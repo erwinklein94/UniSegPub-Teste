@@ -1374,8 +1374,57 @@
 </main>
 
 <main id="page-direitos" class="page-section" role="main">
+  <style>
+    #page-direitos .direitos-intro {
+      background: var(--item-bg);
+      border-left: 4px solid var(--vermelho);
+      padding: 14px 16px;
+      margin-bottom: 18px;
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+    #page-direitos .direitos-grid-extra {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+    #page-direitos .direitos-section-title {
+      margin: 20px 0 4px;
+      padding: 10px 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-card);
+      border-left: 4px solid var(--vermelho);
+      font-family: 'Oswald', sans-serif;
+      font-size: 15px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-main);
+    }
+    #page-direitos .direito-meta {
+      display: block;
+      margin-top: 4px;
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    #page-direitos .direito-status {
+      align-self: flex-start;
+      padding: 4px 8px;
+      border-radius: 3px;
+      border: 1px solid currentColor;
+      font-size: 11px;
+    }
+    @media (max-width: 600px) { #page-direitos .direitos-grid-extra { grid-template-columns: 1fr; } }
+  </style>
+
   <div class="card">
-    <h2>Informações do Profissional</h2>
+    <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
+    <div class="direitos-intro">
+      Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
+    </div>
+
     <div class="form-grid" style="margin-bottom: 0;">
       <div class="field">
         <label for="cargo_dir">Nível da Carreira</label>
@@ -1389,18 +1438,65 @@
           <option value="reforma">Reforma / Invalidez</option>
         </select>
       </div>
-      <div class="field span-2">
+      <div class="field">
         <label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
-        <input type="number" id="tempo_dir" value="10" min="0" max="40"/>
+        <input type="number" id="tempo_dir" value="10" min="0" max="45"/>
+      </div>
+      <div class="field">
+        <label for="idade_dir">Idade</label>
+        <input type="number" id="idade_dir" value="35" min="18" max="80" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="sexo_dir">Sexo para regra previdenciária</label>
+        <select id="sexo_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="ingresso_dir">Data de ingresso na carreira</label>
+        <input type="date" id="ingresso_dir" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="dependente_dir">Tem filho/dependente até 14 anos ou inválido?</label>
+        <select id="dependente_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
+        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+      </div>
+      <div class="field">
+        <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
+        <select id="local_especial_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não informar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="requisitos_apos_dir">Já cumpriu requisitos de aposentadoria?</label>
+        <select id="requisitos_apos_dir" onchange="analisarDireitos()">
+          <option value="na" selected>Não sei / verificar</option>
+          <option value="sim">Sim</option>
+          <option value="nao">Não</option>
+        </select>
       </div>
     </div>
   </div>
 
   <div class="card">
     <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
+    <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
+      <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
+    </div>
     <div class="result-list" id="resultados_dir"></div>
     <div class="alerta legal">
-      <strong>Aviso:</strong> Esta análise é informativa. Direitos específicos podem depender de regulamento interno, regime de transição (EC 103/2019) ou enquadramento jurídico individual. Consulte sua associação ou um advogado especializado em direito administrativo.
+      <strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
     </div>
   </div>
 </main>
@@ -3128,122 +3224,360 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
+
   const inst = currInst;
   const tempo = valEl('tempo_dir');
-  const sit = document.getElementById('situacao_dir').value;
-  const cargoVal = document.getElementById('cargo_dir').value;
+  const idade = valEl('idade_dir');
+  const renda = valEl('renda_dir');
+  const sit = document.getElementById('situacao_dir')?.value || 'ativa';
+  const sexo = document.getElementById('sexo_dir')?.value || 'na';
+  const ingresso = document.getElementById('ingresso_dir')?.value || '';
+  const dependente = document.getElementById('dependente_dir')?.value || 'na';
+  const localEspecial = document.getElementById('local_especial_dir')?.value || 'na';
+  const requisitosApos = document.getElementById('requisitos_apos_dir')?.value || 'na';
+  const cargoVal = document.getElementById('cargo_dir')?.value;
   const c = currTabela.find(x => x.val === cargoVal);
   if (!c) return;
 
-  let html = "";
+  const nomesInst = {
+    pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
+    pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA'
+  };
+  const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst);
+  const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba'].includes(inst);
+  const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : '';
+  const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
-  // ===== DIREITOS UNIVERSAIS =====
-  html += direitoItem("Salário-Família", true,
-    `Direito a benefício mensal pago pela previdência por filho de até 14 anos com renda até R$ 1.984,71. Valor 2026: <strong>R$ 65,00 por filho</strong>.`);
+  let html = '';
 
-  html += direitoItem("Auxílio-Saúde / Plano de Saúde", true,
-    `${inst === 'pmesp' ? 'Cruz Azul SP, FUSAM ou plano credenciado.' :
-       inst === 'pcsp' ? 'IAMSPE — atendimento no Hospital do Servidor Público Estadual.' :
-       inst === 'pmerj' ? 'FUSPOM, HCPM, Família Azul.' :
-       inst === 'pcerj' ? 'FUSPOL ou plano credenciado.' :
-       inst === 'pmmg' ? 'IPSM (10,5% compulsório) com rede credenciada.' :
-       inst === 'pcmg' ? 'IPSEMG opcional (3,2%) ou plano particular.' :
-       inst === 'pmba' || inst === 'pcba' ? 'PLANSERV — gestão estadual.' : ''}`);
+  html += direitoResumo(c.text, nomesInst[inst], tempo, idade, sit, sexo, ingresso, renda, dependente);
 
-  html += direitoItem("Licença-Maternidade / Paternidade", true,
-    `<strong>180 dias</strong> (maternidade) e <strong>20 dias</strong> (paternidade) garantidos pela CF/88, Lei 13.257/2016 e regulamentos institucionais.`);
+  // ===== DIREITOS GERAIS =====
+  html += direitoSecao('Direitos gerais e benefícios familiares');
 
-  html += direitoItem("Licença para Tratamento de Pessoa da Família", true,
-    `Possibilidade de afastamento remunerado por até 12 meses para cuidar de cônjuge, ascendente, descendente ou enteado, conforme regulamento institucional e perícia médica.`);
+  if (dependente === 'sim' && renda > 0 && renda <= 1980.38) {
+    html += direitoItem('Salário-Família', 'condicionado',
+      'Pelos dados informados, pode haver enquadramento no salário-família: filho/equiparado até 14 anos ou inválido e remuneração dentro do limite legal. Cota 2026: <strong>R$ 67,54</strong>.',
+      'Base: Portaria Interministerial MPS/MF nº 13/2026 e tabela INSS 2026. Conferir aplicação ao regime do servidor e regras do órgão.');
+  } else if (dependente === 'nao' || (renda > 1980.38)) {
+    html += direitoItem('Salário-Família', 'atencao',
+      'Não aparece como direito provável com os dados informados. O benefício depende de dependente elegível e remuneração dentro do limite legal.',
+      'Referência 2026: cota de R$ 67,54 para remuneração até R$ 1.980,38.');
+  } else {
+    html += direitoItem('Salário-Família', 'condicionado',
+      'Pode existir somente se houver filho/equiparado até 14 anos ou inválido e remuneração dentro do limite legal. Informe dependente e remuneração para uma análise melhor.',
+      'Referência 2026: cota de R$ 67,54 para remuneração até R$ 1.980,38.');
+  }
 
-  html += direitoItem("Auxílio-Funeral", true,
-    `Indenização paga em caso de falecimento, no valor equivalente a 1 mês de remuneração, conforme regulamento institucional.`);
+  html += direitoItem('Auxílio-Funeral', 'condicionado',
+    'Benefício/indenização normalmente destinado aos dependentes ou a quem comprovar despesas de funeral, conforme regra previdenciária ou estatuto próprio da instituição.',
+    'Depende de requerimento, documentação, vínculo com o servidor e norma estadual específica.');
 
-  html += direitoItem("Pensão por Morte", true,
-    `Direito dos dependentes legais de receber benefício previdenciário (regime próprio). Para policiais civis e militares, regulado pela EC 103/2019 e leis estaduais.`);
+  html += direitoItem('Pensão por Morte', 'condicionado',
+    'Direito dos dependentes legalmente habilitados, observadas as regras do regime próprio, sistema de proteção social militar ou previdência estadual.',
+    'Depende da qualidade de dependente, documentação, cálculo previdenciário e legislação estadual aplicável.');
 
-  html += direitoItem("Promoção por Bravura / Ato de Bravura", true,
-    `Reconhecimento por ato de extrema coragem em serviço, com promoção excepcional ao posto/grad superior, conforme regulamento de promoções.`);
+  html += direitoItem('Licença-Maternidade / Paternidade', 'condicionado',
+    'Direito ligado ao nascimento, adoção ou guarda, com prazos definidos pela Constituição, lei estadual, estatuto e regulamento próprio da carreira.',
+    'Evitar tratar prazo único como regra universal: a aplicação concreta depende do ente federativo e do regime jurídico.');
+
+  html += direitoItem('Licença para Tratamento de Pessoa da Família', 'requerimento',
+    'Possibilidade de afastamento para cuidar de familiar, normalmente condicionada a requerimento, comprovação do vínculo, necessidade de acompanhamento e avaliação administrativa/pericial.',
+    'A remuneração, prazo e renovação variam conforme estatuto/regulamento da instituição.');
+
+  // ===== SAÚDE E ASSISTÊNCIA =====
+  html += direitoSecao('Saúde, assistência e proteção social');
+  html += direitoItem('Assistência à Saúde / Plano Institucional', 'condicionado', getSaudeTexto(inst), getSaudeBase(inst));
+
+  if (sit === 'reforma') {
+    html += direitoItem('Reforma / Invalidez', 'requerimento',
+      'A reforma ou aposentadoria por incapacidade exige procedimento administrativo e/ou perícia oficial. Em casos ligados ao serviço, pode haver tratamento jurídico e cálculo diferenciados.',
+      'Depende de laudo, nexo com o serviço, junta médica e legislação estadual.');
+  } else {
+    html += direitoItem('Licença-Saúde e Readaptação', 'requerimento',
+      'Em caso de doença, acidente ou limitação funcional, pode haver licença para tratamento de saúde, readaptação, restrição temporária ou avaliação de incapacidade.',
+      'Depende de perícia médica oficial e procedimento administrativo.');
+  }
+
+  if (inst === 'pmesp') {
+    html += direitoItem('SPSM / CBPM / Cruz Azul', 'condicionado',
+      'Sistema de proteção social e assistência ligado ao militar paulista, com possíveis benefícios como pensão, auxílio-funeral, assistência e serviços vinculados.',
+      'Acesso, contribuição, dependentes e coberturas dependem das normas da PMESP/CBPM/Cruz Azul.');
+  } else if (inst === 'pmmg') {
+    html += direitoItem('IPSM Minas Gerais', 'condicionado',
+      'O IPSM é referência para previdência e saúde dos militares mineiros e seus dependentes, conforme regras próprias.',
+      'Base institucional: IPSM/MG. Verificar contribuição, dependentes, rede e cobertura.');
+  } else if (inst === 'pcmg') {
+    html += direitoItem('IPSEMG / Assistência à Saúde', 'condicionado',
+      'Servidores civis mineiros podem ter acesso a assistência conforme adesão, contribuição e regras do sistema estadual.',
+      'Verificar adesão, descontos, dependentes e cobertura vigente.');
+  } else if (inst === 'pmba' || inst === 'pcba') {
+    html += direitoItem('Planserv Bahia', 'condicionado',
+      'Assistência à saúde dos servidores públicos baianos, sujeita a adesão, contribuição, dependentes e regras administrativas.',
+      'Base: normas do Planserv e legislação estadual da Bahia.');
+  }
+
+  // ===== VANTAGENS REMUNERATÓRIAS =====
+  html += direitoSecao('Vantagens remuneratórias e adicionais');
+
+  if (tempo >= 5) {
+    html += direitoItem('Adicional por Tempo de Serviço', 'automatico', getTempoServicoTexto(inst, tempo), getTempoServicoBase(inst));
+  } else {
+    const faltaTempo = Math.max(0, 5 - tempo);
+    html += direitoItem('Adicional por Tempo de Serviço', 'atencao',
+      `Ainda não há indicativo de primeiro período completo de tempo de serviço. Faltam aproximadamente <strong>${faltaTempo}</strong> ano(s) para o primeiro marco de 5 anos, quando aplicável.`,
+      getTempoServicoBase(inst));
+  }
+
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    if (tempo >= 20) {
+      html += direitoItem('Sexta-Parte', 'automatico',
+        'Com 20 anos ou mais de efetivo exercício, há indicativo de direito à sexta-parte dos vencimentos integrais, observadas as regras constitucionais e exceções legais.',
+        'Base: Art. 129 da Constituição do Estado de São Paulo; atenção à exceção para servidores remunerados por subsídio, quando aplicável.');
+    } else {
+      html += direitoItem('Sexta-Parte', 'atencao',
+        `Ainda não há 20 anos informados. Faltam aproximadamente <strong>${20 - tempo}</strong> ano(s) para o marco temporal da sexta-parte em SP.`,
+        'Base: Art. 129 da Constituição do Estado de São Paulo.');
+    }
+  }
+
+  if (tempo >= 5) {
+    html += direitoItem('Licença-Prêmio / Férias-Prêmio / Licença Especial', 'condicionado',
+      'Pode existir direito relacionado a períodos aquisitivos por tempo de serviço, conforme a regra estadual e a situação funcional do servidor.',
+      'Não tratar como automático universal: nomenclatura, concessão, conversão em pecúnia e restrições variam por Estado e carreira.');
+  }
+
+  html += direitoItem('Insalubridade', 'condicionado', getInsalubridadeTexto(inst), getInsalubridadeBase(inst));
+  html += direitoItem('Periculosidade / Atividade de Risco', inst === 'pcerj' ? 'automatico' : 'condicionado', getPericulosidadeTexto(inst), getPericulosidadeBase(inst));
+
+  if (localEspecial === 'sim') {
+    html += direitoItem('Localidade Especial / Unidade Especial', 'condicionado',
+      'Você informou atuação em localidade ou unidade especial. Pode haver verba, gratificação, diária, adicional ou prioridade administrativa conforme norma da instituição.',
+      'Depende de designação formal, publicação, unidade, escala, disponibilidade e legislação local.');
+  } else {
+    html += direitoItem('Localidade Especial / Unidade Especial', 'verificar',
+      'Algumas instituições possuem verbas ou regras específicas para local de difícil provimento, unidade especial, transferência ou serviço extraordinário.',
+      'Marque “sim” se o servidor atua nessas condições e confirme a norma da instituição.');
+  }
+
+  html += getVantagensEspecificas(inst);
+
+  // ===== LICENÇAS E CARREIRA =====
+  html += direitoSecao('Licenças, carreira e estabilidade');
+  if (tempo >= 3) {
+    html += direitoItem('Estabilidade no Serviço Público', 'automatico',
+      'Com 3 anos ou mais informados, há indicativo de estabilidade, desde que o estágio probatório tenha sido cumprido e aprovado.',
+      'Base geral: Art. 41 da Constituição Federal. Militares e carreiras específicas podem ter rito próprio de avaliação e permanência.');
+  } else {
+    html += direitoItem('Estabilidade no Serviço Público', 'atencao',
+      `Tempo informado inferior a 3 anos. Faltam aproximadamente <strong>${3 - tempo}</strong> ano(s) para o marco geral de estabilidade, se aprovado no estágio probatório.`,
+      'Base geral: Art. 41 da Constituição Federal.');
+  }
+
+  html += direitoItem('Promoção por Bravura / Ato de Bravura', 'condicionado',
+    'Não é vantagem automática. Pode ocorrer em casos excepcionais de ato reconhecido formalmente como bravura, conforme regulamento de promoções da instituição.',
+    'Depende de sindicância/procedimento, enquadramento, proposta, decisão administrativa e publicação oficial.');
+
+  html += direitoItem('Progressão / Promoção na Carreira', 'condicionado',
+    'Promoções e progressões dependem de tempo, merecimento, antiguidade, avaliação, cursos, vagas, interstício, conduta e regras próprias da carreira.',
+    'Verificar estatuto, plano de carreira e editais internos da instituição.');
+
+  // ===== APOSENTADORIA / RESERVA / REFORMA =====
+  html += direitoSecao(isPM ? 'Reserva, reforma e proteção previdenciária' : 'Aposentadoria, abono e proteção previdenciária');
+
+  html += direitoItem(isPM ? 'Reserva Remunerada / Inatividade' : 'Aposentadoria Policial', getStatusAposentadoria(tempo, idade, requisitosApos),
+    getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103),
+    'A regra concreta depende de idade, tempo total, tempo no cargo/carreira, sexo, data de ingresso, legislação estadual e regras de transição após a EC 103/2019.');
+
+  if (sit === 'ativa') {
+    if (requisitosApos === 'sim') {
+      html += direitoItem('Abono de Permanência', 'condicionado',
+        'Como você informou já ter cumprido requisitos de aposentadoria/reserva e permanece em atividade, pode haver direito ao abono de permanência conforme regra previdenciária aplicável.',
+        'Depende de requerimento, reconhecimento administrativo dos requisitos e norma estadual.');
+    } else {
+      html += direitoItem('Abono de Permanência', 'verificar',
+        'Só deve ser tratado como possível depois de confirmado o cumprimento dos requisitos para aposentadoria/reserva com permanência em atividade.',
+        'Não depende apenas de tempo informado: exige análise de idade, ingresso, carreira, contribuição e regra de transição.');
+    }
+  }
+
+  if (isPC && (sit === 'reserva' || sit === 'reforma')) {
+    html += direitoItem('Paridade e Integralidade', ingressoAntesEC103 ? 'condicionado' : 'verificar',
+      ingressoAntesEC103
+        ? 'A data de ingresso informada é anterior à EC 103/2019, o que pode indicar análise de integralidade/paridade conforme regras de transição e jurisprudência aplicável aos policiais civis.'
+        : 'A análise de paridade e integralidade depende principalmente da data de ingresso, regra de aposentadoria utilizada e legislação do Estado. Informe/verifique a data de ingresso.',
+      'Tema sensível: confirmar com setor previdenciário, associação ou advogado especializado.');
+  }
 
   if (sit === 'reserva' || sit === 'reforma') {
-    html += direitoItem("Porte Funcional Vitalício", true,
-      `Garantido pelo Estatuto da Polícia Civil/Militar e pela Lei Federal 10.826/2003 (Estatuto do Desarmamento) ao policial inativo, condicionado a aptidão psicológica.`);
+    html += direitoItem('Porte de Arma na Inatividade', 'condicionado',
+      'Pode existir autorização para porte na inatividade, mas não deve ser tratado como “vitalício” sem ressalvas. Normalmente depende de requisitos legais, aptidão psicológica, documentação e regras de controle.',
+      'Base geral: Estatuto do Desarmamento e regulamentos. Conferir norma institucional e exigências vigentes.');
   }
 
-  // ===== INSALUBRIDADE / PERICULOSIDADE =====
-  html += direitoItem("Adicional de Insalubridade / Periculosidade", true,
-    inst === 'pcerj' ? `Direito constitucional. <strong>Lei 11.003/2025 RJ:</strong> 230% sobre vencimento para todas as carreiras (exceto Delegado, que recebe verba de representação de 212%).` :
-    `Direito constitucional. PCs/PMs em SP: insalubridade percentual sobre o salário-mínimo (R$ 1.621,00 em 2026 - mín 10%, médio 20%, máx 40%).`);
-
-  // ===== TEMPO DE SERVIÇO =====
-  if (tempo >= 5) {
-    let txt = "";
-    if (inst === 'pmesp' || inst === 'pcsp') txt = `Direito a Quinquênios (5%/qq) — você tem direito a ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmerj') txt = `Direito a Triênios (10%/tri) — você tem direito a ${Math.min(13, Math.floor(tempo/3))} triênio(s).`;
-    else if (inst === 'pcerj') txt = `Direito a Adic. Tempo de Serviço (5%/qq, Lei 11.003/2025) — ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmmg' || inst === 'pcmg') txt = `Direito a Quinquênios (10%/qq) — ${Math.min(6, Math.floor(tempo/5))} quinquênio(s).`;
-    else if (inst === 'pmba' || inst === 'pcba') txt = `Direito a Anuênios (1%/ano) — ${Math.min(35, tempo)} anuênio(s).`;
-    html += direitoItem("Adicional por Tempo de Serviço", true, txt);
-  }
-
-  // ===== SEXTA-PARTE (SP) =====
-  if (inst === 'pmesp' || inst === 'pcsp') {
-    if (tempo >= 20) html += direitoItem("Sexta-Parte (1/6 sobre vencimentos)", true, `Concedida após 20 anos de serviço. Direito constitucional do servidor público estadual SP (Art. 129 CE/SP).`);
-    else html += direitoItem("Sexta-Parte (1/6)", false, `Faltam ${20 - tempo} anos para conquistar este direito (após 20 anos de efetivo serviço).`);
-  }
-
-  // ===== LICENÇA-PRÊMIO =====
-  if (tempo >= 5) {
-    html += direitoItem("Licença-Prêmio (Especial)", true, `Após cada quinquênio, direito a ${inst.includes('mg') ? '3' : '3'} meses de licença remunerada. Pode ser convertida em pecúnia ao se aposentar (sem incidência de IRRF — STF Tema 635).`);
-  }
-
-  // ===== ESTABILIDADE =====
-  if (tempo >= 3) {
-    html += direitoItem("Estabilidade no Serviço Público", true, `Garantida após 3 anos de efetivo exercício e aprovação no estágio probatório (Art. 41 CF/88).`);
-  } else {
-    html += direitoItem("Estabilidade no Serviço Público", false, `Você ainda está em estágio probatório. Faltam ${3 - tempo} anos para conquistar a estabilidade (Art. 41 CF/88).`);
-  }
-
-  // ===== APOSENTADORIA =====
-  if (sit === 'ativa') {
-    if (tempo >= 30) html += direitoItem("Aposentadoria Voluntária Integral", true, `Direito conquistado para policiais (regra de transição EC 103/2019 - 30 anos contribuição + 55 anos idade homens / 25+50 mulheres).`);
-    else html += direitoItem("Aposentadoria Voluntária", false, `Faltam aproximadamente ${30 - tempo} anos para a aposentadoria voluntária integral (regra de transição EC 103/2019).`);
-
-    if (tempo >= 25) html += direitoItem("Abono de Permanência", true, `Direito ao abono (devolução de 14% da contribuição previdenciária) para quem já cumpriu requisitos da aposentadoria mas continua em atividade.`);
-  }
-
-  // ===== PARIDADE/INTEGRALIDADE (PCs) =====
-  if (inst.startsWith('pc') && (sit === 'reserva' || sit === 'reforma')) {
-    html += direitoItem("Paridade e Integralidade — Tema 1019 STF", true,
-      `Aposentados policiais civis que ingressaram <strong>antes da EC 103/2019</strong> têm direito a aposentadoria com <strong>integralidade</strong> (último vencimento) e <strong>paridade</strong> (mesmo reajuste dos ativos). RE 1.162.672 STF.`);
-  }
-
-  // ===== INSTITUCIONAIS ESPECÍFICOS =====
-  if (inst === 'pmesp') {
-    html += direitoItem("Sistema de Proteção Social do Militar (SPSM)", true, `Caixa Beneficente da PMESP (CBPM) — pensão por morte, auxílio-funeral, pecúlio e financiamento habitacional.`);
-  }
-  else if (inst === 'pmerj') {
-    html += direitoItem("Auxílio-Moradia / Lotação Especial", true, `Concedido em situações de transferência ou unidades especiais (BOPE, UPP, BPChq).`);
-  }
-  else if (inst === 'pcerj') {
-    html += direitoItem("Lei 11.003/2025 — Nova Lei Orgânica", true, `Reestruturação geral da PC RJ: novas faixas, adicional de periculosidade de 230%, gratificação técnico-científica de 100%, verba de representação de 212% para Delegados.`);
-  }
-  else if (inst === 'pmmg') {
-    html += direitoItem("Adicional de Desempenho (ADE)", true, `Avaliação periódica concede 10%, 30%, 50% ou 70% sobre o subsídio.`);
-  }
-  else if (inst === 'pmba' || inst === 'pcba') {
-    html += direitoItem("CET (Condição Especial de Trabalho)", true, `Gratificação variável de 25% a 125% sobre o vencimento básico — varia conforme a função e local de exercício.`);
-  }
+  // ===== ALERTAS E FONTES =====
+  html += direitoSecao('Alertas e fontes de conferência');
+  html += direitoItem('Conferência em fonte oficial', 'verificar',
+    'Use esta aba como triagem inicial. Para decisão financeira, ação judicial, aposentadoria, abono ou requerimento administrativo, confira sempre a legislação atualizada e a ficha funcional do servidor.',
+    'Fontes úteis: Diário Oficial do Estado, estatuto da carreira, lei orgânica, portal de transparência, setor de pessoal, previdência estadual e associação/sindicato.');
 
   cont.innerHTML = html;
 }
 
-function direitoItem(nome, sim, desc) {
-  return `<div class="direito-item ${sim ? 'sim' : 'nao'}">
-    <span class="direito-nome">${nome}</span>
-    <span class="direito-status">${sim ? '✓ Direito Garantido' : '⚠ Atenção'}</span>
-    <span class="direito-desc">${desc}</span>
+function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda, dependente) {
+  const sitTxt = sit === 'ativa' ? 'Serviço ativo' : sit === 'reserva' ? 'Inatividade / aposentadoria' : 'Reforma / invalidez';
+  const sexoTxt = sexo === 'masculino' ? 'masculino' : sexo === 'feminino' ? 'feminino' : 'não informado';
+  const ingressoTxt = ingresso ? ingresso.split('-').reverse().join('/') : 'não informado';
+  const rendaTxt = renda > 0 ? fmt(renda) : 'não informada';
+  const depTxt = dependente === 'sim' ? 'sim' : dependente === 'nao' ? 'não' : 'não informado';
+  return `<div class="direito-item acao" style="border-left-color: var(--vermelho);">
+    <span class="direito-nome">Resumo da análise — ${instNome}</span>
+    <span class="direito-desc"><strong>Cargo/nível:</strong> ${cargo}</span>
+    <span class="direito-desc"><strong>Situação:</strong> ${sitTxt} · <strong>Tempo informado:</strong> ${tempo} ano(s) · <strong>Idade:</strong> ${idade || 'não informada'} · <strong>Sexo:</strong> ${sexoTxt}</span>
+    <span class="direito-desc"><strong>Ingresso:</strong> ${ingressoTxt} · <strong>Remuneração bruta:</strong> ${rendaTxt} · <strong>Dependente para salário-família:</strong> ${depTxt}</span>
   </div>`;
+}
+
+function direitoSecao(titulo) {
+  return `<div class="direitos-section-title">${titulo}</div>`;
+}
+
+function direitoItem(nome, status, desc, base = '') {
+  const statusMap = {
+    automatico: { label: '✓ Direito automático / requisito provável', color: 'var(--verde)', bg: 'rgba(32, 142, 78, 0.06)' },
+    condicionado: { label: '◼ Direito condicionado', color: 'var(--dourado)', bg: 'rgba(223,182,62,0.08)' },
+    requerimento: { label: '⏳ Depende de requerimento/perícia', color: 'var(--azul)', bg: 'rgba(30,48,132,0.08)' },
+    verificar: { label: '⚠ Verificar caso individual', color: 'var(--text-muted)', bg: 'var(--item-bg)' },
+    atencao: { label: '⚠ Atenção / requisito não indicado', color: '#e60000', bg: 'rgba(230, 0, 0, 0.05)' }
+  };
+  const cfg = statusMap[status] || statusMap.verificar;
+  const baseHtml = base ? `<span class="direito-meta"><strong>Base/observação:</strong> ${base}</span>` : '';
+  const classe = status === 'automatico' ? 'sim' : status === 'atencao' ? 'nao' : '';
+  return `<div class="direito-item ${classe}" style="border-left-color:${cfg.color}; background:${cfg.bg};">
+    <span class="direito-nome">${nome}</span>
+    <span class="direito-status" style="color:${cfg.color};">${cfg.label}</span>
+    <span class="direito-desc">${desc}</span>
+    ${baseHtml}
+  </div>`;
+}
+
+function getSaudeTexto(inst) {
+  const textos = {
+    pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
+    pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
+    pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
+    pcerj: 'PCERJ: verificar assistência disponível, convênios e regras administrativas da Polícia Civil/RJ.',
+    pmmg: 'PMMG: assistência e previdência vinculadas ao IPSM, conforme contribuição, dependentes e rede credenciada.',
+    pcmg: 'PCMG: assistência pode envolver IPSEMG ou outro plano, conforme adesão e regra estadual.',
+    pmba: 'PMBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.',
+    pcba: 'PCBA: assistência pode envolver Planserv e regras estaduais de adesão, contribuição e cobertura.'
+  };
+  return textos[inst] || 'Verificar assistência à saúde conforme norma da instituição.';
+}
+
+function getSaudeBase(inst) {
+  if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
+  if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
+  return 'Regulamento institucional, estatuto da carreira, órgão de saúde estadual e regras de contribuição/dependentes.';
+}
+
+function getTempoServicoTexto(inst, tempo) {
+  if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
+  if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
+  if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
+  if (inst === 'pmmg' || inst === 'pcmg') return `Em MG, tratar o adicional por tempo de serviço com cautela: pode envolver quinquênio, ADE, VPNI ou regra de transição. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência para conferência.`;
+  if (inst === 'pmba' || inst === 'pcba') return `Na Bahia, há referência a anuênios/adicionais por tempo conforme carreira. Pelo tempo informado, a referência inicial é de <strong>${Math.min(35, tempo)}</strong> ano(s) de serviço.`;
+  return 'Verificar adicional por tempo de serviço conforme legislação da carreira.';
+}
+
+function getTempoServicoBase(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
+  if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
+  if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
+  if (inst === 'pmba' || inst === 'pcba') return 'Base: estatuto/lei orgânica e normas remuneratórias do Estado da Bahia.';
+  return 'Base: estatuto, lei de remuneração e ficha funcional.';
+}
+
+function getInsalubridadeTexto(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
+  if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
+  return 'Pode existir quando houver exposição reconhecida a agente insalubre, mediante laudo, enquadramento e previsão legal da instituição.';
+}
+
+function getInsalubridadeBase(inst) {
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
+  return 'Depende de laudo, legislação estadual e enquadramento do local/função.';
+}
+
+function getPericulosidadeTexto(inst) {
+  if (inst === 'pcerj') return 'PCERJ: a Lei 11.003/2025 prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados, que possuem verba de representação própria.';
+  if (inst === 'pmesp' || inst === 'pmerj' || inst === 'pmmg' || inst === 'pmba') return 'Para militares estaduais, o risco da atividade costuma estar absorvido no regime remuneratório ou em verbas próprias. Não aplicar automaticamente o modelo da PCERJ.';
+  return 'Pode haver gratificação ou adicional ligado ao risco/atividade, mas a regra muda bastante por Estado e carreira. Verificar norma específica.';
+}
+
+function getPericulosidadeBase(inst) {
+  if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
+  return 'Base: estatuto e lei de remuneração da instituição; não usar regra genérica para todas as carreiras.';
+}
+
+function getVantagensEspecificas(inst) {
+  let html = '';
+  if (inst === 'pmesp') {
+    html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
+      'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
+      'Depende de escala, disponibilidade, limite mensal e norma vigente.');
+  } else if (inst === 'pcsp') {
+    html += direitoItem('DEJEC / Diária Especial por Jornada Extraordinária', 'condicionado',
+      'Verba eventual para jornada extraordinária na Polícia Civil/SP, quando autorizada e efetivamente cumprida.',
+      'Depende de escala, autorização, limite e regulamentação vigente.');
+  } else if (inst === 'pmerj') {
+    html += direitoItem('RAS / Serviço Adicional', 'condicionado',
+      'Pode haver remuneração por serviço adicional, escala extraordinária ou programa equivalente, conforme disponibilidade e autorização.',
+      'Depende de escala, publicação, limite e norma estadual.');
+  } else if (inst === 'pcerj') {
+    html += direitoItem('Gratificação Técnico-Científica', 'condicionado',
+      'Pode ser aplicável a carreiras técnico-científicas, como peritos e médicos legistas, conforme enquadramento legal.',
+      'Base: Lei 11.003/2025/RJ e cargo ocupado.');
+    html += direitoItem('Verba de Representação — Delegado', 'condicionado',
+      'Delegados possuem tratamento remuneratório próprio, com verba de representação prevista na reestruturação da PCERJ.',
+      'Base: Lei 11.003/2025/RJ. Aplicável apenas ao cargo correspondente.');
+    html += direitoItem('Auxílio-Transporte / Diárias / Auxílios específicos', 'condicionado',
+      'A nova estrutura da PCERJ lista vantagens e indenizações específicas que devem ser verificadas conforme lotação, deslocamento e situação funcional.',
+      'Conferir Lei 11.003/2025/RJ e regulamentação interna.');
+  } else if (inst === 'pmmg') {
+    html += direitoItem('ADE / VPNI / Vantagens de transição', 'condicionado',
+      'ADE, VPNI e parcelas de transição podem aparecer conforme avaliação, histórico funcional e regra remuneratória individual.',
+      'Conferir ficha financeira, avaliações e legislação mineira atualizada.');
+  } else if (inst === 'pcmg') {
+    html += direitoItem('ADE / Gratificação de Aprimoramento Profissional', 'condicionado',
+      'Podem existir vantagens por desempenho, formação, titulação ou aprimoramento profissional, conforme cargo e legislação da PCMG.',
+      'Conferir plano de carreira, titulação aceita e percentuais vigentes.');
+  } else if (inst === 'pmba' || inst === 'pcba') {
+    html += direitoItem('CET — Condição Especial de Trabalho', 'condicionado',
+      'Gratificação variável ligada a condição especial de trabalho, função ou local de exercício. Não deve ser tratada como valor fixo universal.',
+      'Conferir percentual, cargo, setor, publicação e legislação estadual da Bahia.');
+  }
+  return html;
+}
+
+function getStatusAposentadoria(tempo, idade, requisitosApos) {
+  if (requisitosApos === 'sim') return 'condicionado';
+  if (tempo >= 30 && idade >= 55) return 'verificar';
+  return 'atencao';
+}
+
+function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103) {
+  const tipo = ['pmesp', 'pmerj', 'pmmg', 'pmba'].includes(inst) ? 'reserva remunerada/reforma' : 'aposentadoria policial';
+  if (requisitosApos === 'sim') {
+    return `Você informou que os requisitos de ${tipo} já foram cumpridos. O próximo passo é confirmar a regra usada, cálculo, paridade/integralidade quando cabível e eventual abono de permanência.`;
+  }
+  if (tempo >= 30 && idade >= 55) {
+    return `Tempo e idade informados indicam possível proximidade de ${tipo}, mas isso não basta para afirmar direito automático. É indispensável conferir data de ingresso, sexo, tempo no cargo/carreira e regra de transição.`;
+  }
+  const idadeTxt = idade ? `${idade} ano(s) de idade` : 'idade não informada';
+  const sexoTxt = sexo === 'na' ? 'sexo não informado' : `sexo ${sexo}`;
+  const ingressoTxt = ingressoAntesEC103 ? 'ingresso informado antes da EC 103/2019' : 'ingresso não informado ou posterior à EC 103/2019';
+  return `Com ${tempo} ano(s) de contribuição policial, ${idadeTxt}, ${sexoTxt} e ${ingressoTxt}, a análise previdenciária deve ser individual. Não é seguro afirmar direito adquirido apenas por este simulador.`;
 }
 
 /* ============================================================ */
