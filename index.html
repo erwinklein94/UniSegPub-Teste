@@ -628,6 +628,35 @@
     .breakdown h3 { display: block !important; }
   }
 
+
+
+  /* BLOCO 02.21 — Melhorias específicas da Calculadora de Vencimentos */
+  .calc-toolbar { overflow: visible; }
+  .calc-toolbar h2 { margin-bottom: 10px; }
+  .calc-toolbar-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+  .calc-toolbar-desc { color: var(--text-muted); font-size: 14px; line-height: 1.55; max-width: 720px; }
+  .calc-mode-toggle { display: inline-flex; gap: 6px; padding: 5px; border: 1px solid var(--border-input); background: var(--item-bg); border-radius: 999px; }
+  .calc-mode-toggle button { border: none; border-radius: 999px; padding: 9px 12px; background: transparent; color: var(--text-muted); font-family: 'Roboto Condensed', sans-serif; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; cursor: pointer; transition: 0.2s ease; }
+  .calc-mode-toggle button.active { background: var(--vermelho); color: #ffffff; }
+  .calc-legenda { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .calc-badge, .calc-legenda span { display: inline-flex; align-items: center; gap: 4px; border-radius: 999px; padding: 4px 8px; font-family: 'Roboto Condensed', sans-serif; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.7px; border: 1px solid var(--border-input); color: var(--text-muted); background: var(--bg-card); }
+  label .calc-badge { margin-left: 4px; padding: 2px 6px; font-size: 9px; line-height: 1.1; }
+  .calc-badge.auto, .calc-legenda .auto { color: var(--verde); border-color: rgba(32,142,78,0.5); background: rgba(32,142,78,0.08); }
+  .calc-badge.manual, .calc-legenda .manual { color: var(--text-main); border-color: var(--border-input); background: var(--item-bg); }
+  .calc-badge.opcional, .calc-legenda .opcional { color: var(--azul); border-color: rgba(30,48,132,0.45); background: rgba(30,48,132,0.08); }
+  .calc-badge.estimativa, .calc-legenda .estimativa { color: var(--dourado); border-color: rgba(223,182,62,0.55); background: rgba(223,182,62,0.09); }
+  #page-calculadora.calc-simple .calc-advanced { display: none; }
+  .calc-modo-aviso { display: none; margin-top: 14px; }
+  #page-calculadora.calc-simple .calc-modo-aviso.show { display: block; }
+  .calc-mini-resumo, .calc-comparativo { background: var(--item-bg); border: 1px solid var(--border-card); border-left: 4px solid var(--vermelho); padding: 12px 14px; margin-bottom: 14px; font-size: 13px; color: var(--text-muted); line-height: 1.45; }
+  .calc-mini-resumo strong, .calc-comparativo strong { color: var(--text-main); }
+  .linha.grupo { margin-top: 12px; padding: 10px 0 6px 0; border-bottom: 1px dashed var(--border-input); color: var(--text-main); font-family: 'Oswald', sans-serif; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+  .linha.grupo .desc { color: var(--text-main); }
+  .linha.grupo .val { display: none; }
+  .linha.info .val { color: var(--text-muted); }
+  @media (max-width: 640px) { .calc-toolbar-top { flex-direction: column; } .calc-mode-toggle { width: 100%; } .calc-mode-toggle button { flex: 1; } }
+
+
   /* BLOCO 02.20 — Responsividade final para celular */
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; gap: 12px; }
@@ -824,8 +853,31 @@
 </main>
 
 <!-- BLOCO 05 — PÁGINA CALCULADORA DE VENCIMENTOS -->
-<main id="page-calculadora" class="page-section" role="main">
+<main id="page-calculadora" class="page-section calc-advanced-mode" role="main">
   <div>
+    <div class="card calc-toolbar">
+      <!-- BLOCO 05.0 — Controles de modo e legenda da calculadora -->
+      <div class="calc-toolbar-top">
+        <div>
+          <h2>Calculadora de Vencimentos</h2>
+          <p class="calc-toolbar-desc">Use o modo simples para uma simulação rápida ou o modo avançado para informar adicionais, verbas eventuais, plantões, auxílios e descontos específicos. Os valores são estimativos e devem ser conferidos com o contracheque e normas oficiais.</p>
+        </div>
+        <div class="calc-mode-toggle" aria-label="Modo de uso da calculadora">
+          <button type="button" id="btn_calc_simples" onclick="atualizarModoCalculadora('simples')">Simples</button>
+          <button type="button" id="btn_calc_avancado" class="active" onclick="atualizarModoCalculadora('avancado')">Avançado</button>
+        </div>
+      </div>
+      <div class="calc-legenda" aria-label="Legenda dos campos da calculadora">
+        <span class="auto">Automático</span>
+        <span class="manual">Manual</span>
+        <span class="opcional">Opcional</span>
+        <span class="estimativa">Estimativa</span>
+      </div>
+      <div id="calc_modo_aviso" class="alerta calc-modo-aviso">
+        <strong>Atenção:</strong> existem valores preenchidos em campos avançados que continuam entrando no cálculo mesmo quando o modo simples oculta esses campos. Abra o modo avançado para revisar ou limpar esses valores.
+      </div>
+    </div>
+
     <div class="card">
       <!-- BLOCO 05.1 — Identificação básica do servidor -->
       <h2>Identificação do Servidor</h2>
@@ -835,12 +887,16 @@
           <select id="cargo" aria-label="Selecione o posto, graduação ou cargo"></select>
         </div>
         <div class="field">
-          <label for="dias">Dias trabalhados (mês)</label>
-          <input type="number" id="dias" value="30" min="0" max="31" aria-label="Dias trabalhados no mês"/>
+          <label for="dias">Proporção do mês remunerado <span class="tip" data-tip="Use 30 para mês cheio. Use menos apenas em caso de admissão, afastamento ou pagamento proporcional. O cálculo não ultrapassa 30 dias para evitar salário-base acima de 100% do mês.">?</span></label>
+          <input type="number" id="dias" value="30" min="0" max="30" aria-label="Proporção do mês remunerado"/>
         </div>
         <div class="field">
-          <label for="dependentes">Dependentes (IRRF) <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
+          <label for="dependentes">Dependentes para IRRF <span class="tip" data-tip="Filhos até 21 anos (24 se universitários), cônjuge ou pais com renda baixa. Cada dependente reduz R$ 189,59 da base de cálculo do IRRF.">?</span></label>
           <input type="number" id="dependentes" value="0" min="0" max="20"/>
+        </div>
+        <div class="field pc-only">
+          <label for="dependentes_saude">Dependentes no plano de saúde <span class="tip" data-tip="Campo separado dos dependentes de IRRF. Use aqui apenas dependentes vinculados ao plano de saúde quando o cálculo do desconto usar dependentes, como no IAMSPE.">?</span></label>
+          <input type="number" id="dependentes_saude" value="0" min="0" max="20"/>
         </div>
         <div class="field">
           <label for="dias_va">Dias VA/VR / Aux. alimentação <span class="tip" data-tip="Quantidade de dias efetivamente trabalhados ou úteis considerados para vale-alimentação, diária alimentação ou ajuda de custo. Para verbas fixas mensais, o campo não altera o valor.">?</span></label>
@@ -849,7 +905,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card calc-advanced">
       <!-- BLOCO 05.2 — Adicionais, vantagens, auxílios e gratificações -->
       <h2>Adicionais e Vantagens</h2>
       <div class="form-grid">
@@ -900,16 +956,16 @@
           <input type="number" id="anuenios_ba_pm" value="0" min="0" max="35"/>
         </div>
         <div class="field pmba-only">
-          <label for="cet_ba_pm">CET (%) <span class="tip" data-tip="CET = Condição Especial de Trabalho. Gratificação variável conforme o local e função, geralmente entre 25% e 125%.">?</span></label>
-          <input type="number" id="cet_ba_pm" value="25" min="0" max="125" step="1"/>
+          <label for="cet_ba_pm">CET (%) <span class="tip" data-tip="CET = Condição Especial de Trabalho. Gratificação variável conforme o local e função, geralmente entre 25% e 125%. O campo começa zerado para evitar superestimar o salário; preencha somente se constar no contracheque ou norma aplicável.">?</span></label>
+          <input type="number" id="cet_ba_pm" value="0" min="0" max="125" step="1"/>
         </div>
         <div class="field pcba-only">
           <label for="anuenios_ba_pc">Anuênios (1% ao ano) <span class="tip" data-tip="PCBA: 1% sobre o vencimento a cada ano de efetivo serviço.">?</span></label>
           <input type="number" id="anuenios_ba_pc" value="0" min="0" max="35"/>
         </div>
         <div class="field pcba-only">
-          <label for="cet_ba_pc">CET (%) <span class="tip" data-tip="Gratificação variável de 25% a 125% sobre o vencimento conforme o cargo e setor.">?</span></label>
-          <input type="number" id="cet_ba_pc" value="25" min="0" max="125" step="1"/>
+          <label for="cet_ba_pc">CET (%) <span class="tip" data-tip="Gratificação variável de 25% a 125% sobre o vencimento conforme o cargo e setor. O campo começa zerado para evitar superestimar o salário; preencha somente se constar no contracheque ou norma aplicável.">?</span></label>
+          <input type="number" id="cet_ba_pc" value="0" min="0" max="125" step="1"/>
         </div>
 
         <!-- BLOCO 05.2.3 — SEXTA-PARTE -->
@@ -972,25 +1028,30 @@
           <label for="locesp_rj">Gratif. Localidade Especial (R$) <span class="tip" data-tip="Verba para policiais lotados em áreas de difícil provimento ou risco elevado.">?</span></label>
           <input type="number" id="locesp_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
+        <div class="field span-2 pcerj-only">
+          <div class="alerta legal">
+            <strong>PCERJ:</strong> confira se a verba informada representa adicional isolado ou composição total da remuneração. Em cargos com fator próprio de representação/periculosidade cadastrado, o simulador evita duplicar o adicional automaticamente.
+          </div>
+        </div>
 
         <!-- BLOCO 05.2.6 — INSALUBRIDADE / PERICULOSIDADE / VERBAS DE RISCO -->
         <!-- INSALUBRIDADE -->
         <div class="field pm-only">
           <label for="insalubridade">Insalubridade (grau) <span class="tip" data-tip="Adicional de insalubridade calculado sobre o salário-mínimo nacional 2026 (R$ 1.621). Mínimo 10%, médio 20%, máximo 40%.">?</span></label>
           <select id="insalubridade">
-            <option value="0.40" selected>Máximo (40% SM)</option>
+            <option value="0" selected>Não computar</option>
+            <option value="0.40">Máximo (40% SM)</option>
             <option value="0.20">Médio (20% SM)</option>
             <option value="0.10">Mínimo (10% SM)</option>
-            <option value="0">Sem insalubridade</option>
           </select>
         </div>
         <div class="field pc-only">
           <label for="insalubridade_sp_pc">Insalubridade (grau) <span class="tip" data-tip="Calculado em % do salário-mínimo 2026 (R$ 1.621).">?</span></label>
           <select id="insalubridade_sp_pc">
-            <option value="0.40" selected>Máximo (40% SM)</option>
+            <option value="0" selected>Não computar</option>
+            <option value="0.40">Máximo (40% SM)</option>
             <option value="0.20">Médio (20% SM)</option>
             <option value="0.10">Mínimo (10% SM)</option>
-            <option value="0">Sem insalubridade</option>
           </select>
         </div>
         <div class="field pm-only">
@@ -1148,6 +1209,11 @@
         </div>
 
         <!-- VERBAS GERAIS -->
+        <div class="field span-2">
+          <div class="alerta">
+            <strong>Verbas eventuais:</strong> 13º, férias, abono, licença-prêmio, fardamento e retroativos aparecem separados no holerite para não serem confundidos com o salário mensal normal.
+          </div>
+        </div>
         <div class="field">
           <label for="decimo">13º Salário (proporcional)</label>
           <select id="decimo">
@@ -1171,7 +1237,7 @@
       </div>
     </div>
 
-    <div class="card">
+    <div class="card calc-advanced">
       <!-- BLOCO 05.3 — Trabalho extra por instituição -->
       <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
       <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
@@ -1432,6 +1498,8 @@
 
       <div class="actions-row">
         <button type="button" class="btn-secondary" onclick="imprimirHolerite()" aria-label="Imprimir ou exportar holerite em PDF">📄 Exportar / Imprimir</button>
+        <button type="button" class="btn-secondary" onclick="salvarCenarioAtual()" aria-label="Salvar cenário atual para comparação">💾 Salvar Cenário</button>
+        <button type="button" class="btn-secondary" onclick="compararCenarioSalvo()" aria-label="Comparar cenário atual com o salvo">↔️ Comparar</button>
         <button type="button" class="btn-secondary" onclick="limparFormulario()" aria-label="Limpar todos os campos">🗑️ Limpar Campos</button>
       </div>
     </div>
@@ -1442,14 +1510,22 @@
     <div class="card">
       <!-- BLOCO 05.5 — Resultado do holerite simulado -->
       <h2>Holerite Simulado</h2>
+      <div id="resumo_rapido" class="calc-mini-resumo">Selecione o cargo e preencha os campos para gerar o resumo.</div>
+      <div id="calc_comparativo" class="calc-comparativo" style="display:none;"></div>
+
       <div class="total-bloco">
-        <div class="label">Salário Bruto</div>
+        <div class="label">Bruto Total Estimado</div>
         <div class="valor" id="bruto">R$ 0,00</div>
       </div>
 
       <div class="total-bloco liquido">
-        <div class="label">Salário Líquido</div>
+        <div class="label">Líquido Total Estimado</div>
         <div class="valor" id="liquido">R$ 0,00</div>
+      </div>
+
+      <div class="breakdown">
+        <h3>Resumo por Natureza</h3>
+        <div id="naturezas"></div>
       </div>
 
       <div class="breakdown">
@@ -1463,7 +1539,7 @@
       </div>
 
       <div class="alerta" id="rodape_alerta">
-        Cálculos baseados na legislação atual com projeção/ajustes 2026. <span id="rodape_ufesp">UFESP: R$ 38,42 · </span>Salário-mínimo: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025.
+        Simulação sem valor oficial. Parâmetros usados: <span id="rodape_ufesp">UFESP 2026: R$ 38,42 · </span>Salário-mínimo 2026: R$ 1.621,00 · IRRF: tabela progressiva + redutor da Lei 15.270/2025. Última revisão interna: abril/2026. Confira sempre o contracheque, setor de pessoal e normas oficiais.
       </div>
     </div>
   </aside>
@@ -2974,6 +3050,7 @@ const SAL_MIN_2026 = 1621.00;        // Decreto 12.797/2025
 const ALIQ_PREV = 0.14;
 const ALIQ_IPSM = 0.105;
 const STORAGE_KEY = 'usegpub_form_v2';
+const STORAGE_KEY_CENARIO = 'usegpub_cenario_calc_v1';
 
 /* === IRRF 2026 (tabela progressiva mensal) === */
 /* BLOCO 15.2 — Tabela de IRRF e parâmetros do imposto */
@@ -3644,11 +3721,107 @@ function valorRAS(tipo) {
 /* ============================================================ */
 function linha(desc, valor, cls = "") {
   if (Math.abs(valor) < 0.005) return "";
-  return `<div class="linha ${cls}"><span class="desc">${desc}</span><span class="val">${fmt(valor)}</span></div>`;
+  return '<div class="linha ' + cls + '"><span class="desc">' + desc + '</span><span class="val">' + fmt(valor) + '</span></div>';
+}
+function linhaGrupo(desc) {
+  return '<div class="linha grupo"><span class="desc">' + desc + '</span><span class="val"></span></div>';
 }
 function subtotal(desc, valor) {
-  return `<div class="linha subtotal"><span class="desc">${desc}</span><span class="val">${fmt(valor)}</span></div>`;
+  return '<div class="linha subtotal"><span class="desc">' + desc + '</span><span class="val">' + fmt(valor) + '</span></div>';
 }
+function escapeHtml(str = '') {
+  return String(str).replace(/[&<>'"]/g, ch => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', "'":'&#39;', '"':'&quot;'}[ch]));
+}
+
+let ultimoCalculo = null;
+
+function validarCampoCalculadora(el) {
+  if (!el || el.type !== 'number' || el.value === '') return;
+  let n = parseFloat(el.value);
+  if (Number.isNaN(n)) n = 0;
+  const min = el.min !== '' ? parseFloat(el.min) : null;
+  const max = el.max !== '' ? parseFloat(el.max) : null;
+  if (min !== null && n < min) n = min;
+  if (max !== null && n > max) n = max;
+  el.value = n;
+}
+
+function campoTemValorAtivo(el) {
+  if (!el || !el.id) return false;
+  if (el.tagName === 'SELECT') {
+    const padrao = el.querySelector('option[selected]')?.value ?? (el.options[0]?.value ?? '');
+    return el.value !== padrao && el.value !== '0';
+  }
+  const n = parseFloat(el.value);
+  return !Number.isNaN(n) && Math.abs(n) > 0.005;
+}
+
+function atualizarModoCalculadora(modo = 'avancado') {
+  const page = document.getElementById('page-calculadora');
+  if (!page) return;
+  const simples = modo === 'simples';
+  page.classList.toggle('calc-simple', simples);
+  page.classList.toggle('calc-advanced-mode', !simples);
+  document.getElementById('btn_calc_simples')?.classList.toggle('active', simples);
+  document.getElementById('btn_calc_avancado')?.classList.toggle('active', !simples);
+  localStorage.setItem('usegpub_calc_modo', modo);
+  const temOcultoAtivo = simples && Array.from(page.querySelectorAll('.calc-advanced input, .calc-advanced select')).some(campoTemValorAtivo);
+  document.getElementById('calc_modo_aviso')?.classList.toggle('show', temOcultoAtivo);
+}
+
+function classificarCamposCalculadora() {
+  const tipos = {
+    auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg'],
+    manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','dependentes_saude'],
+    opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc'],
+    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc']
+  };
+  const nomes = { auto: 'Automático', manual: 'Manual', opcional: 'Opcional', estimativa: 'Estimativa' };
+  Object.keys(tipos).forEach(tipo => {
+    tipos[tipo].forEach(id => {
+      const el = document.getElementById(id);
+      const label = el ? document.querySelector('label[for="' + id + '"]') : null;
+      if (label && !label.querySelector('.calc-badge')) {
+        const badge = document.createElement('span');
+        badge.className = 'calc-badge ' + tipo;
+        badge.textContent = nomes[tipo];
+        label.appendChild(badge);
+      }
+    });
+  });
+}
+
+function salvarCenarioAtual() {
+  calcular();
+  if (!ultimoCalculo) return;
+  localStorage.setItem(STORAGE_KEY_CENARIO, JSON.stringify(ultimoCalculo));
+  mostrarToast('Cenário da calculadora salvo!');
+  compararCenarioSalvo(false);
+}
+
+function compararCenarioSalvo(exibirToast = true) {
+  calcular();
+  const box = document.getElementById('calc_comparativo');
+  if (!box || !ultimoCalculo) return;
+  const raw = localStorage.getItem(STORAGE_KEY_CENARIO);
+  if (!raw) {
+    if (exibirToast) mostrarToast('Salve um cenário antes de comparar.', 'error');
+    box.style.display = 'none';
+    return;
+  }
+  let salvo;
+  try { salvo = JSON.parse(raw); } catch (e) { return; }
+  const difLiq = ultimoCalculo.liquido - (salvo.liquido || 0);
+  const difBruto = ultimoCalculo.bruto - (salvo.bruto || 0);
+  const sinalLiq = difLiq >= 0 ? '+' : '-';
+  const sinalBruto = difBruto >= 0 ? '+' : '-';
+  box.style.display = 'block';
+  box.innerHTML = '<strong>Comparação com cenário salvo:</strong><br>' +
+    'Atual: ' + escapeHtml(ultimoCalculo.cargoTexto) + ' · ' + fmt(ultimoCalculo.liquido) + ' líquido.<br>' +
+    'Salvo: ' + escapeHtml(salvo.cargoTexto || 'cenário anterior') + ' · ' + fmt(salvo.liquido || 0) + ' líquido.<br>' +
+    'Diferença líquida: <strong>' + sinalLiq + fmt(Math.abs(difLiq)) + '</strong> · diferença bruta: ' + sinalBruto + fmt(Math.abs(difBruto)) + '.';
+}
+
 
 /* ============================================================ */
 /* === CÁLCULO PRINCIPAL ====================================== */
@@ -3660,10 +3833,11 @@ function calcular() {
   if (!c) return;
 
   const inst = currInst;
-  const dias = Math.min(31, Math.max(0, valEl('dias')));
+  const dias = Math.min(30, Math.max(0, valEl('dias')));
   const diasVA = Math.min(31, Math.max(0, valEl('dias_va')));
   const fatorDias = dias / 30;
-  const dependentes = valEl('dependentes');
+  const dependentes = Math.min(20, Math.max(0, valEl('dependentes')));
+  const dependentesSaude = Math.min(20, Math.max(0, valEl('dependentes_saude')));
 
   // Padrão e RETP/Verba representação
 const padrao = c.padrao * fatorDias;
@@ -3875,6 +4049,11 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   const bruto = baseRemuneratoria + baseIndenizatoria;
 
+  const eventosRemuneratorios = decimoVal + feriasVal;
+  const eventosIndenizatorios = acaoInsalVal + auxfard_pm + auxfardRj + fardamentoMgPm + vestimentaMgPc + auxfardBaPm + abonoTransfVal + lpremioVal + extraVal;
+  const totalEventos = eventosRemuneratorios + eventosIndenizatorios;
+  const brutoMensalNormal = bruto - totalEventos;
+
   // ===== DESCONTOS =====
   // Previdência
   let aliqPrev = ALIQ_PREV;
@@ -3892,7 +4071,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     descPM = valEl('fepomcopa') + valEl('fepomalo') + valEl('fepomran') + valEl('daxv') + valEl('prosaude') + valEl('cbpm') + valEl('cruzazul');
   } else if (inst === 'pcsp') {
     if (parseInt(document.getElementById('opt_iamspe').value) === 1) {
-      descPM = baseRemuneratoria * 0.02 * (1 + dependentes); // simplificado: 2% titular + 2% dep
+      descPM = baseRemuneratoria * 0.02 * (1 + dependentesSaude); // simplificado: 2% titular + 2% por dependente de saúde
     }
     descPM += valEl('sindicato');
   } else if (inst === 'pmerj') {
@@ -3902,9 +4081,9 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   } else if (inst === 'pmmg') {
     descPMMG = valEl('ipsm_copart') + valEl('assoc_mg_pm');
   } else if (inst === 'pcmg') {
-    descPMMG = valEl('sindicato_mg_pc');
+    descPCMG = valEl('sindicato_mg_pc');
     if (parseInt(document.getElementById('opt_ipsemg').value) === 1) {
-      descPMMG += baseRemuneratoria * 0.032;
+      descPCMG += baseRemuneratoria * 0.032;
     }
   } else if (inst === 'pmba') {
     descPMBA = valEl('planserv_ba_pm') + valEl('assoc_ba_pm');
@@ -3914,18 +4093,35 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   descGeral = valEl('emprestimo');
 
   // Pensão alimentícia (% sobre líquido antes da pensão)
-  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPMBA - descPCBA - descGeral;
+  const liquidoAntesPensao = bruto - previdencia - irrf - descPM - descPMERJ - descPCERJ - descPMMG - descPCMG - descPMBA - descPCBA - descGeral;
   const pensaoVal = liquidoAntesPensao * (valEl('pensao') / 100);
 
-  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPMBA + descPCBA + descGeral + pensaoVal;
+  const totalDescontos = previdencia + irrf + descPM + descPMERJ + descPCERJ + descPMMG + descPCMG + descPMBA + descPCBA + descGeral + pensaoVal;
   const liquido = bruto - totalDescontos;
 
   // ===== Renderização =====
   document.getElementById('bruto').textContent = fmt(bruto);
   document.getElementById('liquido').textContent = fmt(liquido);
 
+  const instNomeCurto = {pmesp:'PMESP', pcsp:'PCSP', pmerj:'PMERJ', pcerj:'PCERJ', pmmg:'PMMG', pcmg:'PCMG', pmba:'PMBA', pcba:'PCBA'}[inst] || inst.toUpperCase();
+  const resumoRapido = document.getElementById('resumo_rapido');
+  if (resumoRapido) {
+    resumoRapido.innerHTML = '<strong>' + instNomeCurto + '</strong> · ' + escapeHtml(c.text) + ' · ' + dias + ' dia(s) remunerados · ' + dependentes + ' dep. IRRF' + (inst === 'pcsp' ? ' · ' + dependentesSaude + ' dep. saúde' : '') + '.<br><strong>Bruto mensal normal:</strong> ' + fmt(brutoMensalNormal) + ' · <strong>Eventos/extras:</strong> ' + fmt(totalEventos) + ' · <strong>Descontos:</strong> ' + fmt(totalDescontos) + '.';
+  }
+
+  const naturezas = document.getElementById('naturezas');
+  if (naturezas) {
+    naturezas.innerHTML =
+      linha('Base remuneratória tributável', baseRemuneratoria, 'info') +
+      linha('Base indenizatória / sem incidência', baseIndenizatoria, 'info') +
+      linha('Bruto mensal normal estimado', brutoMensalNormal, 'info') +
+      linha('Eventos, extras e parcelas eventuais', totalEventos, 'info') +
+      subtotal('Total bruto estimado', bruto);
+  }
+
   let proventos = "";
-  proventos += linha(`Padrão / Soldo (${dias} dias)`, padrao, "provento");
+  proventos += linhaGrupo('Mensal normal / parcelas recorrentes');
+  proventos += linha('Padrão / Soldo (' + dias + ' dias)', padrao, "provento");
   if (gratif > 0) proventos += linha("Gratificação Posto", gratif, "provento");
   if (retpOuVerba > 0) proventos += linha(retpLabel, retpOuVerba, "provento");
   if (tempoVal > 0) proventos += linha(tempoLabel, tempoVal, "provento");
@@ -3969,6 +4165,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (auxalimBaPc > 0) proventos += linha("Auxílio-Alimentação BA", auxalimBaPc, "provento");
   if (gipBaPc > 0) proventos += linha("GIP / Verba variável informada", gipBaPc, "provento");
   if (gqualBaPc > 0) proventos += linha("Gratif. Qualificação Profissional", gqualBaPc, "provento");
+  if (extraVal > 0 || decimoVal > 0 || feriasVal > 0 || abonoTransfVal > 0 || lpremioVal > 0 || acaoInsalVal > 0) proventos += linhaGrupo('Eventos, extras e parcelas não mensais');
   if (extraVal > 0) proventos += linha(extraLabel, extraVal, "provento");
   if (decimoVal > 0) proventos += linha("13º Salário", decimoVal, "provento");
   if (feriasVal > 0) proventos += linha(`Férias + 1/3 (${ferias} dias)`, feriasVal, "provento");
@@ -3982,7 +4179,8 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (descPM > 0) descontos += linha(inst === 'pcsp' ? "IAMSPE / Sindicato" : "Descontos Institucionais", descPM, "desconto");
   if (descPMERJ > 0) descontos += linha("Saúde / Cooperativa", descPMERJ, "desconto");
   if (descPCERJ > 0) descontos += linha("FUSPOL / Sindicato", descPCERJ, "desconto");
-  if (descPMMG > 0) descontos += linha("Saúde / Sindicato / Coparticipação", descPMMG, "desconto");
+  if (descPMMG > 0) descontos += linha("IPSM / Associação / Coparticipação", descPMMG, "desconto");
+  if (descPCMG > 0) descontos += linha("IPSEMG / Sindicato", descPCMG, "desconto");
   if (descPMBA > 0) descontos += linha("PLANSERV / Associação", descPMBA, "desconto");
   if (descPCBA > 0) descontos += linha("PLANSERV / Sindicato", descPCBA, "desconto");
   if (descGeral > 0) descontos += linha("Empréstimo / Consignado", descGeral, "desconto");
@@ -3991,6 +4189,20 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   document.getElementById('proventos').innerHTML = proventos;
   document.getElementById('descontos').innerHTML = descontos;
+
+  ultimoCalculo = {
+    inst,
+    instNomeCurto,
+    cargoTexto: c.text,
+    bruto,
+    liquido,
+    brutoMensalNormal,
+    totalEventos,
+    totalDescontos,
+    data: new Date().toISOString()
+  };
+
+  atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
 }
 
 
@@ -4460,6 +4672,7 @@ function limparFormulario() {
   calc.querySelectorAll('input[type="number"]').forEach(el => {
     if (el.id === 'dias') el.value = 30;
     else if (el.id === 'dias_va') el.value = 22;
+    else if (el.id === 'dependentes_saude') el.value = 0;
     else if (el.id === 'auxalim_sp_dia') el.value = AUX_ALIM_SP_DIA_PADRAO;
     else if (el.id === 'auxalim_mg_dia') el.value = AUX_ALIM_MG_DIA_PADRAO;
     else if (el.id === 'auxalim_mg_meta_dia') el.value = 0;
@@ -4467,7 +4680,7 @@ function limparFormulario() {
     else if (el.id === 'auxalim_ba_pc') el.value = AUX_ALIM_BA_40H;
     else if (el.id === 'auxalim_rj_pc') el.value = 433.80;
     else if (el.id === 'auxtransp_rj_pc') el.value = 100;
-    else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 25;
+    else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 0;
     else if (el.id === 'valplantao_rj') el.value = 350;
     else if (el.id === 'valextra_mg_pm') el.value = 250;
     else if (el.id === 'valextra_mg_pc') el.value = 300;
@@ -4480,7 +4693,7 @@ function limparFormulario() {
   });
   // Restaurar selects com valores padrão específicos
   const defs = {
-    insalubridade: '0.40', insalubridade_sp_pc: '0.40',
+    insalubridade: '0', insalubridade_sp_pc: '0',
     auxalim_rj: '433.80', auxtransp_rj: '100',
     periculosidade_rj: '1', gtc_rj: '0',
     regdejem: 'capital', regdel: 'capital',
@@ -4491,6 +4704,7 @@ function limparFormulario() {
   Object.keys(defs).forEach(id => { const el = document.getElementById(id); if (el) el.value = defs[id]; });
 
   localStorage.removeItem(STORAGE_KEY);
+  localStorage.removeItem(STORAGE_KEY_CENARIO);
   calcular();
   mostrarToast('Formulário limpo!');
 }
@@ -4591,9 +4805,12 @@ document.addEventListener('DOMContentLoaded', () => {
   mudarInstituicao();
 
   // Event listeners
+  classificarCamposCalculadora();
+  atualizarModoCalculadora(localStorage.getItem('usegpub_calc_modo') || 'avancado');
+
   document.querySelectorAll('#page-calculadora input, #page-calculadora select').forEach(el => {
-    el.addEventListener('input', recalcDebounced);
-    el.addEventListener('change', recalcDebounced);
+    el.addEventListener('input', e => { validarCampoCalculadora(e.target); recalcDebounced(); });
+    el.addEventListener('change', e => { validarCampoCalculadora(e.target); recalcDebounced(); });
   });
 
   // Direitos: atualizar quando muda cargo/situação/tempo
