@@ -975,7 +975,7 @@
   <section class="principal-grid" aria-label="Resumo das áreas do site">
     <article class="principal-card" onclick="switchPage('remuneracao')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('remuneracao')">
       <h3>Remuneração Tabelada</h3>
-      <p>Consulte, de forma simples e gratuita, os valores brutos estimados de remuneração e benefícios por cargo da instituição selecionada.</p>
+      <p>Consulte, de forma simples e gratuita, os valores brutos de remuneração por cargo da instituição selecionada.</p>
       <span class="principal-tag">Ver tabela grátis</span>
     </article>
     <article class="principal-card" onclick="switchPage('calculadora')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('calculadora')">
@@ -1027,7 +1027,7 @@
   <div class="card">
     <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra remuneração bruta mensal, benefícios brutos de referência quando houver valor geral identificável, total bruto estimado e link da fonte usada, sem descontos, sem adicionais individuais e sem alterar a Calculadora de Vencimentos.
+      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, o total bruto estimado e o link da fonte usada, sem descontos, sem adicionais individuais e sem alterar a Calculadora de Vencimentos.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -1051,14 +1051,13 @@
           <tr>
             <th>Cargo / Classe</th>
             <th>Remuneração bruta</th>
-            <th>Benefícios brutos</th>
             <th>Total bruto estimado</th>
             <th>Critério / fonte</th>
           </tr>
         </thead>
         <tbody id="lista-remuneracao">
           <tr>
-            <td colspan="5">Selecione uma instituição para carregar a tabela.</td>
+            <td colspan="4">Selecione uma instituição para carregar a tabela.</td>
           </tr>
         </tbody>
       </table>
@@ -4095,7 +4094,7 @@ const REMUNERACAO_FONTES_OFICIAIS = {
 };
 
 function linhaRemuneracaoOficial(cargo, remuneracao, beneficios, criterio, benefDesc, fonteKey, badge = 'Fonte oficial') {
-  return { cargo, remuneracao: Number(remuneracao || 0), beneficios: Number(beneficios || 0), total: Number(remuneracao || 0) + Number(beneficios || 0), criterio, benefDesc, fonteKey, badge };
+  return { cargo, remuneracao: Number(remuneracao || 0), beneficios: 0, total: Number(remuneracao || 0), criterio, benefDesc, fonteKey, badge };
 }
 
 const REMUNERACAO_SP_OFICIAL = {
@@ -4289,7 +4288,7 @@ function carregarRemuneracaoTabelada() {
   const linhas = gerarRemuneracaoTabelada(inst);
 
   if (!linhas.length) {
-    tbody.innerHTML = '<tr><td colspan="5">Não há dados cadastrados para esta instituição.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="4">Não há dados cadastrados para esta instituição.</td></tr>';
     return;
   }
 
@@ -4306,7 +4305,6 @@ function carregarRemuneracaoTabelada() {
 
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
-    const beneficioTexto = l.beneficios > 0 ? fmt(l.beneficios) : 'Não somado';
     return `
       <tr>
         <td>
@@ -4314,7 +4312,6 @@ function carregarRemuneracaoTabelada() {
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
         <td class="valor">${fmt(l.remuneracao)}</td>
-        <td class="valor">${beneficioTexto}<br><span class="remuneracao-fonte">${escapeHtml(l.benefDesc || '')}</span></td>
         <td class="total">${fmt(l.total)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
