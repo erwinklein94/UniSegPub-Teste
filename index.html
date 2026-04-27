@@ -2,6 +2,12 @@
 <html lang="pt-BR">
 <head>
 
+<!-- =======================================================
+     BLOCO 01 — HEAD / CONFIGURAÇÕES INICIAIS DO SITE
+     Tags de rastreamento, metadados, fontes, tema inicial e CSS.
+     ======================================================= -->
+
+<!-- BLOCO 01.1 — Google Analytics -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHR4TCCF9D"></script>
 <script>
@@ -12,6 +18,7 @@
   gtag('config', 'G-XHR4TCCF9D');
 </script>
 
+<!-- BLOCO 01.2 — Google Ads -->
 <!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
 <script>
@@ -22,12 +29,14 @@
   gtag('config', 'AW-18121830612');
 </script>
 
+<!-- BLOCO 01.3 — Conversão do Google Ads -->
 <!-- Event snippet for Visualização de página conversion page -->
 <script>
   gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
 </script>
 
 
+<!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG e BA - Atualizado 2026 com tabelas BA/MG revisadas e auxílio-alimentação por instituição">
@@ -40,12 +49,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
+<!-- BLOCO 01.5 — Aplicação antecipada do tema salvo -->
 <script>
   const savedTheme = localStorage.getItem('theme') || 'dark';
   document.documentElement.setAttribute('data-theme', savedTheme);
 </script>
 
 <style>
+  /* =======================================================
+     BLOCO 02 — CSS ORIGINAL DO SITE
+     Estrutura visual base, temas, layout, cards, formulários,
+     páginas internas, responsividade e impressão.
+     ======================================================= */
+
+  /* BLOCO 02.1 — Variáveis principais de cor e tema claro */
   :root {
     --vermelho: #e60000;
     --vermelho-escuro: #a30000;
@@ -66,6 +83,7 @@
     --item-hover: #f3f4f6;
   }
 
+  /* BLOCO 02.2 — Variáveis do tema escuro */
   [data-theme="dark"] {
     --bg-site: #0a0a0c;
     --bg-card: #141518;
@@ -80,6 +98,7 @@
     --item-hover: #23252a;
   }
 
+  /* BLOCO 02.3 — Cores dinâmicas por instituição */
   body[data-inst="pcsp"] { --vermelho: #4f4f4f; --vermelho-escuro: #2b2b2b; }
   body[data-inst="pmerj"] { --vermelho: #1E3084; --vermelho-escuro: #142057; }
   body[data-inst="pcerj"] { --vermelho: #6B7280; --vermelho-escuro: #4B5563; }
@@ -88,6 +107,7 @@
   body[data-inst="pmba"] { --vermelho: #967117; --vermelho-escuro: #5c4308; }
   body[data-inst="pcba"] { --vermelho: #333333; --vermelho-escuro: #111111; }
 
+  /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
@@ -106,6 +126,7 @@
       radial-gradient(circle at 85% 30%, rgba(255, 255, 255, 0.02), transparent 25%);
   }
 
+  /* BLOCO 02.5 — Cabeçalho superior */
   header {
     background-color: var(--header-bg);
     border-bottom: 4px solid var(--vermelho);
@@ -168,6 +189,7 @@
   .stripe-white { height: 2px; background: #ffffff; }
   .stripe-black { height: 4px; background: #111; }
 
+  /* BLOCO 02.6 — Menu lateral, overlay e botão hambúrguer */
   .menu-btn { background: none; border: none; cursor: pointer; display: flex; flex-direction: column; gap: 6px; padding: 10px; z-index: 101; }
   .menu-btn span { width: 26px; height: 3px; background: var(--header-text); border-radius: 2px; transition: 0.3s; }
   .menu-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); opacity: 0; pointer-events: none; transition: 0.3s ease; z-index: 100; }
@@ -204,6 +226,7 @@
   .sidebar-ad img { width: 100%; height: auto; display: block; border-bottom: 1px solid var(--border-input); }
   .sidebar-ad span { display: block; padding: 12px; font-family: 'Roboto', sans-serif; font-size: 13px; font-weight: 700; color: var(--text-main); text-align: center; text-transform: uppercase; }
 
+  /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
   #page-principal.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
@@ -216,6 +239,7 @@
 
   @media (max-width: 968px) { #page-principal, #page-calculadora { margin: 20px auto; } #page-calculadora { grid-template-columns: 1fr; } .resumo { position: static !important; } }
 
+  /* BLOCO 02.8 — Página Principal: hero, botões e cards */
   .principal-hero {
     position: relative;
     overflow: hidden;
@@ -353,6 +377,7 @@
     line-height: 1.5;
   }
 
+  /* BLOCO 02.9 — Cards de cursos, livros e produtos */
   .curso-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
   .curso-card {
     display: block;
@@ -388,16 +413,19 @@
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .principal-hero { padding: 28px 22px; } .principal-grid { grid-template-columns: 1fr; } .header-inst-selector { grid-template-columns: 1fr; max-width: 100%; } }
 
+  /* BLOCO 02.10 — Cards gerais */
   .card { background-color: var(--bg-card); border: 1px solid var(--border-card); padding: 28px; margin-bottom: 24px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); position: relative; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%); transition: border-color 0.3s ease; }
   .card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--vermelho), var(--vermelho-escuro)); transition: background 0.4s ease;}
 
   .card h2 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-main); margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid var(--border-input); display: flex; align-items: center; gap: 10px; }
   .card h2::before { content: ""; display: block; width: 6px; height: 20px; background-color: var(--vermelho); transform: skewX(-15deg); transition: background-color 0.4s ease;}
 
+  /* BLOCO 02.11 — Grades de formulários */
   .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .field { display: flex; flex-direction: column; }
   .field.span-2 { grid-column: span 2; }
 
+  /* BLOCO 02.12 — Exibição condicional por instituição/estado */
   .pm-only, .pc-only, .pmerj-only, .pcerj-only, .pmmg-only, .pcmg-only, .pmba-only, .pcba-only,
   .sp-only, .mg-only, .ba-only {
     display: none !important;
@@ -428,6 +456,7 @@
   body[data-inst="pmba"] div.alerta.pmba-only { display: block !important; }
   body[data-inst="pcba"] div.alerta.pcba-only { display: block !important; }
 
+  /* BLOCO 02.13 — Labels, tooltips e campos */
   label { font-family: 'Roboto', sans-serif; font-size: 11px; font-weight: 700; color: var(--text-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 4px; }
 
   /* Tooltip */
@@ -458,6 +487,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.4);
   }
   .tip:hover::after { opacity: 1; }
+  /* BLOCO 02.13.1 — Responsividade do tooltip em telas pequenas */
   @media (max-width: 600px) { .tip::after { left: 0; transform: none; width: 200px; } }
 
   input[type="number"], input[type="text"], input[type="email"], input[type="date"], input[type="tel"], select, textarea { background-color: var(--bg-input); border: 1px solid var(--border-input); color: var(--text-main); padding: 12px 14px; font-family: 'Roboto', sans-serif; font-size: 14px; border-radius: 4px; transition: all 0.2s ease; width: 100%; }
@@ -465,6 +495,7 @@
   input::placeholder, textarea::placeholder { color: var(--text-muted); }
   textarea { resize: vertical; min-height: 100px; }
 
+  /* BLOCO 02.14 — Botões e linhas de ação */
   .btn-submit { background-color: var(--vermelho); color: #ffffff; border: none; padding: 14px 20px; font-family: 'Oswald', sans-serif; font-size: 16px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; border-radius: 4px; cursor: pointer; transition: background-color 0.3s ease; width: 100%; margin-top: 8px; }
   .btn-submit:hover { background-color: var(--vermelho-escuro); }
   .btn-submit:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
@@ -475,6 +506,7 @@
   .actions-row { display: flex; gap: 10px; margin-top: 12px; }
   .actions-row .btn-secondary { flex: 1; padding: 10px; font-size: 12px; }
 
+  /* BLOCO 02.15 — Resumo do holerite e totais */
   .resumo { position: sticky; top: 24px; align-self: start; }
 
   .total-bloco { background: linear-gradient(135deg, var(--vermelho) 0%, var(--vermelho-escuro) 100%); padding: 24px; border-radius: 6px; margin-bottom: 16px; text-align: center; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); position: relative; overflow: hidden; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 15px) 100%, 0 100%); transition: background 0.4s ease;}
@@ -502,6 +534,7 @@
   #descontos .linha.subtotal { border-left-color: var(--text-muted); }
   #descontos .linha.subtotal .val { color: var(--text-main); }
 
+  /* BLOCO 02.16 — Resultados, direitos, ações e associações */
   .result-list { display: flex; flex-direction: column; gap: 16px; }
   .direito-item { background-color: var(--item-bg); padding: 18px; border-left: 4px solid var(--text-muted); display: flex; flex-direction: column; gap: 8px; clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%); transition: background-color 0.3s ease; }
   .direito-item.sim { border-left-color: var(--verde); background-color: rgba(32, 142, 78, 0.05); }
@@ -533,6 +566,7 @@
   .badge-info.ativa { background: rgba(32, 142, 78, 0.12); color: var(--verde); border: 1px solid var(--verde); }
   .badge-info.inativa { background: rgba(107,114,128,0.12); color: var(--text-muted); border: 1px solid var(--text-muted); }
 
+  /* BLOCO 02.17 — Alertas, toast e mensagens auxiliares */
   .alerta { background-color: var(--item-bg); border-left: 4px solid var(--text-muted); padding: 14px 16px; margin-top: 20px; font-size: 13px; color: var(--text-main); line-height: 1.5; }
   .alerta strong { color: var(--vermelho) !important; font-weight: 700; transition: color 0.4s ease;}
 
@@ -559,6 +593,7 @@
   .char-counter { font-size: 11px; color: var(--text-muted); text-align: right; margin-top: 4px; font-family: 'Roboto Condensed', sans-serif; }
   .char-counter.over { color: #e60000; font-weight: 700; }
 
+  /* BLOCO 02.18 — Links externos e rodapé */
   /* Inst-link em concursos */
   .concurso-link {
     display: inline-block;
@@ -576,6 +611,7 @@
   footer p strong { color: #fff; font-weight: 700; }
   footer .small-note { font-size: 11px; opacity: 0.7; margin-top: 8px; letter-spacing: 0.5px; }
 
+  /* BLOCO 02.19 — CSS de impressão do holerite */
   /* CSS Print - Holerite */
   @media print {
     header, .stripe-container, .menu-overlay, .sidebar, .menu-btn, footer,
@@ -592,6 +628,7 @@
     .breakdown h3 { display: block !important; }
   }
 
+  /* BLOCO 02.20 — Responsividade final para celular */
   @media (max-width: 600px) {
     .form-grid { grid-template-columns: 1fr; gap: 12px; }
     .field.span-2 { grid-column: span 1; }
@@ -605,6 +642,12 @@
 </head>
 <body data-inst="pmesp">
 
+<!-- =======================================================
+     BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
+     Cabeçalho, menu lateral, páginas/abas, formulários e rodapé.
+     ======================================================= -->
+
+<!-- BLOCO 03.1 — Cabeçalho superior com botão de menu e seletor rápido de instituição -->
 <header role="banner">
   <div class="header-content">
     <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
@@ -637,20 +680,24 @@
     </div>
   </div>
 </header>
+<!-- BLOCO 03.2 — Faixas decorativas abaixo do cabeçalho -->
 <div class="stripe-container" aria-hidden="true">
   <div class="stripe"></div>
   <div class="stripe-white"></div>
   <div class="stripe-black"></div>
 </div>
 
+<!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
 
+<!-- BLOCO 03.4 — Menu lateral: navegação, instituição, tema, Instagram e anúncios -->
 <aside class="sidebar" id="sidebar" role="navigation" aria-label="Menu principal">
   <div class="sidebar-header">
     <h2>Menu</h2>
     <button class="close-btn" onclick="toggleMenu()" aria-label="Fechar menu">✕</button>
   </div>
 
+  <!-- BLOCO 03.4.1 — Seletor de instituição do menu lateral -->
   <div class="inst-selector">
     <label for="instituicao">Instituição</label>
     <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
@@ -673,6 +720,7 @@
     </select>
   </div>
 
+  <!-- BLOCO 03.4.2 — Links das abas/páginas -->
   <nav class="sidebar-nav" aria-label="Páginas">
     <a onclick="switchPage('principal')" id="menu-principal" class="active" tabindex="0" role="link">Principal</a>
     <a onclick="switchPage('acoes')" id="menu-acoes" tabindex="0" role="link">Ações Judiciais</a>
@@ -686,12 +734,14 @@
     <a href="https://www.instagram.com/universosegurancapublica?igsh=MTUwa2ptYWJ3ZjA0Yw%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" id="menu-instagram" tabindex="0" role="link" aria-label="Abrir Instagram do Universo Segurança Pública">Instagram</a>
   </nav>
 
+  <!-- BLOCO 03.4.3 — Alternância entre modo claro e escuro -->
   <div class="theme-toggle-container">
     <button class="btn-theme" onclick="toggleTheme()" id="theme-toggle" aria-label="Alternar tema claro/escuro">
       ☀️ Modo Claro
     </button>
   </div>
 
+  <!-- BLOCO 03.4.4 — Produtos parceiros no menu lateral -->
   <div class="sidebar-ad" aria-label="Produtos parceiros">
     <p>Policial padrão precisa de<br>equipamento padrão!</p>
     <a href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
@@ -705,9 +755,12 @@
   </div>
 </aside>
 
+<!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
+<!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main id="page-principal" class="page-section active" role="main">
+  <!-- BLOCO 04.1 — Hero inicial e botões principais -->
   <section class="principal-hero" aria-labelledby="principal-titulo">
     <div class="principal-eyebrow">Portal prático para segurança pública</div>
     <h1 class="principal-title" id="principal-titulo">Tudo que o profissional precisa consultar em um só <span>lugar</span></h1>
@@ -721,6 +774,7 @@
     </div>
   </section>
 
+  <!-- BLOCO 04.2 — Cards de resumo das áreas -->
   <section class="principal-grid" aria-label="Resumo das áreas do site">
     <article class="principal-card" onclick="switchPage('calculadora')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('calculadora')">
       <h3>Calculadora de Vencimentos</h3>
@@ -755,9 +809,11 @@
   </section>
 </main>
 
+<!-- BLOCO 05 — PÁGINA CALCULADORA DE VENCIMENTOS -->
 <main id="page-calculadora" class="page-section" role="main">
   <div>
     <div class="card">
+      <!-- BLOCO 05.1 — Identificação básica do servidor -->
       <h2>Identificação do Servidor</h2>
       <div class="form-grid">
         <div class="field span-2">
@@ -780,9 +836,11 @@
     </div>
 
     <div class="card">
+      <!-- BLOCO 05.2 — Adicionais, vantagens, auxílios e gratificações -->
       <h2>Adicionais e Vantagens</h2>
       <div class="form-grid">
 
+        <!-- BLOCO 05.2.1 — VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
         <!-- VA / VR / AUXÍLIO-ALIMENTAÇÃO -->
         <div class="field sp-only">
           <label for="auxalim_sp_dia">SP — VA/VR por dia (UFESP 2026) <span class="tip" data-tip="Valor indenizatório por dia efetivamente trabalhado. Por padrão, o simulador usa 1 UFESP de 2026 (R$ 38,42) por dia. Ajuste se o holerite/órgão usar regra diferente.">?</span></label>
@@ -797,6 +855,7 @@
           <input type="number" id="auxalim_mg_meta_dia" value="0" min="0" step="0.01"/>
         </div>
 
+        <!-- BLOCO 05.2.2 — TEMPO DE SERVIÇO -->
         <!-- TEMPO DE SERVIÇO -->
         <div class="field pm-only">
           <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% sobre o vencimento a cada 5 anos completos, até no máximo 6 quinquênios (30 anos).">?</span></label>
@@ -839,6 +898,7 @@
           <input type="number" id="cet_ba_pc" value="25" min="0" max="125" step="1"/>
         </div>
 
+        <!-- BLOCO 05.2.3 — SEXTA-PARTE -->
         <!-- SEXTA-PARTE -->
         <div class="field pm-only">
           <label for="sextaparte">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço, o servidor recebe 1/6 do vencimento como gratificação adicional.">?</span></label>
@@ -855,6 +915,7 @@
           </select>
         </div>
 
+        <!-- BLOCO 05.2.4 — ADE / VPNI / GRATIFICAÇÕES ESPECÍFICAS -->
         <!-- ADE / VPNI -->
         <div class="field pmmg-only">
           <label for="ade_mg_pm">ADE (Adic. Desempenho %) <span class="tip" data-tip="Adicional de Desempenho concedido com base nas avaliações periódicas. Aplica-se sobre o subsídio.">?</span></label>
@@ -873,6 +934,7 @@
           <input type="number" id="gap_mg_pc" value="0" min="0" max="35" step="1" placeholder="Ex: 10"/>
         </div>
 
+        <!-- BLOCO 05.2.5 — PCERJ: Periculosidade, GTC e verbas específicas -->
         <!-- PCERJ Periculosidade / GTC -->
         <div class="field pcerj-only">
           <label for="periculosidade_rj">Adicional Periculosidade <span class="tip" data-tip="Adicional de 230% sobre o vencimento previsto na Lei 11.003/2025 para todas as carreiras da Polícia Civil RJ, exceto Delegado.">?</span></label>
@@ -897,6 +959,7 @@
           <input type="number" id="locesp_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
+        <!-- BLOCO 05.2.6 — INSALUBRIDADE / PERICULOSIDADE / VERBAS DE RISCO -->
         <!-- INSALUBRIDADE -->
         <div class="field pm-only">
           <label for="insalubridade">Insalubridade (grau) <span class="tip" data-tip="Adicional de insalubridade calculado sobre o salário-mínimo nacional 2026 (R$ 1.621). Mínimo 10%, médio 20%, máximo 40%.">?</span></label>
@@ -1095,6 +1158,7 @@
     </div>
 
     <div class="card">
+      <!-- BLOCO 05.3 — Trabalho extra por instituição -->
       <h2 class="pm-only">Trabalho Extra — DEJEM e Delegada</h2>
       <h2 class="pc-only">Trabalho Extra — DEJEC</h2>
       <h2 class="pmerj-only">Trabalho Extra — RAS (Regime Adicional de Serviço)</h2>
@@ -1231,6 +1295,7 @@
     </div>
 
     <div class="card">
+      <!-- BLOCO 05.4 — Descontos, contribuições, previdência, IRRF e abatimentos -->
       <h2>Descontos e Contribuições</h2>
       <div class="form-grid">
         <div class="field">
@@ -1361,6 +1426,7 @@
 
   <aside class="resumo" aria-label="Resumo do holerite">
     <div class="card">
+      <!-- BLOCO 05.5 — Resultado do holerite simulado -->
       <h2>Holerite Simulado</h2>
       <div class="total-bloco">
         <div class="label">Salário Bruto</div>
@@ -1389,6 +1455,7 @@
   </aside>
 </main>
 
+<!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
 <main id="page-direitos" class="page-section" role="main">
   <style>
     #page-direitos .direitos-intro {
@@ -1436,6 +1503,7 @@
   </style>
 
   <div class="card">
+    <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
       Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
@@ -1506,6 +1574,7 @@
   </div>
 
   <div class="card">
+    <!-- BLOCO 06.2 — Resultado da análise de direitos -->
     <h2>Parecer de Direitos (<span id="txt-inst-dir">PMESP</span>)</h2>
     <div class="alerta legal" style="margin-top:0; margin-bottom:18px;">
       <strong>Última revisão desta aba:</strong> 26/04/2026. Os itens abaixo são organizados por categoria e por grau de segurança: direito automático, direito condicionado, depende de requerimento/perícia ou verificar caso individual.
@@ -1517,6 +1586,7 @@
   </div>
 </main>
 
+<!-- BLOCO 07 — PÁGINA CONCURSOS -->
 <main id="page-concursos" class="page-section" role="main">
   <div class="card">
     <h2>Informações de Concursos (<span id="txt-inst-concursos">PMESP</span>)</h2>
@@ -1527,6 +1597,7 @@
   </div>
 </main>
 
+<!-- BLOCO 08 — PÁGINA CURSOS -->
 <main id="page-cursos" class="page-section" role="main">
   <div class="card">
     <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
@@ -1992,6 +2063,7 @@
   </div>
 </main>
 
+<!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
   <div class="card">
     <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
@@ -2002,6 +2074,7 @@
   </div>
 </main>
 
+<!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
 <main id="page-associacoes" class="page-section" role="main">
   <div class="card">
     <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
@@ -2013,6 +2086,7 @@
 </main>
 
 
+<!-- BLOCO 11 — PÁGINA LIVROS -->
 <main id="page-livros" class="page-section" role="main">
   <div class="card">
     <h2>Livros e E-books</h2>
@@ -2163,6 +2237,7 @@
   </div>
 </main>
 
+<!-- BLOCO 12 — PÁGINA PARCEIROS E CONTATO -->
 <main id="page-parceiros" class="page-section" role="main">
   <div class="card">
     <h2>Parceiros e Contato</h2>
@@ -2204,6 +2279,7 @@
   </div>
 </main>
 
+<!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
   <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Conteúdo informativo baseado em fontes públicas.</p>
   <p class="small-note">Os valores são estimativas e referências. Confira sempre o holerite oficial e o regulamento institucional.</p>
@@ -2214,7 +2290,12 @@
 <!-- === CAMADA VISUAL GLASS / MODERNA ========================= -->
 <!-- === Apenas aparência: não altera HTML funcional nem JS ===== -->
 <!-- ============================================================ -->
+<!-- =======================================================
+     BLOCO 14 — CSS VISUAL GLASS / MODERNIZAÇÃO DE APARÊNCIA
+     Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
+     ======================================================= -->
 <style id="visual-glass-upgrade">
+  /* BLOCO 14.1 — Variáveis visuais do estilo glass */
   :root {
     --bg-site: #eef2f7;
     --bg-card: rgba(255, 255, 255, 0.74);
@@ -2240,6 +2321,7 @@
     --radius-md: 14px;
   }
 
+  /* BLOCO 14.2 — Ajustes glass do tema escuro */
   [data-theme="dark"] {
     --bg-site: #07090f;
     --bg-card: rgba(17, 20, 30, 0.72);
@@ -2261,6 +2343,7 @@
     --glass-shadow-soft: 0 16px 42px rgba(0, 0, 0, 0.30);
   }
 
+  /* BLOCO 14.3 — Fundo geral moderno e suavização de rolagem */
   html { scroll-behavior: smooth; }
 
   body {
@@ -2281,6 +2364,7 @@
       linear-gradient(135deg, #05060a 0%, #0a0e17 48%, #111827 100%);
   }
 
+  /* BLOCO 14.4 — Cabeçalho glass */
   header {
     background: linear-gradient(135deg, rgba(8, 11, 18, 0.88), rgba(17, 24, 39, 0.70));
     border-bottom: 1px solid var(--glass-border-strong);
@@ -2334,6 +2418,7 @@
 
   .header-inst-selector select,
   .inst-selector select,
+  /* BLOCO 14.8 — Campos de formulário no estilo glass */
   input[type="number"],
   input[type="text"],
   input[type="email"],
@@ -2377,6 +2462,7 @@
     -webkit-backdrop-filter: blur(10px);
   }
 
+  /* BLOCO 14.5 — Sidebar e menu lateral glass */
   .sidebar {
     background: var(--glass-panel-strong);
     border-right: 1px solid var(--glass-border-strong);
@@ -2424,6 +2510,7 @@
 
   .btn-theme,
   .btn-secondary,
+  /* BLOCO 14.9 — Botões com acabamento moderno */
   .btn-submit,
   .principal-btn,
   .curso-cta {
@@ -2455,6 +2542,7 @@
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.10);
   }
 
+  /* BLOCO 14.6 — Cards e painéis glass reutilizáveis */
   .card,
   .principal-hero,
   .principal-card,
@@ -2499,6 +2587,7 @@
     box-shadow: 0 0 18px var(--vermelho);
   }
 
+  /* BLOCO 14.7 — Hero principal glass */
   .principal-hero {
     background:
       linear-gradient(135deg, rgba(8, 11, 18, 0.88), rgba(17, 24, 39, 0.72)),
@@ -2563,6 +2652,7 @@
     background: linear-gradient(135deg, rgba(230, 0, 0, 0.10), var(--glass-panel));
   }
 
+  /* BLOCO 14.10 — Blocos de total e resumo do holerite */
   .total-bloco {
     clip-path: none !important;
     border-radius: var(--radius-xl);
@@ -2627,6 +2717,7 @@
   }
   .sidebar-ad img { border-bottom: 1px solid var(--glass-border); }
 
+  /* BLOCO 14.11 — Rodapé glass */
   footer {
     background: linear-gradient(135deg, rgba(8, 11, 18, 0.90), rgba(17, 24, 39, 0.76));
     border-top: 1px solid var(--glass-border-strong);
@@ -2640,6 +2731,7 @@
     background: linear-gradient(90deg, transparent, var(--vermelho), transparent);
   }
 
+  /* BLOCO 14.12 — Responsividade da camada glass */
   @media (max-width: 640px) {
     .principal-hero,
     .card { border-radius: 22px; }
@@ -2660,6 +2752,7 @@
     }
   }
 
+  /* BLOCO 14.13 — Ajustes de impressão da camada glass */
   @media print {
     .card,
     .total-bloco,
@@ -2673,6 +2766,13 @@
   }
 </style>
 <script>
+/* =======================================================
+   BLOCO 15 — JAVASCRIPT / DADOS E FUNCIONALIDADES
+   Dados das instituições, cálculos, navegação, tema,
+   formulários, geração de resultados e contato.
+   ======================================================= */
+
+/* BLOCO 15.1 — Constantes oficiais e parâmetros legais 2026 */
 /* ============================================================ */
 /* === CONSTANTES OFICIAIS 2026 ================================ */
 /* ============================================================ */
@@ -2688,6 +2788,7 @@ const ALIQ_IPSM = 0.105;
 const STORAGE_KEY = 'usegpub_form_v2';
 
 /* === IRRF 2026 (tabela progressiva mensal) === */
+/* BLOCO 15.2 — Tabela de IRRF e parâmetros do imposto */
 const IRRF_FAIXAS = [
   { ate: 2428.80, aliq: 0,     ded: 0      },
   { ate: 2826.65, aliq: 0.075, ded: 182.16 },
@@ -2706,6 +2807,7 @@ const IRRF_REDUTOR_FORMULA_B = 0.133145;
 /* === DADOS DE CARGOS (PADRÃO + GRATIF + RETP FATOR) ========== */
 /* ============================================================ */
 
+/* BLOCO 15.3 — Tabelas de cargos e remunerações por instituição */
 const CARGOS_PM = [
   { val: "cmtg",   text: "CMT G — Comandante Geral PM",          padrao: 11524.04, gratif: 1798.01, oficial: true,  retpFator: 1.0 },
   { val: "cel",    text: "CEL — Coronel PM",                     padrao: 9495.92,  gratif: 899.00,  oficial: true,  retpFator: 1.0 },
@@ -2852,6 +2954,7 @@ const CARGOS_PCBA = [
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
+/* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 const ACOES_JUDICIAIS = {
   pmesp: [
     { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
@@ -2904,6 +3007,7 @@ const ACOES_JUDICIAIS = {
   ]
 };
 
+/* BLOCO 15.5 — Base de dados das associações e sindicatos */
 const ASSOCIACOES = {
   pmesp: [
     { nome: "ACS - Associação dos Cabos e Soldados da PMESP", foco: "Praças da Polícia Militar do Estado de São Paulo", acao: "Representação institucional, apoio jurídico, pautas remuneratórias, valorização da carreira e atendimento por regionais no Estado.", site: "www.cabosesoldados.org.br", telefone: "(11) 3871-8100", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias de classe, regionais, convênios, comunicação institucional e orientação ao associado." },
@@ -2956,6 +3060,7 @@ const ASSOCIACOES = {
 };
 
 
+/* BLOCO 15.6 — Base de dados dos concursos por instituição */
 const CONCURSOS = {
   pmesp: {
     edital: "Soldado PM 2ª Classe (2025/2026) — edital PMES2502 em andamento",
@@ -3102,6 +3207,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 
+/* BLOCO 15.7 — Funções utilitárias gerais */
 const fmt = v => `R$ ${(+v || 0).toLocaleString('pt-BR', {minimumFractionDigits: 2, maximumFractionDigits: 2})}`;
 const valEl = id => parseFloat(document.getElementById(id)?.value) || 0;
 const BA_REFS = ['I', 'II', 'III', 'IV', 'V'];
@@ -3122,6 +3228,7 @@ function mostrarToast(msg, tipo = 'success') {
 /* ============================================================ */
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
+/* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
 function toggleMenu() {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
@@ -3202,6 +3309,7 @@ function initTheme() {
 /* ============================================================ */
 /* === POPULA CARGOS NO SELECT ================================ */
 /* ============================================================ */
+/* BLOCO 15.9 — Troca de instituição e popularização dos cargos */
 function popularCargos(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
@@ -3287,6 +3395,7 @@ function mudarInstituicao(novaInstituicao) {
 /* ============================================================ */
 /* === IRRF 2026 (com redutor Lei 15.270/2025) ================ */
 /* ============================================================ */
+/* BLOCO 15.10 — Cálculo de IRRF, extras e holerite */
 function calcularIRRF(rendimentoTributavelMensal, baseAposPrevDep) {
   // Etapa 1: IRRF pela tabela progressiva
   let irrfBruto = 0;
@@ -3352,6 +3461,7 @@ function subtotal(desc, valor) {
 /* ============================================================ */
 /* === CÁLCULO PRINCIPAL ====================================== */
 /* ============================================================ */
+/* BLOCO 15.10.1 — Função principal da calculadora */
 function calcular() {
   const cargoVal = document.getElementById('cargo').value;
   const c = currTabela.find(x => x.val === cargoVal);
@@ -3695,6 +3805,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 /* ============================================================ */
 /* === ANÁLISE DE DIREITOS (EXPANDIDA) ======================== */
 /* ============================================================ */
+/* BLOCO 15.11 — Análise de direitos e vantagens */
 function analisarDireitos() {
   const cont = document.getElementById('resultados_dir');
   if (!cont) return;
@@ -4057,6 +4168,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 /* === CONCURSOS (RICO) ======================================= */
 /* ============================================================ */
+/* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
@@ -4135,6 +4247,7 @@ function carregarAssociacoes() {
 /* ============================================================ */
 /* === IMPRESSÃO / EXPORTAÇÃO PDF ============================= */
 /* ============================================================ */
+/* BLOCO 15.13 — Impressão, limpeza, salvamento e restauração do formulário */
 function imprimirHolerite() {
   // Garante que está na aba calculadora
   const calc = document.getElementById('page-calculadora');
@@ -4232,6 +4345,7 @@ function restaurarFormulario() {
 /* ============================================================ */
 /* === CONTADOR DE CARACTERES (CONTATO) ======================= */
 /* ============================================================ */
+/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
 function atualizarContador() {
   const txt = document.getElementById('contato_mensagem');
   const cnt = document.getElementById('char-counter');
@@ -4268,6 +4382,7 @@ function enviarEmailContato(event) {
 /* ============================================================ */
 /* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
 /* ============================================================ */
+/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
 const recalcDebounced = debounce(() => {
   calcular();
   if (document.getElementById('page-direitos').classList.contains('active')) analisarDireitos();
