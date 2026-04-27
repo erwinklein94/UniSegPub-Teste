@@ -2781,17 +2781,45 @@ const CARGOS_PCPR = [
 ];
 
 const CARGOS_PMRS = [
-  // PMRS / Brigada Militar do Rio Grande do Sul — valores de referência de editais oficiais 2025.
-  { val: "cap_rs", text: "CAP PM — Capitão PMRS", padrao: 21513.44, oficial: true, retpFator: 0 },
-  { val: "alof_rs", text: "AL OF PM — Aluno-Oficial PMRS (bolsa CSPM)", padrao: 10756.72, oficial: false, retpFator: 0 },
-  { val: "sd1_rs", text: "SD 1ª CL — Soldado PMRS", padrao: 5944.85, oficial: false, selected: true, retpFator: 0 }
+  // PMRS / Brigada Militar do Rio Grande do Sul — relação oficial de remuneração RHE, competência 11/2025, com linhas inicial/final por posto/graduação.
+  { val: "cel_rs_ini", text: "CEL PM — Coronel PMRS (remuneração inicial)", padrao: 19911.80, oficial: true, retpFator: 0 },
+  { val: "cel_rs_fin", text: "CEL PM — Coronel PMRS (remuneração final)", padrao: 36836.83, oficial: true, retpFator: 0 },
+  { val: "tc_rs_ini", text: "TEN CEL PM — Tenente-Coronel PMRS (remuneração inicial)", padrao: 17920.65, oficial: true, retpFator: 0 },
+  { val: "tc_rs_fin", text: "TEN CEL PM — Tenente-Coronel PMRS (remuneração final)", padrao: 33153.20, oficial: true, retpFator: 0 },
+  { val: "maj_rs_ini", text: "MAJ PM — Major PMRS (remuneração inicial)", padrao: 16128.56, oficial: true, retpFator: 0 },
+  { val: "maj_rs_fin", text: "MAJ PM — Major PMRS (remuneração final)", padrao: 29837.83, oficial: true, retpFator: 0 },
+  { val: "cap_rs_ini", text: "CAP PM — Capitão PMRS (remuneração inicial)", padrao: 14515.71, oficial: true, retpFator: 0 },
+  { val: "cap_rs_fin", text: "CAP PM — Capitão PMRS (remuneração final)", padrao: 26854.06, oficial: true, retpFator: 0 },
+  { val: "cap_qoem_rs_edital", text: "CAP PM — Capitão PMRS / QOEM (referência edital 2025)", padrao: 21513.44, oficial: true, retpFator: 0 },
+  { val: "alof_rs", text: "AL OF PM — Aluno-Oficial PMRS / bolsa CSPM", padrao: 10756.72, oficial: false, retpFator: 0 },
+  { val: "ten1_rs_ini", text: "1º TEN PM — 1º Tenente PMRS (remuneração inicial)", padrao: 8960.29, oficial: true, retpFator: 0 },
+  { val: "ten1_rs_fin", text: "1º TEN PM — 1º Tenente PMRS (remuneração final)", padrao: 16576.54, oficial: true, retpFator: 0 },
+  { val: "sgt1_rs_ini", text: "1º SGT PM — 1º Sargento PMRS (remuneração inicial)", padrao: 7168.20, oficial: true, retpFator: 0 },
+  { val: "sgt1_rs_fin", text: "1º SGT PM — 1º Sargento PMRS (remuneração final)", padrao: 13261.17, oficial: true, retpFator: 0 },
+  { val: "sgt2_rs_ini", text: "2º SGT PM — 2º Sargento PMRS (remuneração inicial)", padrao: 6769.98, oficial: true, retpFator: 0 },
+  { val: "sgt2_rs_fin", text: "2º SGT PM — 2º Sargento PMRS (remuneração final)", padrao: 12524.47, oficial: true, retpFator: 0 },
+  { val: "sgt3_rs_ini", text: "3º SGT PM — 3º Sargento PMRS (remuneração inicial)", padrao: 6172.64, oficial: true, retpFator: 0 },
+  { val: "sgt3_rs_fin", text: "3º SGT PM — 3º Sargento PMRS (remuneração final)", padrao: 11419.39, oficial: true, retpFator: 0 },
+  { val: "sd_rs_ini", text: "SD PM — Soldado PMRS (remuneração inicial RHE)", padrao: 5376.20, oficial: true, selected: true, retpFator: 0 },
+  { val: "sd_rs_fin", text: "SD PM — Soldado PMRS (remuneração final RHE)", padrao: 9945.98, oficial: true, retpFator: 0 },
+  { val: "sd1_rs_edital", text: "SD 1ª CL — Soldado PMRS (referência edital 2025)", padrao: 5944.85, oficial: true, retpFator: 0 }
 ];
 
 const CARGOS_PCRS = [
-  // PCRS — valores de referência dos editais oficiais 2025.
-  { val: "del_rs", text: "Delegado de Polícia PCRS — Classe Inicial", padrao: 23334.43, oficial: true, delegado: true, retpFator: 0 },
-  { val: "esc_rs", text: "Escrivão de Polícia PCRS — Classe Inicial", padrao: 7299.54, oficial: false, selected: true, retpFator: 0 },
-  { val: "insp_rs", text: "Inspetor de Polícia PCRS — Classe Inicial", padrao: 7299.54, oficial: false, retpFator: 0 }
+  // PCRS — cargos e evolução por classe com base em editais 2025, relação oficial RHE 11/2025 e tabelas de carreira divulgadas para a Lei Estadual RS nº 16.165/2024.
+  { val: "del_rs_1", text: "Delegado de Polícia PCRS — 1ª Classe", padrao: 23334.43, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_2", text: "Delegado de Polícia PCRS — 2ª Classe", padrao: 25927.43, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_3", text: "Delegado de Polícia PCRS — 3ª Classe", padrao: 28808.27, oficial: true, delegado: true, retpFator: 0 },
+  { val: "del_rs_4", text: "Delegado de Polícia PCRS — 4ª Classe", padrao: 32009.35, oficial: true, delegado: true, retpFator: 0 },
+  { val: "esc_rs_1", text: "Escrivão de Polícia PCRS — 1ª Classe", padrao: 7299.54, oficial: true, selected: true, retpFator: 0 },
+  { val: "esc_rs_2", text: "Escrivão de Polícia PCRS — 2ª Classe", padrao: 10617.47, oficial: true, retpFator: 0 },
+  { val: "esc_rs_3", text: "Escrivão de Polícia PCRS — 3ª Classe", padrao: 13271.83, oficial: true, retpFator: 0 },
+  { val: "esc_rs_4", text: "Escrivão de Polícia PCRS — 4ª Classe", padrao: 15926.26, oficial: true, retpFator: 0 },
+  { val: "insp_rs_1", text: "Inspetor de Polícia PCRS — 1ª Classe", padrao: 7299.54, oficial: true, retpFator: 0 },
+  { val: "insp_rs_2", text: "Inspetor de Polícia PCRS — 2ª Classe", padrao: 10617.47, oficial: true, retpFator: 0 },
+  { val: "insp_rs_3", text: "Inspetor de Polícia PCRS — 3ª Classe", padrao: 13271.83, oficial: true, retpFator: 0 },
+  { val: "insp_rs_4", text: "Inspetor de Polícia PCRS — 4ª Classe", padrao: 15926.26, oficial: true, retpFator: 0 },
+  { val: "comissario_rs", text: "Comissário de Polícia PCRS — topo da carreira", padrao: 19907.84, oficial: true, retpFator: 0 }
 ];
 
 
@@ -3400,12 +3428,12 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1'
   },
   pmrs: {
-    nome: 'Brigada Militar/RS — editais oficiais 2025 — Soldado e Oficialato',
-    url: 'https://www.brigadamilitar.rs.gov.br/concursos-2025'
+    nome: 'Governo do RS/RHE — Relação de Remuneração — competência 11/2025; editais BMRS 2025 para ingresso',
+    url: 'https://tesouro-admin.fazenda.rs.gov.br/upload/arquivos/202512/12090345-cargos-venc-gov3032-112025.pdf'
   },
   pcrs: {
-    nome: 'Polícia Civil/RS — editais oficiais 2025 — Escrivão, Inspetor e Delegado',
-    url: 'https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025'
+    nome: 'Governo do RS/RHE — Relação de Remuneração — competência 11/2025; editais PCRS 2025 para ingresso',
+    url: 'https://tesouro-admin.fazenda.rs.gov.br/upload/arquivos/202512/12090345-cargos-venc-gov3032-112025.pdf'
   },
   pr_auxilio: {
     nome: 'Legislação/PR — auxílio-alimentação de R$ 834,74',
@@ -3484,8 +3512,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Regime por subsídio: o subsídio pode compreender adicionais como insalubridade, periculosidade e risco de vida, conforme LC PR 259/2023 e aplicação vigente. Auxílio-alimentação oficial PR: ${fmt(AUX_ALIM_PR_PADRAO)}. Verbas específicas/eventuais não foram somadas.`;
   }
 
-  if (inst === 'pmrs') return `<strong>Remuneração por edital:</strong> valores brutos de referência para Soldado, Aluno-Oficial e Capitão, conforme concursos oficiais 2025. <strong>Auxílio-alimentação BM/RS:</strong> ${fmt(AUX_ALIM_RS_BM)} informado nos editais de Soldado e Oficialato; não somado automaticamente ao bruto.`;
-  if (inst === 'pcrs') return '<strong>Regime estatutário:</strong> cargos de Escrivão, Inspetor e Delegado com jornada de 40 horas semanais, conforme editais oficiais 2025. <strong>Adicionais/indenizações:</strong> dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
+  if (inst === 'pmrs') return `<strong>RHE/RS:</strong> linhas inicial e final por posto/graduação, com competência 11/2025. <strong>Editais BM/RS 2025:</strong> referências de ingresso para Soldado, Aluno-Oficial e Capitão. <strong>Auxílio-alimentação BM/RS:</strong> ${fmt(AUX_ALIM_RS_BM)} informado em edital; não somado automaticamente ao bruto.`;
+  if (inst === 'pcrs') return '<strong>Carreira PCRS:</strong> classes de Delegado, Escrivão, Inspetor e Comissário, com valores de referência dos editais/tabelas 2025 e conferência na relação RHE 11/2025. <strong>Adicionais/indenizações:</strong> dependem de rubrica, lotação, legislação e situação funcional; não são somados automaticamente.';
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 
@@ -3628,12 +3656,12 @@ function calcularRemuneracaoTabelada(inst, cargo) {
   } else if (inst === 'pmrs') {
     remuneracao = padrao;
     beneficios = AUX_ALIM_RS_BM;
-    criterio = 'Remuneração bruta mensal de referência conforme editais oficiais da Brigada Militar/RS.';
+    criterio = 'Remuneração bruta mensal de referência por posto/graduação conforme RHE/RS 11/2025 e editais oficiais BMRS 2025 para linhas de ingresso.';
     benefDesc = `Auxílio-alimentação BM/RS informado em edital: ${fmt(AUX_ALIM_RS_BM)}.`;
   } else if (inst === 'pcrs') {
     remuneracao = padrao;
     beneficios = 0;
-    criterio = 'Vencimentos brutos mensais conforme editais oficiais da Polícia Civil/RS.';
+    criterio = 'Subsídio/vencimento bruto mensal por cargo/classe conforme editais PCRS 2025, tabelas de carreira e relação RHE/RS 11/2025.';
     benefDesc = 'Adicionais, indenizações e auxílios dependem de rubrica, lotação e situação funcional; não somados automaticamente.';
   }
 
