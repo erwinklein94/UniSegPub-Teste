@@ -486,12 +486,6 @@
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
   }
-  .remuneracao-table td.total {
-    color: var(--vermelho);
-    font-family: 'Oswald', sans-serif;
-    font-size: 15px;
-    white-space: nowrap;
-  }
   .remuneracao-fonte {
     display: inline-block;
     margin-top: 8px;
@@ -1027,7 +1021,7 @@
   <div class="card">
     <h2>Remuneração Tabelada (<span id="txt-inst-remuneracao">PMESP</span>)</h2>
     <div class="remuneracao-intro">
-      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal, o total bruto estimado e o link da fonte usada, sem descontos, sem adicionais individuais e sem alterar a Calculadora de Vencimentos.
+      Consulta simples e gratuita com valores brutos por cargo da instituição selecionada, levantados em fontes oficiais sempre que disponíveis. A tabela mostra a remuneração bruta mensal e o link da fonte usada, sem descontos, sem adicionais individuais e sem alterar a Calculadora de Vencimentos.
     </div>
 
     <div class="remuneracao-resumo-grid" aria-label="Resumo da remuneração tabelada">
@@ -1036,11 +1030,11 @@
         <strong id="remu-total-cargos">0</strong>
       </div>
       <div class="remuneracao-stat">
-        <span>Menor total bruto</span>
+        <span>Menor remuneração bruta</span>
         <strong id="remu-menor-total">R$ 0,00</strong>
       </div>
       <div class="remuneracao-stat">
-        <span>Maior total bruto</span>
+        <span>Maior remuneração bruta</span>
         <strong id="remu-maior-total">R$ 0,00</strong>
       </div>
     </div>
@@ -1051,13 +1045,12 @@
           <tr>
             <th>Cargo / Classe</th>
             <th>Remuneração bruta</th>
-            <th>Total bruto estimado</th>
             <th>Critério / fonte</th>
           </tr>
         </thead>
         <tbody id="lista-remuneracao">
           <tr>
-            <td colspan="4">Selecione uma instituição para carregar a tabela.</td>
+            <td colspan="3">Selecione uma instituição para carregar a tabela.</td>
           </tr>
         </tbody>
       </table>
@@ -4288,13 +4281,13 @@ function carregarRemuneracaoTabelada() {
   const linhas = gerarRemuneracaoTabelada(inst);
 
   if (!linhas.length) {
-    tbody.innerHTML = '<tr><td colspan="4">Não há dados cadastrados para esta instituição.</td></tr>';
+    tbody.innerHTML = '<tr><td colspan="3">Não há dados cadastrados para esta instituição.</td></tr>';
     return;
   }
 
-  const totais = linhas.map(l => l.total);
-  const menor = Math.min(...totais);
-  const maior = Math.max(...totais);
+  const remuneracoes = linhas.map(l => l.remuneracao);
+  const menor = Math.min(...remuneracoes);
+  const maior = Math.max(...remuneracoes);
 
   const elTotal = document.getElementById('remu-total-cargos');
   const elMenor = document.getElementById('remu-menor-total');
@@ -4312,7 +4305,6 @@ function carregarRemuneracaoTabelada() {
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
         <td class="valor">${fmt(l.remuneracao)}</td>
-        <td class="total">${fmt(l.total)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
           <span class="remuneracao-fonte">${escapeHtml(fonte.nome)}</span><br>
