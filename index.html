@@ -928,7 +928,7 @@
         <!-- BLOCO 05.2.2 — TEMPO DE SERVIÇO -->
         <!-- TEMPO DE SERVIÇO -->
         <div class="field pm-only">
-          <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% sobre o vencimento a cada 5 anos completos, até no máximo 6 quinquênios (30 anos).">?</span></label>
+          <label for="quinquenios">Quinquênios (5% cada) <span class="tip" data-tip="Adicional por tempo de serviço. PMESP: 5% a cada 5 anos completos, calculado sobre a soma do padrão e da RETP. Quando houver pro labore legalmente aplicável, confira o holerite/ato específico.">?</span></label>
           <input type="number" id="quinquenios" value="0" min="0" max="6"/>
         </div>
         <div class="field pc-only">
@@ -936,8 +936,8 @@
           <input type="number" id="quinquenios_sp_pc" value="0" min="0" max="6"/>
         </div>
         <div class="field pmerj-only">
-          <label for="trienios">Triênios PMERJ (10% cada) <span class="tip" data-tip="PMERJ: adicional de 10% a cada 3 anos de efetivo serviço, calculado sobre o soldo. Limite: 13 triênios.">?</span></label>
-          <input type="number" id="trienios" value="0" min="0" max="13"/>
+          <label for="trienios">Triênios PMERJ (10% cada) <span class="tip" data-tip="PMERJ: adicional por tempo de serviço de 10% a 60%, calculado sobre soldo + GRET + GHP + GRAM. Atenção: extinto para ingressantes por edital publicado a partir de 01/01/2022; use apenas se houver direito adquirido.">?</span></label>
+          <input type="number" id="trienios" value="0" min="0" max="6"/>
         </div>
         <div class="field pcerj-only">
           <label for="quinquenios_rj_pc">Adic. Tempo Serviço (5%/qq.) <span class="tip" data-tip="PCERJ Lei 11.003/2025: 5% a cada 5 anos completos.">?</span></label>
@@ -971,14 +971,14 @@
         <!-- BLOCO 05.2.3 — SEXTA-PARTE -->
         <!-- SEXTA-PARTE -->
         <div class="field pm-only">
-          <label for="sextaparte">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço, o servidor recebe 1/6 do vencimento como gratificação adicional.">?</span></label>
+          <label for="sextaparte">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço. Na PMESP, o cálculo foi ajustado para considerar padrão + RETP + quinquênio, conforme estrutura da LC 731/1993.">?</span></label>
           <select id="sextaparte">
             <option value="0">Não</option>
             <option value="1">Sim — 1/6 sobre vencimentos</option>
           </select>
         </div>
         <div class="field pc-only">
-          <label for="sextaparte_sp_pc">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço, o servidor recebe 1/6 do vencimento.">?</span></label>
+          <label for="sextaparte_sp_pc">Sexta-parte (após 20 anos) <span class="tip" data-tip="Após 20 anos de efetivo serviço. Na PCSP, o cálculo foi ajustado para considerar padrão + RETP + quinquênio, conforme estrutura da LC 731/1993.">?</span></label>
           <select id="sextaparte_sp_pc">
             <option value="0">Não</option>
             <option value="1">Sim — 1/6 sobre vencimentos</option>
@@ -1004,20 +1004,29 @@
           <input type="number" id="gap_mg_pc" value="0" min="0" max="35" step="1" placeholder="Ex: 10"/>
         </div>
 
-        <!-- BLOCO 05.2.5 — PCERJ: Periculosidade, GTC e verbas específicas -->
-        <!-- PCERJ Periculosidade / GTC -->
+        <!-- BLOCO 05.2.5 — PCERJ: AAP, representação, GHP, GATC e verbas específicas -->
+        <!-- PCERJ AAP / Representação / GHP / GATC -->
         <div class="field pcerj-only">
-          <label for="periculosidade_rj">Adicional Periculosidade <span class="tip" data-tip="Adicional de 230% sobre o vencimento previsto na Lei 11.003/2025 para todas as carreiras da Polícia Civil RJ, exceto Delegado.">?</span></label>
+          <label for="periculosidade_rj">AAP / Representação <span class="tip" data-tip="Conforme a Lei 11.003/2025: AAP de 230% sobre o vencimento-base para policiais civis, exceto Delegados; Delegados recebem verba de representação de 212% sobre o vencimento-base.">?</span></label>
           <select id="periculosidade_rj">
-            <option value="1" selected>Sim — 230% sobre vencimento</option>
-            <option value="0">Não optante</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1">Forçar AAP 230% (não Delegado)</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pcerj-only">
-          <label for="gtc_rj">Gratif. Técnico-Científica <span class="tip" data-tip="Acréscimo de 100% sobre o vencimento para Peritos Criminais e Médicos Legistas.">?</span></label>
+          <label for="ghp_rj_pc">GHP PCERJ <span class="tip" data-tip="O Caderno de Remuneração RJ apresenta GHP no valor máximo: 100% para a maioria dos cargos e 105% para Delegados. Use 'não computar' caso o servidor não receba a parcela máxima.">?</span></label>
+          <select id="ghp_rj_pc">
+            <option value="auto" selected>Conforme tabela oficial (máximo)</option>
+            <option value="0">Não computar</option>
+          </select>
+        </div>
+        <div class="field pcerj-only">
+          <label for="gtc_rj">GATC Técnico-Científica <span class="tip" data-tip="Gratificação de Atividade Técnico-Científica de 100% sobre o vencimento-base, aplicada aos cargos técnico-científicos indicados na tabela remuneratória oficial.">?</span></label>
           <select id="gtc_rj">
-            <option value="0" selected>Não se aplica</option>
-            <option value="1">Sim — +100% sobre venc.</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1">Forçar GATC 100%</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pcerj-only">
@@ -1030,7 +1039,7 @@
         </div>
         <div class="field span-2 pcerj-only">
           <div class="alerta legal">
-            <strong>PCERJ:</strong> confira se a verba informada representa adicional isolado ou composição total da remuneração. Em cargos com fator próprio de representação/periculosidade cadastrado, o simulador evita duplicar o adicional automaticamente.
+            <strong>PCERJ:</strong> remuneração reestruturada pela Lei 11.003/2025 e conferida pelo Caderno de Remuneração RJ/2026. AAP/representação, GHP e GATC são calculadas por parcelas separadas para evitar duplicidade. O auxílio-alimentação é informado como total mensal estimado.
           </div>
         </div>
 
@@ -1111,9 +1120,9 @@
 
         <!-- PMERJ - GHP, LOTAÇÃO ESP, AUX ALIMENTAÇÃO -->
         <div class="field pmerj-only">
-          <label for="auxalim_rj">Auxílio-Alimentação (R$ 433,80) <span class="tip" data-tip="Verba indenizatória mensal. Não incide previdência nem IRRF.">?</span></label>
+          <label for="auxalim_rj">PMERJ — Etapa de alimentação mensal <span class="tip" data-tip="Valor mensal indenizatório da etapa de alimentação da PMERJ. Este campo já representa o total mensal e não é multiplicado pelos dias VA/VR.">?</span></label>
           <select id="auxalim_rj">
-            <option value="433.80" selected>Receber R$ 433,80</option>
+            <option value="433.80" selected>Receber R$ 433,80 mensais</option>
             <option value="0">Não recebe</option>
           </select>
         </div>
@@ -1129,12 +1138,14 @@
           <input type="number" id="lotacao_rj" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pmerj-only">
-          <label for="ghp_rj">GHP (Habil. Profissional %) <span class="tip" data-tip="Gratificação de Habilitação Profissional: 10% por curso de especialização (CFC, CFAP), 20% (CAS), 30% (CAO/CSP).">?</span></label>
+          <label for="ghp_rj">GHP PMERJ <span class="tip" data-tip="Gratificação de Habilitação Profissional conforme tabela oficial do Caderno de Remuneração RJ/2026. O modo automático usa o percentual previsto para o cargo: 160%, 110%, 80%, 75% ou 0%, conforme a linha da tabela.">?</span></label>
           <select id="ghp_rj">
-            <option value="0" selected>Não tem</option>
-            <option value="0.10">CFC/CFAP (+10%)</option>
-            <option value="0.20">CAS/CASES (+20%)</option>
-            <option value="0.30">CAO/CSP (+30%)</option>
+            <option value="auto" selected>Automático conforme cargo</option>
+            <option value="1.60">160% sobre soldo</option>
+            <option value="1.10">110% sobre soldo</option>
+            <option value="0.80">80% sobre soldo</option>
+            <option value="0.75">75% sobre soldo</option>
+            <option value="0">Não computar</option>
           </select>
         </div>
         <div class="field pmerj-only">
@@ -1144,8 +1155,8 @@
 
         <!-- PCERJ - AUX -->
         <div class="field pcerj-only">
-          <label for="auxalim_rj_pc">Auxílio-Alimentação</label>
-          <input type="number" id="auxalim_rj_pc" value="433.80" min="0" step="0.01"/>
+          <label for="auxalim_rj_pc">PCERJ — Auxílio-Alimentação mensal estimado <span class="tip" data-tip="Decreto RJ 49.585/2025: R$ 32,00 por dia para servidores da SEPOL. Para evitar duplicidade, este campo usa o total mensal estimado. Padrão: 22 dias × R$ 32,00 = R$ 704,00. Ajuste manualmente se o contracheque vier diferente.">?</span></label>
+          <input type="number" id="auxalim_rj_pc" value="704" min="0" step="0.01" placeholder="Ex: 704,00"/>
         </div>
         <div class="field pcerj-only">
           <label for="auxtransp_rj_pc">Auxílio-Transporte</label>
@@ -1174,7 +1185,7 @@
           </select>
         </div>
         <div class="field pmba-only">
-          <label for="auxalim_ba">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <label for="auxalim_ba">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Este campo já representa o total mensal e não é multiplicado por dias. Ajuste se o contracheque trouxer outro valor.">?</span></label>
           <input type="number" id="auxalim_ba" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
 
@@ -1194,7 +1205,7 @@
           <input type="number" id="gip_ba_pc" value="0" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
-          <label for="auxalim_ba_pc">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Ajuste se o contracheque trouxer outro valor.">?</span></label>
+          <label for="auxalim_ba_pc">Auxílio-Alimentação BA (R$) <span class="tip" data-tip="Valor mensal indenizatório. Referência geral BA: R$ 440,00 para jornada de 40h e R$ 286,00 para 30h. Este campo já representa o total mensal e não é multiplicado por dias. Ajuste se o contracheque trouxer outro valor.">?</span></label>
           <input type="number" id="auxalim_ba_pc" value="440" min="0" step="0.01" placeholder="R$ 0,00"/>
         </div>
         <div class="field pcba-only">
@@ -1464,10 +1475,10 @@
         </div>
 
         <div class="field pcmg-only">
-          <label for="opt_ipsemg">IPSEMG (Saúde 3,2%) <span class="tip" data-tip="Assistência médica do servidor MG. Desconto de 3,2% sobre a remuneração.">?</span></label>
+          <label for="opt_ipsemg">IPSEMG Saúde <span class="tip" data-tip="Estimativa da contribuição mensal do titular pela assistência à saúde. Dependentes e coparticipações variam conforme cadastro/uso e devem ser lançados manualmente no campo Sindicato/Descontos PCMG quando necessário.">?</span></label>
           <select id="opt_ipsemg">
-            <option value="1">Sim (3,2%)</option>
-            <option value="0" selected>Não optante</option>
+            <option value="1">Sim — 3,2% titular</option>
+            <option value="0" selected>Não computar / informar manualmente</option>
           </select>
         </div>
         <div class="field pcmg-only">
@@ -1784,7 +1795,7 @@
           </ol>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -2007,7 +2018,7 @@
           </ul>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -2036,7 +2047,7 @@
           Concurseiros.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Preparatório para o psicotécnico das carreiras policiais na Hotmart">Click e Compre</a>
       </div>
     </div>
 
@@ -2110,7 +2121,7 @@
           </ul>
         </details>
 
-        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir curso de Raciocínio Lógico para PCSP na Hotmart">Click e Compre</a>
       </div>
 
       <div class="curso-card">
@@ -2147,7 +2158,7 @@
           Pessoas que querem ser aprovadas no concurso de Delegado da Polícia Civil de São Paulo.
         </p>
 
-        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Acessar curso na Hotmart</a>
+        <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Click e Compre</a>
       </div>
     </div>
   </div>
@@ -3062,6 +3073,8 @@ const IRRF_FAIXAS = [
   { ate: Infinity, aliq: 0.275, ded: 908.73 }
 ];
 const IRRF_DEP_DEDUCAO = 189.59;
+const IRRF_DESCONTO_SIMPLIFICADO = 607.20; // 25% da faixa mensal isenta da tabela progressiva (R$ 2.428,80)
+let ultimoDetalheIRRF = null;
 /* Redutor mensal da Lei 15.270/2025 */
 const IRRF_REDUTOR_LIM_TOTAL = 5000.00;
 const IRRF_REDUTOR_LIM_PARC  = 7350.00;
@@ -3096,58 +3109,73 @@ const CARGOS_PM = [
 ];
 
 const CARGOS_PC = [
-  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 9385.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 8650.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 7950.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 7420.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
-  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8100.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 7450.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 6850.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 6450.00, gratif: 0, oficial: true, retpFator: 1.0 },
-  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 4200.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 3820.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 3450.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 3120.00, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
-  { val: "age_esp", text: "Agente / Aux. / Papi - Especial",     padrao: 3550.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_1",   text: "Agente / Aux. / Papi - 1ª Classe",    padrao: 3150.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_2",   text: "Agente / Aux. / Papi - 2ª Classe",    padrao: 2850.00, gratif: 0, oficial: false, retpFator: 1.0 },
-  { val: "age_3",   text: "Agente / Aux. / Papi - 3ª Classe",    padrao: 2600.00, gratif: 0, oficial: false, retpFator: 1.0 }
+  // PCSP — estrutura padrão + RETP (100%). Valores da 3ª classe ancorados nos vencimentos iniciais oficiais divulgados pela Polícia Civil/SP.
+  // Demais classes mantêm progressão estimativa do simulador, ajustada pela mesma referência proporcional quando não há tabela oficial legível no HTML.
+  { val: "del_esp", text: "Delegado de Polícia - Especial",   padrao: 9510.20, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_1",   text: "Delegado de Polícia - 1ª Classe",  padrao: 8765.41, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_2",   text: "Delegado de Polícia - 2ª Classe",  padrao: 8056.08, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "del_3",   text: "Delegado de Polícia - 3ª Classe",  padrao: 7519.00, gratif: 0, oficial: true,  delegado: true, retpFator: 1.0 },
+  { val: "med_esp", text: "Médico Legista / Perito - Especial", padrao: 8134.16, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_1",   text: "Médico Legista / Perito - 1ª Classe", padrao: 7481.42, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_2",   text: "Médico Legista / Perito - 2ª Classe", padrao: 6878.89, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "med_3",   text: "Médico Legista / Perito - 3ª Classe", padrao: 6477.20, gratif: 0, oficial: true, retpFator: 1.0 },
+  { val: "inv_esp", text: "Investigador / Escrivão - Especial",  padrao: 3957.96, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_1",   text: "Investigador / Escrivão - 1ª Classe", padrao: 3591.58, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_2",   text: "Investigador / Escrivão - 2ª Classe", padrao: 3243.71, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "inv_3",   text: "Investigador / Escrivão - 3ª Classe", padrao: 2939.84, gratif: 0, oficial: false, selected: true, retpFator: 1.0 },
+  { val: "age_esp", text: "Agente / Aux. / Papi - Especial",     padrao: 3345.01, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_1",   text: "Agente / Aux. / Papi - 1ª Classe",    padrao: 2968.25, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_2",   text: "Agente / Aux. / Papi - 2ª Classe",    padrao: 2685.24, gratif: 0, oficial: false, retpFator: 1.0 },
+  { val: "age_3",   text: "Agente / Aux. / Papi - 3ª Classe",    padrao: 2449.87, gratif: 0, oficial: false, retpFator: 1.0 }
 ];
 
 const CARGOS_PMERJ = [
-  { val: "cel_rj",     text: "CEL PM — Coronel PMERJ",            padrao: 4700.00, gratif: 1850.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "tencel_rj",  text: "TEN CEL PM — Tenente Coronel PMERJ", padrao: 4250.00, gratif: 950.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "maj_rj",     text: "MAJ PM — Major PMERJ",               padrao: 3800.00, gratif: 600.00, oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "cap_rj",     text: "CAP PM — Capitão PMERJ",             padrao: 3200.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "1ten_rj",    text: "1º TEN PM — 1º Tenente PMERJ",       padrao: 2750.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "2ten_rj",    text: "2º TEN PM — 2º Tenente PMERJ",       padrao: 2400.00, gratif: 0,      oficial: true,  retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "subten_rj",  text: "SUBTEN PM — Subtenente PMERJ",       padrao: 1900.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "1sgt_rj",    text: "1º SGT PM — 1º Sargento PMERJ",      padrao: 1750.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "2sgt_rj",    text: "2º SGT PM — 2º Sargento PMERJ",      padrao: 1620.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "3sgt_rj",    text: "3º SGT PM — 3º Sargento PMERJ",      padrao: 1500.00, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "cabo_rj",    text: "CABO PM — Cabo PMERJ",               padrao: 1141.30, gratif: 0,      oficial: false, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "sd_rj",      text: "SD PM — Soldado PMERJ",              padrao: 991.03,  gratif: 0,      oficial: false, selected: true, retpFator: 3.344, retpLabel: "Gratificações Militares (GRET+IHP+GRAM)" },
-  { val: "sdaluno_rj", text: "SD ALUNO — Soldado-Aluno (CFAP)",    padrao: 740.00,  gratif: 0,      oficial: false, retpFator: 3.0,   retpLabel: "Auxílios formação" }
+  // Tabela oficial do Caderno de Remuneração RJ — janeiro/2026.
+  // Cálculo por parcelas: Soldo + GRET + GHP + GRAM.
+  { val: "cel_rj",     text: "CEL PM — Coronel PMERJ",              padrao: 3270.72, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0 },
+  { val: "tencel_rj",  text: "TEN CEL PM — Tenente Coronel PMERJ",  padrao: 2943.64, oficial: true,  gretPct: 1.925, ghpPct: 1.60, retpFator: 0 },
+  { val: "maj_rj",     text: "MAJ PM — Major PMERJ",                padrao: 2649.27, oficial: true,  gretPct: 1.925, ghpPct: 1.10, retpFator: 0 },
+  { val: "cap_rj",     text: "CAP PM — Capitão PMERJ",              padrao: 2384.35, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "1ten_rj",    text: "1º TEN PM — 1º Tenente PMERJ",        padrao: 2145.59, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "2ten_rj",    text: "2º TEN PM — 2º Tenente PMERJ",        padrao: 1929.73, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "asp_rj",     text: "ASP OF PM — Aspirante Oficial PMERJ", padrao: 1736.74, oficial: true,  gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "subten_rj",  text: "SUBTEN PM — Subtenente PMERJ",        padrao: 1736.74, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "1sgt_rj",    text: "1º SGT PM — 1º Sargento PMERJ",       padrao: 1596.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "2sgt_rj",    text: "2º SGT PM — 2º Sargento PMERJ",       padrao: 1448.93, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "3sgt_rj",    text: "3º SGT PM — 3º Sargento PMERJ",       padrao: 1318.10, oficial: false, gretPct: 1.500, ghpPct: 1.10, retpFator: 0 },
+  { val: "cabo_rj",    text: "CABO PM — Cabo PMERJ",                padrao: 1141.48, oficial: false, gretPct: 1.500, ghpPct: 0.75, retpFator: 0 },
+  { val: "sd_rj",      text: "SD PM — Soldado A/B/C PMERJ",         padrao: 991.03,  oficial: false, selected: true, gretPct: 1.500, ghpPct: 0.75, retpFator: 0 },
+  { val: "sdaluno_rj", text: "SD ALUNO — Soldado-Aluno PMERJ",      padrao: 817.67,  oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0 },
+  { val: "alesfo_rj",  text: "ALUNO ESFO — Aluno EsFO PMERJ",       padrao: 1141.48, oficial: false, gretPct: 1.225, ghpPct: 0,    retpFator: 0 }
 ];
 
 const CARGOS_PCERJ = [
-  { val: "del_esp_rj",     text: "Delegado de Polícia - Especial", padrao: 11200.00, gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_1_rj",       text: "Delegado de Polícia - 1ª Classe", padrao: 10100.00, gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_2_rj",       text: "Delegado de Polícia - 2ª Classe", padrao: 9300.00,  gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "del_3_rj",       text: "Delegado de Polícia - 3ª Classe", padrao: 8648.00,  gratif: 0, oficial: true,  delegado: true, retpFator: 2.12, retpLabel: "Verba de Representação (212%)" },
-  { val: "perito_esp_rj",  text: "Perito Criminal/Legista - Esp",   padrao: 7100.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_1_rj",    text: "Perito Criminal/Legista - 1ª Cl", padrao: 6450.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_2_rj",    text: "Perito Criminal/Legista - 2ª Cl", padrao: 5950.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "perito_3_rj",    text: "Perito Criminal/Legista - 3ª Cl", padrao: 5500.00,  gratif: 0, oficial: true,  perito: true,  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "piloto_rj",      text: "Piloto Policial",                  padrao: 6800.00,  gratif: 0, oficial: true,                  retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_esp_rj",    text: "Oficial de PC (Insp/Inv) - Esp",  padrao: 4250.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_1_rj",      text: "Oficial de PC - 1ª Classe",        padrao: 3850.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_2_rj",      text: "Oficial de PC - 2ª Classe",        padrao: 3500.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "ofpc_3_rj",      text: "Oficial de PC - 3ª Classe",        padrao: 3200.00,  gratif: 0, oficial: false, selected: true, retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_esp_rj",    text: "Agente Polícia Científica - Esp",  padrao: 3450.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_1_rj",      text: "Agente Polícia Científica - 1ª",   padrao: 3100.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_2_rj",      text: "Agente Polícia Científica - 2ª",   padrao: 2800.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" },
-  { val: "agpc_3_rj",      text: "Agente Polícia Científica - 3ª",   padrao: 2550.00,  gratif: 0, oficial: false,                 retpFator: 2.30, retpLabel: "Adicional Periculosidade (230%)" }
+  // Tabela oficial do Caderno de Remuneração RJ — janeiro/2026, conforme Lei 11.003/2025.
+  // Cálculo por parcelas: VB + AAP/Representação + GHP máxima + GATC quando aplicável.
+  { val: "del_1_rj",       text: "Delegado de Polícia - 1ª Classe",       padrao: 7133.67, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "del_2_rj",       text: "Delegado de Polícia - 2ª Classe",       padrao: 6793.98, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "del_3_rj",       text: "Delegado de Polícia - 3ª Classe",       padrao: 6470.45, oficial: true,  delegado: true,  representacaoPct: 2.12, ghpPct: 1.05, gatcPct: 0, retpFator: 0 },
+  { val: "engtelecom_rj",  text: "Eng. Policial de Telecomunicações",     padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "piloto_rj",      text: "Piloto Policial",                       padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 0,    retpFator: 0 },
+  { val: "perito_1_rj",    text: "Perito Legista/Criminal - 1ª Classe",   padrao: 3251.50, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "perito_2_rj",    text: "Perito Legista/Criminal - 2ª Classe",   padrao: 2861.32, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "perito_3_rj",    text: "Perito Legista/Criminal - 3ª Classe",   padrao: 2601.20, oficial: true,  perito: true,    aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_1_rj",       text: "Médico Policial - 1ª Classe",           padrao: 2601.20, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_2_rj",       text: "Médico Policial - 2ª Classe",           padrao: 2471.14, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "med_3_rj",       text: "Médico Policial - 3ª Classe",           padrao: 2158.99, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_1_rj",    text: "Perito Papiloscopista - 1ª Classe",     padrao: 3251.50, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_2_rj",    text: "Perito Papiloscopista - 2ª Classe",     padrao: 2861.32, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "papilo_3_rj",    text: "Perito Papiloscopista - 3ª Classe",     padrao: 2601.20, oficial: true,                  aapPct: 2.30, ghpPct: 1.00, gatcPct: 1.00, retpFator: 0 },
+  { val: "ofpc_com_rj",    text: "Oficial de Polícia Civil - Comissário", padrao: 2861.32, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_2_rj",      text: "Oficial de Polícia Civil - 2ª Classe",  padrao: 2471.14, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_3_rj",      text: "Oficial de Polícia Civil - 3ª Classe",  padrao: 2341.07, oficial: false, selected: true,  aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_4_rj",      text: "Oficial de Polícia Civil - 4ª Classe",  padrao: 2132.97, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_5_rj",      text: "Oficial de Polícia Civil - 5ª Classe",  padrao: 2080.95, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "ofpc_6_rj",      text: "Oficial de Polícia Civil - 6ª Classe",  padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_1_rj",      text: "Agente de Polícia Científica - 1ª",     padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_2_rj",      text: "Agente de Polícia Científica - 2ª",     padrao: 1820.84, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "agpc_3_rj",      text: "Agente de Polícia Científica - 3ª",     padrao: 1690.77, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 },
+  { val: "auxenf_rj",      text: "Aux. Enfermagem da Polícia - 1ª",       padrao: 2028.92, oficial: false,                 aapPct: 2.30, ghpPct: 1.00, gatcPct: 0, retpFator: 0 }
 ];
 
 const MG_REAJUSTE_2026 = 1.054; // Lei Estadual MG 25.804/2026 — revisão geral de 5,4% a partir de jan/2026.
@@ -3623,8 +3651,8 @@ function mudarInstituicao(novaInstituicao) {
   const config = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
-    pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, IHP, GRAM e triênios." },
-    pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento e Verba de Representação/Periculosidade." },
+    pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
+    pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },
     pmmg:  { titulo: "PMMG",  desc: "Polícia Militar de Minas Gerais",     cor: "#7c1a1a", alertaPrev: "IPSM — 10,5% (8% previdência + 2,5% saúde compulsória) sobre o subsídio." },
     pcmg:  { titulo: "PCMG",  desc: "Polícia Civil de Minas Gerais",        cor: "#b58d3d", alertaPrev: "IPSEMG — 11% previdência + 3,2% saúde (opcional) sobre subsídio." },
     pmba:  { titulo: "PMBA",  desc: "Polícia Militar da Bahia",             cor: "#967117", alertaPrev: "Funprev-BA — 14% sobre soldo, GAP, anuênios e CET." },
@@ -3665,31 +3693,60 @@ function mudarInstituicao(novaInstituicao) {
 /* === IRRF 2026 (com redutor Lei 15.270/2025) ================ */
 /* ============================================================ */
 /* BLOCO 15.10 — Cálculo de IRRF, extras e holerite */
-function calcularIRRF(rendimentoTributavelMensal, baseAposPrevDep) {
-  // Etapa 1: IRRF pela tabela progressiva
+function calcularIRRFPelaTabela(baseCalculo) {
   let irrfBruto = 0;
   for (const f of IRRF_FAIXAS) {
-    if (baseAposPrevDep <= f.ate) {
-      irrfBruto = baseAposPrevDep * f.aliq - f.ded;
+    if (baseCalculo <= f.ate) {
+      irrfBruto = baseCalculo * f.aliq - f.ded;
       break;
     }
   }
-  if (irrfBruto < 0) irrfBruto = 0;
+  return Math.max(0, irrfBruto);
+}
 
-  // Etapa 2: Redutor mensal Lei 15.270/2025
-  // Importante: o redutor incide sobre o RENDIMENTO TRIBUTÁVEL MENSAL (bruto após prev), não a base IRRF
+function aplicarRedutorIRRF(irrfBruto, rendimentoTributavelMensal) {
   let redutor = 0;
   if (rendimentoTributavelMensal <= IRRF_REDUTOR_LIM_TOTAL) {
-    redutor = irrfBruto; // zera o IR
+    redutor = irrfBruto;
   } else if (rendimentoTributavelMensal <= IRRF_REDUTOR_LIM_PARC) {
     redutor = IRRF_REDUTOR_FORMULA_A - (IRRF_REDUTOR_FORMULA_B * rendimentoTributavelMensal);
     if (redutor < 0) redutor = 0;
     if (redutor > irrfBruto) redutor = irrfBruto;
-  } else {
-    redutor = 0;
   }
+  return {
+    redutor,
+    valorFinal: Math.max(0, irrfBruto - redutor)
+  };
+}
 
-  return Math.max(0, irrfBruto - redutor);
+function calcularIRRF(rendimentoTributavelMensal, deducoesLegais) {
+  // Calcula o IRRF por dois caminhos e usa o menor imposto:
+  // 1) deduções legais: previdência + dependentes;
+  // 2) desconto simplificado mensal de R$ 607,20.
+  const deducoes = Math.max(0, Number(deducoesLegais) || 0);
+  const rendimento = Math.max(0, Number(rendimentoTributavelMensal) || 0);
+
+  const baseLegal = Math.max(0, rendimento - deducoes);
+  const irrfLegalBruto = calcularIRRFPelaTabela(baseLegal);
+  const irrfLegal = aplicarRedutorIRRF(irrfLegalBruto, rendimento);
+
+  const baseSimplificada = Math.max(0, rendimento - IRRF_DESCONTO_SIMPLIFICADO);
+  const irrfSimplificadoBruto = calcularIRRFPelaTabela(baseSimplificada);
+  const irrfSimplificado = aplicarRedutorIRRF(irrfSimplificadoBruto, rendimento);
+
+  const usarSimplificado = irrfSimplificado.valorFinal < irrfLegal.valorFinal;
+  const escolhido = usarSimplificado ? irrfSimplificado : irrfLegal;
+
+  ultimoDetalheIRRF = {
+    metodo: usarSimplificado ? 'desconto simplificado' : 'deduções legais',
+    baseLegal,
+    baseSimplificada,
+    baseUsada: usarSimplificado ? baseSimplificada : baseLegal,
+    redutor: escolhido.redutor,
+    valor: escolhido.valorFinal
+  };
+
+  return escolhido.valorFinal;
 }
 
 /* ============================================================ */
@@ -3774,7 +3831,7 @@ function classificarCamposCalculadora() {
     auto: ['cargo','dias','dias_va','quinquenios','quinquenios_sp_pc','trienios','quinquenios_rj_pc','quinquenios_mg_pm','quinquenios_mg_pc','anuenios_ba_pm','anuenios_ba_pc','sextaparte','sextaparte_sp_pc','gap_ba_nivel','grat_ba_pc_ref','opt_iamspe','opt_ipsemg'],
     manual: ['emprestimo','pensao','fepomcopa','fepomalo','fepomran','daxv','prosaude','cbpm','cruzazul','sindicato','fuspom','familiazul','hcpm','coopm','fuspol','sindicato_rj','ipsm_copart','assoc_mg_pm','sindicato_mg_pc','planserv_ba_pm','assoc_ba_pm','planserv_ba_pc','sindicato_ba_pc','dependentes_saude'],
     opcional: ['dependentes','auxalim_sp_dia','auxalim_mg_dia','auxalim_mg_meta_dia','insalubridade','insalubridade_sp_pc','decimo','ferias','abonotransf','lpremio','auxfard_pm','auxfard_rj','fardamento_mg_pm','vestimenta_mg_pc'],
-    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc']
+    estimativa: ['cet_ba_pm','cet_ba_pc','ade_mg_pm','vpni_mg_pm','ade_mg_pc','gap_mg_pc','periculosidade_rj','ghp_rj_pc','gtc_rj','adictransf_rj','locesp_rj','acaoinsal','acaoinsal_sp_pc','dsfuncao','dsdias','ale_pm','ensino','adicnoturno_pm','gat_dias','gas_pc','qualif_pc','auxalim_rj','auxtransp_rj','lotacao_rj','ghp_rj','auxalim_rj_pc','auxtransp_rj_pc','gip_ba_pc','auxalim_ba','auxalim_ba_pc','gqual_ba_pc','qtddejem','regdejem','qtddel','regdel','qtddejec','tipodejec','qtdras','tiporas','qtdplantao_rj','valplantao_rj','qtdextra_mg_pm','valextra_mg_pm','qtdextra_mg_pc','valextra_mg_pc','qtdextra_ba_pm','valextra_ba_pm','qtdextra_ba_pc','valextra_ba_pc']
   };
   const nomes = { auto: 'Automático', manual: 'Manual', opcional: 'Opcional', estimativa: 'Estimativa' };
   Object.keys(tipos).forEach(tipo => {
@@ -3840,38 +3897,70 @@ function calcular() {
   const dependentesSaude = Math.min(20, Math.max(0, valEl('dependentes_saude')));
 
   // Padrão e RETP/Verba representação
-const padrao = c.padrao * fatorDias;
-const retpFator = c.retpFator || 0;
+  const padrao = c.padrao * fatorDias;
+  const retpFator = c.retpFator || 0;
 
-// Gratificação fixa do cargo, quando existir
-let gratif = (c.gratif || 0) * fatorDias;
+  // Gratificação fixa do cargo, quando existir
+  let gratif = (c.gratif || 0) * fatorDias;
 
-let retpOuVerba = 0;
-let retpLabel = "RETP";
+  let retpOuVerba = 0;
+  let retpLabel = "RETP";
 
-// SP: mantém a lógica atual de RETP/Verba Representação
-if (inst === 'pmesp' || inst === 'pcsp') {
-  retpOuVerba = padrao;
-  retpLabel = (inst === 'pmesp') ? "RETP (Representação Patrimonial)" : "Verba Representação";
-}
+  // RJ — parcelas oficiais separadas
+  let gretRj = 0;
+  let gramRj = 0;
+  let ghpRj = 0;
+  let ghpRjPctAplicado = 0;
+  let ghpPcRj = 0;
+  let ghpPcRjPctAplicado = 0;
 
-// RJ: usa o fator próprio já cadastrado no cargo
-else if (inst === 'pmerj' || inst === 'pcerj') {
-  retpOuVerba = retpFator > 1 ? padrao * (retpFator - 1) : 0;
-  retpLabel = c.retpLabel || "Gratificações Adicionais";
-}
+  // SP: RETP/verba representação calculada em 100% do padrão.
+  if (inst === 'pmesp' || inst === 'pcsp') {
+    retpOuVerba = padrao;
+    retpLabel = (inst === 'pmesp') ? "RETP (Regime Especial de Trabalho Policial Militar)" : "RETP (Regime Especial de Trabalho Policial)";
+  }
 
-// MG e BA: não possuem Verba Representação automática neste simulador
-else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
-  retpOuVerba = 0;
-  retpLabel = "";
-}
+  // PMERJ: cálculo oficial por Soldo + GRET + GHP + GRAM.
+  else if (inst === 'pmerj') {
+    const ghpOpt = document.getElementById('ghp_rj')?.value || 'auto';
+    ghpRjPctAplicado = ghpOpt === 'auto' ? (c.ghpPct || 0) : parseFloat(ghpOpt || 0);
+    gretRj = padrao * (c.gretPct || 0);
+    ghpRj = padrao * ghpRjPctAplicado;
+    gramRj = (padrao + gretRj + ghpRj) * 0.625;
+    retpOuVerba = 0;
+    retpLabel = "";
+  }
+
+  // PCERJ: Lei 11.003/2025 — AAP 230% para não Delegados; Representação 212% para Delegados.
+  else if (inst === 'pcerj') {
+    const aapOpt = document.getElementById('periculosidade_rj')?.value || 'auto';
+    if (c.delegado) {
+      retpOuVerba = padrao * (c.representacaoPct || 2.12);
+      retpLabel = "Verba de Representação Delegado (212%)";
+    } else if (aapOpt !== '0') {
+      retpOuVerba = padrao * (aapOpt === '1' ? 2.30 : (c.aapPct || 2.30));
+      retpLabel = "AAP — Adic. Atividade Perigosa (230%)";
+    } else {
+      retpOuVerba = 0;
+      retpLabel = "AAP / Representação";
+    }
+
+    const ghpPcOpt = document.getElementById('ghp_rj_pc')?.value || 'auto';
+    ghpPcRjPctAplicado = ghpPcOpt === 'auto' ? (c.ghpPct || 0) : parseFloat(ghpPcOpt || 0);
+    ghpPcRj = padrao * ghpPcRjPctAplicado;
+  }
+
+  // MG e BA: não possuem Verba Representação automática neste simulador
+  else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba') {
+    retpOuVerba = 0;
+    retpLabel = "";
+  }
 
   // ===== Tempo de serviço =====
   let tempoVal = 0, tempoLabel = "";
-  if (inst === 'pmesp')      { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios')); tempoLabel = `Quinquênios (${valEl('quinquenios')}×5%)`; }
-  else if (inst === 'pcsp')  { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios_sp_pc')); tempoLabel = `Quinquênios (${valEl('quinquenios_sp_pc')}×5%)`; }
-  else if (inst === 'pmerj') { tempoVal = padrao * 0.10 * Math.min(13, valEl('trienios')); tempoLabel = `Triênios (${valEl('trienios')}×10%)`; }
+  if (inst === 'pmesp')      { tempoVal = (padrao + retpOuVerba) * 0.05 * Math.min(6, valEl('quinquenios')); tempoLabel = `Quinquênios PMESP (${valEl('quinquenios')}×5% sobre padrão + RETP)`; }
+  else if (inst === 'pcsp')  { tempoVal = (padrao + retpOuVerba) * 0.05 * Math.min(6, valEl('quinquenios_sp_pc')); tempoLabel = `Quinquênios PCSP (${valEl('quinquenios_sp_pc')}×5% sobre padrão + RETP)`; }
+  else if (inst === 'pmerj') { const qtdTrienios = Math.min(6, valEl('trienios')); tempoVal = (padrao + gretRj + ghpRj + gramRj) * 0.10 * qtdTrienios; tempoLabel = `Triênios PMERJ (${qtdTrienios}×10% sobre soldo+GRET+GHP+GRAM)`; }
   else if (inst === 'pcerj') { tempoVal = padrao * 0.05 * Math.min(6, valEl('quinquenios_rj_pc')); tempoLabel = `Adic. Tempo Serviço (${valEl('quinquenios_rj_pc')}×5%)`; }
   else if (inst === 'pmmg')  { tempoVal = padrao * 0.10 * Math.min(6, valEl('quinquenios_mg_pm')); tempoLabel = `Quinquênios PMMG (${valEl('quinquenios_mg_pm')}×10%)`; }
   else if (inst === 'pcmg')  { tempoVal = padrao * 0.10 * Math.min(6, valEl('quinquenios_mg_pc')); tempoLabel = `Quinquênios PCMG (${valEl('quinquenios_mg_pc')}×10%)`; }
@@ -3880,8 +3969,8 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   // ===== Sexta-parte (SP) =====
   let sextaVal = 0;
-  if (inst === 'pmesp' && valEl('sextaparte') === 1) sextaVal = (padrao + tempoVal) / 6;
-  else if (inst === 'pcsp' && valEl('sextaparte_sp_pc') === 1) sextaVal = (padrao + tempoVal) / 6;
+  if (inst === 'pmesp' && valEl('sextaparte') === 1) sextaVal = (padrao + retpOuVerba + tempoVal) / 6;
+  else if (inst === 'pcsp' && valEl('sextaparte_sp_pc') === 1) sextaVal = (padrao + retpOuVerba + tempoVal) / 6;
 
   // ===== Insalubridade dinâmica (% SM 2026) =====
   let insalVal = 0, acaoInsalVal = 0;
@@ -3916,29 +4005,25 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
     auxalimSp = valEl('auxalim_sp_dia') * diasVA;
   }
 
-  // PMERJ
-  let auxalimRj = 0, auxtranspRj = 0, lotacaoRj = 0, ghpRj = 0, auxfardRj = 0;
+  // PMERJ — auxílios e verbas manuais; GRET/GHP/GRAM já foram calculadas no núcleo remuneratório RJ.
+  let auxalimRj = 0, auxtranspRj = 0, lotacaoRj = 0, auxfardRj = 0;
   if (inst === 'pmerj') {
     auxalimRj   = parseFloat(document.getElementById('auxalim_rj').value || 0);
     auxtranspRj = parseFloat(document.getElementById('auxtransp_rj').value || 0);
     lotacaoRj   = valEl('lotacao_rj');
-    ghpRj       = (padrao) * parseFloat(document.getElementById('ghp_rj').value || 0);
     auxfardRj   = valEl('auxfard_rj');
   }
 
-  // PCERJ
+  // PCERJ — GATC, auxílio-alimentação diário e verbas manuais.
   let pericRj = 0, gtcRj = 0, auxalimRjPc = 0, auxtranspRjPc = 0, adictransfRj = 0, locespRj = 0;
   if (inst === 'pcerj') {
-    pericRj  = (parseInt(document.getElementById('periculosidade_rj').value) === 1 && !c.delegado) ? padrao * 2.30 : 0;
-    if (c.delegado) pericRj = 0; // Delegado tem verba representação 212% (já no retpFator)
-    gtcRj   = parseInt(document.getElementById('gtc_rj').value) === 1 ? padrao * 1.0 : 0;
+    const gatcOpt = document.getElementById('gtc_rj')?.value || 'auto';
+    gtcRj = gatcOpt === '0' ? 0 : padrao * (gatcOpt === '1' ? 1.0 : (c.gatcPct || 0));
     auxalimRjPc   = valEl('auxalim_rj_pc');
     auxtranspRjPc = valEl('auxtransp_rj_pc');
     adictransfRj  = valEl('adictransf_rj');
     locespRj      = valEl('locesp_rj');
   }
-  // Para PCERJ c/ retpFator já computado, pericRj acima dobraria — então quando retpFator>1 (delegado/perito), zera periculosidade adicional
-  if (inst === 'pcerj' && retpFator > 1) pericRj = 0;
 
   // PMMG
   let adeMgPm = 0, vpniMgPm = 0, fardamentoMgPm = 0, auxalimMgPm = 0;
@@ -4023,18 +4108,19 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   }
 
   // ===== Verbas eventuais (13º, férias, abono, lpremio) =====
+  const baseEventosRemuneratorios = padrao + retpOuVerba + gretRj + ghpRj + gramRj + ghpPcRj + gtcRj + tempoVal + sextaVal;
   const decimoFator = parseFloat(document.getElementById('decimo').value || 0);
-  const decimoVal = (padrao + retpOuVerba + tempoVal + sextaVal) * decimoFator;
+  const decimoVal = baseEventosRemuneratorios * decimoFator;
   const ferias = valEl('ferias');
-  const feriasVal = ((padrao + retpOuVerba + tempoVal + sextaVal) / 30) * ferias * (1 + 1/3);
+  const feriasVal = (baseEventosRemuneratorios / 30) * ferias * (1 + 1/3);
   const abonoTransfVal = valEl('abonotransf');
-  const lpremioVal = valEl('lpremio') * (padrao + retpOuVerba + tempoVal + sextaVal);
+  const lpremioVal = valEl('lpremio') * baseEventosRemuneratorios;
 
   // ===== TOTAL BRUTO =====
   // Verbas remuneratórias (incidência previdência e IRRF)
   const baseRemuneratoria = padrao + retpOuVerba + tempoVal + sextaVal + insalVal + dsVal +
                             gatVal + gas_pc + ale_pm + ensino + adicNoturno_pm +
-                            ghpRj + lotacaoRj + pericRj + gtcRj + locespRj +
+                            gretRj + ghpRj + gramRj + lotacaoRj + ghpPcRj + pericRj + gtcRj + locespRj +
                             adeMgPm + vpniMgPm + adeMgPc + gapMgPc +
                             cetBaPm + gapBaValor + cetBaPc + gratBaPc + gqualBaPc +
                             decimoVal + feriasVal;
@@ -4061,9 +4147,10 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (inst === 'pcmg') aliqPrev = 0.11;
   const previdencia = baseRemuneratoria * aliqPrev;
 
-  // IRRF (rendimento tributável = base remuneratória; base IRRF = rendTributavel - previdencia - dependentes)
-  const baseIRRF = Math.max(0, baseRemuneratoria - previdencia - (dependentes * IRRF_DEP_DEDUCAO));
-  const irrf = calcularIRRF(baseRemuneratoria, baseIRRF);
+  // IRRF 2026: compara deduções legais (previdência + dependentes) com desconto simplificado mensal.
+  const deducoesIRRFLegais = previdencia + (dependentes * IRRF_DEP_DEDUCAO);
+  const baseIRRF = Math.max(0, baseRemuneratoria - deducoesIRRFLegais);
+  const irrf = calcularIRRF(baseRemuneratoria, deducoesIRRFLegais);
 
   // Outros descontos por instituição
   let descPM = 0, descPMERJ = 0, descPCERJ = 0, descPMMG = 0, descPCMG = 0, descPMBA = 0, descPCBA = 0, descGeral = 0;
@@ -4113,6 +4200,8 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (naturezas) {
     naturezas.innerHTML =
       linha('Base remuneratória tributável', baseRemuneratoria, 'info') +
+      linha('Base IRRF usada (' + (ultimoDetalheIRRF ? ultimoDetalheIRRF.metodo : 'deduções legais') + ')', ultimoDetalheIRRF ? ultimoDetalheIRRF.baseUsada : baseIRRF, 'info') +
+      linha('Redutor IRRF Lei 15.270/2025', ultimoDetalheIRRF ? ultimoDetalheIRRF.redutor : 0, 'info') +
       linha('Base indenizatória / sem incidência', baseIndenizatoria, 'info') +
       linha('Bruto mensal normal estimado', brutoMensalNormal, 'info') +
       linha('Eventos, extras e parcelas eventuais', totalEventos, 'info') +
@@ -4137,14 +4226,17 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
   if (ensino > 0) proventos += linha("Retribuição Função Ensino", ensino, "provento");
   if (auxfard_pm > 0) proventos += linha("Auxílio-Fardamento", auxfard_pm, "provento");
   if (adicNoturno_pm > 0) proventos += linha("Adicional Noturno", adicNoturno_pm, "provento");
+  if (gretRj > 0) proventos += linha("GRET PMERJ (" + ((c.gretPct || 0) * 100).toFixed(1).replace('.', ',') + "% sobre soldo)", gretRj, "provento");
+  if (ghpRj > 0) proventos += linha("GHP PMERJ (" + (ghpRjPctAplicado * 100).toFixed(0) + "% sobre soldo)", ghpRj, "provento");
+  if (gramRj > 0) proventos += linha("GRAM PMERJ (62,5% sobre soldo+GRET+GHP)", gramRj, "provento");
   if (auxalimRj > 0) proventos += linha("Auxílio-Alimentação", auxalimRj, "provento");
   if (auxtranspRj > 0) proventos += linha("Auxílio-Transporte", auxtranspRj, "provento");
   if (auxfardRj > 0) proventos += linha("Auxílio-Fardamento", auxfardRj, "provento");
   if (lotacaoRj > 0) proventos += linha("Gratif. Lotação Especial", lotacaoRj, "provento");
-  if (ghpRj > 0) proventos += linha("GHP (Habilitação Profissional)", ghpRj, "provento");
+  if (ghpPcRj > 0) proventos += linha("GHP PCERJ (" + (ghpPcRjPctAplicado * 100).toFixed(0) + "% sobre vencimento-base)", ghpPcRj, "provento");
   if (pericRj > 0) proventos += linha("Adic. Periculosidade (230%)", pericRj, "provento");
-  if (gtcRj > 0) proventos += linha("Gratif. Técnico-Científica (100%)", gtcRj, "provento");
-  if (auxalimRjPc > 0) proventos += linha("Auxílio-Alimentação", auxalimRjPc, "provento");
+  if (gtcRj > 0) proventos += linha("GATC Técnico-Científica (100%)", gtcRj, "provento");
+  if (auxalimRjPc > 0) proventos += linha("Auxílio-Alimentação PCERJ (mensal estimado)", auxalimRjPc, "provento");
   if (auxtranspRjPc > 0) proventos += linha("Auxílio-Transporte", auxtranspRjPc, "provento");
   if (adictransfRj > 0) proventos += linha("Adic. Transferência", adictransfRj, "provento");
   if (locespRj > 0) proventos += linha("Gratif. Localidade Especial", locespRj, "provento");
@@ -4175,7 +4267,7 @@ else if (inst === 'pmmg' || inst === 'pcmg' || inst === 'pmba' || inst === 'pcba
 
   let descontos = "";
   descontos += linha(`Previdência (${(aliqPrev*100).toFixed(1)}%)`, previdencia, "desconto");
-  descontos += linha("IRRF (Lei 15.270/2025)", irrf, "desconto");
+  descontos += linha("IRRF (Lei 15.270/2025" + (ultimoDetalheIRRF ? " — " + ultimoDetalheIRRF.metodo : "") + ")", irrf, "desconto");
   if (descPM > 0) descontos += linha(inst === 'pcsp' ? "IAMSPE / Sindicato" : "Descontos Institucionais", descPM, "desconto");
   if (descPMERJ > 0) descontos += linha("Saúde / Cooperativa", descPMERJ, "desconto");
   if (descPCERJ > 0) descontos += linha("FUSPOL / Sindicato", descPCERJ, "desconto");
@@ -4678,7 +4770,7 @@ function limparFormulario() {
     else if (el.id === 'auxalim_mg_meta_dia') el.value = 0;
     else if (el.id === 'auxalim_ba') el.value = AUX_ALIM_BA_40H;
     else if (el.id === 'auxalim_ba_pc') el.value = AUX_ALIM_BA_40H;
-    else if (el.id === 'auxalim_rj_pc') el.value = 433.80;
+    else if (el.id === 'auxalim_rj_pc') el.value = 704;
     else if (el.id === 'auxtransp_rj_pc') el.value = 100;
     else if (el.id === 'cet_ba_pm' || el.id === 'cet_ba_pc') el.value = 0;
     else if (el.id === 'valplantao_rj') el.value = 350;
@@ -4694,8 +4786,8 @@ function limparFormulario() {
   // Restaurar selects com valores padrão específicos
   const defs = {
     insalubridade: '0', insalubridade_sp_pc: '0',
-    auxalim_rj: '433.80', auxtransp_rj: '100',
-    periculosidade_rj: '1', gtc_rj: '0',
+    auxalim_rj: '433.80', auxtransp_rj: '100', ghp_rj: 'auto',
+    periculosidade_rj: 'auto', ghp_rj_pc: 'auto', gtc_rj: 'auto',
     regdejem: 'capital', regdel: 'capital',
     tipodejec: 'normal', tiporas: 'normal',
     gap_ba_nivel: '0', grat_ba_pc_ref: '0', gqual_ba_pc: '0',
