@@ -234,7 +234,7 @@
 
   #page-principal { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
   #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-  #page-remuneracao { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+  #page-remuneracao { max-width: 920px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-principal, #page-remuneracao { margin: 20px auto; } }
 
@@ -449,84 +449,134 @@
   }
   .remuneracao-table-wrap {
     width: 100%;
-    overflow-x: auto;
-    border: 1px solid var(--border-card);
-    border-radius: 8px;
-    background: var(--bg-card);
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
   }
   .remuneracao-table {
     width: 100%;
-    border-collapse: collapse;
-    min-width: 1120px;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 0;
+  }
+  .remuneracao-table thead {
+    display: none;
+  }
+  .remuneracao-table tbody {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .remuneracao-table tr {
+    display: grid;
+    grid-template-columns: minmax(170px, 1.15fr) minmax(120px, 0.65fr) minmax(210px, 1.2fr) minmax(210px, 1.2fr);
+    gap: 8px;
+    align-items: stretch;
+    background: var(--bg-card);
+    border: 1px solid var(--border-card);
+    border-left: 4px solid var(--vermelho);
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.2s ease;
+  }
+  .remuneracao-table tr:hover {
+    background: var(--item-hover);
+    border-color: var(--vermelho);
   }
   .remuneracao-table th,
   .remuneracao-table td {
-    padding: 12px 14px;
-    border-bottom: 1px solid var(--border-card);
+    display: block;
+    padding: 0;
+    border-bottom: 0;
     text-align: left;
     vertical-align: top;
-    font-size: 13px;
-  }
-  .remuneracao-table th {
-    background: var(--item-bg);
-    color: var(--text-main);
-    font-family: 'Oswald', sans-serif;
     font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
   }
-  .remuneracao-table tbody tr:hover { background: var(--item-hover); }
+  .remuneracao-table td {
+    background: var(--item-bg);
+    border: 1px solid var(--border-card);
+    border-radius: 6px;
+    padding: 9px 10px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+  .remuneracao-table td::before {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--text-muted);
+    font-family: 'Oswald', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+  }
+  .remuneracao-table td:nth-child(1)::before { content: "Cargo / Classe"; }
+  .remuneracao-table td:nth-child(2)::before { content: "Remuneração bruta"; }
+  .remuneracao-table td:nth-child(3)::before { content: "Adicionais / auxílios"; }
+  .remuneracao-table td:nth-child(4)::before { content: "Critério / fonte"; }
   .remuneracao-table td.valor {
     font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     white-space: nowrap;
+    color: var(--text-main);
   }
   .remuneracao-table td.adicionais {
     color: var(--text-muted);
-    line-height: 1.45;
-    min-width: 280px;
+    line-height: 1.35;
+    min-width: 0;
   }
   .remuneracao-table td.adicionais strong {
     color: var(--text-main);
   }
   .remuneracao-fonte {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 6px;
     color: var(--text-muted);
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 11px;
+    line-height: 1.35;
   }
   .remuneracao-badge {
     display: inline-flex;
     align-items: center;
-    padding: 3px 8px;
-    margin-top: 4px;
+    padding: 3px 7px;
+    margin-top: 5px;
     border-radius: 999px;
     border: 1px solid var(--border-input);
     color: var(--text-muted);
-    background: var(--item-bg);
-    font-size: 10px;
+    background: var(--bg-card);
+    font-size: 9px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
+    letter-spacing: 0.6px;
   }
   .remuneracao-link {
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 6px;
     color: var(--vermelho);
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-decoration: none;
   }
   .remuneracao-link:hover { text-decoration: underline; }
-  @media (max-width: 700px) {
+  @media (max-width: 900px) {
     .remuneracao-resumo-grid { grid-template-columns: 1fr; }
-    .remuneracao-table th,
-    .remuneracao-table td { padding: 10px; }
+    .remuneracao-table tr {
+      grid-template-columns: 1fr;
+      gap: 7px;
+      padding: 9px;
+    }
+    .remuneracao-table td {
+      padding: 8px 9px;
+      font-size: 12px;
+    }
+    .remuneracao-table td.valor {
+      font-size: 15px;
+      white-space: normal;
+    }
   }
 
   @media (max-width: 900px) { .principal-grid { grid-template-columns: 1fr 1fr; } }
