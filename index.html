@@ -125,6 +125,7 @@
   body[data-inst="ppes"] { --vermelho: #5e548e; --vermelho-escuro: #342f5a; }
   body[data-inst="ppms"] { --vermelho: #516b3b; --vermelho-escuro: #2f3f23; }
   body[data-inst="ppmt"] { --vermelho: #6b5f2f; --vermelho-escuro: #3d361b; }
+  body[data-inst="portal"] { --vermelho: #DFB63E; --vermelho-escuro: #8f6a16; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -895,7 +896,7 @@
 </style>
 
 </head>
-<body data-inst="pmesp">
+<body data-inst="portal">
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
@@ -925,59 +926,59 @@
       <section class="header-institution-card" aria-label="Instituição selecionada">
         <div class="header-institution-main">
           <div class="header-current-identity">
-            <div class="current-flag-frame" aria-hidden="true">
-              <img id="header-active-flag" src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="">
+            <div class="current-flag-frame brand-logo-frame" aria-hidden="true">
+              <img id="header-active-flag" src="logoleao" data-img-base="logoleao" alt="Logo Universo Segurança Pública" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='logoleao.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='logoleao.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='logoleao.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='logoleao.webp';}else{this.style.display='none';}">
             </div>
 
             <div class="header-current-copy">
               <span class="header-current-label"> </span>
-              <strong id="header-active-sigla">PMESP</strong>
-              <p id="header-active-name">Polícia Militar de São Paulo</p>
-              <small id="header-desc">Principal</small>
+              <strong id="header-active-sigla">Universo</strong>
+              <p id="header-active-name">Segurança Pública</p>
+              <small id="header-desc">Escolha uma instituição</small>
             </div>
           </div>
 
           <aside class="header-facts-panel" aria-label="Resumo institucional atualizado">
             <div class="header-facts-head">
-              <span>Resumo institucional</span>
-              <strong id="header-resumo-atualizado">Atualizado em 28/04/2026</strong>
+              <span id="header-resumo-titulo">Resumo do portal</span>
+              <strong id="header-resumo-atualizado">Visão geral do portal</strong>
             </div>
 
             <div class="header-facts-grid">
               <div class="header-fact">
-                <span>Criação</span>
-                <strong id="header-resumo-criacao">15/12/1831</strong>
+                <span id="header-label-criacao">Instituições</span>
+                <strong id="header-resumo-criacao">30</strong>
               </div>
               <div class="header-fact">
-                <span>Efetivo ativo</span>
-                <strong id="header-resumo-ativa">≈ 82 mil</strong>
+                <span id="header-label-ativa">Ativos estimados</span>
+                <strong id="header-resumo-ativa">≈ 323,8 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>Reserva/inativos</span>
-                <strong id="header-resumo-reserva">≈ 90 mil</strong>
+                <span id="header-label-reserva">Reserva/inativos</span>
+                <strong id="header-resumo-reserva">≈ 348 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>Efetivo total</span>
-                <strong id="header-resumo-total">≈ 172 mil</strong>
+                <span id="header-label-total">Total abrangido</span>
+                <strong id="header-resumo-total">≈ 671,8 mil+</strong>
               </div>
               <div class="header-fact">
-                <span>População UF</span>
-                <strong id="header-resumo-populacao">46.081.801</strong>
+                <span id="header-label-populacao">População abrangida</span>
+                <strong id="header-resumo-populacao">141.825.649</strong>
               </div>
               <div class="header-fact">
-                <span>Relação ativa</span>
-                <strong id="header-resumo-relacao">1 ativo / 562 hab.</strong>
+                <span id="header-label-relacao">Estados</span>
+                <strong id="header-resumo-relacao">10 estados</strong>
               </div>
             </div>
 
             <div class="header-leadership">
               <div class="header-leadership-item">
-                <span>Chefe do Executivo</span>
-                <strong id="header-resumo-governador">Tarcísio de Freitas</strong>
+                <span id="header-label-governador">Cobertura</span>
+                <strong id="header-resumo-governador">Polícias militares, civis e penais</strong>
               </div>
               <div class="header-leadership-item">
-                <span>Comando atual</span>
-                <strong id="header-resumo-comando">Cel PM José Augusto Coutinho — Comandante-Geral</strong>
+                <span id="header-label-comando">Primeiro passo</span>
+                <strong id="header-resumo-comando">Selecione uma instituição para ver os dados específicos</strong>
               </div>
             </div>
 
@@ -988,8 +989,9 @@
           <div class="header-inst-selector" aria-label="Escolha rápida de instituição">
             <label for="instituicao_header">Consultar instituição</label>
             <select id="instituicao_header" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição no topo do site">
+              <option value="" selected disabled>Escolha uma instituição</option>
               <optgroup label="São Paulo">
-                <option value="pmesp" selected>PMESP - Polícia Militar</option>
+                <option value="pmesp">PMESP - Polícia Militar</option>
                 <option value="pcsp">PCSP - Polícia Civil</option>
         <option value="ppsp">PPSP - Polícia Penal</option>
               </optgroup>
@@ -1044,16 +1046,16 @@
           <div class="header-branch-switcher" aria-label="Alternar entre instituição militar, civil e penal do estado selecionado">
             <span>Carreira do estado</span>
             <div class="branch-buttons">
-              <button class="branch-option active" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="true">
-                <strong id="header-pm-sigla">PMESP</strong>
+              <button class="branch-option" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="false" disabled>
+                <strong id="header-pm-sigla">PM</strong>
                 <small>Militar</small>
               </button>
-              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false">
-                <strong id="header-pc-sigla">PCSP</strong>
+              <button class="branch-option" id="header-branch-pc" type="button" data-branch="pc" onclick="selecionarRamo('pc')" aria-pressed="false" disabled>
+                <strong id="header-pc-sigla">PC</strong>
                 <small>Civil</small>
               </button>
-              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false">
-                <strong id="header-pp-sigla">PPSP</strong>
+              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false" disabled>
+                <strong id="header-pp-sigla">PP</strong>
                 <small>Penal</small>
               </button>
             </div>
@@ -1064,7 +1066,7 @@
       <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
         <div class="state-flags-title">Estados disponíveis</div>
 
-        <button class="state-flag active" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="true">
+        <button class="state-flag" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="false">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="Bandeira de São Paulo">
           <span>SP</span>
         </button>
@@ -1141,8 +1143,9 @@
   <div class="inst-selector sidebar-inst-panel">
     <label for="instituicao">Instituição selecionada</label>
     <select id="instituicao" onchange="mudarInstituicao(this.value)" aria-label="Selecione a instituição">
+      <option value="" selected disabled>Escolha uma instituição</option>
       <optgroup label="São Paulo">
-        <option value="pmesp" selected>PMESP - Polícia Militar</option>
+        <option value="pmesp">PMESP - Polícia Militar</option>
         <option value="pcsp">PCSP - Polícia Civil</option>
         <option value="ppsp">PPSP - Polícia Penal</option>
       </optgroup>
@@ -3192,6 +3195,19 @@
     display: block;
     object-fit: cover;
     border-radius: 50%;
+  }
+
+  .current-flag-frame.brand-logo-frame {
+    border-radius: 20px;
+    background: linear-gradient(135deg, rgba(223,182,62,0.30), rgba(255,255,255,0.05));
+    border-color: rgba(223,182,62,0.42);
+  }
+
+  .current-flag-frame.brand-logo-frame img {
+    object-fit: contain;
+    border-radius: 16px;
+    padding: 4px;
+    background: rgba(0,0,0,0.18);
   }
 
   .header-current-copy {
@@ -6605,6 +6621,7 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
+let headerModoInicialPortal = true;
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
@@ -6725,6 +6742,12 @@ function getNomeAbaAtual() {
 }
 
 function atualizarHeaderDesc(descInstituicao) {
+  if (headerModoInicialPortal) {
+    const el = document.getElementById('header-desc');
+    if (el) el.textContent = getNomeAbaAtual() === 'Principal' ? 'Escolha uma instituição' : getNomeAbaAtual();
+    return;
+  }
+
   const descs = {
     pmesp: 'Polícia Militar de São Paulo',
     pcsp: 'Polícia Civil de São Paulo',
@@ -7593,7 +7616,120 @@ function calcularRelacaoHeader(populacao, ativa) {
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
 }
 
+function atualizarLabelsHeaderResumo(labels = {}) {
+  const padrao = {
+    'header-label-criacao': 'Criação',
+    'header-label-ativa': 'Efetivo ativo',
+    'header-label-reserva': 'Reserva/inativos',
+    'header-label-total': 'Efetivo total',
+    'header-label-populacao': 'População UF',
+    'header-label-relacao': 'Relação ativa',
+    'header-label-governador': 'Chefe do Executivo',
+    'header-label-comando': 'Comando atual'
+  };
+
+  Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  });
+}
+
+function calcularResumoPortalHeader() {
+  const instituicoes = INSTITUICOES_VALIDAS.length;
+  const estados = Object.keys(HEADER_ESTADOS).length;
+  let ativa = 0;
+  let reserva = 0;
+  let populacao = 0;
+
+  INSTITUICOES_VALIDAS.forEach(inst => {
+    const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
+    const infoPenal = POLICIAS_PENAIS_INFO?.[inst] || {};
+    ativa += Number(dados.ativa || infoPenal.efetivoAtivo || 0);
+    reserva += Number(dados.reserva || 0);
+  });
+
+  Object.values(HEADER_ESTADOS).forEach(estado => {
+    const ref = HEADER_INSTITUICOES_RESUMO[estado.pm] || HEADER_INSTITUICOES_RESUMO[estado.pc] || HEADER_INSTITUICOES_RESUMO[estado.pp] || {};
+    populacao += Number(ref.populacao || 0);
+  });
+
+  return { instituicoes, estados, ativa, reserva, total: ativa + reserva, populacao };
+}
+
+function aplicarHeaderInicialPortal() {
+  headerModoInicialPortal = true;
+  document.body.setAttribute('data-inst', 'portal');
+
+  const resumoPortal = calcularResumoPortalHeader();
+  const setTexto = (id, valor) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = valor;
+  };
+
+  const flagAtual = document.getElementById('header-active-flag');
+  if (flagAtual) {
+    flagAtual.style.display = '';
+    flagAtual.dataset.imgBase = 'logoleao';
+    flagAtual.dataset.retry = '';
+    flagAtual.src = 'logoleao';
+    flagAtual.alt = 'Logo Universo Segurança Pública';
+    const moldura = flagAtual.closest('.current-flag-frame');
+    if (moldura) moldura.classList.add('brand-logo-frame');
+  }
+
+  setTexto('header-active-sigla', 'Universo');
+  setTexto('header-active-name', 'Segurança Pública');
+  setTexto('header-desc', 'Escolha uma instituição');
+  setTexto('header-resumo-titulo', 'Resumo do portal');
+  setTexto('header-resumo-atualizado', 'Visão geral do portal');
+
+  atualizarLabelsHeaderResumo({
+    'header-label-criacao': 'Instituições',
+    'header-label-ativa': 'Ativos estimados',
+    'header-label-reserva': 'Reserva/inativos',
+    'header-label-total': 'Total abrangido',
+    'header-label-populacao': 'População abrangida',
+    'header-label-relacao': 'Estados',
+    'header-label-governador': 'Cobertura',
+    'header-label-comando': 'Primeiro passo'
+  });
+
+  setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
+  setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
+  setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
+  setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.total)}+`);
+  setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
+  setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
+  setTexto('header-resumo-governador', 'Polícias militares, civis e penais');
+  setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
+
+  ['instituicao', 'instituicao_header'].forEach(id => {
+    const seletor = document.getElementById(id);
+    if (seletor) seletor.value = '';
+  });
+
+  [['header-pm-sigla', 'PM'], ['header-pc-sigla', 'PC'], ['header-pp-sigla', 'PP']].forEach(([id, valor]) => setTexto(id, valor));
+  ['header-branch-pm', 'header-branch-pc', 'header-branch-pp'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (!btn) return;
+    btn.disabled = true;
+    btn.classList.remove('active');
+    btn.setAttribute('aria-pressed', 'false');
+  });
+
+  document.querySelectorAll('.state-flag').forEach(flag => {
+    flag.classList.remove('active');
+    flag.setAttribute('aria-pressed', 'false');
+  });
+
+  atualizarVisibilidadeResumoInstitucional('principal');
+}
+
 function atualizarHeaderResumo(inst) {
+  atualizarLabelsHeaderResumo();
+  const tituloResumo = document.getElementById('header-resumo-titulo');
+  if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
+
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
   const totalEfetivo = Number(dados.ativa || 0) + Number(dados.reserva || 0);
   const setTexto = (id, valor) => {
@@ -7648,6 +7784,11 @@ function atualizarHeaderInstitucional(inst) {
 
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
+    const moldura = flagAtual.closest('.current-flag-frame');
+    if (moldura) moldura.classList.remove('brand-logo-frame');
+    flagAtual.style.display = '';
+    flagAtual.removeAttribute('data-retry');
+    flagAtual.removeAttribute('onerror');
     flagAtual.src = dadosEstado.flag;
     flagAtual.alt = `Bandeira de ${dadosEstado.nome}`;
   }
@@ -7707,6 +7848,8 @@ function atualizarFlagsEstado(inst) {
 }
 
 function mudarInstituicao(novaInstituicao) {
+  if (novaInstituicao === '') return;
+
   const configs = {
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
@@ -7749,6 +7892,7 @@ function mudarInstituicao(novaInstituicao) {
     try { localStorage.removeItem(STORAGE_KEY); } catch (e) { /* silencioso */ }
   }
 
+  headerModoInicialPortal = false;
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
 
@@ -8854,9 +8998,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Popula cargos usados na aba Direitos e Vantagens.
   popularCargos('pmesp');
 
-  // Aplica configuração da instituição (textos e visibilidade).
-  mudarInstituicao();
-  atualizarVisibilidadeResumoInstitucional('principal');
+  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
+  aplicarHeaderInicialPortal();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
   ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
