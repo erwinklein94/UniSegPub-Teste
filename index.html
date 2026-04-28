@@ -243,12 +243,12 @@
   /* BLOCO 02.7 — Controle de páginas/abas */
   .page-section { display: none; animation: fadeIn 0.4s ease; flex-grow: 1; }
   .page-section.active { display: grid; }
-  #page-principal.active, #page-remuneracao.active, #page-direitos.active, #page-concursos.active, #page-cursos.active, #page-livros.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
+  #page-principal.active, #page-remuneracao.active, #page-direitos.active, #page-concursos.active, #page-produtos.active, #page-acoes.active, #page-associacoes.active, #page-parceiros.active { display: block; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
 
   #page-principal { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
-  #page-direitos, #page-concursos, #page-cursos, #page-livros, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+  #page-direitos, #page-concursos, #page-produtos, #page-acoes, #page-associacoes, #page-parceiros { max-width: 800px; margin: 40px auto; padding: 0 20px; }
   #page-remuneracao { max-width: 920px; margin: 40px auto; padding: 0 20px; }
 
   @media (max-width: 968px) { #page-principal, #page-remuneracao { margin: 20px auto; } }
@@ -423,6 +423,9 @@
   .curso-detalhes summary { cursor: pointer; font-family: 'Oswald', sans-serif; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: var(--vermelho); }
   .curso-cta { display: inline-flex; align-items: center; justify-content: center; margin-top: 18px; padding: 13px 18px; background: var(--vermelho); color: #ffffff; border-radius: 4px; text-decoration: none; font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; transition: 0.2s ease; }
   .curso-cta:hover { background: var(--vermelho-escuro); transform: translateY(-2px); }
+  .produto-imagem { margin-bottom: 14px; border: 1px solid var(--border-input); background: var(--bg-card); border-radius: 6px; overflow: hidden; }
+  .produto-imagem img { width: 100%; max-height: 220px; object-fit: contain; display: block; padding: 10px; }
+  .produto-aviso-afiliado { margin-top: 18px; font-size: 12px; color: var(--text-muted); line-height: 1.45; }
 
 
   /* BLOCO 02.9.1 — Remuneração tabelada */
@@ -1190,15 +1193,10 @@
 
     <div class="sidebar-nav-group" aria-label="Conteúdos e parceiros">
       <div class="sidebar-nav-title">Conteúdos e parceiros</div>
-      <a href="#cursos" onclick="switchPage('cursos'); return false;" id="menu-cursos" tabindex="0" role="link">
-        <span class="sidebar-link-icon" aria-hidden="true">🎓</span>
-        <span class="sidebar-link-text">Cursos</span>
-        <small>Preparação e carreira</small>
-      </a>
-      <a href="#livros" onclick="switchPage('livros'); return false;" id="menu-livros" tabindex="0" role="link">
-        <span class="sidebar-link-icon" aria-hidden="true">📚</span>
-        <span class="sidebar-link-text">Livros</span>
-        <small>Estudo e desenvolvimento</small>
+      <a href="#produtos" onclick="switchPage('produtos'); return false;" id="menu-produtos" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🛒</span>
+        <span class="sidebar-link-text">Produtos</span>
+        <small>Cursos, livros e afiliados</small>
       </a>
       <a href="#parceiros" onclick="switchPage('parceiros'); return false;" id="menu-parceiros" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">🤝</span>
@@ -1296,7 +1294,7 @@
       </div>
       <div class="como-usar-step">
         <strong>3</strong>
-        <span>Acesse fontes, cursos, livros e parceiros quando quiser se aprofundar.</span>
+        <span>Acesse fontes, produtos, materiais de estudo e parceiros quando quiser se aprofundar.</span>
       </div>
     </div>
   </section>
@@ -1360,26 +1358,17 @@
   <section class="principal-area" aria-labelledby="conteudos-parceiros-titulo">
     <div class="principal-section-title">
       <h2 id="conteudos-parceiros-titulo">Conteúdos e parceiros</h2>
-      <p>Materiais de apoio, indicações e espaços comerciais ficam separados das consultas principais.</p>
+      <p>Produtos, materiais de apoio, indicações e espaços comerciais ficam separados das consultas principais.</p>
     </div>
 
     <div class="principal-grid conteudos-parceiros" aria-label="Conteúdos complementares e parceiros">
-      <article class="principal-card" onclick="switchPage('cursos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('cursos')" aria-label="Abrir cursos">
+      <article class="principal-card" onclick="switchPage('produtos')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('produtos')" aria-label="Abrir produtos">
         <div class="principal-card-header">
-          <span class="principal-card-icon" aria-hidden="true">🎓</span>
-          <h3>Cursos</h3>
+          <span class="principal-card-icon" aria-hidden="true">🛒</span>
+          <h3>Produtos</h3>
         </div>
-        <p>Encontre cursos e materiais úteis para preparação, carreira e desenvolvimento profissional.</p>
-        <span class="principal-tag">Ver cursos</span>
-      </article>
-
-      <article class="principal-card" onclick="switchPage('livros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('livros')" aria-label="Abrir livros">
-        <div class="principal-card-header">
-          <span class="principal-card-icon" aria-hidden="true">📚</span>
-          <h3>Livros</h3>
-        </div>
-        <p>Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e concursos.</p>
-        <span class="principal-tag">Ver livros</span>
+        <p>Cursos, livros, e-books, produtos Shopee e outras indicações com comissão reunidos em uma única aba.</p>
+        <span class="principal-tag">Ver produtos</span>
       </article>
 
       <article class="principal-card" onclick="switchPage('parceiros')" tabindex="0" role="button" onkeypress="if(event.key==='Enter') switchPage('parceiros')" aria-label="Abrir parceiros">
@@ -1651,11 +1640,54 @@
   </div>
 </main>
 
-<!-- BLOCO 08 — PÁGINA CURSOS -->
-<main id="page-cursos" class="page-section" role="main">
+<!-- BLOCO 08 — PÁGINA PRODUTOS -->
+<main id="page-produtos" class="page-section" role="main">
   <div class="card">
-    <h2>Cursos Preparatórios (<span id="txt-inst-cursos">PMESP</span>)</h2>
+    <h2>Produtos (<span id="txt-inst-produtos">PMESP</span>)</h2>
 
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos, produtos Shopee e outras indicações comerciais do Universo Segurança Pública. Alguns links podem gerar comissão ao site, sem custo adicional para o usuário.
+    </div>
+
+
+    <div class="curso-section-title">Produtos físicos / Shopee</div>
+    <div class="curso-grid" aria-label="Produtos físicos com link de afiliado">
+      <a class="curso-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir barra fixa para porta na Shopee">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';}">
+        </div>
+        <h3>Barra fixa para porta</h3>
+        <p>
+          Produto simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando o candidato a criar constância para o TAF das polícias.
+        </p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Shopee</span>
+          <span>TAF</span>
+          <span>Treino em casa</span>
+          <span>Link de afiliado</span>
+        </div>
+        <span class="curso-cta">Ver na Shopee</span>
+      </a>
+
+      <a class="curso-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Power Rack Funcional na Shopee">
+        <div class="produto-imagem" aria-hidden="true">
+          <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';}">
+        </div>
+        <h3>Power Rack Funcional com paralelas</h3>
+        <p>
+          Equipamento mais completo para quem quer treinar barra fixa, paralelas, agachamento e supino, criando uma estrutura de treino mais forte para preparação física.
+        </p>
+        <div class="curso-meta" aria-label="Destaques do produto">
+          <span>Shopee</span>
+          <span>TAF</span>
+          <span>Treino completo</span>
+          <span>Link de afiliado</span>
+        </div>
+        <span class="curso-cta">Ver na Shopee</span>
+      </a>
+    </div>
+
+    <div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
     <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
       Espaço destinado a cursos preparatórios, mentorias e materiais de estudo.
     </div>
@@ -2114,36 +2146,8 @@
         <a class="curso-cta" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir PCSP Curso de Informática Edital Completo na Hotmart">Click e Compre</a>
       </div>
     </div>
-  </div>
-</main>
 
-<!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
-<main id="page-acoes" class="page-section" role="main">
-  <div class="card">
-    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
-    <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
-      <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
-    </div>
-    <div class="result-list" id="lista-acoes"></div>
-  </div>
-</main>
-
-<!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
-<main id="page-associacoes" class="page-section" role="main">
-  <div class="card">
-    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
-    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      Entidades representativas e de apoio relacionadas à instituição selecionada. Consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
-    </div>
-    <div class="result-list" id="lista-associacoes"></div>
-  </div>
-</main>
-
-
-<!-- BLOCO 11 — PÁGINA LIVROS -->
-<main id="page-livros" class="page-section" role="main">
-  <div class="card">
-    <h2>Livros e E-books</h2>
+    <div class="curso-section-title">Livros e e-books</div>
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
       Espaço destinado a livros, e-books e materiais de desenvolvimento pessoal, produtividade, liderança e preparação para concursos.
     </div>
@@ -2288,10 +2292,37 @@
         <a class="curso-cta" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="sponsored noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia na Hotmart">Click e Compre</a>
       </div>
     </div>
+
+    <p class="produto-aviso-afiliado">
+      Transparência: antes de comprar, confira preço, prazo, avaliações, garantia, política de reembolso e descrição atualizada diretamente na página do vendedor ou plataforma parceira.
+    </p>
   </div>
 </main>
 
-<!-- BLOCO 12 — PÁGINA PARCEIROS E CONTATO -->
+<!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
+<main id="page-acoes" class="page-section" role="main">
+  <div class="card">
+    <h2>Notícias e Ações Judiciais (<span id="txt-inst-acoes">PMESP</span>)</h2>
+    <div class="alerta legal" style="margin-top: 0; margin-bottom: 24px;">
+      <strong>Aviso legal:</strong> conteúdo meramente informativo. As teses abaixo dependem de análise individual, documentos funcionais, holerites, data de ingresso, situação ativa/inativa e entendimento judicial atualizado. Em regra, pretensões contra a Fazenda Pública observam prescrição quinquenal, sem prejuízo de regras específicas. Consulte advogado, associação ou sindicato antes de tomar decisão.
+    </div>
+    <div class="result-list" id="lista-acoes"></div>
+  </div>
+</main>
+
+<!-- BLOCO 10 — PÁGINA ASSOCIAÇÕES E SINDICATOS -->
+<main id="page-associacoes" class="page-section" role="main">
+  <div class="card">
+    <h2>Associações e Sindicatos (<span id="txt-inst-assoc">PMESP</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Entidades representativas e de apoio relacionadas à instituição selecionada. Consulte diretamente cada entidade antes de se filiar, pois valores, serviços, cobertura, convênios e atendimento podem mudar.
+    </div>
+    <div class="result-list" id="lista-associacoes"></div>
+  </div>
+</main>
+
+
+<!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
 <main id="page-parceiros" class="page-section" role="main">
   <div class="card">
     <h2>Parceiros e Contato</h2>
@@ -6432,9 +6463,8 @@ function getNomeAbaAtual() {
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
     comparar: 'Comparar Carreiras',
-    cursos: 'Cursos',
+    produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
-    livros: 'Livros',
     parceiros: 'Parceiros - Anuncie aqui!'
   };
   return nomes[page] || 'Principal';
@@ -7354,7 +7384,7 @@ function mudarInstituicao(novaInstituicao) {
   atualizarTexto('txt-inst-dir', config.titulo);
   atualizarTexto('txt-inst-concursos', config.titulo);
   atualizarTexto('txt-inst-comparar', config.titulo);
-  atualizarTexto('txt-inst-cursos', config.titulo);
+  atualizarTexto('txt-inst-produtos', config.titulo);
   atualizarTexto('txt-inst-remuneracao', config.titulo);
   atualizarTexto('txt-inst-acoes', config.titulo);
   atualizarTexto('txt-inst-assoc', config.titulo);
