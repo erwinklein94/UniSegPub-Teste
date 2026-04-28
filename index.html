@@ -950,7 +950,6 @@
               </div>
             </div>
 
-            <small id="header-resumo-nota">Efetivos são estimativas informativas e devem ser conferidos nas páginas de transparência, leis de efetivo e publicações oficiais.</small>
           </aside>
         </div>
 
@@ -3394,14 +3393,6 @@
     margin-top: 8px;
   }
 
-  #header-resumo-nota {
-    display: block;
-    margin-top: 8px;
-    color: rgba(255,255,255,0.47);
-    font-family: 'Roboto', sans-serif;
-    font-size: 10px;
-    line-height: 1.35;
-  }
 
   .header-current-identity {
     display: flex;
@@ -5914,7 +5905,6 @@ function atualizarHeaderResumo(inst) {
   setTexto('header-resumo-relacao', calcularRelacaoHeader(dados.populacao, dados.ativa));
   setTexto('header-resumo-governador', dados.governador || 'Não informado');
   setTexto('header-resumo-comando', dados.comando || 'Não informado');
-  setTexto('header-resumo-nota', dados.nota || 'Efetivos são estimativas informativas e devem ser conferidos em fonte oficial.');
 }
 
 function getEstadoDaInstituicao(inst) {
