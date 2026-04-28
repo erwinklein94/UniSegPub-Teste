@@ -39,7 +39,7 @@
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Simulador de vencimentos e direitos para policiais militares e civis de SP, RJ, MG, BA, PR, RS, SC e ES - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC, ES e União - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
 <title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -110,6 +110,16 @@
   body[data-inst="pcsc"] { --vermelho: #4b5563; --vermelho-escuro: #1f2937; }
   body[data-inst="pmes"] { --vermelho: #0b5c9e; --vermelho-escuro: #063a63; }
   body[data-inst="pces"] { --vermelho: #4b3f72; --vermelho-escuro: #2c2545; }
+
+  body[data-inst="ppsp"] { --vermelho: #6f4e37; --vermelho-escuro: #3f2d21; }
+  body[data-inst="pprj"] { --vermelho: #5a4b81; --vermelho-escuro: #332a50; }
+  body[data-inst="ppmg"] { --vermelho: #8b5a2b; --vermelho-escuro: #4b3018; }
+  body[data-inst="ppba"] { --vermelho: #6b5b2e; --vermelho-escuro: #3d341b; }
+  body[data-inst="pppr"] { --vermelho: #41644a; --vermelho-escuro: #253a2b; }
+  body[data-inst="pprs"] { --vermelho: #315d7c; --vermelho-escuro: #1d374b; }
+  body[data-inst="ppsc"] { --vermelho: #38598b; --vermelho-escuro: #203553; }
+  body[data-inst="ppes"] { --vermelho: #5e548e; --vermelho-escuro: #342f5a; }
+  body[data-inst="ppf"]  { --vermelho: #1f6f5b; --vermelho-escuro: #123f34; }
 
   /* BLOCO 02.4 — Reset básico e estrutura geral */
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -885,7 +895,7 @@
       </div>
 
       <div class="header-brand-block" aria-label="Identidade do site">
-        <div class="header-kicker">Consulta rápida por instituição</div>
+        <div class="header-kicker"> </div>
         <h1>Universo <span>Segurança Pública</span></h1>
       </div>
     </div>
@@ -899,7 +909,7 @@
             </div>
 
             <div class="header-current-copy">
-              <span class="header-current-label">Instituição ativa</span>
+              <span class="header-current-label"> </span>
               <strong id="header-active-sigla">PMESP</strong>
               <p id="header-active-name">Polícia Militar de São Paulo</p>
               <small id="header-desc">Principal</small>
@@ -960,40 +970,51 @@
               <optgroup label="São Paulo">
                 <option value="pmesp" selected>PMESP - Polícia Militar</option>
                 <option value="pcsp">PCSP - Polícia Civil</option>
+        <option value="ppsp">PPSP - Polícia Penal</option>
               </optgroup>
               <optgroup label="Rio de Janeiro">
                 <option value="pmerj">PMERJ - Polícia Militar</option>
                 <option value="pcerj">PCERJ - Polícia Civil</option>
+        <option value="pprj">PPRJ - Polícia Penal</option>
               </optgroup>
               <optgroup label="Minas Gerais">
                 <option value="pmmg">PMMG - Polícia Militar</option>
                 <option value="pcmg">PCMG - Polícia Civil</option>
+        <option value="ppmg">PPMG - Polícia Penal</option>
               </optgroup>
               <optgroup label="Bahia">
                 <option value="pmba">PMBA - Polícia Militar</option>
                 <option value="pcba">PCBA - Polícia Civil</option>
+        <option value="ppba">PPBA - Polícia Penal</option>
               </optgroup>
               <optgroup label="Paraná">
                 <option value="pmpr">PMPR - Polícia Militar</option>
                 <option value="pcpr">PCPR - Polícia Civil</option>
+        <option value="pppr">PPPR - Polícia Penal</option>
               </optgroup>
               <optgroup label="Rio Grande do Sul">
                 <option value="pmrs">PMRS - Brigada Militar</option>
                 <option value="pcrs">PCRS - Polícia Civil</option>
+        <option value="pprs">PPRS - Polícia Penal</option>
               </optgroup>
               <optgroup label="Santa Catarina">
                 <option value="pmsc">PMSC - Polícia Militar</option>
                 <option value="pcsc">PCSC - Polícia Civil</option>
+        <option value="ppsc">PPSC - Polícia Penal</option>
               </optgroup>
               <optgroup label="Espírito Santo">
                 <option value="pmes">PMES - Polícia Militar</option>
                 <option value="pces">PCES - Polícia Civil</option>
+                <option value="ppes">PPES - Polícia Penal</option>
+              </optgroup>
+              <optgroup label="União / Federal">
+                <option value="ppf">PPF - Polícia Penal Federal</option>
               </optgroup>
             </select>
           </div>
 
-          <div class="header-branch-switcher" aria-label="Alternar entre instituição militar e civil do estado selecionado">
-            <span>Carreira do estado</span>
+          <div class="header-branch-switcher" aria-label="Alternar entre instituição militar, civil e penal do estado selecionado">
+            <span>Carreira do estado/União</span>
             <div class="branch-buttons">
               <button class="branch-option active" id="header-branch-pm" type="button" data-branch="pm" onclick="selecionarRamo('pm')" aria-pressed="true">
                 <strong id="header-pm-sigla">PMESP</strong>
@@ -1003,13 +1024,17 @@
                 <strong id="header-pc-sigla">PCSP</strong>
                 <small>Civil</small>
               </button>
+              <button class="branch-option" id="header-branch-pp" type="button" data-branch="pp" onclick="selecionarRamo('pp')" aria-pressed="false">
+                <strong id="header-pp-sigla">PPSP</strong>
+                <small>Penal</small>
+              </button>
             </div>
           </div>
         </div>
       </section>
 
       <div class="header-state-flags" aria-label="Bandeiras dos estados disponíveis no site">
-        <div class="state-flags-title">Estados disponíveis</div>
+        <div class="state-flags-title">Estados e União disponíveis</div>
 
         <button class="state-flag active" type="button" data-estado="sp" title="São Paulo" onclick="selecionarEstado('sp')" aria-label="Selecionar São Paulo" aria-pressed="true">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg" alt="Bandeira de São Paulo">
@@ -1050,6 +1075,11 @@
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg" alt="Bandeira do Espírito Santo">
           <span>ES</span>
         </button>
+
+        <button class="state-flag" type="button" data-estado="uniao" title="União / Federal" onclick="selecionarEstado('uniao')" aria-label="Selecionar União / Federal" aria-pressed="false">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg" alt="Bandeira do Brasil">
+          <span>BR</span>
+        </button>
       </div>
     </div>
   </div>
@@ -1081,34 +1111,45 @@
       <optgroup label="São Paulo">
         <option value="pmesp" selected>PMESP - Polícia Militar</option>
         <option value="pcsp">PCSP - Polícia Civil</option>
+        <option value="ppsp">PPSP - Polícia Penal</option>
       </optgroup>
       <optgroup label="Rio de Janeiro">
         <option value="pmerj">PMERJ - Polícia Militar</option>
         <option value="pcerj">PCERJ - Polícia Civil</option>
+        <option value="pprj">PPRJ - Polícia Penal</option>
       </optgroup>
       <optgroup label="Minas Gerais">
         <option value="pmmg">PMMG - Polícia Militar</option>
         <option value="pcmg">PCMG - Polícia Civil</option>
+        <option value="ppmg">PPMG - Polícia Penal</option>
       </optgroup>
       <optgroup label="Bahia">
         <option value="pmba">PMBA - Polícia Militar</option>
         <option value="pcba">PCBA - Polícia Civil</option>
+        <option value="ppba">PPBA - Polícia Penal</option>
       </optgroup>
       <optgroup label="Paraná">
         <option value="pmpr">PMPR - Polícia Militar</option>
         <option value="pcpr">PCPR - Polícia Civil</option>
+        <option value="pppr">PPPR - Polícia Penal</option>
       </optgroup>
       <optgroup label="Rio Grande do Sul">
         <option value="pmrs">PMRS - Brigada Militar</option>
         <option value="pcrs">PCRS - Polícia Civil</option>
+        <option value="pprs">PPRS - Polícia Penal</option>
       </optgroup>
       <optgroup label="Santa Catarina">
         <option value="pmsc">PMSC - Polícia Militar</option>
         <option value="pcsc">PCSC - Polícia Civil</option>
+        <option value="ppsc">PPSC - Polícia Penal</option>
       </optgroup>
       <optgroup label="Espírito Santo">
         <option value="pmes">PMES - Polícia Militar</option>
         <option value="pces">PCES - Polícia Civil</option>
+        <option value="ppes">PPES - Polícia Penal</option>
+      </optgroup>
+      <optgroup label="União / Federal">
+        <option value="ppf">PPF - Polícia Penal Federal</option>
       </optgroup>
     </select>
     <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
@@ -1227,12 +1268,12 @@
   <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
   <section class="principal-stats" aria-label="Resumo de cobertura do site">
     <div class="principal-stat">
-      <strong>8</strong>
-      <span>Estados disponíveis</span>
+      <strong>8 + União</strong>
+      <span>Campos disponíveis</span>
     </div>
     <div class="principal-stat">
-      <strong>16</strong>
-      <span>Instituições estaduais</span>
+      <strong>25</strong>
+      <span>Instituições cadastradas</span>
     </div>
     <div class="principal-stat">
       <strong>2026</strong>
@@ -3542,7 +3583,7 @@
 
   .branch-buttons {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
   }
 
@@ -3595,6 +3636,17 @@
 
   .branch-option.active small {
     color: rgba(255,255,255,0.78);
+  }
+
+  .branch-option:disabled {
+    opacity: 0.42;
+    cursor: not-allowed;
+    transform: none;
+  }
+
+  .branch-option:disabled:hover {
+    transform: none;
+    border-color: rgba(255,255,255,0.14);
   }
 
   .header-state-flags {
@@ -4230,6 +4282,10 @@
     text-transform: uppercase;
   }
 
+  #page-concursos .taf-produto-card-barrafixa02.img-indisponivel .taf-produto-imagem::before {
+    content: "Imagem barrafixa02 não encontrada";
+  }
+
   #page-concursos .taf-produto-conteudo {
     display: flex;
     flex-direction: column;
@@ -4760,6 +4816,31 @@ const CARGOS_PCES = [
 
 
 
+/* BLOCO 15.3.1 — Cargos-base da Polícia Penal por Estado e União
+   Observação: as carreiras de Polícia Penal estão em implantação/adequação nos entes federativos após a EC 104/2019.
+   Para evitar valor falso, a remuneração fica como "A confirmar" quando não houver tabela oficial específica cadastrada.
+*/
+function criarCargosPoliciaPenal(sigla, uf, prefixo, federal = false) {
+  const esfera = federal ? 'Federal' : uf;
+  return [
+    { val: `${prefixo}_pp_inicial`, text: `Policial Penal ${sigla} — Classe/Referência Inicial (${esfera})`, padrao: 0, oficial: false, selected: true, retpFator: 0, valorPendente: true },
+    { val: `${prefixo}_pp_intermediaria`, text: `Policial Penal ${sigla} — Classe/Referência Intermediária (${esfera})`, padrao: 0, oficial: false, retpFator: 0, valorPendente: true },
+    { val: `${prefixo}_pp_final`, text: `Policial Penal ${sigla} — Classe/Referência Final (${esfera})`, padrao: 0, oficial: false, retpFator: 0, valorPendente: true },
+    { val: `${prefixo}_pp_gestao`, text: `Polícia Penal ${sigla} — Função de Chefia/Direção Penitenciária (${esfera})`, padrao: 0, oficial: false, retpFator: 0, valorPendente: true }
+  ];
+}
+
+const CARGOS_PPSP = criarCargosPoliciaPenal('PPSP', 'São Paulo', 'ppsp');
+const CARGOS_PPRJ = criarCargosPoliciaPenal('PPRJ', 'Rio de Janeiro', 'pprj');
+const CARGOS_PPMG = criarCargosPoliciaPenal('PPMG', 'Minas Gerais', 'ppmg');
+const CARGOS_PPBA = criarCargosPoliciaPenal('PPBA', 'Bahia', 'ppba');
+const CARGOS_PPPR = criarCargosPoliciaPenal('PPPR', 'Paraná', 'pppr');
+const CARGOS_PPRS = criarCargosPoliciaPenal('PPRS', 'Rio Grande do Sul', 'pprs');
+const CARGOS_PPSC = criarCargosPoliciaPenal('PPSC', 'Santa Catarina', 'ppsc');
+const CARGOS_PPES = criarCargosPoliciaPenal('PPES', 'Espírito Santo', 'ppes');
+const CARGOS_PPF  = criarCargosPoliciaPenal('PPF', 'União', 'ppf', true);
+
+
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
@@ -5274,9 +5355,28 @@ const CONCURSOS = {
 /* ============================================================ */
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','pmerj','pcerj','pmmg','pcmg','pmba','pcba','pmpr','pcpr','pmrs','pcrs','pmsc','pcsc','pmes','pces'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','ppf'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
+}
+
+function isPoliciaPenal(inst) {
+  return /^pp/.test(String(inst || ''));
+}
+
+function getSiglaInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO?.[inst];
+  return info?.titulo || String(inst || '').toUpperCase();
+}
+
+function getNomeInstituicao(inst) {
+  const info = HEADER_INSTITUICOES_INFO?.[inst];
+  return info?.desc || 'Polícia Penal';
+}
+
+function getUnidadeInstituicao(inst) {
+  const estado = getEstadoDaInstituicao(inst);
+  return HEADER_ESTADOS?.[estado]?.nome || 'unidade federativa';
 }
 
 /* BLOCO 15.7 — Funções utilitárias gerais */
@@ -5371,7 +5471,16 @@ function atualizarHeaderDesc(descInstituicao) {
     pmsc: 'Polícia Militar de Santa Catarina',
     pcsc: 'Polícia Civil de Santa Catarina',
     pmes: 'Polícia Militar do Espírito Santo',
-    pces: 'Polícia Civil do Espírito Santo'
+    pces: 'Polícia Civil do Espírito Santo',
+    ppsp: 'Polícia Penal de São Paulo',
+    pprj: 'Polícia Penal do Rio de Janeiro',
+    ppmg: 'Polícia Penal de Minas Gerais',
+    ppba: 'Polícia Penal da Bahia',
+    pppr: 'Polícia Penal do Paraná',
+    pprs: 'Polícia Penal do Rio Grande do Sul',
+    ppsc: 'Polícia Penal de Santa Catarina',
+    ppes: 'Polícia Penal do Espírito Santo',
+    ppf: 'Polícia Penal Federal'
   };
   const textoAba = getNomeAbaAtual();
   const desc = descInstituicao || descs[currInst] || descs.pmesp;
@@ -5406,14 +5515,15 @@ function initTheme() {
 /* BLOCO 15.9 — Troca de instituição e popularização dos cargos */
 function popularCargos(inst) {
   const map = {
-    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
-    pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
-    pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
-    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
-    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
-    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
-    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,
-    pmes: CARGOS_PMES,   pces: CARGOS_PCES
+    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
+    pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
+    pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
+    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
+    ppf: CARGOS_PPF
   };
   currTabela = map[inst] || CARGOS_PM;
 
@@ -5513,6 +5623,42 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PCES/ES — LC 1.093/2024, concurso OIP 2025, tabelas de Delegado e PCIES/Perícia Oficial',
     url: 'https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf'
   },
+  ppsp: {
+    nome: 'Polícia Penal/SP — tabela remuneratória da carreira penitenciária a cadastrar/conferir em fonte oficial do Estado',
+    url: 'https://www.sap.sp.gov.br/'
+  },
+  pprj: {
+    nome: 'Polícia Penal/RJ — remuneração e editais a conferir nos canais oficiais do Governo do RJ/SEAP',
+    url: 'https://www.rj.gov.br/'
+  },
+  ppmg: {
+    nome: 'Polícia Penal/MG — carreira do sistema prisional vinculada à segurança pública estadual; conferir tabela oficial MG/SEJUSP',
+    url: 'https://www.mg.gov.br/seguranca'
+  },
+  ppba: {
+    nome: 'Polícia Penal/BA — remuneração e carreira a conferir nos canais oficiais da administração penitenciária do Estado',
+    url: 'https://www.ba.gov.br/'
+  },
+  pppr: {
+    nome: 'Polícia Penal/PR — remuneração e carreira a conferir nos canais oficiais da Polícia Penal/SESP',
+    url: 'https://www.policiapenal.pr.gov.br/'
+  },
+  pprs: {
+    nome: 'Polícia Penal/RS — remuneração e carreira a conferir nos canais oficiais da SUSEPE/RS',
+    url: 'https://www.susepe.rs.gov.br/'
+  },
+  ppsc: {
+    nome: 'Polícia Penal/SC — LC SC 774/2021 e normas da Secretaria de Justiça e Reintegração Social; conferir tabela vigente',
+    url: 'https://leis.alesc.sc.gov.br/html/2021/774_2021_lei_complementar.html'
+  },
+  ppes: {
+    nome: 'Polícia Penal/ES — remuneração e carreira a conferir nos canais oficiais da Secretaria de Justiça do ES',
+    url: 'https://sejus.es.gov.br/'
+  },
+  ppf: {
+    nome: 'Polícia Penal Federal — carreira vinculada à SENAPPEN/MJSP; conferir Lei 14.875/2024, edital e tabela vigente',
+    url: 'https://www.gov.br/senappen/'
+  },
   sc_auxilio: {
     nome: 'ALESC/SC — Lei 18.796/2023, redação da Lei 19.059/2024 — auxílio-alimentação',
     url: 'https://leis.alesc.sc.gov.br/ato-normativo/22251'
@@ -5528,12 +5674,17 @@ const REMUNERACAO_FONTES_OFICIAIS = {
 };
 
 function linhaRemuneracaoOficial(cargo, remuneracao, beneficios, criterio, benefDesc, fonteKey, badge = 'Fonte oficial') {
-  return { cargo, remuneracao: Number(remuneracao || 0), beneficios: 0, total: Number(remuneracao || 0), criterio, benefDesc, fonteKey, badge };
+  const valor = Number(remuneracao || 0);
+  return { cargo, remuneracao: valor, beneficios: 0, total: valor, criterio, benefDesc, fonteKey, badge, valorPendente: valor <= 0 };
 }
 
 function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   inst = normalizarInstituicao(inst);
   const cargo = String(linha.cargo || '').toLowerCase();
+
+  if (isPoliciaPenal(inst)) {
+    return 'Carreira de Polícia Penal: segurança, custódia, escolta, vigilância e gestão operacional do sistema prisional, conforme norma do ente federativo. Adicional de atividade penitenciária, adicional de periculosidade/risco, plantões, diárias, indenizações e auxílio-alimentação podem existir, mas dependem de lei local, rubrica, lotação, escala e situação funcional; não são somados automaticamente. Remuneração oficial: cadastrar tabela específica quando houver fonte oficial consolidada.';
+  }
 
   if (inst === 'pmesp') {
     const representacao = /(cmt g|coronel|cel|ten cel)/i.test(linha.cargo || '')
@@ -5547,7 +5698,14 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. ${carreiraDelegado ? 'Delegados podem ter verbas próprias de representação quando previstas. ' : ''}Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. Insalubridade: possível conforme grau, laudo e enquadramento.`;
   }
 
-  if (inst === 'pmerj') {
+  if (isPoliciaPenal(inst)) {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = 'Estrutura cadastrada para a Polícia Penal. Informe a tabela oficial da carreira para substituir o campo A confirmar.';
+    benefDesc = 'Auxílios e adicionais da carreira penitenciária dependem de lei estadual/federal, escala, lotação, rubrica e situação funcional.';
+    fonteKey = inst;
+    badge = 'Estrutura pronta';
+  } else if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
     if (/cel|ten cel/i.test(linha.cargo || '')) { gret = '192,5%'; ghp = '160%'; }
@@ -5693,14 +5851,15 @@ const REMUNERACAO_MG_OFICIAL = {
 
 function getTabelaCargosRemuneracao(inst) {
   const map = {
-    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,
-    pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ,
-    pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,
-    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,
-    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,
-    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,
-    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,
-    pmes: CARGOS_PMES,   pces: CARGOS_PCES
+    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
+    pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
+    pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
+    pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
+    pmpr: CARGOS_PMPR,   pcpr: CARGOS_PCPR,   pppr: CARGOS_PPPR,
+    pmrs: CARGOS_PMRS,   pcrs: CARGOS_PCRS,   pprs: CARGOS_PPRS,
+    pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
+    pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
+    ppf: CARGOS_PPF
   };
   return map[normalizarInstituicao(inst)] || CARGOS_PM;
 }
@@ -5716,7 +5875,14 @@ function calcularRemuneracaoTabelada(inst, cargo) {
   let fonteKey = inst;
   let badge = cargo.oficial ? 'Fonte oficial' : 'Carreira operacional';
 
-  if (inst === 'pmerj') {
+  if (isPoliciaPenal(inst)) {
+    remuneracao = padrao;
+    beneficios = 0;
+    criterio = 'Estrutura cadastrada para a Polícia Penal. Informe a tabela oficial da carreira para substituir o campo A confirmar.';
+    benefDesc = 'Auxílios e adicionais da carreira penitenciária dependem de lei estadual/federal, escala, lotação, rubrica e situação funcional.';
+    fonteKey = inst;
+    badge = 'Estrutura pronta';
+  } else if (inst === 'pmerj') {
     const gret = padrao * Number(cargo.gretPct || 0);
     const ghp = padrao * Number(cargo.ghpPct || 0);
     const gram = (padrao + gret + ghp) * 0.625;
@@ -5854,16 +6020,16 @@ function carregarRemuneracaoTabelada() {
     return;
   }
 
-  const remuneracoes = linhas.map(l => l.remuneracao);
-  const menor = Math.min(...remuneracoes);
-  const maior = Math.max(...remuneracoes);
+  const remuneracoes = linhas.map(l => l.remuneracao).filter(v => Number(v) > 0);
+  const menor = remuneracoes.length ? Math.min(...remuneracoes) : 0;
+  const maior = remuneracoes.length ? Math.max(...remuneracoes) : 0;
 
   const elTotal = document.getElementById('remu-total-cargos');
   const elMenor = document.getElementById('remu-menor-total');
   const elMaior = document.getElementById('remu-maior-total');
   if (elTotal) elTotal.textContent = String(linhas.length);
-  if (elMenor) elMenor.textContent = fmt(menor);
-  if (elMaior) elMaior.textContent = fmt(maior);
+  if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'A confirmar';
+  if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'A confirmar';
 
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
@@ -5873,7 +6039,7 @@ function carregarRemuneracaoTabelada() {
           <strong>${escapeHtml(l.cargo)}</strong>
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
         </td>
-        <td class="valor">${fmt(l.remuneracao)}</td>
+        <td class="valor">${l.valorPendente ? 'A confirmar' : fmt(l.remuneracao)}</td>
         <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
         <td>
           ${escapeHtml(l.criterio || '')}<br>
@@ -5896,6 +6062,7 @@ const HEADER_ESTADOS = {
     sigla: 'SP',
     pm: 'pmesp',
     pc: 'pcsp',
+    pp: 'ppsp',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_de_S%C3%A3o_Paulo.svg'
   },
   rj: {
@@ -5903,6 +6070,7 @@ const HEADER_ESTADOS = {
     sigla: 'RJ',
     pm: 'pmerj',
     pc: 'pcerj',
+    pp: 'pprj',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_estado_do_Rio_de_Janeiro.svg'
   },
   mg: {
@@ -5910,6 +6078,7 @@ const HEADER_ESTADOS = {
     sigla: 'MG',
     pm: 'pmmg',
     pc: 'pcmg',
+    pp: 'ppmg',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Minas_Gerais.svg'
   },
   ba: {
@@ -5917,6 +6086,7 @@ const HEADER_ESTADOS = {
     sigla: 'BA',
     pm: 'pmba',
     pc: 'pcba',
+    pp: 'ppba',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_da_Bahia.svg'
   },
   pr: {
@@ -5924,6 +6094,7 @@ const HEADER_ESTADOS = {
     sigla: 'PR',
     pm: 'pmpr',
     pc: 'pcpr',
+    pp: 'pppr',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Paran%C3%A1.svg'
   },
   rs: {
@@ -5931,6 +6102,7 @@ const HEADER_ESTADOS = {
     sigla: 'RS',
     pm: 'pmrs',
     pc: 'pcrs',
+    pp: 'pprs',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Rio_Grande_do_Sul.svg'
   },
   sc: {
@@ -5938,6 +6110,7 @@ const HEADER_ESTADOS = {
     sigla: 'SC',
     pm: 'pmsc',
     pc: 'pcsc',
+    pp: 'ppsc',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Santa_Catarina.svg'
   },
   es: {
@@ -5945,7 +6118,14 @@ const HEADER_ESTADOS = {
     sigla: 'ES',
     pm: 'pmes',
     pc: 'pces',
+    pp: 'ppes',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Esp%C3%ADrito_Santo.svg'
+  },
+  uniao: {
+    nome: 'União / Federal',
+    sigla: 'BR',
+    pp: 'ppf',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg'
   }
 };
 
@@ -5965,7 +6145,16 @@ const HEADER_INSTITUICOES_INFO = {
   pmsc:  { titulo: 'PMSC',  desc: 'Polícia Militar de Santa Catarina' },
   pcsc:  { titulo: 'PCSC',  desc: 'Polícia Civil de Santa Catarina' },
   pmes:  { titulo: 'PMES',  desc: 'Polícia Militar do Espírito Santo' },
-  pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' }
+  pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' },
+  ppsp: { titulo: 'PPSP', desc: 'Polícia Penal de São Paulo' },
+  pprj: { titulo: 'PPRJ', desc: 'Polícia Penal do Rio de Janeiro' },
+  ppmg: { titulo: 'PPMG', desc: 'Polícia Penal de Minas Gerais' },
+  ppba: { titulo: 'PPBA', desc: 'Polícia Penal da Bahia' },
+  pppr: { titulo: 'PPPR', desc: 'Polícia Penal do Paraná' },
+  pprs: { titulo: 'PPRS', desc: 'Polícia Penal do Rio Grande do Sul' },
+  ppsc: { titulo: 'PPSC', desc: 'Polícia Penal de Santa Catarina' },
+  ppes: { titulo: 'PPES', desc: 'Polícia Penal do Espírito Santo' },
+  ppf:  { titulo: 'PPF',  desc: 'Polícia Penal Federal' }
 };
 
 const HEADER_INSTITUICOES_RESUMO = {
@@ -5984,7 +6173,16 @@ const HEADER_INSTITUICOES_RESUMO = {
   pmsc:  { criacao: '05/05/1835', ativa: 10500, reserva: 12000, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Cel PM Emerson Fernandes — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcsc:  { criacao: 'Origem histórica: 1812', ativa: 3500, reserva: 4500, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Delegado Ulisses Gabriel — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pmes:  { criacao: '06/04/1835', ativa: 8000, reserva: 7000, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Cel PM Ríodo Lopes Rubim — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
-  pces:  { criacao: 'Origem histórica: 1896', ativa: 2500, reserva: 3500, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Delegado-Geral Jordano Bruno — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' }
+  pces:  { criacao: 'Origem histórica: 1896', ativa: 2500, reserva: 3500, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Delegado-Geral Jordano Bruno — Delegado-Geral', atualizado: 'Atualizado em 28/04/2026' },
+  ppsp: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Administração Penitenciária/SP — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  pprj: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Administração Penitenciária/RJ — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  ppmg: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 21393441, governador: 'Mateus Simões', comando: 'Polícia Penal/MG — gestão vinculada à segurança pública estadual', atualizado: 'Atualizado em 28/04/2026' },
+  ppba: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 14870907, governador: 'Jerônimo Rodrigues', comando: 'Administração Penitenciária/BA — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  pppr: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 11890517, governador: 'Carlos Massa Ratinho Junior', comando: 'Polícia Penal/PR — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  pprs: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 11233263, governador: 'Eduardo Leite', comando: 'SUSEPE/Polícia Penal RS — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  ppsc: { criacao: 'EC 104/2019 / LC SC 774/2021', ativa: 0, reserva: 0, populacao: 8187029, governador: 'Jorginho Mello', comando: 'Polícia Penal/SC — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  ppes: { criacao: 'EC 104/2019', ativa: 0, reserva: 0, populacao: 4126854, governador: 'Ricardo Ferraço', comando: 'Secretaria de Justiça/ES — órgão gestor do sistema prisional', atualizado: 'Atualizado em 28/04/2026' },
+  ppf:  { criacao: 'EC 104/2019 / Lei 14.875/2024', ativa: 0, reserva: 0, populacao: 212583750, governador: 'Presidência da República', comando: 'SENAPPEN/MJSP — órgão federal de políticas penais', atualizado: 'Atualizado em 28/04/2026' }
 };
 
 function formatarNumeroHeader(valor) {
@@ -6033,7 +6231,7 @@ function atualizarHeaderResumo(inst) {
 function getEstadoDaInstituicao(inst) {
   return Object.keys(HEADER_ESTADOS).find(estado => {
     const item = HEADER_ESTADOS[estado];
-    return item.pm === inst || item.pc === inst;
+    return item.pm === inst || item.pc === inst || item.pp === inst;
   }) || 'sp';
 }
 
@@ -6042,16 +6240,16 @@ function selecionarEstado(estado) {
   const dadosEstado = HEADER_ESTADOS[estadoNormalizado];
   if (!dadosEstado) return;
 
-  mudarInstituicao(dadosEstado.pm);
+  mudarInstituicao(dadosEstado.pm || dadosEstado.pc || dadosEstado.pp);
   switchPage('principal');
-  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar ou Civil no botão ao lado do seletor.`);
+  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar, Civil ou Penal no botão ao lado do seletor.`);
 }
 
 function selecionarRamo(ramo) {
   const estadoAtivo = getEstadoDaInstituicao(currInst);
   const dadosEstado = HEADER_ESTADOS[estadoAtivo] || HEADER_ESTADOS.sp;
-  const instituicao = ramo === 'pc' ? dadosEstado.pc : dadosEstado.pm;
-  mudarInstituicao(instituicao);
+  const instituicao = dadosEstado[ramo] || dadosEstado.pm || dadosEstado.pc || dadosEstado.pp;
+  if (instituicao) mudarInstituicao(instituicao);
 }
 
 function atualizarHeaderInstitucional(inst) {
@@ -6073,24 +6271,37 @@ function atualizarHeaderInstitucional(inst) {
 
   const pmInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pm];
   const pcInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pc];
+  const ppInfo = HEADER_INSTITUICOES_INFO[dadosEstado.pp];
 
   const pmSigla = document.getElementById('header-pm-sigla');
-  if (pmSigla && pmInfo) pmSigla.textContent = pmInfo.titulo;
+  if (pmSigla) pmSigla.textContent = pmInfo ? pmInfo.titulo : '—';
 
   const pcSigla = document.getElementById('header-pc-sigla');
-  if (pcSigla && pcInfo) pcSigla.textContent = pcInfo.titulo;
+  if (pcSigla) pcSigla.textContent = pcInfo ? pcInfo.titulo : '—';
+
+  const ppSigla = document.getElementById('header-pp-sigla');
+  if (ppSigla) ppSigla.textContent = ppInfo ? ppInfo.titulo : 'PP';
 
   const btnPm = document.getElementById('header-branch-pm');
   const btnPc = document.getElementById('header-branch-pc');
+  const btnPp = document.getElementById('header-branch-pp');
   if (btnPm) {
-    const ativo = inst === dadosEstado.pm;
+    const ativo = !!dadosEstado.pm && inst === dadosEstado.pm;
+    btnPm.disabled = !dadosEstado.pm;
     btnPm.classList.toggle('active', ativo);
     btnPm.setAttribute('aria-pressed', ativo ? 'true' : 'false');
   }
   if (btnPc) {
-    const ativo = inst === dadosEstado.pc;
+    const ativo = !!dadosEstado.pc && inst === dadosEstado.pc;
+    btnPc.disabled = !dadosEstado.pc;
     btnPc.classList.toggle('active', ativo);
     btnPc.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+  }
+  if (btnPp) {
+    const ativo = !!dadosEstado.pp && inst === dadosEstado.pp;
+    btnPp.disabled = !dadosEstado.pp;
+    btnPp.classList.toggle('active', ativo);
+    btnPp.setAttribute('aria-pressed', ativo ? 'true' : 'false');
   }
 
   atualizarHeaderResumo(inst);
@@ -6123,7 +6334,16 @@ function mudarInstituicao(novaInstituicao) {
     pmsc:  { titulo: "PMSC",  desc: "Polícia Militar de Santa Catarina",        cor: "#1b4f8a", alertaPrev: "IPREV/SC e sistema de proteção dos militares estaduais: conferir contribuição previdenciária, subsídio, rubricas e auxílio-alimentação no contracheque." },
     pcsc:  { titulo: "PCSC",  desc: "Polícia Civil de Santa Catarina",          cor: "#4b5563", alertaPrev: "IPREV/SC: contribuição previdenciária conforme regra estadual; classes, subsídios e indenizações dependem de cargo, rubrica e situação funcional." },
     pmes:  { titulo: "PMES",  desc: "Polícia Militar do Espírito Santo",        cor: "#0b5c9e", alertaPrev: "IPAJM/ES e sistema estadual: conferir subsídio, referência, auxílio-alimentação, fardamento, serviço extra e demais rubricas no contracheque." },
-    pces:  { titulo: "PCES",  desc: "Polícia Civil do Espírito Santo",          cor: "#4b3f72", alertaPrev: "IPAJM/ES: contribuição previdenciária conforme regra estadual; OIP, Delegado e demais carreiras exigem conferência de categoria, referência e rubricas." }
+    pces:  { titulo: "PCES",  desc: "Polícia Civil do Espírito Santo",          cor: "#4b3f72", alertaPrev: "IPAJM/ES: contribuição previdenciária conforme regra estadual; OIP, Delegado e demais carreiras exigem conferência de categoria, referência e rubricas." },
+    ppsp: { titulo: "PPSP", desc: "Polícia Penal de São Paulo", cor: "#6f4e37", alertaPrev: "SPPREV/regime estadual: conferir contribuição previdenciária, adicional de atividade penitenciária, insalubridade/periculosidade, auxílio-alimentação e demais rubricas no holerite." },
+    pprj: { titulo: "PPRJ", desc: "Polícia Penal do Rio de Janeiro", cor: "#5a4b81", alertaPrev: "RioPrevidência/regime estadual: conferir contribuição previdenciária, adicionais penitenciários, auxílio-alimentação, plantões e demais rubricas no contracheque." },
+    ppmg: { titulo: "PPMG", desc: "Polícia Penal de Minas Gerais", cor: "#8b5a2b", alertaPrev: "IPSEMG/regime estadual: conferir contribuição previdenciária, ajuda de custo alimentação, adicionais e rubricas próprias da Polícia Penal." },
+    ppba: { titulo: "PPBA", desc: "Polícia Penal da Bahia", cor: "#6b5b2e", alertaPrev: "Funprev-BA/regime estadual: conferir contribuição previdenciária, gratificações penitenciárias, auxílio-alimentação e demais vantagens conforme rubrica." },
+    pppr: { titulo: "PPPR", desc: "Polícia Penal do Paraná", cor: "#41644a", alertaPrev: "ParanáPrevidência/regime estadual: conferir contribuição previdenciária, subsídio/vencimento, auxílio-alimentação e rubricas penitenciárias." },
+    pprs: { titulo: "PPRS", desc: "Polícia Penal do Rio Grande do Sul", cor: "#315d7c", alertaPrev: "IPE Prev/RS: conferir contribuição previdenciária, adicionais penitenciários, auxílio-alimentação e demais rubricas no contracheque." },
+    ppsc: { titulo: "PPSC", desc: "Polícia Penal de Santa Catarina", cor: "#38598b", alertaPrev: "IPREV/SC: conferir subsídio, auxílio-alimentação, adicionais e rubricas da Polícia Penal conforme classe, referência e situação funcional." },
+    ppes: { titulo: "PPES", desc: "Polícia Penal do Espírito Santo", cor: "#5e548e", alertaPrev: "IPAJM/ES/regime estadual: conferir contribuição previdenciária, auxílio-alimentação, adicionais penitenciários e demais rubricas no contracheque." },
+    ppf:  { titulo: "PPF",  desc: "Polícia Penal Federal", cor: "#1f6f5b", alertaPrev: "Regime federal/SENAPPEN: conferir contribuição previdenciária, tabela federal da carreira, adicionais, indenizações e regras específicas da Polícia Penal Federal." }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -6199,12 +6419,14 @@ function analisarDireitos() {
   const nomesInst = {
     pmesp: 'PMESP', pcsp: 'PCSP', pmerj: 'PMERJ', pcerj: 'PCERJ',
     pmmg: 'PMMG', pcmg: 'PCMG', pmba: 'PMBA', pcba: 'PCBA', pmpr: 'PMPR', pcpr: 'PCPR',
-    pmrs: 'PMRS', pcrs: 'PCRS', pmsc: 'PMSC', pcsc: 'PCSC', pmes: 'PMES', pces: 'PCES'
+    pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
+    pmes: 'PMES', pces: 'PCES', ppes: 'PPES', ppf: 'PPF'
   };
   const isPM = ['pmesp', 'pmerj', 'pmmg', 'pmba', 'pmpr', 'pmrs', 'pmsc', 'pmes'].includes(inst);
   const isPC = ['pcsp', 'pcerj', 'pcmg', 'pcba', 'pcpr', 'pcrs', 'pcsc', 'pces'].includes(inst);
+  const isPP = isPoliciaPenal(inst);
   const uf = inst.includes('sp') ? 'SP' : inst.includes('rj') ? 'RJ' : inst.includes('mg') ? 'MG' : inst.includes('ba') ? 'BA' : inst.includes('pr') ? 'PR' : inst.includes('rs') ? 'RS' : inst.includes('sc') ? 'SC' :
-             inst.includes('es') ? 'ES' : '';
+             inst.includes('es') ? 'ES' : inst === 'ppf' ? 'União' : '';
   const ingressoAntesEC103 = ingresso ? new Date(ingresso + 'T00:00:00') < new Date('2019-11-13T00:00:00') : false;
 
   let html = '';
@@ -6284,6 +6506,10 @@ function analisarDireitos() {
       getSaudeBase(inst));
   } else if (inst === 'pmes' || inst === 'pces') {
     html += direitoItem('Assistência à saúde / sistema estadual ES', 'condicionado',
+      getSaudeTexto(inst),
+      getSaudeBase(inst));
+  } else if (isPP) {
+    html += direitoItem('Assistência à saúde / sistema penitenciário', 'condicionado',
       getSaudeTexto(inst),
       getSaudeBase(inst));
   }
@@ -6433,6 +6659,9 @@ function direitoItem(nome, status, desc, base = '') {
 }
 
 function getSaudeTexto(inst) {
+  if (isPoliciaPenal(inst)) {
+    return `${getSiglaInstituicao(inst)}: assistência à saúde deve ser conferida conforme o regime previdenciário/assistencial do ente federativo, órgão gestor do sistema prisional, adesão, contribuição, dependentes e rede disponível.`;
+  }
   const textos = {
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
     pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
@@ -6455,6 +6684,7 @@ function getSaudeTexto(inst) {
 }
 
 function getSaudeBase(inst) {
+  if (isPoliciaPenal(inst)) return 'Base: órgão administrador do sistema penal da unidade federativa, regime próprio de previdência/assistência e normas internas da Polícia Penal.';
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
   if (inst === 'pmpr') return 'FASPM/PR: contribuição facultativa de saúde dos militares estaduais, conforme Lei PR 17.169/2012.';
@@ -6466,6 +6696,7 @@ function getSaudeBase(inst) {
 }
 
 function getTempoServicoTexto(inst, tempo) {
+  if (isPoliciaPenal(inst)) return `${getSiglaInstituicao(inst)}: classe, referência, progressão, adicional por tempo, quinquênio/anuênio ou subsídio dependem da lei própria da Polícia Penal na unidade. O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício e vantagens.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
   if (inst === 'pmerj') return `Na PMERJ, o adicional por tempo de serviço deve ser conferido conforme regra estadual e ficha funcional. Pelo tempo informado, há <strong>${Math.floor(tempo / 3)}</strong> período(s) de 3 anos como referência de triênio, se aplicável.`;
   if (inst === 'pcerj') return `Na PCERJ, a Lei Orgânica vigente prevê adicional por tempo de serviço. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência.`;
@@ -6483,6 +6714,7 @@ function getTempoServicoTexto(inst, tempo) {
 }
 
 function getTempoServicoBase(inst) {
+  if (isPoliciaPenal(inst)) return 'Base: EC 104/2019, lei estadual/federal da Polícia Penal, estatuto da carreira, tabela remuneratória vigente e ficha funcional.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Base: Art. 129 da Constituição do Estado de São Paulo; observar exceções para remuneração por subsídio.';
   if (inst === 'pcerj') return 'Base: Lei Orgânica/Reestruturação da Polícia Civil do RJ e normas complementares.';
   if (inst === 'pmmg' || inst === 'pcmg') return 'Revisar no estatuto/plano de carreira atualizado e no demonstrativo de pagamento. Não fixar percentual sem conferência individual.';
@@ -6499,6 +6731,7 @@ function getTempoServicoBase(inst) {
 }
 
 function getInsalubridadeTexto(inst) {
+  if (isPoliciaPenal(inst)) return 'Na Polícia Penal, insalubridade, periculosidade, risco de vida ou adicional de atividade penitenciária podem existir conforme lei local/federal, laudo, lotação, unidade prisional, rubrica e regime remuneratório. Não lançar como verba automática sem conferência.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Em SP, pode haver adicional de insalubridade em graus mínimo, médio ou máximo, conforme enquadramento, laudo e legislação. Não é universal para todo servidor em qualquer função.';
   if (inst === 'pcerj') return 'Na PCERJ, a insalubridade aparece entre vantagens possíveis, mas deve ser separada do adicional de atividade perigosa. Depende de previsão legal e enquadramento.';
   if (inst === 'pcpr') return 'Na PCPR, a LC 259/2023 indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida. Não lançar como verba separada sem decisão, rubrica ou tese específica.';
@@ -6513,6 +6746,7 @@ function getInsalubridadeTexto(inst) {
 }
 
 function getInsalubridadeBase(inst) {
+  if (isPoliciaPenal(inst)) return 'Base: lei da carreira de Polícia Penal, laudo/ato administrativo, rubrica de pagamento, lotação e contracheque.';
   if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
@@ -6547,6 +6781,18 @@ function getPericulosidadeBase(inst) {
 
 function getVantagensEspecificas(inst) {
   let html = '';
+  if (isPoliciaPenal(inst)) {
+    html += direitoItem('Adicional de Atividade Penitenciária / Risco', 'condicionado',
+      'Pode existir em algumas legislações da Polícia Penal, mas o nome, percentual, base de cálculo e incorporação variam por Estado ou União. Conferir lei local/federal e rubrica no contracheque.',
+      'Base: EC 104/2019, lei da carreira da Polícia Penal, tabela remuneratória e atos do órgão gestor do sistema prisional.');
+    html += direitoItem('Plantões, escoltas, diárias e serviço extraordinário', 'condicionado',
+      'Podem existir conforme escala, escolta, movimentação de presos, muralha, custódia hospitalar, deslocamento, plantão autorizado ou unidade de lotação. Não são verbas fixas universais.',
+      'Conferir escala, ordem de serviço, publicação, lei estadual/federal e contracheque.');
+    html += direitoItem('Porte funcional, identidade e prerrogativas da Polícia Penal', 'condicionado',
+      'A Polícia Penal integra a segurança pública após a EC 104/2019, mas prerrogativas, porte, identidade funcional, corregedoria, uniforme e estrutura dependem da regulamentação do ente federativo.',
+      'Base: Constituição Federal, art. 144, EC 104/2019 e legislação específica da unidade federativa.');
+    return html;
+  }
   if (inst === 'pmesp') {
     html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
@@ -6665,10 +6911,58 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* === CONCURSOS (RICO) ======================================= */
 /* ============================================================ */
 /* BLOCO 15.12 — Renderização das páginas de concursos, ações e associações */
+
+function getConcursoPoliciaPenal(inst) {
+  if (!isPoliciaPenal(inst)) return null;
+  const sigla = getSiglaInstituicao(inst);
+  const nome = getNomeInstituicao(inst);
+  const unidade = getUnidadeInstituicao(inst);
+  const federal = inst === 'ppf';
+  return {
+    edital: `${sigla} — ${nome} — concursos e editais da carreira penal`,
+    salario: 'A confirmar em edital/tabela oficial vigente da carreira. A remuneração pode envolver vencimento/subsídio, adicional de atividade penitenciária/risco, auxílio-alimentação e verbas condicionadas.',
+    vagas: 'A definir conforme edital vigente, autorização do governo e necessidade do sistema prisional.',
+    cotas: 'Reserva de vagas conforme legislação federal/estadual e regras do edital.',
+    idade: 'Em regra, idade mínima de 18 anos; limites máximos e requisitos físicos dependem do edital e da legislação da carreira.',
+    escolaridade: federal ? 'Conferir lei federal da carreira e edital da SENAPPEN/MJSP.' : 'Normalmente ensino médio ou superior conforme lei local; conferir edital específico da Polícia Penal/órgão gestor.',
+    materias: 'Português, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos, Execução Penal, legislação penitenciária e conhecimentos específicos, conforme edital.',
+    banca: 'A definir conforme edital.',
+    inscritos: 'Sem informação automática; acompanhar Diário Oficial e site oficial do órgão.',
+    etapas: 'Prova objetiva, investigação social, exames médicos, avaliação psicológica, TAF, curso de formação e demais fases previstas no edital.',
+    cfsd: 'Curso de Formação Profissional da Polícia Penal/academia ou escola penitenciária competente.',
+    estagio: 'Estágio probatório conforme regime jurídico da carreira.',
+    validade: 'Conferir edital do certame.',
+    previsao: `Acompanhar publicações oficiais da ${nome} e do governo de ${unidade}. Não afirmar edital aberto sem publicação oficial.`,
+    site: REMUNERACAO_FONTES_OFICIAIS[inst]?.url || 'https://www.gov.br/senappen/'
+  };
+}
+
+function getAcoesPoliciaPenal(inst) {
+  if (!isPoliciaPenal(inst)) return [];
+  const sigla = getSiglaInstituicao(inst);
+  return [
+    { titulo: `${sigla} — Enquadramento e transformação de cargos`, status: 'Verificar caso a caso', ano: 'EC 104/2019', tipo: 'individual', desc: 'Discussões podem envolver transformação de antigos cargos penitenciários em Polícia Penal, enquadramento, classe, referência, atribuições e efeitos financeiros.', base: 'EC 104/2019, lei estadual/federal de implantação da Polícia Penal, ato de enquadramento e ficha funcional.', fonte: 'Emenda Constitucional 104/2019', fonteUrl: 'https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc104.htm', atualizado: 'Abril/2026' },
+    { titulo: `${sigla} — Adicional de atividade penitenciária, risco ou insalubridade`, status: 'Tema dependente de rubrica e laudo', ano: 'Tema recorrente', tipo: 'individual', desc: 'Pode haver discussão sobre percentual, base de cálculo, termo inicial, diferença de pagamento ou ausência de implantação de adicional previsto para atividade prisional.', base: 'Lei da carreira de Polícia Penal, laudo/ato administrativo, contracheques e local de exercício.', fonte: 'Conferência por legislação local/federal', fonteUrl: '', atualizado: 'Abril/2026' },
+    { titulo: `${sigla} — Aposentadoria policial e regras de transição`, status: 'Análise individual', ano: 'EC 103/2019 e normas locais', tipo: 'individual', desc: 'A análise exige data de ingresso, tempo de contribuição, tempo na carreira/cargo, sexo, idade, regra aplicada e eventual direito a paridade/integralidade quando cabível.', base: 'Constituição Federal, EC 103/2019, EC 104/2019, legislação previdenciária do ente e ficha funcional.', fonte: 'Conferência previdenciária individual', fonteUrl: '', atualizado: 'Abril/2026' },
+    { titulo: `${sigla} — Horas extras, plantões, escoltas e diárias`, status: 'Depende de escala e autorização', ano: 'Tema operacional', tipo: 'individual', desc: 'Pode existir discussão de diferenças quando houver escala extraordinária, escolta, deslocamento, custódia externa ou plantão com previsão normativa e comprovação documental.', base: 'Escalas, ordens de serviço, lei local/federal, contracheques e atos administrativos.', fonte: 'Documentos funcionais e normas internas', fonteUrl: '', atualizado: 'Abril/2026' }
+  ];
+}
+
+function getAssociacoesPoliciaPenal(inst) {
+  if (!isPoliciaPenal(inst)) return [];
+  const sigla = getSiglaInstituicao(inst);
+  const nome = getNomeInstituicao(inst);
+  const unidade = getUnidadeInstituicao(inst);
+  return [
+    { nome: `Entidade representativa da ${sigla} — Polícia Penal`, foco: `${nome} — ${unidade}`, acao: 'Representação da categoria em pautas de carreira, remuneração, saúde, aposentadoria policial, porte funcional, condições de trabalho, segurança prisional e valorização institucional.', site: 'Consultar site/canal oficial da entidade', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação sindical/associativa, notícias, mobilização, acompanhamento legislativo e eventual apoio jurídico conforme regras internas.' },
+    { nome: `Associação/Sindicato dos Policiais Penais — ${unidade}`, foco: 'Policiais penais ativos, aposentados e pensionistas quando abrangidos pela entidade', acao: 'Atuação em demandas coletivas e individuais ligadas à carreira penal, sistema prisional, adicionais, aposentadoria e condições de serviço.', site: 'Consultar canais oficiais e redes da entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento associativo, comunicação, assembleias, convênios e eventual suporte jurídico conforme contrato.' }
+  ];
+}
+
 function carregarConcursos() {
   const cont = document.getElementById('lista-concursos');
   if (!cont) return;
-  const c = CONCURSOS[currInst];
+  const c = CONCURSOS[currInst] || getConcursoPoliciaPenal(currInst);
   if (!c) { cont.innerHTML = ""; return; }
 
   cont.innerHTML = `
@@ -6697,7 +6991,19 @@ function carregarConcursos() {
         <span class="taf-produto-selo">Produto útil para o TAF</span>
         <strong>Barra fixa para porta</strong>
         <p>Ajuda o candidato a treinar em casa um dos exercícios que mais reprovam no TAF. Com constância, a barra fortalece costas, braços, pegada e resistência, facilitando a evolução para cumprir as repetições exigidas nos testes físicos das polícias.</p>
-        <span class="taf-produto-cta">Ver oferta na Shopee</span>
+        <span class="taf-produto-cta">Comprar</span>
+      </div>
+    </a>
+
+    <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="sponsored noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela na Shopee, produto útil para treino de TAF">
+      <div class="taf-produto-imagem" aria-hidden="true">
+        <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
+      </div>
+      <div class="taf-produto-conteudo">
+        <span class="taf-produto-selo">Produto útil para o TAF</span>
+        <strong>Power Rack Funcional com barra fixa e paralelas</strong>
+        <p>Por ser maior, mais estável e permitir treino completo, o power rack ajuda o candidato a evoluir com mais segurança na barra fixa, paralelas, agachamento e fortalecimento geral. É uma opção superior para quem quer passar no TAF das polícias, porque permite treinar força, pegada, costas, braços, core e resistência em um equipamento mais robusto e versátil.</p>
+        <span class="taf-produto-cta">Comprar</span>
       </div>
     </a>
   `;
@@ -6709,7 +7015,7 @@ function carregarConcursos() {
 function carregarAcoes() {
   const cont = document.getElementById('lista-acoes');
   if (!cont) return;
-  const lista = ACOES_JUDICIAIS[currInst] || [];
+  const lista = ACOES_JUDICIAIS[currInst] || getAcoesPoliciaPenal(currInst) || [];
 
   cont.innerHTML = lista.map(a => {
     const fonteHtml = a.fonte ? `<span class="direito-desc"><strong>Fonte de conferência:</strong> ${a.fonteUrl ? `<a href="${a.fonteUrl}" target="_blank" rel="noopener noreferrer" class="concurso-link">${a.fonte}</a>` : a.fonte}</span>` : '';
@@ -6738,7 +7044,7 @@ function carregarAcoes() {
 function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
-  const lista = ASSOCIACOES[currInst] || [];
+  const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
   cont.innerHTML = lista.map(a => `
     <div class="direito-item associacao">
       <span class="direito-nome">${a.nome}</span>
