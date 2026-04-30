@@ -1,0 +1,11 @@
+Coloque nesta pasta exatamente estes arquivos:
+
+- barrafixa01.jpg
+- barrafixa02.jpg
+- botaacero.jpeg
+- logoleao.jpeg
+
+Atenção:
+- Use letras minúsculas exatamente como acima.
+- No GitHub Pages, nomes de arquivos diferenciam maiúsculas/minúsculas.
+- Não coloque espaços nos nomes.
