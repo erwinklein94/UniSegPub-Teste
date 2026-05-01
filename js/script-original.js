@@ -3386,40 +3386,28 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   if (card) card.classList.remove('header-portal-home');
 
   const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
-  const imagemInstitucionalPadrao = 'img/logoleao.webp';
-  const imagemVisualInstituicao = imagemInstituicao || imagemInstitucionalPadrao;
   const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
-  // A bandeira do estado fica somente como plano de fundo do cabeçalho geral.
-  setSiteHeaderBackgroundImage(fallbackBandeira || imagemInstitucionalPadrao);
+  // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
+  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.jpeg');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.jpeg');
 
-  // O card institucional e o plano de fundo da página usam a imagem da instituição, nunca a bandeira do estado.
-  setHeaderHeroImage(imagemVisualInstituicao);
-  setPageInstitutionBackgroundImage(imagemVisualInstituicao);
+  // Página grande: se houver brasão cadastrado, usa o brasão; se não houver, usa o logo principal.
+  setPageInstitutionBackgroundImage(imagemInstituicao || 'img/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
   img.removeAttribute('data-retry');
   img.removeAttribute('data-img-base');
   img.onerror = function () {
-    if (imagemInstituicao && !this.dataset.fallbackJpegAplicado) {
-      const jpegFallback = imagemInstituicao.replace(/\.webp$/i, '.jpeg');
-      if (jpegFallback && jpegFallback !== this.getAttribute('src')) {
-        this.dataset.fallbackJpegAplicado = 'true';
-        this.src = jpegFallback;
-        return;
-      }
-    }
-
-    if (this.dataset.fallbackAplicado === 'institucional-padrao') {
+    if (this.dataset.fallbackAplicado === 'bandeira') {
       this.onerror = null;
       return;
     }
-
-    this.dataset.fallbackAplicado = 'institucional-padrao';
-    this.src = imagemInstitucionalPadrao;
-    this.alt = `Imagem institucional padrão para ${altInstituicao}`;
+    this.dataset.fallbackAplicado = 'bandeira';
+    this.src = fallbackBandeira;
+    this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   };
 
   if (imagemInstituicao) {
@@ -3427,10 +3415,10 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
     img.src = imagemInstituicao;
     img.alt = `Logo/brasão da ${altInstituicao}`;
   } else {
-    img.dataset.fallbackAplicado = 'institucional-padrao';
+    img.dataset.fallbackAplicado = 'bandeira';
     img.onerror = null;
-    img.src = imagemInstitucionalPadrao;
-    img.alt = `Imagem institucional padrão para ${altInstituicao}`;
+    img.src = fallbackBandeira;
+    img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
   }
 }
 
