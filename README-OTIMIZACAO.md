@@ -1,30 +1,46 @@
-# Otimização de carregamento — Universo Segurança Pública
+# Otimização aplicada
 
-Esta versão mantém o código original como backup e carrega o site por arquivos menores.
+Projeto refatorado para separar melhor responsabilidades e melhorar o carregamento.
 
-## O que foi alterado
+## Principais mudanças
 
-- `js/script.js` foi preservado como backup completo em `js/script-original.js`.
-- O JavaScript ativo agora está dividido em `js/chunks/01-...` até `09-...`, carregado em ordem com `defer`.
-- `css/style.css` foi preservado como backup completo em `css/style-original.css`.
-- O CSS ativo agora está dividido em `css/chunks/01-...` até `05-...`, carregado diretamente pelo `index.html`.
-- Imagens com `loading="lazy"` receberam `decoding="async"`.
-- A imagem principal do cabeçalho recebeu `fetchpriority="high"`.
+- CSS reorganizado em:
+  - `css/base/`
+  - `css/layout/`
+  - `css/components/`
+  - `css/pages/`
+  - `css/dist/main.min.css`
 
-## Como voltar ao modelo antigo, se necessário
+- JavaScript reorganizado em:
+  - `js/data/`
+  - `js/services/`
+  - `js/ui/`
+  - `js/pages/`
+  - `js/dist/app.bundle.js`
 
-1. No `index.html`, substitua os links de `css/chunks/*.css` por:
+- O `index.html` agora carrega:
+  - `css/dist/main.min.css`
+  - `js/dist/app.bundle.js`
 
-```html
-<link rel="stylesheet" href="css/style-original.css">
-```
+- Eventos inline removidos do HTML:
+  - `onclick`
+  - `onchange`
+  - `oninput`
+  - `onkeypress`
+  - `onsubmit`
+  - `onerror`
 
-2. No final do `index.html`, substitua os scripts de `js/chunks/*.js` por:
+- Eventos centralizados em:
+  - `js/ui/event-bindings.js`
 
-```html
-<script src="js/script-original.js"></script>
-```
+- Imagens locais convertidas para WebP:
+  - 43 arquivos gerados em `img/*.webp`
+  - redução estimada das imagens convertidas: 10.5% quando o navegador carrega WebP
 
-## Observação
+- Caminhos de imagens locais corrigidos para `img/...`.
+- Criados 10 placeholders visuais WebP para produtos/cursos que não tinham imagem no ZIP.
 
-A divisão foi feita de forma conservadora para preservar a ordem original das declarações, funções e inicialização.
+## Observação importante
+
+Os arquivos antigos em `css/chunks/` e `js/chunks/` foram mantidos como referência/backup de compatibilidade.  
+A versão ativa do site usa os arquivos organizados e os bundles em `dist/`.
