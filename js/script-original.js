@@ -1160,18 +1160,796 @@ const POLICIAS_PENAIS_INFO = {
     atualizado: 'Atualizado em 28/04/2026'
   },
   ppac: {
-    nome: 'Polícia Penal do Acre / IAPEN-AC', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
-    criacao: 'EC 104/2019 · IAPEN/AC criado pela Lei AC 1.908/2007',
-    marco: 'Concurso SEAD/IAPEN 2023: 329 vagas totais, sendo 261 para Agente de Polícia Penal. Em 2025 foram nomeados 183 servidores: 170 policiais penais e 13 administrativos.',
-    ativaLabel: 'Reforço confirmado: 170 novos policiais penais nomeados em 2025 · Edital nº 104/2026 convocou novos aprovados para posse em 08/05/2026',
-    reservaLabel: 'Estrutura prisional: 5 unidades penitenciárias do Estado — Rio Branco, Senador Guiomard, Sena Madureira, Tarauacá e Cruzeiro do Sul',
-    totalLabel: 'Concurso 2023: 329 vagas totais · 261 Agentes de Polícia Penal · validade de 2 anos, prorrogável por mais 2',
-    relacaoLabel: 'DME/IAPEN: 1 sede em Rio Branco + 4 Núcleos de Monitoramento Eletrônico — Brasiléia, Sena Madureira, Feijó e Cruzeiro do Sul',
-    populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
-    ingresso: 'Edital SEAD/IAPEN 001/2023, banca IBFC, com provas em 10 municípios do Acre e etapas para Agente de Polícia Penal, especialistas e cargos técnico-administrativos.',
-    remuneracao: 'Edital IAPEN/PPAC 2023: Agente de Polícia Penal R$ 4.366,60; Especialista/Psicólogo/Assistente Social R$ 5.131,34; Engenheiro Civil R$ 6.561,76.',
-    fonte: 'IAPEN/AC; Agência Acre; SEAD/IAPEN 001/2023; IBFC; IBGE 2025', atualizado: 'Atualizado em 01/05/2026'
+    sigla: 'PPAC',
+    nome: 'Polícia Penal do Estado do Acre',
+    uf: 'Acre',
+    criacao: 'EC 104/2019 · IAPEN/AC · Polícia Penal do Acre',
+    marco: 'O concurso SEAD/IAPEN 2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com resultado final/homologação publicados em 2025 e nomeações posteriores.',
+    orgao: 'Instituto de Administração Penitenciária do Acre (IAPEN/AC) / Secretaria de Estado de Justiça e Segurança Pública (SEJUSP/AC)',
+    direcao: 'Marcos Frank Costa — Presidente do IAPEN/AC',
+    subordinacao: 'Sistema penitenciário estadual do Acre, com atuação em segurança prisional, custódia, escoltas, controle, disciplina, monitoramento e execução penal.',
+    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 261 vagas de Agente de Polícia Penal; 170 policiais penais nomeados em 2025',
+    reservaLabel: 'Inativos: conferir Acreprevidência e atos do IAPEN/AC',
+    totalLabel: 'Sistema em reforço após curso de formação e nomeações de 2025',
+    relacaoLabel: 'Relação depende do efetivo ativo consolidado pelo IAPEN/AC',
+    quadro: 'Carreira penal estadual ligada ao IAPEN/AC. O edital 2023 cadastrou Agente de Polícia Penal e cargos de apoio do instituto, com dedicação exclusiva e escala definida pela administração.',
+    ingresso: 'Concurso público com prova objetiva, discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação, conforme edital.',
+    escolaridade: 'Agente de Polícia Penal: diploma de curso superior e CNH categoria B até a matrícula no curso de formação, conforme edital SEAD/IAPEN 2023.',
+    formacao: 'Curso de formação no Acre; o governo estadual divulgou formação e nomeações de novos policiais penais em 2025.',
+    atribuicoes: 'Segurança interna e externa de unidades prisionais, custódia, escolta, controle disciplinar, prevenção de ilícitos, fiscalização, apoio à execução penal e proteção das instalações.',
+    remuneracao: 'Edital SEAD/IAPEN 2023: Agente de Polícia Penal com remuneração de R$ 4.366,60, jornada de 40h semanais, dedicação exclusiva e escala. Conferir LC AC 392/2021, atualizações e contracheque.',
+    vantagens: 'Auxílio saúde, risco de vida, etapa alimentação, titulação, sexta-parte, prêmio anual, plantões, indenizações e vantagens pessoais dependem de lei, rubrica e situação funcional; não foram somados automaticamente.',
+    saude: 'Conferir IAPEN/AC, SEAD/AC, Acreprevidência e normas estaduais de assistência ao servidor.',
+    previdencia: 'Regime próprio estadual/Acreprevidência; aposentadoria policial, transições e abono de permanência exigem análise individual.',
+    concurso: {
+      vagas: 'Edital 001/2023 SEAD/IAPEN: 261 vagas para Agente de Polícia Penal, além de cargos administrativos e de nível superior do IAPEN/AC.',
+      salario: 'Agente de Polícia Penal: R$ 4.366,60 no edital 2023; cargos de apoio tinham remunerações próprias no mesmo edital.',
+      banca: 'IBFC',
+      escolaridade: 'Superior completo e CNH B para Agente de Polícia Penal; requisitos específicos para os demais cargos.'
+    },
+    associacaoBusca: 'associação ou sindicato dos policiais penais do Acre',
+    fonte: 'SEAD/IAPEN/AC — Edital 001/2023, publicações de homologação/curso de formação 2025; Portal do Estado do Acre — Lei 2.180/IAPEN',
+    url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/',
+    atualizado: 'Atualizado em 01/05/2026'
+  }
+};
+
+function getInfoPoliciaPenal(inst) {
+  const chave = String(inst || '').toLowerCase();
+  return POLICIAS_PENAIS_INFO[chave] || POLICIAS_PENAIS_INFO.ppsp;
+}
+
+function cargoRemuneracaoPenal(inst, val, text, padrao, resumo, opcoes = {}) {
+  const info = getInfoPoliciaPenal(inst);
+  return {
+    val,
+    text,
+    padrao: Number(padrao || 0),
+    selected: !!opcoes.selected,
+    oficial: true,
+    retpFator: 0,
+    valorPendente: false,
+    fonteKey: opcoes.fonteKey || inst,
+    fonteUrl: opcoes.fonteUrl || info.url,
+    infoPenal: true,
+    beneficios: Number(opcoes.beneficios || 0),
+    criterio: opcoes.criterio || `Tabela remuneratória oficial da ${info.sigla}.`,
+    benefDesc: opcoes.benefDesc || 'Auxílios, adicionais, plantões, gratificações e parcelas indenizatórias dependem da legislação local, da escala, da lotação e da situação funcional; não foram somados quando não forem parcela geral fixa da tabela.',
+    badge: opcoes.badge || 'Fonte oficial',
+    resumo: resumo || `${text}: remuneração bruta mensal de referência cadastrada.`
+  };
+}
+
+function mapearTabelaPoliciaPenal(inst, tabela, criterio, benefDesc, prefixo, opcoes = {}) {
+  return tabela.map((item, index) => cargoRemuneracaoPenal(
+    inst,
+    `${prefixo}_${item.id || index + 1}`,
+    item.text,
+    item.valor,
+    item.resumo || `${item.text}: remuneração bruta mensal de referência conforme tabela/edital da carreira.`,
+    {
+      selected: index === 0,
+      criterio: item.criterio || criterio,
+      benefDesc: item.benefDesc || benefDesc,
+      beneficios: item.beneficios !== undefined ? item.beneficios : (opcoes.beneficios || 0),
+      badge: item.badge || opcoes.badge || 'Fonte oficial',
+      fonteKey: opcoes.fonteKey || inst
+    }
+  ));
+}
+
+const CARGOS_PPSP = mapearTabelaPoliciaPenal('ppsp', [
+  { id: 'nivel_i_ingresso', text: 'PPSP — Nível I / Ingresso', valor: 4695.60 },
+  { id: 'nivel_i_a', text: 'PPSP — Nível I / Classe A', valor: 4982.25 },
+  { id: 'nivel_ii_a', text: 'PPSP — Nível II / Classe A', valor: 5316.87 },
+  { id: 'nivel_ii_b', text: 'PPSP — Nível II / Classe B', valor: 5479.58 },
+  { id: 'nivel_ii_c', text: 'PPSP — Nível II / Classe C', valor: 5642.30 },
+  { id: 'nivel_iii_a', text: 'PPSP — Nível III / Classe A', valor: 6020.34 },
+  { id: 'nivel_iii_b', text: 'PPSP — Nível III / Classe B', valor: 6204.59 },
+  { id: 'nivel_iii_c', text: 'PPSP — Nível III / Classe C', valor: 6388.83 },
+  { id: 'nivel_iv_a', text: 'PPSP — Nível IV / Classe A', valor: 6816.88 },
+  { id: 'nivel_iv_b', text: 'PPSP — Nível IV / Classe B', valor: 7025.51 },
+  { id: 'nivel_iv_c', text: 'PPSP — Nível IV / Classe C', valor: 7234.13 },
+  { id: 'nivel_v_a', text: 'PPSP — Nível V / Classe A', valor: 7718.82 },
+  { id: 'nivel_v_b', text: 'PPSP — Nível V / Classe B', valor: 7955.04 },
+  { id: 'nivel_v_c', text: 'PPSP — Nível V / Classe C', valor: 8191.27 },
+  { id: 'nivel_vi_a', text: 'PPSP — Nível VI / Classe A', valor: 8740.08 },
+  { id: 'nivel_vi_b', text: 'PPSP — Nível VI / Classe B', valor: 9007.57 },
+  { id: 'nivel_vi_c', text: 'PPSP — Nível VI / Classe C', valor: 9275.05 },
+  { id: 'nivel_vii_a', text: 'PPSP — Nível VII / Classe A', valor: 9896.48 },
+  { id: 'nivel_vii_b', text: 'PPSP — Nível VII / Classe B', valor: 10199.35 },
+  { id: 'nivel_vii_c', text: 'PPSP — Nível VII / Classe C', valor: 10502.23 },
+],
+  'Subsídio mensal da carreira de Policial Penal/SP. Valores da LC SP 1.416/2024 reajustados em 5% pela LC SP 1.425/2025, conferindo o ingresso de R$ 4.695,60 publicado no concurso SAP 2025.',
+  'Insalubridade informada pela SAP em R$ 785,67 e DEJEP eventual podem existir conforme escala/lotação; não foram somadas ao subsídio da tabela.',
+  'ppsp'
+);
+
+const CARGOS_PPRJ = mapearTabelaPoliciaPenal('pprj', [
+  { id: 'terceira_classe', text: 'PPRJ — 3ª Classe / ingresso', valor: 7461.95 },
+  { id: 'segunda_classe', text: 'PPRJ — 2ª Classe', valor: 8291.06 },
+  { id: 'primeira_classe', text: 'PPRJ — 1ª Classe', valor: 9212.29 },
+],
+  'Remuneração bruta calculada como vencimento-base + GVP de 20%, conforme Caderno de Remuneração GESPERJ/RJ — janeiro/2026 para Policiais Penais.',
+  'A GVP já está incluída no valor da remuneração bruta. Insalubridade, auxílio-transporte, auxílio-alimentação e triênio dependem das regras do caderno/remuneração e da situação funcional.',
+  'pprj'
+);
+
+const CARGOS_PPMG = mapearTabelaPoliciaPenal('ppmg', [
+  { id: 'nivel_i_grau_a', text: 'PPMG — Nível I / Grau A', valor: 5332.64 },
+  { id: 'nivel_i_grau_b', text: 'PPMG — Nível I / Grau B', valor: 5492.62 },
+  { id: 'nivel_i_grau_c', text: 'PPMG — Nível I / Grau C', valor: 5657.40 },
+  { id: 'nivel_i_grau_d', text: 'PPMG — Nível I / Grau D', valor: 5827.12 },
+  { id: 'nivel_i_grau_e', text: 'PPMG — Nível I / Grau E', valor: 6001.93 },
+  { id: 'nivel_i_grau_f', text: 'PPMG — Nível I / Grau F', valor: 6181.99 },
+  { id: 'nivel_i_grau_g', text: 'PPMG — Nível I / Grau G', valor: 6367.45 },
+  { id: 'nivel_i_grau_h', text: 'PPMG — Nível I / Grau H', valor: 6558.47 },
+  { id: 'nivel_i_grau_i', text: 'PPMG — Nível I / Grau I', valor: 6755.23 },
+  { id: 'nivel_i_grau_j', text: 'PPMG — Nível I / Grau J', valor: 6957.89 },
+  { id: 'nivel_ii_grau_a', text: 'PPMG — Nível II / Grau A', valor: 5571.13 },
+  { id: 'nivel_ii_grau_b', text: 'PPMG — Nível II / Grau B', valor: 5738.26 },
+  { id: 'nivel_ii_grau_c', text: 'PPMG — Nível II / Grau C', valor: 5910.41 },
+  { id: 'nivel_ii_grau_d', text: 'PPMG — Nível II / Grau D', valor: 6087.72 },
+  { id: 'nivel_ii_grau_e', text: 'PPMG — Nível II / Grau E', valor: 6270.36 },
+  { id: 'nivel_ii_grau_f', text: 'PPMG — Nível II / Grau F', valor: 6458.47 },
+  { id: 'nivel_ii_grau_g', text: 'PPMG — Nível II / Grau G', valor: 6652.22 },
+  { id: 'nivel_ii_grau_h', text: 'PPMG — Nível II / Grau H', valor: 6851.79 },
+  { id: 'nivel_ii_grau_i', text: 'PPMG — Nível II / Grau I', valor: 7057.34 },
+  { id: 'nivel_ii_grau_j', text: 'PPMG — Nível II / Grau J', valor: 7269.06 },
+  { id: 'nivel_iii_grau_a', text: 'PPMG — Nível III / Grau A', valor: 5820.62 },
+  { id: 'nivel_iii_grau_b', text: 'PPMG — Nível III / Grau B', valor: 5995.24 },
+  { id: 'nivel_iii_grau_c', text: 'PPMG — Nível III / Grau C', valor: 6175.10 },
+  { id: 'nivel_iii_grau_d', text: 'PPMG — Nível III / Grau D', valor: 6360.35 },
+  { id: 'nivel_iii_grau_e', text: 'PPMG — Nível III / Grau E', valor: 6551.16 },
+  { id: 'nivel_iii_grau_f', text: 'PPMG — Nível III / Grau F', valor: 6747.69 },
+  { id: 'nivel_iii_grau_g', text: 'PPMG — Nível III / Grau G', valor: 6950.12 },
+  { id: 'nivel_iii_grau_h', text: 'PPMG — Nível III / Grau H', valor: 7158.63 },
+  { id: 'nivel_iii_grau_i', text: 'PPMG — Nível III / Grau I', valor: 7373.39 },
+  { id: 'nivel_iii_grau_j', text: 'PPMG — Nível III / Grau J', valor: 7594.59 },
+  { id: 'nivel_iv_grau_a', text: 'PPMG — Nível IV / Grau A', valor: 6751.92 },
+  { id: 'nivel_iv_grau_b', text: 'PPMG — Nível IV / Grau B', valor: 6954.48 },
+  { id: 'nivel_iv_grau_c', text: 'PPMG — Nível IV / Grau C', valor: 7163.11 },
+  { id: 'nivel_iv_grau_d', text: 'PPMG — Nível IV / Grau D', valor: 7378.01 },
+  { id: 'nivel_iv_grau_e', text: 'PPMG — Nível IV / Grau E', valor: 7599.35 },
+  { id: 'nivel_iv_grau_f', text: 'PPMG — Nível IV / Grau F', valor: 7827.33 },
+  { id: 'nivel_iv_grau_g', text: 'PPMG — Nível IV / Grau G', valor: 8062.15 },
+  { id: 'nivel_iv_grau_h', text: 'PPMG — Nível IV / Grau H', valor: 8304.01 },
+  { id: 'nivel_iv_grau_i', text: 'PPMG — Nível IV / Grau I', valor: 8553.13 },
+  { id: 'nivel_iv_grau_j', text: 'PPMG — Nível IV / Grau J', valor: 8809.72 },
+  { id: 'nivel_v_grau_a', text: 'PPMG — Nível V / Grau A', valor: 7832.23 },
+  { id: 'nivel_v_grau_b', text: 'PPMG — Nível V / Grau B', valor: 8067.20 },
+  { id: 'nivel_v_grau_c', text: 'PPMG — Nível V / Grau C', valor: 8309.21 },
+  { id: 'nivel_v_grau_d', text: 'PPMG — Nível V / Grau D', valor: 8558.49 },
+  { id: 'nivel_v_grau_e', text: 'PPMG — Nível V / Grau E', valor: 8815.24 },
+  { id: 'nivel_v_grau_f', text: 'PPMG — Nível V / Grau F', valor: 9079.70 },
+  { id: 'nivel_v_grau_g', text: 'PPMG — Nível V / Grau G', valor: 9352.09 },
+  { id: 'nivel_v_grau_h', text: 'PPMG — Nível V / Grau H', valor: 9632.65 },
+  { id: 'nivel_v_grau_i', text: 'PPMG — Nível V / Grau I', valor: 9921.63 },
+  { id: 'nivel_v_grau_j', text: 'PPMG — Nível V / Grau J', valor: 10219.28 },
+],
+  'Vencimento básico da carreira de Policial Penal/MG. Ingresso no Nível I Grau A conforme Edital SEJUSP nº 01/2025; graus seguintes estruturados pela tabela de carreira com progressão remuneratória entre graus.',
+  'Ajuda de custo para alimentação é devida por dia efetivamente trabalhado conforme Decreto MG nº 49.006/2025; não foi somada por variar conforme escala e dias trabalhados.',
+  'ppmg'
+);
+
+const CARGOS_PPBA = mapearTabelaPoliciaPenal('ppba', [
+  { id: 'agente_30h', text: 'PPBA — Agente Penitenciário / Policial Penal — 30h', valor: 2601.04 },
+  { id: 'agente_40h', text: 'PPBA — Agente Penitenciário / Policial Penal — 40h', valor: 4478.31 },
+],
+  'Remuneração bruta oficial do edital SEAP/BA nº 02/2024: 30h composta por vencimento básico + GSP; 40h conforme valor máximo indicado no edital.',
+  'Valores do edital não incluem vantagens pessoais, adicionais de escala, indenizações ou parcelas condicionadas à lotação/ficha funcional.',
+  'ppba'
+);
+
+const CARGOS_PPPR = mapearTabelaPoliciaPenal('pppr', [
+  { id: 'classe_xii', text: 'PPPR — Classe XII / ingresso', valor: 4300.00 },
+  { id: 'classe_xi', text: 'PPPR — Classe XI', valor: 6000.00 },
+  { id: 'classe_x', text: 'PPPR — Classe X', valor: 6800.00 },
+  { id: 'classe_ix', text: 'PPPR — Classe IX', valor: 7300.00 },
+  { id: 'classe_viii', text: 'PPPR — Classe VIII', valor: 8200.00 },
+  { id: 'classe_vii', text: 'PPPR — Classe VII', valor: 9100.00 },
+  { id: 'classe_vi', text: 'PPPR — Classe VI', valor: 10000.00 },
+  { id: 'classe_v', text: 'PPPR — Classe V', valor: 11000.00 },
+  { id: 'classe_iv', text: 'PPPR — Classe IV', valor: 12300.00 },
+  { id: 'classe_iii', text: 'PPPR — Classe III', valor: 14000.00 },
+  { id: 'classe_ii', text: 'PPPR — Classe II', valor: 15700.00 },
+  { id: 'classe_i', text: 'PPPR — Classe I / final', valor: 17500.00 },
+],
+  'Subsídio mensal por classe do Quadro Próprio da Polícia Penal do Paraná, conforme LC PR 245/2022 e alteração da LC PR 283/2025.',
+  'Carreira em subsídio. Décimo terceiro, férias, diárias, função, auxílio-alimentação e parcelas indenizatórias dependem de regra própria e não foram somados ao subsídio.',
+  'pppr'
+);
+
+const CARGOS_PPRS = mapearTabelaPoliciaPenal('pprs', [
+  { id: 'policial_penal_inicial', text: 'PPRS — Policial Penal / antigo Agente Penitenciário — inicial', valor: 6305.76 },
+  { id: 'policial_penal_final', text: 'PPRS — Policial Penal / antigo Agente Penitenciário — final', valor: 17197.52 },
+  { id: 'tecnico_administrativo_inicial', text: 'PPRS — Técnico Administrativo da Polícia Penal — inicial', valor: 5159.25 },
+  { id: 'tecnico_administrativo_final', text: 'PPRS — Técnico Administrativo da Polícia Penal — final', valor: 9745.26 },
+  { id: 'analista_inicial', text: 'PPRS — Analista da Polícia Penal / antigo Técnico Superior Penitenciário — inicial', valor: 9745.26 },
+  { id: 'analista_final', text: 'PPRS — Analista da Polícia Penal / antigo Técnico Superior Penitenciário — final', valor: 18917.27 },
+],
+  'Remuneração mensal inicial/final de referência conforme relações remuneratórias RHE/RS e transição/nomenclatura da LC RS 16.449/2025.',
+  'Valores de referência por cargo/classe. Adicionais, gratificações, indenizações e eventuais auxílios dependem de rubrica, lotação e situação funcional; não foram somados automaticamente.',
+  'pprs'
+);
+
+const CARGOS_PPSC = mapearTabelaPoliciaPenal('ppsc', [
+  { id: 'classe_i', text: 'PPSC — Classe I / ingresso', valor: 7290.00 },
+  { id: 'classe_ii', text: 'PPSC — Classe II', valor: 7897.50 },
+  { id: 'classe_iii', text: 'PPSC — Classe III', valor: 8505.00 },
+  { id: 'classe_iv', text: 'PPSC — Classe IV', valor: 9720.00 },
+  { id: 'classe_v', text: 'PPSC — Classe V', valor: 10969.02 },
+  { id: 'classe_vi', text: 'PPSC — Classe VI', valor: 12904.52 },
+  { id: 'classe_vii', text: 'PPSC — Classe VII', valor: 15181.43 },
+  { id: 'classe_viii', text: 'PPSC — Classe VIII / final', valor: 19440.00 },
+],
+  'Subsídio mensal da carreira de Policial Penal/SC por classe, com referência da LC SC 774/2021 e atualização salarial da segurança pública em 2025/2026.',
+  'Carreira remunerada por subsídio. Auxílio-alimentação, convocação, diárias, função e outras parcelas do art. 44 da LC SC 774/2021 dependem de regra, escala e situação funcional.',
+  'ppsc'
+);
+
+const CARGOS_PPES = mapearTabelaPoliciaPenal('ppes', [
+  { id: '3a_classe_nivel_1', text: 'PPES — 3ª Classe / Nível 1', valor: 5631.16 },
+  { id: '3a_classe_nivel_2', text: 'PPES — 3ª Classe / Nível 2', valor: 5743.79 },
+  { id: '3a_classe_nivel_3', text: 'PPES — 3ª Classe / Nível 3', valor: 5858.66 },
+  { id: '3a_classe_nivel_4', text: 'PPES — 3ª Classe / Nível 4', valor: 5975.83 },
+  { id: '3a_classe_nivel_5', text: 'PPES — 3ª Classe / Nível 5', valor: 6095.36 },
+  { id: '3a_classe_nivel_6', text: 'PPES — 3ª Classe / Nível 6', valor: 6217.26 },
+  { id: '3a_classe_nivel_7', text: 'PPES — 3ª Classe / Nível 7', valor: 6341.60 },
+  { id: '3a_classe_nivel_8', text: 'PPES — 3ª Classe / Nível 8', valor: 6468.44 },
+  { id: '3a_classe_nivel_9', text: 'PPES — 3ª Classe / Nível 9', valor: 6597.81 },
+  { id: '3a_classe_nivel_10', text: 'PPES — 3ª Classe / Nível 10', valor: 6729.76 },
+  { id: '3a_classe_nivel_11', text: 'PPES — 3ª Classe / Nível 11', valor: 6864.36 },
+  { id: '3a_classe_nivel_12', text: 'PPES — 3ª Classe / Nível 12', valor: 7001.64 },
+  { id: '3a_classe_nivel_13', text: 'PPES — 3ª Classe / Nível 13', valor: 7141.68 },
+  { id: '3a_classe_nivel_14', text: 'PPES — 3ª Classe / Nível 14', valor: 7284.51 },
+  { id: '3a_classe_nivel_15', text: 'PPES — 3ª Classe / Nível 15', valor: 7430.20 },
+  { id: '2a_classe_nivel_1', text: 'PPES — 2ª Classe / Nível 1', valor: 6475.84 },
+  { id: '2a_classe_nivel_2', text: 'PPES — 2ª Classe / Nível 2', valor: 6605.35 },
+  { id: '2a_classe_nivel_3', text: 'PPES — 2ª Classe / Nível 3', valor: 6737.46 },
+  { id: '2a_classe_nivel_4', text: 'PPES — 2ª Classe / Nível 4', valor: 6872.21 },
+  { id: '2a_classe_nivel_5', text: 'PPES — 2ª Classe / Nível 5', valor: 7009.65 },
+  { id: '2a_classe_nivel_6', text: 'PPES — 2ª Classe / Nível 6', valor: 7149.85 },
+  { id: '2a_classe_nivel_7', text: 'PPES — 2ª Classe / Nível 7', valor: 7292.85 },
+  { id: '2a_classe_nivel_8', text: 'PPES — 2ª Classe / Nível 8', valor: 7438.70 },
+  { id: '2a_classe_nivel_9', text: 'PPES — 2ª Classe / Nível 9', valor: 7587.47 },
+  { id: '2a_classe_nivel_10', text: 'PPES — 2ª Classe / Nível 10', valor: 7739.23 },
+  { id: '2a_classe_nivel_11', text: 'PPES — 2ª Classe / Nível 11', valor: 7894.01 },
+  { id: '2a_classe_nivel_12', text: 'PPES — 2ª Classe / Nível 12', valor: 8051.89 },
+  { id: '2a_classe_nivel_13', text: 'PPES — 2ª Classe / Nível 13', valor: 8212.93 },
+  { id: '2a_classe_nivel_14', text: 'PPES — 2ª Classe / Nível 14', valor: 8377.19 },
+  { id: '2a_classe_nivel_15', text: 'PPES — 2ª Classe / Nível 15', valor: 8544.72 },
+  { id: '1a_classe_nivel_1', text: 'PPES — 1ª Classe / Nível 1', valor: 7447.20 },
+  { id: '1a_classe_nivel_2', text: 'PPES — 1ª Classe / Nível 2', valor: 7596.16 },
+  { id: '1a_classe_nivel_3', text: 'PPES — 1ª Classe / Nível 3', valor: 7748.08 },
+  { id: '1a_classe_nivel_4', text: 'PPES — 1ª Classe / Nível 4', valor: 7903.04 },
+  { id: '1a_classe_nivel_5', text: 'PPES — 1ª Classe / Nível 5', valor: 8061.10 },
+  { id: '1a_classe_nivel_6', text: 'PPES — 1ª Classe / Nível 6', valor: 8222.32 },
+  { id: '1a_classe_nivel_7', text: 'PPES — 1ª Classe / Nível 7', valor: 8386.77 },
+  { id: '1a_classe_nivel_8', text: 'PPES — 1ª Classe / Nível 8', valor: 8554.51 },
+  { id: '1a_classe_nivel_9', text: 'PPES — 1ª Classe / Nível 9', valor: 8725.59 },
+  { id: '1a_classe_nivel_10', text: 'PPES — 1ª Classe / Nível 10', valor: 8900.11 },
+  { id: '1a_classe_nivel_11', text: 'PPES — 1ª Classe / Nível 11', valor: 9078.11 },
+  { id: '1a_classe_nivel_12', text: 'PPES — 1ª Classe / Nível 12', valor: 9259.67 },
+  { id: '1a_classe_nivel_13', text: 'PPES — 1ª Classe / Nível 13', valor: 9444.87 },
+  { id: '1a_classe_nivel_14', text: 'PPES — 1ª Classe / Nível 14', valor: 9633.77 },
+  { id: '1a_classe_nivel_15', text: 'PPES — 1ª Classe / Nível 15', valor: 9826.44 },
+  { id: 'classe_especial_nivel_1', text: 'PPES — Classe Especial / Nível 1', valor: 8564.30 },
+  { id: 'classe_especial_nivel_2', text: 'PPES — Classe Especial / Nível 2', valor: 8735.57 },
+  { id: 'classe_especial_nivel_3', text: 'PPES — Classe Especial / Nível 3', valor: 8910.29 },
+  { id: 'classe_especial_nivel_4', text: 'PPES — Classe Especial / Nível 4', valor: 9088.50 },
+  { id: 'classe_especial_nivel_5', text: 'PPES — Classe Especial / Nível 5', valor: 9270.27 },
+  { id: 'classe_especial_nivel_6', text: 'PPES — Classe Especial / Nível 6', valor: 9455.67 },
+  { id: 'classe_especial_nivel_7', text: 'PPES — Classe Especial / Nível 7', valor: 9644.79 },
+  { id: 'classe_especial_nivel_8', text: 'PPES — Classe Especial / Nível 8', valor: 9837.68 },
+  { id: 'classe_especial_nivel_9', text: 'PPES — Classe Especial / Nível 9', valor: 10034.43 },
+  { id: 'classe_especial_nivel_10', text: 'PPES — Classe Especial / Nível 10', valor: 10235.13 },
+  { id: 'classe_especial_nivel_11', text: 'PPES — Classe Especial / Nível 11', valor: 10439.82 },
+  { id: 'classe_especial_nivel_12', text: 'PPES — Classe Especial / Nível 12', valor: 10648.62 },
+  { id: 'classe_especial_nivel_13', text: 'PPES — Classe Especial / Nível 13', valor: 10861.59 },
+  { id: 'classe_especial_nivel_14', text: 'PPES — Classe Especial / Nível 14', valor: 11078.82 },
+  { id: 'classe_especial_nivel_15', text: 'PPES — Classe Especial / Nível 15', valor: 11300.41 },
+],
+  'Subsídio mensal da carreira de Policial Penal/ES por classe e nível, conforme estrutura da LC ES 1.059/2023 e tabela usada no concurso PPES 2025.',
+  'Auxílio-alimentação de R$ 800,00 informado no concurso PPES 2025; não incluído no campo de subsídio bruto. Outras verbas dependem de escala, lotação e situação funcional.',
+  'ppes',
+  { beneficios: 800 }
+);
+
+
+
+const CARGOS_PPMS = mapearTabelaPoliciaPenal('ppms', [
+  { id: "especial_nivel_1", text: "PPMS — Policial Penal — Classe Especial / Nível 1", valor: 9380.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_2", text: "PPMS — Policial Penal — Classe Especial / Nível 2", valor: 10318.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_3", text: "PPMS — Policial Penal — Classe Especial / Nível 3", valor: 10787.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_4", text: "PPMS — Policial Penal — Classe Especial / Nível 4", valor: 11256.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_5", text: "PPMS — Policial Penal — Classe Especial / Nível 5", valor: 11725.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_6", text: "PPMS — Policial Penal — Classe Especial / Nível 6", valor: 12194.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_7", text: "PPMS — Policial Penal — Classe Especial / Nível 7", valor: 12663.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "especial_nivel_8", text: "PPMS — Policial Penal — Classe Especial / Nível 8", valor: 13132.02, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_1", text: "PPMS — Policial Penal — Classe Primeira / Nível 1", valor: 8828.25, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_2", text: "PPMS — Policial Penal — Classe Primeira / Nível 2", valor: 9711.08, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_3", text: "PPMS — Policial Penal — Classe Primeira / Nível 3", valor: 10152.49, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_4", text: "PPMS — Policial Penal — Classe Primeira / Nível 4", valor: 10593.90, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_5", text: "PPMS — Policial Penal — Classe Primeira / Nível 5", valor: 11035.31, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_6", text: "PPMS — Policial Penal — Classe Primeira / Nível 6", valor: 11476.73, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_7", text: "PPMS — Policial Penal — Classe Primeira / Nível 7", valor: 11918.14, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "primeira_nivel_8", text: "PPMS — Policial Penal — Classe Primeira / Nível 8", valor: 12359.55, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_1", text: "PPMS — Policial Penal — Classe Segunda / Nível 1", valor: 8276.48, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_2", text: "PPMS — Policial Penal — Classe Segunda / Nível 2", valor: 9104.13, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_3", text: "PPMS — Policial Penal — Classe Segunda / Nível 3", valor: 9517.96, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_4", text: "PPMS — Policial Penal — Classe Segunda / Nível 4", valor: 9931.78, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_5", text: "PPMS — Policial Penal — Classe Segunda / Nível 5", valor: 10345.61, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_6", text: "PPMS — Policial Penal — Classe Segunda / Nível 6", valor: 10759.43, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_7", text: "PPMS — Policial Penal — Classe Segunda / Nível 7", valor: 11173.25, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "segunda_nivel_8", text: "PPMS — Policial Penal — Classe Segunda / Nível 8", valor: 11587.08, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_1", text: "PPMS — Policial Penal — Classe Terceira / Nível 1", valor: 7724.72, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_2", text: "PPMS — Policial Penal — Classe Terceira / Nível 2", valor: 8497.19, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_3", text: "PPMS — Policial Penal — Classe Terceira / Nível 3", valor: 8883.43, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_4", text: "PPMS — Policial Penal — Classe Terceira / Nível 4", valor: 9269.66, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_5", text: "PPMS — Policial Penal — Classe Terceira / Nível 5", valor: 9655.90, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_6", text: "PPMS — Policial Penal — Classe Terceira / Nível 6", valor: 10042.14, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_7", text: "PPMS — Policial Penal — Classe Terceira / Nível 7", valor: 10428.37, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "terceira_nivel_8", text: "PPMS — Policial Penal — Classe Terceira / Nível 8", valor: 10814.61, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_1", text: "PPMS — Policial Penal — Classe Quarta / Nível 1", valor: 7172.95, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_2", text: "PPMS — Policial Penal — Classe Quarta / Nível 2", valor: 7890.25, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_3", text: "PPMS — Policial Penal — Classe Quarta / Nível 3", valor: 8248.90, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_4", text: "PPMS — Policial Penal — Classe Quarta / Nível 4", valor: 8607.54, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_5", text: "PPMS — Policial Penal — Classe Quarta / Nível 5", valor: 8966.19, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_6", text: "PPMS — Policial Penal — Classe Quarta / Nível 6", valor: 9324.84, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_7", text: "PPMS — Policial Penal — Classe Quarta / Nível 7", valor: 9683.49, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quarta_nivel_8", text: "PPMS — Policial Penal — Classe Quarta / Nível 8", valor: 10042.14, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_1", text: "PPMS — Policial Penal — Classe Quinta / Nível 1", valor: 6621.19, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_2", text: "PPMS — Policial Penal — Classe Quinta / Nível 2", valor: 7283.31, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_3", text: "PPMS — Policial Penal — Classe Quinta / Nível 3", valor: 7614.37, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_4", text: "PPMS — Policial Penal — Classe Quinta / Nível 4", valor: 7945.43, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_5", text: "PPMS — Policial Penal — Classe Quinta / Nível 5", valor: 8276.48, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_6", text: "PPMS — Policial Penal — Classe Quinta / Nível 6", valor: 8607.54, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_7", text: "PPMS — Policial Penal — Classe Quinta / Nível 7", valor: 8938.60, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "quinta_nivel_8", text: "PPMS — Policial Penal — Classe Quinta / Nível 8", valor: 9269.66, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_1", text: "PPMS — Policial Penal — Classe Sexta / Nível 1", valor: 6069.42, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_2", text: "PPMS — Policial Penal — Classe Sexta / Nível 2", valor: 6676.36, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_3", text: "PPMS — Policial Penal — Classe Sexta / Nível 3", valor: 6979.84, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_4", text: "PPMS — Policial Penal — Classe Sexta / Nível 4", valor: 7283.31, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_5", text: "PPMS — Policial Penal — Classe Sexta / Nível 5", valor: 7586.78, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_6", text: "PPMS — Policial Penal — Classe Sexta / Nível 6", valor: 7890.25, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_7", text: "PPMS — Policial Penal — Classe Sexta / Nível 7", valor: 8193.72, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "sexta_nivel_8", text: "PPMS — Policial Penal — Classe Sexta / Nível 8", valor: 8497.19, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_1", text: "PPMS — Policial Penal — Classe Inicial / Nível 1", valor: 5517.66, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_2", text: "PPMS — Policial Penal — Classe Inicial / Nível 2", valor: 6069.42, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_3", text: "PPMS — Policial Penal — Classe Inicial / Nível 3", valor: 6345.31, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_4", text: "PPMS — Policial Penal — Classe Inicial / Nível 4", valor: 6621.19, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_5", text: "PPMS — Policial Penal — Classe Inicial / Nível 5", valor: 6897.07, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_6", text: "PPMS — Policial Penal — Classe Inicial / Nível 6", valor: 7172.95, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_7", text: "PPMS — Policial Penal — Classe Inicial / Nível 7", valor: 7448.84, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." },
+  { id: "inicial_nivel_8", text: "PPMS — Policial Penal — Classe Inicial / Nível 8", valor: 7724.72, badge: "Tabela 2026", criterio: "Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.", benefDesc: "Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente." }
+],
+  'Tabela Subsídio AGEPEN/MS 2026, elaborada pela Divisão de Recursos Humanos da AGEPEN/MS, com reajuste de 3,81% pela Lei MS nº 6.562/2026.',
+  'Auxílios, adicionais, plantões, indenizações, gratificações e verbas por escala/lotação dependem de lei, rubrica, unidade e situação funcional; não foram somados automaticamente.',
+  'ppms',
+  { badge: 'Tabela 2026' }
+);
+
+const CARGOS_PPMT = mapearTabelaPoliciaPenal('ppmt', [
+  { id: "nivel_001_a", text: "PPMT — Policial Penal — Nível 001 / Classe A", valor: 5155.94, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_001_b", text: "PPMT — Policial Penal — Nível 001 / Classe B", valor: 6252.58, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_001_c", text: "PPMT — Policial Penal — Nível 001 / Classe C", valor: 8051.67, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_001_d", text: "PPMT — Policial Penal — Nível 001 / Classe D", valor: 10459.21, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_002_a", text: "PPMT — Policial Penal — Nível 002 / Classe A", valor: 5132.60, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_002_b", text: "PPMT — Policial Penal — Nível 002 / Classe B", valor: 6728.00, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_002_c", text: "PPMT — Policial Penal — Nível 002 / Classe C", valor: 8355.25, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_002_d", text: "PPMT — Policial Penal — Nível 002 / Classe D", valor: 10853.51, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_003_a", text: "PPMT — Policial Penal — Nível 003 / Classe A", valor: 5326.11, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_003_b", text: "PPMT — Policial Penal — Nível 003 / Classe B", valor: 6981.66, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_003_c", text: "PPMT — Policial Penal — Nível 003 / Classe C", valor: 8670.20, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_003_d", text: "PPMT — Policial Penal — Nível 003 / Classe D", valor: 11262.73, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_004_a", text: "PPMT — Policial Penal — Nível 004 / Classe A", valor: 5526.88, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_004_b", text: "PPMT — Policial Penal — Nível 004 / Classe B", valor: 7244.90, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_004_c", text: "PPMT — Policial Penal — Nível 004 / Classe C", valor: 8997.07, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_004_d", text: "PPMT — Policial Penal — Nível 004 / Classe D", valor: 11687.31, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_005_a", text: "PPMT — Policial Penal — Nível 005 / Classe A", valor: 5735.25, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_005_b", text: "PPMT — Policial Penal — Nível 005 / Classe B", valor: 7517.99, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_005_c", text: "PPMT — Policial Penal — Nível 005 / Classe C", valor: 9951.12, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_005_d", text: "PPMT — Policial Penal — Nível 005 / Classe D", valor: 12936.40, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_006_a", text: "PPMT — Policial Penal — Nível 006 / Classe A", valor: 5951.50, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_006_b", text: "PPMT — Policial Penal — Nível 006 / Classe B", valor: 7801.44, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_006_c", text: "PPMT — Policial Penal — Nível 006 / Classe C", valor: 10326.28, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_006_d", text: "PPMT — Policial Penal — Nível 006 / Classe D", valor: 13424.19, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_007_a", text: "PPMT — Policial Penal — Nível 007 / Classe A", valor: 6175.81, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_007_b", text: "PPMT — Policial Penal — Nível 007 / Classe B", valor: 8095.55, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_007_c", text: "PPMT — Policial Penal — Nível 007 / Classe C", valor: 10715.56, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_007_d", text: "PPMT — Policial Penal — Nível 007 / Classe D", valor: 13930.21, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_008_a", text: "PPMT — Policial Penal — Nível 008 / Classe A", valor: 6408.70, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_008_b", text: "PPMT — Policial Penal — Nível 008 / Classe B", valor: 8400.76, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_008_c", text: "PPMT — Policial Penal — Nível 008 / Classe C", valor: 11119.54, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_008_d", text: "PPMT — Policial Penal — Nível 008 / Classe D", valor: 14455.39, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_009_a", text: "PPMT — Policial Penal — Nível 009 / Classe A", valor: 6650.29, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_009_b", text: "PPMT — Policial Penal — Nível 009 / Classe B", valor: 8717.48, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_009_c", text: "PPMT — Policial Penal — Nível 009 / Classe C", valor: 11538.73, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_009_d", text: "PPMT — Policial Penal — Nível 009 / Classe D", valor: 15000.38, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_010_a", text: "PPMT — Policial Penal — Nível 010 / Classe A", valor: 6900.98, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_010_b", text: "PPMT — Policial Penal — Nível 010 / Classe B", valor: 9046.09, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_010_c", text: "PPMT — Policial Penal — Nível 010 / Classe C", valor: 11973.79, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_010_d", text: "PPMT — Policial Penal — Nível 010 / Classe D", valor: 15565.87, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_011_a", text: "PPMT — Policial Penal — Nível 011 / Classe A", valor: 7161.18, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_011_b", text: "PPMT — Policial Penal — Nível 011 / Classe B", valor: 9387.11, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_011_c", text: "PPMT — Policial Penal — Nível 011 / Classe C", valor: 12425.19, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_011_d", text: "PPMT — Policial Penal — Nível 011 / Classe D", valor: 16152.70, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_012_a", text: "PPMT — Policial Penal — Nível 012 / Classe A", valor: 7431.15, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_012_b", text: "PPMT — Policial Penal — Nível 012 / Classe B", valor: 9741.03, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_012_c", text: "PPMT — Policial Penal — Nível 012 / Classe C", valor: 12893.61, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." },
+  { id: "nivel_012_d", text: "PPMT — Policial Penal — Nível 012 / Classe D", valor: 16761.66, badge: "Tabela 2026", criterio: "Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT para Policial Penal, período selecionado 01/01/2026-atual.", benefDesc: "Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente." }
+],
+  'Tabela salarial de 40h do Portal do Servidor/SEPLAG-MT, período 01/01/2026-atual, para o cargo de Policial Penal.',
+  'Adicionais, plantões, indenizações, gratificações, auxílio-alimentação e parcelas por escala/lotação dependem de rubrica, legislação estadual e situação funcional; não foram somados automaticamente.',
+  'ppmt',
+  { badge: 'Tabela 2026' }
+);
+
+/* ============================================================ */
+/* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
+/* ============================================================ */
+
+const CARGOS_PPAC = mapearTabelaPoliciaPenal(
+  'ppac',
+  [
+    { id: 'agente_policial_penal_ac', text: 'Agente de Polícia Penal PPAC — edital SEAD/IAPEN 2023', valor: 4366.60, resumo: 'Remuneração inicial informada no edital SEAD/IAPEN 001/2023 para 40h semanais, dedicação exclusiva e escala.', selected: true },
+    { id: 'especialista_iapen_ac', text: 'Especialista / Psicólogo / Assistente Social IAPEN-AC — edital 2023', valor: 5131.34, resumo: 'Remuneração de referência dos cargos de nível superior do IAPEN/AC no edital 2023.' },
+    { id: 'engenheiro_iapen_ac', text: 'Engenheiro Civil IAPEN-AC — edital 2023', valor: 6561.76, resumo: 'Remuneração de referência do cargo de Engenheiro Civil no edital SEAD/IAPEN 2023.' }
+  ],
+  'Remuneração informada no edital SEAD/IAPEN 001/2023 e nas tabelas oficiais do Portal do Estado do Acre. Conferir LC AC 392/2021, Lei 2.180/IAPEN, atualizações posteriores e contracheque.',
+  'Auxílio saúde, risco de vida, etapa alimentação, titulação, sexta-parte, prêmio anual, plantões, indenizações e vantagens pessoais não foram somados automaticamente.',
+  'ppac',
+  { badge: 'Edital 2023' }
+);
+
+/* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
+const ACOES_JUDICIAIS = {
+  pmac: [
+    { titulo: 'PMAC — sexta-parte e adicionais por tempo de serviço', status: 'Verificar ficha individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir se sexta-parte, adicional por tempo de serviço e reflexos foram implantados corretamente após o cumprimento dos requisitos legais e se a base usada no contracheque corresponde à legislação estadual.', base: 'LC AC 39/1993, LC AC 164/2006 e tabela remuneratória estadual; depende de histórico funcional e ficha financeira.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PMAC — serviço complementar, localização especial e chefia', status: 'Depende de escala/designação', ano: 'Tema de conferência', tipo: 'individual', desc: 'Pode haver discussão quando houver serviço complementar, lotação especial, designação de chefia ou ato funcional formal com pagamento ausente, incompleto ou calculado em base divergente.', base: 'Tabela PMAC/CBMAC e normas estaduais de vantagens; exige ordem de serviço, boletins, escalas e contracheques.', fonte: 'Portal do Estado do Acre — tabela LC 164', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
+  pcac: [
+    { titulo: 'PCAC — titulação e progressão por classe', status: 'Conferir cargo e classe', ano: 'Tema permanente', tipo: 'individual', desc: 'Verificar enquadramento na classe correta e pagamento de titulação, progressão e vantagens pessoais para Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia.', base: 'LC AC 303/2015, Lei AC 3.107/2015, Lei AC 3.228/2017 e tabelas salariais oficiais.', fonte: 'Portal do Estado do Acre — tabelas PCAC', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PCAC — serviço complementar e vantagens absorvidas', status: 'Análise por contracheque', ano: 'Tema de conferência', tipo: 'individual', desc: 'As tabelas indicam serviço complementar e regras de absorção de vantagens. A ação só deve ser cogitada após comparar lei, ato funcional, classe, cargo, fichas financeiras e rubricas efetivamente pagas.', base: 'Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015 e normas remuneratórias da PCAC.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
+  ppac: [
+    { titulo: 'PPAC — enquadramento, posse e nomeações do concurso IAPEN 2023', status: 'Acompanhar atos oficiais', ano: '2023–2025', tipo: 'coletivo/individual', desc: 'Para aprovados e nomeados, conferir ordem de classificação, convocação, posse, lotação, curso de formação e eventuais efeitos financeiros conforme atos publicados pela SEAD/IAPEN.', base: 'Edital SEAD/IAPEN 001/2023, homologação de 2025 e atos de nomeação/posse.', fonte: 'SEAD/AC — editais IAPEN', fonteUrl: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/', atualizado: 'Maio/2026' },
+    { titulo: 'PPAC — risco de vida, etapa alimentação, auxílio saúde e titulação', status: 'Verificar cargo/rubrica', ano: 'Tema permanente', tipo: 'individual', desc: 'A tabela do IAPEN e o edital indicam vantagens específicas, mas o cálculo depende do cargo, legislação vigente, lotação, jornada, contracheque e eventuais atos administrativos.', base: 'Lei AC 2.180/IAPEN, LC AC 392/2021, edital SEAD/IAPEN 2023 e contracheques.', fonte: 'Portal do Estado do Acre e SEAD/IAPEN', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
+  pmesp: [
+    { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
+    { titulo: "ALE — incorporação e eventuais diferenças", status: "Possível cobrança individual", ano: "Incorporação de 2013", tipo: "individual", desc: "Conferência de eventuais diferenças decorrentes da absorção do Adicional de Local de Exercício nos vencimentos da PMESP. Não tratar como ganho automático.", base: "Lei Complementar Estadual SP nº 1.200/2013, sobre absorção do ALE nos vencimentos dos integrantes da Polícia Militar.", fonte: "LC SP 1.200/2013", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2013/lei.complementar-1200-06.06.2013.html", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade — termo inicial após atividade insalubre", status: "Atenção: não afirmar no curso de formação", ano: "IRDR Tema 36/TJSP", tipo: "individual", desc: "O ponto seguro é discutir termo inicial após início de atividade insalubre reconhecida por laudo ou documento equivalente. Não afirmar direito automático durante o curso de formação.", base: "TJSP — IRDR Tema 36: o curso de formação é tratado como período acadêmico/treinamento; conferir caso concreto e laudo.", fonte: "TJSP — IRDR Tema 36", fonteUrl: "https://www.tjsp.jus.br/NugepNac/Irdr/DetalheTema?codigoNoticia=62232&pagina=1", atualizado: "Abril/2026" },
+    { titulo: "Licença-prêmio não gozada em pecúnia", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Servidor inativo pode discutir conversão em dinheiro de licença-prêmio, férias ou direitos remuneratórios não usufruídos, desde que não usados nem contados para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Adicional noturno e jornada extraordinária", status: "Em discussão", ano: "Conferir entendimento atual", tipo: "individual", desc: "Tema sensível para militares estaduais por envolver regime próprio, RETP, escalas especiais e DEJEM. Não tratar como direito líquido sem análise jurídica.", base: "Art. 7º, IX, da Constituição Federal; confrontar com regime militar estadual e jurisprudência do TJSP.", fonte: "Constituição Federal", fonteUrl: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm", atualizado: "Abril/2026" }
+  ],
+  pcsp: [
+    { titulo: "Insalubridade — grau, laudo e base de cálculo", status: "Verificar caso a caso", ano: "Tema permanente", tipo: "individual", desc: "Ação possível quando houver divergência no grau, termo inicial, pagamento ou base usada. Depende de laudo, local de trabalho, função e holerites.", base: "Lei Complementar Estadual SP nº 432/1985 e Súmula Vinculante nº 4 do STF.", fonte: "LC SP 432/1985", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/1985/compilacao-lei.complementar-432-18.12.1985.html", atualizado: "Abril/2026" },
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis que ingressaram antes da EC 103/2019 podem ter análise de aposentadoria especial com integralidade e paridade, conforme requisitos e regra aplicada.", base: "STF — Tema 1019 / RE 1.162.672.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" },
+    { titulo: "Abono de permanência retroativo", status: "Possível cobrança", ano: "Depende da data dos requisitos", tipo: "individual", desc: "Pode haver cobrança quando o servidor completou requisitos para aposentadoria voluntária e permaneceu em atividade, mas o abono não foi implantado ou foi pago tardiamente.", base: "Regras previdenciárias aplicáveis ao servidor policial; análise da ficha funcional e ato de concessão.", fonte: "Conferência previdenciária individual", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "GAT / acúmulo de titularidade — Delegados", status: "Restrito ao caso concreto", ano: "Quando houver acúmulo comprovado", tipo: "individual", desc: "Discussão de diferenças quando Delegado respondeu formalmente por mais de uma unidade e entende que houve pagamento incompleto.", base: "LC SP nº 1.020/2007 e atos de designação do período cobrado.", fonte: "LC SP 1.020/2007", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2007/lei.complementar-1020-23.10.2007.html", atualizado: "Abril/2026" }
+  ],
+  pmerj: [
+    { titulo: "Férias não gozadas na passagem para inatividade", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Militar que passou para a inatividade sem usufruir férias ou outros direitos remuneratórios pode discutir conversão em pecúnia, desde que não tenha havido uso ou contagem para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Promoção retroativa / preterição", status: "Verificar caso a caso", ano: "Depende do histórico funcional", tipo: "individual", desc: "Pode envolver atraso de promoção, erro administrativo, preterição ou reflexos financeiros. Depende da legislação de promoções, quadro de acesso e publicações.", base: "Estatuto dos Policiais Militares do RJ, normas de promoção, boletins e publicações oficiais.", fonte: "Legislação e boletins internos da PMERJ", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-moradia / diferenças pretéritas", status: "Cautela: tema histórico", ano: "Conferir período e prescrição", tipo: "individual", desc: "A discussão pode existir para períodos específicos, desde que o policial comprove direito, pagamento a menor e ausência de prescrição.", base: "Normas estaduais do RJ sobre auxílio-moradia e demonstrativos de pagamento do período cobrado.", fonte: "Legislação estadual do RJ e holerites", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Triênios e reflexos remuneratórios", status: "Em discussão", ano: "Conferir entendimento atual", tipo: "individual", desc: "Tema deve ser apresentado com prudência, pois a base de cálculo depende do regime remuneratório, da natureza das verbas e da jurisprudência atual.", base: "Regime jurídico militar estadual e ficha financeira individual; não usar apenas habitualidade como fundamento isolado.", fonte: "Legislação remuneratória estadual e jurisprudência do TJRJ", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pcerj: [
+    { titulo: "Lei 11.003/2025 — conferência de vantagens implantadas", status: "Atualização legislativa relevante", ano: "Vigente desde 2025", tipo: "individual", desc: "A reestruturação da PCERJ reorganizou cargos e listou vantagens. O ponto prático é conferir se a implantação no holerite corresponde à lei e ao cargo.", base: "Lei Estadual RJ nº 11.003/2025.", fonte: "Alerj — Lei 11.003/2025", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Adicional de atividade perigosa — 230%", status: "Conferência de implantação", ano: "Lei 11.003/2025", tipo: "individual", desc: "A lei prevê adicional de atividade perigosa de 230% sobre o vencimento-base para policiais civis, salvo Delegados. Ação só faz sentido se houver não implantação, implantação parcial, base incorreta ou retroativo discutível.", base: "Lei Estadual RJ nº 11.003/2025.", fonte: "Alerj — reestruturação da PCERJ", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Verba de representação — Delegados", status: "Conferência de implantação", ano: "Lei 11.003/2025", tipo: "individual", desc: "Para Delegados, a lei prevê verba de representação própria. Conferir percentual, vencimento-base usado, implantação e eventuais diferenças.", base: "Lei Estadual RJ nº 11.003/2025 — verba de representação de Delegado.", fonte: "Alerj — reestruturação da PCERJ", fonteUrl: "https://www.alerj.rj.gov.br/Visualizar/Noticia/80215", atualizado: "Abril/2026" },
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis inativos ou próximos da aposentadoria devem conferir regra usada, data de ingresso e direito a paridade/integralidade.", base: "STF — Tema 1019 / RE 1.162.672.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" }
+  ],
+  pmmg: [
+    { titulo: "URV — diferença de 11,98% e compensações", status: "Tema histórico com cautela", ano: "STF Tema 5", tipo: "individual", desc: "A discussão da URV envolve eventual diferença decorrente da conversão monetária de 1994, mas deve considerar reestruturações posteriores, compensações, prescrição e situação funcional.", base: "STF — Tema 5 / RE 561.836.", fonte: "STF Tema 5", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5", atualizado: "Abril/2026" },
+    { titulo: "Férias-prêmio não gozadas em pecúnia", status: "Tema com precedente forte", ano: "STF Tema 635", tipo: "individual", desc: "Na passagem para a reserva/inatividade, pode haver discussão sobre conversão em dinheiro de férias-prêmio não usufruídas nem aproveitadas para outro fim.", base: "STF — Tema 635 da repercussão geral.", fonte: "STF Tema 635", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635", atualizado: "Abril/2026" },
+    { titulo: "Promoção retroativa / ressarcimento de preterição", status: "Verificar caso a caso", ano: "Depende do processo funcional", tipo: "individual", desc: "Possível quando houver atraso, erro administrativo, preterição indevida ou reflexos de absolvição/revisão funcional. Precisa de boletins, quadro de acesso e atos de promoção.", base: "Normas de promoção da PMMG, atos administrativos e jurisprudência do TJMG.", fonte: "Legislação PMMG, boletins e decisões do TJMG", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "IPSM / descontos previdenciários e assistenciais", status: "Em discussão conforme caso", ano: "Conferir holerite", tipo: "coletiva", desc: "Revisões de descontos exigem separar contribuição previdenciária, assistência à saúde, dependentes e regras específicas dos militares mineiros. Não confundir IPSM com IPSEMG dos servidores civis.", base: "Conferir legislação do IPSM, contracheques e orientação da entidade representativa.", fonte: "IPSM/MG", fonteUrl: "https://www.ipsm.mg.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcmg: [
+    { titulo: "IPSEMG Saúde — contribuição sem adesão", status: "Tema com precedente relevante", ano: "STF ADI 3.106/MG", tipo: "individual", desc: "A tese forte é contra cobrança compulsória para custeio de assistência à saúde quando não houver adesão válida. Devolução depende do período, modulação, prova de não adesão e entendimento aplicável.", base: "STF — ADI 3.106/MG; atenção à modulação e à comprovação individual.", fonte: "STF — ADI 3.106/MG", fonteUrl: "https://noticias.stf.jus.br/postsnoticias/julgada-parcialmente-procedente-adi-que-questionava-lei-mineira-sobre-regime-de-previdencia/", atualizado: "Abril/2026" },
+    { titulo: "ADE / vantagens na aposentadoria", status: "Verificar caso a caso", ano: "Depende da regra aplicada", tipo: "individual", desc: "A inclusão de ADE ou vantagens semelhantes em proventos depende da natureza da verba, regra de aposentadoria, histórico de recebimento e legislação mineira.", base: "Plano de carreira, legislação estadual da PCMG e ato de aposentadoria.", fonte: "Legislação PCMG e análise previdenciária individual", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Promoção/progressão atrasada", status: "Possível cobrança", ano: "Caso a caso", tipo: "individual", desc: "Pode haver cobrança de diferenças quando a progressão ou promoção foi concedida com atraso ou implantada em data incorreta. Depende de publicações e requisitos cumpridos.", base: "Lei de carreira da PCMG, atos de promoção/progressão e jurisprudência do TJMG.", fonte: "Legislação PCMG, atos funcionais e TJMG", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Paridade, integralidade e regra de aposentadoria", status: "Análise previdenciária individual", ano: "Conferir ingresso e regra utilizada", tipo: "individual", desc: "Para policiais civis, a análise depende da data de ingresso, regra de aposentadoria, transições e entendimento aplicado ao cargo.", base: "STF — Tema 1019 como referência para atividade de risco, além da legislação estadual aplicável.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" }
+  ],
+  pmba: [
+    { titulo: "GAP / gratificações — implantação e retroativos", status: "Verificar caso a caso", ano: "Depende do período e da publicação", tipo: "individual", desc: "Discussão possível quando houver atraso de implantação, erro de nível, base incorreta ou diferenças em gratificações da carreira. Exige legislação, boletins, holerites e prescrição.", base: "Legislação remuneratória da Bahia e atos funcionais do período cobrado.", fonte: "Legislação estadual da Bahia e Diário Oficial", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "URV — diferença de 11,98% e compensações", status: "Tema histórico com cautela", ano: "STF Tema 5", tipo: "individual", desc: "A tese da URV não deve ser apresentada como ganho automático. É necessário verificar período, carreira, reajustes posteriores, compensações, prescrição e decisões aplicáveis à Bahia.", base: "STF — Tema 5 / RE 561.836.", fonte: "STF Tema 5", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5", atualizado: "Abril/2026" },
+    { titulo: "Adicional noturno", status: "Em discussão", ano: "Conferir jurisprudência atual", tipo: "individual", desc: "A cobrança depende do regime jurídico militar estadual, escala, previsão legal e entendimento do TJBA. Melhor apresentar como tese em avaliação.", base: "Art. 7º, IX, da Constituição Federal; legislação militar estadual e jurisprudência do TJBA.", fonte: "Constituição Federal", fonteUrl: "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm", atualizado: "Abril/2026" },
+    { titulo: "CET — Condição Especial de Trabalho", status: "Conferência individual", ano: "Depende de função/local", tipo: "individual", desc: "A CET pode variar conforme função, lotação e norma aplicável. Ação judicial deve focar erro de percentual, base de cálculo ou atraso comprovado.", base: "Legislação remuneratória da Bahia, ato de designação, lotação e holerites.", fonte: "Legislação estadual da Bahia e ficha funcional", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pcba: [
+    { titulo: "Paridade e integralidade na aposentadoria policial", status: "Tema com repercussão geral", ano: "STF Tema 1019", tipo: "individual", desc: "Policiais civis devem conferir data de ingresso, regra de aposentadoria, ato concessório e reajustes aplicados. O tema exige análise previdenciária individual.", base: "STF — Tema 1019 / RE 1.162.672, além da legislação previdenciária estadual.", fonte: "STF Tema 1019", fonteUrl: "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019", atualizado: "Abril/2026" },
+    { titulo: "Promoções/progressões atrasadas", status: "Possível cobrança", ano: "Caso a caso", tipo: "individual", desc: "Discussão possível quando houver atraso administrativo, implantação tardia ou erro em progressão/promoção. Necessário comprovar requisitos, publicação, data correta e diferenças financeiras.", base: "Lei de carreira da PCBA, atos de promoção/progressão e publicações oficiais.", fonte: "Legislação PCBA e Diário Oficial da Bahia", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade — laudo, lotação e pagamento", status: "Verificar caso a caso", ano: "Depende da função e local", tipo: "individual", desc: "Possível quando houver exposição insalubre reconhecida, laudo, previsão legal e pagamento ausente ou incorreto. Não tratar como verba universal.", base: "Legislação estadual, laudos, local de trabalho e holerites do período.", fonte: "Legislação estadual da Bahia e prova técnica", fonteUrl: "", atualizado: "Abril/2026" },
+    { titulo: "GIP / gratificações e diferenças remuneratórias", status: "Conferência individual", ano: "Depende do cargo e período", tipo: "individual", desc: "A cobrança de diferenças de gratificações deve partir de erro concreto: percentual, base, atraso, não implantação ou enquadramento incorreto.", base: "Legislação remuneratória da Bahia, ato funcional e demonstrativos de pagamento.", fonte: "Legislação estadual da Bahia e ficha financeira", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pmpr: [
+    { titulo: "Subsídio PMPR e enquadramento por classe", status: "Conferência individual", ano: "Lei 22.187/2024", tipo: "individual", desc: "A carreira militar estadual do Paraná foi reestruturada por subsídio e classes. Diferenças podem depender de enquadramento, promoção, data de implantação, ficha funcional e contracheque.", base: "Lei Estadual PR 22.187/2024; conferir Anexo I, classe, posto/graduação e histórico funcional.", fonte: "Lei PR 22.187/2024", fonteUrl: "https://www.administracao.pr.gov.br/sites/default/arquivos_restritos/files/documento/2024-12/lei_n.deg_22.187_2024_tabelas_vigentes_pmpr_e_cbmpr_2024.pdf", atualizado: "Abril/2026" },
+    { titulo: "FASPM — desconto facultativo e dependentes", status: "Verificar adesão", ano: "Lei 17.169/2012", tipo: "individual", desc: "A contribuição ao Fundo de Assistência à Saúde dos Militares Estaduais é facultativa e pode variar conforme titular e dependentes. Conferir autorização, percentual e limite aplicado.", base: "0,5% do subsídio + 0,2% por dependente, limitado a 2%, quando houver adesão formal.", fonte: "Lei PR 17.169/2012", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/exibirAto.do?action=iniciarProcesso&codAto=68411&codItemAto=507044", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-alimentação PMPR", status: "Conferência de pagamento", ano: "Lei 22.208/2024", tipo: "individual", desc: "Verificar se o auxílio-alimentação mensal está sendo pago conforme valor vigente para servidores ativos e se há proporcionalidade por afastamento, ingresso ou desligamento.", base: "Auxílio-alimentação de R$ 834,74 informado pela PMPR para concursos e remuneração de ingresso.", fonte: "PMPR — Formas de Ingresso", fonteUrl: "https://www.pmpr.pr.gov.br/Pagina/Formas-de-Ingresso", atualizado: "Abril/2026" },
+    { titulo: "Escala extra / diária especial", status: "Somente com previsão e escala", ano: "Tema administrativo", tipo: "individual", desc: "Possíveis valores de escala extraordinária, diária ou indenização operacional dependem de autorização, programa, publicação, cumprimento da escala e rubrica em contracheque.", base: "Conferir ato estadual, escala publicada, unidade e demonstrativo de pagamento.", fonte: "Normas internas e Diário Oficial do Paraná", fonteUrl: "", atualizado: "Abril/2026" }
+  ],
+  pcpr: [
+    { titulo: "Subsídio PCPR e parcelas indenizatórias", status: "Conferência individual", ano: "LC 259/2023", tipo: "individual", desc: "A Lei Complementar 259/2023 estruturou as carreiras da Polícia Civil do Paraná por subsídio. Verbas fora do subsídio exigem previsão legal específica.", base: "LC PR 259/2023: subsídio em parcela única, ressalvadas vantagens expressamente previstas na própria lei.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Insalubridade, periculosidade e risco de vida no subsídio", status: "Atenção jurídica", ano: "LC 259/2023", tipo: "individual", desc: "A legislação da PCPR indica que o subsídio compreende adicionais de insalubridade, periculosidade e risco de vida, sem prejuízo de discussão judicial específica quando houver tese ou decisão aplicável.", base: "LC PR 259/2023, art. 39, §3º, com observação de ADI indicada no texto legal.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Promoção por titulação e enquadramento", status: "Verificar requisitos", ano: "LC 259/2023 e alterações", tipo: "individual", desc: "A promoção por titulação para níveis específicos envolve tempo de carreira, formação, requisitos e regras de transição. Conferir cargo, nível, data de ingresso e documentação.", base: "Art. 83-A da LC PR 259/2023 e alterações posteriores.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" },
+    { titulo: "Diária especial por jornada extrajornada voluntária", status: "Somente se autorizada", ano: "LC 259/2023", tipo: "individual", desc: "A diária especial por jornada extrajornada voluntária aparece entre parcelas possíveis, mas depende de autorização, disponibilidade orçamentária, escala e cumprimento efetivo.", base: "LC PR 259/2023, art. 39, rol de vantagens e indenizações.", fonte: "LC PR 259/2023", fonteUrl: "https://www.legislacao.pr.gov.br/legislacao/pesquisarAto.do?action=exibir&codAto=300584&dt=27.1.2024.16.42.52.571&indice=1&totalRegistros=1", atualizado: "Abril/2026" }
+  ],
+  pmrs: [
+    {
+      titulo: "Subsídio, auxílio-alimentação e enquadramento funcional",
+      status: "Verificar caso a caso",
+      ano: "Editais 2025",
+      tipo: "individual",
+      desc: "Conferência de subsídio/remuneração, auxílio-alimentação, ingresso, posto/graduação e eventuais diferenças deve partir do edital oficial, ficha funcional e contracheque. Não tratar verba condicionada como automática.",
+      base: "Editais oficiais da Brigada Militar/RS para Soldado e Oficialato; legislação estadual dos militares.",
+      fonte: "Brigada Militar/RS — Concursos 2025",
+      fonteUrl: "https://www.brigadamilitar.rs.gov.br/concursos-2025",
+      atualizado: "Abril/2026"
+    },
+    {
+      titulo: "Reserva remunerada, reforma e contribuição previdenciária",
+      status: "Tema previdenciário",
+      ano: "EC 103/2019",
+      tipo: "individual",
+      desc: "A análise de reserva, reforma, abono de permanência e descontos previdenciários exige data de ingresso, tempo total, legislação estadual e demonstrativo de pagamento.",
+      base: "Constituição Federal, EC 103/2019 e normas estaduais/RS aplicáveis aos militares estaduais.",
+      fonte: "IPE Prev/RS e legislação estadual",
+      fonteUrl: "https://ipeprev.rs.gov.br/",
+      atualizado: "Abril/2026"
+    }
+  ],
+  pcrs: [
+    {
+      titulo: "Vencimentos de Escrivão, Inspetor e Delegado — classe inicial",
+      status: "Verificar caso a caso",
+      ano: "Editais 2025",
+      tipo: "individual",
+      desc: "Conferência de vencimentos, classe inicial, dedicação exclusiva, descontos e eventual diferença remuneratória deve usar edital, ato de nomeação e contracheque.",
+      base: "Editais nº 06/2025 (Escrivão/Inspetor) e nº 04/2025 (Delegado) da Polícia Civil/RS.",
+      fonte: "Polícia Civil/RS — Concursos 2025",
+      fonteUrl: "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025",
+      atualizado: "Abril/2026"
+    },
+    {
+      titulo: "Aposentadoria policial, abono e paridade/integralidade",
+      status: "Tema sensível",
+      ano: "EC 103/2019",
+      tipo: "individual",
+      desc: "A análise de aposentadoria policial e abono de permanência depende da data de ingresso, tempo de atividade policial, regra de transição e norma estadual efetivamente aplicada.",
+      base: "Lei Federal 14.735/2023, EC 103/2019, Lei Estadual RS 12.350/2005 e legislação previdenciária estadual.",
+      fonte: "Polícia Civil/RS — Editais e legislação",
+      fonteUrl: "https://www.pc.rs.gov.br/",
+      atualizado: "Abril/2026"
+    }
+  ]
+,
+  pmsc: [
+    { titulo: "Subsídio, enquadramento e promoções na carreira militar estadual", status: "Conferência individual", ano: "Regime SC", tipo: "individual", desc: "Discussões podem envolver enquadramento no regime remuneratório especial, progressão de praças, posto/graduação, interstício, ficha funcional e eventual diferença de subsídio.", base: "LC SC 765/2020, LC SC 776/2021, LC SC 872/2025, LC SC 880/2025 e estatuto militar estadual.", fonte: "ALESC — legislação SC", fonteUrl: "https://leis.alesc.sc.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma, paridade e contribuição previdenciária", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "O direito depende da data de ingresso, tempo de serviço, regra de transição, situação funcional, cálculo do benefício e eventuais regras de paridade/integralidade.", base: "Sistema de proteção social dos militares estaduais, regras estaduais e ficha funcional.", fonte: "IPREV/SC e legislação estadual", fonteUrl: "https://www.iprev.sc.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcsc: [
+    { titulo: "Subsídio, classe inicial e progressão funcional", status: "Conferência individual", ano: "Regime SC", tipo: "individual", desc: "Pode exigir conferência de cargo, classe, data de ingresso, enquadramento, progressões e reflexos remuneratórios. A comparação deve partir da tabela legal e do contracheque.", base: "Lei SC 6.843/1986, LC SC 765/2020, LC SC 776/2021 e LC SC 872/2025.", fonte: "ALESC — legislação SC", fonteUrl: "https://leis.alesc.sc.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial, abono de permanência e paridade", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de contribuição, tempo em atividade policial, idade, sexo, data de ingresso, regra de transição e situação no cargo.", base: "Lei Orgânica Nacional das Polícias Civis, estatuto da PCSC, regras previdenciárias estaduais e ficha funcional.", fonte: "PCSC/IPREV/SC", fonteUrl: "https://www.iprev.sc.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pmes: [
+    { titulo: "Subsídio PMES, referência e enquadramento", status: "Conferência individual", ano: "Regime ES", tipo: "individual", desc: "Discussões podem envolver posto/graduação, referência na tabela de subsídio, progressão horizontal, promoção, ficha funcional e diferenças remuneratórias.", base: "LC ES 420/2007, estatuto dos militares estaduais, tabela PM/CBM e ficha funcional.", fonte: "PMES — legislação", fonteUrl: "https://pm.es.gov.br/legislacao", atualizado: "Abril/2026" },
+    { titulo: "Serviço extraordinário e escalas especiais", status: "Depende de escala", ano: "LC ES 420/2007", tipo: "individual", desc: "A LC ES 420/2007 admite parcela eventual de serviço extraordinário, condicionada à escala prévia e efetiva prestação do serviço, sem incorporação aos proventos.", base: "LC ES 420/2007, escala, ordem de serviço e contracheque.", fonte: "LC ES 420/2007", fonteUrl: "https://pm.es.gov.br/Media/PMES/Leis%203/36-Lei%20que%20Disp%C3%B5e%20sobre%20a%20remunera%C3%A7%C3%A3o%20por%20subs%C3%ADdio%20-%20Lei_Complementar_420.pdf", atualizado: "Abril/2026" },
+    { titulo: "Auxílio-fardamento e indenizações", status: "Conferir rubrica", ano: "Tema recorrente", tipo: "individual", desc: "Pode envolver pagamento anual, fornecimento, indenização ou diferenças conforme edital, norma interna, situação funcional e contracheque.", base: "Editais PMES, normas internas, legislação estadual e ficha financeira.", fonte: "PMES — concursos e legislação", fonteUrl: "https://pm.es.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e contribuição previdenciária", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "Depende de data de ingresso, tempo de serviço, regra de transição, situação funcional, proventos, paridade/integralidade quando cabíveis e normas do sistema estadual.", base: "Sistema de proteção social dos militares estaduais, LC ES 420/2007, estatuto e legislação previdenciária estadual.", fonte: "IPAJM/ES e legislação estadual", fonteUrl: "https://ipajm.es.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pces: [
+    { titulo: "OIP PCES — enquadramento, categoria e referência", status: "Conferência individual", ano: "LC ES 1.093/2024", tipo: "individual", desc: "O Oficial Investigador de Polícia foi criado com carreira própria, organizada em categorias e referências. Diferenças podem envolver enquadramento, progressão, promoção, categoria, referência e rubricas de transição.", base: "LC ES 1.093/2024, LC ES 1.123/2025, edital OIP 2025 e ficha funcional.", fonte: "LC ES 1.093/2024", fonteUrl: "https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf", atualizado: "Abril/2026" },
+    { titulo: "Delegado PCES — categoria, referência e subsídio", status: "Conferência individual", ano: "Tabelas 2025", tipo: "individual", desc: "A análise deve comparar categoria, referência, data de progressão/promoção e tabela vigente com o contracheque e a ficha funcional.", base: "Tabelas de subsídio dos Delegados de Polícia do ES, legislação estadual e ficha funcional.", fonte: "ALEES/ES — legislação", fonteUrl: "https://www.al.es.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Serviço extraordinário do OIP", status: "Depende de escala", ano: "LC ES 1.093/2024", tipo: "individual", desc: "A LC ES 1.093/2024 prevê prestação de serviço extraordinário conforme interesse público, disponibilidade, candidatura prévia e escala, com regra própria de cálculo e sem incorporação à inatividade.", base: "LC ES 1.093/2024, escala, autorização administrativa e contracheque.", fonte: "LC ES 1.093/2024", fonteUrl: "https://pc.es.gov.br/Media/PCES/Legisla%C3%A7%C3%A3o/LC_%20n_%201093_cria_OIP.pdf", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial, abono e paridade/integralidade", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo em atividade policial, regra de transição, norma estadual aplicada, abono de permanência e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação previdenciária estadual e ficha funcional.", fonte: "PCES/IPAJM/ES", fonteUrl: "https://pc.es.gov.br/", atualizado: "Abril/2026" }
+  ],
+
+  pmms: [
+    { titulo: "Promoção, preterição e enquadramento militar", status: "Conferência individual", ano: "Regime MS", tipo: "individual", desc: "Discussões podem envolver quadro de acesso, antiguidade/merecimento, interstícios, publicações, promoções retroativas e reflexos financeiros.", base: "Estatuto e legislação dos militares estaduais de MS, boletins, ficha funcional e Diário Oficial/MS.", fonte: "PMMS/DOE-MS", fonteUrl: "https://www.pm.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Escalas, adicionais e diferenças remuneratórias", status: "Depende de rubrica", ano: "Caso concreto", tipo: "individual", desc: "Pode envolver adicional, verba eventual, indenização, serviço extraordinário, ajuda de custo ou diferença por escala/lotação, sempre comparando lei, ordem de serviço e contracheque.", base: "Legislação estadual, escala, ordem de serviço, ficha financeira e holerite.", fonte: "PMMS/Portal MS", fonteUrl: "https://www.pm.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e abono de permanência", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de serviço, data de ingresso, regras do sistema de proteção social, averbações, idade, situação funcional e cálculo aplicado.", base: "Sistema de proteção social dos militares estaduais, AGEPREV/MS e ficha funcional.", fonte: "AGEPREV/MS", fonteUrl: "https://www.ageprev.ms.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcms: [
+    { titulo: "APJ PCMS — concurso, nomeação e ordem de classificação", status: "Acompanhar edital", ano: "Edital APJ/2025", tipo: "individual", desc: "Candidatos podem acompanhar convocações, cotas, nomeações, curso de formação e eventual preterição conforme edital e publicações oficiais.", base: "Edital SAD/SEJUSP/PCMS/APJ/2025, atos da banca, PCMS, Acadepol e Diário Oficial/MS.", fonte: "PCMS — concurso APJ 2025", fonteUrl: "https://www.pc.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Classe, referência e progressão na Polícia Civil", status: "Conferência individual", ano: "LC MS 114/2005 e alterações", tipo: "individual", desc: "Diferenças podem envolver enquadramento, promoção, classe, referência, tempo na carreira, ficha funcional e tabela legal vigente.", base: "LC MS 114/2005, LC MS 343/2024, ficha funcional e contracheque.", fonte: "PCMS/DOE-MS", fonteUrl: "https://www.pc.ms.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial e abono de permanência", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo de atividade policial, regra de transição, abono implantado ou não e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação estadual e AGEPREV/MS.", fonte: "PCMS/AGEPREV-MS", fonteUrl: "https://www.ageprev.ms.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pmmt: [
+    { titulo: "Promoção, preterição e enquadramento militar", status: "Conferência individual", ano: "Regime MT", tipo: "individual", desc: "Discussões podem envolver quadro de acesso, antiguidade/merecimento, interstícios, publicações, promoções retroativas e reflexos financeiros.", base: "Estatuto e legislação dos militares estaduais de MT, boletins, ficha funcional e Diário Oficial/MT.", fonte: "PMMT/DOE-MT", fonteUrl: "https://www.pm.mt.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Escalas, etapas, adicionais e diferenças remuneratórias", status: "Depende de rubrica", ano: "Caso concreto", tipo: "individual", desc: "Pode envolver adicional, verba eventual, indenização, serviço extraordinário, ajuda de custo ou diferença por escala/lotação, sempre comparando lei, ordem de serviço e contracheque.", base: "Legislação estadual, escala, ordem de serviço, ficha financeira e holerite.", fonte: "PMMT/Portal MT", fonteUrl: "https://www.pm.mt.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Reserva remunerada, reforma e abono de permanência", status: "Análise previdenciária", ano: "Tema recorrente", tipo: "individual", desc: "A análise depende de tempo de serviço, data de ingresso, regras do sistema de proteção social, averbações, idade, situação funcional e cálculo aplicado.", base: "Sistema de proteção social dos militares estaduais, MTPREV/MT e ficha funcional.", fonte: "MTPREV/MT", fonteUrl: "https://www.mtprev.mt.gov.br/", atualizado: "Abril/2026" }
+  ],
+  pcmt: [
+    { titulo: "Concurso PCMT — nomeação, ordem de classificação e convocações", status: "Acompanhar edital", ano: "Último ciclo/novo edital", tipo: "individual", desc: "Candidatos podem acompanhar convocações, cotas, nomeações, curso de formação e eventual preterição conforme edital e publicações oficiais.", base: "Edital vigente, atos da banca, PJC-MT, Academia da Polícia Civil e Diário Oficial/MT.", fonte: "PJC-MT", fonteUrl: "https://www.pjc.mt.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Classe, nível, progressão e tabela salarial", status: "Conferência individual", ano: "Tabela SEPLAG-MT", tipo: "individual", desc: "Diferenças podem envolver enquadramento, progressão, classe, nível, tempo na carreira, ficha funcional, tabela legal vigente e rubricas de contracheque.", base: "Tabela salarial do Portal do Servidor/SEPLAG-MT, ficha funcional e contracheque.", fonte: "PJC-MT/SEPLAG-MT", fonteUrl: "https://www.pjc.mt.gov.br/", atualizado: "Abril/2026" },
+    { titulo: "Aposentadoria policial e abono de permanência", status: "Tema sensível", ano: "EC 103/2019", tipo: "individual", desc: "A análise depende de cargo, data de ingresso, tempo de atividade policial, regra de transição, abono implantado ou não e situação funcional.", base: "Lei Federal 14.735/2023, EC 103/2019, legislação estadual e MTPREV/MT.", fonte: "PJC-MT/MTPREV", fonteUrl: "https://www.mtprev.mt.gov.br/", atualizado: "Abril/2026" }
+  ]
+
+};
+
+/* BLOCO 15.5 — Base de dados das associações e sindicatos */
+const ASSOCIACOES = {
+  pmac: [
+    { nome: 'Entidades representativas dos militares estaduais do Acre', foco: 'Policiais militares, bombeiros militares, veteranos, pensionistas e familiares no Acre', acao: 'Representação de pautas remuneratórias, previdenciárias, assistenciais e institucionais. Cadastro informativo: confirmar entidade específica, filiação e legitimidade antes de encaminhar demanda.', site: 'estado.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento de pautas da carreira, comunicação institucional e eventual apoio jurídico conforme entidade.' }
+  ],
+  pcac: [
+    { nome: 'Entidades representativas dos policiais civis do Acre', foco: 'Delegados, agentes, escrivães, peritos, papiloscopistas e demais carreiras da Polícia Civil do Acre', acao: 'Atuação sindical/associativa em defesa de carreira, remuneração, concursos, previdência e condições de trabalho. Validar a entidade específica conforme cargo e pauta.', site: 'pc.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação de classe, comunicação de pautas, orientação ao associado e acompanhamento de demandas funcionais.' }
+  ],
+  ppac: [
+    { nome: 'Entidades representativas dos policiais penais do Acre', foco: 'Polícia Penal, IAPEN/AC, sistema penitenciário, segurança prisional e carreira penal estadual', acao: 'Acompanhamento de pautas de carreira, nomeações, remuneração, condições de trabalho e estrutura do sistema penitenciário. Confirmar entidade ativa e base de representação antes de encaminhar demanda.', site: 'sead.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação de classe, comunicação institucional, orientação ao servidor e acompanhamento de editais/atos do IAPEN.' }
+  ],
+  pmesp: [
+    { nome: "ACS - Associação dos Cabos e Soldados da PMESP", foco: "Praças da Polícia Militar do Estado de São Paulo", acao: "Representação institucional, apoio jurídico, pautas remuneratórias, valorização da carreira e atendimento por regionais no Estado.", site: "www.cabosesoldados.org.br", telefone: "(11) 3871-8100", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias de classe, regionais, convênios, comunicação institucional e orientação ao associado." },
+    { nome: "AFAM - Associação Fundo de Auxílio Mútuo dos Militares do Estado de São Paulo", foco: "Família policial-militar, assistência social e apoio ao associado", acao: "Atuação voltada a benefícios assistenciais, apoio familiar, orientação jurídica e atendimento ao policial militar e seus dependentes.", site: "www.afam.com.br", telefone: "(11) 3328-1500", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento ao associado, assistência, apoio jurídico, canais de contato, benefícios e ações de suporte à família policial militar." },
+    { nome: "AOMESP - Associação dos Oficiais Militares do Estado de São Paulo", foco: "Oficiais militares estaduais, veteranos e pensionistas", acao: "Defesa institucional da oficialidade, acompanhamento de pautas legislativas, previdenciárias e remuneratórias dos militares estaduais.", site: "aomesp.com.br", telefone: "(11) 3388-7501", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, comunicação institucional, convênios, eventos e apoio aos associados." },
+    { nome: "AOPM - Associação dos Oficiais da Polícia Militar do Estado de São Paulo", foco: "Oficiais da PMESP e família policial-militar", acao: "Entidade tradicional de apoio associativo, social e institucional aos oficiais, com estrutura de convivência, serviços e defesa de interesses da carreira.", site: "www.aopm.com.br", telefone: "(11) 2997-8800", mensalidade: "Consultar diretamente na entidade", servicos: "Clube, eventos, convênios, comunicação institucional, apoio associativo e estrutura social para oficiais e familiares." }
+  ],
+  pcsp: [
+    { nome: "SINDPESP - Sindicato dos Delegados de Polícia do Estado de São Paulo", foco: "Delegados de Polícia do Estado de São Paulo", acao: "Defesa de prerrogativas, valorização profissional, plano de carreira, remuneração e pautas institucionais da carreira de Delegado.", site: "sindpesp.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atuação sindical, jurídico e institucional, comunicação de pautas da carreira e representação perante órgãos públicos." },
+    { nome: "ADPESP - Associação dos Delegados de Polícia do Estado de São Paulo", foco: "Delegados de Polícia, ativos, aposentados e pensionistas", acao: "Associação voltada à organização, consulta, fortalecimento e defesa dos interesses da carreira de Delegado de Polícia.", site: "www.adpesp.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, eventos, notícias, apoio institucional, convênios e comunicação da carreira." },
+    { nome: "SIPESP - Sindicato dos Investigadores de Polícia do Estado de São Paulo", foco: "Investigadores de Polícia e demais carreiras da Polícia Civil paulista", acao: "Defesa de direitos, interesses e prerrogativas dos investigadores, com atuação sindical e acompanhamento de pautas de valorização da PCSP.", site: "sipesp.org.br", telefone: "(11) 3326-8307 / (11) 3326-8308", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, colônia de férias, clube de vantagens, notícias, permutas e atendimento sindical." },
+    { nome: "SINCOPOL - Sindicato Regional dos Policiais Civis do Centro-Oeste Paulista", foco: "Policiais civis da região Centro-Oeste Paulista", acao: "Representação regional de policiais civis, defesa de direitos, acompanhamento de pautas funcionais e apoio sindical ao filiado.", site: "www.sincopol.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, legislação, serviços ao filiado, orientação sindical, convênios e defesa de direitos." }
+  ],
+  pmerj: [
+    { nome: "ASSINAP - Associação de Ativos, Inativos, Pensionistas das Polícias Militares, Brigadas Militares e Corpos de Bombeiros Militares do Brasil", foco: "Policiais militares, bombeiros militares, inativos e pensionistas", acao: "Entidade representativa de classe militar, com atuação voltada à defesa de direitos, atendimento regional e apoio aos associados.", site: "assinap.com.br", telefone: "WhatsApp: (21) 96499-6470 / (21) 97580-9680", mensalidade: "Consultar diretamente na entidade", servicos: "Representação, atendimento em sedes, orientação ao associado, canais de contato e acompanhamento de pautas militares." },
+    { nome: "AME-RJ - Associação de Oficiais Militares Estaduais do Rio de Janeiro", foco: "Oficiais da PMERJ e do CBMERJ, ativa, reserva e reformados", acao: "Representação da oficialidade militar estadual, defesa institucional e acompanhamento de pautas de carreira, prerrogativas e valorização.", site: "amerj.net.br", telefone: "(21) 2233-1144", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, notícias, atuação institucional, comunicação com associados e defesa de prerrogativas." },
+    { nome: "CBPMRJ - Caixa Beneficente da Polícia Militar do Estado do Rio de Janeiro", foco: "Policiais militares associados e seus familiares", acao: "Entidade de benefícios e serviços voltada à família policial militar do Rio de Janeiro.", site: "www.cbpmrj.com.br", telefone: "Consultar no site", mensalidade: "Consultar regras de associação e contribuição", servicos: "Benefícios, serviços ao associado, apoio familiar e canais de atendimento." },
+    { nome: "Clube dos Oficiais Bombeiros do Estado do Rio de Janeiro", foco: "Oficiais bombeiros militares e associados", acao: "Entidade social e associativa com estrutura de lazer, convivência, assessoria jurídica e apoio aos oficiais bombeiros.", site: "clubeoficiaisbmrj.com.br", telefone: "(21) 2252-1619", mensalidade: "Consultar diretamente na entidade", servicos: "Clube social, assessoria jurídica, áreas de lazer, eventos e serviços ao associado." }
+  ],
+  pcerj: [
+    { nome: "SINDPOL-RJ - Sindicato dos Policiais Civis do Estado do Rio de Janeiro", foco: "Policiais civis do Estado do Rio de Janeiro", acao: "Atuação sindical em defesa de direitos, condições de trabalho, valorização da carreira e acompanhamento de pautas da PCERJ.", site: "sindpolrj.com.br", telefone: "(21) 3439-8428 / (21) 98514-4949", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, saúde do policial, educação, bem-estar, notícias e atendimento sindical." },
+    { nome: "SINPOL-RJ - Sindicato dos Funcionários da Polícia Civil", foco: "Servidores e funcionários da Polícia Civil do Estado do Rio de Janeiro", acao: "Representação sindical, mobilização da categoria, acompanhamento legislativo e defesa de pautas funcionais da Polícia Civil.", site: "sinpol.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Filiação, notícias, comunicação sindical, assembleias, acompanhamento político e defesa coletiva." },
+    { nome: "ADEPOL-RJ - Associação dos Delegados de Polícia do Estado do Rio de Janeiro", foco: "Delegados de Polícia do Estado do Rio de Janeiro", acao: "Defesa das prerrogativas dos delegados, representação institucional e acompanhamento de temas ligados à Polícia Judiciária.", site: "www.portal.adepolrj.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, notícias, atuação institucional, comunicação com associados e defesa de prerrogativas." },
+    { nome: "COLPOL-RJ - Coligação dos Policiais Civis do Estado do Rio de Janeiro", foco: "Policiais civis ativos, aposentados e pensionistas", acao: "Entidade tradicional da PCERJ, com atuação em jurídico, saúde, serviços ao associado, convênios e acompanhamento de pautas da categoria.", site: "colpol.com.br", telefone: "(21) 2509-0611 / (21) 2509-1255 / (21) 96914-0012", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, centro odontológico, reabilitação física, ambulatório, convênios, assistência funeral e serviços ao policial civil." }
+  ],
+  pmmg: [
+    { nome: "ASPRA/PMBM-MG - Associação dos Praças Policiais e Bombeiros Militares de Minas Gerais", foco: "Praças da PMMG e do CBMMG", acao: "Representação de classe, defesa de direitos, pautas remuneratórias, previdenciárias, IPSM, regionais, lazer e clube de vantagens.", site: "aspra.org.br", telefone: "(31) 3235-2700", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, regionais, clubes, hotelaria, clube de vantagens, convênios e projetos aos associados." },
+    { nome: "AOPMBM-MG - Associação dos Oficiais da Polícia Militar e do Corpo de Bombeiros Militar de Minas Gerais", foco: "Oficiais da PMMG e do CBMMG", acao: "Representação da oficialidade, defesa de interesses dos associados, prerrogativas, valorização da carreira e fortalecimento institucional.", site: "www.aopmbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação de classe, jurídico, eventos, comunicação institucional, convênios e apoio aos associados." },
+    { nome: "APNM/BMPM - Associação dos Praças do Interior de Minas Gerais", foco: "Praças policiais e bombeiros militares do interior de Minas Gerais", acao: "Associação civil de classe voltada à representação, apoio e defesa dos interesses dos praças no interior do Estado.", site: "www.apnm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, comunicação, atendimento ao associado e apoio regional." },
+    { nome: "AAPMMGBM - Associação de Amparo aos Policiais Militares e Bombeiros Militares de Minas Gerais", foco: "Policiais militares, bombeiros militares e familiares", acao: "Atuação de amparo, benefícios, assistência e projetos sociais voltados aos militares estaduais e suas famílias.", site: "aapmmgbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Benefícios, assistências, projetos sociais, cursos, diretoria, atendimento e canais de contato." }
+  ],
+  pcmg: [
+    { nome: "SINDPOL-MG - Sindicato dos Servidores da Polícia Civil do Estado de Minas Gerais", foco: "Servidores da Polícia Civil de Minas Gerais", acao: "Defesa sindical da categoria, valorização, recomposição salarial, condições de trabalho, convênios e acompanhamento jurídico-institucional.", site: "sindpolmg.org.br", telefone: "(31) 2138-9898", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, convênios, atendimento administrativo, financeiro, comunicação, notícias e orientação ao filiado." },
+    { nome: "ADEPOL-MG - Associação dos Delegados da Polícia Civil de Minas Gerais", foco: "Delegados de Polícia Civil de Minas Gerais", acao: "Representação associativa dos delegados, defesa de prerrogativas, integração institucional, eventos e acompanhamento de pautas da carreira.", site: "adepolmg.org", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, eventos, representação, convênios, comunicação institucional e apoio aos delegados associados." },
+    { nome: "SINDEPOMINAS - Sindicato dos Delegados de Polícia do Estado de Minas Gerais", foco: "Delegados de Polícia Civil de Minas Gerais", acao: "Atuação sindical sem conotação político-partidária, defesa de interesses da carreira, prerrogativas, remuneração e pautas institucionais.", site: "www.sindepominas.com.br", telefone: "(31) 3272-7268", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, notícias, diretoria, atendimento, comunicação, defesa institucional e orientação ao filiado." },
+    { nome: "SINDPECRI-MG - Sindicato dos Peritos Criminais do Estado de Minas Gerais", foco: "Peritos criminais da Polícia Civil de Minas Gerais", acao: "Defesa dos direitos da perícia criminal, valorização da carreira, estrutura de trabalho e pautas específicas dos peritos oficiais.", site: "sindpecri.org.br", telefone: "(31) 3295-4177", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, convênios, atendimento sindical, contato administrativo e defesa das pautas da perícia criminal." }
+  ],
+  pmba: [
+    { nome: "APPM-BA - Associação de Praças da Polícia e Bombeiro Militar da Bahia", foco: "Praças da PMBA e do CBMBA", acao: "Atuação em valorização salarial, direitos dos militares estaduais, propostas, ofícios e discussões com o governo e comando da Corporação.", site: "www.appmba.org.br", telefone: "(71) 3310-4250", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, comunicação, notícias, secretaria, representação associativa, canais digitais e atendimento ao associado." },
+    { nome: "ASPRA-BA - Associação de Policiais e Bombeiros e de seus Familiares do Estado da Bahia", foco: "Policiais militares, bombeiros militares e familiares", acao: "Representação de policiais e bombeiros militares, defesa de direitos, plantão jurídico e mobilização por valorização da categoria.", site: "www.instagram.com/asprabahia", telefone: "Plantão jurídico: (71) 99374-2524", mensalidade: "Consultar diretamente na entidade", servicos: "Plantão jurídico, comunicação institucional, mobilização, atendimento regional e defesa de pautas dos militares estaduais." },
+    { nome: "Força Invicta - Associação dos Oficiais Militares Estaduais da Bahia", foco: "Oficiais da PMBA e do CBMBA", acao: "Representação institucional da oficialidade baiana, segurança jurídica, acompanhamento de pautas no Legislativo e Executivo e defesa de prerrogativas.", site: "forcainvicta.org.br", telefone: "0800 190 0574", mensalidade: "Consultar diretamente na entidade", servicos: "Suporte jurídico, representação institucional, rede de associados, convênios, benefícios, bem-estar e comunicação transparente." },
+    { nome: "PLANSERV - Assistência à Saúde dos Servidores Públicos Estaduais da Bahia", foco: "Servidores públicos estaduais da Bahia, incluindo militares estaduais quando vinculados", acao: "Plano de assistência à saúde dos servidores estaduais; não é sindicato, mas é serviço essencial de consulta para o público da segurança pública baiana.", site: "www.planserv.ba.gov.br", telefone: "Consultar canais oficiais", mensalidade: "Conforme regras do plano e dependentes", servicos: "Rede assistencial, atendimento de saúde, dependentes, informações cadastrais e canais oficiais do Governo da Bahia." }
+  ],
+  pcba: [
+    { nome: "SINDPOC-BA - Sindicato dos Policiais Civis do Estado da Bahia", foco: "Policiais civis da Bahia", acao: "Representação sindical, defesa de direitos, valorização, condições de trabalho, atuação jurídica, fiscalização e acompanhamento de pautas da PCBA.", site: "www.sindpoc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, convênios, articulação institucional, fiscalização, comunicação e atendimento ao sindicalizado." },
+    { nome: "ADPEB/Sindicato - Sindicato dos Delegados de Polícia do Estado da Bahia", foco: "Delegados de Polícia do Estado da Bahia", acao: "Defesa das prerrogativas, valorização da carreira, representação sindical, assembleias, eleições internas e apoio jurídico aos delegados sindicalizados.", site: "www.adpeb.com.br", telefone: "(71) 3329-2684", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, atendimento psicológico, convênios, cursos, notícias, assembleias e comunicação institucional." },
+    { nome: "AEPEB/Sindicato - Sindicato dos Escrivães de Polícia Civil do Estado da Bahia", foco: "Escrivães de Polícia Civil da Bahia", acao: "Representação específica dos escrivães, defesa de direitos, valorização funcional e comunicação sindical da categoria.", site: "aepebsindicato.com.br", telefone: "(71) 3329-6802", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação sindical, filiação, redes sociais, notícias, orientação e defesa de pautas dos escrivães." },
+    { nome: "SINDPEP-BA - Sindicato dos Peritos em Papiloscopia do Estado da Bahia", foco: "Peritos em papiloscopia e identificação civil/criminal da Bahia", acao: "Defesa dos interesses da papiloscopia, valorização da ciência papiloscópica, identificação civil e criminal e pautas específicas da carreira.", site: "sindpep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, notícias, comunicação, defesa de direitos, eventos técnicos e pautas de valorização profissional." }
+  ],
+  pmpr: [
+    { nome: "APCS-PR — Associação de Praças do Estado do Paraná", tipo: "associação", publico: "Praças da PMPR/CBMPR", acao: "Acompanhamento de carreira, notícias, representação institucional e pautas de valorização dos militares estaduais.", site: "apcs.net.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Informativos, defesa de interesses da categoria, apoio institucional e acompanhamento de temas remuneratórios." },
+    { nome: "FASPM — Fundo de Assistência à Saúde dos Militares Estaduais", tipo: "assistência", publico: "Militares estaduais ativos, inativos, pensionistas e dependentes, quando aderentes", acao: "Assistência à saúde dos militares estaduais do Paraná, com contribuição facultativa conforme lei.", site: "Consultar canal oficial do Governo do Paraná / FASPM", telefone: "Consultar canal oficial", mensalidade: "0,5% do subsídio + 0,2% por dependente, limitado a 2%, quando houver adesão.", servicos: "Assistência à saúde, regras de dependentes e cobertura conforme regulamento próprio." },
+    { nome: "Entidades representativas locais da PMPR", tipo: "associação", publico: "Policiais militares do Paraná", acao: "Atuação em pautas de promoção, subsídio, saúde, escala, condições de trabalho e defesa institucional.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, orientação, notícias e eventual apoio jurídico conforme contrato." }
+  ],
+  pcpr: [
+    { nome: "SINCLAPOL — Sindicato das Classes Policiais Civis do Paraná", tipo: "sindicato", publico: "Policiais civis do Paraná", acao: "Defesa de interesses da categoria, carreira, remuneração, condições de trabalho e pautas institucionais da Polícia Civil do Paraná.", site: "sinclapol.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação sindical, comunicação de pautas, assembleias, apoio jurídico conforme regras internas e defesa coletiva." },
+    { nome: "ADEPOL-PR — Associação dos Delegados de Polícia do Paraná", tipo: "associação", publico: "Delegados de Polícia do Paraná", acao: "Representação institucional da carreira de Delegado, defesa de prerrogativas, valorização profissional e acompanhamento legislativo.", site: "adepolpr.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, notícias, eventos, defesa de prerrogativas e apoio institucional." },
+    { nome: "Entidades e associações por carreira da PCPR", tipo: "associação", publico: "Agentes, Papiloscopistas, Delegados e demais carreiras da Polícia Civil", acao: "Representação específica por cargo, acompanhamento de promoções, subsídio, titulação, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, apoio institucional, pautas remuneratórias, acompanhamento legislativo e eventual orientação jurídica." }
+  ],
+  pmrs: [
+    { nome: "ASSTBM - Associação dos Sargentos, Subtenentes e Tenentes da Brigada Militar e Bombeiros Militares do RS", foco: "Militares estaduais da Brigada Militar e do Corpo de Bombeiros Militar do RS", acao: "Representação associativa, defesa institucional e acompanhamento de pautas de carreira dos militares estaduais.", site: "asstbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Apoio associativo, comunicação, atuação institucional, convênios e orientações aos associados." },
+    { nome: "ABAMF - Associação Beneficente Antônio Mendes Filho", foco: "Praças da Brigada Militar e Bombeiros Militares do Rio Grande do Sul", acao: "Atuação associativa e beneficente voltada à categoria, com acompanhamento de pautas funcionais e apoio aos associados.", site: "abamf.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Apoio associativo, notícias, representação, convênios e atendimento ao associado." },
+    { nome: "ASOFBM - Associação dos Oficiais da Brigada Militar", foco: "Oficiais da Brigada Militar do Rio Grande do Sul", acao: "Representação da oficialidade militar estadual, defesa institucional e valorização da carreira.", site: "www.asofbm.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, notícias, eventos, comunicação e apoio aos associados." }
+  ],
+  pcrs: [
+    { nome: "UGEIRM Sindicato - Sindicato dos Escrivães, Inspetores e Investigadores de Polícia do RS", foco: "Policiais civis do Estado do Rio Grande do Sul", acao: "Representação sindical em defesa de direitos, carreira, condições de trabalho e valorização dos policiais civis.", site: "ugeirmsindicato.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias, mobilização, assembleias, convênios e atendimento sindical." },
+    { nome: "ASDEP-RS - Associação dos Delegados de Polícia do Rio Grande do Sul", foco: "Delegados de Polícia Civil do RS", acao: "Representação associativa da carreira de Delegado, defesa institucional e acompanhamento de pautas legislativas e administrativas.", site: "asdep.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "SINPOL-RS - Sindicato dos Policiais Civis do Rio Grande do Sul", foco: "Servidores policiais civis do Rio Grande do Sul", acao: "Atuação sindical e acompanhamento de pautas de valorização, direitos e condições de trabalho.", site: "sinpolrs.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, convênios e orientação aos filiados." }
+  ]
+,
+  pmsc: [
+    { nome: "APRASC — Associação de Praças de Santa Catarina", foco: "Praças militares estaduais de Santa Catarina", acao: "Representação associativa, institucional e defesa de interesses da categoria, com acompanhamento de pautas de carreira, remuneração e condições de trabalho.", site: "www.aprasc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação institucional, representação, notícias, atuação associativa, convênios e orientação aos associados." },
+    { nome: "ACORS — Associação de Oficiais Militares de SC", foco: "Oficiais da Polícia Militar e do Corpo de Bombeiros Militar de Santa Catarina", acao: "Representação institucional da oficialidade militar estadual, defesa de prerrogativas, valorização profissional e acompanhamento legislativo.", site: "www.acors.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação associativa, comunicação institucional, eventos, convênios e apoio aos associados." }
+  ],
+  pcsc: [
+    { nome: "SINPOL-SC — Sindicato dos Policiais Civis de Santa Catarina", foco: "Policiais civis de Santa Catarina", acao: "Representação sindical em pautas de carreira, direitos, remuneração, condições de trabalho e defesa coletiva da categoria.", site: "sinpolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, orientação, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-SC — Associação dos Delegados de Polícia de Santa Catarina", foco: "Delegados de Polícia de Santa Catarina", acao: "Representação associativa da carreira de Delegado, defesa institucional, acompanhamento legislativo e valorização da Polícia Judiciária.", site: "adepolsc.org.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." }
+  ],
+  pmes: [
+    { nome: "ASPRA-ES — Associação de Praças da PM e BM do Espírito Santo", foco: "Praças militares estaduais do Espírito Santo", acao: "Representação associativa, acompanhamento de pautas de carreira, remuneração, promoção, previdência e condições de trabalho.", site: "aspraes.com.br", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação institucional, representação, notícias, orientação associativa, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades da oficialidade militar estadual do ES", foco: "Oficiais da Polícia Militar e do Corpo de Bombeiros Militar do Espírito Santo", acao: "Atuação institucional e associativa em pautas da oficialidade, carreira, prerrogativas, subsídio e sistema de proteção social.", site: "Consultar canais oficiais da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, acompanhamento legislativo, comunicação institucional e orientação aos associados." },
+    { nome: "Entidades representativas locais da PMES", foco: "Militares estaduais ativos, veteranos e pensionistas", acao: "Apoio associativo em temas de promoção, subsídio, escalas, fardamento, saúde, previdência e valorização profissional.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento de pautas de classe e eventual suporte jurídico/administrativo conforme contrato." }
+  ],
+  pces: [
+    { nome: "SINDIPOL/ES — Sindicato dos Policiais Civis do Espírito Santo", foco: "Policiais civis do Espírito Santo", acao: "Representação sindical em pautas de carreira, remuneração, condições de trabalho, direitos, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, mobilização, assembleias, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-ES — Associação dos Delegados de Polícia do Espírito Santo", foco: "Delegados de Polícia Civil do Espírito Santo", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "Entidades por carreira da PCES/PCIES", foco: "Oficial Investigador, Delegados, Perícia Oficial e demais carreiras ligadas à segurança pública estadual", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, escalas e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
+  ],
+
+  pmms: [
+    { nome: "ACS-PM/BM-MS — Associação de Cabos e Soldados de MS", foco: "Praças da Polícia Militar e do Corpo de Bombeiros Militar de Mato Grosso do Sul", acao: "Representação associativa em pautas de remuneração, carreira, previdência, condições de trabalho e valorização dos militares estaduais.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação de classe, acompanhamento legislativo, orientação associativa, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades da oficialidade militar estadual de MS", foco: "Oficiais da PMMS e do CBMMS", acao: "Atuação institucional e associativa em temas de carreira, prerrogativas, promoções, sistema de proteção social e valorização da oficialidade.", site: "Consultar canais oficiais da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, acompanhamento de pautas, eventos, comunicação e orientação aos associados." },
+    { nome: "Entidades locais da PMMS", foco: "Militares estaduais ativos, veteranos e pensionistas", acao: "Apoio associativo em pautas de escala, promoção, remuneração, saúde, previdência e condições de serviço.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
+  ],
+  pcms: [
+    { nome: "SINPOL-MS — Sindicato dos Policiais Civis de Mato Grosso do Sul", foco: "Policiais civis de Mato Grosso do Sul", acao: "Representação sindical em pautas de carreira, remuneração, concurso, condições de trabalho, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, assembleias, mobilização, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "ADEPOL-MS — Associação dos Delegados de Polícia de Mato Grosso do Sul", foco: "Delegados de Polícia Civil de Mato Grosso do Sul", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "Entidades por carreira da PCMS", foco: "Investigadores, Escrivães, Delegados, Perícia Oficial e demais carreiras ligadas à Polícia Civil", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, plantões e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
+  ],
+  pmmt: [
+    { nome: "Associações de praças e militares estaduais de Mato Grosso", foco: "Praças da Polícia Militar e do Corpo de Bombeiros Militar de Mato Grosso", acao: "Representação associativa em pautas de remuneração, carreira, previdência, condições de trabalho e valorização dos militares estaduais.", site: "Consultar canal oficial da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Comunicação de classe, acompanhamento legislativo, orientação associativa, convênios e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades da oficialidade militar estadual de MT", foco: "Oficiais da PMMT e do CBMMT", acao: "Atuação institucional e associativa em temas de carreira, prerrogativas, promoções, sistema de proteção social e valorização da oficialidade.", site: "Consultar canais oficiais da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Representação associativa, acompanhamento de pautas, eventos, comunicação e orientação aos associados." },
+    { nome: "Entidades locais da PMMT", foco: "Militares estaduais ativos, veteranos e pensionistas", acao: "Apoio associativo em pautas de escala, promoção, remuneração, saúde, previdência e condições de serviço.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
+  ],
+  pcmt: [
+    { nome: "Sindicato dos Investigadores da Polícia Civil de Mato Grosso", foco: "Investigadores da Polícia Judiciária Civil de Mato Grosso", acao: "Representação sindical em pautas de carreira, remuneração, concurso, condições de trabalho, aposentadoria e valorização da Polícia Civil.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento sindical, notícias, assembleias, mobilização, orientação e eventual apoio jurídico conforme regras internas." },
+    { nome: "Associação dos Delegados de Polícia de Mato Grosso", foco: "Delegados de Polícia Judiciária Civil de Mato Grosso", acao: "Representação associativa da carreira de Delegado, defesa de prerrogativas, acompanhamento legislativo e valorização institucional.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar no site", mensalidade: "Consultar diretamente na entidade", servicos: "Representação institucional, comunicação, eventos, apoio associativo e defesa de prerrogativas." },
+    { nome: "Entidades por carreira da PCMT", foco: "Escrivães, Investigadores, Delegados e demais carreiras ligadas à Polícia Judiciária Civil", acao: "Atuação por carreira em pautas de subsídio, enquadramento, progressão, saúde, aposentadoria, plantões e condições de trabalho.", site: "Consultar canais oficiais da entidade de cada carreira", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, acompanhamento legislativo, pautas remuneratórias e eventual suporte jurídico conforme contrato." }
+  ],
+  ppmt: [
+    { nome: "SINDSPPEN-MT — Sindicato dos Policiais Penais de Mato Grosso", foco: "Policiais penais de Mato Grosso", acao: "Representação sindical em pautas da Polícia Penal, sistema prisional, tabela salarial, condições de trabalho, segurança e carreira.", site: "Consultar site/canal oficial da entidade", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente na entidade", servicos: "Notícias, representação sindical, mobilização, orientação, acompanhamento legislativo e eventual apoio jurídico conforme regras internas." },
+    { nome: "Entidades locais da Polícia Penal/SEJUS-MT", foco: "Servidores policiais penais, ativos, veteranos e pensionistas", acao: "Apoio associativo e sindical em temas de segurança prisional, escala, remuneração, saúde, previdência e condições de serviço.", site: "Consultar canais oficiais e redes institucionais", telefone: "Consultar diretamente", mensalidade: "Consultar diretamente", servicos: "Informativos, orientação, representação e eventual suporte jurídico/administrativo conforme contrato." }
+  ]
+
+};
+
+
+/* BLOCO 15.6 — Base de dados dos concursos por instituição */
+const CONCURSOS = {
+  pmac: {
+    edital: 'PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde',
+    salario: 'Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.',
+    vagas: '36 vagas: Aluno Oficial Combatente e cargos de 2º Tenente Estagiário de Saúde',
+    cotas: 'Conferir regras do edital FGV/SEAD/PMAC 2023',
+    idade: 'Conferir limite etário e requisitos específicos do edital.',
+    escolaridade: 'Nível superior conforme cargo; requisitos específicos no edital.',
+    materias: 'Língua Portuguesa, conhecimentos jurídicos, conhecimentos específicos, redação/discursiva, raciocínio e legislação conforme cargo.',
+    banca: 'FGV',
+    inscritos: 'Conferir página oficial da FGV',
+    etapas: 'Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação.',
+    cfsd: 'Curso de formação/estágio conforme cargo e edital PMAC 2023.',
+    estagio: 'Conferir estatuto militar estadual e edital.',
+    validade: 'Conferir edital e atos de homologação/prorrogação.',
+    previsao: 'Concurso PMAC 2023 já publicado; acompanhar convocações e atos oficiais da SEAD/PMAC/FGV.',
+    site: 'https://conhecimento.fgv.br/concursos/pmac23'
+  },
+  pcac: {
+    edital: 'PCAC — concurso anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito',
+    salario: 'Edital pendente; o simulador usa as tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais.',
+    vagas: '139 vagas anunciadas',
+    cotas: 'A definir no edital',
+    idade: 'A definir no edital',
+    escolaridade: 'A definir no edital; cargos policiais civis normalmente exigem formação específica conforme carreira.',
+    materias: 'A definir no edital; preparar base em Direito Penal, Processo Penal, Constitucional, Administrativo, Legislação Especial, Português e específicas do cargo.',
+    banca: 'A definir',
+    inscritos: 'Ainda não divulgado',
+    etapas: 'A definir no edital; acompanhar SEAD/AC, PCAC e Diário Oficial do Acre.',
+    cfsd: 'A definir no edital e normas da Academia de Polícia Civil.',
+    estagio: 'Conferir estatuto e edital.',
+    validade: 'A definir no edital.',
+    previsao: 'Governo anunciou novo concurso PCAC em abril de 2026; edital e banca ainda devem ser acompanhados nos canais oficiais.',
+    site: 'https://agencia.ac.gov.br/'
+  },
+  ppac: {
+    edital: 'IAPEN/PPAC — Edital nº 001/2023 SEAD/IAPEN — Agente de Polícia Penal',
+    salario: 'Agente de Polícia Penal: R$ 4.366,60, 40h semanais, dedicação exclusiva e escala.',
+    vagas: '261 vagas para Agente de Polícia Penal, além de cargos de apoio do IAPEN/AC',
+    cotas: 'Conferir edital SEAD/IAPEN 001/2023',
+    idade: 'Conferir requisitos do edital',
+    escolaridade: 'Superior completo e CNH categoria B até o curso de formação para Agente de Polícia Penal.',
+    materias: 'Língua Portuguesa, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Execução Penal, Direitos Humanos e legislação específica conforme edital.',
+    banca: 'IBFC',
+    inscritos: 'Conferir página oficial do concurso SEAD/IAPEN',
+    etapas: 'Prova objetiva, prova discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação.',
+    cfsd: 'Curso de formação com convocações e publicações pela SEAD/IAPEN.',
+    estagio: 'Conferir LC estadual, edital e atos de posse.',
+    validade: 'Resultado final/homologação publicados em 2025; acompanhar prorrogação, nomeações e atos oficiais.',
+    previsao: 'Concurso 2023 teve resultado/homologação em 2025 e nomeações posteriores; acompanhar novas convocações e eventual novo certame.',
+    site: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
   },
   pmesp: {
     edital: "Soldado PM 2ª Classe (2025/2026) — edital PMES2502 em andamento",
@@ -2648,46 +3426,33 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
 const HEADER_INSTITUICOES_RESUMO = {
   pmac: {
     nome: 'Polícia Militar do Acre', sigla: 'PMAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Militar',
-    criacao: '25/05/1916 · 110 anos em maio/2026',
-    marco: 'Quadro legal global: 4.734 cargos. Efetivo operacional informado em 2026: aproximadamente 2.340 PMs, com 302 mulheres em atividade; déficit estimado frente ao quadro legal: 2.394 cargos.',
-    ativa: 2340,
-    ativaLabel: '≈2.340 PMs em atividade · 302 mulheres · participação feminina de ≈13% do efetivo',
-    reservaLabel: 'Reserva/inativos: número consolidado não aberto; LC AC 305/2015 permite convocação temporária de até 20% do efetivo das corporações militares',
-    totalLabel: 'Quadro legal PMAC: 4.734 cargos · diferença aproximada entre quadro legal e ativo 2026: 2.394 cargos',
-    relacaoLabel: '≈1 PM ativo / 378 hab. (884.372 hab. ÷ 2.340 PMs) · estudo NAT/MPAC 2022: 1 PM / 390 hab.',
+    criacao: '1916 · instituição centenária', marco: 'A PMAC completou 110 anos em 2026; a data institucional é celebrada em maio.',
+    ativaLabel: 'Efetivo: conferir PMAC/Portal da Transparência', reservaLabel: 'Reserva/reforma: conferir Acreprevidência e atos estaduais', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
     populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral da PMAC',
-    ingresso: 'Concurso PMAC 2023 prorrogado em 2026; formação de oficiais em andamento com 24 alunos oficiais iniciados, mais 5 em inclusão, e curso de 3.880 horas até 2028.',
-    remuneracao: 'Edital PMAC 2023: R$ 8.129,55 para Aluno Oficial Combatente e R$ 10.423,73 para 2º Tenente Estagiário de Saúde; tabela PMAC/CBMAC restante mantida no módulo remuneratório.',
-    fonte: 'IBGE 2025; LC AC 315/2015; LC AC 305/2015; Agência Acre/PMAC; Edital SEAD/PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral',
+    ingresso: 'Concurso público, curso de formação, TAF, exames, investigação social e requisitos específicos do edital.',
+    remuneracao: 'Tabela PMAC/CBMAC cadastrada com total bruto oficial de julho/2018; edital PMAC 2023 indicou R$ 8.129,55 para Aluno Oficial e R$ 10.423,73 para 2º Tenente Estagiário de Saúde.',
+    fonte: 'IBGE, Governadoria/PMAC, Portal do Estado do Acre e Edital FGV PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
   },
   pcac: {
     nome: 'Polícia Civil do Acre', sigla: 'PCAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Civil',
-    criacao: 'Polícia judiciária estadual estruturada pela LC AC 129/2004 e alterações posteriores',
-    marco: 'Em 15/04/2026, Pedro Paulo Buzolin tomou posse como Delegado-Geral. Novo concurso PCAC anunciado para 139 vagas; último edital amplo PCAC teve 250 vagas em 2017.',
-    ativaLabel: 'Parâmetro NAT/MPAC 2022: 1 policial civil / 977 hab. · equivalência com IBGE 2025: ≈905 policiais civis para 884.372 hab.',
-    reservaLabel: 'Reforço 2023: 156 nomeados — 116 agentes, 18 peritos criminais, 12 delegados, 9 escrivães e 1 médico-legista',
-    totalLabel: 'Concursos: 250 vagas no edital 2017 · +139 vagas anunciadas em 2026 · atuação estadual nos 22 municípios acreanos',
-    relacaoLabel: '1 policial civil / 977 hab. no estudo NAT/MPAC · média nacional citada no mesmo estudo: 1 / 2.290 hab.',
+    criacao: 'Órgão estadual de polícia judiciária', marco: 'Em 2026, o Governo do Acre anunciou Pedro Paulo Buzolin como Delegado-Geral e novo concurso PCAC com 139 vagas.',
+    ativaLabel: 'Efetivo: conferir PCAC/Portal da Transparência', reservaLabel: 'Inativos: conferir Acreprevidência', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
     populacao: 884372,
     governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Pedro Paulo Buzolin — Delegado-Geral da Polícia Civil do Acre',
-    ingresso: 'Concurso público; novo certame PCAC anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito, com oferta inicial divulgada de 139 vagas.',
-    remuneracao: 'Tabelas cadastradas: Delegado Classe I R$ 15.378,00; Delegado Classe Especial R$ 22.514,92; carreiras operacionais com vencimentos iniciais a partir de R$ 3.007,78 no módulo remuneratório.',
-    fonte: 'Agência Acre; PCAC; NAT/MPAC; leis de carreira PCAC; acompanhamento de concursos PCAC 2017/2026', atualizado: 'Atualizado em 01/05/2026'
+    ingresso: 'Concurso público conforme edital; anúncio de 2026 prevê Delegado, Oficial Investigador de Polícia e Perito.',
+    remuneracao: 'Tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais da PCAC, com alertas para atualização por lei e contracheque.',
+    fonte: 'Agência de Notícias do Acre, Portal do Estado do Acre e tabelas salariais PCAC', atualizado: 'Atualizado em 01/05/2026'
   },
   ppac: {
-    nome: 'Polícia Penal do Acre / IAPEN-AC', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
-    criacao: 'EC 104/2019 · IAPEN/AC criado pela Lei AC 1.908/2007',
-    marco: 'Concurso SEAD/IAPEN 2023: 329 vagas totais, sendo 261 para Agente de Polícia Penal. Em 2025 foram nomeados 183 servidores: 170 policiais penais e 13 administrativos.',
-    ativaLabel: 'Reforço confirmado: 170 novos policiais penais nomeados em 2025 · Edital nº 104/2026 convocou novos aprovados para posse em 08/05/2026',
-    reservaLabel: 'Estrutura prisional: 5 unidades penitenciárias do Estado — Rio Branco, Senador Guiomard, Sena Madureira, Tarauacá e Cruzeiro do Sul',
-    totalLabel: 'Concurso 2023: 329 vagas totais · 261 Agentes de Polícia Penal · validade de 2 anos, prorrogável por mais 2',
-    relacaoLabel: 'DME/IAPEN: 1 sede em Rio Branco + 4 Núcleos de Monitoramento Eletrônico — Brasiléia, Sena Madureira, Feijó e Cruzeiro do Sul',
+    nome: 'Polícia Penal do Acre', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
+    criacao: POLICIAS_PENAIS_INFO.ppac.criacao, marco: POLICIAS_PENAIS_INFO.ppac.marco,
+    ativaLabel: POLICIAS_PENAIS_INFO.ppac.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppac.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppac.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppac.relacaoLabel,
     populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
-    ingresso: 'Edital SEAD/IAPEN 001/2023, banca IBFC, com provas em 10 municípios do Acre e etapas para Agente de Polícia Penal, especialistas e cargos técnico-administrativos.',
-    remuneracao: 'Edital IAPEN/PPAC 2023: Agente de Polícia Penal R$ 4.366,60; Especialista/Psicólogo/Assistente Social R$ 5.131,34; Engenheiro Civil R$ 6.561,76.',
-    fonte: 'IAPEN/AC; Agência Acre; SEAD/IAPEN 001/2023; IBFC; IBGE 2025', atualizado: 'Atualizado em 01/05/2026'
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: POLICIAS_PENAIS_INFO.ppac.direcao,
+    ingresso: POLICIAS_PENAIS_INFO.ppac.ingresso,
+    remuneracao: POLICIAS_PENAIS_INFO.ppac.remuneracao,
+    fonte: POLICIAS_PENAIS_INFO.ppac.fonte, atualizado: POLICIAS_PENAIS_INFO.ppac.atualizado
   },
   pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },

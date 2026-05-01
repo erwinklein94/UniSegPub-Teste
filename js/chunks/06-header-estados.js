@@ -96,48 +96,204 @@ const HEADER_ESTADOS = {
 };
 
 const HEADER_INSTITUICOES_INFO = {
+  pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
+  pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
+  ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
+  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
+  pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
+  pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
+  pcerj: { titulo: 'PCERJ', desc: 'Polícia Civil do Rio de Janeiro' },
+  pmmg:  { titulo: 'PMMG',  desc: 'Polícia Militar de Minas Gerais' },
+  pcmg:  { titulo: 'PCMG',  desc: 'Polícia Civil de Minas Gerais' },
+  pmba:  { titulo: 'PMBA',  desc: 'Polícia Militar da Bahia' },
+  pcba:  { titulo: 'PCBA',  desc: 'Polícia Civil da Bahia' },
+  pmpr:  { titulo: 'PMPR',  desc: 'Polícia Militar do Paraná' },
+  pcpr:  { titulo: 'PCPR',  desc: 'Polícia Civil do Paraná' },
+  pmrs:  { titulo: 'PMRS',  desc: 'Brigada Militar do Rio Grande do Sul' },
+  pcrs:  { titulo: 'PCRS',  desc: 'Polícia Civil do Rio Grande do Sul' },
+  pmsc:  { titulo: 'PMSC',  desc: 'Polícia Militar de Santa Catarina' },
+  pcsc:  { titulo: 'PCSC',  desc: 'Polícia Civil de Santa Catarina' },
+  pmes:  { titulo: 'PMES',  desc: 'Polícia Militar do Espírito Santo' },
+  pces:  { titulo: 'PCES',  desc: 'Polícia Civil do Espírito Santo' },
+  ppsp: { titulo: 'PPSP', desc: 'Polícia Penal de São Paulo' },
+  pprj: { titulo: 'PPRJ', desc: 'Polícia Penal do Rio de Janeiro' },
+  ppmg: { titulo: 'PPMG', desc: 'Polícia Penal de Minas Gerais' },
+  ppba: { titulo: 'PPBA', desc: 'Polícia Penal da Bahia' },
+  pppr: { titulo: 'PPPR', desc: 'Polícia Penal do Paraná' },
+  pprs: { titulo: 'PPRS', desc: 'Polícia Penal do Rio Grande do Sul' },
+  ppsc: { titulo: 'PPSC', desc: 'Polícia Penal de Santa Catarina' },
+  ppes: { titulo: 'PPES', desc: 'Polícia Penal do Espírito Santo' },
+  pmms: { titulo: 'PMMS', desc: 'Polícia Militar de Mato Grosso do Sul' },
+  pcms: { titulo: 'PCMS', desc: 'Polícia Civil de Mato Grosso do Sul' },
+  ppms: { titulo: 'PPMS', desc: 'Polícia Penal de Mato Grosso do Sul' },
+  pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
+  pcmt: { titulo: 'PCMT', desc: 'Polícia Judiciária Civil de Mato Grosso' },
+  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
+};
+
+const HEADER_INSTITUICOES_IMAGENS = {
+  pmesp: 'img/pmesp.jpeg',
+  pcsp: 'img/pcsp.jpeg',
+  pmerj: 'img/pmerj.jpeg',
+  pcerj: 'img/pcrj.jpeg',
+  pmmg: 'img/pmmg.jpeg',
+  pcmg: 'img/pcmg.jpeg',
+  pmba: 'img/pmba.jpeg',
+  pcba: 'img/pcba.jpeg',
+  pmpr: 'img/pmpr.jpeg',
+  pcpr: 'img/pcpr.jpeg',
+  pmrs: 'img/pmrs.jpeg',
+  pcrs: 'img/pcrs.jpeg',
+  pmsc: 'img/pmsc.jpeg',
+  pcsc: 'img/pcsc.jpeg',
+  pmes: 'img/pmes.jpeg',
+  pces: 'img/pces.jpeg',
+  pmgo: 'img/pmgo.jpeg',
+  pmms: 'img/pmms.jpeg',
+  pcms: 'img/pcms.jpeg',
+  pmmt: 'img/pmmt.jpeg',
+  pcmt: 'img/pcmt.jpeg',
+  ppsp: 'img/ppsp.jpeg',
+  pprj: 'img/pprj.jpeg',
+  ppmg: 'img/ppmg.jpeg',
+  ppba: 'img/ppba.jpeg',
+  pppr: 'img/pppr.jpeg',
+  pprs: 'img/pprs.jpeg',
+  ppsc: 'img/ppsc.jpeg',
+  ppes: 'img/ppes.jpeg',
+  ppms: 'img/ppms.jpeg',
+  ppmt: 'img/ppmt.jpeg',
+  pmma: 'img/pmma.jpeg',
+  pcma: 'img/pcma.jpeg',
+  ppma: 'img/ppma.jpeg',
+  pmto: 'img/pmto.jpeg',
+  pcto: 'img/pcto.jpeg',
+  ppto: 'img/ppto.jpeg'
+};
+
+
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.jpeg') {
+  if (!elemento || !nomeVariavel) return;
+  const imagemOriginal = String(src || fallback || 'img/logoleao.jpeg');
+  const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
+  elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
+  return imagemOriginal;
+}
+
+function setHeaderHeroImage(src) {
+  const card = document.querySelector('.header-institution-card');
+  if (!card) return;
+  const imagemOriginal = setCssUrlVariable(card, '--header-hero-image', src);
+  card.dataset.headerHeroImage = imagemOriginal;
+}
+
+function setSiteHeaderBackgroundImage(src) {
+  const imagemOriginal = setCssUrlVariable(document.body, '--site-header-bg-image', src);
+  if (imagemOriginal) document.body.dataset.siteHeaderBgImage = imagemOriginal;
+}
+
+function setPageInstitutionBackgroundImage(src) {
+  const imagemOriginal = setCssUrlVariable(document.body, '--page-institution-image', src);
+  if (imagemOriginal) document.body.dataset.pageInstitutionImage = imagemOriginal;
+}
+
+function configurarLogoInicialHeader(img) {
+  if (!img) return;
+  img.style.display = '';
+  img.onerror = null;
+  img.removeAttribute('srcset');
+  img.removeAttribute('sizes');
+  img.removeAttribute('data-fallback-aplicado');
+  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.retry = '';
+  img.dataset.logoRetry = '0';
+  img.alt = 'Logo Universo Segurança Pública';
+  img.onerror = function () {
+    const alternativas = ['img/logoleao.png', 'img/logoleao.jpg', 'img/logoleao.webp'];
+    const indice = parseInt(this.dataset.logoRetry || '0', 10);
+    if (indice < alternativas.length) {
+      this.dataset.logoRetry = String(indice + 1);
+      this.src = alternativas[indice];
+      return;
+    }
+    this.onerror = null;
+    this.style.display = 'none';
+  };
+  img.src = 'img/logoleao.jpeg';
+}
+
+function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
+  const card = document.querySelector('.header-institution-card');
+  if (card) card.classList.remove('header-portal-home');
+
+  const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
+  const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
+
+  // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
+  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.jpeg');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.jpeg');
+
+  // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
+  setPageInstitutionBackgroundImage('img/logoleao.webp');
+
+  if (!img) return;
+  img.style.display = '';
+  img.removeAttribute('data-retry');
+  img.removeAttribute('data-img-base');
+  img.onerror = function () {
+    if (this.dataset.fallbackAplicado === 'bandeira') {
+      this.onerror = null;
+      return;
+    }
+    this.dataset.fallbackAplicado = 'bandeira';
+    this.src = fallbackBandeira;
+    this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
+  };
+
+  if (imagemInstituicao) {
+    img.dataset.fallbackAplicado = '';
+    img.src = imagemInstituicao;
+    img.alt = `Logo/brasão da ${altInstituicao}`;
+  } else {
+    img.dataset.fallbackAplicado = 'bandeira';
+    img.onerror = null;
+    img.src = fallbackBandeira;
+    img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
+  }
+}
+
+
+const HEADER_INSTITUICOES_RESUMO = {
   pmac: {
     nome: 'Polícia Militar do Acre', sigla: 'PMAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Militar',
-    criacao: '25/05/1916 · 110 anos em maio/2026',
-    marco: 'Quadro legal global: 4.734 cargos. Efetivo operacional informado em 2026: aproximadamente 2.340 PMs, com 302 mulheres em atividade; déficit estimado frente ao quadro legal: 2.394 cargos.',
-    ativa: 2340,
-    ativaLabel: '≈2.340 PMs em atividade · 302 mulheres · participação feminina de ≈13% do efetivo',
-    reservaLabel: 'Reserva/inativos: número consolidado não aberto; LC AC 305/2015 permite convocação temporária de até 20% do efetivo das corporações militares',
-    totalLabel: 'Quadro legal PMAC: 4.734 cargos · diferença aproximada entre quadro legal e ativo 2026: 2.394 cargos',
-    relacaoLabel: '≈1 PM ativo / 378 hab. (884.372 hab. ÷ 2.340 PMs) · estudo NAT/MPAC 2022: 1 PM / 390 hab.',
+    criacao: '1916 · instituição centenária', marco: 'A PMAC completou 110 anos em 2026; a data institucional é celebrada em maio.',
+    ativaLabel: 'Efetivo: conferir PMAC/Portal da Transparência', reservaLabel: 'Reserva/reforma: conferir Acreprevidência e atos estaduais', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
     populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral da PMAC',
-    ingresso: 'Concurso PMAC 2023 prorrogado em 2026; formação de oficiais em andamento com 24 alunos oficiais iniciados, mais 5 em inclusão, e curso de 3.880 horas até 2028.',
-    remuneracao: 'Edital PMAC 2023: R$ 8.129,55 para Aluno Oficial Combatente e R$ 10.423,73 para 2º Tenente Estagiário de Saúde; tabela PMAC/CBMAC restante mantida no módulo remuneratório.',
-    fonte: 'IBGE 2025; LC AC 315/2015; LC AC 305/2015; Agência Acre/PMAC; Edital SEAD/PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral',
+    ingresso: 'Concurso público, curso de formação, TAF, exames, investigação social e requisitos específicos do edital.',
+    remuneracao: 'Tabela PMAC/CBMAC cadastrada com total bruto oficial de julho/2018; edital PMAC 2023 indicou R$ 8.129,55 para Aluno Oficial e R$ 10.423,73 para 2º Tenente Estagiário de Saúde.',
+    fonte: 'IBGE, Governadoria/PMAC, Portal do Estado do Acre e Edital FGV PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
   },
   pcac: {
     nome: 'Polícia Civil do Acre', sigla: 'PCAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Civil',
-    criacao: 'Polícia judiciária estadual estruturada pela LC AC 129/2004 e alterações posteriores',
-    marco: 'Em 15/04/2026, Pedro Paulo Buzolin tomou posse como Delegado-Geral. Novo concurso PCAC anunciado para 139 vagas; último edital amplo PCAC teve 250 vagas em 2017.',
-    ativaLabel: 'Parâmetro NAT/MPAC 2022: 1 policial civil / 977 hab. · equivalência com IBGE 2025: ≈905 policiais civis para 884.372 hab.',
-    reservaLabel: 'Reforço 2023: 156 nomeados — 116 agentes, 18 peritos criminais, 12 delegados, 9 escrivães e 1 médico-legista',
-    totalLabel: 'Concursos: 250 vagas no edital 2017 · +139 vagas anunciadas em 2026 · atuação estadual nos 22 municípios acreanos',
-    relacaoLabel: '1 policial civil / 977 hab. no estudo NAT/MPAC · média nacional citada no mesmo estudo: 1 / 2.290 hab.',
+    criacao: 'Órgão estadual de polícia judiciária', marco: 'Em 2026, o Governo do Acre anunciou Pedro Paulo Buzolin como Delegado-Geral e novo concurso PCAC com 139 vagas.',
+    ativaLabel: 'Efetivo: conferir PCAC/Portal da Transparência', reservaLabel: 'Inativos: conferir Acreprevidência', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
     populacao: 884372,
     governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Pedro Paulo Buzolin — Delegado-Geral da Polícia Civil do Acre',
-    ingresso: 'Concurso público; novo certame PCAC anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito, com oferta inicial divulgada de 139 vagas.',
-    remuneracao: 'Tabelas cadastradas: Delegado Classe I R$ 15.378,00; Delegado Classe Especial R$ 22.514,92; carreiras operacionais com vencimentos iniciais a partir de R$ 3.007,78 no módulo remuneratório.',
-    fonte: 'Agência Acre; PCAC; NAT/MPAC; leis de carreira PCAC; acompanhamento de concursos PCAC 2017/2026', atualizado: 'Atualizado em 01/05/2026'
+    ingresso: 'Concurso público conforme edital; anúncio de 2026 prevê Delegado, Oficial Investigador de Polícia e Perito.',
+    remuneracao: 'Tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais da PCAC, com alertas para atualização por lei e contracheque.',
+    fonte: 'Agência de Notícias do Acre, Portal do Estado do Acre e tabelas salariais PCAC', atualizado: 'Atualizado em 01/05/2026'
   },
   ppac: {
-    nome: 'Polícia Penal do Acre / IAPEN-AC', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
-    criacao: 'EC 104/2019 · IAPEN/AC criado pela Lei AC 1.908/2007',
-    marco: 'Concurso SEAD/IAPEN 2023: 329 vagas totais, sendo 261 para Agente de Polícia Penal. Em 2025 foram nomeados 183 servidores: 170 policiais penais e 13 administrativos.',
-    ativaLabel: 'Reforço confirmado: 170 novos policiais penais nomeados em 2025 · Edital nº 104/2026 convocou novos aprovados para posse em 08/05/2026',
-    reservaLabel: 'Estrutura prisional: 5 unidades penitenciárias do Estado — Rio Branco, Senador Guiomard, Sena Madureira, Tarauacá e Cruzeiro do Sul',
-    totalLabel: 'Concurso 2023: 329 vagas totais · 261 Agentes de Polícia Penal · validade de 2 anos, prorrogável por mais 2',
-    relacaoLabel: 'DME/IAPEN: 1 sede em Rio Branco + 4 Núcleos de Monitoramento Eletrônico — Brasiléia, Sena Madureira, Feijó e Cruzeiro do Sul',
+    nome: 'Polícia Penal do Acre', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
+    criacao: POLICIAS_PENAIS_INFO.ppac.criacao, marco: POLICIAS_PENAIS_INFO.ppac.marco,
+    ativaLabel: POLICIAS_PENAIS_INFO.ppac.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppac.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppac.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppac.relacaoLabel,
     populacao: 884372,
-    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Marcos Frank Costa e Silva — Presidente do IAPEN/AC',
-    ingresso: 'Edital SEAD/IAPEN 001/2023, banca IBFC, com provas em 10 municípios do Acre e etapas para Agente de Polícia Penal, especialistas e cargos técnico-administrativos.',
-    remuneracao: 'Edital IAPEN/PPAC 2023: Agente de Polícia Penal R$ 4.366,60; Especialista/Psicólogo/Assistente Social R$ 5.131,34; Engenheiro Civil R$ 6.561,76.',
-    fonte: 'IAPEN/AC; Agência Acre; SEAD/IAPEN 001/2023; IBFC; IBGE 2025', atualizado: 'Atualizado em 01/05/2026'
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: POLICIAS_PENAIS_INFO.ppac.direcao,
+    ingresso: POLICIAS_PENAIS_INFO.ppac.ingresso,
+    remuneracao: POLICIAS_PENAIS_INFO.ppac.remuneracao,
+    fonte: POLICIAS_PENAIS_INFO.ppac.fonte, atualizado: POLICIAS_PENAIS_INFO.ppac.atualizado
   },
   pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
