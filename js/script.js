@@ -3086,6 +3086,50 @@ const HEADER_INSTITUICOES_INFO = {
   ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
 };
 
+const HEADER_INSTITUICOES_IMAGENS = {
+  pmesp: 'pmesp.jpeg', pcsp: 'pcsp.jpeg', pmerj: 'pmerj.jpeg', pcerj: 'pcrj.jpeg',
+  pmmg: 'pmmg.jpeg', pcmg: 'pcmg.jpeg', pmba: 'pmba.jpeg', pcba: 'pcba.jpeg',
+  pmpr: 'pmpr.jpeg', pcpr: 'pcpr.jpeg', pmrs: 'pmrs.jpeg', pcrs: 'pcrs.jpeg',
+  pmsc: 'pmsc.jpeg', pcsc: 'pcsc.jpeg', pmes: 'pmes.jpeg', pces: 'pces.jpeg',
+  pmms: 'pmms.jpeg', pcms: 'pcms.jpeg', pmmt: 'pmmt.jpeg', pcmt: 'pcmt.jpeg',
+  ppsp: 'ppsp.jpeg', pprj: 'pprj.jpeg', ppmg: 'ppmg.jpeg', ppba: 'ppba.jpeg',
+  pppr: 'pppr.jpeg', pprs: 'pprs.jpeg', ppsc: 'ppsc.jpeg', ppes: 'ppes.jpeg',
+  ppms: 'ppms.jpeg', ppmt: 'ppmt.jpeg', ppto: 'ppto.jpeg', pmto: 'pmto.jpeg',
+  pcto: 'pcto.jpeg', ppma: 'ppma.jpeg', pmma: 'pmma.jpeg', pcma: 'pcma.jpeg'
+};
+
+function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
+  if (!img) return;
+  const imagemInstituicao = HEADER_INSTITUICOES_IMAGENS[inst];
+  const fallbackBandeira = dadosEstado?.flag || HEADER_ESTADOS.sp.flag;
+  const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
+
+  img.style.display = '';
+  img.removeAttribute('data-retry');
+  img.removeAttribute('data-img-base');
+  img.onerror = function () {
+    if (this.dataset.fallbackAplicado === 'bandeira') {
+      this.onerror = null;
+      return;
+    }
+    this.dataset.fallbackAplicado = 'bandeira';
+    this.src = fallbackBandeira;
+    this.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
+  };
+
+  if (imagemInstituicao) {
+    img.dataset.fallbackAplicado = '';
+    img.src = imagemInstituicao;
+    img.alt = `Logo/brasão da ${altInstituicao}`;
+  } else {
+    img.dataset.fallbackAplicado = 'bandeira';
+    img.onerror = null;
+    img.src = fallbackBandeira;
+    img.alt = `Bandeira de ${dadosEstado?.nome || 'estado'}`;
+  }
+}
+
+
 const HEADER_INSTITUICOES_RESUMO = {
   pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
@@ -3201,7 +3245,10 @@ function aplicarHeaderInicialPortal() {
     flagAtual.src = 'logoleao';
     flagAtual.alt = 'Logo Universo Segurança Pública';
     const moldura = flagAtual.closest('.current-flag-frame');
-    if (moldura) moldura.classList.add('brand-logo-frame');
+    if (moldura) {
+      moldura.classList.remove('institution-logo-frame');
+      moldura.classList.add('brand-logo-frame');
+    }
   }
 
   setTexto('header-active-sigla', 'Universo');
@@ -3312,12 +3359,11 @@ function atualizarHeaderInstitucional(inst) {
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
     const moldura = flagAtual.closest('.current-flag-frame');
-    if (moldura) moldura.classList.remove('brand-logo-frame');
-    flagAtual.style.display = '';
-    flagAtual.removeAttribute('data-retry');
-    flagAtual.removeAttribute('onerror');
-    flagAtual.src = dadosEstado.flag;
-    flagAtual.alt = `Bandeira de ${dadosEstado.nome}`;
+    if (moldura) {
+      moldura.classList.remove('brand-logo-frame');
+      moldura.classList.add('institution-logo-frame');
+    }
+    aplicarImagemHeaderInstituicao(flagAtual, inst, dadosEstado, instituicao);
   }
 
   const siglaAtual = document.getElementById('header-active-sigla');

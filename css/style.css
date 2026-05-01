@@ -3400,3 +3400,15 @@
     .comparador-stat,
     .comparador-card { border-radius: 14px; }
   }
+/* Imagens reais das instituições no cabeçalho */
+.current-flag-frame.institution-logo-frame {
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.28), rgba(255,255,255,0.06));
+}
+
+.current-flag-frame.institution-logo-frame img {
+  object-fit: contain;
+  border-radius: 16px;
+  padding: 4px;
+  background: rgba(255,255,255,0.92);
+}
