@@ -55,6 +55,7 @@
 
 <!-- Tema refeito do zero a partir da referência visual enviada -->
 <link rel="stylesheet" href="assets/css/tema-anexo-zero.css">
+<link rel="stylesheet" href="assets/css/tema-mockup-armada.css">
 <script src="assets/js/image-fallback.js"></script>
 
 </head>
@@ -490,6 +491,71 @@
 
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main id="page-principal" class="page-section active" role="main">
+
+  <!-- BLOCO 04.0 — Capa visual em formato de apresentação tática, inspirada no mockup enviado -->
+  <section class="slide-showcase" aria-labelledby="slide-showcase-title">
+    <article class="slide-card slide-cover" aria-label="Capa do portal em estilo apresentação">
+      <div class="slide-brand-row">
+        <span class="slide-shield" aria-hidden="true">◆</span>
+        <strong>UNISEGPUB</strong>
+        <small>painel independente</small>
+      </div>
+      <div class="slide-cover-grid">
+        <div class="slide-cover-copy">
+          <span class="slide-kicker">consulta operacional</span>
+          <h2 id="slide-showcase-title">Mapa de carreira, remuneração e fontes oficiais</h2>
+          <p>Uma experiência em formato de dossiê visual: escolha a instituição, acompanhe os dados essenciais e avance para a consulta que resolve sua dúvida.</p>
+          <div class="slide-cover-actions" aria-label="Atalhos da capa visual">
+            <button type="button" onclick="document.getElementById('instituicao_header')?.focus()">Selecionar instituição</button>
+            <button type="button" class="ghost" onclick="switchPage('comparar')">Comparar carreiras</button>
+          </div>
+        </div>
+        <div class="slide-cover-media" aria-label="Instituição em destaque">
+          <div class="slide-media-frame">
+            <img id="deck-active-logo" src="assets/img/logoleao.jpeg" alt="Logo Universo Segurança Pública" loading="eager">
+          </div>
+          <div class="slide-media-caption">
+            <strong id="deck-active-sigla">UNIVERSO</strong>
+            <span id="deck-active-name">Segurança Pública</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="slide-card slide-mini slide-dark" onclick="switchPage('remuneracao')" role="button" tabindex="0" aria-label="Abrir remuneração tabelada">
+      <span>01</span>
+      <strong>Remuneração</strong>
+      <p>Tabelas brutas, cargos, filtros e fonte de validação.</p>
+    </article>
+
+    <article class="slide-card slide-mini slide-light" onclick="switchPage('concursos')" role="button" tabindex="0" aria-label="Abrir concursos">
+      <span>02</span>
+      <strong>Concursos</strong>
+      <p>Editais, etapas, requisitos e informações de ingresso.</p>
+    </article>
+
+    <article class="slide-card slide-stat slide-dark" aria-label="Cobertura do portal">
+      <span>COBERTURA</span>
+      <strong>36</strong>
+      <p>instituições em 12 estados</p>
+      <div class="slide-stat-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    </article>
+
+    <article class="slide-card slide-wide slide-light" aria-label="Fluxo recomendado de uso">
+      <span>FLUXO RÁPIDO</span>
+      <div class="slide-timeline" aria-hidden="true">
+        <i>01</i><i>02</i><i>03</i><i>04</i>
+      </div>
+      <p>Selecionar → consultar → comparar → validar em fonte oficial.</p>
+    </article>
+
+    <article class="slide-card slide-wide slide-dark" onclick="switchPage('direitos')" role="button" tabindex="0" aria-label="Abrir direitos e vantagens">
+      <span>PAINEL DE APOIO</span>
+      <strong>Direitos, ações e entidades</strong>
+      <p>Conteúdo organizado por instituição para orientar a próxima consulta sem confundir informação pública com decisão final.</p>
+    </article>
+  </section>
+
   <!-- BLOCO 04.1 — Hero inicial e botões principais -->
   <section class="principal-hero" aria-labelledby="principal-titulo">
     <!-- BLOCO 04.1.1 — Título da página principal -->
@@ -1266,6 +1332,7 @@
 <script src="assets/js/dados/05-associacoes.js" defer></script>
 <script src="assets/js/dados/06-concursos.js" defer></script>
 <script src="assets/js/app.js" defer></script>
+<script src="assets/js/deck-sync.js" defer></script>
 
 </body>
 </html>
