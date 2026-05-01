@@ -234,8 +234,8 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   setHeaderHeroImage(fallbackBandeira || 'img/logoleao.jpeg');
   setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.jpeg');
 
-  // Página grande: se houver brasão cadastrado, usa o brasão; se não houver, usa o logo principal.
-  setPageInstitutionBackgroundImage(imagemInstituicao || 'img/logoleao.webp');
+  // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
+  setPageInstitutionBackgroundImage('img/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
