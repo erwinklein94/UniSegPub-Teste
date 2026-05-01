@@ -2302,6 +2302,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
+const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
@@ -2369,6 +2370,16 @@ function toggleMenu(forceOpen) {
 
 function closeMenu() {
   toggleMenu(false);
+}
+
+function abrirPaginaInicial() {
+  // Volta ao mesmo estado visual da primeira entrada no portal:
+  // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
+  aplicarHeaderInicialPortal();
+  switchPage('principal');
+  try {
+    if (window.location.hash !== '#principal') window.history.replaceState(null, '', '#principal');
+  } catch (e) { /* navegação silenciosa */ }
 }
 
 function switchPage(page) {
@@ -3742,7 +3753,7 @@ function aplicarHeaderInicialPortal() {
     flagAtual.dataset.retry = '';
     flagAtual.src = 'logoleao';
     flagAtual.alt = 'Logo Universo Segurança Pública';
-    setHeaderHeroImage('logoleao.jpeg');
+    setHeaderHeroImage(HEADER_BRASIL_FLAG);
     const moldura = flagAtual.closest('.current-flag-frame');
     if (moldura) {
       moldura.classList.remove('institution-logo-frame');

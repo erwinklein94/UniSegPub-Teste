@@ -3815,9 +3815,10 @@
 }
 
 body[data-inst="portal"] .header-institution-card::before {
-  width: min(45%, 520px);
-  filter: saturate(1.02) contrast(1.05) brightness(0.72);
-  opacity: 0.66;
+  width: min(58%, 690px);
+  filter: saturate(1.08) contrast(1.08) brightness(0.76);
+  opacity: 0.92;
+  background-position: center left;
 }
 
 body[data-inst="portal"] .header-current-copy strong {
