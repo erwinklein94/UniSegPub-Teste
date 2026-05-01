@@ -46,7 +46,11 @@
 
 <!-- BLOCO 01.5 — Aplicação antecipada do tema salvo -->
 <script>
-  document.documentElement.setAttribute('data-theme', 'dark');
+  (function () {
+    const temaSalvo = localStorage.getItem('theme');
+    const temaInicial = temaSalvo === 'light' || temaSalvo === 'dark' ? temaSalvo : 'dark';
+    document.documentElement.setAttribute('data-theme', temaInicial);
+  })();
 </script>
 
 <!-- Arquivos separados para cache e manutenção -->
@@ -112,7 +116,7 @@
             <div class="header-facts-grid">
               <div class="header-fact">
                 <span id="header-label-criacao">Instituições</span>
-                <strong id="header-resumo-criacao">30</strong>
+                <strong id="header-resumo-criacao">36</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-ativa">Ativos estimados</span>
@@ -132,7 +136,7 @@
               </div>
               <div class="header-fact">
                 <span id="header-label-relacao">Estados</span>
-                <strong id="header-resumo-relacao">10 estados</strong>
+                <strong id="header-resumo-relacao">12 estados</strong>
               </div>
             </div>
 
@@ -482,7 +486,7 @@
       <img src="assets/img/barrafixa01.jpg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
-    <small class="sidebar-affiliate-note">.</small>
+    <small class="sidebar-affiliate-note">Links comerciais/afiliados: podemos receber comissão sem alterar o preço para você. Confira preço, prazo, garantia e reembolso no vendedor.</small>
   </div>
 </aside>
 
@@ -513,11 +517,11 @@
   <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
   <section class="principal-stats" aria-label="Resumo de cobertura do site">
     <div class="principal-stat">
-      <strong>10 estados</strong>
+      <strong>12 estados</strong>
       <span>Estados monitorados</span>
     </div>
     <div class="principal-stat">
-      <strong>30</strong>
+      <strong>36</strong>
       <span>Instituições cadastradas</span>
     </div>
     <div class="principal-stat">
@@ -527,6 +531,30 @@
     <div class="principal-stat">
       <strong>Público</strong>
       <span>Conteúdo organizado</span>
+    </div>
+  </section>
+
+  <section class="instituicao-dossie" aria-labelledby="dossie-titulo">
+    <div class="principal-section-title">
+      <h2 id="dossie-titulo">Dossiê rápido da instituição</h2>
+      <p>Resumo objetivo para indicar o que está cadastrado, o que precisa ser conferido e onde o usuário deve validar informações sensíveis.</p>
+    </div>
+    <div class="dossie-grid" id="instituicao-dossie-grid" aria-live="polite">
+      <article class="dossie-card">
+        <span>Instituição</span>
+        <strong>Portal</strong>
+        <p>Selecione uma instituição no topo para ver dados específicos.</p>
+      </article>
+      <article class="dossie-card">
+        <span>Cobertura</span>
+        <strong>36 instituições</strong>
+        <p>Dados públicos organizados por estado, carreira e área de consulta.</p>
+      </article>
+      <article class="dossie-card">
+        <span>Atenção</span>
+        <strong>Conferência oficial</strong>
+        <p>Valores, editais e direitos devem ser validados em fontes oficiais.</p>
+      </article>
     </div>
   </section>
 
@@ -683,6 +711,31 @@
       </div>
     </div>
 
+    <div class="remuneracao-filtros" aria-label="Filtros da tabela de remuneração">
+      <div class="field">
+        <label for="filtro-remu-cargo">Buscar cargo, classe ou referência</label>
+        <input type="search" id="filtro-remu-cargo" placeholder="Ex.: Soldado, Delegado, Classe Especial" oninput="carregarRemuneracaoTabelada()">
+      </div>
+      <div class="field">
+        <label for="filtro-remu-faixa">Faixa da carreira</label>
+        <select id="filtro-remu-faixa" onchange="carregarRemuneracaoTabelada()">
+          <option value="">Todos os cargos</option>
+          <option value="ingresso">Priorizar cargos de ingresso</option>
+          <option value="topo">Priorizar topo de carreira</option>
+          <option value="confirmados">Somente valores confirmados</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="filtro-remu-ordem">Ordenar</label>
+        <select id="filtro-remu-ordem" onchange="carregarRemuneracaoTabelada()">
+          <option value="original">Ordem da carreira</option>
+          <option value="menor">Menor remuneração primeiro</option>
+          <option value="maior">Maior remuneração primeiro</option>
+          <option value="az">Cargo A-Z</option>
+        </select>
+      </div>
+    </div>
+
     <div class="remuneracao-table-wrap">
       <table class="remuneracao-table" aria-label="Tabela de remuneração bruta por cargo">
         <thead>
@@ -716,6 +769,10 @@
       Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
     </div>
 
+    <div class="alerta legal" style="margin-top: 0; margin-bottom: 18px;">
+      Quanto mais campos você preencher, melhor será a triagem. Se não souber uma resposta, deixe como “não informar” ou em branco.
+    </div>
+
     <div class="form-grid" style="margin-bottom: 0;">
       <div class="field">
         <label for="cargo_dir">Nível da Carreira</label>
@@ -730,15 +787,15 @@
         </select>
       </div>
       <div class="field">
-        <label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
-        <input type="number" id="tempo_dir" value="10" min="0" max="45"/>
+        <label for="tempo_dir">Tempo aproximado na carreira policial (anos)</label>
+        <input type="number" id="tempo_dir" min="0" max="45" placeholder="Ex.: 10" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
-        <label for="idade_dir">Idade</label>
-        <input type="number" id="idade_dir" value="35" min="18" max="80" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+        <label for="idade_dir">Idade atual</label>
+        <input type="number" id="idade_dir" min="18" max="80" placeholder="Ex.: 35" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
-        <label for="sexo_dir">Sexo para regra previdenciária</label>
+        <label for="sexo_dir">Regra previdenciária aplicável</label>
         <select id="sexo_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="masculino">Masculino</option>
@@ -758,11 +815,11 @@
         </select>
       </div>
       <div class="field">
-        <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
-        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+        <label for="renda_dir">Remuneração bruta mensal — opcional (R$)</label>
+        <input type="number" id="renda_dir" min="0" step="0.01" placeholder="Ex.: 5500,00" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
-        <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
+        <label for="local_especial_dir">Trabalha em unidade com adicional ou regra especial?</label>
         <select id="local_especial_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="sim">Sim</option>
@@ -872,7 +929,7 @@
     <h2>Produtos (<span id="txt-inst-produtos">PMESP</span>)</h2>
 
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
+      <strong>Aviso de transparência:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal. Alguns links podem ser comerciais ou afiliados; isso não altera o preço para o usuário e ajuda a manter o portal. Antes de comprar, confira preço, prazo, garantia, avaliações e política de reembolso na página oficial do vendedor.
     </div>
 
     

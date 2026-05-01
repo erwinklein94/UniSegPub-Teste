@@ -646,3 +646,184 @@ a:hover {
     padding: 22px 18px !important;
   }
 }
+
+/* =======================================================
+   UX/Acessibilidade — camada final de correções
+   Melhora contraste, tema claro real, filtros e dossiê.
+   ======================================================= */
+.principal-hero {
+  background:
+    linear-gradient(135deg, rgba(217,169,61,.10) 0 24%, transparent 24% 100%),
+    linear-gradient(140deg, rgba(194,203,162,.12) 0 42%, transparent 42% 100%),
+    linear-gradient(320deg, rgba(125,143,75,.20) 0 18%, transparent 18% 100%),
+    linear-gradient(90deg, rgba(18,24,19,.98), rgba(22,30,23,.98)) !important;
+}
+
+.principal-title,
+.principal-title span,
+.principal-subtitle,
+.principal-eyebrow {
+  text-shadow: 0 2px 14px rgba(0,0,0,.45);
+}
+
+html[data-theme="light"],
+html[data-theme="light"] body {
+  background: #f5f3ea !important;
+  color: #182016 !important;
+}
+
+html[data-theme="light"] body::before {
+  background:
+    linear-gradient(135deg, rgba(70,82,52,.08) 0 28%, transparent 28% 100%),
+    linear-gradient(90deg, rgba(245,243,234,.98), rgba(232,227,212,.98)) !important;
+}
+
+html[data-theme="light"] .site-header,
+html[data-theme="light"] .header-facts-panel,
+html[data-theme="light"] .header-inst-selector,
+html[data-theme="light"] .header-branch-switcher,
+html[data-theme="light"] .state-flag-strip,
+html[data-theme="light"] .principal-stat,
+html[data-theme="light"] .portal-trust-card,
+html[data-theme="light"] .como-usar-step,
+html[data-theme="light"] .principal-card,
+html[data-theme="light"] .curso-card,
+html[data-theme="light"] .card,
+html[data-theme="light"] .alerta,
+html[data-theme="light"] .remuneracao-stat,
+html[data-theme="light"] .inst-selector,
+html[data-theme="light"] .taf-produto-card,
+html[data-theme="light"] .comparador-table-wrap,
+html[data-theme="light"] .remuneracao-table-wrap,
+html[data-theme="light"] .sidebar,
+html[data-theme="light"] .instituicao-dossie,
+html[data-theme="light"] .dossie-card {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.76), rgba(246,243,232,.92)) !important;
+  color: #182016 !important;
+  border-color: rgba(77,91,55,.22) !important;
+  box-shadow: 0 18px 34px rgba(26,32,20,.13) !important;
+}
+
+html[data-theme="light"] .principal-hero {
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.78), rgba(240,235,220,.94)),
+    linear-gradient(90deg, rgba(236,232,215,.98), rgba(226,220,203,.98)) !important;
+  color: #182016 !important;
+}
+
+html[data-theme="light"] .principal-title,
+html[data-theme="light"] .principal-title span,
+html[data-theme="light"] .principal-subtitle,
+html[data-theme="light"] .principal-eyebrow,
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] p,
+html[data-theme="light"] label,
+html[data-theme="light"] small,
+html[data-theme="light"] span,
+html[data-theme="light"] strong {
+  color: #182016 !important;
+  text-shadow: none !important;
+}
+
+html[data-theme="light"] .principal-title span,
+html[data-theme="light"] .principal-eyebrow,
+html[data-theme="light"] a,
+html[data-theme="light"] .remuneracao-link,
+html[data-theme="light"] .concurso-link {
+  color: #6b4a00 !important;
+}
+
+html[data-theme="light"] input,
+html[data-theme="light"] select,
+html[data-theme="light"] textarea {
+  background: #fffdf5 !important;
+  color: #182016 !important;
+  border-color: rgba(77,91,55,.32) !important;
+}
+
+.instituicao-dossie {
+  margin: 28px 0;
+}
+
+.dossie-grid,
+.remuneracao-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.dossie-card {
+  padding: 18px;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,.045) 0 7%, transparent 7% 100%),
+    linear-gradient(180deg, rgba(20,26,21,.96), rgba(15,20,16,.94)) !important;
+  border: 1px solid rgba(195,204,163,.14);
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+
+.dossie-card span,
+.remuneracao-faixa {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 3px 8px;
+  border: 1px solid rgba(217,169,61,.35);
+  color: #d9a93d !important;
+  font-size: .74rem;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.dossie-card strong {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.08rem;
+}
+
+.dossie-card p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.remuneracao-filtros {
+  margin: 20px 0;
+  padding: 16px;
+  background: rgba(0,0,0,.16);
+  border: 1px solid rgba(195,204,163,.14);
+}
+
+.remuneracao-faixa {
+  margin-left: 6px;
+  margin-top: 8px;
+  color: #cdd6b5 !important;
+  border-color: rgba(195,204,163,.24);
+}
+
+.alerta-campos {
+  border-left-color: #d9a93d !important;
+}
+
+.sidebar-affiliate-note {
+  display: block;
+  margin-top: 10px;
+  color: #cdd6b5 !important;
+  line-height: 1.45;
+}
+
+.img-indisponivel .produto-imagem,
+.img-indisponivel .taf-produto-imagem {
+  display: none !important;
+}
+
+@media (max-width: 900px) {
+  .principal-hero {
+    background:
+      linear-gradient(135deg, rgba(217,169,61,.12) 0 18%, transparent 18% 100%),
+      linear-gradient(140deg, rgba(194,203,162,.10) 0 36%, transparent 36% 100%),
+      linear-gradient(90deg, rgba(18,24,19,.98), rgba(22,30,23,.98)) !important;
+  }
+}

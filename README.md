@@ -174,3 +174,18 @@ No celular, o tamanho está controlado dentro de:
 ```css
 @media (max-width: 700px) { ... }
 ```
+
+## Melhorias de UX aplicadas nesta versão
+
+- Tema salvo no navegador respeitado antes da página carregar.
+- Tema claro recebeu contraste próprio em vez de herdar a camada escura militar.
+- Hero principal ajustado para remover faixa clara que prejudicava leitura.
+- Tocantins corrigido no seletor institucional (`PMTO`, `PCTO`, `PPTO`).
+- Dossiê rápido incluído na página inicial para mostrar cobertura, fonte e campos que ainda exigem conferência.
+- Tabela de remuneração recebeu busca, filtro por faixa da carreira e ordenação.
+- Formulário de direitos ficou sem valores pré-preenchidos para evitar falsa personalização.
+- Comparador manteve seleção clara por checkbox e resumo de instituições selecionadas.
+- Menu lateral recebeu foco inicial, retorno de foco e navegação com `Esc`/`Tab` mais consistente.
+- Links comerciais/afiliados receberam aviso de transparência mais explícito.
+- Associações sem URL real não são mais renderizadas como links quebrados.
+- URLs podem ser compartilhadas com `?inst=sigla&aba=nome-da-aba`, por exemplo `?inst=pmto&aba=remuneracao`.

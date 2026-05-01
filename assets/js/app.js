@@ -11,6 +11,7 @@ function debounce(fn, ms = 150) {
 
 function mostrarToast(msg, tipo = 'success') {
   const toast = document.getElementById('toast');
+  if (!toast) return;
   toast.textContent = msg;
   toast.className = 'toast show' + (tipo === 'error' ? ' error' : '');
   setTimeout(() => { toast.className = 'toast'; }, 3500);
@@ -24,38 +25,85 @@ function escapeHtml(str = '') {
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
 /* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
-function toggleMenu() {
+let ultimoFocoAntesMenu = null;
+
+function toggleMenu(forceOpen) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
   const btn = document.querySelector('.menu-btn');
-  const isActive = sidebar.classList.toggle('active');
-  overlay.classList.toggle('active');
-  btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+  if (!sidebar) return;
+
+  const deveAbrir = typeof forceOpen === 'boolean' ? forceOpen : !sidebar.classList.contains('active');
+  if (deveAbrir && document.activeElement) ultimoFocoAntesMenu = document.activeElement;
+
+  sidebar.classList.toggle('active', deveAbrir);
+  if (overlay) overlay.classList.toggle('active', deveAbrir);
+  if (btn) btn.setAttribute('aria-expanded', deveAbrir ? 'true' : 'false');
+
+  if (deveAbrir) {
+    const primeiroFoco = sidebar.querySelector('button, [href], select, input, textarea, [tabindex]:not([tabindex="-1"])');
+    if (primeiroFoco) primeiroFoco.focus({ preventScroll: true });
+  } else if (ultimoFocoAntesMenu && typeof ultimoFocoAntesMenu.focus === 'function') {
+    ultimoFocoAntesMenu.focus({ preventScroll: true });
+  }
 }
 
-function switchPage(page) {
-  document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+function getPaginaAtual() {
+  const ativa = document.querySelector('.page-section.active');
+  return ativa ? ativa.id.replace('page-', '') : 'principal';
+}
+
+function atualizarUrlCompartilhavel(page = getPaginaAtual()) {
+  if (!window.history || !window.location) return;
+  const params = new URLSearchParams(window.location.search);
+  if (!headerModoInicialPortal && INSTITUICOES_VALIDAS.includes(currInst)) params.set('inst', currInst);
+  else params.delete('inst');
+  if (page && page !== 'principal') params.set('aba', page);
+  else params.delete('aba');
+  const query = params.toString();
+  const novaUrl = `${window.location.pathname}${query ? '?' + query : ''}${window.location.hash || ''}`;
+  window.history.replaceState({}, '', novaUrl);
+}
+
+function focarPaginaAtiva(pageEl) {
+  if (!pageEl) return;
+  const alvo = pageEl.querySelector('h1, h2, [tabindex="-1"]');
+  if (!alvo) return;
+  if (!alvo.hasAttribute('tabindex')) alvo.setAttribute('tabindex', '-1');
+  alvo.focus({ preventScroll: true });
+}
+
+function switchPage(page, atualizarUrl = true) {
+  let pageEl = null;
+  document.querySelectorAll('.page-section').forEach(p => {
+    const ativo = p.id === 'page-' + page;
+    p.classList.toggle('active', ativo);
+    p.setAttribute('aria-hidden', ativo ? 'false' : 'true');
+    if ('inert' in p) p.inert = !ativo;
+    if (ativo) pageEl = p;
+  });
   document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
 
-  const pageEl = document.getElementById('page-' + page);
   const menuEl = document.getElementById('menu-' + page);
   if (!pageEl || !menuEl) return;
 
-  pageEl.classList.add('active');
   menuEl.classList.add('active');
   atualizarHeaderDesc();
   atualizarVisibilidadeResumoInstitucional(page);
 
   const sidebar = document.getElementById('sidebar');
-  if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu();
+  if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu(false);
 
-  // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
+  else if (page === 'principal') atualizarDossieInstitucional();
+
+  if (atualizarUrl) atualizarUrlCompartilhavel(page);
+  focarPaginaAtiva(pageEl);
 }
 
 function atualizarVisibilidadeResumoInstitucional(page = '') {
@@ -160,9 +208,14 @@ function toggleTheme() {
 }
 
 function initTheme() {
-  const tema = document.documentElement.getAttribute('data-theme');
+  const temaAtual = document.documentElement.getAttribute('data-theme');
+  const tema = temaAtual === 'light' || temaAtual === 'dark' ? temaAtual : 'dark';
+  document.documentElement.setAttribute('data-theme', tema);
   const btnHeader = document.getElementById('theme-toggle-header');
-  if (btnHeader) btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+  if (btnHeader) {
+    btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+    btnHeader.setAttribute('aria-label', tema === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro');
+  }
 }
 
 /* ============================================================ */
@@ -787,36 +840,85 @@ function formatarAdicionaisRemuneracaoHtml(inst, linha = {}) {
   }).join('')}</ul>`;
 }
 
+
+function textoNormalizado(valor = '') {
+  return String(valor)
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function classificarFaixaRemuneracao(linha = {}, indice = 0, total = 0) {
+  const cargo = textoNormalizado(linha.cargo);
+  const termosIngresso = ['soldado 2', 'soldado aluno', 'aluno', 'aspirante', 'agente', 'escrivao', 'investigador', 'oficial investigador', 'policial penal', 'inspetor', 'perito criminal 3', 'delegado 3', 'delegado substituto', '3a classe', '3ª classe', 'classe inicial'];
+  const termosTopo = ['coronel', 'comandante', 'delegado geral', 'delegado classe especial', 'classe especial', 'especial', 'subtenente', 'major', 'tenente coronel', '1a classe', '1ª classe', 'nivel 12', 'referencia final'];
+  if (termosIngresso.some(t => cargo.includes(textoNormalizado(t)))) return 'ingresso';
+  if (termosTopo.some(t => cargo.includes(textoNormalizado(t)))) return 'topo';
+  if (total > 6 && indice < 3) return 'topo';
+  if (total > 6 && indice >= Math.max(0, total - 3)) return 'ingresso';
+  return 'intermediario';
+}
+
+function aplicarFiltrosRemuneracao(linhas = []) {
+  const busca = textoNormalizado(document.getElementById('filtro-remu-cargo')?.value || '');
+  const faixa = document.getElementById('filtro-remu-faixa')?.value || '';
+  const ordem = document.getElementById('filtro-remu-ordem')?.value || 'original';
+  let resultado = linhas.map((linha, indice) => ({ ...linha, _indiceOriginal: indice, _faixa: classificarFaixaRemuneracao(linha, indice, linhas.length) }));
+
+  if (busca) {
+    resultado = resultado.filter(l => textoNormalizado(`${l.cargo} ${l.criterio} ${l.badge}`).includes(busca));
+  }
+  if (faixa === 'ingresso' || faixa === 'topo') resultado = resultado.filter(l => l._faixa === faixa);
+  if (faixa === 'confirmados') resultado = resultado.filter(l => !l.valorPendente && Number(l.remuneracao || 0) > 0);
+
+  if (ordem === 'menor') resultado.sort((a, b) => Number(a.remuneracao || Infinity) - Number(b.remuneracao || Infinity));
+  else if (ordem === 'maior') resultado.sort((a, b) => Number(b.remuneracao || 0) - Number(a.remuneracao || 0));
+  else if (ordem === 'az') resultado.sort((a, b) => String(a.cargo).localeCompare(String(b.cargo), 'pt-BR'));
+  else resultado.sort((a, b) => a._indiceOriginal - b._indiceOriginal);
+
+  return resultado;
+}
+
 function carregarRemuneracaoTabelada() {
   const inst = normalizarInstituicao(currInst);
   const tbody = document.getElementById('lista-remuneracao');
   if (!tbody) return;
 
-  const linhas = gerarRemuneracaoTabelada(inst);
+  const linhasOriginais = gerarRemuneracaoTabelada(inst);
 
-  if (!linhas.length) {
+  if (!linhasOriginais.length) {
     tbody.innerHTML = '<tr><td colspan="4">Não há dados cadastrados para esta instituição.</td></tr>';
     return;
   }
 
-  const remuneracoes = linhas.map(l => l.remuneracao).filter(v => Number(v) > 0);
+  const linhas = aplicarFiltrosRemuneracao(linhasOriginais);
+  const remuneracoes = linhasOriginais.map(l => l.remuneracao).filter(v => Number(v) > 0);
   const menor = remuneracoes.length ? Math.min(...remuneracoes) : 0;
   const maior = remuneracoes.length ? Math.max(...remuneracoes) : 0;
 
   const elTotal = document.getElementById('remu-total-cargos');
   const elMenor = document.getElementById('remu-menor-total');
   const elMaior = document.getElementById('remu-maior-total');
-  if (elTotal) elTotal.textContent = String(linhas.length);
+  if (elTotal) elTotal.textContent = linhas.length === linhasOriginais.length ? String(linhasOriginais.length) : `${linhas.length} de ${linhasOriginais.length}`;
   if (elMenor) elMenor.textContent = menor ? fmt(menor) : 'A confirmar';
   if (elMaior) elMaior.textContent = maior ? fmt(maior) : 'A confirmar';
 
+  if (!linhas.length) {
+    tbody.innerHTML = '<tr><td colspan="4">Nenhum cargo encontrado com os filtros atuais.</td></tr>';
+    return;
+  }
+
   tbody.innerHTML = linhas.map(l => {
     const fonte = REMUNERACAO_FONTES_OFICIAIS[l.fonteKey] || REMUNERACAO_FONTES_OFICIAIS[inst] || { nome: 'Fonte oficial da carreira', url: '#' };
+    const faixaLabel = l._faixa === 'ingresso' ? 'Ingresso' : l._faixa === 'topo' ? 'Topo de carreira' : 'Intermediário';
     return `
       <tr>
         <td>
           <strong>${escapeHtml(l.cargo)}</strong>
           <br><span class="remuneracao-badge">${escapeHtml(l.badge || 'Fonte oficial')}</span>
+          <span class="remuneracao-faixa">${escapeHtml(faixaLabel)}</span>
         </td>
         <td class="valor">${l.valorPendente ? 'A confirmar' : fmt(l.remuneracao)}</td>
         <td class="adicionais">${formatarAdicionaisRemuneracaoHtml(inst, l)}</td>
@@ -1366,7 +1468,10 @@ function mudarInstituicao(novaInstituicao) {
     ppmt: { titulo: "PPMT", desc: POLICIAS_PENAIS_INFO.ppmt.nome, cor: "#6b5f2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppmt.sigla}: ${POLICIAS_PENAIS_INFO.ppmt.previdencia} ${POLICIAS_PENAIS_INFO.ppmt.vantagens}` },
     pmgo: { titulo: "PMGO", desc: "Polícia Militar de Goiás", cor: "#1f7a4d", alertaPrev: "PMGO: conferir sistema de proteção social dos militares estaduais, GOIASPREV/GO, regra de ingresso, averbações, reserva remunerada e reforma conforme legislação estadual." },
     pcgo: { titulo: "PCGO", desc: "Polícia Civil de Goiás", cor: "#4b5563", alertaPrev: "PCGO: conferir Lei Orgânica da Polícia Civil/GO, GOIASPREV/GO, cargo, classe, tempo em atividade policial e regra de aposentadoria aplicada." },
-    ppgo: { titulo: "PPGO", desc: POLICIAS_PENAIS_INFO.ppgo.nome, cor: "#526b2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppgo.sigla}: ${POLICIAS_PENAIS_INFO.ppgo.previdencia} ${POLICIAS_PENAIS_INFO.ppgo.vantagens}` }
+    ppgo: { titulo: "PPGO", desc: POLICIAS_PENAIS_INFO.ppgo.nome, cor: "#526b2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppgo.sigla}: ${POLICIAS_PENAIS_INFO.ppgo.previdencia} ${POLICIAS_PENAIS_INFO.ppgo.vantagens}` },
+    pmto: { titulo: "PMTO", desc: "Polícia Militar do Tocantins", cor: "#2f6b3f", alertaPrev: "PMTO: conferir sistema de proteção social dos militares estaduais, IGEPREV/TO, reserva remunerada, reforma, averbações e legislação estadual." },
+    pcto: { titulo: "PCTO", desc: "Polícia Civil do Tocantins", cor: "#4b5563", alertaPrev: "PCTO: conferir legislação da Polícia Civil/TO, cargo, classe, referência, IGEPREV/TO e regra de aposentadoria aplicada." },
+    ppto: { titulo: "PPTO", desc: POLICIAS_PENAIS_INFO.ppto.nome, cor: "#526b2f", alertaPrev: `${POLICIAS_PENAIS_INFO.ppto.sigla}: ${POLICIAS_PENAIS_INFO.ppto.previdencia} ${POLICIAS_PENAIS_INFO.ppto.vantagens}` }
   };
 
   const solicitada = novaInstituicao || document.getElementById('instituicao')?.value || currInst || 'pmesp';
@@ -1416,7 +1521,68 @@ function mudarInstituicao(novaInstituicao) {
   carregarAcoes();
   carregarAssociacoes();
   carregarRemuneracaoTabelada();
+  atualizarDossieInstitucional();
+  atualizarUrlCompartilhavel(getPaginaAtual());
   if (document.getElementById('page-comparar')?.classList.contains('active')) carregarComparadorCarreiras();
+}
+
+
+function getCoberturaInstitucional(inst) {
+  return {
+    remuneracao: gerarRemuneracaoTabelada(inst).length > 0,
+    concurso: Boolean(CONCURSOS[inst] || getConcursoPoliciaPenal(inst)),
+    acoes: Boolean((ACOES_JUDICIAIS[inst] || getAcoesPoliciaPenal(inst) || []).length),
+    associacoes: Boolean((ASSOCIACOES[inst] || getAssociacoesPoliciaPenal(inst) || []).length)
+  };
+}
+
+function atualizarDossieInstitucional() {
+  const cont = document.getElementById('instituicao-dossie-grid');
+  if (!cont) return;
+
+  if (headerModoInicialPortal || !INSTITUICOES_VALIDAS.includes(currInst)) {
+    cont.innerHTML = `
+      <article class="dossie-card"><span>Instituição</span><strong>Portal</strong><p>Selecione uma instituição no topo para ver dados específicos.</p></article>
+      <article class="dossie-card"><span>Cobertura</span><strong>${INSTITUICOES_VALIDAS.length} instituições</strong><p>Dados públicos organizados em ${Object.keys(HEADER_ESTADOS).length} estados.</p></article>
+      <article class="dossie-card"><span>Atenção</span><strong>Conferência oficial</strong><p>Valores, editais e direitos devem ser validados em fontes oficiais.</p></article>
+    `;
+    return;
+  }
+
+  const info = HEADER_INSTITUICOES_INFO[currInst] || {};
+  const estado = HEADER_ESTADOS[getEstadoDaInstituicao(currInst)] || {};
+  const resumo = HEADER_INSTITUICOES_RESUMO[currInst] || {};
+  const cobertura = getCoberturaInstitucional(currInst);
+  const fonte = REMUNERACAO_FONTES_OFICIAIS[currInst] || {};
+  const checklist = [
+    ['Remuneração', cobertura.remuneracao],
+    ['Concursos', cobertura.concurso],
+    ['Ações', cobertura.acoes],
+    ['Associações', cobertura.associacoes]
+  ];
+
+  cont.innerHTML = `
+    <article class="dossie-card">
+      <span>Instituição selecionada</span>
+      <strong>${escapeHtml(info.titulo || currInst.toUpperCase())}</strong>
+      <p>${escapeHtml(info.desc || 'Nome institucional a conferir')} · ${escapeHtml(estado.nome || 'Estado a conferir')}.</p>
+    </article>
+    <article class="dossie-card">
+      <span>Dados disponíveis</span>
+      <strong>${checklist.filter(([, ok]) => ok).length}/4 áreas</strong>
+      <p>${checklist.map(([nome, ok]) => `${ok ? '✓' : '!' } ${nome}`).join(' · ')}</p>
+    </article>
+    <article class="dossie-card">
+      <span>Efetivo e atualização</span>
+      <strong>${escapeHtml(resumo.ativaLabel || formatarEfetivoHeader(resumo.ativa))}</strong>
+      <p>${escapeHtml(resumo.atualizado || 'Última revisão a informar')} · ${escapeHtml(resumo.reservaLabel || 'Reserva/inativos a conferir')}.</p>
+    </article>
+    <article class="dossie-card">
+      <span>Fonte principal</span>
+      <strong>${escapeHtml(fonte.nome || 'Fonte oficial a conferir')}</strong>
+      <p>${fonte.url && fonte.url !== '#' ? `<a href="${escapeHtml(fonte.url)}" target="_blank" rel="noopener noreferrer">Abrir fonte</a>` : 'Sem link direto cadastrado. Conferir portal oficial do órgão.'}</p>
+    </article>
+  `;
 }
 
 
@@ -1432,6 +1598,7 @@ function analisarDireitos() {
   const tempo = valEl('tempo_dir');
   const idade = valEl('idade_dir');
   const renda = valEl('renda_dir');
+  const camposIncompletos = ['tempo_dir', 'idade_dir', 'renda_dir'].some(id => !String(document.getElementById(id)?.value || '').trim());
   const sit = document.getElementById('situacao_dir')?.value || 'ativa';
   const sexo = document.getElementById('sexo_dir')?.value || 'na';
   const ingresso = document.getElementById('ingresso_dir')?.value || '';
@@ -1647,7 +1814,10 @@ function analisarDireitos() {
     'Use esta aba como triagem inicial. Para decisão financeira, ação judicial, aposentadoria, abono ou requerimento administrativo, confira sempre a legislação atualizada e a ficha funcional do servidor.',
     'Fontes úteis: Diário Oficial do Estado, estatuto da carreira, lei orgânica, portal de transparência, setor de pessoal, previdência estadual e associação/sindicato.');
 
-  cont.innerHTML = html;
+  const avisoCampos = camposIncompletos
+    ? `<div class="direito-item alerta-campos"><span class="direito-nome">Triagem inicial</span><span class="direito-desc">Preencha tempo, idade e remuneração quando souber. O resultado abaixo permanece informativo, mas alguns benefícios e regras previdenciárias dependem desses dados.</span></div>`
+    : '';
+  cont.innerHTML = avisoCampos + html;
 }
 
 function direitoResumo(cargo, instNome, tempo, idade, sit, sexo, ingresso, renda, dependente) {
@@ -2421,18 +2591,27 @@ function carregarAcoes() {
 /* ============================================================ */
 /* === ASSOCIAÇÕES ============================================ */
 /* ============================================================ */
+function formatarContatoAssociacao(a = {}) {
+  const telefone = escapeHtml(a.telefone || 'Consultar diretamente');
+  const site = String(a.site || '').trim();
+  const pareceUrl = /^(https?:\/\/)?[a-z0-9.-]+\.[a-z]{2,}/i.test(site);
+  if (!site || !pareceUrl) return `${telefone} · ${escapeHtml(site || 'Site/canal oficial a consultar')}`;
+  const href = /^https?:\/\//i.test(site) ? site : `https://${site}`;
+  return `${telefone} · <a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${escapeHtml(site.replace(/^https?:\/\//i, ''))}</a>`;
+}
+
 function carregarAssociacoes() {
   const cont = document.getElementById('lista-associacoes');
   if (!cont) return;
   const lista = ASSOCIACOES[currInst] || getAssociacoesPoliciaPenal(currInst) || [];
   cont.innerHTML = lista.map(a => `
     <div class="direito-item associacao">
-      <span class="direito-nome">${a.nome}</span>
-      <span class="direito-desc"><strong>Foco:</strong> ${a.foco}</span>
-      <span class="direito-desc"><strong>Atuação atual:</strong> ${a.acao}</span>
-      <span class="direito-desc"><strong>Serviços:</strong> ${a.servicos}</span>
-      <span class="direito-desc"><strong>Mensalidade:</strong> ${a.mensalidade}</span>
-      <span class="direito-desc"><strong>Contato:</strong> ${a.telefone} · <a href="https://${a.site}" target="_blank" rel="noopener noreferrer" class="concurso-link" style="margin-top:0;">${a.site}</a></span>
+      <span class="direito-nome">${escapeHtml(a.nome)}</span>
+      <span class="direito-desc"><strong>Foco:</strong> ${escapeHtml(a.foco)}</span>
+      <span class="direito-desc"><strong>Atuação atual:</strong> ${escapeHtml(a.acao)}</span>
+      <span class="direito-desc"><strong>Serviços:</strong> ${escapeHtml(a.servicos)}</span>
+      <span class="direito-desc"><strong>Mensalidade:</strong> ${escapeHtml(a.mensalidade)}</span>
+      <span class="direito-desc"><strong>Contato:</strong> ${formatarContatoAssociacao(a)}</span>
     </div>
   `).join('');
 }
@@ -2487,18 +2666,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Abre o site na identidade do portal, com o logoleão e o resumo geral.
   aplicarHeaderInicialPortal();
+  atualizarDossieInstitucional();
 
-  // Direitos: atualizar quando muda cargo/situação/tempo.
-  ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
+  const params = new URLSearchParams(window.location.search);
+  const instUrl = params.get('inst');
+  const abaUrl = params.get('aba') || (window.location.hash ? window.location.hash.replace('#', '') : '');
+  if (INSTITUICOES_VALIDAS.includes(instUrl)) mudarInstituicao(instUrl);
+  if (abaUrl && document.getElementById('page-' + abaUrl)) switchPage(abaUrl, false);
+
+  // Direitos: atualizar quando muda qualquer campo relevante.
+  ['cargo_dir', 'situacao_dir', 'tempo_dir', 'idade_dir', 'sexo_dir', 'ingresso_dir', 'dependente_dir', 'renda_dir', 'local_especial_dir', 'requisitos_apos_dir'].forEach(id => {
     const el = document.getElementById(id);
-    if (el) el.addEventListener('change', analisarDireitos);
+    if (el) {
+      el.addEventListener('change', analisarDireitos);
+      el.addEventListener('input', debounce(analisarDireitos, 120));
+    }
   });
 
-  // Acessibilidade: ESC fecha o menu.
+  // Cards com role="button": Enter e Espaço ativam a ação, como um botão real.
+  document.querySelectorAll('[role="button"][onclick]').forEach(el => {
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        el.click();
+      }
+    });
+  });
+
+  // Acessibilidade: ESC fecha o menu e Tab fica dentro do menu aberto.
   document.addEventListener('keydown', e => {
+    const sb = document.getElementById('sidebar');
     if (e.key === 'Escape') {
-      const sb = document.getElementById('sidebar');
-      if (sb && sb.classList.contains('active')) toggleMenu();
+      if (sb && sb.classList.contains('active')) toggleMenu(false);
+      return;
+    }
+    if (e.key === 'Tab' && sb && sb.classList.contains('active')) {
+      const focaveis = Array.from(sb.querySelectorAll('button, [href], select, input, textarea, [tabindex]:not([tabindex="-1"])')).filter(el => !el.disabled && el.offsetParent !== null);
+      if (!focaveis.length) return;
+      const primeiro = focaveis[0];
+      const ultimo = focaveis[focaveis.length - 1];
+      if (e.shiftKey && document.activeElement === primeiro) { e.preventDefault(); ultimo.focus(); }
+      else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primeiro.focus(); }
     }
   });
 });
