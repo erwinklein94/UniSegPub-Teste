@@ -39,6 +39,5 @@ function carregarImagemProduto(img) {
         const container = img.closest('.produto-imagem');
         if (container) {
           container.classList.add('img-indisponivel');
-          container.style.display = 'none';
         }
       }
