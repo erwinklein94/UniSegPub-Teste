@@ -2,18 +2,43 @@
 (function () {
   const EXTENSOES = ['png', 'jpg', 'jpeg', 'webp'];
 
+  function normalizarBase(caminho) {
+    return String(caminho || '').trim().replace(/\.(png|jpe?g|webp|gif|svg)$/i, '');
+  }
+
+  function obterBasesImagem(img) {
+    const baseOriginal = img?.dataset?.imgBase || img?.getAttribute('src') || '';
+    const aliases = String(img?.dataset?.imgAliases || '')
+      .split(',')
+      .map(normalizarBase)
+      .filter(Boolean);
+
+    const bases = [normalizarBase(baseOriginal), ...aliases].filter(Boolean);
+    return [...new Set(bases)];
+  }
+
+  function tentarProximaImagem(img) {
+    if (!img) return false;
+
+    const bases = obterBasesImagem(img);
+    const tentativaAtual = Number(img.dataset.tentativa || 0);
+    const totalTentativas = bases.length * EXTENSOES.length;
+
+    if (tentativaAtual < totalTentativas) {
+      const baseIndex = Math.floor(tentativaAtual / EXTENSOES.length);
+      const extensaoIndex = tentativaAtual % EXTENSOES.length;
+      img.dataset.tentativa = String(tentativaAtual + 1);
+      img.src = `${bases[baseIndex]}.${EXTENSOES[extensaoIndex]}`;
+      return true;
+    }
+
+    return false;
+  }
+
   function trocarImagemComFallback(img) {
     if (!img) return;
 
-    const baseOriginal = img.dataset.imgBase || img.getAttribute('src') || '';
-    const base = baseOriginal.replace(/\.(png|jpe?g|webp|gif|svg)$/i, '');
-    const tentativaAtual = Number(img.dataset.tentativa || 0);
-
-    if (base && tentativaAtual < EXTENSOES.length) {
-      img.dataset.tentativa = String(tentativaAtual + 1);
-      img.src = `${base}.${EXTENSOES[tentativaAtual]}`;
-      return;
-    }
+    if (tentarProximaImagem(img)) return;
 
     img.style.display = 'none';
 
@@ -25,6 +50,8 @@
 
   function trocarImagemCabecalhoInstituicao(img) {
     if (!img) return;
+
+    if (tentarProximaImagem(img)) return;
 
     const fallbackSrc = img.dataset.fallbackSrc || '';
     const fallbackAlt = img.dataset.fallbackAlt || 'Bandeira do estado da instituição';

@@ -1081,9 +1081,58 @@ const HEADER_INSTITUICOES_INFO = {
   Se uma imagem não existir, o cabeçalho cai automaticamente para a bandeira do estado.
   Observação: a chave interna da Polícia Civil do RJ é pcerj, mas o arquivo informado é pcrj.jpeg.
 */
+const IMAGENS_REFERENCIA_SITE = Object.freeze([
+  'barrafixa01.jpg',
+  'barrafixa02.jpg',
+  'botaacero.jpeg',
+  'logolesao.jpeg',
+  'pcba.jpeg',
+  'pces.jpeg',
+  'pcma.jpeg',
+  'pcmg.jpeg',
+  'pcms.jpeg',
+  'pcmt.jpeg',
+  'pcpr.jpeg',
+  'pcrj.jpeg',
+  'pcrs.jpeg',
+  'pcsc.jpeg',
+  'pcsp.jpeg',
+  'pcto.jpeg',
+  'pmba.jpeg',
+  'pmej.jpeg',
+  'pmes.jpeg',
+  'pmesp.jpeg',
+  'pmgo.jpeg',
+  'pmma.jpeg',
+  'pmmg.jpeg',
+  'pmms.jpeg',
+  'pmmt.jpeg',
+  'pmpr.jpeg',
+  'pmrs.jpeg',
+  'pmsc.jpeg',
+  'pmto.jpeg',
+  'ppba.jpeg',
+  'ppes.jpeg',
+  'ppma.jpeg',
+  'ppmg.jpeg',
+  'ppms.jpeg',
+  'ppmt.jpeg',
+  'pppr.jpeg',
+  'pprj.jpeg',
+  'pprs.jpeg',
+  'ppsc.jpeg',
+  'ppsp.jpeg',
+  'ppto.jpeg',
+  'logoleao.jpeg',
+  'pmerj.jpeg',
+  'pcgo.jpeg',
+  'ppgo.jpeg'
+]);
+
 const HEADER_INSTITUICOES_IMAGENS = {
   pcba: 'pcba.jpeg',
   pces: 'pces.jpeg',
+  pcma: 'pcma.jpeg',
   pcmg: 'pcmg.jpeg',
   pcms: 'pcms.jpeg',
   pcmt: 'pcmt.jpeg',
@@ -1092,18 +1141,25 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcrs: 'pcrs.jpeg',
   pcsc: 'pcsc.jpeg',
   pcsp: 'pcsp.jpeg',
+  pcgo: 'pcgo.jpeg',
+  pcto: 'pcto.jpeg',
   pmba: 'pmba.jpeg',
   pmerj: 'pmerj.jpeg',
+  pmej: 'pmej.jpeg',
   pmes: 'pmes.jpeg',
   pmesp: 'pmesp.jpeg',
+  pmgo: 'pmgo.jpeg',
+  pmma: 'pmma.jpeg',
   pmmg: 'pmmg.jpeg',
   pmms: 'pmms.jpeg',
   pmmt: 'pmmt.jpeg',
   pmpr: 'pmpr.jpeg',
   pmrs: 'pmrs.jpeg',
   pmsc: 'pmsc.jpeg',
+  pmto: 'pmto.jpeg',
   ppba: 'ppba.jpeg',
   ppes: 'ppes.jpeg',
+  ppma: 'ppma.jpeg',
   ppmg: 'ppmg.jpeg',
   ppms: 'ppms.jpeg',
   ppmt: 'ppmt.jpeg',
@@ -1111,12 +1167,28 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pprj: 'pprj.jpeg',
   pprs: 'pprs.jpeg',
   ppsc: 'ppsc.jpeg',
-  ppsp: 'ppsp.jpeg'
+  ppsp: 'ppsp.jpeg',
+  ppgo: 'ppgo.jpeg',
+  ppto: 'ppto.jpeg'
 };
 
-function montarCaminhoImagemInstituicao(inst) {
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  pmerj: ['pmej.jpeg'],
+  pmej: ['pmerj.jpeg'],
+  logo: ['logolesao.jpeg', 'logoleao.jpeg']
+};
+
+function montarInfoImagemInstituicao(inst) {
   const nomeArquivo = HEADER_INSTITUICOES_IMAGENS[inst];
-  return nomeArquivo ? `assets/img/${nomeArquivo}` : '';
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[inst] || [];
+  return {
+    principal: nomeArquivo ? `assets/img/${nomeArquivo}` : '',
+    aliases: aliases.map(nome => `assets/img/${nome}`)
+  };
+}
+
+function montarCaminhoImagemInstituicao(inst) {
+  return montarInfoImagemInstituicao(inst).principal;
 }
 
 const HEADER_INSTITUICOES_RESUMO = {
@@ -1236,7 +1308,9 @@ function aplicarHeaderInicialPortal() {
   if (flagAtual) {
     flagAtual.style.display = '';
     flagAtual.dataset.imgBase = 'assets/img/logoleao';
+    flagAtual.dataset.imgAliases = 'assets/img/logolesao';
     flagAtual.dataset.retry = '';
+    flagAtual.removeAttribute('data-tentativa');
     flagAtual.removeAttribute('data-fallback-src');
     flagAtual.removeAttribute('data-fallback-alt');
     flagAtual.removeAttribute('data-fallback-aplicado');
@@ -1358,7 +1432,8 @@ function atualizarHeaderInstitucional(inst) {
   const flagAtual = document.getElementById('header-active-flag');
   if (flagAtual) {
     const moldura = flagAtual.closest('.current-flag-frame');
-    const imagemInstituicao = montarCaminhoImagemInstituicao(inst);
+    const imagemInfoInstituicao = montarInfoImagemInstituicao(inst);
+    const imagemInstituicao = imagemInfoInstituicao.principal;
     const usaImagemInstituicao = Boolean(imagemInstituicao);
 
     if (moldura) {
@@ -1368,6 +1443,9 @@ function atualizarHeaderInstitucional(inst) {
 
     flagAtual.style.display = '';
     flagAtual.removeAttribute('data-retry');
+    flagAtual.removeAttribute('data-tentativa');
+    flagAtual.dataset.imgBase = usaImagemInstituicao ? imagemInstituicao : '';
+    flagAtual.dataset.imgAliases = usaImagemInstituicao ? imagemInfoInstituicao.aliases.join(',') : '';
     flagAtual.dataset.fallbackSrc = dadosEstado.flag;
     flagAtual.dataset.fallbackAlt = `Bandeira de ${dadosEstado.nome}`;
     flagAtual.dataset.fallbackAplicado = 'false';

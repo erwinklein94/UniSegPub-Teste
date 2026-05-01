@@ -75,8 +75,10 @@ barrafixa01.jpg
 barrafixa02.jpg
 botaacero.jpeg
 logoleao.jpeg
+logolesao.jpeg
 pcba.jpeg
 pces.jpeg
+pcma.jpeg
 pcmg.jpeg
 pcms.jpeg
 pcmt.jpeg
@@ -85,18 +87,23 @@ pcrj.jpeg
 pcrs.jpeg
 pcsc.jpeg
 pcsp.jpeg
+pcto.jpeg
 pmba.jpeg
-pmerj.jpeg
+pmej.jpeg
 pmes.jpeg
 pmesp.jpeg
+pmgo.jpeg
+pmma.jpeg
 pmmg.jpeg
 pmms.jpeg
 pmmt.jpeg
 pmpr.jpeg
 pmrs.jpeg
 pmsc.jpeg
+pmto.jpeg
 ppba.jpeg
 ppes.jpeg
+ppma.jpeg
 ppmg.jpeg
 ppms.jpeg
 ppmt.jpeg
@@ -105,6 +112,10 @@ pprj.jpeg
 pprs.jpeg
 ppsc.jpeg
 ppsp.jpeg
+ppto.jpeg
+pmerj.jpeg
+pcgo.jpeg
+ppgo.jpeg
 ```
 
 No GitHub Pages, letras maiúsculas e minúsculas fazem diferença. Use os nomes exatamente como estão acima.
@@ -118,6 +129,8 @@ Exemplo:
 - PMESP usa `assets/img/pmesp.jpeg`.
 - PCSP usa `assets/img/pcsp.jpeg`.
 - Polícia Civil do RJ usa a chave interna `pcerj`, mas o arquivo esperado é `assets/img/pcrj.jpeg`, conforme a lista informada.
+- PMERJ usa `assets/img/pmerj.jpeg` e também aceita `assets/img/pmej.jpeg` como referência alternativa.
+- O logo usa `assets/img/logoleao.jpeg` e também aceita `assets/img/logolesao.jpeg` como referência alternativa.
 
 Se alguma imagem institucional não existir na pasta, o site usa automaticamente a bandeira do estado como fallback.
 
