@@ -774,6 +774,54 @@ const CARGOS_PCMT = [
 ];
 
 
+
+/* === ACRE — tabelas oficiais cadastradas manualmente ===================== */
+const CRITERIO_PMAC_2018 = 'Total bruto oficial da tabela remuneratória da PMAC/CBMAC, Lei Complementar AC 164 e alterações, vigência julho/2018. Conferir atualizações posteriores no Portal do Estado do Acre, Diário Oficial e contracheque.';
+const BENEF_PMAC_2018 = 'O total bruto já consolida as parcelas da tabela oficial. Não soma automaticamente prêmio anual, serviço complementar, localização especial, chefia, sexta-parte, titulação, adicionais pessoais, indenizações ou rubricas por escala.';
+const CARGOS_PMAC = [
+  { val: 'coronel_ac', text: 'CEL PMAC — Coronel', padrao: 18560.01, gratif: 0, oficial: true, retpFator: 0, selected: false, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'ten_cel_ac', text: 'TEN CEL PMAC — Tenente-Coronel', padrao: 15955.97, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'major_ac', text: 'MAJ PMAC — Major', padrao: 13856.68, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'capitao_ac', text: 'CAP PMAC — Capitão', padrao: 11988.79, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '1ten_ac', text: '1º TEN PMAC — 1º Tenente', padrao: 10494.73, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '2ten_ac', text: '2º TEN PMAC — 2º Tenente', padrao: 9887.81, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'asp_of_ac', text: 'ASP OF PMAC — Aspirante a Oficial', padrao: 9253.15, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'al_of_ac', text: 'AL OF PMAC — Aluno Oficial', padrao: 6887.07, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'subten_ac', text: 'SUBTEN PMAC — Subtenente', padrao: 7285.86, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '1sgt_ac', text: '1º SGT PMAC — 1º Sargento', padrao: 6767.42, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '2sgt_ac', text: '2º SGT PMAC — 2º Sargento', padrao: 6500.93, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '3sgt_b_ac', text: '3º SGT PMAC — Nível II', padrao: 6349.39, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: '3sgt_a_ac', text: '3º SGT PMAC — Nível I', padrao: 6217.35, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'al_sgt_ac', text: 'AL SGT PMAC — Aluno Sargento', padrao: 5415.82, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'cabo_ac', text: 'CB PMAC — Cabo', padrao: 5326.50, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'al_cabo_ac', text: 'AL CB PMAC — Aluno Cabo', padrao: 5249.83, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'soldado_2_ac', text: 'SD PMAC — Soldado Nível II', padrao: 5207.53, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'soldado_1_ac', text: 'SD PMAC — Soldado Nível I', padrao: 5007.40, gratif: 0, oficial: false, selected: true, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' },
+  { val: 'al_soldado_ac', text: 'AL SD PMAC — Aluno Soldado', padrao: 4344.22, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' }
+];
+
+const CRITERIO_PCAC_DELEGADO = 'Vencimento oficial do Delegado de Polícia Civil/AC, Lei Complementar AC 303/2015, tabela de janeiro/2016. Conferir atualizações posteriores, absorções e contracheque.';
+const CRITERIO_PCAC_PERITO = 'Vencimento oficial de Perito Criminal e Médico-Legista/AC, Lei AC 3.107/2015, tabela de janeiro/2018. Conferir atualizações posteriores, classe, rubricas e contracheque.';
+const CRITERIO_PCAC_OPERACIONAL = 'Vencimento oficial das carreiras de Agente, Escrivão, Perito Papiloscopista e Auxiliar de Necropsia da PCAC, Lei AC 3.228/2017. Conferir atualizações posteriores, classe, rubricas e contracheque.';
+const BENEF_PCAC = 'Titulação, sexta-parte, serviço complementar, vantagens pessoais, indenizações e eventuais gratificações dependem do cargo, classe, ato funcional e contracheque; não foram somadas automaticamente.';
+const CARGOS_PCAC = [
+  { val: 'delegado_esp_ac', text: 'Delegado de Polícia PCAC — Classe Especial', padrao: 22514.92, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_DELEGADO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'delegado_iv_ac', text: 'Delegado de Polícia PCAC — Classe IV', padrao: 20468.12, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_DELEGADO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'delegado_iii_ac', text: 'Delegado de Polícia PCAC — Classe III', padrao: 18607.39, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_DELEGADO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'delegado_ii_ac', text: 'Delegado de Polícia PCAC — Classe II', padrao: 16915.81, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_DELEGADO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'delegado_i_ac', text: 'Delegado de Polícia PCAC — Classe I', padrao: 15378.00, gratif: 0, oficial: true, delegado: true, selected: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_DELEGADO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'perito_esp_ac', text: 'Perito Criminal / Médico-Legista PCAC — Classe Especial', padrao: 17000.48, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_PERITO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'perito_iv_ac', text: 'Perito Criminal / Médico-Legista PCAC — Classe IV', padrao: 16332.90, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_PERITO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'perito_iii_ac', text: 'Perito Criminal / Médico-Legista PCAC — Classe III', padrao: 13830.98, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_PERITO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'perito_ii_ac', text: 'Perito Criminal / Médico-Legista PCAC — Classe II', padrao: 12213.42, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_PERITO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'perito_i_ac', text: 'Perito Criminal / Médico-Legista PCAC — Classe I', padrao: 10255.66, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_PERITO, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'agente_v_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe V', padrao: 9200.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'agente_iv_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe IV', padrao: 8150.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'agente_iii_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe III', padrao: 7100.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'agente_ii_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe II', padrao: 6050.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' },
+  { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
+];
+
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
    Observação: a Polícia Penal foi inserida no art. 144 da Constituição pela EC 104/2019.
    Como a implantação, nomenclatura, carreira, adicionais, previdência e tabelas remuneratórias variam por UF,
@@ -1110,6 +1158,39 @@ const POLICIAS_PENAIS_INFO = {
     fonte: 'SEJUS/MT, Portal do Servidor/SEPLAG-MT e SINDSPPEN-MT — tabela 40h Policial Penal',
     url: 'https://sindspenmt.com.br/tabela-salarial-do-sistema-penitenciario/',
     atualizado: 'Atualizado em 28/04/2026'
+  },
+  ppac: {
+    sigla: 'PPAC',
+    nome: 'Polícia Penal do Estado do Acre',
+    uf: 'Acre',
+    criacao: 'EC 104/2019 · IAPEN/AC · Polícia Penal do Acre',
+    marco: 'O concurso SEAD/IAPEN 2023 tratou expressamente do IAPEN/AC e da Polícia Penal do Acre, com resultado final/homologação publicados em 2025 e nomeações posteriores.',
+    orgao: 'Instituto de Administração Penitenciária do Acre (IAPEN/AC) / Secretaria de Estado de Justiça e Segurança Pública (SEJUSP/AC)',
+    direcao: 'Marcos Frank Costa — Presidente do IAPEN/AC',
+    subordinacao: 'Sistema penitenciário estadual do Acre, com atuação em segurança prisional, custódia, escoltas, controle, disciplina, monitoramento e execução penal.',
+    efetivoAtivoLabel: 'Edital SEAD/IAPEN 2023: 261 vagas de Agente de Polícia Penal; 170 policiais penais nomeados em 2025',
+    reservaLabel: 'Inativos: conferir Acreprevidência e atos do IAPEN/AC',
+    totalLabel: 'Sistema em reforço após curso de formação e nomeações de 2025',
+    relacaoLabel: 'Relação depende do efetivo ativo consolidado pelo IAPEN/AC',
+    quadro: 'Carreira penal estadual ligada ao IAPEN/AC. O edital 2023 cadastrou Agente de Polícia Penal e cargos de apoio do instituto, com dedicação exclusiva e escala definida pela administração.',
+    ingresso: 'Concurso público com prova objetiva, discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação, conforme edital.',
+    escolaridade: 'Agente de Polícia Penal: diploma de curso superior e CNH categoria B até a matrícula no curso de formação, conforme edital SEAD/IAPEN 2023.',
+    formacao: 'Curso de formação no Acre; o governo estadual divulgou formação e nomeações de novos policiais penais em 2025.',
+    atribuicoes: 'Segurança interna e externa de unidades prisionais, custódia, escolta, controle disciplinar, prevenção de ilícitos, fiscalização, apoio à execução penal e proteção das instalações.',
+    remuneracao: 'Edital SEAD/IAPEN 2023: Agente de Polícia Penal com remuneração de R$ 4.366,60, jornada de 40h semanais, dedicação exclusiva e escala. Conferir LC AC 392/2021, atualizações e contracheque.',
+    vantagens: 'Auxílio saúde, risco de vida, etapa alimentação, titulação, sexta-parte, prêmio anual, plantões, indenizações e vantagens pessoais dependem de lei, rubrica e situação funcional; não foram somados automaticamente.',
+    saude: 'Conferir IAPEN/AC, SEAD/AC, Acreprevidência e normas estaduais de assistência ao servidor.',
+    previdencia: 'Regime próprio estadual/Acreprevidência; aposentadoria policial, transições e abono de permanência exigem análise individual.',
+    concurso: {
+      vagas: 'Edital 001/2023 SEAD/IAPEN: 261 vagas para Agente de Polícia Penal, além de cargos administrativos e de nível superior do IAPEN/AC.',
+      salario: 'Agente de Polícia Penal: R$ 4.366,60 no edital 2023; cargos de apoio tinham remunerações próprias no mesmo edital.',
+      banca: 'IBFC',
+      escolaridade: 'Superior completo e CNH B para Agente de Polícia Penal; requisitos específicos para os demais cargos.'
+    },
+    associacaoBusca: 'associação ou sindicato dos policiais penais do Acre',
+    fonte: 'SEAD/IAPEN/AC — Edital 001/2023, publicações de homologação/curso de formação 2025; Portal do Estado do Acre — Lei 2.180/IAPEN',
+    url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/',
+    atualizado: 'Atualizado em 01/05/2026'
   }
 };
 
@@ -1508,8 +1589,34 @@ const CARGOS_PPMT = mapearTabelaPoliciaPenal('ppmt', [
 /* ============================================================ */
 /* === AÇÕES JUDICIAIS (com tipo, ano, prazo, base legal) ===== */
 /* ============================================================ */
+
+const CARGOS_PPAC = mapearTabelaPoliciaPenal(
+  'ppac',
+  [
+    { id: 'agente_policial_penal_ac', text: 'Agente de Polícia Penal PPAC — edital SEAD/IAPEN 2023', valor: 4366.60, resumo: 'Remuneração inicial informada no edital SEAD/IAPEN 001/2023 para 40h semanais, dedicação exclusiva e escala.', selected: true },
+    { id: 'especialista_iapen_ac', text: 'Especialista / Psicólogo / Assistente Social IAPEN-AC — edital 2023', valor: 5131.34, resumo: 'Remuneração de referência dos cargos de nível superior do IAPEN/AC no edital 2023.' },
+    { id: 'engenheiro_iapen_ac', text: 'Engenheiro Civil IAPEN-AC — edital 2023', valor: 6561.76, resumo: 'Remuneração de referência do cargo de Engenheiro Civil no edital SEAD/IAPEN 2023.' }
+  ],
+  'Remuneração informada no edital SEAD/IAPEN 001/2023 e nas tabelas oficiais do Portal do Estado do Acre. Conferir LC AC 392/2021, Lei 2.180/IAPEN, atualizações posteriores e contracheque.',
+  'Auxílio saúde, risco de vida, etapa alimentação, titulação, sexta-parte, prêmio anual, plantões, indenizações e vantagens pessoais não foram somados automaticamente.',
+  'ppac',
+  { badge: 'Edital 2023' }
+);
+
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 const ACOES_JUDICIAIS = {
+  pmac: [
+    { titulo: 'PMAC — sexta-parte e adicionais por tempo de serviço', status: 'Verificar ficha individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir se sexta-parte, adicional por tempo de serviço e reflexos foram implantados corretamente após o cumprimento dos requisitos legais e se a base usada no contracheque corresponde à legislação estadual.', base: 'LC AC 39/1993, LC AC 164/2006 e tabela remuneratória estadual; depende de histórico funcional e ficha financeira.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PMAC — serviço complementar, localização especial e chefia', status: 'Depende de escala/designação', ano: 'Tema de conferência', tipo: 'individual', desc: 'Pode haver discussão quando houver serviço complementar, lotação especial, designação de chefia ou ato funcional formal com pagamento ausente, incompleto ou calculado em base divergente.', base: 'Tabela PMAC/CBMAC e normas estaduais de vantagens; exige ordem de serviço, boletins, escalas e contracheques.', fonte: 'Portal do Estado do Acre — tabela LC 164', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
+  pcac: [
+    { titulo: 'PCAC — titulação e progressão por classe', status: 'Conferir cargo e classe', ano: 'Tema permanente', tipo: 'individual', desc: 'Verificar enquadramento na classe correta e pagamento de titulação, progressão e vantagens pessoais para Delegado, Perito, Médico-Legista, Agente, Escrivão, Papiloscopista e Auxiliar de Necropsia.', base: 'LC AC 303/2015, Lei AC 3.107/2015, Lei AC 3.228/2017 e tabelas salariais oficiais.', fonte: 'Portal do Estado do Acre — tabelas PCAC', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' },
+    { titulo: 'PCAC — serviço complementar e vantagens absorvidas', status: 'Análise por contracheque', ano: 'Tema de conferência', tipo: 'individual', desc: 'As tabelas indicam serviço complementar e regras de absorção de vantagens. A ação só deve ser cogitada após comparar lei, ato funcional, classe, cargo, fichas financeiras e rubricas efetivamente pagas.', base: 'Lei AC 2.250/2009, Lei AC 3.228/2017, LC AC 303/2015 e normas remuneratórias da PCAC.', fonte: 'Portal do Estado do Acre — tabelas salariais', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
+  ppac: [
+    { titulo: 'PPAC — enquadramento, posse e nomeações do concurso IAPEN 2023', status: 'Acompanhar atos oficiais', ano: '2023–2025', tipo: 'coletivo/individual', desc: 'Para aprovados e nomeados, conferir ordem de classificação, convocação, posse, lotação, curso de formação e eventuais efeitos financeiros conforme atos publicados pela SEAD/IAPEN.', base: 'Edital SEAD/IAPEN 001/2023, homologação de 2025 e atos de nomeação/posse.', fonte: 'SEAD/AC — editais IAPEN', fonteUrl: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/', atualizado: 'Maio/2026' },
+    { titulo: 'PPAC — risco de vida, etapa alimentação, auxílio saúde e titulação', status: 'Verificar cargo/rubrica', ano: 'Tema permanente', tipo: 'individual', desc: 'A tabela do IAPEN e o edital indicam vantagens específicas, mas o cálculo depende do cargo, legislação vigente, lotação, jornada, contracheque e eventuais atos administrativos.', base: 'Lei AC 2.180/IAPEN, LC AC 392/2021, edital SEAD/IAPEN 2023 e contracheques.', fonte: 'Portal do Estado do Acre e SEAD/IAPEN', fonteUrl: 'https://estado.ac.gov.br/tabelas-salariais/', atualizado: 'Maio/2026' }
+  ],
   pmesp: [
     { titulo: "Quinquênio e sexta-parte — base de cálculo", status: "Verificar caso a caso", ano: "Tema recorrente", tipo: "individual", desc: "Discussão sobre a base de cálculo dos adicionais temporais. Exige análise do holerite, verba discutida, período cobrado e entendimento judicial atual.", base: "Constituição do Estado de SP, art. 129; conferir ficha financeira e decisões recentes da carreira.", fonte: "Constituição do Estado de São Paulo", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/constituicao/1989/constituicao-0-05.10.1989.html", atualizado: "Abril/2026" },
     { titulo: "ALE — incorporação e eventuais diferenças", status: "Possível cobrança individual", ano: "Incorporação de 2013", tipo: "individual", desc: "Conferência de eventuais diferenças decorrentes da absorção do Adicional de Local de Exercício nos vencimentos da PMESP. Não tratar como ganho automático.", base: "Lei Complementar Estadual SP nº 1.200/2013, sobre absorção do ALE nos vencimentos dos integrantes da Polícia Militar.", fonte: "LC SP 1.200/2013", fonteUrl: "https://www.al.sp.gov.br/repositorio/legislacao/lei.complementar/2013/lei.complementar-1200-06.06.2013.html", atualizado: "Abril/2026" },
@@ -1666,6 +1773,15 @@ const ACOES_JUDICIAIS = {
 
 /* BLOCO 15.5 — Base de dados das associações e sindicatos */
 const ASSOCIACOES = {
+  pmac: [
+    { nome: 'Entidades representativas dos militares estaduais do Acre', foco: 'Policiais militares, bombeiros militares, veteranos, pensionistas e familiares no Acre', acao: 'Representação de pautas remuneratórias, previdenciárias, assistenciais e institucionais. Cadastro informativo: confirmar entidade específica, filiação e legitimidade antes de encaminhar demanda.', site: 'estado.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, acompanhamento de pautas da carreira, comunicação institucional e eventual apoio jurídico conforme entidade.' }
+  ],
+  pcac: [
+    { nome: 'Entidades representativas dos policiais civis do Acre', foco: 'Delegados, agentes, escrivães, peritos, papiloscopistas e demais carreiras da Polícia Civil do Acre', acao: 'Atuação sindical/associativa em defesa de carreira, remuneração, concursos, previdência e condições de trabalho. Validar a entidade específica conforme cargo e pauta.', site: 'pc.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação de classe, comunicação de pautas, orientação ao associado e acompanhamento de demandas funcionais.' }
+  ],
+  ppac: [
+    { nome: 'Entidades representativas dos policiais penais do Acre', foco: 'Polícia Penal, IAPEN/AC, sistema penitenciário, segurança prisional e carreira penal estadual', acao: 'Acompanhamento de pautas de carreira, nomeações, remuneração, condições de trabalho e estrutura do sistema penitenciário. Confirmar entidade ativa e base de representação antes de encaminhar demanda.', site: 'sead.ac.gov.br', telefone: 'Consultar canais oficiais e redes institucionais locais', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação de classe, comunicação institucional, orientação ao servidor e acompanhamento de editais/atos do IAPEN.' }
+  ],
   pmesp: [
     { nome: "ACS - Associação dos Cabos e Soldados da PMESP", foco: "Praças da Polícia Militar do Estado de São Paulo", acao: "Representação institucional, apoio jurídico, pautas remuneratórias, valorização da carreira e atendimento por regionais no Estado.", site: "www.cabosesoldados.org.br", telefone: "(11) 3871-8100", mensalidade: "Consultar diretamente na entidade", servicos: "Jurídico, notícias de classe, regionais, convênios, comunicação institucional e orientação ao associado." },
     { nome: "AFAM - Associação Fundo de Auxílio Mútuo dos Militares do Estado de São Paulo", foco: "Família policial-militar, assistência social e apoio ao associado", acao: "Atuação voltada a benefícios assistenciais, apoio familiar, orientação jurídica e atendimento ao policial militar e seus dependentes.", site: "www.afam.com.br", telefone: "(11) 3328-1500", mensalidade: "Consultar diretamente na entidade", servicos: "Atendimento ao associado, assistência, apoio jurídico, canais de contato, benefícios e ações de suporte à família policial militar." },
@@ -1784,6 +1900,57 @@ const ASSOCIACOES = {
 
 /* BLOCO 15.6 — Base de dados dos concursos por instituição */
 const CONCURSOS = {
+  pmac: {
+    edital: 'PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde',
+    salario: 'Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.',
+    vagas: '36 vagas: Aluno Oficial Combatente e cargos de 2º Tenente Estagiário de Saúde',
+    cotas: 'Conferir regras do edital FGV/SEAD/PMAC 2023',
+    idade: 'Conferir limite etário e requisitos específicos do edital.',
+    escolaridade: 'Nível superior conforme cargo; requisitos específicos no edital.',
+    materias: 'Língua Portuguesa, conhecimentos jurídicos, conhecimentos específicos, redação/discursiva, raciocínio e legislação conforme cargo.',
+    banca: 'FGV',
+    inscritos: 'Conferir página oficial da FGV',
+    etapas: 'Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação.',
+    cfsd: 'Curso de formação/estágio conforme cargo e edital PMAC 2023.',
+    estagio: 'Conferir estatuto militar estadual e edital.',
+    validade: 'Conferir edital e atos de homologação/prorrogação.',
+    previsao: 'Concurso PMAC 2023 já publicado; acompanhar convocações e atos oficiais da SEAD/PMAC/FGV.',
+    site: 'https://conhecimento.fgv.br/concursos/pmac23'
+  },
+  pcac: {
+    edital: 'PCAC — concurso anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito',
+    salario: 'Edital pendente; o simulador usa as tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais.',
+    vagas: '139 vagas anunciadas',
+    cotas: 'A definir no edital',
+    idade: 'A definir no edital',
+    escolaridade: 'A definir no edital; cargos policiais civis normalmente exigem formação específica conforme carreira.',
+    materias: 'A definir no edital; preparar base em Direito Penal, Processo Penal, Constitucional, Administrativo, Legislação Especial, Português e específicas do cargo.',
+    banca: 'A definir',
+    inscritos: 'Ainda não divulgado',
+    etapas: 'A definir no edital; acompanhar SEAD/AC, PCAC e Diário Oficial do Acre.',
+    cfsd: 'A definir no edital e normas da Academia de Polícia Civil.',
+    estagio: 'Conferir estatuto e edital.',
+    validade: 'A definir no edital.',
+    previsao: 'Governo anunciou novo concurso PCAC em abril de 2026; edital e banca ainda devem ser acompanhados nos canais oficiais.',
+    site: 'https://agencia.ac.gov.br/'
+  },
+  ppac: {
+    edital: 'IAPEN/PPAC — Edital nº 001/2023 SEAD/IAPEN — Agente de Polícia Penal',
+    salario: 'Agente de Polícia Penal: R$ 4.366,60, 40h semanais, dedicação exclusiva e escala.',
+    vagas: '261 vagas para Agente de Polícia Penal, além de cargos de apoio do IAPEN/AC',
+    cotas: 'Conferir edital SEAD/IAPEN 001/2023',
+    idade: 'Conferir requisitos do edital',
+    escolaridade: 'Superior completo e CNH categoria B até o curso de formação para Agente de Polícia Penal.',
+    materias: 'Língua Portuguesa, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Execução Penal, Direitos Humanos e legislação específica conforme edital.',
+    banca: 'IBFC',
+    inscritos: 'Conferir página oficial do concurso SEAD/IAPEN',
+    etapas: 'Prova objetiva, prova discursiva, títulos, TAF, avaliação psicológica, avaliação médica, investigação social e curso de formação.',
+    cfsd: 'Curso de formação com convocações e publicações pela SEAD/IAPEN.',
+    estagio: 'Conferir LC estadual, edital e atos de posse.',
+    validade: 'Resultado final/homologação publicados em 2025; acompanhar prorrogação, nomeações e atos oficiais.',
+    previsao: 'Concurso 2023 teve resultado/homologação em 2025 e nomeações posteriores; acompanhar novas convocações e eventual novo certame.',
+    site: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
+  },
   pmesp: {
     edital: "Soldado PM 2ª Classe (2025/2026) — edital PMES2502 em andamento",
     salario: "R$ 5.055,53 (inicial informado no edital)",
@@ -2135,7 +2302,7 @@ const CONCURSOS = {
 let currTabela = CARGOS_PM;
 let currInst = 'pmesp';
 let headerModoInicialPortal = true;
-const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 function normalizarInstituicao(inst) {
   return INSTITUICOES_VALIDAS.includes(inst) ? inst : 'pmesp';
 }
@@ -2337,6 +2504,7 @@ function initTheme() {
 function popularCargos(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
+    pmac: CARGOS_PMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -2380,6 +2548,18 @@ function popularCargos(inst) {
 /* ============================================================ */
 /* BLOCO 15.8.1 — Tabela simples gratuita de remuneração bruta com fontes oficiais */
 const REMUNERACAO_FONTES_OFICIAIS = {
+  pmac: {
+    nome: 'Portal do Estado do Acre — tabelas salariais PMAC/CBMAC e Edital FGV PMAC 2023',
+    url: 'https://estado.ac.gov.br/tabelas-salariais/'
+  },
+  pcac: {
+    nome: 'Portal do Estado do Acre — tabelas salariais PCAC (Lei 2.250/3.228, LC 303 e Lei 3.107)',
+    url: 'https://estado.ac.gov.br/tabelas-salariais/'
+  },
+  ppac: {
+    nome: 'SEAD/IAPEN-AC — Edital 001/2023 e Portal do Estado do Acre — tabela IAPEN',
+    url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
+  },
   pmesp: {
     nome: 'SGGD/SP — Área Policial — Polícia Militar — mês de referência julho/2025',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
@@ -2738,6 +2918,7 @@ const REMUNERACAO_MG_OFICIAL = {
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP,
+    pmac: CARGOS_PMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -2972,6 +3153,14 @@ function carregarRemuneracaoTabelada() {
 /* ============================================================ */
 
 const HEADER_ESTADOS = {
+  ac: {
+    nome: 'Acre',
+    sigla: 'AC',
+    pm: 'pmac',
+    pc: 'pcac',
+    pp: 'ppac',
+    flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg'
+  },
   sp: {
     nome: 'São Paulo',
     sigla: 'SP',
@@ -3055,6 +3244,9 @@ const HEADER_ESTADOS = {
 };
 
 const HEADER_INSTITUICOES_INFO = {
+  pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
+  pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
+  ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
   pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
   pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
   pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
@@ -3132,6 +3324,36 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
 
 
 const HEADER_INSTITUICOES_RESUMO = {
+  pmac: {
+    nome: 'Polícia Militar do Acre', sigla: 'PMAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Militar',
+    criacao: '1916 · instituição centenária', marco: 'A PMAC completou 110 anos em 2026; a data institucional é celebrada em maio.',
+    ativaLabel: 'Efetivo: conferir PMAC/Portal da Transparência', reservaLabel: 'Reserva/reforma: conferir Acreprevidência e atos estaduais', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
+    populacao: 884372,
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Cel PM Marta Renata da Silva Freitas Alves — Comandante-Geral',
+    ingresso: 'Concurso público, curso de formação, TAF, exames, investigação social e requisitos específicos do edital.',
+    remuneracao: 'Tabela PMAC/CBMAC cadastrada com total bruto oficial de julho/2018; edital PMAC 2023 indicou R$ 8.129,55 para Aluno Oficial e R$ 10.423,73 para 2º Tenente Estagiário de Saúde.',
+    fonte: 'IBGE, Governadoria/PMAC, Portal do Estado do Acre e Edital FGV PMAC 2023', atualizado: 'Atualizado em 01/05/2026'
+  },
+  pcac: {
+    nome: 'Polícia Civil do Acre', sigla: 'PCAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Civil',
+    criacao: 'Órgão estadual de polícia judiciária', marco: 'Em 2026, o Governo do Acre anunciou Pedro Paulo Buzolin como Delegado-Geral e novo concurso PCAC com 139 vagas.',
+    ativaLabel: 'Efetivo: conferir PCAC/Portal da Transparência', reservaLabel: 'Inativos: conferir Acreprevidência', totalLabel: 'Conferir transparência estadual', relacaoLabel: 'Não calcular sem efetivo oficial consolidado',
+    populacao: 884372,
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: 'Pedro Paulo Buzolin — Delegado-Geral da Polícia Civil do Acre',
+    ingresso: 'Concurso público conforme edital; anúncio de 2026 prevê Delegado, Oficial Investigador de Polícia e Perito.',
+    remuneracao: 'Tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais da PCAC, com alertas para atualização por lei e contracheque.',
+    fonte: 'Agência de Notícias do Acre, Portal do Estado do Acre e tabelas salariais PCAC', atualizado: 'Atualizado em 01/05/2026'
+  },
+  ppac: {
+    nome: 'Polícia Penal do Acre', sigla: 'PPAC', estado: 'Acre', estadoSigla: 'AC', tipo: 'Polícia Penal',
+    criacao: POLICIAS_PENAIS_INFO.ppac.criacao, marco: POLICIAS_PENAIS_INFO.ppac.marco,
+    ativaLabel: POLICIAS_PENAIS_INFO.ppac.efetivoAtivoLabel, reservaLabel: POLICIAS_PENAIS_INFO.ppac.reservaLabel, totalLabel: POLICIAS_PENAIS_INFO.ppac.totalLabel, relacaoLabel: POLICIAS_PENAIS_INFO.ppac.relacaoLabel,
+    populacao: 884372,
+    governo: 'Governo do Estado do Acre', governador: 'Mailza Assis Cameli', comando: POLICIAS_PENAIS_INFO.ppac.direcao,
+    ingresso: POLICIAS_PENAIS_INFO.ppac.ingresso,
+    remuneracao: POLICIAS_PENAIS_INFO.ppac.remuneracao,
+    fonte: POLICIAS_PENAIS_INFO.ppac.fonte, atualizado: POLICIAS_PENAIS_INFO.ppac.atualizado
+  },
   pmesp: { criacao: '15/12/1831', ativa: 82000, reserva: 90000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Cel PM José Augusto Coutinho — Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
   pcsp:  { criacao: 'Origem histórica: 1841', ativa: 28000, reserva: 35000, populacao: 46081801, governador: 'Tarcísio de Freitas', comando: 'Delegado Artur José Dian — Delegado-Geral de Polícia', atualizado: 'Atualizado em 28/04/2026' },
   pmerj: { criacao: '13/05/1809', ativa: 43000, reserva: 40000, populacao: 17223547, governador: 'Douglas Ruas — Governador em exercício', comando: 'Cel PM Sylvio Ricardo Ciuffo Guerra — Secretário de Estado e Comandante-Geral', atualizado: 'Atualizado em 28/04/2026' },
@@ -3174,7 +3396,6 @@ const HEADER_INSTITUICOES_RESUMO = {
   copiar remunerações de São Paulo para outras UFs.
 */
 const ESTADOS_ESTRUTURA_FALTANTES = [
-  { estado: 'ac', nome: 'Acre', sigla: 'AC', pm: 'pmac', pc: 'pcac', pp: 'ppac', pmSigla: 'PMAC', pcSigla: 'PCAC', ppSigla: 'PPAC', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg' },
   { estado: 'al', nome: 'Alagoas', sigla: 'AL', pm: 'pmal', pc: 'pcal', pp: 'ppal', pmSigla: 'PMAL', pcSigla: 'PCAL', ppSigla: 'PPAL', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Alagoas.svg' },
   { estado: 'am', nome: 'Amazonas', sigla: 'AM', pm: 'pmam', pc: 'pcam', pp: 'ppam', pmSigla: 'PMAM', pcSigla: 'PCAM', ppSigla: 'PPAM', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amazonas.svg' },
   { estado: 'ap', nome: 'Amapá', sigla: 'AP', pm: 'pmap', pc: 'pcap', pp: 'ppap', pmSigla: 'PMAP', pcSigla: 'PCAP', ppSigla: 'PPAP', flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Amap%C3%A1.svg' },
@@ -3691,6 +3912,9 @@ function mudarInstituicao(novaInstituicao) {
   if (novaInstituicao === '') return;
 
   const configs = {
+    pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
+    pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
+    ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
     pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
