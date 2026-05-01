@@ -2295,30 +2295,32 @@
 
   .header-state-flags {
     max-width: none;
+    width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 8px;
+    row-gap: 9px;
     margin-top: 0;
-    padding: 2px 2px 8px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: thin;
-    scrollbar-color: var(--vermelho) transparent;
+    padding: 4px 2px 6px;
+    overflow-x: visible;
+    overflow-y: visible;
+    scrollbar-width: none;
   }
 
   .header-state-flags::-webkit-scrollbar {
-    height: 5px;
+    display: none;
   }
 
   .header-state-flags::-webkit-scrollbar-thumb {
-    background: var(--vermelho);
+    background: transparent;
     border-radius: 999px;
   }
 
   .state-flags-title {
-    flex: 0 0 auto;
+    flex: 0 0 100%;
     align-self: center;
-    margin-right: 4px;
+    margin: 0 0 2px;
     color: rgba(255,255,255,0.56);
     white-space: nowrap;
   }
