@@ -10,57 +10,26 @@
 <!-- BLOCO 01.1 — Google Analytics -->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XHR4TCCF9D"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-XHR4TCCF9D');
-</script>
-
 <!-- BLOCO 01.2 — Google Ads -->
 <!-- Google Ads tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18121830612"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18121830612');
-</script>
-
+<script src="js/head.js"></script>
 <!-- BLOCO 01.3 — Conversão do Google Ads -->
 <!-- Event snippet for Visualização de página conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-18121830612/GtZCCJSGh6McENThlMFD'});
-</script>
-
 <!-- BLOCO 01.4 — Metadados, título e fontes externas -->
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Portal independente que organiza informações públicas, links úteis, remuneração, direitos, concursos e referências oficiais de instituições de segurança pública em um só lugar.">
-<title>Universo Segurança Pública — Portal Independente de Informações Públicas</title>
+<meta name="description" content="Simulador de vencimentos e direitos para policiais militares, civis e penais de SP, RJ, MG, BA, PR, RS, SC, ES, MS e MT - Atualizado 2026 com tabelas BA/MG/PR revisadas e auxílio-alimentação por instituição">
+<title>Universo Segurança Pública - Simulador e Direitos 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Roboto+Condensed:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <!-- BLOCO 01.5 — Aplicação antecipada do tema salvo -->
-<script>
-  (function () {
-    const temaSalvo = localStorage.getItem('theme');
-    const temaInicial = temaSalvo === 'light' || temaSalvo === 'dark' ? temaSalvo : 'dark';
-    document.documentElement.setAttribute('data-theme', temaInicial);
-  })();
-</script>
-
-<!-- Tema refeito do zero a partir da referência visual enviada -->
-<link rel="stylesheet" href="assets/css/tema-anexo-zero.css">
-<link rel="stylesheet" href="assets/css/tema-mockup-armada.css">
-<script src="assets/js/image-fallback.js"></script>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 <body data-inst="portal">
-<a class="skip-link" href="#page-principal">Pular para o conteúdo principal</a>
 
 <!-- =======================================================
      BLOCO 03 — HTML / ESTRUTURA VISÍVEL DO SITE
@@ -75,15 +44,14 @@
         <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="sidebar">
           <span></span><span></span><span></span>
         </button>
-        <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar entre tema claro e tema escuro">
-          ☀️ Tema claro
+        <button class="theme-toggle-header" onclick="toggleTheme()" id="theme-toggle-header" type="button" aria-label="Alternar tema claro/escuro">
+          ☀️ Claro
         </button>
       </div>
 
       <div class="header-brand-block" aria-label="Identidade do site">
-        <div class="header-kicker">Portal independente</div>
+        <div class="header-kicker"> </div>
         <h1>Universo <span>Segurança Pública</span></h1>
-        <p class="header-brand-subtitle">Informações públicas, fontes institucionais e ferramentas de consulta em um só lugar.</p>
       </div>
     </div>
 
@@ -92,14 +60,14 @@
         <div class="header-institution-main">
           <div class="header-current-identity">
             <div class="current-flag-frame brand-logo-frame" aria-hidden="true">
-              <img id="header-active-flag" src="assets/img/logoleao.jpeg" data-img-base="assets/img/logoleao" data-img-aliases="assets/img/logolesao" alt="Logo Universo Segurança Pública" onerror="carregarImagemProduto(this)">
+              <img id="header-active-flag" src="logoleao" data-img-base="logoleao" alt="Logo Universo Segurança Pública" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='logoleao.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='logoleao.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='logoleao.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='logoleao.webp';}else{this.style.display='none';}">
             </div>
 
             <div class="header-current-copy">
-              <span class="header-current-label">Portal independente</span>
+              <span class="header-current-label"> </span>
               <strong id="header-active-sigla">Universo</strong>
               <p id="header-active-name">Segurança Pública</p>
-              <small id="header-desc">Escolha uma instituição para consultar dados públicos organizados</small>
+              <small id="header-desc">Escolha uma instituição</small>
             </div>
           </div>
 
@@ -112,7 +80,7 @@
             <div class="header-facts-grid">
               <div class="header-fact">
                 <span id="header-label-criacao">Instituições</span>
-                <strong id="header-resumo-criacao">36</strong>
+                <strong id="header-resumo-criacao">30</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-ativa">Ativos estimados</span>
@@ -132,7 +100,7 @@
               </div>
               <div class="header-fact">
                 <span id="header-label-relacao">Estados</span>
-                <strong id="header-resumo-relacao">12 estados</strong>
+                <strong id="header-resumo-relacao">10 estados</strong>
               </div>
             </div>
 
@@ -204,16 +172,6 @@
                 <option value="pmmt">PMMT - Polícia Militar</option>
                 <option value="pcmt">PCMT - Polícia Civil</option>
                 <option value="ppmt">PPMT - Polícia Penal</option>
-              </optgroup>
-              <optgroup label="Goiás">
-                <option value="pmgo">PMGO - Polícia Militar</option>
-                <option value="pcgo">PCGO - Polícia Civil</option>
-                <option value="ppgo">PPGO - Polícia Penal</option>
-              </optgroup>
-              <optgroup label="Tocantins">
-                <option value="pmto">PMTO - Polícia Militar</option>
-                <option value="pcto">PCTO - Polícia Civil</option>
-                <option value="ppto">PPTO - Polícia Penal</option>
               </optgroup>
             </select>
           </div>
@@ -290,16 +248,6 @@
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Mato_Grosso.svg" alt="Bandeira de Mato Grosso">
           <span>MT</span>
         </button>
-
-        <button class="state-flag" type="button" data-estado="go" title="Goiás" onclick="selecionarEstado('go')" aria-label="Selecionar Goiás" aria-pressed="false">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_de_Goi%C3%A1s.svg" alt="Bandeira de Goiás">
-          <span>GO</span>
-        </button>
-
-        <button class="state-flag" type="button" data-estado="to" title="Tocantins" onclick="selecionarEstado('to')" aria-label="Selecionar Tocantins" aria-pressed="false">
-          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Tocantins.svg" alt="Bandeira do Tocantins">
-          <span>TO</span>
-        </button>
       </div>
     </div>
   </div>
@@ -310,13 +258,6 @@
   <div class="stripe-white"></div>
   <div class="stripe-black"></div>
 </div>
-
-<section class="portal-notice" aria-label="Aviso de independência editorial">
-  <div class="portal-notice-inner">
-    <strong>Portal independente e não governamental.</strong>
-    <span>O Universo Segurança Pública reúne informações públicas, referências institucionais e links de fontes oficiais em uma interface única. Não representa, não fala em nome e não substitui nenhum órgão público.</span>
-  </div>
-</section>
 
 <!-- BLOCO 03.3 — Overlay escuro do menu lateral -->
 <div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()" aria-hidden="true"></div>
@@ -385,16 +326,6 @@
         <option value="pmmt">PMMT - Polícia Militar</option>
         <option value="pcmt">PCMT - Polícia Civil</option>
         <option value="ppmt">PPMT - Polícia Penal</option>
-      </optgroup>
-      <optgroup label="Goiás">
-        <option value="pmgo">PMGO - Polícia Militar</option>
-        <option value="pcgo">PCGO - Polícia Civil</option>
-        <option value="ppgo">PPGO - Polícia Penal</option>
-      </optgroup>
-      <optgroup label="Tocantins">
-        <option value="pmto">PMTO - Polícia Militar</option>
-        <option value="pcto">PCTO - Polícia Civil</option>
-        <option value="ppto">PPTO - Polícia Penal</option>
       </optgroup>
     </select>
     <p class="sidebar-selector-hint">Os dados das abas serão ajustados conforme a instituição escolhida.</p>
@@ -475,14 +406,14 @@
       <span>Itens úteis para a rotina operacional</span>
     </div>
     <a class="sidebar-product" href="https://s.shopee.com.br/AKWuxuRbwP" target="_blank" rel="noopener noreferrer">
-      <img src="assets/img/botaacero.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <img src="IMG_0868.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
     <a class="sidebar-product" href="https://s.shopee.com.br/8fOgxANigm" target="_blank" rel="noopener noreferrer">
-      <img src="assets/img/barrafixa01.jpg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
+      <img src="IMG_0865.jpeg" alt="Produto parceiro selecionado" loading="lazy" onerror="this.style.display='none'; this.parentElement.classList.add('img-indisponivel');">
       <span>Ver produto</span>
     </a>
-    <small class="sidebar-affiliate-note">Links comerciais/afiliados: podemos receber comissão sem alterar o preço para você. Confira preço, prazo, garantia e reembolso no vendedor.</small>
+    <small class="sidebar-affiliate-note">.</small>
   </div>
 </aside>
 
@@ -491,204 +422,64 @@
 
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main id="page-principal" class="page-section active" role="main">
-
-  <!-- BLOCO 04.0 — Capa visual em formato de apresentação tática, inspirada no mockup enviado -->
-  <section class="slide-showcase" aria-labelledby="slide-showcase-title">
-    <article class="slide-card slide-cover" aria-label="Capa do portal em estilo apresentação">
-      <div class="slide-brand-row">
-        <span class="slide-shield" aria-hidden="true">◆</span>
-        <strong>UNISEGPUB</strong>
-        <small>painel independente</small>
-      </div>
-      <div class="slide-cover-grid">
-        <div class="slide-cover-copy">
-          <span class="slide-kicker">consulta operacional</span>
-          <h2 id="slide-showcase-title">Mapa de carreira, remuneração e fontes oficiais</h2>
-          <p>Uma experiência em formato de dossiê visual: escolha a instituição, acompanhe os dados essenciais e avance para a consulta que resolve sua dúvida.</p>
-          <div class="slide-cover-actions" aria-label="Atalhos da capa visual">
-            <button type="button" onclick="document.getElementById('instituicao_header')?.focus()">Selecionar instituição</button>
-            <button type="button" class="ghost" onclick="switchPage('comparar')">Comparar carreiras</button>
-          </div>
-        </div>
-        <div class="slide-cover-media" aria-label="Instituição em destaque">
-          <div class="slide-media-frame">
-            <img id="deck-active-logo" src="assets/img/logoleao.jpeg" alt="Logo Universo Segurança Pública" loading="eager">
-          </div>
-          <div class="slide-media-caption">
-            <strong id="deck-active-sigla">UNIVERSO</strong>
-            <span id="deck-active-name">Segurança Pública</span>
-          </div>
-        </div>
-      </div>
-    </article>
-
-    <article class="slide-card slide-mini slide-dark" onclick="switchPage('remuneracao')" role="button" tabindex="0" aria-label="Abrir remuneração tabelada">
-      <span>01</span>
-      <strong>Remuneração</strong>
-      <p>Tabelas brutas, cargos, filtros e fonte de validação.</p>
-    </article>
-
-    <article class="slide-card slide-mini slide-light" onclick="switchPage('concursos')" role="button" tabindex="0" aria-label="Abrir concursos">
-      <span>02</span>
-      <strong>Concursos</strong>
-      <p>Editais, etapas, requisitos e informações de ingresso.</p>
-    </article>
-
-    <article class="slide-card slide-stat slide-dark" aria-label="Cobertura do portal">
-      <span>COBERTURA</span>
-      <strong>36</strong>
-      <p>instituições em 12 estados</p>
-      <div class="slide-stat-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-    </article>
-
-    <article class="slide-card slide-wide slide-light" aria-label="Fluxo recomendado de uso">
-      <span>FLUXO RÁPIDO</span>
-      <div class="slide-timeline" aria-hidden="true">
-        <i>01</i><i>02</i><i>03</i><i>04</i>
-      </div>
-      <p>Selecionar → consultar → comparar → validar em fonte oficial.</p>
-    </article>
-
-    <article class="slide-card slide-wide slide-dark" onclick="switchPage('direitos')" role="button" tabindex="0" aria-label="Abrir direitos e vantagens">
-      <span>PAINEL DE APOIO</span>
-      <strong>Direitos, ações e entidades</strong>
-      <p>Conteúdo organizado por instituição para orientar a próxima consulta sem confundir informação pública com decisão final.</p>
-    </article>
-  </section>
-
   <!-- BLOCO 04.1 — Hero inicial e botões principais -->
   <section class="principal-hero" aria-labelledby="principal-titulo">
     <!-- BLOCO 04.1.1 — Título da página principal -->
     <div class="principal-hero-top">
       <div class="principal-title-area">
-        <div class="principal-eyebrow">Portal independente de informações públicas</div>
-        <h1 class="principal-title" id="principal-titulo">Dados públicos, fontes institucionais e consultas úteis em um só <span>lugar</span></h1>
+        <div class="principal-eyebrow">Portal prático para segurança pública</div>
+        <h1 class="principal-title" id="principal-titulo">Consulte remuneração, direitos, concursos e informações da sua instituição em poucos <span>cliques</span></h1>
       </div>
     </div>
     <p class="principal-subtitle">
-      Encontre remuneração, direitos, concursos, ações judiciais, associações, materiais úteis e referências de fontes oficiais/públicas sem precisar garimpar várias páginas separadas.
+      Selecione sua instituição e acesse dados organizados sobre salários, benefícios, concursos, ações judiciais, associações e materiais úteis para profissionais da segurança pública.
     </p>
     <div class="principal-actions" aria-label="Ações principais da página inicial">
-      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Consultar remuneração</button>
-      <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Acompanhar concursos</button>
-      <button class="principal-btn secundario" type="button" onclick="switchPage('direitos')">Ver direitos</button>
+      <button class="principal-btn" type="button" onclick="switchPage('remuneracao')">Consultar Remuneração</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('direitos')">Ver Direitos</button>
+      <button class="principal-btn secundario" type="button" onclick="switchPage('concursos')">Ver Concursos</button>
     </div>
   </section>
 
   <!-- BLOCO 04.2 — Indicadores de autoridade e cobertura do portal -->
   <section class="principal-stats" aria-label="Resumo de cobertura do site">
     <div class="principal-stat">
-      <strong>12 estados</strong>
-      <span>Estados monitorados</span>
+      <strong>10 estados</strong>
+      <span>Campos disponíveis</span>
     </div>
     <div class="principal-stat">
-      <strong>36</strong>
+      <strong>30</strong>
       <span>Instituições cadastradas</span>
     </div>
     <div class="principal-stat">
       <strong>2026</strong>
-      <span>Referências em atualização</span>
+      <span>Dados em atualização</span>
     </div>
     <div class="principal-stat">
-      <strong>Público</strong>
-      <span>Conteúdo organizado</span>
+      <strong>Grátis</strong>
+      <span>Consulta inicial</span>
     </div>
-  </section>
-
-  <section class="instituicao-dossie" aria-labelledby="dossie-titulo">
-    <div class="principal-section-title">
-      <h2 id="dossie-titulo">Dossiê rápido da instituição</h2>
-      <p>Resumo objetivo para indicar o que está cadastrado, o que precisa ser conferido e onde o usuário deve validar informações sensíveis.</p>
-    </div>
-    <div class="dossie-grid" id="instituicao-dossie-grid" aria-live="polite">
-      <article class="dossie-card">
-        <span>Instituição</span>
-        <strong>Portal</strong>
-        <p>Selecione uma instituição no topo para ver dados específicos.</p>
-      </article>
-      <article class="dossie-card">
-        <span>Cobertura</span>
-        <strong>36 instituições</strong>
-        <p>Dados públicos organizados por estado, carreira e área de consulta.</p>
-      </article>
-      <article class="dossie-card">
-        <span>Atenção</span>
-        <strong>Conferência oficial</strong>
-        <p>Valores, editais e direitos devem ser validados em fontes oficiais.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="instituicao-painel" aria-labelledby="painel-institucional-titulo">
-    <div class="principal-section-title">
-      <h2 id="painel-institucional-titulo">Painel completo da instituição</h2>
-      <p>Ao selecionar uma instituição, o portal cruza remuneração, concursos, ações, associações, efetivo e alertas em uma visão única.</p>
-    </div>
-
-    <div class="painel-institucional-grid" id="painel-institucional" aria-live="polite">
-      <article class="painel-info-card destaque">
-        <span>Comece por uma instituição</span>
-        <strong>Selecione no cabeçalho</strong>
-        <p>O painel vai mostrar identidade, dados cadastrados, remuneração, concursos, associações, ações e pontos de atenção para validação oficial.</p>
-      </article>
-      <article class="painel-info-card">
-        <span>Conteúdo integrado</span>
-        <strong>36 instituições</strong>
-        <p>Polícias militares, civis e penais organizadas por estado, ramo de carreira e área de consulta.</p>
-      </article>
-      <article class="painel-info-card">
-        <span>Uso seguro</span>
-        <strong>Conferência obrigatória</strong>
-        <p>O portal ajuda a localizar caminhos, mas decisões funcionais exigem fonte oficial, edital, lei, contracheque ou setor competente.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="portal-cobertura" aria-labelledby="cobertura-titulo">
-    <div class="principal-section-title">
-      <h2 id="cobertura-titulo">Mapa rápido de cobertura</h2>
-      <p>Escolha um estado para alternar rapidamente entre Polícia Militar, Polícia Civil e Polícia Penal quando houver dados cadastrados.</p>
-    </div>
-    <div class="portal-cobertura-grid" id="portal-cobertura-estados" aria-live="polite"></div>
-  </section>
-
-  <section class="portal-trust-strip" aria-label="Diferenciais do portal">
-    <article class="portal-trust-card">
-      <span>01</span>
-      <strong>Curadoria centralizada</strong>
-      <p>Organiza dados e caminhos úteis por estado, carreira e instituição.</p>
-    </article>
-    <article class="portal-trust-card">
-      <span>02</span>
-      <strong>Clareza sobre fontes</strong>
-      <p>Prioriza informações públicas e alerta quando a conferência oficial é indispensável.</p>
-    </article>
-    <article class="portal-trust-card">
-      <span>03</span>
-      <strong>Uso rápido no celular</strong>
-      <p>Menus, cards e tabelas foram reorganizados para consulta objetiva.</p>
-    </article>
   </section>
 
   <!-- BLOCO 04.3 — Como usar a página inicial -->
   <section class="principal-como-usar" aria-labelledby="como-usar-titulo">
     <div class="principal-section-title">
-      <h2 id="como-usar-titulo">Como consultar com segurança</h2>
-      <p>Use o portal como ponto de partida e confirme decisões importantes nas fontes institucionais correspondentes.</p>
+      <h2 id="como-usar-titulo">Como usar o Universo Segurança Pública</h2>
+      <p>Comece pela instituição e vá direto para a consulta que resolve sua dúvida.</p>
     </div>
 
     <div class="como-usar-grid">
       <div class="como-usar-step">
         <strong>1</strong>
-        <span>Escolha sua instituição no topo do site ou pelos estados disponíveis.</span>
+        <span>Escolha sua instituição no topo do site ou pelas bandeiras dos estados.</span>
       </div>
       <div class="como-usar-step">
         <strong>2</strong>
-        <span>Consulte remuneração, direitos, concursos, ações judiciais, associações e materiais úteis.</span>
+        <span>Consulte remuneração, direitos, concursos, ações judiciais ou entidades.</span>
       </div>
       <div class="como-usar-step">
         <strong>3</strong>
-        <span>Antes de agir, confira detalhes sensíveis no edital, lei, regulamento ou canal institucional indicado.</span>
+        <span>Acesse fontes, produtos, materiais de estudo e parceiros quando quiser se aprofundar.</span>
       </div>
     </div>
   </section>
@@ -696,8 +487,8 @@
   <!-- BLOCO 04.4 — Consultas principais -->
   <section class="principal-area" aria-labelledby="consultas-principais-titulo">
     <div class="principal-section-title">
-      <h2 id="consultas-principais-titulo">Áreas principais do portal</h2>
-      <p>Conteúdos organizados para economizar tempo sem confundir o usuário sobre a natureza independente do site.</p>
+      <h2 id="consultas-principais-titulo">Consultas principais</h2>
+      <p>Áreas mais úteis para quem quer comparar cargos, entender direitos e acompanhar oportunidades.</p>
     </div>
 
     <div class="principal-grid consultas-principais" aria-label="Consultas principais do site">
@@ -782,6 +573,7 @@
   </section>
 </main>
 
+
 <!-- BLOCO 04.3 — PÁGINA REMUNERAÇÃO TABELADA -->
 <main id="page-remuneracao" class="page-section" role="main">
   <div class="card">
@@ -802,31 +594,6 @@
       <div class="remuneracao-stat">
         <span>Maior remuneração bruta</span>
         <strong id="remu-maior-total">R$ 0,00</strong>
-      </div>
-    </div>
-
-    <div class="remuneracao-filtros" aria-label="Filtros da tabela de remuneração">
-      <div class="field">
-        <label for="filtro-remu-cargo">Buscar cargo, classe ou referência</label>
-        <input type="search" id="filtro-remu-cargo" placeholder="Ex.: Soldado, Delegado, Classe Especial" oninput="carregarRemuneracaoTabelada()">
-      </div>
-      <div class="field">
-        <label for="filtro-remu-faixa">Faixa da carreira</label>
-        <select id="filtro-remu-faixa" onchange="carregarRemuneracaoTabelada()">
-          <option value="">Todos os cargos</option>
-          <option value="ingresso">Priorizar cargos de ingresso</option>
-          <option value="topo">Priorizar topo de carreira</option>
-          <option value="confirmados">Somente valores confirmados</option>
-        </select>
-      </div>
-      <div class="field">
-        <label for="filtro-remu-ordem">Ordenar</label>
-        <select id="filtro-remu-ordem" onchange="carregarRemuneracaoTabelada()">
-          <option value="original">Ordem da carreira</option>
-          <option value="menor">Menor remuneração primeiro</option>
-          <option value="maior">Maior remuneração primeiro</option>
-          <option value="az">Cargo A-Z</option>
-        </select>
       </div>
     </div>
 
@@ -856,15 +623,13 @@
 
 <!-- BLOCO 06 — PÁGINA DIREITOS E VANTAGENS -->
 <main id="page-direitos" class="page-section" role="main">
-<div class="card">
+  <!-- CSS movido para css/style.css -->
+
+  <div class="card">
     <!-- BLOCO 06.1 — Formulário para análise de direitos -->
     <h2>Análise de Direitos, Benefícios e Vantagens Funcionais</h2>
     <div class="direitos-intro">
       Preencha os campos abaixo para consultar uma visão informativa dos principais direitos, vantagens, licenças, benefícios e alertas funcionais da instituição selecionada. A análise evita tratar como “garantido” aquilo que depende de renda, perícia, requerimento, data de ingresso, cargo, local de exercício ou regra de transição.
-    </div>
-
-    <div class="alerta legal" style="margin-top: 0; margin-bottom: 18px;">
-      Quanto mais campos você preencher, melhor será a triagem. Se não souber uma resposta, deixe como “não informar” ou em branco.
     </div>
 
     <div class="form-grid" style="margin-bottom: 0;">
@@ -881,15 +646,15 @@
         </select>
       </div>
       <div class="field">
-        <label for="tempo_dir">Tempo aproximado na carreira policial (anos)</label>
-        <input type="number" id="tempo_dir" min="0" max="45" placeholder="Ex.: 10" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+        <label for="tempo_dir">Tempo de Contribuição Policial (Anos)</label>
+        <input type="number" id="tempo_dir" value="10" min="0" max="45"/>
       </div>
       <div class="field">
-        <label for="idade_dir">Idade atual</label>
-        <input type="number" id="idade_dir" min="18" max="80" placeholder="Ex.: 35" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+        <label for="idade_dir">Idade</label>
+        <input type="number" id="idade_dir" value="35" min="18" max="80" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
-        <label for="sexo_dir">Regra previdenciária aplicável</label>
+        <label for="sexo_dir">Sexo para regra previdenciária</label>
         <select id="sexo_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="masculino">Masculino</option>
@@ -909,11 +674,11 @@
         </select>
       </div>
       <div class="field">
-        <label for="renda_dir">Remuneração bruta mensal — opcional (R$)</label>
-        <input type="number" id="renda_dir" min="0" step="0.01" placeholder="Ex.: 5500,00" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
+        <label for="renda_dir">Remuneração bruta aproximada (R$)</label>
+        <input type="number" id="renda_dir" value="0" min="0" step="0.01" placeholder="Use para salário-família" oninput="analisarDireitos()" onchange="analisarDireitos()"/>
       </div>
       <div class="field">
-        <label for="local_especial_dir">Trabalha em unidade com adicional ou regra especial?</label>
+        <label for="local_especial_dir">Atua em localidade/unidade especial?</label>
         <select id="local_especial_dir" onchange="analisarDireitos()">
           <option value="na" selected>Não informar</option>
           <option value="sim">Sim</option>
@@ -1023,16 +788,13 @@
     <h2>Produtos (<span id="txt-inst-produtos">PMESP</span>)</h2>
 
     <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
-      <strong>Aviso de transparência:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal. Alguns links podem ser comerciais ou afiliados; isso não altera o preço para o usuário e ajuda a manter o portal. Antes de comprar, confira preço, prazo, garantia, avaliações e política de reembolso na página oficial do vendedor.
+      <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
     </div>
-
-    
-
-    <div class="curso-section-title">Produtos físicos</div>
+<div class="curso-section-title">Produtos físicos</div>
     <div class="curso-grid" aria-label="Produtos físicos com link de compra">
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Abrir barra fixa para porta">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/barrafixa01.jpg" data-img-base="assets/img/barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="barrafixa01" data-img-base="barrafixa01" alt="Barra fixa para porta" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Barra fixa para porta</h3>
         <p>Equipamento simples para treinar barra fixa em casa, fortalecer costas, braços e pegada, ajudando na preparação para o TAF.</p>
@@ -1046,7 +808,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" target="_blank" rel="noopener noreferrer" aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/botaacero.jpeg" data-img-base="assets/img/botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="botaacero" data-img-base="botaacero" alt="BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP</h3>
         <p>No trabalho policial, uma boa bota ajuda na estabilidade, proteção dos pés e tornozelos, aderência em deslocamentos e conforto em longas jornadas. Isso favorece mobilidade, postura e segurança durante patrulhamento, plantões, abordagens e ocorrências.</p>
@@ -1060,7 +822,7 @@
 
       <a class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Abrir Power Rack Funcional">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/barrafixa02.jpg" data-img-base="assets/img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="barrafixa02" data-img-base="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Power Rack Funcional com paralelas</h3>
         <p>Estrutura mais completa para treinar barra fixa, paralelas, agachamento e supino, criando uma rotina física mais forte para concursos policiais.</p>
@@ -1081,7 +843,7 @@
     <div class="curso-grid curso-pmesp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório Sargento PMESP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/curso-sargento-pmesp" data-img-base="assets/img/curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="curso-sargento-pmesp" data-img-base="curso-sargento-pmesp" alt="Curso Preparatório Sargento PMESP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório - SARGENTO PMESP</h3>
         <p>Curso online do CABEP voltado aos concursos internos da PMESP, com conteúdo direcionado para Soldado, Cabo, Sargento e CHQAOPM.</p>
@@ -1096,7 +858,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso Preparatório PMESP Completo">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/curso-pmesp-completo" data-img-base="assets/img/curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="curso-pmesp-completo" data-img-base="curso-pmesp-completo" alt="Curso Preparatório PMESP Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Curso Preparatório PMESP Completo</h3>
         <p>Preparatório para o concurso de Soldado PMESP 2ª Classe, com foco em prova, exercícios, fases do concurso e preparação objetiva para a banca VUNESP.</p>
@@ -1111,7 +873,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/curso-psicotecnico-carreiras-policiais" data-img-base="assets/img/curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="curso-psicotecnico-carreiras-policiais" data-img-base="curso-psicotecnico-carreiras-policiais" alt="Preparatório para o psicotécnico das carreiras policiais" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Preparatório para o psicotécnico das carreiras policiais</h3>
         <p>Material direto para candidatos que querem entender melhor a etapa psicológica dos concursos policiais e se preparar com mais segurança.</p>
@@ -1128,7 +890,7 @@
     <div class="curso-grid curso-pcsp-only">
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/curso-raciocinio-logico-pcsp" data-img-base="assets/img/curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="curso-raciocinio-logico-pcsp" data-img-base="curso-raciocinio-logico-pcsp" alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Raciocínio Lógico para Polícia Civil de São Paulo (PCSP)</h3>
         <p>Curso de Raciocínio Lógico com foco na PCSP e na banca VUNESP, pensado para acelerar o aprendizado com abordagem prática.</p>
@@ -1143,7 +905,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Curso de Informática PCSP">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/curso-informatica-pcsp" data-img-base="assets/img/curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="curso-informatica-pcsp" data-img-base="curso-informatica-pcsp" alt="PCSP Curso de Informática Edital Completo" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>PCSP - Curso de Informática - Edital Completo</h3>
         <p>Curso de Informática para concursos da Polícia Civil de São Paulo, com teoria, exercícios, videoaulas, PDFs e foco na banca VUNESP.</p>
@@ -1165,7 +927,7 @@
     <div class="curso-grid" aria-label="Livros e e-books com link de compra">
       <a class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Pacote Viva Sem Procrastinar">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/pacote-viva-sem-procrastinar" data-img-base="assets/img/pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="pacote-viva-sem-procrastinar" data-img-base="pacote-viva-sem-procrastinar" alt="Pacote Viva Sem Procrastinar" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Pacote - Viva Sem Procrastinar</h3>
         <p>Pacote voltado para quem deseja combater a procrastinação, melhorar a rotina e construir mais atitude prática no dia a dia.</p>
@@ -1180,7 +942,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Otimizando o Cérebro para Concursos Públicos">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/otimizando-cerebro-concursos" data-img-base="assets/img/otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="otimizando-cerebro-concursos" data-img-base="otimizando-cerebro-concursos" alt="Otimizando o Cérebro para Concursos Públicos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Otimizando o Cérebro para Concursos Públicos</h3>
         <p>E-book com técnicas para melhorar memória, concentração, aprendizado, organização do tempo e produtividade nos estudos para concursos.</p>
@@ -1195,7 +957,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Além da Farda O Código da Travessia">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/alem-da-farda-codigo-travessia" data-img-base="assets/img/alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="alem-da-farda-codigo-travessia" data-img-base="alem-da-farda-codigo-travessia" alt="Além da Farda O Código da Travessia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Além da Farda: O Código da Travessia</h3>
         <p>Manual de reconstrução de identidade e transição do modo institucional para uma vida com mais autonomia, estratégia e consciência de valor.</p>
@@ -1210,7 +972,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" target="_blank" rel="noopener noreferrer" aria-label="Abrir Método DMA">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/metodo-dma-procrastinacao" data-img-base="assets/img/metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="metodo-dma-procrastinacao" data-img-base="metodo-dma-procrastinacao" alt="Método DMA Vença a Procrastinação e Alcance o Sucesso em seus Objetivos" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Método DMA: Vença a Procrastinação e Alcance o Sucesso em seus Objetivos</h3>
         <p>Método de planejamento, gestão de tempo, disciplina e desenvolvimento pessoal para quem busca mais resultado na vida profissional e pessoal.</p>
@@ -1225,7 +987,7 @@
 
       <a class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" target="_blank" rel="noopener noreferrer" aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia">
         <div class="produto-imagem" aria-hidden="true">
-          <img src="assets/img/taticas-lideranca-militar" data-img-base="assets/img/taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
+          <img src="taticas-lideranca-militar" data-img-base="taticas-lideranca-militar" alt="Táticas de Liderança Militar Aplicadas ao Dia a Dia" loading="lazy" onerror="carregarImagemProduto(this)">
         </div>
         <h3>Táticas de Liderança Militar Aplicadas ao Dia a Dia</h3>
         <p>E-book sobre disciplina, liderança, tomada de decisão, comunicação objetiva e organização da rotina com princípios militares.</p>
@@ -1244,6 +1006,7 @@
     </p>
   </div>
 </main>
+
 
 <!-- BLOCO 09 — PÁGINA AÇÕES JUDICIAIS -->
 <main id="page-acoes" class="page-section" role="main">
@@ -1266,6 +1029,7 @@
     <div class="result-list" id="lista-associacoes"></div>
   </div>
 </main>
+
 
 <!-- BLOCO 11 — PÁGINA PARCEIROS E CONTATO -->
 <main id="page-parceiros" class="page-section" role="main">
@@ -1311,9 +1075,10 @@
 
 <!-- BLOCO 13 — RODAPÉ DO SITE -->
 <footer role="contentinfo">
-  <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Portal independente baseado em informações públicas.</p>
-  <p class="small-note">Não somos órgão público e não representamos instituições oficiais. Valores, editais e direitos devem ser confirmados nas fontes oficiais, holerite, legislação ou setor competente.</p>
+  <p>Desenvolvido por <strong>LOCKSTAGE</strong> — Conteúdo informativo baseado em fontes públicas.</p>
+  <p class="small-note">Os valores são estimativas e referências. Confira sempre o holerite oficial e o regulamento institucional.</p>
 </footer>
+
 
 <!-- ============================================================ -->
 <!-- === CAMADA VISUAL GLASS / MODERNA ========================= -->
@@ -1323,16 +1088,8 @@
      BLOCO 14 — CSS VISUAL GLASS / MODERNIZAÇÃO DE APARÊNCIA
      Camada visual final: apenas aparência, sem alterar HTML funcional ou JavaScript.
      ======================================================= -->
-
-<!-- JavaScript dividido por responsabilidade: dados primeiro, funções depois -->
-<script src="assets/js/dados/01-parametros.js" defer></script>
-<script src="assets/js/dados/02-remuneracoes.js" defer></script>
-<script src="assets/js/dados/03-policia-penal.js" defer></script>
-<script src="assets/js/dados/04-acoes.js" defer></script>
-<script src="assets/js/dados/05-associacoes.js" defer></script>
-<script src="assets/js/dados/06-concursos.js" defer></script>
-<script src="assets/js/app.js" defer></script>
-<script src="assets/js/deck-sync.js" defer></script>
+<!-- CSS movido para css/style.css -->
+<script src="js/script.js"></script>
 
 </body>
 </html>
