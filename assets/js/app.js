@@ -91,8 +91,10 @@ function switchPage(page, atualizarUrl = true) {
   atualizarHeaderDesc();
   atualizarVisibilidadeResumoInstitucional(page);
 
+  // Fecha a sidebar/menu após o clique em qualquer aba,
+  // em celular, tablet ou desktop, liberando a tela para a página escolhida.
   const sidebar = document.getElementById('sidebar');
-  if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu(false);
+  if (sidebar && sidebar.classList.contains('active')) toggleMenu(false);
 
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
