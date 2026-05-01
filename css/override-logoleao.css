@@ -309,3 +309,27 @@ body.brasao-lightbox-open {
     max-height: 68vh;
   }
 }
+
+/* ============================================================
+   Correção: remove foto duplicada do plano anterior do cabeçalho
+   ------------------------------------------------------------
+   Mantém intactos:
+   - a imagem principal do brasão/logo no card;
+   - a bandeira dentro do card institucional;
+   - o plano de fundo grande da página.
+
+   O que sai daqui é apenas a imagem aplicada no ::before do
+   header inteiro, que ficava atrás do card e repetia logo/bandeira.
+   ============================================================ */
+header.site-header::before,
+body[data-inst="portal"] header.site-header::before,
+body:not([data-inst="portal"]) header.site-header::before {
+  background-image:
+    radial-gradient(circle at 12% 18%, color-mix(in srgb, var(--vermelho) 24%, transparent), transparent 24%),
+    linear-gradient(120deg, rgba(255,255,255,0.08), transparent 38%),
+    repeating-linear-gradient(135deg, transparent, transparent 28px, rgba(255,255,255,0.018) 28px, rgba(255,255,255,0.018) 56px) !important;
+  background-size: auto, auto, auto !important;
+  background-position: center, center, center !important;
+  background-repeat: no-repeat, no-repeat, repeat !important;
+  opacity: 0.42 !important;
+}
