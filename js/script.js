@@ -2185,13 +2185,23 @@ function escapeHtml(str = '') {
 /* === UI: MENU, TEMA, TROCA DE PÁGINA ======================== */
 /* ============================================================ */
 /* BLOCO 15.8 — Menu lateral, navegação por abas e tema */
-function toggleMenu() {
+function toggleMenu(forceOpen) {
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('menuOverlay');
   const btn = document.querySelector('.menu-btn');
-  const isActive = sidebar.classList.toggle('active');
-  overlay.classList.toggle('active');
-  btn.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+  if (!sidebar || !overlay || !btn) return;
+
+  const shouldOpen = typeof forceOpen === 'boolean'
+    ? forceOpen
+    : !sidebar.classList.contains('active');
+
+  sidebar.classList.toggle('active', shouldOpen);
+  overlay.classList.toggle('active', shouldOpen);
+  btn.setAttribute('aria-expanded', shouldOpen ? 'true' : 'false');
+}
+
+function closeMenu() {
+  toggleMenu(false);
 }
 
 function switchPage(page) {
@@ -2207,8 +2217,8 @@ function switchPage(page) {
   atualizarHeaderDesc();
   atualizarVisibilidadeResumoInstitucional(page);
 
-  const sidebar = document.getElementById('sidebar');
-  if (window.innerWidth <= 968 && sidebar && sidebar.classList.contains('active')) toggleMenu();
+  // Fecha a sidebar automaticamente após escolher uma aba, liberando a área principal da página.
+  closeMenu();
 
   // Atualiza dados da página alvo
   if (page === 'direitos') analisarDireitos();
