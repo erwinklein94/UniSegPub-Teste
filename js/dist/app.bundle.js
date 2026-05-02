@@ -825,6 +825,8 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
+
+
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1611,6 +1613,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 
+
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2318,6 +2321,7 @@ let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 
+
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2572,6 +2576,7 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
+
 
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
@@ -3182,6 +3187,7 @@ function carregarRemuneracaoTabelada() {
 
 /* ============================================================ */
 
+
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3316,95 +3322,200 @@ const HEADER_INSTITUICOES_INFO = {
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
-  bmsp: 'img/bmsp.png',
-  bmrj: 'img/bmrj.png',
-  bmmg: 'img/bmmg.png',
-  pmesp: 'img/pmesp.webp',
-  pcsp: 'img/pcsp.webp',
-  pmerj: 'img/pmerj.webp',
-  pcerj: 'img/pcrj.webp',
-  pmmg: 'img/pmmg.webp',
-  pcmg: 'img/pcmg.webp',
-  pmba: 'img/pmba.webp',
-  pcba: 'img/pcba.webp',
-  pmpr: 'img/pmpr.webp',
-  pcpr: 'img/pcpr.webp',
-  pmrs: 'img/pmrs.webp',
-  pcrs: 'img/pcrs.webp',
-  pmsc: 'img/pmsc.webp',
-  pcsc: 'img/pcsc.webp',
-  pmes: 'img/pmes.webp',
-  pces: 'img/pces.webp',
-  pmgo: 'img/pmgo.webp',
-  pmms: 'img/pmms.webp',
-  pcms: 'img/pcms.webp',
-  pmmt: 'img/pmmt.webp',
-  pcmt: 'img/pcmt.webp',
-  ppsp: 'img/ppsp.webp',
-  pprj: 'img/pprj.webp',
-  ppmg: 'img/ppmg.webp',
-  ppba: 'img/ppba.webp',
-  pppr: 'img/pppr.webp',
-  pprs: 'img/pprs.webp',
-  ppes: 'img/ppes.webp',
-  ppms: 'img/ppms.webp',
-  ppmt: 'img/ppmt.webp',
-  pmma: 'img/pmma.webp',
-  pcma: 'img/pcma.webp',
-  ppma: 'img/ppma.webp',
-  pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp'
+  pmac: 'img/MILITAR/pmac.webp',
+  pmal: 'img/MILITAR/pmal.webp',
+  pmam: 'img/MILITAR/pmam.webp',
+  pmba: 'img/MILITAR/pmba.webp',
+  pmdf: 'img/MILITAR/pmdf.webp',
+  pmerj: 'img/MILITAR/pmerj.webp',
+  pmes: 'img/MILITAR/pmes.webp',
+  pmesp: 'img/MILITAR/pmesp.webp',
+  pmgo: 'img/MILITAR/pmgo.webp',
+  pmma: 'img/MILITAR/pmma.webp',
+  pmmg: 'img/MILITAR/pmmg.webp',
+  pmms: 'img/MILITAR/pmms.webp',
+  pmmt: 'img/MILITAR/pmmt.webp',
+  pmpr: 'img/MILITAR/pmpr.webp',
+  pmrs: 'img/MILITAR/pmrs.webp',
+  pmsc: 'img/MILITAR/pmsc.webp',
+  pmto: 'img/MILITAR/pmto.webp',
+  pcac: 'img/CIVIL/pcac.webp',
+  pcal: 'img/CIVIL/pcal.webp',
+  pcam: 'img/CIVIL/pcam.webp',
+  pcba: 'img/CIVIL/pcba.webp',
+  pcdf: 'img/CIVIL/pcdf.webp',
+  pcerj: 'img/CIVIL/pcrj.webp',
+  pces: 'img/CIVIL/pces.webp',
+  pcma: 'img/CIVIL/pcma.webp',
+  pcmg: 'img/CIVIL/pcmg.webp',
+  pcms: 'img/CIVIL/pcms.webp',
+  pcmt: 'img/CIVIL/pcmt.webp',
+  pcpr: 'img/CIVIL/pcpr.webp',
+  pcrs: 'img/CIVIL/pcrs.webp',
+  pcsc: 'img/CIVIL/pcsc.webp',
+  pcsp: 'img/CIVIL/pcsp.webp',
+  pcto: 'img/CIVIL/pcto.webp',
+  ppac: 'img/PENAL/ppac.webp',
+  ppal: 'img/PENAL/ppal.webp',
+  ppam: 'img/PENAL/ppam.webp',
+  ppap: 'img/PENAL/ppap.webp',
+  ppba: 'img/PENAL/ppba.webp',
+  ppce: 'img/PENAL/ppce.webp',
+  ppdf: 'img/PENAL/ppdf.webp',
+  ppes: 'img/PENAL/ppes.webp',
+  ppgo: 'img/PENAL/ppgo.webp',
+  ppma: 'img/PENAL/ppma.webp',
+  ppmg: 'img/PENAL/ppmg.webp',
+  ppms: 'img/PENAL/ppms.webp',
+  ppmt: 'img/PENAL/ppmt.webp',
+  pppa: 'img/PENAL/pppa.webp',
+  pppb: 'img/PENAL/pppb.webp',
+  pppe: 'img/PENAL/pppe.webp',
+  pppi: 'img/PENAL/pppi.webp',
+  pppr: 'img/PENAL/pppr.webp',
+  pprj: 'img/PENAL/pprj.webp',
+  pprn: 'img/PENAL/pprn.webp',
+  ppro: 'img/PENAL/ppro.webp',
+  pprr: 'img/PENAL/pprr.webp',
+  pprs: 'img/PENAL/pprs.webp',
+  ppsc: 'img/PENAL/ppsc.webp',
+  ppse: 'img/PENAL/ppse.webp',
+  ppsp: 'img/PENAL/ppsp.webp',
+  ppto: 'img/PENAL/ppto.webp',
+  bmac: 'img/BOMBEIRO/bmac.webp',
+  bmal: 'img/BOMBEIRO/bmal.webp',
+  bmam: 'img/BOMBEIRO/bmam.webp',
+  bmap: 'img/BOMBEIRO/bmap.webp',
+  bmba: 'img/BOMBEIRO/bmba.webp',
+  bmce: 'img/BOMBEIRO/bmce.webp',
+  bmdf: 'img/BOMBEIRO/bmdf.webp',
+  bmes: 'img/BOMBEIRO/bmes.webp',
+  bmgo: 'img/BOMBEIRO/bmgo.webp',
+  bmma: 'img/BOMBEIRO/bmma.webp',
+  bmmg: 'img/BOMBEIRO/bmmg.webp',
+  bmms: 'img/BOMBEIRO/bmms.webp',
+  bmmt: 'img/BOMBEIRO/bmmt.webp',
+  bmpa: 'img/BOMBEIRO/bmpa.webp',
+  bmpe: 'img/BOMBEIRO/bmpe.webp',
+  bmpi: 'img/BOMBEIRO/bmpi.webp',
+  bmpr: 'img/BOMBEIRO/bmpr.webp',
+  bmrj: 'img/BOMBEIRO/bmrj.webp',
+  bmrn: 'img/BOMBEIRO/bmrn.webp',
+  bmro: 'img/BOMBEIRO/bmro.webp',
+  bmrr: 'img/BOMBEIRO/bmrr.webp',
+  bmrs: 'img/BOMBEIRO/bmrs.webp',
+  bmsc: 'img/BOMBEIRO/bmsc.webp',
+  bmse: 'img/BOMBEIRO/bmse.webp',
+  bmsp: 'img/BOMBEIRO/bmsp.webp',
+  bmto: 'img/BOMBEIRO/bmto.webp',
+  pf: 'img/FEDERAL/pf.webp',
+  prf: 'img/FEDERAL/prf.webp'
 };
 
-/* Brasões/insígnias em versão leve. Preferência: WebP; fallback automático para PNG/JPEG/JPG/SVG. */
-Object.assign(HEADER_INSTITUICOES_IMAGENS, {
-  bmsp: 'img/bmsp.webp',
-  bmrj: 'img/bmrj.webp',
-  bmmg: 'img/bmmg.webp',
-  pmdf: 'img/pmdf.webp',
-  pcdf: 'img/pcdf.webp',
-  ppdf: 'img/ppdf.webp',
-  bmdf: 'img/bmdf.webp',
-  pf: 'img/pf.webp',
-  prf: 'img/prf.webp'
-});
-
-const EXTENSOES_BRASAO_SUPORTADAS = ['webp', 'png', 'jpeg', 'jpg', 'svg'];
+/* Brasões/insígnias em versão leve.
+   O site agora usa somente WebP; arquivos PNG/JPEG/JPG originais foram removidos.
+   A busca automática também verifica as pastas organizadas por carreira para facilitar novas inclusões. */
+const EXTENSOES_BRASAO_SUPORTADAS = ['webp'];
 
 const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
-  bmdf: ['img/cbmdf', 'img/bombeiros-df', 'img/bombeiro-df'],
-  pf: ['img/dpf', 'img/policia-federal', 'img/policiafederal'],
-  prf: ['img/policia-rodoviaria-federal', 'img/policiarodoviariafederal']
+  pmdf: [
+    'img/pmdf', 'img/PMDF', 'img/pm-df', 'img/PM-DF', 'img/pm_df', 'img/PM_DF',
+    'img/brasao-pmdf', 'img/brasao-PMDF', 'img/logo-pmdf', 'img/logo-PMDF',
+    'img/policia-militar-df', 'img/policia-militar-distrito-federal',
+    'img/policia-militar-do-distrito-federal'
+  ],
+  pcdf: [
+    'img/pcdf', 'img/PCDF', 'img/pc-df', 'img/PC-DF', 'img/pc_df', 'img/PC_DF',
+    'img/brasao-pcdf', 'img/brasao-PCDF', 'img/logo-pcdf', 'img/logo-PCDF',
+    'img/policia-civil-df', 'img/policia-civil-distrito-federal',
+    'img/policia-civil-do-distrito-federal'
+  ],
+  ppdf: [
+    'img/ppdf', 'img/PPDF', 'img/pp-df', 'img/PP-DF', 'img/pp_df', 'img/PP_DF',
+    'img/brasao-ppdf', 'img/brasao-PPDF', 'img/logo-ppdf', 'img/logo-PPDF',
+    'img/policia-penal-df', 'img/policia-penal-distrito-federal',
+    'img/policia-penal-do-distrito-federal', 'img/seape-df', 'img/SEAPE-DF'
+  ],
+  bmdf: [
+    'img/bmdf', 'img/BMDF', 'img/bm-df', 'img/BM-DF', 'img/bm_df', 'img/BM_DF',
+    'img/cbmdf', 'img/CBMDF', 'img/cbm-df', 'img/CBM-DF', 'img/cbm_df', 'img/CBM_DF',
+    'img/brasao-bmdf', 'img/brasao-BMDF', 'img/brasao-cbmdf', 'img/brasao-CBMDF',
+    'img/logo-bmdf', 'img/logo-BMDF', 'img/logo-cbmdf', 'img/logo-CBMDF',
+    'img/bombeiros-df', 'img/bombeiro-df', 'img/corpo-bombeiros-df',
+    'img/corpo-de-bombeiros-militar-df',
+    'img/corpo-de-bombeiros-militar-do-distrito-federal'
+  ],
+  pf: [
+    'img/pf', 'img/PF', 'img/dpf', 'img/DPF',
+    'img/brasao-pf', 'img/brasao-PF', 'img/brasao-dpf', 'img/brasao-DPF',
+    'img/logo-pf', 'img/logo-PF', 'img/logo-dpf', 'img/logo-DPF',
+    'img/policia-federal', 'img/Policia-Federal', 'img/POLICIA-FEDERAL',
+    'img/policiafederal', 'img/departamento-policia-federal',
+    'img/departamento-de-policia-federal'
+  ],
+  prf: [
+    'img/prf', 'img/PRF',
+    'img/brasao-prf', 'img/brasao-PRF', 'img/logo-prf', 'img/logo-PRF',
+    'img/policia-rodoviaria-federal', 'img/Policia-Rodoviaria-Federal',
+    'img/POLICIA-RODOVIARIA-FEDERAL', 'img/policiarodoviariafederal',
+    'img/policia-rodoviária-federal', 'img/Polícia-Rodoviária-Federal'
+  ]
 };
+
+function normalizarBaseImagemBrasao(base) {
+  return String(base || '')
+    .trim()
+    .replace(/^\/+/, '')
+    .replace(/^\.\//, '')
+    .replace(/\.(webp|png|jpe?g|svg)$/i, '');
+}
 
 function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
   const candidatos = [];
+  const bases = [];
+  const instLimpa = String(inst || '').trim();
+  const instMinuscula = instLimpa.toLowerCase();
+  const instMaiuscula = instLimpa.toUpperCase();
+  const adicionarPastasOrganizadas = () => {
+    ['MILITAR', 'CIVIL', 'PENAL', 'BOMBEIRO', 'FEDERAL', 'LOGO'].forEach(pasta => {
+      adicionarBase(`img/${pasta}/${instMinuscula}`);
+      adicionarBase(`img/${pasta}/${instMaiuscula}`);
+    });
+    if (instMinuscula === 'pcerj') adicionarBase('img/CIVIL/pcrj');
+  };
+
   const adicionar = valor => {
     if (!valor) return;
-    const caminho = String(valor).trim();
+    const caminho = String(valor).trim().replace(/^\/+/, '').replace(/^\.\//, '');
     if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
   };
 
   const adicionarBase = base => {
-    if (!base) return;
-    const baseLimpa = String(base).replace(/\.(webp|png|jpe?g|svg)$/i, '');
-    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseLimpa}.${ext}`));
+    const baseLimpa = normalizarBaseImagemBrasao(base);
+    if (baseLimpa && !bases.includes(baseLimpa)) bases.push(baseLimpa);
   };
 
   adicionar(caminhoInicial);
-  adicionarBase(caminhoInicial || `img/${String(inst || '').toLowerCase()}`);
+  adicionarBase(caminhoInicial || `img/${instMinuscula}`);
+  adicionarBase(`img/${instMinuscula}`);
+  adicionarBase(`img/${instMaiuscula}`);
+  adicionarPastasOrganizadas();
 
-  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[String(inst || '').toLowerCase()] || [];
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[instMinuscula] || [];
   aliases.forEach(adicionarBase);
+
+  bases.forEach(base => {
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${base}.${ext}`));
+  });
 
   return candidatos;
 }
 
 
 
-function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/logoleao.webp') {
+function setCssUrlVariable(elemento, nomeVariavel, src, fallback = 'img/LOGO/logoleao.webp') {
   if (!elemento || !nomeVariavel) return;
-  const imagemOriginal = String(src || fallback || 'img/logoleao.webp');
+  const imagemOriginal = String(src || fallback || 'img/LOGO/logoleao.webp');
   const imagem = imagemOriginal.replace(/["\\]/g, '\\$&');
   elemento.style.setProperty(nomeVariavel, `url("${imagem}")`);
   return imagemOriginal;
@@ -3434,12 +3545,12 @@ function configurarLogoInicialHeader(img) {
   img.removeAttribute('srcset');
   img.removeAttribute('sizes');
   img.removeAttribute('data-fallback-aplicado');
-  img.dataset.imgBase = 'img/logoleao';
+  img.dataset.imgBase = 'img/LOGO/logoleao';
   img.dataset.retry = '';
   img.dataset.logoRetry = '0';
   img.alt = 'Logo Universo Segurança Pública';
   img.onerror = function () {
-    const alternativas = ['img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp', 'img/logoleao.webp'];
+    const alternativas = ['img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp', 'img/LOGO/logoleao.webp'];
     const indice = parseInt(this.dataset.logoRetry || '0', 10);
     if (indice < alternativas.length) {
       this.dataset.logoRetry = String(indice + 1);
@@ -3449,7 +3560,7 @@ function configurarLogoInicialHeader(img) {
     this.onerror = null;
     this.style.display = 'none';
   };
-  img.src = 'img/logoleao.webp';
+  img.src = 'img/LOGO/logoleao.webp';
 }
 
 function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
@@ -3462,11 +3573,11 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
   const altInstituicao = instituicao?.desc || instituicao?.titulo || 'Instituição de segurança pública';
 
   // Cabeçalho do estado: volta a usar a bandeira como plano de fundo.
-  setHeaderHeroImage(fallbackBandeira || 'img/logoleao.webp');
-  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/logoleao.webp');
+  setHeaderHeroImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage(fallbackBandeira || 'img/LOGO/logoleao.webp');
 
   // Página grande: usa sempre o logo principal, independentemente da instituição selecionada.
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
 
   if (!img) return;
   img.style.display = '';
@@ -5939,9 +6050,9 @@ function calcularResumoPortalHeader() {
 function aplicarHeaderInicialPortal() {
   headerModoInicialPortal = true;
   document.body.setAttribute('data-inst', 'portal');
-  setHeaderHeroImage('img/logoleao.webp');
-  setSiteHeaderBackgroundImage('img/logoleao.webp');
-  setPageInstitutionBackgroundImage('img/logoleao.webp');
+  setHeaderHeroImage('img/LOGO/logoleao.webp');
+  setSiteHeaderBackgroundImage('img/LOGO/logoleao.webp');
+  setPageInstitutionBackgroundImage('img/LOGO/logoleao.webp');
   const card = document.querySelector('.header-institution-card');
   if (card) card.classList.add('header-portal-home');
 
@@ -6247,6 +6358,7 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
+
 
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
@@ -6829,6 +6941,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 
 /* ============================================================ */
 
+
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6939,7 +7052,7 @@ function inicializarComparadorCarreiras() {
           <div class="comparador-check-titulo">${escapeHtml(dadosEstado.nome || estado.toUpperCase())}</div>
           ${itens.map(item => `
             <label class="comparador-check-option">
-              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}" onchange="carregarComparadorCarreiras()">
+              <input type="checkbox" value="${escapeHtml(item.inst)}" data-sigla="${escapeHtml(item.sigla)}">
               <span>
                 <strong>${escapeHtml(item.sigla)}</strong>
                 <small>${escapeHtml(item.nome)} · ${escapeHtml(item.uf)} · ${escapeHtml(item.ramo)}</small>
@@ -7232,7 +7345,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa01.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa01.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa01.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa01.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
+        <img src="img/SHOPEE/barrafixa01.webp" data-img-base="img/SHOPEE/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7244,7 +7357,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>
@@ -7256,7 +7369,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy" onerror="if(!this.dataset.retry){this.dataset.retry='png';this.src='barrafixa02.png';}else if(this.dataset.retry==='png'){this.dataset.retry='jpg';this.src='barrafixa02.jpg';}else if(this.dataset.retry==='jpg'){this.dataset.retry='jpeg';this.src='barrafixa02.jpeg';}else if(this.dataset.retry==='jpeg'){this.dataset.retry='webp';this.src='barrafixa02.webp';}else{this.style.display='none';this.closest('.taf-produto-card').classList.add('img-indisponivel');}">
+        <img src="img/SHOPEE/barrafixa02.webp" data-img-base="img/SHOPEE/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -7319,6 +7432,7 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
+
 
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
@@ -7442,6 +7556,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 
 /* =======================================================
    Eventos centralizados.

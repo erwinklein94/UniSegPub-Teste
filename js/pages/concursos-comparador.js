@@ -401,7 +401,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card" href="https://s.shopee.com.br/9fHIyi0uae" target="_blank" rel="noopener noreferrer" aria-label="Ver barra fixa para porta, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa01.webp" data-img-base="img/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
+        <img src="img/SHOPEE/barrafixa01.webp" data-img-base="img/SHOPEE/barrafixa01" alt="Detalhes da Oferta do Produto - barra fixa para porta" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
@@ -413,7 +413,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-mochilaimpermeavel50l" href="https://s.shopee.com.br/901i8h9IK5" target="_blank" rel="noopener noreferrer" aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA, produto útil para rotina operacional e preparação">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/mochilaimpermeavel50l.webp" data-img-base="img/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
+        <img src="img/SHOPEE/mochilaimpermeavel50l.webp" data-img-base="img/SHOPEE/mochilaimpermeavel50l" alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para rotina operacional</span>
@@ -425,7 +425,7 @@ function carregarConcursos() {
 
     <a class="taf-produto-card taf-produto-card-barrafixa02" href="https://s.shopee.com.br/9fHJ0X4HVl" target="_blank" rel="noopener noreferrer" aria-label="Ver Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela, produto útil para treino de TAF">
       <div class="taf-produto-imagem" aria-hidden="true">
-        <img src="img/barrafixa02.webp" data-img-base="img/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
+        <img src="img/SHOPEE/barrafixa02.webp" data-img-base="img/SHOPEE/barrafixa02" alt="Power Rack Funcional com paralelas, suporte de agachamento, supino, barra fixa e barra paralela" loading="lazy">
       </div>
       <div class="taf-produto-conteudo">
         <span class="taf-produto-selo">Produto útil para o TAF</span>
