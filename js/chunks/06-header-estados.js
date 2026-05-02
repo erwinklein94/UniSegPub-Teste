@@ -187,6 +187,12 @@ Object.assign(HEADER_INSTITUICOES_IMAGENS, {
 
 const EXTENSOES_BRASAO_SUPORTADAS = ['webp', 'png', 'jpeg', 'jpg', 'svg'];
 
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  bmdf: ['img/cbmdf', 'img/bombeiros-df', 'img/bombeiro-df'],
+  pf: ['img/dpf', 'img/policia-federal', 'img/policiafederal'],
+  prf: ['img/policia-rodoviaria-federal', 'img/policiarodoviariafederal']
+};
+
 function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
   const candidatos = [];
   const adicionar = valor => {
@@ -195,13 +201,18 @@ function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
     if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
   };
 
+  const adicionarBase = base => {
+    if (!base) return;
+    const baseLimpa = String(base).replace(/\.(webp|png|jpe?g|svg)$/i, '');
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseLimpa}.${ext}`));
+  };
+
   adicionar(caminhoInicial);
+  adicionarBase(caminhoInicial || `img/${String(inst || '').toLowerCase()}`);
 
-  const baseDoCaminho = caminhoInicial
-    ? String(caminhoInicial).replace(/\.(webp|png|jpe?g|svg)$/i, '')
-    : `img/${String(inst || '').toLowerCase()}`;
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[String(inst || '').toLowerCase()] || [];
+  aliases.forEach(adicionarBase);
 
-  EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseDoCaminho}.${ext}`));
   return candidatos;
 }
 

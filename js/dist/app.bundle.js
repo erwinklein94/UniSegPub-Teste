@@ -1610,6 +1610,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
+
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2316,6 +2317,7 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2570,6 +2572,7 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3178,6 +3181,7 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3367,6 +3371,12 @@ Object.assign(HEADER_INSTITUICOES_IMAGENS, {
 
 const EXTENSOES_BRASAO_SUPORTADAS = ['webp', 'png', 'jpeg', 'jpg', 'svg'];
 
+const HEADER_INSTITUICOES_IMAGENS_ALIASES = {
+  bmdf: ['img/cbmdf', 'img/bombeiros-df', 'img/bombeiro-df'],
+  pf: ['img/dpf', 'img/policia-federal', 'img/policiafederal'],
+  prf: ['img/policia-rodoviaria-federal', 'img/policiarodoviariafederal']
+};
+
 function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
   const candidatos = [];
   const adicionar = valor => {
@@ -3375,13 +3385,18 @@ function montarCandidatosImagemInstituicao(inst, caminhoInicial) {
     if (caminho && !candidatos.includes(caminho)) candidatos.push(caminho);
   };
 
+  const adicionarBase = base => {
+    if (!base) return;
+    const baseLimpa = String(base).replace(/\.(webp|png|jpe?g|svg)$/i, '');
+    EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseLimpa}.${ext}`));
+  };
+
   adicionar(caminhoInicial);
+  adicionarBase(caminhoInicial || `img/${String(inst || '').toLowerCase()}`);
 
-  const baseDoCaminho = caminhoInicial
-    ? String(caminhoInicial).replace(/\.(webp|png|jpe?g|svg)$/i, '')
-    : `img/${String(inst || '').toLowerCase()}`;
+  const aliases = HEADER_INSTITUICOES_IMAGENS_ALIASES[String(inst || '').toLowerCase()] || [];
+  aliases.forEach(adicionarBase);
 
-  EXTENSOES_BRASAO_SUPORTADAS.forEach(ext => adicionar(`${baseDoCaminho}.${ext}`));
   return candidatos;
 }
 
@@ -6232,6 +6247,7 @@ function mudarInstituicao(novaInstituicao) {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6812,6 +6828,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7302,6 +7319,7 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7424,3 +7442,138 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+/* =======================================================
+   Eventos centralizados.
+   Remove a dependência de onclick/onchange/oninput inline no HTML.
+   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
+   ======================================================= */
+
+(function () {
+  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
+  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
+  function safeCall(fnName, args = []) {
+    const fn = window[fnName];
+    if (typeof fn === 'function') return fn.apply(window, args);
+    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
+    return undefined;
+  }
+
+  function bindClick(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('click', handler);
+    });
+  }
+
+  function bindChange(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('change', handler);
+    });
+  }
+
+  function bindInput(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('input', handler);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
+    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
+
+    bindChange('#instituicao, #instituicao_header', event => {
+      safeCall('mudarInstituicao', [event.currentTarget.value]);
+    });
+
+    bindClick('.branch-option[data-branch]', event => {
+      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
+    });
+
+    bindClick('.state-flag[data-estado]', event => {
+      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
+    });
+
+    bindClick('.sidebar-nav a[href^="#"]', event => {
+      const link = event.currentTarget;
+      const page = (link.getAttribute('href') || '').replace('#', '');
+      if (!page) return;
+
+      event.preventDefault();
+
+      if (page === 'principal') {
+        safeCall('abrirPaginaInicial');
+        return;
+      }
+
+      safeCall('switchPage', [page]);
+    });
+
+    bindClick('[data-page]', event => {
+      const page = event.currentTarget.dataset.page;
+      if (!page) return;
+      safeCall('switchPage', [page]);
+    });
+
+    document.querySelectorAll('[data-page]').forEach(el => {
+      el.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          safeCall('switchPage', [event.currentTarget.dataset.page]);
+        }
+      });
+    });
+
+    bindClick('.ad-slot .ad-placeholder-link', event => {
+      const link = event.currentTarget;
+      const href = link.getAttribute('href') || '';
+
+      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
+      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
+        return;
+      }
+
+      const area = link.closest('[data-ad-area]')?.dataset.adArea;
+      if (!area) return;
+      event.preventDefault();
+      safeCall('abrirContatoAnuncio', [area]);
+    });
+
+    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
+    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
+
+    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
+    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
+    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
+        safeCall('carregarComparadorCarreiras');
+      }
+    });
+
+    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
+
+    const contatoForm = document.querySelector('form[data-form="contato"]');
+    if (contatoForm) {
+      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
+    }
+  });
+
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+
+    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
+      safeCall('carregarImagemProduto', [img]);
+      return;
+    }
+
+    if (img.dataset.hideOnError === 'true') {
+      img.style.display = 'none';
+      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
+      if (container) container.classList.add('img-indisponivel');
+    }
+  }, true);
+})();
