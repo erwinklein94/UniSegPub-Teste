@@ -133,6 +133,8 @@ const HEADER_INSTITUICOES_INFO = {
 
 const HEADER_INSTITUICOES_IMAGENS = {
   bmsp: 'img/bmsp.png',
+  bmrj: 'img/bmrj.png',
+  bmmg: 'img/bmmg.png',
   pmesp: 'img/pmesp.webp',
   pcsp: 'img/pcsp.webp',
   pmerj: 'img/pmerj.webp',
@@ -160,7 +162,6 @@ const HEADER_INSTITUICOES_IMAGENS = {
   ppba: 'img/ppba.webp',
   pppr: 'img/pppr.webp',
   pprs: 'img/pprs.webp',
-  ppsc: 'img/ppsc.webp',
   ppes: 'img/ppes.webp',
   ppms: 'img/ppms.webp',
   ppmt: 'img/ppmt.webp',
@@ -168,8 +169,7 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcma: 'img/pcma.webp',
   ppma: 'img/ppma.webp',
   pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp',
-  ppto: 'img/ppto.webp'
+  pcto: 'img/pcto.webp'
 };
 
 
@@ -2260,33 +2260,33 @@ function criarAssociacoesEstrutura(info, estadoNome) {
 
 
 const BOMBEIROS_MILITARES_ESTRUTURA = [
-  { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'bmac', desc: 'Corpo de Bombeiros Militar do Acre' },
-  { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'bmal', desc: 'Corpo de Bombeiros Militar de Alagoas' },
-  { estado: 'am', nome: 'Amazonas', sigla: 'AM', inst: 'bmam', titulo: 'bmam', desc: 'Corpo de Bombeiros Militar do Amazonas' },
-  { estado: 'ap', nome: 'Amapá', sigla: 'AP', inst: 'bmap', titulo: 'bmap', desc: 'Corpo de Bombeiros Militar do Amapá' },
-  { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'bmba', titulo: 'bmba', desc: 'Corpo de Bombeiros Militar da Bahia' },
-  { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'bmce', titulo: 'bmce', desc: 'Corpo de Bombeiros Militar do Ceará' },
-  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'bmdf', titulo: 'bmdf', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
-  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'bmes', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
-  { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'bmgo', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
-  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'bmma', desc: 'Corpo de Bombeiros Militar do Maranhão' },
-  { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'bmmg', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
-  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'bmms', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
-  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'bmmt', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
-  { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'bmpa', desc: 'Corpo de Bombeiros Militar do Pará' },
-  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'bmpb', desc: 'Corpo de Bombeiros Militar da Paraíba' },
-  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'bmpe', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
-  { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'bmpi', titulo: 'bmpi', desc: 'Corpo de Bombeiros Militar do Piauí' },
-  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'bmpr', desc: 'Corpo de Bombeiros Militar do Paraná' },
-  { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'bmrj', titulo: 'bmrj', desc: 'Corpo de Bombeiros Militar do Rio de Janeiro' },
-  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'bmrn', titulo: 'bmrn', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
-  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'bmro', titulo: 'bmro', desc: 'Corpo de Bombeiros Militar de Rondônia' },
-  { estado: 'rr', nome: 'Roraima', sigla: 'RR', inst: 'bmrr', titulo: 'bmrr', desc: 'Corpo de Bombeiros Militar de Roraima' },
-  { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'bmrs', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
-  { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'bmsc', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
-  { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'bmse', desc: 'Corpo de Bombeiros Militar de Sergipe' },
-  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'bmsp', desc: 'Corpo de Bombeiros Militar de São Paulo' },
-  { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'bmto', desc: 'Corpo de Bombeiros Militar do Tocantins' }
+  { estado: 'ac', nome: 'Acre', sigla: 'AC', inst: 'bmac', titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
+  { estado: 'al', nome: 'Alagoas', sigla: 'AL', inst: 'bmal', titulo: 'BMAL', desc: 'Corpo de Bombeiros Militar de Alagoas' },
+  { estado: 'am', nome: 'Amazonas', sigla: 'AM', inst: 'bmam', titulo: 'BMAM', desc: 'Corpo de Bombeiros Militar do Amazonas' },
+  { estado: 'ap', nome: 'Amapá', sigla: 'AP', inst: 'bmap', titulo: 'BMAP', desc: 'Corpo de Bombeiros Militar do Amapá' },
+  { estado: 'ba', nome: 'Bahia', sigla: 'BA', inst: 'bmba', titulo: 'BMBA', desc: 'Corpo de Bombeiros Militar da Bahia' },
+  { estado: 'ce', nome: 'Ceará', sigla: 'CE', inst: 'bmce', titulo: 'BMCE', desc: 'Corpo de Bombeiros Militar do Ceará' },
+  { estado: 'df', nome: 'Distrito Federal', sigla: 'DF', inst: 'bmdf', titulo: 'BMDF', desc: 'Corpo de Bombeiros Militar do Distrito Federal' },
+  { estado: 'es', nome: 'Espírito Santo', sigla: 'ES', inst: 'bmes', titulo: 'BMES', desc: 'Corpo de Bombeiros Militar do Espírito Santo' },
+  { estado: 'go', nome: 'Goiás', sigla: 'GO', inst: 'bmgo', titulo: 'BMGO', desc: 'Corpo de Bombeiros Militar do Estado de Goiás' },
+  { estado: 'ma', nome: 'Maranhão', sigla: 'MA', inst: 'bmma', titulo: 'BMMA', desc: 'Corpo de Bombeiros Militar do Maranhão' },
+  { estado: 'mg', nome: 'Minas Gerais', sigla: 'MG', inst: 'bmmg', titulo: 'BMMG', desc: 'Corpo de Bombeiros Militar de Minas Gerais' },
+  { estado: 'ms', nome: 'Mato Grosso do Sul', sigla: 'MS', inst: 'bmms', titulo: 'BMMS', desc: 'Corpo de Bombeiros Militar de Mato Grosso do Sul' },
+  { estado: 'mt', nome: 'Mato Grosso', sigla: 'MT', inst: 'bmmt', titulo: 'BMMT', desc: 'Corpo de Bombeiros Militar de Mato Grosso' },
+  { estado: 'pa', nome: 'Pará', sigla: 'PA', inst: 'bmpa', titulo: 'BMPA', desc: 'Corpo de Bombeiros Militar do Pará' },
+  { estado: 'pb', nome: 'Paraíba', sigla: 'PB', inst: 'bmpb', titulo: 'BMPB', desc: 'Corpo de Bombeiros Militar da Paraíba' },
+  { estado: 'pe', nome: 'Pernambuco', sigla: 'PE', inst: 'bmpe', titulo: 'BMPE', desc: 'Corpo de Bombeiros Militar de Pernambuco' },
+  { estado: 'pi', nome: 'Piauí', sigla: 'PI', inst: 'bmpi', titulo: 'BMPI', desc: 'Corpo de Bombeiros Militar do Piauí' },
+  { estado: 'pr', nome: 'Paraná', sigla: 'PR', inst: 'bmpr', titulo: 'BMPR', desc: 'Corpo de Bombeiros Militar do Paraná' },
+  { estado: 'rj', nome: 'Rio de Janeiro', sigla: 'RJ', inst: 'bmrj', titulo: 'BMRJ', desc: 'Corpo de Bombeiros Militar do Rio de Janeiro' },
+  { estado: 'rn', nome: 'Rio Grande do Norte', sigla: 'RN', inst: 'bmrn', titulo: 'BMRN', desc: 'Corpo de Bombeiros Militar do Rio Grande do Norte' },
+  { estado: 'ro', nome: 'Rondônia', sigla: 'RO', inst: 'bmro', titulo: 'BMRO', desc: 'Corpo de Bombeiros Militar de Rondônia' },
+  { estado: 'rr', nome: 'Roraima', sigla: 'RR', inst: 'bmrr', titulo: 'BMRR', desc: 'Corpo de Bombeiros Militar de Roraima' },
+  { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'BMRS', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
+  { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'BMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
+  { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'BMSE', desc: 'Corpo de Bombeiros Militar de Sergipe' },
+  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'BMSP', desc: 'Corpo de Bombeiros Militar de São Paulo' },
+  { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'BMTO', desc: 'Corpo de Bombeiros Militar do Tocantins' }
 ];
 
 function criarResumoBombeiroEstrutura(estado, item) {
@@ -2332,25 +2332,28 @@ function criarAssociacoesBombeiroEstrutura(info, estadoNome) {
 function aplicarEstruturaBombeirosMilitaresDados() {
   BOMBEIROS_MILITARES_ESTRUTURA.forEach(item => {
     const estado = HEADER_ESTADOS[item.estado] || { nome: item.nome, sigla: item.sigla, flag: HEADER_BRASIL_FLAG };
+    const tituloBombeiro = String(item.titulo || item.inst || '').toUpperCase();
+    item.titulo = tituloBombeiro;
+
     if (!HEADER_ESTADOS[item.estado]) HEADER_ESTADOS[item.estado] = estado;
     estado.bm = item.inst;
 
     if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
-    if (!HEADER_INSTITUICOES_INFO[item.inst]) HEADER_INSTITUICOES_INFO[item.inst] = { titulo: item.titulo, desc: item.desc };
+    HEADER_INSTITUICOES_INFO[item.inst] = { titulo: tituloBombeiro, desc: item.desc };
     if (!HEADER_INSTITUICOES_RESUMO[item.inst]) HEADER_INSTITUICOES_RESUMO[item.inst] = criarResumoBombeiroEstrutura(estado, item);
     if (!REMUNERACAO_FONTES_OFICIAIS[item.inst]) {
-      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: `${item.titulo} — fonte oficial a preencher`, url: '#' };
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: `${tituloBombeiro} — fonte oficial a preencher`, url: '#' };
     }
     CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
-      titulo: item.titulo,
+      titulo: tituloBombeiro,
       desc: item.desc,
       cor: '#b91c1c',
-      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir sistema de proteção social militar, remuneração, adicionais, auxílios, escalas, ingresso e direitos conforme legislação de ${estado.nome || item.nome}.`
+      alertaPrev: `${tituloBombeiro}: estrutura aberta para preenchimento. Conferir sistema de proteção social militar, remuneração, adicionais, auxílios, escalas, ingresso e direitos conforme legislação de ${estado.nome || item.nome}.`
     };
     CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoEstrutura(item.inst, item, 'bm');
     ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesBombeiroEstrutura(item);
     ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesBombeiroEstrutura(item, estado.nome || item.nome);
-    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) CARGOS_ESTRUTURA_GENERICAS[item.inst] = criarCargosBombeiroEstrutura(item.inst, item.titulo);
+    if (!CARGOS_ESTRUTURA_GENERICAS[item.inst]) CARGOS_ESTRUTURA_GENERICAS[item.inst] = criarCargosBombeiroEstrutura(item.inst, tituloBombeiro);
   });
 }
 

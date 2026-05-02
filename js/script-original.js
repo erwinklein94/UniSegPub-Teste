@@ -3292,6 +3292,8 @@ const HEADER_INSTITUICOES_INFO = {
 
 const HEADER_INSTITUICOES_IMAGENS = {
   bmsp: 'img/bmsp.png',
+  bmrj: 'img/bmrj.png',
+  bmmg: 'img/bmmg.png',
   pmesp: 'img/pmesp.webp',
   pcsp: 'img/pcsp.webp',
   pmerj: 'img/pmerj.webp',
@@ -3328,7 +3330,6 @@ const HEADER_INSTITUICOES_IMAGENS = {
   ppba: 'img/ppba.webp',
   pppr: 'img/pppr.webp',
   pprs: 'img/pprs.jpeg',
-  ppsc: 'img/ppsc.jpeg',
   ppes: 'img/ppes.webp',
   ppms: 'img/ppms.webp',
   ppmt: 'img/ppmt.webp',
@@ -3336,8 +3337,7 @@ const HEADER_INSTITUICOES_IMAGENS = {
   pcma: 'img/pcma.webp',
   ppma: 'img/ppma.webp',
   pmto: 'img/pmto.webp',
-  pcto: 'img/pcto.webp',
-  ppto: 'img/ppto.jpeg'
+  pcto: 'img/pcto.webp'
 };
 
 
