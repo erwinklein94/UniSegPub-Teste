@@ -2786,9 +2786,133 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
   aplicarEstruturaFederaisNoHtml();
 }
 
+
+
+/* ============================================================ */
+/* === REVISÃO DOS RESUMOS INSTITUCIONAIS ====================== */
+/* ============================================================ */
+const RESUMO_DADOS_EM_BREVE = 'Dados em breve';
+
+const RESUMO_GOVERNADORES_UF_2026 = {
+  ac: 'Mailza Assis',
+  al: 'Paulo Dantas',
+  ap: 'Clécio Luís',
+  am: 'Roberto Cidade (interino)',
+  ba: 'Jerônimo Rodrigues',
+  ce: 'Elmano de Freitas',
+  df: 'Celina Leão',
+  es: 'Ricardo Ferraço',
+  go: 'Daniel Vilela',
+  ma: 'Carlos Brandão Júnior',
+  mt: 'Otaviano Pivetta',
+  ms: 'Eduardo Riedel',
+  mg: 'Mateus Simões',
+  pa: 'Hana Ghassan',
+  pb: 'Lucas Ribeiro',
+  pr: 'Ratinho Júnior',
+  pe: 'Raquel Lyra',
+  pi: 'Rafael Fonteles',
+  rj: 'Ricardo Couto (interino)',
+  rn: 'Fátima Bezerra',
+  rs: 'Eduardo Leite',
+  ro: 'Marcos Rocha',
+  rr: 'Soldado Sampaio (interino)',
+  sc: 'Jorginho Mello',
+  sp: 'Tarcísio de Freitas',
+  se: 'Fábio Mitidieri',
+  to: 'Wanderlei Barbosa'
+};
+
+function resumoEhDadoPendente(valor) {
+  if (valor === undefined || valor === null) return true;
+  if (typeof valor === 'number') return !Number.isFinite(valor) || valor === 0;
+  const texto = String(valor).trim();
+  if (!texto || texto === '#' || texto === '-' || texto === '—') return true;
+  return /\b(a preencher|preencher|a confirmar|não informado|nao informado|estrutura .*criada|preenchimento|pendente|consultar diretamente|consultar site oficial|fonte oficial a preencher|fontes oficiais .* preencher|comando\/direção atual|chefe do executivo|efetivo ativo — preencher|reserva\/inativos — preencher|integrantes femininas — preencher|relação ativa|relação ativo\/população — preencher)\b/i.test(texto);
+}
+
+function resumoValorOuEmBreve(valor) {
+  return resumoEhDadoPendente(valor) ? RESUMO_DADOS_EM_BREVE : valor;
+}
+
+function resumoInferirTipo(inst, dados = {}) {
+  if (dados.tipo && !resumoEhDadoPendente(dados.tipo)) return dados.tipo;
+  if (/^bm/i.test(inst)) return 'Bombeiro Militar';
+  if (/^pm/i.test(inst) || inst === 'pmerj') return 'Polícia Militar';
+  if (/^pc/i.test(inst) || inst === 'pcerj') return 'Polícia Civil';
+  if (/^pp/i.test(inst)) return 'Polícia Penal';
+  if (inst === 'pf') return 'Polícia Federal';
+  if (inst === 'prf') return 'Polícia Rodoviária Federal';
+  return RESUMO_DADOS_EM_BREVE;
+}
+
+function resumoInstituicoesEstaduais() {
+  const pares = [];
+  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
+    if (uf === 'br') return;
+    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => {
+      if (estado && estado[ramo]) pares.push({ uf, ramo, inst: estado[ramo], estado });
+    });
+  });
+  return pares;
+}
+
+function aplicarRevisaoResumosInstitucionais() {
+  const pares = resumoInstituicoesEstaduais();
+
+  pares.forEach(({ uf, ramo, inst, estado }) => {
+    const info = HEADER_INSTITUICOES_INFO[inst] || {};
+    const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
+    const governadorAtual = RESUMO_GOVERNADORES_UF_2026[uf];
+    const nome = !resumoEhDadoPendente(dados.nome) ? dados.nome : (info.desc || RESUMO_DADOS_EM_BREVE);
+    const sigla = !resumoEhDadoPendente(dados.sigla) ? dados.sigla : (info.titulo || String(inst || '').toUpperCase() || RESUMO_DADOS_EM_BREVE);
+
+    HEADER_INSTITUICOES_RESUMO[inst] = {
+      ...dados,
+      nome,
+      sigla,
+      estado: resumoValorOuEmBreve(dados.estado || estado?.nome),
+      estadoSigla: resumoValorOuEmBreve(dados.estadoSigla || estado?.sigla),
+      tipo: resumoInferirTipo(inst, dados),
+      criacao: resumoValorOuEmBreve(dados.criacao),
+      ativaLabel: !resumoEhDadoPendente(dados.ativaLabel) ? dados.ativaLabel : (resumoEhDadoPendente(dados.ativa) ? RESUMO_DADOS_EM_BREVE : ''),
+      reservaLabel: !resumoEhDadoPendente(dados.reservaLabel) ? dados.reservaLabel : (resumoEhDadoPendente(dados.reserva) ? RESUMO_DADOS_EM_BREVE : ''),
+      femininasLabel: !resumoEhDadoPendente(dados.femininasLabel) ? dados.femininasLabel : (resumoEhDadoPendente(dados.femininas) ? RESUMO_DADOS_EM_BREVE : ''),
+      populacaoTitulo: dados.populacaoTitulo || (ramo === 'pp' ? 'Presos atendidos' : 'População do Estado'),
+      populacaoLabel: !resumoEhDadoPendente(dados.populacaoLabel) ? dados.populacaoLabel : (resumoEhDadoPendente(dados.populacao) ? RESUMO_DADOS_EM_BREVE : ''),
+      relacaoTitulo: dados.relacaoTitulo || (ramo === 'pp' ? 'Relação ativa/presos' : 'Relação ativa/população'),
+      relacaoLabel: !resumoEhDadoPendente(dados.relacaoLabel) ? dados.relacaoLabel : (!resumoEhDadoPendente(dados.populacao) && !resumoEhDadoPendente(dados.ativa) ? '' : RESUMO_DADOS_EM_BREVE),
+      governador: governadorAtual || resumoValorOuEmBreve(dados.governador),
+      comando: resumoValorOuEmBreve(dados.comando),
+      fonte: resumoValorOuEmBreve(dados.fonte),
+      atualizado: dados.atualizado && !resumoEhDadoPendente(dados.atualizado)
+        ? `${dados.atualizado} · Revisado em 02/05/2026`
+        : 'Revisado em 02/05/2026'
+    };
+
+    ['ativaLabel', 'reservaLabel', 'femininasLabel', 'populacaoLabel', 'relacaoLabel'].forEach(chave => {
+      if (HEADER_INSTITUICOES_RESUMO[inst][chave] === '') delete HEADER_INSTITUICOES_RESUMO[inst][chave];
+    });
+  });
+
+  // Também normaliza estruturas federais que o site mantém fora das 108 estaduais.
+  ['pf', 'prf'].forEach(inst => {
+    if (!HEADER_INSTITUICOES_RESUMO[inst]) return;
+    const dados = HEADER_INSTITUICOES_RESUMO[inst];
+    Object.keys(dados).forEach(chave => {
+      if (chave.endsWith('Titulo')) return;
+      if (chave === 'populacao' || chave === 'ativa' || chave === 'reserva' || chave === 'femininas') return;
+      dados[chave] = resumoValorOuEmBreve(dados[chave]);
+    });
+    dados.populacaoLabel = resumoValorOuEmBreve(dados.populacaoLabel || dados.populacao);
+    dados.atualizado = 'Revisado em 02/05/2026';
+  });
+}
+
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
 aplicarEstruturaFederaisDados();
+aplicarRevisaoResumosInstitucionais();
 
 function formatarNumeroHeader(valor) {
   return Number(valor || 0).toLocaleString('pt-BR');
@@ -2796,7 +2920,7 @@ function formatarNumeroHeader(valor) {
 
 function formatarEfetivoHeader(valor) {
   const numero = Number(valor || 0);
-  if (!numero) return 'Não informado';
+  if (!numero) return RESUMO_DADOS_EM_BREVE;
   if (numero >= 1000) {
     const mil = numero / 1000;
     let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
@@ -2809,7 +2933,7 @@ function formatarEfetivoHeader(valor) {
 function calcularRelacaoHeader(populacao, ativa) {
   const pop = Number(populacao || 0);
   const ativo = Number(ativa || 0);
-  if (!pop || !ativo) return 'Não informado';
+  if (!pop || !ativo) return RESUMO_DADOS_EM_BREVE;
   const habitantesPorAtivo = Math.round(pop / ativo);
   const percentual = ((ativo / pop) * 100).toFixed(3).replace('.', ',');
   return `1 ativo / ${habitantesPorAtivo.toLocaleString('pt-BR')} hab. · ${percentual}%`;
@@ -2947,18 +3071,18 @@ function atualizarHeaderResumo(inst) {
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
-  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : 'Não informado');
+  const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
 
   setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
-  setTexto('header-resumo-criacao', dados.criacao || 'Não informado');
+  setTexto('header-resumo-criacao', dados.criacao || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);
   setTexto('header-resumo-total', femininasTexto);
-  setTexto('header-resumo-populacao', dados.populacao ? formatarNumeroHeader(dados.populacao) : 'Não informado');
+  setTexto('header-resumo-populacao', dados.populacaoLabel || (dados.populacao ? formatarNumeroHeader(dados.populacao) : RESUMO_DADOS_EM_BREVE));
   setTexto('header-resumo-relacao', relacaoTexto);
-  setTexto('header-resumo-governador', dados.governador || 'Não informado');
-  setTexto('header-resumo-comando', dados.comando || 'Não informado');
+  setTexto('header-resumo-governador', dados.governador || RESUMO_DADOS_EM_BREVE);
+  setTexto('header-resumo-comando', dados.comando || RESUMO_DADOS_EM_BREVE);
 }
 
 function getEstadoDaInstituicao(inst) {
