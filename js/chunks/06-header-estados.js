@@ -3105,14 +3105,16 @@ function calcularRelacaoHeader(populacao, ativa) {
 
 function atualizarLabelsHeaderResumo(labels = {}) {
   const padrao = {
+    'header-label-natureza': 'Natureza',
+    'header-label-uf': 'UF/Jurisdição',
     'header-label-criacao': 'Criação',
     'header-label-ativa': 'Efetivo ativo',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População do Estado',
     'header-label-relacao': 'Relação ativa/população',
     'header-label-governador': 'Chefe do Executivo',
-    'header-label-comando': 'Comando atual'
+    'header-label-comando': 'Comando/Direção'
   };
 
   Object.entries({ ...padrao, ...labels }).forEach(([id, valor]) => {
@@ -3179,16 +3181,20 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-atualizado', 'Visão geral do portal');
 
   atualizarLabelsHeaderResumo({
+    'header-label-natureza': 'Escopo',
+    'header-label-uf': 'Abrangência',
     'header-label-criacao': 'Instituições',
     'header-label-ativa': 'Ativos estimados',
     'header-label-reserva': 'Reserva/inativos',
-    'header-label-total': 'Integrantes femininas',
+    'header-label-total': 'Mulheres no efetivo',
     'header-label-populacao': 'População abrangida',
     'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
 
+  setTexto('header-resumo-natureza', 'Portal informativo');
+  setTexto('header-resumo-uf', 'Brasil');
   setTexto('header-resumo-criacao', String(resumoPortal.instituicoes));
   setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.ativa)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
@@ -3220,27 +3226,140 @@ function aplicarHeaderInicialPortal() {
   atualizarVisibilidadeResumoInstitucional('principal');
 }
 
+function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
+  const instTexto = String(inst || '').toLowerCase();
+  const tipoTexto = String(dados.tipo || '').toLowerCase();
+  const ehPenal = instTexto.startsWith('pp') || tipoTexto.includes('penal');
+  const ehBombeiro = instTexto.startsWith('bm') || tipoTexto.includes('bombeiro');
+  const ehMilitar = instTexto.startsWith('pm') || instTexto === 'pmerj' || tipoTexto.includes('militar');
+  const ehCivil = instTexto.startsWith('pc') || instTexto === 'pcerj' || tipoTexto.includes('civil');
+  const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
+  const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
+
+  if (ehPenal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Base constitucional',
+      'header-label-ativa': 'Policiais penais',
+      'header-label-reserva': 'Inativos/RPPS',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Presos atendidos',
+      'header-label-relacao': dados.relacaoTitulo || 'Servidor/preso',
+      'header-label-governador': ehFederal ? 'Governo responsável' : 'Chefe do Executivo',
+      'header-label-comando': 'Direção/Secretaria'
+    };
+  }
+
+  if (ehBombeiro) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo ativo',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehMilitar) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Criação',
+      'header-label-ativa': 'Efetivo ativo',
+      'header-label-reserva': 'Reserva/reforma',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
+  if (ehCivil) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Origem histórica',
+      'header-label-ativa': 'Efetivo ativo',
+      'header-label-reserva': 'Inativos estimados',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Delegado-Geral/Chefia'
+    };
+  }
+
+  if (ehFederal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base legal/histórica',
+      'header-label-ativa': 'Efetivo ativo',
+      'header-label-reserva': 'Aposentados/inativos',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Indicador',
+      'header-label-governador': 'Governo responsável',
+      'header-label-comando': 'Direção-Geral'
+    };
+  }
+
+  if (ehMunicipal) {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'Jurisdição',
+      'header-label-criacao': 'Base local',
+      'header-label-ativa': 'Efetivo municipal',
+      'header-label-reserva': 'Regime previdenciário',
+      'header-label-total': 'Mulheres no efetivo',
+      'header-label-populacao': dados.populacaoTitulo || 'Abrangência',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Poder Executivo local',
+      'header-label-comando': 'Comando/Direção'
+    };
+  }
+
+  return {
+    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
+  };
+}
+
+function resumoHeaderUfLabel(dados = {}) {
+  const sigla = dados.estadoSigla && !resumoEhDadoPendente(dados.estadoSigla) ? String(dados.estadoSigla).trim() : '';
+  const estado = dados.estado && !resumoEhDadoPendente(dados.estado) ? String(dados.estado).trim() : '';
+  if (sigla && estado && sigla !== estado) return `${sigla} · ${estado}`;
+  return sigla || estado || RESUMO_DADOS_EM_BREVE;
+}
+
 function atualizarHeaderResumo(inst) {
   const tituloResumo = document.getElementById('header-resumo-titulo');
   if (tituloResumo) tituloResumo.textContent = 'Resumo institucional';
 
   const dados = HEADER_INSTITUICOES_RESUMO[inst] || HEADER_INSTITUICOES_RESUMO.pmesp;
-  atualizarLabelsHeaderResumo({
-    'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
-    'header-label-relacao': dados.relacaoTitulo || 'Relação ativa/população'
-  });
+  atualizarLabelsHeaderResumo(getResumoHeaderLabelsPorInstituicao(inst, dados));
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (el) el.textContent = valor;
+    if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
   const reservaTexto = dados.reservaLabel || formatarEfetivoHeader(dados.reserva);
   const femininasTexto = dados.femininasLabel || (dados.femininas ? formatarNumeroHeader(dados.femininas) : RESUMO_DADOS_EM_BREVE);
   const relacaoTexto = dados.relacaoLabel || calcularRelacaoHeader(dados.populacao, dados.ativa);
+  const naturezaTexto = dados.tipo || resumoInferirTipo(inst, dados);
 
   setTexto('header-resumo-atualizado', dados.atualizado || 'Atualizado');
+  setTexto('header-resumo-natureza', naturezaTexto);
+  setTexto('header-resumo-uf', resumoHeaderUfLabel(dados));
   setTexto('header-resumo-criacao', dados.criacao || RESUMO_DADOS_EM_BREVE);
   setTexto('header-resumo-ativa', ativaTexto);
   setTexto('header-resumo-reserva', reservaTexto);

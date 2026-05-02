@@ -854,3 +854,186 @@ header.site-header,
     grid-template-columns: 1fr;
   }
 }
+
+
+/* ============================================================
+   Revisão do cabeçalho institucional — resumo mais útil e compacto
+   ============================================================ */
+.header-institution-card {
+  padding: clamp(16px, 2vw, 22px) !important;
+}
+
+.header-institution-main {
+  min-height: clamp(230px, 23vw, 292px) !important;
+  grid-template-columns: minmax(330px, 0.82fr) minmax(560px, 1.18fr) !important;
+  gap: clamp(14px, 1.8vw, 22px) !important;
+  align-items: stretch !important;
+}
+
+.header-current-identity {
+  min-height: clamp(230px, 23vw, 292px) !important;
+  align-items: center !important;
+  gap: clamp(14px, 1.7vw, 20px) !important;
+  padding: clamp(18px, 2.8vw, 34px) 4px !important;
+}
+
+.header-current-identity::before {
+  height: 46% !important;
+  bottom: 10px !important;
+}
+
+.current-flag-frame.institution-logo-frame,
+.current-flag-frame.brand-logo-frame {
+  width: clamp(132px, 12vw, 174px) !important;
+  height: clamp(132px, 12vw, 174px) !important;
+  min-width: clamp(132px, 12vw, 174px) !important;
+  min-height: clamp(132px, 12vw, 174px) !important;
+  border-radius: clamp(24px, 2.4vw, 32px) !important;
+}
+
+.current-flag-frame.institution-logo-frame img,
+.current-flag-frame.brand-logo-frame img {
+  border-radius: clamp(18px, 2vw, 26px) !important;
+}
+
+.header-current-copy strong {
+  font-size: clamp(32px, 4.3vw, 50px) !important;
+  line-height: .96 !important;
+}
+
+.header-current-copy p {
+  max-width: 440px !important;
+  font-size: clamp(14px, 1.45vw, 18px) !important;
+  line-height: 1.16 !important;
+}
+
+.header-current-copy small {
+  margin-top: 8px !important;
+}
+
+.header-facts-panel {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  padding: clamp(12px, 1.35vw, 16px) !important;
+}
+
+.header-facts-head {
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.header-facts-head span {
+  font-size: 10px !important;
+  letter-spacing: .14em !important;
+}
+
+.header-facts-head strong {
+  font-size: 10.5px !important;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  text-align: right !important;
+}
+
+.header-facts-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 9px !important;
+}
+
+.header-fact,
+.header-leadership-item {
+  min-height: 0 !important;
+  padding: 10px 11px !important;
+}
+
+.header-fact span,
+.header-leadership-item span {
+  min-height: 18px !important;
+  font-size: 9px !important;
+  letter-spacing: .08em !important;
+  line-height: 1.15 !important;
+}
+
+.header-fact strong {
+  margin-top: 5px !important;
+  font-size: clamp(13px, 1.08vw, 15px) !important;
+  line-height: 1.16 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.header-leadership {
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr) !important;
+  gap: 9px !important;
+  margin-top: 9px !important;
+}
+
+.header-leadership-item strong {
+  margin-top: 5px !important;
+  font-size: clamp(12px, 0.95vw, 14px) !important;
+  line-height: 1.22 !important;
+  overflow-wrap: anywhere !important;
+}
+
+body[data-inst="portal"] .header-current-copy strong {
+  font-size: clamp(30px, 3.8vw, 44px) !important;
+}
+
+@media (max-width: 1040px) {
+  .header-institution-main {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+
+  .header-current-identity {
+    min-height: 230px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: clamp(120px, 19vw, 156px) !important;
+    height: clamp(120px, 19vw, 156px) !important;
+    min-width: clamp(120px, 19vw, 156px) !important;
+    min-height: clamp(120px, 19vw, 156px) !important;
+  }
+}
+
+@media (max-width: 780px) {
+  .header-current-identity {
+    min-height: 248px !important;
+    padding: 20px 0 !important;
+  }
+
+  .header-institution-card::before {
+    height: 250px !important;
+  }
+
+  .current-flag-frame.institution-logo-frame,
+  .current-flag-frame.brand-logo-frame {
+    width: clamp(118px, 34vw, 148px) !important;
+    height: clamp(118px, 34vw, 148px) !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .header-leadership {
+    grid-template-columns: 1fr !important;
+  }
+
+  .header-facts-head strong {
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .header-current-identity {
+    min-height: 238px !important;
+  }
+
+  .header-facts-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
