@@ -2484,7 +2484,8 @@ function formatarEfetivoHeader(valor) {
   if (!numero) return 'Não informado';
   if (numero >= 1000) {
     const mil = numero / 1000;
-    const texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    let texto = Number.isInteger(mil) ? String(mil) : mil.toFixed(1).replace('.', ',');
+    texto = texto.replace(',0', '');
     return `≈ ${texto} mil`;
   }
   return `≈ ${formatarNumeroHeader(numero)}`;
@@ -2578,7 +2579,7 @@ function aplicarHeaderInicialPortal() {
     'header-label-reserva': 'Reserva/inativos',
     'header-label-total': 'Integrantes femininas',
     'header-label-populacao': 'População abrangida',
-    'header-label-relacao': 'Estados',
+    'header-label-relacao': 'UFs',
     'header-label-governador': 'Cobertura',
     'header-label-comando': 'Primeiro passo'
   });
@@ -2588,7 +2589,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
   setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
-  setTexto('header-resumo-relacao', `${resumoPortal.estados} estados`);
+  setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
   setTexto('header-resumo-comando', 'Selecione uma instituição para ver os dados específicos');
 
