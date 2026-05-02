@@ -1066,9 +1066,14 @@
 
     <div class="form-grid poderes-form-grid" style="margin-bottom: 24px;">
       <div class="field span-2">
-        <label for="poderes_instituicao">Escolha a instituição para consultar leis, poderes e deveres</label>
-        <select id="poderes_instituicao" aria-label="Selecione a instituição para consultar poderes e deveres">
-          <option value="pf">PF - Polícia Federal</option>
+        <label for="poderes_instituicao">Escolha o tipo de instituição para consultar leis, poderes e deveres</label>
+        <select id="poderes_instituicao" aria-label="Selecione o tipo de instituição para consultar poderes e deveres">
+          <option value="pm">Polícia Militar</option>
+          <option value="pc">Polícia Civil</option>
+          <option value="pp">Polícia Penal</option>
+          <option value="pf">Polícia Federal</option>
+          <option value="prf">Polícia Rodoviária Federal</option>
+          <option value="gm">Guarda Municipal</option>
         </select>
       </div>
     </div>
@@ -1555,7 +1560,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502dadosembreve" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502poderesbombeiros" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

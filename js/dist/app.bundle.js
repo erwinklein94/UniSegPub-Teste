@@ -1,6 +1,6 @@
 
-
 /* ===== js/data/parametros-cargos.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -829,9 +829,8 @@ const CARGOS_PCAC = [
 ];
 
 
-
-
 /* ===== js/data/policia-penal.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -1619,8 +1618,8 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 
 
-
 /* ===== js/data/bases-conteudo.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2329,8 +2328,8 @@ const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 
 
-
 /* ===== js/ui/navegacao-ui.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2589,8 +2588,8 @@ function popularCargos(inst) {
 /* ============================================================ */
 
 
-
 /* ===== js/services/remuneracao.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3201,8 +3200,8 @@ function carregarRemuneracaoTabelada() {
 /* ============================================================ */
 
 
-
 /* ===== js/ui/header-estados.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6663,8 +6662,8 @@ function mudarInstituicao(novaInstituicao) {
 /* ============================================================ */
 
 
-
 /* ===== js/services/direitos.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7247,8 +7246,8 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 
 
-
 /* ===== js/pages/concursos-comparador.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7799,8 +7798,8 @@ function carregarAssociacoes() {
 /* ============================================================ */
 
 
-
 /* ===== js/pages/poderes-deveres.js ===== */
+
 /* ============================================================
    PODERES E DEVERES — aba independente da instituição principal
    ============================================================ */
@@ -8262,41 +8261,78 @@ function poderesOrdemRamo(inst, estado) {
 }
 
 function poderesInstituicoesDisponiveis() {
-  const itens = [];
-  const vistos = new Set();
-
-  function adicionar(inst, estadoKey, ramo) {
-    if (!inst || vistos.has(inst)) return;
-    vistos.add(inst);
-    const estado = HEADER_ESTADOS?.[estadoKey] || {};
-    const info = HEADER_INSTITUICOES_INFO?.[inst] || {};
-    itens.push({
-      inst,
-      estadoKey,
-      estadoNome: estado.nome || (estadoKey === 'br' ? 'Brasil' : PODERES_DEVERES_DADOS_EM_BREVE),
-      uf: estado.sigla || (estadoKey === 'br' ? 'BR' : ''),
-      sigla: info.titulo || String(inst).toUpperCase(),
-      nome: info.desc || poderesRamoNome(poderesTipoDaInstituicao(inst)),
-      ramo: ramo || poderesRamoNome(poderesTipoDaInstituicao(inst)),
-      ordem: poderesOrdemRamo(inst, estado)
-    });
-  }
-
-  Object.entries(HEADER_ESTADOS || {}).forEach(([estadoKey, estado]) => {
-    if (estadoKey === 'br') return;
-    ['pm', 'bm', 'pc', 'pp'].forEach(ramo => adicionar(estado?.[ramo], estadoKey, poderesRamoNome(ramo)));
-  });
-
-  adicionar('pf', 'br', poderesRamoNome('pf'));
-  adicionar('prf', 'br', poderesRamoNome('prf'));
-  itens.push({ inst: 'guarda_municipal', estadoKey: 'municipal', estadoNome: 'Municípios', uf: 'MUN', sigla: 'GM', nome: 'Guardas Municipais', ramo: poderesRamoNome('gm'), ordem: 1 });
-
-  const ordemEstados = Object.keys(HEADER_ESTADOS || {});
-  return itens.sort((a, b) => {
-    const ia = a.estadoKey === 'municipal' ? 999 : ordemEstados.indexOf(a.estadoKey);
-    const ib = b.estadoKey === 'municipal' ? 999 : ordemEstados.indexOf(b.estadoKey);
-    return (ia - ib) || (a.ordem - b.ordem) || a.sigla.localeCompare(b.sigla, 'pt-BR');
-  });
+  return [
+    {
+      inst: 'pm',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'PM',
+      nome: 'Polícia Militar',
+      ramo: 'Polícia Militar',
+      ordem: 1
+    },
+    {
+      inst: 'bm',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'BM',
+      nome: 'Corpo de Bombeiros Militar',
+      ramo: 'Corpo de Bombeiros Militar',
+      ordem: 2
+    },
+    {
+      inst: 'pc',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados e Distrito Federal',
+      uf: 'UF/DF',
+      sigla: 'PC',
+      nome: 'Polícia Civil',
+      ramo: 'Polícia Civil',
+      ordem: 3
+    },
+    {
+      inst: 'pp',
+      estadoKey: 'estadual',
+      estadoNome: 'Estados, Distrito Federal e União',
+      uf: 'UF/DF/BR',
+      sigla: 'PP',
+      nome: 'Polícia Penal',
+      ramo: 'Polícia Penal',
+      ordem: 4
+    },
+    {
+      inst: 'pf',
+      estadoKey: 'br',
+      estadoNome: 'União',
+      uf: 'BR',
+      sigla: 'PF',
+      nome: 'Polícia Federal',
+      ramo: 'Polícia Federal',
+      ordem: 5
+    },
+    {
+      inst: 'prf',
+      estadoKey: 'br',
+      estadoNome: 'União',
+      uf: 'BR',
+      sigla: 'PRF',
+      nome: 'Polícia Rodoviária Federal',
+      ramo: 'Polícia Rodoviária Federal',
+      ordem: 6
+    },
+    {
+      inst: 'gm',
+      estadoKey: 'municipal',
+      estadoNome: 'Municípios',
+      uf: 'MUN',
+      sigla: 'GM',
+      nome: 'Guarda Municipal',
+      ramo: 'Guarda Municipal',
+      ordem: 7
+    }
+  ];
 }
 
 function poderesPopularSeletor() {
@@ -8304,20 +8340,12 @@ function poderesPopularSeletor() {
   if (!select || select.dataset.renderizado) return;
 
   const itens = poderesInstituicoesDisponiveis();
-  const grupos = new Map();
-  itens.forEach(item => {
-    const chave = item.estadoNome || 'Outras instituições';
-    if (!grupos.has(chave)) grupos.set(chave, []);
-    grupos.get(chave).push(item);
-  });
-
-  select.innerHTML = '<option value="" disabled>Escolha uma instituição</option>' + Array.from(grupos.entries()).map(([grupo, lista]) => `
-    <optgroup label="${poderesEscapar(grupo)}">
-      ${lista.map(item => `<option value="${poderesEscapar(item.inst)}">${poderesEscapar(item.sigla)} - ${poderesEscapar(item.nome)}${item.uf ? ' · ' + poderesEscapar(item.uf) : ''}</option>`).join('')}
-    </optgroup>
+  select.innerHTML = '<option value="" disabled>Escolha o tipo de instituição</option>' + itens.map(item => `
+    <option value="${poderesEscapar(item.inst)}">${poderesEscapar(item.nome)}</option>
   `).join('');
 
-  const preferida = itens.some(item => item.inst === currInst) ? currInst : 'pf';
+  const tipoAtual = poderesTipoDaInstituicao(currInst);
+  const preferida = itens.some(item => item.inst === tipoAtual) ? tipoAtual : 'pf';
   select.value = preferida;
   select.dataset.renderizado = 'true';
 }
@@ -8389,13 +8417,13 @@ function poderesRenderizar(inst) {
 
   const tipo = poderesTipoDaInstituicao(inst);
   const dados = PODERES_DEVERES_BASE[tipo] || PODERES_DEVERES_BASE.pm;
-  const info = inst === 'guarda_municipal'
-    ? { titulo: 'GM', desc: 'Guardas Municipais' }
-    : (HEADER_INSTITUICOES_INFO?.[inst] || { titulo: String(inst || '').toUpperCase(), desc: dados.rotulo });
-  const estadoKey = inst === 'guarda_municipal' ? 'municipal' : (typeof getEstadoDaInstituicao === 'function' ? getEstadoDaInstituicao(inst) : '');
-  const estado = HEADER_ESTADOS?.[estadoKey] || {};
-  const nomeCompleto = `${info.titulo || String(inst).toUpperCase()} — ${info.desc || dados.rotulo}`;
-  if (tituloSpan) tituloSpan.textContent = info.titulo || dados.rotulo;
+  const itemSelecionado = poderesInstituicoesDisponiveis().find(item => item.inst === tipo) || {
+    nome: dados.rotulo,
+    estadoNome: dados.categoria,
+    sigla: String(tipo || '').toUpperCase()
+  };
+  const nomeCompleto = dados.rotulo || itemSelecionado.nome || PODERES_DEVERES_DADOS_EM_BREVE;
+  if (tituloSpan) tituloSpan.textContent = nomeCompleto;
 
   painel.innerHTML = `
     <section class="poderes-resumo-card" aria-label="Resumo de poderes e deveres">
@@ -8405,9 +8433,9 @@ function poderesRenderizar(inst) {
         <p>${poderesEscapar(dados.abrangencia)}</p>
       </div>
       <div class="poderes-meta-grid">
-        <div><span>Instituição-base</span><strong>${poderesEscapar(dados.rotulo)}</strong></div>
-        <div><span>Abrangência local</span><strong>${poderesEscapar(estado.nome || (estadoKey === 'municipal' ? 'Município' : 'Brasil'))}</strong></div>
-        <div><span>Lei local específica</span><strong>${poderesEscapar(dados.local || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
+        <div><span>Tipo de instituição</span><strong>${poderesEscapar(itemSelecionado.nome || dados.rotulo)}</strong></div>
+        <div><span>Abrangência geral</span><strong>${poderesEscapar(itemSelecionado.estadoNome || dados.categoria)}</strong></div>
+        <div><span>Lei específica complementar</span><strong>${poderesEscapar(dados.local || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
         <div><span>Última revisão</span><strong>${poderesEscapar(dados.atualizacao || PODERES_DEVERES_DADOS_EM_BREVE)}</strong></div>
       </div>
     </section>
@@ -8455,8 +8483,8 @@ function mudarInstituicaoPoderes(valor) {
 }
 
 
-
 /* ===== js/pages/contato-init.js ===== */
+
 /* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -8581,8 +8609,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 /* ===== js/ui/event-bindings.js ===== */
+
 /* =======================================================
    Eventos centralizados.
    Remove a dependência de onclick/onchange/oninput inline no HTML.
