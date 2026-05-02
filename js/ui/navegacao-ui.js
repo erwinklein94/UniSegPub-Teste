@@ -106,6 +106,7 @@ function switchPage(page) {
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
   else if (page === 'poderes') inicializarPoderesDeveres();
+  else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -139,6 +140,7 @@ function getNomeAbaAtual() {
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
     poderes: 'Poderes e Deveres',
+    brasoes: 'Brasões e história',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',

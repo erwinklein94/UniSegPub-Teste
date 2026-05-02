@@ -1610,6 +1610,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 );
 
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
+
 /* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2316,6 +2317,7 @@ let currInst = 'pmesp';
 let headerModoInicialPortal = true;
 const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Brazil.svg';
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
+
 /* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -2424,6 +2426,7 @@ function switchPage(page) {
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
   else if (page === 'poderes') inicializarPoderesDeveres();
+  else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -2457,6 +2460,7 @@ function getNomeAbaAtual() {
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
     poderes: 'Poderes e Deveres',
+    brasoes: 'Brasões e história',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
@@ -2578,6 +2582,7 @@ function popularCargos(inst) {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -3190,6 +3195,7 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -6316,8 +6322,9 @@ function atualizarLabelsHeaderResumo(labels = {}) {
 }
 
 function calcularResumoPortalHeader() {
+  if (typeof garantirEstruturaGuardaMunicipalConsulta === 'function') garantirEstruturaGuardaMunicipalConsulta();
   const instituicoes = INSTITUICOES_VALIDAS.length;
-  const estados = Object.keys(HEADER_ESTADOS).length;
+  const estados = Object.keys(HEADER_ESTADOS).filter(chave => !['br', 'municipal'].includes(chave)).length;
   let ativa = 0;
   let reserva = 0;
   let femininas = 0;
@@ -6353,15 +6360,7 @@ function aplicarHeaderInicialPortal() {
   const resumoPortal = calcularResumoPortalHeader();
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (!el) return;
-    const textoFinal = valor;
-    el.textContent = textoFinal;
-    const cardResumo = el.closest('.header-fact, .header-leadership-item');
-    if (cardResumo) {
-      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
-      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
-      cardResumo.classList.toggle('is-empty-data', vazio);
-    }
+    if (el) el.textContent = valor;
   };
 
   const flagAtual = document.getElementById('header-active-flag');
@@ -6548,15 +6547,7 @@ function atualizarHeaderResumo(inst) {
 
   const setTexto = (id, valor) => {
     const el = document.getElementById(id);
-    if (!el) return;
-    const textoFinal = resumoValorOuEmBreve(valor);
-    el.textContent = textoFinal;
-    const cardResumo = el.closest('.header-fact, .header-leadership-item');
-    if (cardResumo) {
-      const textoResumoNormalizado = String(textoFinal || '').trim().toLowerCase();
-      const vazio = !textoResumoNormalizado || textoResumoNormalizado === 'dados em breve' || textoResumoNormalizado === 'não informado' || textoResumoNormalizado === 'nao informado';
-      cardResumo.classList.toggle('is-empty-data', vazio);
-    }
+    if (el) el.textContent = resumoValorOuEmBreve(valor);
   };
 
   const ativaTexto = dados.ativaLabel || formatarEfetivoHeader(dados.ativa);
@@ -6807,6 +6798,11 @@ const PAGINAS_COM_SELECAO_INSTITUICAO = {
     titulo: 'Consultar poderes e deveres por instituição',
     subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
     destino: 'poderes_resultado'
+  },
+  brasoes: {
+    titulo: 'Consultar brasão e história por instituição',
+    subtitulo: 'Escolha a esfera e a instituição para ver o brasão, origem, criação, marcos históricos e dados institucionais.',
+    destino: 'brasoes_historia_resultado'
   },
   concursos: {
     titulo: 'Consultar concursos por instituição',
@@ -7156,6 +7152,7 @@ function avisoSelecaoInstituicaoHtml(page) {
     remuneracao: 'a tabela de remuneração',
     direitos: 'a análise de direitos',
     poderes: 'os poderes e deveres',
+    brasoes: 'o brasão e a história institucional',
     concursos: 'os dados de concursos',
     acoes: 'as ações judiciais',
     associacoes: 'as associações e sindicatos'
@@ -7173,6 +7170,7 @@ function atualizarTitulosConsultaSemInstituicao() {
     'txt-inst-dir',
     'txt-inst-concursos',
     'txt-inst-poderes',
+    'txt-inst-brasoes',
     'txt-inst-remuneracao',
     'txt-inst-acoes',
     'txt-inst-assoc'
@@ -7232,6 +7230,8 @@ function renderizarConteudoPaginaInstitucional(page) {
     carregarConcursos();
   } else if (page === 'poderes') {
     inicializarPoderesDeveres();
+  } else if (page === 'brasoes') {
+    renderizarBrasoesHistoria();
   } else if (page === 'acoes') {
     carregarAcoes();
   } else if (page === 'associacoes') {
@@ -7253,7 +7253,225 @@ function prepararPaginaComSelecaoInstituicao(page) {
 }
 
 
+
+function obterResumoInstituicaoCompleto(inst) {
+  const info = HEADER_INSTITUICOES_INFO[inst] || {};
+  const resumo = HEADER_INSTITUICOES_RESUMO[inst] || {};
+  const estadoChave = getEstadoDaInstituicao(inst);
+  const estado = HEADER_ESTADOS[estadoChave] || {};
+  const sigla = resumo.sigla || info.titulo || String(inst || '').toUpperCase();
+  const nome = resumo.nome || info.desc || sigla;
+  const tipo = resumo.tipo || resumoInferirTipo(inst, resumo);
+  const uf = resumo.estadoSigla || estado.sigla || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'BR' : '—');
+  const estadoNome = resumo.estado || estado.nome || (getEsferaConsultaInstituicao(inst) === 'federal' ? 'Brasil' : 'Municípios');
+  return { info, resumo, estadoChave, estado, sigla, nome, tipo, uf, estadoNome };
+}
+
+function valorHistoriaOuNaoDeclarado(valor, alternativo = 'Informação específica a confirmar em fonte oficial') {
+  if (typeof resumoEhDadoPendente === 'function' && resumoEhDadoPendente(valor)) return alternativo;
+  const texto = String(valor || '').trim();
+  if (!texto || texto === RESUMO_DADOS_EM_BREVE || /dados em breve/i.test(texto)) return alternativo;
+  return texto;
+}
+
+function imagemPrincipalBrasaoInstituicao(inst) {
+  const caminho = HEADER_INSTITUICOES_IMAGENS?.[inst] || '';
+  const candidatos = montarCandidatosImagemInstituicao(inst, caminho);
+  return candidatos[0] || caminho || 'img/LOGO/logoleao.webp';
+}
+
+function getCriadorInstitucional(inst, tipo, estadoNome) {
+  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  const esfera = getEsferaConsultaInstituicao(inst);
+  if (inst === 'pf') return 'União — estrutura federal organizada pela Constituição, legislação federal e atos do Poder Executivo federal.';
+  if (inst === 'prf') return 'União — estrutura federal vinculada à segurança pública e ao policiamento ostensivo das rodovias federais.';
+  if (esfera === 'municipal') return 'Município — criada por lei municipal e organizada pela prefeitura/secretaria competente.';
+  if (/Polícia Penal/i.test(tipo)) return `${estadoNome} — carreira constitucionalizada pela EC 104/2019 e estruturada por normas estaduais/distritais.`;
+  if (/Bombeiro/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização militar e comando próprio conforme legislação local.`;
+  if (/Polícia Civil/i.test(tipo)) return `${estadoNome} — poder público estadual/distrital, com organização da polícia judiciária conforme legislação local.`;
+  return `${estadoNome} — poder público estadual/distrital, por ato legal de organização da força pública local.`;
+}
+
+function getHistoricoPorTipo(inst, dados) {
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const criacao = valorHistoriaOuNaoDeclarado(resumo.criacao, 'origem histórica organizada pela legislação própria da instituição');
+  const esfera = getEsferaConsultaInstituicao(inst);
+
+  if (inst === 'pmesp') {
+    return {
+      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Ao longo de sua trajetória, a instituição passou por reorganizações, profissionalização, expansão territorial e consolidação do policiamento ostensivo e da preservação da ordem pública no estado.`,
+      marcos: [
+        'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
+        'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
+        'Modernização de formação, policiamento especializado, radiopatrulhamento, policiamento comunitário, tecnologia, inteligência e atendimento emergencial.'
+      ]
+    };
+  }
+
+  if (inst === 'pf') {
+    return {
+      origem: `A ${nome} é órgão permanente da União e atua como polícia judiciária federal, responsável por investigar crimes de competência federal, proteger interesses da União e executar atribuições especializadas em fronteiras, migração, polícia marítima, aeroportuária e de combate a crimes interestaduais ou internacionais.`,
+      marcos: [
+        'Consolidação constitucional como órgão da segurança pública federal no art. 144 da Constituição.',
+        'Atuação em investigações federais, cooperação internacional, controle migratório e repressão a crimes contra bens, serviços e interesses da União.',
+        'Ampliação de capacidades técnicas em perícia, inteligência, operações especiais, crimes cibernéticos e enfrentamento de organizações criminosas.'
+      ]
+    };
+  }
+
+  if (inst === 'prf') {
+    return {
+      origem: `A ${nome} se consolidou como polícia ostensiva federal voltada às rodovias federais, combinando fiscalização de trânsito, prevenção de acidentes, atendimento em ocorrências e enfrentamento de crimes que utilizam a malha rodoviária nacional.`,
+      marcos: [
+        'Reconhecimento constitucional como órgão permanente da segurança pública federal no art. 144 da Constituição.',
+        'Fortalecimento da fiscalização de trânsito e do patrulhamento ostensivo nas rodovias federais.',
+        'Atuação integrada no combate ao tráfico de drogas, armas, contrabando, crimes ambientais, roubo de cargas e crimes interestaduais.'
+      ]
+    };
+  }
+
+  if (esfera === 'municipal') {
+    return {
+      origem: 'A Guarda Municipal é organizada por lei local e atua na proteção de bens, serviços e instalações municipais, com papel preventivo e comunitário. A história concreta varia conforme o município, sua lei de criação, estatuto, plano de carreira e estrutura administrativa.',
+      marcos: [
+        'Previsão constitucional das guardas municipais no art. 144 da Constituição.',
+        'Fortalecimento nacional com o Estatuto Geral das Guardas Municipais, que definiu princípios mínimos de atuação, proteção municipal e cooperação institucional.',
+        'Integração crescente com políticas de prevenção, ordenamento urbano, proteção escolar, videomonitoramento e defesa civil local.'
+      ]
+    };
+  }
+
+  if (/Bombeiro/i.test(tipo)) {
+    return {
+      origem: `O ${nome} integra a segurança pública e a defesa civil do ${estadoNome}. Sua trajetória é ligada ao combate a incêndios, salvamento, resgate, prevenção, vistoria técnica e resposta a emergências, com organização militar estadual/distrital. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Formação ou consolidação como estrutura bombeiro militar estadual/distrital.',
+        'Expansão das atividades de prevenção contra incêndio, salvamento, atendimento pré-hospitalar e defesa civil.',
+        'Adoção de normas técnicas, formação especializada e integração com sistemas estaduais de gestão de riscos e desastres.'
+      ]
+    };
+  }
+
+  if (/Polícia Civil/i.test(tipo)) {
+    return {
+      origem: `A ${nome} é a polícia judiciária do ${estadoNome}. Sua história está ligada à investigação criminal, apuração de infrações penais, formalização de procedimentos, apoio à Justiça criminal e especialização de delegacias. Registro de criação/origem usado nesta base: ${criacao}.`,
+      marcos: [
+        'Consolidação das delegacias e da carreira policial civil como estrutura de investigação estadual/distrital.',
+        'Especialização de unidades investigativas para homicídios, patrimônio, drogas, crimes cibernéticos, violência contra a mulher e outras áreas.',
+        'Integração progressiva com perícia, inteligência, bancos de dados e cooperação operacional com outras forças.'
+      ]
+    };
+  }
+
+  if (/Polícia Penal/i.test(tipo)) {
+    return {
+      origem: `A ${nome} representa a carreira voltada à segurança dos estabelecimentos penais no ${estadoNome}. A Polícia Penal foi inserida no texto constitucional pela Emenda Constitucional 104/2019, e cada ente federativo organiza sua estrutura, cargos, atribuições e identidade institucional por normas próprias.`,
+      marcos: [
+        'Constitucionalização da Polícia Penal pela EC 104/2019.',
+        'Transição de estruturas penitenciárias para carreira policial penal estadual/distrital.',
+        'Fortalecimento da segurança prisional, escoltas, inteligência penitenciária e controle interno dos estabelecimentos penais.'
+      ]
+    };
+  }
+
+  return {
+    origem: `A ${nome} é força policial militar do ${estadoNome}, com trajetória ligada à preservação da ordem pública, policiamento ostensivo, disciplina militar e proteção da sociedade. Registro de criação/origem usado nesta base: ${criacao}.`,
+    marcos: [
+      'Criação ou organização histórica como força pública estadual/provincial.',
+      'Consolidação do policiamento ostensivo e da preservação da ordem pública como atribuições centrais.',
+      'Modernização de formação, radiopatrulhamento, policiamento especializado, corregedoria, inteligência e atendimento comunitário.'
+    ]
+  };
+}
+
+function montarCamposResumoHistoria(inst, dados) {
+  const { resumo, tipo, uf, estadoNome } = dados;
+  const populacaoTitulo = resumo.populacaoTitulo || (/Polícia Penal/i.test(tipo) ? 'Presos atendidos' : 'População atendida');
+  return [
+    { rotulo: 'Natureza', valor: tipo },
+    { rotulo: 'Jurisdição', valor: `${uf} · ${estadoNome}` },
+    { rotulo: 'Criação/origem', valor: valorHistoriaOuNaoDeclarado(resumo.criacao, 'Registro histórico específico a confirmar') },
+    { rotulo: 'Criador/ato de origem', valor: getCriadorInstitucional(inst, tipo, estadoNome) },
+    { rotulo: 'Efetivo ativo', valor: valorHistoriaOuNaoDeclarado(resumo.ativaLabel || resumo.ativa, 'Efetivo específico a confirmar') },
+    { rotulo: /Bombeiro|Polícia Militar/i.test(tipo) ? 'Reserva/reforma' : 'Aposentados/inativos', valor: valorHistoriaOuNaoDeclarado(resumo.reservaLabel || resumo.reserva, 'Inativos específicos a confirmar') },
+    { rotulo: 'Mulheres no efetivo', valor: valorHistoriaOuNaoDeclarado(resumo.femininasLabel || resumo.femininas, 'Dado específico a confirmar') },
+    { rotulo: populacaoTitulo, valor: valorHistoriaOuNaoDeclarado(resumo.populacaoLabel || (resumo.populacao ? formatarNumeroHeader(resumo.populacao) : ''), 'Abrangência específica a confirmar') },
+    { rotulo: resumo.relacaoTitulo || 'Relação institucional', valor: valorHistoriaOuNaoDeclarado(resumo.relacaoLabel, 'Relação específica a confirmar') },
+    { rotulo: /Polícia Federal|Rodoviária Federal/i.test(tipo) ? 'Direção-Geral' : (/Polícia Civil/i.test(tipo) ? 'Chefia/Direção' : 'Comando/Direção'), valor: valorHistoriaOuNaoDeclarado(resumo.comando, 'Chefia atual a confirmar') }
+  ];
+}
+
+function renderizarBrasoesHistoria() {
+  const cont = document.getElementById('brasoes_historia_resultado');
+  if (!cont) return;
+  if (typeof instituicaoConsultaFoiSelecionada === 'function' && !instituicaoConsultaFoiSelecionada()) {
+    if (typeof mostrarAvisoSelecaoInstituicao === 'function') mostrarAvisoSelecaoInstituicao('brasoes');
+    return;
+  }
+
+  const inst = currInst;
+  const dados = obterResumoInstituicaoCompleto(inst);
+  const { sigla, nome, tipo, estadoNome, resumo } = dados;
+  const imagem = imagemPrincipalBrasaoInstituicao(inst);
+  const historico = getHistoricoPorTipo(inst, dados);
+  const campos = montarCamposResumoHistoria(inst, dados);
+  const atualizado = valorHistoriaOuNaoDeclarado(resumo.atualizado, 'Resumo institucional revisado para navegação informativa');
+  const fonte = valorHistoriaOuNaoDeclarado(resumo.fonte, 'Fontes públicas e oficiais quando disponíveis; confirmar informações sensíveis nos canais oficiais da instituição.');
+
+  const tituloSpan = document.getElementById('txt-inst-brasoes');
+  if (tituloSpan) tituloSpan.textContent = sigla;
+
+  cont.innerHTML = `
+    <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
+      <div class="brasoes-imagem-wrap">
+        <img class="brasoes-imagem" src="${escapeHtml(imagem)}" alt="Brasão ou insígnia da ${escapeHtml(nome)}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+      </div>
+      <div class="brasoes-hero-copy">
+        <span class="brasoes-kicker">${escapeHtml(tipo)}</span>
+        <h3>${escapeHtml(sigla)} — ${escapeHtml(nome)}</h3>
+        <p>${escapeHtml(estadoNome)} · ${escapeHtml(getEsferaConsultaInstituicao(inst))}</p>
+        <small>${escapeHtml(atualizado)}</small>
+      </div>
+    </section>
+
+    <section class="brasoes-resumo-grid" aria-label="Resumo institucional detalhado">
+      ${campos.map(campo => `
+        <article class="brasoes-resumo-item">
+          <span>${escapeHtml(campo.rotulo)}</span>
+          <strong>${escapeHtml(campo.valor)}</strong>
+        </article>
+      `).join('')}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="História da instituição">
+      <div class="brasoes-section-title">
+        <span>História breve</span>
+        <h3>Origem e evolução institucional</h3>
+      </div>
+      <p>${escapeHtml(historico.origem)}</p>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Marcos históricos">
+      <div class="brasoes-section-title">
+        <span>Marcos históricos</span>
+        <h3>Pontos importantes da trajetória</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.marcos.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
+      <strong>Fonte-base do resumo:</strong>
+      <p>${escapeHtml(fonte)}</p>
+      <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
+    </section>
+  `;
+}
+
+
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -7838,6 +8056,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 }
 
 /* ============================================================ */
+
 /* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
@@ -8398,277 +8617,7 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
-/* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
-   Mantém a ordem original para preservar compatibilidade. */
 
-/* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
-/* ============================================================ */
-/* BLOCO 15.13A — Direciona interessados em anúncios para o formulário */
-const ANUNCIO_AREAS_LABELS = {
-  home_topo: 'Topo da página principal',
-  home_meio_consultas: 'Meio da página principal, após consultas principais',
-  home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
-  menu_lateral: 'Menu lateral',
-  remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
-  direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
-  concursos_antes_lista: 'Aba Concursos, antes da lista',
-  comparador_antes_resultado: 'Aba Comparar Carreiras, antes dos resultados',
-  produtos_topo: 'Topo da aba Produtos',
-  acoes_antes_lista: 'Aba Ações Judiciais, antes da lista',
-  associacoes_antes_lista: 'Aba Associações, antes da lista',
-  rodape_geral: 'Antes do rodapé'
-};
-
-function abrirContatoAnuncio(area = '') {
-  const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
-
-  switchPage('parceiros');
-
-  if (window.history && window.history.replaceState) {
-    window.history.replaceState(null, '', '#parceiros');
-  }
-
-  window.setTimeout(() => {
-    const assunto = document.getElementById('contato_assunto');
-    const mensagem = document.getElementById('contato_mensagem');
-    const nome = document.getElementById('contato_nome');
-    const form = document.querySelector('#page-parceiros form');
-
-    if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
-
-    if (mensagem && !mensagem.value.trim()) {
-      mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
-      atualizarContador();
-    }
-
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    if (nome) {
-      try {
-        nome.focus({ preventScroll: true });
-      } catch (e) {
-        nome.focus();
-      }
-    }
-  }, 0);
-}
-
-/* ============================================================ */
-/* === CONTADOR DE CARACTERES (CONTATO) ======================= */
-/* ============================================================ */
-/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
-function atualizarContador() {
-  const txt = document.getElementById('contato_mensagem');
-  const cnt = document.getElementById('char-counter');
-  if (!txt || !cnt) return;
-  const len = txt.value.length;
-  cnt.textContent = `${len} / 2000 caracteres`;
-  cnt.classList.toggle('over', len > 1900);
-}
-
-/* ============================================================ */
-/* === ENVIO DE CONTATO ======================================= */
-/* ============================================================ */
-function enviarEmailContato(event) {
-  event.preventDefault();
-  const nome = document.getElementById('contato_nome').value.trim();
-  const email = document.getElementById('contato_email').value.trim();
-  const assunto = document.getElementById('contato_assunto').value;
-  const msg = document.getElementById('contato_mensagem').value.trim();
-
-  if (!nome || !email || !assunto || !msg) {
-    mostrarToast('Preencha todos os campos!', 'error');
-    return;
-  }
-  if (msg.length < 10) {
-    mostrarToast('Mensagem muito curta (mínimo 10 caracteres).', 'error');
-    return;
-  }
-  const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${msg}\n\n---\nEnviado via Universo Segurança Pública`);
-  const sub = encodeURIComponent(`[CONTATO] ${assunto}`);
-  window.location.href = `mailto:universosegpub@gmail.com?subject=${sub}&body=${corpo}`;
-  setTimeout(() => mostrarToast('E-mail aberto no seu cliente! Resposta em até 48h.'), 300);
-}
-
-/* ============================================================ */
-/* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
-/* ============================================================ */
-/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
-document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  aplicarEstruturaEstadosFaltantesNoHtml();
-
-  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
-  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
-
-  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
-  aplicarHeaderInicialPortal();
-  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
-
-  // Direitos: atualizar quando muda cargo/situação/tempo.
-  ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('change', analisarDireitos);
-  });
-
-  // Acessibilidade: ESC fecha o menu.
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      const sb = document.getElementById('sidebar');
-      if (sb && sb.classList.contains('active')) toggleMenu();
-    }
-  });
-});
-/* =======================================================
-   Eventos centralizados.
-   Remove a dependência de onclick/onchange/oninput inline no HTML.
-   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
-   ======================================================= */
-
-(function () {
-  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
-  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
-  function safeCall(fnName, args = []) {
-    const fn = window[fnName];
-    if (typeof fn === 'function') return fn.apply(window, args);
-    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
-    return undefined;
-  }
-
-  function bindClick(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('click', handler);
-    });
-  }
-
-  function bindChange(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('change', handler);
-    });
-  }
-
-  function bindInput(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('input', handler);
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
-    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
-
-    bindChange('#instituicao, #instituicao_header', event => {
-      safeCall('mudarInstituicao', [event.currentTarget.value]);
-    });
-
-    bindChange('#poderes_instituicao', event => {
-      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
-    });
-
-    bindChange('[data-consulta-esfera]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
-    });
-
-    bindChange('[data-consulta-instituicao]', event => {
-      const page = event.currentTarget.dataset.consultaPage;
-      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
-    });
-
-    bindClick('.branch-option[data-branch]', event => {
-      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
-    });
-
-    bindClick('.state-flag[data-estado]', event => {
-      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
-    });
-
-    bindClick('.sidebar-nav a[href^="#"]', event => {
-      const link = event.currentTarget;
-      const page = (link.getAttribute('href') || '').replace('#', '');
-      if (!page) return;
-
-      event.preventDefault();
-
-      if (page === 'principal') {
-        safeCall('abrirPaginaInicial');
-        return;
-      }
-
-      safeCall('switchPage', [page]);
-    });
-
-    bindClick('[data-page]', event => {
-      const page = event.currentTarget.dataset.page;
-      if (!page) return;
-      safeCall('switchPage', [page]);
-    });
-
-    document.querySelectorAll('[data-page]').forEach(el => {
-      el.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          safeCall('switchPage', [event.currentTarget.dataset.page]);
-        }
-      });
-    });
-
-    bindClick('.ad-slot .ad-placeholder-link', event => {
-      const link = event.currentTarget;
-      const href = link.getAttribute('href') || '';
-
-      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
-      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
-        return;
-      }
-
-      const area = link.closest('[data-ad-area]')?.dataset.adArea;
-      if (!area) return;
-      event.preventDefault();
-      safeCall('abrirContatoAnuncio', [area]);
-    });
-
-    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
-    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
-
-    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
-    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
-    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
-    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
-
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
-        safeCall('carregarComparadorCarreiras');
-      }
-    });
-
-    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
-
-    const contatoForm = document.querySelector('form[data-form="contato"]');
-    if (contatoForm) {
-      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
-    }
-  });
-
-  document.addEventListener('error', event => {
-    const img = event.target;
-    if (!(img instanceof HTMLImageElement)) return;
-
-    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
-      safeCall('carregarImagemProduto', [img]);
-      return;
-    }
-
-    if (img.dataset.hideOnError === 'true') {
-      img.style.display = 'none';
-      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
-      if (container) container.classList.add('img-indisponivel');
-    }
-  }, true);
-})();
 /* ============================================================
    PODERES E DEVERES — aba independente da instituição principal
    ============================================================ */
@@ -9485,3 +9434,276 @@ function mudarInstituicaoPoderes(valor) {
   if (valor && typeof mudarInstituicao === 'function') mudarInstituicao(valor);
   poderesRenderizar(valor || currInst || 'pf');
 }
+
+/* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
+   Mantém a ordem original para preservar compatibilidade. */
+
+/* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
+/* ============================================================ */
+/* BLOCO 15.13A — Direciona interessados em anúncios para o formulário */
+const ANUNCIO_AREAS_LABELS = {
+  home_topo: 'Topo da página principal',
+  home_meio_consultas: 'Meio da página principal, após consultas principais',
+  home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
+  menu_lateral: 'Menu lateral',
+  remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
+  direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
+  concursos_antes_lista: 'Aba Concursos, antes da lista',
+  comparador_antes_resultado: 'Aba Comparar Carreiras, antes dos resultados',
+  produtos_topo: 'Topo da aba Produtos',
+  acoes_antes_lista: 'Aba Ações Judiciais, antes da lista',
+  associacoes_antes_lista: 'Aba Associações, antes da lista',
+  rodape_geral: 'Antes do rodapé'
+};
+
+function abrirContatoAnuncio(area = '') {
+  const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
+
+  switchPage('parceiros');
+
+  if (window.history && window.history.replaceState) {
+    window.history.replaceState(null, '', '#parceiros');
+  }
+
+  window.setTimeout(() => {
+    const assunto = document.getElementById('contato_assunto');
+    const mensagem = document.getElementById('contato_mensagem');
+    const nome = document.getElementById('contato_nome');
+    const form = document.querySelector('#page-parceiros form');
+
+    if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
+
+    if (mensagem && !mensagem.value.trim()) {
+      mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
+      atualizarContador();
+    }
+
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (nome) {
+      try {
+        nome.focus({ preventScroll: true });
+      } catch (e) {
+        nome.focus();
+      }
+    }
+  }, 0);
+}
+
+/* ============================================================ */
+/* === CONTADOR DE CARACTERES (CONTATO) ======================= */
+/* ============================================================ */
+/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
+function atualizarContador() {
+  const txt = document.getElementById('contato_mensagem');
+  const cnt = document.getElementById('char-counter');
+  if (!txt || !cnt) return;
+  const len = txt.value.length;
+  cnt.textContent = `${len} / 2000 caracteres`;
+  cnt.classList.toggle('over', len > 1900);
+}
+
+/* ============================================================ */
+/* === ENVIO DE CONTATO ======================================= */
+/* ============================================================ */
+function enviarEmailContato(event) {
+  event.preventDefault();
+  const nome = document.getElementById('contato_nome').value.trim();
+  const email = document.getElementById('contato_email').value.trim();
+  const assunto = document.getElementById('contato_assunto').value;
+  const msg = document.getElementById('contato_mensagem').value.trim();
+
+  if (!nome || !email || !assunto || !msg) {
+    mostrarToast('Preencha todos os campos!', 'error');
+    return;
+  }
+  if (msg.length < 10) {
+    mostrarToast('Mensagem muito curta (mínimo 10 caracteres).', 'error');
+    return;
+  }
+  const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${msg}\n\n---\nEnviado via Universo Segurança Pública`);
+  const sub = encodeURIComponent(`[CONTATO] ${assunto}`);
+  window.location.href = `mailto:universosegpub@gmail.com?subject=${sub}&body=${corpo}`;
+  setTimeout(() => mostrarToast('E-mail aberto no seu cliente! Resposta em até 48h.'), 300);
+}
+
+/* ============================================================ */
+/* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
+/* ============================================================ */
+/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  aplicarEstruturaEstadosFaltantesNoHtml();
+
+  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
+  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
+
+  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
+  aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
+
+  // Direitos: atualizar quando muda cargo/situação/tempo.
+  ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', analisarDireitos);
+  });
+
+  // Acessibilidade: ESC fecha o menu.
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const sb = document.getElementById('sidebar');
+      if (sb && sb.classList.contains('active')) toggleMenu();
+    }
+  });
+});
+
+/* =======================================================
+   Eventos centralizados.
+   Remove a dependência de onclick/onchange/oninput inline no HTML.
+   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
+   ======================================================= */
+
+(function () {
+  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
+  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
+  function safeCall(fnName, args = []) {
+    const fn = window[fnName];
+    if (typeof fn === 'function') return fn.apply(window, args);
+    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
+    return undefined;
+  }
+
+  function bindClick(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('click', handler);
+    });
+  }
+
+  function bindChange(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('change', handler);
+    });
+  }
+
+  function bindInput(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('input', handler);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bindClick('.menu-btn, #menuOverlay, .close-btn', () => safeCall('toggleMenu'));
+    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
+
+    bindChange('#instituicao, #instituicao_header', event => {
+      safeCall('mudarInstituicao', [event.currentTarget.value]);
+    });
+
+    bindChange('#poderes_instituicao', event => {
+      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
+    });
+
+    bindChange('[data-consulta-esfera]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('alterarEsferaConsultaInstituicao', [page, event.currentTarget.value]);
+    });
+
+    bindChange('[data-consulta-instituicao]', event => {
+      const page = event.currentTarget.dataset.consultaPage;
+      safeCall('selecionarInstituicaoConsulta', [page, event.currentTarget.value]);
+    });
+
+    bindClick('.branch-option[data-branch]', event => {
+      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
+    });
+
+    bindClick('.state-flag[data-estado]', event => {
+      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
+    });
+
+    bindClick('.sidebar-nav a[href^="#"]', event => {
+      const link = event.currentTarget;
+      const page = (link.getAttribute('href') || '').replace('#', '');
+      if (!page) return;
+
+      event.preventDefault();
+
+      if (page === 'principal') {
+        safeCall('abrirPaginaInicial');
+        return;
+      }
+
+      safeCall('switchPage', [page]);
+    });
+
+    bindClick('[data-page]', event => {
+      const page = event.currentTarget.dataset.page;
+      if (!page) return;
+      safeCall('switchPage', [page]);
+    });
+
+    document.querySelectorAll('[data-page]').forEach(el => {
+      el.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          safeCall('switchPage', [event.currentTarget.dataset.page]);
+        }
+      });
+    });
+
+    bindClick('.ad-slot .ad-placeholder-link', event => {
+      const link = event.currentTarget;
+      const href = link.getAttribute('href') || '';
+
+      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
+      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
+        return;
+      }
+
+      const area = link.closest('[data-ad-area]')?.dataset.adArea;
+      if (!area) return;
+      event.preventDefault();
+      safeCall('abrirContatoAnuncio', [area]);
+    });
+
+    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
+    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
+
+    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
+    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
+    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
+        safeCall('carregarComparadorCarreiras');
+      }
+    });
+
+    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
+
+    const contatoForm = document.querySelector('form[data-form="contato"]');
+    if (contatoForm) {
+      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
+    }
+  });
+
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+
+    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
+      safeCall('carregarImagemProduto', [img]);
+      return;
+    }
+
+    if (img.dataset.hideOnError === 'true') {
+      img.style.display = 'none';
+      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
+      if (container) container.classList.add('img-indisponivel');
+    }
+  }, true);
+})();

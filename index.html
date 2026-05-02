@@ -29,7 +29,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link rel="preload" href="css/dist/main.min.css" as="style">
 <link rel="stylesheet" href="css/dist/main.min.css">
-<link rel="stylesheet" href="css/override-logoleao.css?v=20260502mobilev1">
+<link rel="stylesheet" href="css/override-logoleao.css?v=20260502brasoesv1">
 
 </head>
 <body data-inst="portal">
@@ -92,7 +92,7 @@
               </div>
               <div class="header-fact">
                 <span id="header-label-criacao">Instituições</span>
-                <strong id="header-resumo-criacao">108</strong>
+                <strong id="header-resumo-criacao">111</strong>
               </div>
               <div class="header-fact">
                 <span id="header-label-ativa">Ativos estimados</span>
@@ -631,6 +631,11 @@
         <span class="sidebar-link-text">Poderes e Deveres</span>
         <small>Leis, limites e competências</small>
       </a>
+      <a href="#brasoes" id="menu-brasoes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">🛡️</span>
+        <span class="sidebar-link-text">Brasões e história</span>
+        <small>Origem, brasão e dados</small>
+      </a>
       <a href="#concursos" id="menu-concursos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">📋</span>
         <span class="sidebar-link-text">Concursos</span>
@@ -738,6 +743,7 @@
       <button class="principal-btn" type="button" data-page="remuneracao">Consultar Remuneração</button>
       <button class="principal-btn secundario" type="button" data-page="direitos">Ver Direitos</button>
       <button class="principal-btn secundario" type="button" data-page="poderes">Ver Poderes e Deveres</button>
+      <button class="principal-btn secundario" type="button" data-page="brasoes">Brasões e história</button>
       <button class="principal-btn secundario" type="button" data-page="concursos">Ver Concursos</button>
     </div>
   </section>
@@ -758,7 +764,7 @@
       <span>UFs cobertas</span>
     </div>
     <div class="principal-stat">
-      <strong>108</strong>
+      <strong>111</strong>
       <span>Seções institucionais</span>
     </div>
     <div class="principal-stat">
@@ -781,7 +787,7 @@
     <div class="como-usar-grid">
       <div class="como-usar-step">
         <strong>1</strong>
-        <span>Clique na aba desejada: remuneração, direitos, poderes e deveres, concursos, ações ou associações.</span>
+        <span>Clique na aba desejada: remuneração, direitos, poderes e deveres, brasões e história, concursos, ações ou associações.</span>
       </div>
       <div class="como-usar-step">
         <strong>2</strong>
@@ -827,6 +833,15 @@
         </div>
         <p>Entenda deveres, abrangência de poder, limites legais, leis oficiais e entendimentos recentes de cada instituição.</p>
         <span class="principal-tag">Ver legislação</span>
+      </article>
+
+      <article class="principal-card destaque" tabindex="0" role="button" aria-label="Abrir brasões e história" data-page="brasoes">
+        <div class="principal-card-header">
+          <span class="principal-card-icon" aria-hidden="true">🛡️</span>
+          <h3>Brasões e história</h3>
+        </div>
+        <p>Veja o brasão em destaque, dados institucionais, efetivo, presença feminina, criação, origem e marcos históricos da instituição escolhida.</p>
+        <span class="principal-tag">Ver história</span>
       </article>
 
       <article class="principal-card" tabindex="0" role="button" aria-label="Abrir concursos" data-page="concursos">
@@ -1081,6 +1096,18 @@
     </aside>
 
     <div id="poderes_resultado" class="poderes-resultado"></div>
+  </div>
+</main>
+
+<!-- BLOCO 06.6 — PÁGINA BRASÕES E HISTÓRIA -->
+<main id="page-brasoes" class="page-section" role="main">
+  <div class="card">
+    <h2>Brasões e história (<span id="txt-inst-brasoes">—</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Escolha a esfera e a instituição nesta aba para visualizar o brasão em destaque, um resumo institucional mais completo e uma breve história com criação, origem, marcos históricos e dados de efetivo quando disponíveis.
+    </div>
+    <!-- Seletor de instituição inserido automaticamente pelo JavaScript nesta aba. -->
+    <div id="brasoes_historia_resultado" class="brasoes-historia-resultado"></div>
   </div>
 </main>
 
@@ -1554,7 +1581,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502mobilev1" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502brasoesv1" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>
