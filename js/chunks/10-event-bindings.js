@@ -40,6 +40,10 @@
       safeCall('mudarInstituicao', [event.currentTarget.value]);
     });
 
+    bindChange('#poderes_instituicao', event => {
+      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
+    });
+
     bindClick('.branch-option[data-branch]', event => {
       safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
     });

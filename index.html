@@ -618,6 +618,11 @@
         <span class="sidebar-link-text">Direitos e Vantagens</span>
         <small>Benefícios e alertas</small>
       </a>
+      <a href="#poderes" id="menu-poderes" tabindex="0" role="link">
+        <span class="sidebar-link-icon" aria-hidden="true">📜</span>
+        <span class="sidebar-link-text">Poderes e Deveres</span>
+        <small>Leis, limites e competências</small>
+      </a>
       <a href="#concursos" id="menu-concursos" tabindex="0" role="link">
         <span class="sidebar-link-icon" aria-hidden="true">📋</span>
         <span class="sidebar-link-text">Concursos</span>
@@ -724,6 +729,7 @@
     <div class="principal-actions" aria-label="Ações principais da página inicial">
       <button class="principal-btn" type="button" data-page="remuneracao">Consultar Remuneração</button>
       <button class="principal-btn secundario" type="button" data-page="direitos">Ver Direitos</button>
+      <button class="principal-btn secundario" type="button" data-page="poderes">Ver Poderes e Deveres</button>
       <button class="principal-btn secundario" type="button" data-page="concursos">Ver Concursos</button>
     </div>
   </section>
@@ -804,6 +810,15 @@
         </div>
         <p>Consulte vantagens, licenças, adicionais, aposentadoria, benefícios e observações importantes para a carreira.</p>
         <span class="principal-tag">Consultar direitos</span>
+      </article>
+
+      <article class="principal-card" tabindex="0" role="button" aria-label="Abrir poderes e deveres" data-page="poderes">
+        <div class="principal-card-header">
+          <span class="principal-card-icon" aria-hidden="true">📜</span>
+          <h3>Poderes e Deveres</h3>
+        </div>
+        <p>Entenda deveres, abrangência de poder, limites legais, leis oficiais e entendimentos recentes de cada instituição.</p>
+        <span class="principal-tag">Ver legislação</span>
       </article>
 
       <article class="principal-card" tabindex="0" role="button" aria-label="Abrir concursos" data-page="concursos">
@@ -1038,6 +1053,35 @@
     <div class="alerta legal">
       <strong>Aviso:</strong> Esta análise é informativa e não substitui consulta ao setor de pessoal, associação, sindicato, advogado especializado ou fonte oficial. Direitos específicos podem depender de regulamento interno, cargo, data de ingresso, regra de transição previdenciária, perícia médica, limite de renda, disponibilidade orçamentária ou requerimento administrativo.
     </div>
+  </div>
+</main>
+
+<!-- BLOCO 06.5 — PÁGINA PODERES E DEVERES -->
+<main id="page-poderes" class="page-section" role="main">
+  <div class="card">
+    <h2>Poderes e Deveres (<span id="txt-inst-poderes">PF</span>)</h2>
+    <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
+      Esta aba tem uma seleção independente da instituição principal do site. A escolha abaixo altera apenas o conteúdo de Poderes e Deveres, mantendo as demais abas como estão.
+    </div>
+
+    <div class="form-grid poderes-form-grid" style="margin-bottom: 24px;">
+      <div class="field span-2">
+        <label for="poderes_instituicao">Escolha a instituição para consultar leis, poderes e deveres</label>
+        <select id="poderes_instituicao" aria-label="Selecione a instituição para consultar poderes e deveres">
+          <option value="pf">PF - Polícia Federal</option>
+        </select>
+      </div>
+    </div>
+
+    <aside class="ad-slot ad-slot--inline" data-ad-area="poderes_antes_conteudo" aria-label="Espaço de anúncio: Poderes e Deveres antes do conteúdo">
+      <a class="ad-placeholder-link" href="#parceiros">
+        <span class="ad-label">Publicidade</span>
+        <strong>Anuncie aqui</strong>
+        <small>Espaço para advocacia, consultoria jurídica, entidades de classe, cursos e materiais de legislação aplicada à segurança pública.</small>
+      </a>
+    </aside>
+
+    <div id="poderes_resultado" class="poderes-resultado"></div>
   </div>
 </main>
 
@@ -1511,7 +1555,7 @@
 <!-- CSS movido para css/style.css -->
 <!-- JavaScript fonte reorganizado em js/data, js/services, js/ui e js/pages.
      Produção: bundle único para reduzir requisições e preservar a ordem de execução. -->
-<script src="js/dist/app.bundle.js?v=20260502concursos110" defer></script>
+<script src="js/dist/app.bundle.js?v=20260502poderesdeveres" defer></script>
 <script src="js/brasao-lightbox.js?v=20260501" defer></script>
 
 </body>

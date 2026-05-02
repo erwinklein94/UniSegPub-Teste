@@ -99,6 +99,7 @@ function switchPage(page) {
   if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
+  else if (page === 'poderes') inicializarPoderesDeveres();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
   else if (page === 'remuneracao') carregarRemuneracaoTabelada();
@@ -131,6 +132,7 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    poderes: 'Poderes e Deveres',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
     direitos: 'Direitos e Vantagens',
