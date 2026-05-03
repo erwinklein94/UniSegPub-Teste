@@ -99,7 +99,7 @@ const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
-  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar de São Paulo' },
+  pmesp: { titulo: 'PMESP', desc: 'Polícia Militar do Estado de São Paulo' },
   pcsp:  { titulo: 'PCSP',  desc: 'Polícia Civil de São Paulo' },
   pmerj: { titulo: 'PMERJ', desc: 'Polícia Militar do Rio de Janeiro' },
   pcerj: { titulo: 'PCERJ', desc: 'Polícia Civil do Rio de Janeiro' },
@@ -432,26 +432,26 @@ function aplicarImagemHeaderInstituicao(img, inst, dadosEstado, instituicao) {
 
 const HEADER_INSTITUICOES_RESUMO = {
   "pmesp": {
-    "nome": "Polícia Militar de São Paulo",
+    "nome": "Polícia Militar do Estado de São Paulo",
     "sigla": "PMESP",
     "estado": "São Paulo",
     "estadoSigla": "SP",
     "tipo": "Polícia Militar",
-    "criacao": "15/12/1831",
-    "ativa": 80037,
-    "ativaLabel": "80.037",
-    "reserva": 90000,
-    "reservaLabel": "90.000",
-    "femininas": 10405,
-    "femininasLabel": "10.405 · estimado",
+    "criacao": "15/12/1831 · origem histórica",
+    "ativa": 82000,
+    "ativaLabel": "82.000+",
+    "reserva": 72000,
+    "reservaLabel": "72.000+ inativos",
+    "femininas": 0,
+    "femininasLabel": "93.802 cargos fixados em lei",
     "populacao": 46081801,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 576 hab. · 0,174%",
+    "relacaoLabel": "1 ativo / 562 hab. · 0,178%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Tarcísio de Freitas",
-    "comando": "Cel PM José Augusto Coutinho — Comandante-Geral",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Cel PM Glauce Anselmo Cavalli — Comandante-Geral",
+    "fonte": "PMESP; Governo de SP; SSP/SP Plano de Ação 2024; SGGD/SP; Leis SP 18.441/2026 e 18.442/2026; Portal da Transparência/SP",
+    "atualizado": "PMESP revisada em 03/05/2026 — números exatos não inferidos quando a fonte oficial informa faixa"
   },
   "pcsp": {
     "nome": "Polícia Civil de São Paulo",
@@ -3523,6 +3523,21 @@ function getResumoHeaderLabelsPorInstituicao(inst, dados = {}) {
   const ehFederal = ['pf', 'prf'].includes(instTexto) || dados.estadoSigla === 'BR';
   const ehMunicipal = instTexto === 'gm' || tipoTexto.includes('guarda municipal');
 
+  if (instTexto === 'pmesp') {
+    return {
+      'header-label-natureza': 'Natureza',
+      'header-label-uf': 'UF/Jurisdição',
+      'header-label-criacao': 'Origem histórica',
+      'header-label-ativa': 'Efetivo ativo oficial',
+      'header-label-reserva': 'Inativos (SSP)',
+      'header-label-total': 'Efetivo legal',
+      'header-label-populacao': dados.populacaoTitulo || 'População do Estado',
+      'header-label-relacao': dados.relacaoTitulo || 'Efetivo/população',
+      'header-label-governador': 'Chefe do Executivo',
+      'header-label-comando': 'Comando-Geral'
+    };
+  }
+
   if (ehPenal) {
     return {
       'header-label-natureza': 'Natureza',
@@ -3780,7 +3795,7 @@ function mudarInstituicao(novaInstituicao) {
     pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
-    pmesp: { titulo: "PMESP", desc: "Polícia Militar de São Paulo", cor: "#e60000", alertaPrev: "SPPREV (previdência) é descontada automaticamente — 14% sobre vencimentos, RETP, quinquênios e sexta-parte." },
+    pmesp: { titulo: "PMESP", desc: "Polícia Militar do Estado de São Paulo", cor: "#e60000", alertaPrev: "PMESP/SPPREV/SPSM: conferir a contribuição e a base de cálculo no holerite e na norma vigente. Não fixar percentual único sem validar cargo, situação funcional e rubricas." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil de São Paulo",   cor: "#4f4f4f", alertaPrev: "SPPREV (previdência) — 14% sobre vencimentos, GAT, quinquênios e sexta-parte." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
     pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },
@@ -4392,11 +4407,14 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'pmesp') {
     return {
-      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Ao longo de sua trajetória, a instituição passou por reorganizações, profissionalização, expansão territorial e consolidação do policiamento ostensivo e da preservação da ordem pública no estado.`,
+      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Em 2026, a instituição teve atualização relevante de comando, efetivo legal e carreira, com a posse da Cel PM Glauce Anselmo Cavalli no Comando-Geral e a Lei SP 18.442/2026 reorganizando efetivo, quadros, regime jurídico e regras gerais de promoção.`,
       marcos: [
         'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
         'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
-        'Modernização de formação, policiamento especializado, radiopatrulhamento, policiamento comunitário, tecnologia, inteligência e atendimento emergencial.'
+        'Estrutura institucional organizada em órgãos de direção geral, direção setorial, apoio, execução e assessoria, conforme página oficial de organização da PMESP.',
+        'Lei SP 18.442/2026: efetivo legal de 93.802 cargos, com quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção.',
+        'Lei SP 18.441/2026: vencimentos-base reclassificados a partir de 01/04/2026; remuneração total deve ser conferida em tabela oficial posterior quando disponível.',
+        '2026: Cel PM Glauce Anselmo Cavalli assume o Comando-Geral, primeira mulher a comandar a PMESP.'
       ]
     };
   }

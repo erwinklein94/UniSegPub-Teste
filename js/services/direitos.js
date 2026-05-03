@@ -278,7 +278,7 @@ function getSaudeTexto(inst) {
   const textos = {
     pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
     pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
-    pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes.',
+    pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes; a contribuição deve ser conferida na CBPM conforme vínculo, retribuição-base, pensão e dependentes.',
     pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
     pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
     pcerj: 'PCERJ: verificar assistência disponível, convênios e regras administrativas da Polícia Civil/RJ.',
@@ -385,7 +385,7 @@ function getInsalubridadeBase(inst) {
     return `Base: ${info.criacao}; laudo/ato administrativo, rubrica, lotação, escala e contracheque.`;
   }
   if (inst === 'pmac' || inst === 'pcac') return 'Base: legislação estadual do Acre, tabela salarial oficial, laudo/ato administrativo, lotação, escala, rubrica e contracheque.';
-  if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Não confundir com periculosidade.';
+  if (inst === 'pmesp' || inst === 'pcsp') return 'Conferir grau, base de cálculo, laudo e holerite. Para PMESP, a tabela SGGD/SP informa faixas de adicional, mas valor final depende da classificação oficial. Não confundir com periculosidade.';
   if (inst === 'pcpr') return 'Base: LC PR 259/2023, art. 39, §3º; observar ADI indicada na própria legislação e decisões aplicáveis.';
   if (inst === 'pmpr') return 'Base: regime de subsídio da carreira militar estadual do Paraná; conferir rubrica específica, laudo e legislação aplicável.';
   if (inst === 'pmrs' || inst === 'pcrs') return 'Base: legislação estadual do RS, laudo, rubrica de pagamento e enquadramento do local/função.';
@@ -471,6 +471,15 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('DEJEM / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária, quando houver escala, autorização e cumprimento do serviço.',
       'Depende de escala, disponibilidade, limite mensal e norma vigente.');
+    html += direitoItem('Lei 18.441/2026 — vencimento-base PMESP', 'verificar',
+      'A Lei 18.441/2026 reclassificou os vencimentos-base a partir de 01/04/2026. Isso não é sinônimo de remuneração total: RETP, representação, adicionais, quinquênios, sexta-parte e rubricas pessoais exigem conferência no holerite.',
+      'Base: Lei SP 18.441/2026, tabela SGGD/SP e demonstrativo de pagamento individual.');
+    html += direitoItem('Lei 18.442/2026 — promoção, quadros e efetivo legal', 'condicionado',
+      'A carreira deve ser lida com a reorganização de 2026: efetivo legal de 93.802 cargos, quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção. A promoção depende do quadro, curso, interstício, conduta e vaga.',
+      'Base: Lei SP 18.442/2026; conferir Boletim Geral, ficha funcional, atos de enquadramento e cursos exigidos.');
+    html += direitoItem('CBPM / Cruz Azul', 'condicionado',
+      'Benefício de assistência institucional dos militares paulistas. A contribuição e a cobertura dependem de regra própria, vínculo, dependentes e situação funcional; não tratar como plano de saúde comercial comum.',
+      'Base: CBPM/SP, Cruz Azul, SPSM e normas administrativas vigentes.');
   } else if (inst === 'pcsp') {
     html += direitoItem('DEJEC / Diária Especial por Jornada Extraordinária', 'condicionado',
       'Verba eventual para jornada extraordinária na Polícia Civil/SP, quando autorizada e efetivamente cumprida.',
