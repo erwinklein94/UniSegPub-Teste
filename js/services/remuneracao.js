@@ -125,6 +125,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PPSP — SGGD/SP — tabela oficial da área penitenciária julho/2025; LC SP 1.416/2024 e LC SP 1.425/2025',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/penitenciaria'
   },
+  prf: {
+    nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência',
+    url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf'
+  },
   pprj: {
     nome: 'PPRJ — GESPERJ/RJ — Caderno de Remuneração janeiro/2026 — SEAP/Polícia Penal',
     url: 'https://www.rj.gov.br/gesperj/sites/default/files/Caderno%20de%20Remunera%C3%A7%C3%A3o%20-%20janeiro%20-%202026.pdf'
@@ -292,6 +296,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   if (inst === 'pcsc') return `Regime por subsídio da PCSC: classes de Delegado, Agente, Escrivão e Psicólogo Policial conforme legislação estadual. Auxílio-alimentação SC: ${fmt(AUX_ALIM_SC_PADRAO)}, já citado nos editais de Agente/Escrivão 2025, mas não somado automaticamente ao bruto.`;
   if (inst === 'pmes') return `Regime por subsídio da PMES: tabela PM/CBM por posto/graduação e referências, com base na LC ES 420/2007 e valores de referência a partir de 01/12/2025. Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto.`;
   if (inst === 'pces') return `Regime por subsídio da PCES: Delegado e Oficial Investigador por categorias/referências. Carreiras periciais aparecem sinalizadas como PCIES/Perícia Oficial após segregação institucional. Auxílio-alimentação ES de referência: ${fmt(AUX_ALIM_ES_PADRAO)}; não somado automaticamente ao bruto.`;
+  if (inst === 'prf') return linha.benefDesc || 'PRF: subsídio federal por classe/padrão. Benefícios não somados: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, adicional de fronteira quando houver exercício em localidade prevista, diárias e indenizações.';
   return linha.benefDesc || 'Adicionais e benefícios dependem de legislação, cargo, lotação, escala e situação individual; não foram somados ao bruto.';
 }
 

@@ -2452,6 +2452,31 @@ const INSTITUICOES_FEDERAIS_ESTRUTURA = [
 ];
 
 function criarResumoFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return {
+      nome: 'Polícia Rodoviária Federal',
+      sigla: 'PRF',
+      estado: 'Brasil',
+      estadoSigla: 'BR',
+      tipo: 'Polícia Rodoviária Federal',
+      criacao: '24/07/1928 · Decreto nº 18.323/1928',
+      ativa: 13000,
+      ativaLabel: '13.000+ · PRF/2025',
+      reserva: 7000,
+      reservaLabel: '7.000+ aposentados e pensionistas · estimado/Transparência',
+      femininas: 1700,
+      femininasLabel: '1.700+ mulheres · estimado',
+      populacao: 77000,
+      populacaoTitulo: 'Rodovias federais fiscalizadas',
+      relacaoLabel: '1 PRF / 5,9 km de rodovia federal · estimado',
+      relacaoTitulo: 'Cobertura operacional',
+      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      comando: 'Antônio Fernando Souza Oliveira — Diretor-Geral da PRF',
+      fonte: 'PRF, Portal da Transparência, MGI/Servidor, Decreto nº 11.759/2023 e legislação federal',
+      atualizado: 'Pesquisa em 03/05/2026 · efetivo ativo aprox. PRF/2025 · remuneração federal 2026'
+    };
+  }
+
   return {
     nome: item.desc,
     sigla: item.titulo,
@@ -2489,18 +2514,52 @@ function criarCargosPfEstrutura(inst, sigla) {
 }
 
 function criarCargosPrfEstrutura(inst, sigla) {
+  const fonteKey = 'prf';
+  const criterio = 'Subsídio federal da carreira de Policial Rodoviário Federal, referência 2026, conforme tabela remuneratória federal/MGI e Lei nº 14.875/2024.';
+  const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, adicional de fronteira quando houver exercício em localidade prevista, diárias/indenizações e demais rubricas funcionais.';
   return [
-    criarCargoEstrutural(inst, 'diretor_geral', `${sigla} — Diretor-Geral / Direção Superior`, true),
-    criarCargoEstrutural(inst, 'classe_especial', `${sigla} — Policial Rodoviário Federal — Classe Especial`, false),
-    criarCargoEstrutural(inst, 'primeira_classe', `${sigla} — Policial Rodoviário Federal — 1ª Classe`, false),
-    criarCargoEstrutural(inst, 'segunda_classe', `${sigla} — Policial Rodoviário Federal — 2ª Classe`, false),
-    criarCargoEstrutural(inst, 'terceira_classe', `${sigla} — Policial Rodoviário Federal — 3ª Classe`, false, true),
-    criarCargoEstrutural(inst, 'aluno_formacao', `${sigla} — Aluno / Curso de Formação Profissional`, false),
-    criarCargoEstrutural(inst, 'administrativo', `${sigla} — Carreira administrativa / apoio`, false)
+    { id: 'especial_iii', nome: `${sigla} — Policial Rodoviário Federal — Especial III`, padrao: 23000.00, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'especial_ii', nome: `${sigla} — Policial Rodoviário Federal — Especial II`, padrao: 22249.43, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'especial_i', nome: `${sigla} — Policial Rodoviário Federal — Especial I`, padrao: 21524.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_vi', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe VI`, padrao: 20306.21, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_v', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe V`, padrao: 19649.56, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_iv', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe IV`, padrao: 19015.88, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_iii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe III`, padrao: 18404.39, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_ii', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe II`, padrao: 17814.28, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'primeira_i', nome: `${sigla} — Policial Rodoviário Federal — 1ª Classe I`, padrao: 17244.77, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_vi', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe VI`, padrao: 15949.32, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_v', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe V`, padrao: 15704.54, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_iv', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe IV`, padrao: 15467.49, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_iii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe III`, padrao: 15237.63, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_ii', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe II`, padrao: 15014.50, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'segunda_i', nome: `${sigla} — Policial Rodoviário Federal — 2ª Classe I`, padrao: 14798.58, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_iii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe III`, padrao: 12646.11, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_ii', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe II`, padrao: 12448.92, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' },
+    { id: 'terceira_i', nome: `${sigla} — Policial Rodoviário Federal — 3ª Classe I`, padrao: 12253.84, oficial: true, fonteKey, criterio, benefDesc, badge: 'Federal 2026' }
   ];
 }
 
 function criarConcursoFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return {
+      edital: 'PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026',
+      salario: 'Inicial 2026: R$ 12.253,84 · Classe 3ª, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial III.',
+      vagas: '1.500 vagas no concurso PRF 2021; 521 nomeações em 2025 e posse coletiva de aproximadamente 300 profissionais em janeiro/2026.',
+      cotas: 'Regras federais de cotas e edital Cebraspe/PRF 2021.',
+      idade: 'CNH categoria B ou superior; requisitos físicos, médicos, psicológicos, investigação social e demais condições do edital.',
+      escolaridade: 'Nível superior completo em qualquer área, conforme carreira de Policial Rodoviário Federal.',
+      banca: 'Cebraspe',
+      inscritos: '304 mil+ inscritos · referência concurso PRF 2021/Cebraspe',
+      materias: 'Língua Portuguesa, Raciocínio Lógico, Informática, Física, Ética, Geopolítica, Língua Estrangeira, legislação de trânsito, Direito Constitucional, Administrativo, Penal, Processo Penal, Direitos Humanos e legislação especial.',
+      etapas: 'Provas objetiva e discursiva, TAF, avaliação psicológica, avaliação de saúde, investigação social, avaliação biopsicossocial/heteroidentificação quando aplicável, curso de formação profissional e nomeação.',
+      cfsd: 'Curso de Formação Policial na UniPRF; novas turmas em 2025/2026 reforçaram efetivo em áreas estratégicas.',
+      estagio: 'Estágio probatório e desenvolvimento na carreira conforme Lei nº 9.654/1998, Decreto nº 8.282/2014 e normas federais.',
+      validade: 'Concurso PRF 2021 prorrogado até junho/2026.',
+      previsao: 'Novo concurso solicitado/anunciado em estudos; sem edital novo publicado até a referência desta atualização.',
+      site: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/concursos'
+    };
+  }
+
   return {
     edital: `${item.titulo} — ${item.desc} — estrutura de concurso a preencher`,
     salario: 'A confirmar em edital, tabela oficial federal ou Diário Oficial da União.',
@@ -2521,6 +2580,14 @@ function criarConcursoFederalEstrutura(item) {
 }
 
 function criarAcoesFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return [
+      { titulo: 'PRF — subsídio 2026, enquadramento e progressão', status: 'Tema permanente', ano: 'Lei 9.654/1998 · Lei 14.875/2024', tipo: 'individual/coletivo', desc: 'Conferência de classe e padrão da carreira de Policial Rodoviário Federal, progressão, promoção e aplicação do subsídio federal vigente em 2026.', base: 'Lei nº 9.654/1998, Lei nº 12.775/2012, Decreto nº 8.282/2014, Lei nº 14.875/2024 e tabela federal/MGI 2026.', fonte: 'PRF/MGI/Planalto', fonteUrl: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf', atualizado: 'Maio/2026' },
+      { titulo: 'PRF — adicional de fronteira, diárias e indenizações', status: 'Depende de lotação/escala', ano: 'Tema recorrente', tipo: 'individual', desc: 'Conferência de adicional de fronteira, diárias, indenizações, ajuda de custo, missões, deslocamentos, escalas e demais rubricas eventuais.', base: 'Lei nº 12.855/2013, portarias federais, escala, lotação, Sigepe/SouGov e ficha financeira.', fonte: 'Planalto/MGI/PRF', fonteUrl: 'https://www.planalto.gov.br/ccivil_03/_ato2011-2014/2013/lei/l12855.htm', atualizado: 'Maio/2026' },
+      { titulo: 'PRF — aposentadoria policial, integralidade, paridade e abono', status: 'Análise previdenciária', ano: 'EC 103/2019', tipo: 'individual', desc: 'Aplicação das regras de aposentadoria policial federal, transições, paridade/integralidade quando cabíveis, contribuição previdenciária e abono de permanência.', base: 'Constituição Federal, EC 103/2019, LC 51/1985, Lei Complementar 144/2014, Lei 9.654/1998 e histórico funcional.', fonte: 'Planalto/MGI/PRF', fonteUrl: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores', atualizado: 'Maio/2026' }
+    ];
+  }
+
   return [
     { titulo: `${item.titulo} — Estrutura de direitos e ações a preencher`, status: 'A preencher', ano: 'Base federal pendente', tipo: 'individual', desc: 'Espaço reservado para inserir ações judiciais, teses administrativas, precedentes, prazos e observações específicas desta instituição federal.', base: 'Preencher com lei federal, edital, estatuto, jurisprudência, atos administrativos e documentos funcionais.', fonte: 'Fonte oficial a preencher', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
     { titulo: `${item.titulo} — Remuneração, adicionais e indenizações`, status: 'Verificar caso a caso', ano: 'Tema permanente', tipo: 'individual', desc: 'Use este item para detalhar subsídio/vencimento, indenizações, adicionais, auxílio-alimentação, adicional de fronteira, plantões, serviço extraordinário e eventuais diferenças.', base: 'Tabela remuneratória federal, contracheque, escala, portaria, ato de designação e legislação aplicável.', fonte: 'Documentos funcionais e normas federais', fonteUrl: '', atualizado: 'Estrutura criada para preenchimento' },
@@ -2529,6 +2596,14 @@ function criarAcoesFederalEstrutura(item) {
 }
 
 function criarAssociacoesFederalEstrutura(item) {
+  if (item.inst === 'prf') {
+    return [
+      { nome: 'FenaPRF — Federação Nacional dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais ativos, aposentados e pensionistas', acao: 'Representação nacional da categoria, negociação coletiva, defesa institucional, previdência, saúde, segurança do trabalho e pautas remuneratórias.', site: 'https://fenaprf.org.br', telefone: 'Consultar canais oficiais da federação', mensalidade: 'Conforme sindicato estadual/filiado', servicos: 'Notícias da carreira, representação nacional, articulação legislativa, convênios e orientação institucional.' },
+      { nome: 'SINPRFs — Sindicatos estaduais dos Policiais Rodoviários Federais', foco: 'Policiais rodoviários federais por unidade da federação', acao: 'Representação regional, atendimento jurídico/administrativo, acompanhamento de escalas, lotação, remoção, saúde, remuneração e aposentadoria.', site: 'Consultar sindicato estadual da base', telefone: 'Consultar diretamente no sindicato local', mensalidade: 'Conforme regra de filiação', servicos: 'Atendimento sindical, jurídico, convênios, assembleias, comunicação e apoio ao associado.' },
+      { nome: 'Associações e entidades regionais da PRF', foco: 'Servidores PRF, familiares, aposentados e pensionistas', acao: 'Apoio associativo complementar, comunicação de classe, benefícios, atividades sociais e acompanhamento de pautas locais.', site: 'Consultar entidade regional', telefone: 'Consultar diretamente', mensalidade: 'Conforme entidade', servicos: 'Convênios, apoio social, comunicação institucional e suporte associativo.' }
+    ];
+  }
+
   return [
     { nome: `Associação/Sindicato — ${item.titulo}`, foco: `Brasil — ${item.desc}`, acao: 'Espaço reservado para cadastrar entidade representativa, atuação institucional, pautas remuneratórias, previdenciárias e jurídicas da carreira.', site: 'Consultar site oficial da entidade nacional', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Jurídico, comunicação institucional, convênios, assembleias, atendimento ao associado e acompanhamento legislativo — preencher conforme entidade.' },
     { nome: `Entidade representativa federal — ${item.titulo}`, foco: `Profissionais ativos, aposentados e pensionistas vinculados à ${item.desc}`, acao: 'Cadastrar aqui associações, sindicatos, clubes e entidades de classe nacionais/regionais existentes.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Serviços a preencher conforme entidade.' }
@@ -2550,13 +2625,22 @@ function aplicarEstruturaFederaisDados() {
     if (!INSTITUICOES_VALIDAS.includes(item.inst)) INSTITUICOES_VALIDAS.push(item.inst);
     HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
     HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
-    REMUNERACAO_FONTES_OFICIAIS[item.inst] = REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' };
-    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = {
-      titulo: item.titulo,
-      desc: item.desc,
-      cor: item.cor,
-      alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
-    };
+    REMUNERACAO_FONTES_OFICIAIS[item.inst] = item.inst === 'prf'
+      ? { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; PRF — Carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' }
+      : (REMUNERACAO_FONTES_OFICIAIS[item.inst] || { nome: `${item.titulo} — fonte oficial federal a preencher`, url: '#' });
+    CONFIGS_INSTITUICOES_GENERICAS[item.inst] = item.inst === 'prf'
+      ? {
+          titulo: 'PRF',
+          desc: 'Polícia Rodoviária Federal',
+          cor: item.cor,
+          alertaPrev: 'PRF: carreira federal de Policial Rodoviário Federal, com atuação em patrulhamento ostensivo, fiscalização de trânsito, segurança viária, enfrentamento ao crime nas rodovias federais e operações integradas.'
+        }
+      : {
+          titulo: item.titulo,
+          desc: item.desc,
+          cor: item.cor,
+          alertaPrev: `${item.titulo}: estrutura aberta para preenchimento. Conferir legislação federal, carreira, previdência, remuneração, indenizações, auxílios, regras de ingresso e direitos conforme fontes oficiais.`
+        };
     CONCURSOS[item.inst] = CONCURSOS[item.inst] || criarConcursoFederalEstrutura(item);
     ACOES_JUDICIAIS[item.inst] = ACOES_JUDICIAIS[item.inst] || criarAcoesFederalEstrutura(item);
     ASSOCIACOES[item.inst] = ASSOCIACOES[item.inst] || criarAssociacoesFederalEstrutura(item);
