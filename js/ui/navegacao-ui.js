@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
+/* Módulo organizado por responsabilidade — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
 function normalizarInstituicao(inst) {
@@ -37,9 +37,14 @@ function debounce(fn, ms = 150) {
 
 function mostrarToast(msg, tipo = 'success') {
   const toast = document.getElementById('toast');
+  if (!toast) return;
+
   toast.textContent = msg;
   toast.className = 'toast show' + (tipo === 'error' ? ' error' : '');
-  setTimeout(() => { toast.className = 'toast'; }, 3500);
+  window.clearTimeout(toast.__unisegToastTimer);
+  toast.__unisegToastTimer = window.setTimeout(() => {
+    toast.className = 'toast';
+  }, 3500);
 }
 
 function escapeHtml(str = '') {
@@ -224,11 +229,15 @@ function initTheme() {
     const isDark = tema === 'dark';
 
     if (style === 'icon') {
-      btn.innerHTML = isDark ? '☀️' : '🌙';
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span>'
+        : '<span aria-hidden="true">🌙</span>';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     } else {
-      btn.innerHTML = isDark ? '☀️ Claro' : '🌙 Escuro';
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span> Claro'
+        : '<span aria-hidden="true">🌙</span> Escuro';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     }

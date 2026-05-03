@@ -1,5 +1,5 @@
 /* ===== js/data/parametros-cargos.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
+/* Módulo organizado por responsabilidade — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* =======================================================
@@ -827,7 +827,7 @@ const CARGOS_PCAC = [
 ];
 
 /* ===== js/data/policia-penal.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
+/* Módulo organizado por responsabilidade — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
@@ -1614,7 +1614,7 @@ const CARGOS_PPAC = mapearTabelaPoliciaPenal(
 /* BLOCO 15.4 — Base de dados das ações judiciais por instituição */
 
 /* ===== js/data/bases-conteudo.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
+/* Módulo organizado por responsabilidade — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
 const ACOES_JUDICIAIS = {
@@ -2322,7 +2322,7 @@ const HEADER_BRASIL_FLAG = 'https://commons.wikimedia.org/wiki/Special:FilePath/
 const INSTITUICOES_VALIDAS = ['pmesp','pcsp','ppsp','pmac','pcac','ppac','pmerj','pcerj','pprj','pmmg','pcmg','ppmg','pmba','pcba','ppba','pmpr','pcpr','pppr','pmrs','pcrs','pprs','pmsc','pcsc','ppsc','pmes','pces','ppes','pmms','pcms','ppms','pmmt','pcmt','ppmt'];
 
 /* ===== js/ui/navegacao-ui.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Helpers, menu, tema, navegação e popularização de cargos.
+/* Módulo organizado por responsabilidade — Helpers, menu, tema, navegação e popularização de cargos.
    Mantém a ordem original para preservar compatibilidade. */
 
 function normalizarInstituicao(inst) {
@@ -2361,9 +2361,14 @@ function debounce(fn, ms = 150) {
 
 function mostrarToast(msg, tipo = 'success') {
   const toast = document.getElementById('toast');
+  if (!toast) return;
+
   toast.textContent = msg;
   toast.className = 'toast show' + (tipo === 'error' ? ' error' : '');
-  setTimeout(() => { toast.className = 'toast'; }, 3500);
+  window.clearTimeout(toast.__unisegToastTimer);
+  toast.__unisegToastTimer = window.setTimeout(() => {
+    toast.className = 'toast';
+  }, 3500);
 }
 
 function escapeHtml(str = '') {
@@ -2394,6 +2399,10 @@ function closeMenu() {
 }
 
 function abrirPaginaInicial() {
+  if (document.body?.dataset?.page && document.body.dataset.page !== 'principal') {
+    window.location.href = (window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS.principal) || 'index.html';
+    return;
+  }
   // Volta ao mesmo estado visual da primeira entrada no portal:
   // página principal, cabeçalho institucional genérico e nenhum Estado/instituição marcado.
   aplicarHeaderInicialPortal();
@@ -2410,7 +2419,11 @@ function switchPage(page) {
 
   const pageEl = document.getElementById('page-' + page);
   const menuEl = document.getElementById('menu-' + page);
-  if (!pageEl || !menuEl) return;
+  if (!pageEl || !menuEl) {
+    const destino = window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS[page];
+    if (destino) window.location.href = destino;
+    return;
+  }
 
   pageEl.classList.add('active');
   menuEl.classList.add('active');
@@ -2534,9 +2547,25 @@ function toggleTheme() {
 }
 
 function initTheme() {
-  const tema = document.documentElement.getAttribute('data-theme');
-  const btnHeader = document.getElementById('theme-toggle-header');
-  if (btnHeader) btnHeader.innerHTML = tema === 'dark' ? '☀️ Claro' : '🌙 Escuro';
+  const tema = document.documentElement.getAttribute('data-theme') || 'dark';
+  document.querySelectorAll('[data-theme-toggle]').forEach(btn => {
+    const style = btn.dataset.toggleStyle || 'text';
+    const isDark = tema === 'dark';
+
+    if (style === 'icon') {
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span>'
+        : '<span aria-hidden="true">🌙</span>';
+      btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+      btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+    } else {
+      btn.innerHTML = isDark
+        ? '<span aria-hidden="true">☀️</span> Claro'
+        : '<span aria-hidden="true">🌙</span> Escuro';
+      btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+      btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
+    }
+  });
 }
 
 /* ============================================================ */
@@ -2588,7 +2617,7 @@ function popularCargos(inst) {
 /* ============================================================ */
 
 /* ===== js/services/remuneracao.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
+/* Módulo organizado por responsabilidade — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === REMUNERAÇÃO TABELADA =================================== */
@@ -3202,7 +3231,7 @@ function carregarRemuneracaoTabelada() {
 /* ============================================================ */
 
 /* ===== js/ui/header-estados.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Troca de instituição, estados, cabeçalho e estrutura de UFs.
+/* Módulo organizado por responsabilidade — Troca de instituição, estados, cabeçalho e estrutura de UFs.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === TROCA INSTITUIÇÃO ====================================== */
@@ -5770,7 +5799,7 @@ function aplicarEstruturaFederaisNoHtml() {
     btn.setAttribute('aria-label', 'Selecionar instituições federais');
     btn.setAttribute('aria-pressed', 'false');
     btn.onclick = () => selecionarEstado('br');
-    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="Bandeira do Brasil"><span>BR</span>`;
+    btn.innerHTML = `<img src="${HEADER_BRASIL_FLAG}" alt="" aria-hidden="true"><span>BR</span>`;
     flags.appendChild(btn);
   }
 }
@@ -5981,7 +6010,7 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
       btn.setAttribute('aria-label', `Selecionar ${estado.nome}`);
       btn.setAttribute('aria-pressed', 'false');
       btn.onclick = () => selecionarEstado(estado.estado);
-      btn.innerHTML = `<img src="${estado.flag}" alt="Bandeira de ${estado.nome}"><span>${estado.sigla}</span>`;
+      btn.innerHTML = `<img src="${estado.flag}" alt="" aria-hidden="true"><span>${estado.sigla}</span>`;
       flags.appendChild(btn);
     });
   }
@@ -7497,7 +7526,7 @@ function renderizarBrasoesHistoria() {
 /* ============================================================ */
 
 /* ===== js/services/direitos.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
+/* Módulo organizado por responsabilidade — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === ANÁLISE DE DIREITOS (EXPANDIDA) ======================== */
@@ -8083,7 +8112,7 @@ function getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingress
 /* ============================================================ */
 
 /* ===== js/pages/concursos-comparador.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Concursos, comparador de carreiras, ações judiciais e associações.
+/* Módulo organizado por responsabilidade — Concursos, comparador de carreiras, ações judiciais e associações.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === CONCURSOS (RICO) ======================================= */
@@ -8708,6 +8737,332 @@ function carregarAssociacoes() {
 
 
 /* ============================================================ */
+
+/* ===== js/pages/contato-init.js ===== */
+/* Módulo organizado por responsabilidade — Contato, anúncios, contador e inicialização.
+   Mantém a ordem original para preservar compatibilidade. */
+
+/* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
+/* ============================================================ */
+/* BLOCO 15.13A — Direciona interessados em anúncios para o formulário */
+const ANUNCIO_AREAS_LABELS = {
+  home_topo: 'Topo da página principal',
+  home_meio_consultas: 'Meio da página principal, após consultas principais',
+  home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
+  menu_lateral: 'Menu lateral',
+  remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
+  direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
+  concursos_antes_lista: 'Aba Concursos, antes da lista',
+  comparador_antes_resultado: 'Aba Comparar Carreiras, antes dos resultados',
+  produtos_topo: 'Topo da aba Produtos',
+  acoes_antes_lista: 'Aba Ações Judiciais, antes da lista',
+  associacoes_antes_lista: 'Aba Associações, antes da lista',
+  rodape_geral: 'Antes do rodapé'
+};
+
+function abrirContatoAnuncio(area = '') {
+  const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
+  const paginaAtual = document.body?.dataset?.page || '';
+
+  if (paginaAtual && paginaAtual !== 'parceiros') {
+    const destino = (window.UNISEGPUB_PAGE_URLS && window.UNISEGPUB_PAGE_URLS.parceiros) || 'anuncie.html';
+    const query = area ? `?area=${encodeURIComponent(area)}` : '';
+    window.location.href = `${destino}${query}`;
+    return;
+  }
+
+  if (!paginaAtual && typeof switchPage === 'function') {
+    switchPage('parceiros');
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#parceiros');
+    }
+  }
+
+  window.setTimeout(() => {
+    const assunto = document.getElementById('contato_assunto');
+    const mensagem = document.getElementById('contato_mensagem');
+    const nome = document.getElementById('contato_nome');
+    const form = document.querySelector('#page-parceiros form');
+
+    if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
+
+    if (mensagem && !mensagem.value.trim()) {
+      mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
+      atualizarContador();
+    }
+
+    if (form) {
+      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    if (nome) {
+      try {
+        nome.focus({ preventScroll: true });
+      } catch (e) {
+        nome.focus();
+      }
+    }
+  }, 0);
+}
+
+/* ============================================================ */
+/* === CONTADOR DE CARACTERES (CONTATO) ======================= */
+/* ============================================================ */
+/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
+function atualizarContador() {
+  const txt = document.getElementById('contato_mensagem');
+  const cnt = document.getElementById('char-counter');
+  if (!txt || !cnt) return;
+  const len = txt.value.length;
+  cnt.textContent = `${len} / 2000 caracteres`;
+  cnt.classList.toggle('over', len > 1900);
+}
+
+/* ============================================================ */
+/* === ENVIO DE CONTATO ======================================= */
+/* ============================================================ */
+function enviarEmailContato(event) {
+  event.preventDefault();
+  const nome = document.getElementById('contato_nome').value.trim();
+  const email = document.getElementById('contato_email').value.trim();
+  const assunto = document.getElementById('contato_assunto').value;
+  const msg = document.getElementById('contato_mensagem').value.trim();
+
+  if (!nome || !email || !assunto || !msg) {
+    mostrarToast('Preencha todos os campos!', 'error');
+    return;
+  }
+  if (msg.length < 10) {
+    mostrarToast('Mensagem muito curta (mínimo 10 caracteres).', 'error');
+    return;
+  }
+  const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${msg}\n\n---\nEnviado via Universo Segurança Pública`);
+  const sub = encodeURIComponent(`[CONTATO] ${assunto}`);
+  window.location.href = `mailto:universosegpub@gmail.com?subject=${sub}&body=${corpo}`;
+  setTimeout(() => mostrarToast('E-mail aberto no seu cliente! Resposta em até 48h.'), 300);
+}
+
+/* ============================================================ */
+/* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
+/* ============================================================ */
+/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
+document.addEventListener('DOMContentLoaded', () => {
+  initTheme();
+  aplicarEstruturaEstadosFaltantesNoHtml();
+
+  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
+  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
+
+  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
+  aplicarHeaderInicialPortal();
+  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
+
+  // Direitos: atualizar quando muda cargo/situação/tempo.
+  ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.addEventListener('change', analisarDireitos);
+  });
+
+  // Acessibilidade: ESC fecha o menu.
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      const sb = document.getElementById('sidebar');
+      if (sb && sb.classList.contains('active')) toggleMenu();
+    }
+  });
+});
+
+/* ===== js/ui/event-bindings.js ===== */
+/* =======================================================
+   Eventos centralizados.
+   Remove a dependência de onclick/onchange/oninput inline no HTML.
+   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
+   ======================================================= */
+
+(function () {
+  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
+  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
+  function safeCall(fnName, args = []) {
+    const fn = window[fnName];
+    if (typeof fn === 'function') return fn.apply(window, args);
+    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
+    return undefined;
+  }
+
+  function bindClick(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('click', handler);
+    });
+  }
+
+  function bindChange(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('change', handler);
+    });
+  }
+
+  function bindInput(selector, handler) {
+    document.querySelectorAll(selector).forEach(el => {
+      el.addEventListener('input', handler);
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    bindClick('.menu-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu');
+    });
+
+    bindClick('#menuOverlay, .close-btn', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('toggleMenu', [false]);
+    });
+
+    bindClick('[data-theme-toggle]', event => { event.preventDefault(); safeCall('toggleTheme'); });
+
+    bindChange('#instituicao, #instituicao_header', event => {
+      safeCall('mudarInstituicao', [event.currentTarget.value]);
+    });
+
+    bindChange('#poderes_instituicao', event => {
+      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
+    });
+
+    // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
+    // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
+    // que já existiam no DOM no momento do carregamento.
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (!alvo) return;
+
+      if (alvo.matches('#comparador-selecao input[type="checkbox"]')) {
+        safeCall('carregarComparadorCarreiras');
+        return;
+      }
+
+      if (!(alvo instanceof HTMLSelectElement)) return;
+
+      if (alvo.matches('[data-consulta-esfera]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('alterarEsferaConsultaInstituicao', [page, alvo.value]);
+        return;
+      }
+
+      if (alvo.matches('[data-consulta-instituicao]')) {
+        const page = alvo.dataset.consultaPage;
+        safeCall('selecionarInstituicaoConsulta', [page, alvo.value]);
+      }
+    });
+
+    bindClick('.branch-option[data-branch]', event => {
+      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
+    });
+
+    bindClick('.state-flag[data-estado]', event => {
+      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
+    });
+
+    bindClick('.sidebar-nav a[href^="#"]', event => {
+      const link = event.currentTarget;
+      const page = (link.getAttribute('href') || '').replace('#', '');
+      if (!page) return;
+
+      event.preventDefault();
+
+      if (page === 'principal') {
+        safeCall('abrirPaginaInicial');
+        return;
+      }
+
+      safeCall('switchPage', [page]);
+    });
+
+    bindClick('[data-page]:not(body)', event => {
+      const el = event.currentTarget;
+      const page = el.dataset.page;
+      if (!page) return;
+
+      // Em páginas reais, links com href devem navegar normalmente.
+      // Botões/cards sem href ainda usam a compatibilidade com switchPage().
+      const href = el.getAttribute('href');
+      if (href && href !== '#') return;
+
+      event.preventDefault();
+      event.stopPropagation();
+      safeCall('switchPage', [page]);
+    });
+
+    document.querySelectorAll('[data-page]:not(body)').forEach(el => {
+      el.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          const href = event.currentTarget.getAttribute('href');
+          if (href && href !== '#') return;
+
+          event.preventDefault();
+          event.stopPropagation();
+          safeCall('switchPage', [event.currentTarget.dataset.page]);
+        }
+      });
+    });
+
+    bindClick('.ad-slot .ad-placeholder-link', event => {
+      const link = event.currentTarget;
+      const href = link.getAttribute('href') || '';
+
+      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
+      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
+        return;
+      }
+
+      const area = link.closest('[data-ad-area]')?.dataset.adArea;
+      if (!area) return;
+      event.preventDefault();
+      safeCall('abrirContatoAnuncio', [area]);
+    });
+
+    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
+    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
+
+    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
+    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
+    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
+    bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
+    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
+
+    bindChange('#comparador-esfera', event => {
+      safeCall('comparadorAlterarEsfera', [event.currentTarget.value]);
+    });
+
+    bindChange('#comparador-instituicao', () => {
+      safeCall('comparadorAdicionarInstituicaoSelecionada');
+    });
+
+    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
+
+    const contatoForm = document.querySelector('form[data-form="contato"]');
+    if (contatoForm) {
+      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
+    }
+  });
+
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+
+    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
+      safeCall('carregarImagemProduto', [img]);
+      return;
+    }
+
+    if (img.dataset.hideOnError === 'true') {
+      img.style.display = 'none';
+      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
+      if (container) container.classList.add('img-indisponivel');
+    }
+  }, true);
+})();
 
 /* ===== js/pages/poderes-deveres.js ===== */
 /* ============================================================
@@ -9527,319 +9882,256 @@ function mudarInstituicaoPoderes(valor) {
   poderesRenderizar(valor || currInst || 'pf');
 }
 
-/* ===== js/pages/contato-init.js ===== */
-/* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
-   Mantém a ordem original para preservar compatibilidade. */
+/* ===== js/core/page-context.js ===== */
+/* ============================================================
+   UniSegPub — Contexto MPA (Multi Page Application)
+   Mantém compatibilidade com o JS legado da versão em abas,
+   mas agora cada seção principal é uma página HTML real.
+   ============================================================ */
+(function () {
+  const PAGE_URLS = {
+    principal: 'index.html',
+    remuneracao: 'remuneracao.html',
+    direitos: 'direitos.html',
+    poderes: 'poderes-deveres.html',
+    brasoes: 'brasoes.html',
+    concursos: 'concursos.html',
+    comparar: 'comparar-carreiras.html',
+    produtos: 'produtos.html',
+    acoes: 'acoes-judiciais.html',
+    associacoes: 'associacoes-sindicatos.html',
+    parceiros: 'anuncie.html'
+  };
 
-/* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */
-/* ============================================================ */
-/* BLOCO 15.13A — Direciona interessados em anúncios para o formulário */
-const ANUNCIO_AREAS_LABELS = {
-  home_topo: 'Topo da página principal',
-  home_meio_consultas: 'Meio da página principal, após consultas principais',
-  home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
-  menu_lateral: 'Menu lateral',
-  remuneracao_antes_tabela: 'Aba Remuneração, antes da tabela',
-  direitos_entre_formulario_parecer: 'Aba Direitos, entre formulário e parecer',
-  concursos_antes_lista: 'Aba Concursos, antes da lista',
-  comparador_antes_resultado: 'Aba Comparar Carreiras, antes dos resultados',
-  produtos_topo: 'Topo da aba Produtos',
-  acoes_antes_lista: 'Aba Ações Judiciais, antes da lista',
-  associacoes_antes_lista: 'Aba Associações, antes da lista',
-  rodape_geral: 'Antes do rodapé'
-};
+  const PAGE_NAMES = {
+    principal: 'Principal',
+    remuneracao: 'Remuneração Tabelada',
+    direitos: 'Direitos e Vantagens',
+    poderes: 'Poderes e Deveres',
+    brasoes: 'Brasões e história',
+    concursos: 'Concursos',
+    comparar: 'Comparar Carreiras',
+    produtos: 'Produtos',
+    acoes: 'Ações Judiciais',
+    associacoes: 'Associações e Sindicatos',
+    parceiros: 'Parceiros - Anuncie aqui!'
+  };
 
-function abrirContatoAnuncio(area = '') {
-  const areaNome = ANUNCIO_AREAS_LABELS[area] || 'Espaço de anúncio do portal';
 
-  switchPage('parceiros');
 
-  if (window.history && window.history.replaceState) {
-    window.history.replaceState(null, '', '#parceiros');
+  const AD_AREA_LABELS = {
+    home_topo: 'Topo da página principal',
+    home_meio_consultas: 'Meio da página principal, após consultas principais',
+    home_meio_produtos: 'Página principal, antes de conteúdos e produtos',
+    menu_lateral: 'Menu lateral',
+    remuneracao_antes_tabela: 'Página de remuneração, antes da tabela',
+    direitos_entre_formulario_parecer: 'Página de direitos, entre formulário e parecer',
+    concursos_antes_lista: 'Página de concursos, antes da lista',
+    comparador_antes_resultado: 'Página de comparação, antes dos resultados',
+    produtos_topo: 'Topo da página de produtos',
+    acoes_antes_lista: 'Página de ações judiciais, antes da lista',
+    associacoes_antes_lista: 'Página de associações, antes da lista',
+    rodape_geral: 'Antes do rodapé'
+  };
+
+  window.UNISEGPUB_PAGE_URLS = Object.assign({}, PAGE_URLS);
+  window.UNISEGPUB_PAGE_NAMES = Object.assign({}, PAGE_NAMES);
+
+  function getCurrentPage() {
+    return document.body?.dataset?.page || 'principal';
   }
 
-  window.setTimeout(() => {
+  function setActivePage(page) {
+    document.querySelectorAll('.page-section').forEach(section => {
+      section.classList.toggle('active', section.id === `page-${page}`);
+    });
+
+    document.querySelectorAll('.sidebar-nav a').forEach(link => {
+      const active = link.id === `menu-${page}`;
+      link.classList.toggle('active', active);
+      if (active) link.setAttribute('aria-current', 'page');
+      else link.removeAttribute('aria-current');
+    });
+  }
+
+  function fillAdContactFormFromUrl() {
+    const page = getCurrentPage();
+    if (page !== 'parceiros') return;
+
+    const params = new URLSearchParams(window.location.search);
+    const area = params.get('area') || '';
+    if (!area) return;
+
+    const areaNome = AD_AREA_LABELS[area] || 'Espaço de anúncio do portal';
     const assunto = document.getElementById('contato_assunto');
     const mensagem = document.getElementById('contato_mensagem');
-    const nome = document.getElementById('contato_nome');
-    const form = document.querySelector('#page-parceiros form');
 
     if (assunto) assunto.value = 'Parceria Comercial / Anúncio';
-
     if (mensagem && !mensagem.value.trim()) {
       mensagem.value = `Olá, tenho interesse em anunciar no Universo Segurança Pública.\n\nÁrea de interesse: ${areaNome}.\n\nGostaria de receber informações sobre disponibilidade, valores, formatos e próximos passos.`;
-      atualizarContador();
+      if (typeof window.atualizarContador === 'function') window.atualizarContador();
+    }
+  }
+
+  function initPageSpecificContent(page) {
+    if (typeof window.atualizarVisibilidadeResumoInstitucional === 'function') {
+      window.atualizarVisibilidadeResumoInstitucional(page);
     }
 
-    if (form) {
-      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (typeof window.atualizarHeaderDesc === 'function') {
+      window.atualizarHeaderDesc(PAGE_NAMES[page] || PAGE_NAMES.principal);
     }
 
-    if (nome) {
-      try {
-        nome.focus({ preventScroll: true });
-      } catch (e) {
-        nome.focus();
-      }
+    const institutionalPages = ['remuneracao', 'direitos', 'poderes', 'brasoes', 'concursos', 'acoes', 'associacoes'];
+    if (institutionalPages.includes(page) && typeof window.prepararPaginaComSelecaoInstituicao === 'function') {
+      window.prepararPaginaComSelecaoInstituicao(page);
     }
-  }, 0);
-}
 
-/* ============================================================ */
-/* === CONTADOR DE CARACTERES (CONTATO) ======================= */
-/* ============================================================ */
-/* BLOCO 15.14 — Formulário de contato e contador de caracteres */
-function atualizarContador() {
-  const txt = document.getElementById('contato_mensagem');
-  const cnt = document.getElementById('char-counter');
-  if (!txt || !cnt) return;
-  const len = txt.value.length;
-  cnt.textContent = `${len} / 2000 caracteres`;
-  cnt.classList.toggle('over', len > 1900);
-}
-
-/* ============================================================ */
-/* === ENVIO DE CONTATO ======================================= */
-/* ============================================================ */
-function enviarEmailContato(event) {
-  event.preventDefault();
-  const nome = document.getElementById('contato_nome').value.trim();
-  const email = document.getElementById('contato_email').value.trim();
-  const assunto = document.getElementById('contato_assunto').value;
-  const msg = document.getElementById('contato_mensagem').value.trim();
-
-  if (!nome || !email || !assunto || !msg) {
-    mostrarToast('Preencha todos os campos!', 'error');
-    return;
-  }
-  if (msg.length < 10) {
-    mostrarToast('Mensagem muito curta (mínimo 10 caracteres).', 'error');
-    return;
-  }
-  const corpo = encodeURIComponent(`Nome: ${nome}\nE-mail: ${email}\n\nMensagem:\n${msg}\n\n---\nEnviado via Universo Segurança Pública`);
-  const sub = encodeURIComponent(`[CONTATO] ${assunto}`);
-  window.location.href = `mailto:universosegpub@gmail.com?subject=${sub}&body=${corpo}`;
-  setTimeout(() => mostrarToast('E-mail aberto no seu cliente! Resposta em até 48h.'), 300);
-}
-
-/* ============================================================ */
-/* === EVENT LISTENERS / INICIALIZAÇÃO ======================== */
-/* ============================================================ */
-/* BLOCO 15.15 — Inicialização, eventos automáticos e atalhos de teclado */
-document.addEventListener('DOMContentLoaded', () => {
-  initTheme();
-  aplicarEstruturaEstadosFaltantesNoHtml();
-
-  // Monta os seletores internos das abas institucionais, sem escolher PMESP automaticamente.
-  if (typeof montarSeletoresConsultaInstituicao === 'function') montarSeletoresConsultaInstituicao();
-
-  // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
-  aplicarHeaderInicialPortal();
-  if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
-
-  // Direitos: atualizar quando muda cargo/situação/tempo.
-  ['cargo_dir', 'situacao_dir', 'tempo_dir'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('change', analisarDireitos);
-  });
-
-  // Acessibilidade: ESC fecha o menu.
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      const sb = document.getElementById('sidebar');
-      if (sb && sb.classList.contains('active')) toggleMenu();
+    if (page === 'comparar' && typeof window.inicializarComparadorCarreiras === 'function') {
+      window.inicializarComparadorCarreiras();
     }
-  });
-});
 
-/* ===== js/ui/event-bindings.js ===== */
-/* =======================================================
-   Eventos centralizados.
-   Remove a dependência de onclick/onchange/oninput inline no HTML.
-   Este arquivo deve ser carregado depois dos dados, serviços e páginas.
-   ======================================================= */
-
-(function () {
-  if (window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__) return;
-  window.__UNISEGPUB_EVENT_BINDINGS_INSTALLED__ = true;
-  function safeCall(fnName, args = []) {
-    const fn = window[fnName];
-    if (typeof fn === 'function') return fn.apply(window, args);
-    console.warn(`[UniSegPub] Função não encontrada: ${fnName}`);
-    return undefined;
-  }
-
-  function bindClick(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('click', handler);
-    });
-  }
-
-  function bindChange(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('change', handler);
-    });
-  }
-
-  function bindInput(selector, handler) {
-    document.querySelectorAll(selector).forEach(el => {
-      el.addEventListener('input', handler);
-    });
+    fillAdContactFormFromUrl();
   }
 
   document.addEventListener('DOMContentLoaded', () => {
-    bindClick('.menu-btn', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      safeCall('toggleMenu');
-    });
-
-    bindClick('#menuOverlay, .close-btn', event => {
-      event.preventDefault();
-      event.stopPropagation();
-      safeCall('toggleMenu', [false]);
-    });
-
-    bindClick('#theme-toggle-header', () => safeCall('toggleTheme'));
-
-    bindChange('#instituicao, #instituicao_header', event => {
-      safeCall('mudarInstituicao', [event.currentTarget.value]);
-    });
-
-    bindChange('#poderes_instituicao', event => {
-      safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
-    });
-
-    // Os seletores internos de cada página são inseridos dinamicamente por page-context.js.
-    // Por isso, eles precisam de delegação de evento; bindChange() só pegaria elementos
-    // que já existiam no DOM no momento do carregamento.
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (!alvo || !(alvo instanceof HTMLSelectElement)) return;
-
-      if (alvo.matches('[data-consulta-esfera]')) {
-        const page = alvo.dataset.consultaPage;
-        safeCall('alterarEsferaConsultaInstituicao', [page, alvo.value]);
-        return;
-      }
-
-      if (alvo.matches('[data-consulta-instituicao]')) {
-        const page = alvo.dataset.consultaPage;
-        safeCall('selecionarInstituicaoConsulta', [page, alvo.value]);
-      }
-    });
-
-    bindClick('.branch-option[data-branch]', event => {
-      safeCall('selecionarRamo', [event.currentTarget.dataset.branch]);
-    });
-
-    bindClick('.state-flag[data-estado]', event => {
-      safeCall('selecionarEstado', [event.currentTarget.dataset.estado]);
-    });
-
-    bindClick('.sidebar-nav a[href^="#"]', event => {
-      const link = event.currentTarget;
-      const page = (link.getAttribute('href') || '').replace('#', '');
-      if (!page) return;
-
-      event.preventDefault();
-
-      if (page === 'principal') {
-        safeCall('abrirPaginaInicial');
-        return;
-      }
-
-      safeCall('switchPage', [page]);
-    });
-
-    bindClick('[data-page]:not(body)', event => {
-      const el = event.currentTarget;
-      const page = el.dataset.page;
-      if (!page) return;
-
-      // Em páginas reais, links com href devem navegar normalmente.
-      // Botões/cards sem href ainda usam a compatibilidade com switchPage().
-      const href = el.getAttribute('href');
-      if (href && href !== '#') return;
-
-      event.preventDefault();
-      event.stopPropagation();
-      safeCall('switchPage', [page]);
-    });
-
-    document.querySelectorAll('[data-page]:not(body)').forEach(el => {
-      el.addEventListener('keydown', event => {
-        if (event.key === 'Enter' || event.key === ' ') {
-          const href = event.currentTarget.getAttribute('href');
-          if (href && href !== '#') return;
-
-          event.preventDefault();
-          event.stopPropagation();
-          safeCall('switchPage', [event.currentTarget.dataset.page]);
-        }
-      });
-    });
-
-    bindClick('.ad-slot .ad-placeholder-link', event => {
-      const link = event.currentTarget;
-      const href = link.getAttribute('href') || '';
-
-      // Produtos/anúncios com link externo devem abrir o afiliado diretamente.
-      if (link.classList.contains('ad-placeholder-link--product') || /^https?:\/\//i.test(href)) {
-        return;
-      }
-
-      const area = link.closest('[data-ad-area]')?.dataset.adArea;
-      if (!area) return;
-      event.preventDefault();
-      safeCall('abrirContatoAnuncio', [area]);
-    });
-
-    bindInput('#idade_dir, #renda_dir', () => safeCall('analisarDireitos'));
-    bindChange('#idade_dir, #renda_dir, #sexo_dir, #ingresso_dir, #dependente_dir, #local_especial_dir, #requisitos_apos_dir', () => safeCall('analisarDireitos'));
-
-    bindClick('[data-action="comparador-estado-atual"]', () => safeCall('comparadorSelecionarEstadoAtual'));
-    bindClick('[data-action="comparador-todas"]', () => safeCall('comparadorSelecionarTodas'));
-    bindClick('[data-action="comparador-limpar"]', () => safeCall('comparadorLimparSelecao'));
-    bindClick('[data-action="comparador-adicionar-instituicao"]', () => safeCall('comparadorAdicionarInstituicaoSelecionada'));
-    bindClick('#comparador-toggle-lista', () => safeCall('toggleComparadorLista'));
-
-    bindChange('#comparador-esfera', event => {
-      safeCall('comparadorAlterarEsfera', [event.currentTarget.value]);
-    });
-
-    bindChange('#comparador-instituicao', () => {
-      safeCall('comparadorAdicionarInstituicaoSelecionada');
-    });
-
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (alvo && alvo.matches('#comparador-selecao input[type="checkbox"]')) {
-        safeCall('carregarComparadorCarreiras');
-      }
-    });
-
-    bindInput('#contato_mensagem', () => safeCall('atualizarContador'));
-
-    const contatoForm = document.querySelector('form[data-form="contato"]');
-    if (contatoForm) {
-      contatoForm.addEventListener('submit', event => safeCall('enviarEmailContato', [event]));
-    }
+    const page = getCurrentPage();
+    setActivePage(page);
+    initPageSpecificContent(page);
   });
-
-  document.addEventListener('error', event => {
-    const img = event.target;
-    if (!(img instanceof HTMLImageElement)) return;
-
-    if (img.matches('.produto-imagem img[data-img-base], .taf-produto-imagem img[data-img-base]')) {
-      safeCall('carregarImagemProduto', [img]);
-      return;
-    }
-
-    if (img.dataset.hideOnError === 'true') {
-      img.style.display = 'none';
-      const container = img.closest('.produto-imagem, .taf-produto-imagem, .partner-image-slot');
-      if (container) container.classList.add('img-indisponivel');
-    }
-  }, true);
 })();
+
+/* ===== js/brasao-lightbox.js ===== */
+/*
+  Ampliação dos brasões do cabeçalho.
+  - Mantém a imagem do brasão grande no cabeçalho.
+  - Ao clicar, abre uma visualização ampliada da imagem atual.
+  - Fecha pelo botão, clique fora da imagem ou tecla ESC.
+*/
+(function () {
+  'use strict';
+
+  const HEADER_BRASAO_SELECTOR = '#header-active-flag';
+  const LIGHTBOX_ID = 'brasao-lightbox';
+
+  let ultimoFocoAntesDoLightbox = null;
+
+  function getImagemCabecalho() {
+    return document.querySelector(HEADER_BRASAO_SELECTOR);
+  }
+
+  function prepararImagemCabecalho() {
+    const img = getImagemCabecalho();
+    if (!img) return;
+
+    const moldura = img.closest('.current-flag-frame');
+    if (moldura) {
+      // O brasão agora é interativo, então não deve ficar escondido da acessibilidade.
+      moldura.removeAttribute('aria-hidden');
+      moldura.classList.add('brasao-header-clickable');
+    }
+
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', 'Ampliar imagem do brasão no cabeçalho');
+    img.setAttribute('title', 'Clique para ampliar o brasão');
+  }
+
+  function garantirLightbox() {
+    let lightbox = document.getElementById(LIGHTBOX_ID);
+    if (lightbox) return lightbox;
+
+    lightbox = document.createElement('div');
+    lightbox.id = LIGHTBOX_ID;
+    lightbox.className = 'brasao-lightbox';
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Imagem ampliada do brasão');
+
+    lightbox.innerHTML = [
+      '<div class="brasao-lightbox__backdrop" data-brasao-fechar="true"></div>',
+      '<div class="brasao-lightbox__content" role="document">',
+      '  <button type="button" class="brasao-lightbox__close" data-brasao-fechar="true" aria-label="Fechar imagem ampliada">×</button>',
+      '  <img class="brasao-lightbox__img" alt="Imagem ampliada do brasão">',
+      '  <p class="brasao-lightbox__caption">Clique fora da imagem, use ESC ou o botão × para fechar.</p>',
+      '</div>'
+    ].join('');
+
+    document.body.appendChild(lightbox);
+    return lightbox;
+  }
+
+  function abrirLightbox(imgOrigem) {
+    if (!imgOrigem || !imgOrigem.currentSrc && !imgOrigem.src) return;
+
+    const lightbox = garantirLightbox();
+    const imgAmpliada = lightbox.querySelector('.brasao-lightbox__img');
+    const botaoFechar = lightbox.querySelector('.brasao-lightbox__close');
+
+    imgAmpliada.src = imgOrigem.currentSrc || imgOrigem.src;
+    imgAmpliada.alt = imgOrigem.alt || 'Imagem ampliada do brasão';
+
+    ultimoFocoAntesDoLightbox = document.activeElement;
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('brasao-lightbox-open');
+
+    if (botaoFechar) botaoFechar.focus({ preventScroll: true });
+  }
+
+  function fecharLightbox() {
+    const lightbox = document.getElementById(LIGHTBOX_ID);
+    if (!lightbox || !lightbox.classList.contains('is-open')) return;
+
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('brasao-lightbox-open');
+
+    if (ultimoFocoAntesDoLightbox && typeof ultimoFocoAntesDoLightbox.focus === 'function') {
+      ultimoFocoAntesDoLightbox.focus({ preventScroll: true });
+    }
+  }
+
+  function iniciar() {
+    prepararImagemCabecalho();
+    garantirLightbox();
+
+    document.addEventListener('click', function (event) {
+      const imgCabecalho = event.target.closest(HEADER_BRASAO_SELECTOR);
+      if (imgCabecalho) {
+        event.preventDefault();
+        abrirLightbox(imgCabecalho);
+        return;
+      }
+
+      if (event.target.closest('[data-brasao-fechar="true"]')) {
+        event.preventDefault();
+        fecharLightbox();
+      }
+    });
+
+    document.addEventListener('keydown', function (event) {
+      const imgCabecalho = event.target.closest && event.target.closest(HEADER_BRASAO_SELECTOR);
+      if (imgCabecalho && (event.key === 'Enter' || event.key === ' ')) {
+        event.preventDefault();
+        abrirLightbox(imgCabecalho);
+        return;
+      }
+
+      if (event.key === 'Escape') fecharLightbox();
+    });
+
+    const img = getImagemCabecalho();
+    if (img) {
+      const observer = new MutationObserver(prepararImagemCabecalho);
+      observer.observe(img, { attributes: true, attributeFilter: ['src', 'alt', 'class'] });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciar, { once: true });
+  } else {
+    iniciar();
+  }
+}());

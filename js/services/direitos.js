@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Análise de direitos, vantagens e aposentadoria.
+/* Módulo organizado por responsabilidade — Análise de direitos, vantagens e aposentadoria.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === ANÁLISE DE DIREITOS (EXPANDIDA) ======================== */

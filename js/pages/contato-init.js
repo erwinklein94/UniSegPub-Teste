@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Contato, anúncios, contador e inicialização.
+/* Módulo organizado por responsabilidade — Contato, anúncios, contador e inicialização.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === ESPAÇOS DE ANÚNCIO / LINK PARA PARCEIROS =============== */

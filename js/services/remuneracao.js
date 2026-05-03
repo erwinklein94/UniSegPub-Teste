@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Cálculos e renderização da remuneração tabelada.
+/* Módulo organizado por responsabilidade — Cálculos e renderização da remuneração tabelada.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* === REMUNERAÇÃO TABELADA =================================== */

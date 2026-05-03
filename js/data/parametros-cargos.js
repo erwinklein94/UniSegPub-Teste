@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Parâmetros oficiais e cargos principais por instituição.
+/* Módulo organizado por responsabilidade — Parâmetros oficiais e cargos principais por instituição.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* =======================================================

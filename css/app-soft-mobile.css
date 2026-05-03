@@ -1185,3 +1185,11 @@ html[data-theme="light"] .app-bottom-nav {
 html[data-theme="light"] .menu-overlay.active {
   background: rgba(180, 186, 196, .42) !important;
 }
+
+/* Acessibilidade: foco de teclado visível em elementos interativos */
+:where(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 3px solid var(--dourado, #f4c542);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+

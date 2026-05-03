@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Bases de ações judiciais, associações, concursos e estado inicial.
+/* Módulo organizado por responsabilidade — Bases de ações judiciais, associações, concursos e estado inicial.
    Mantém a ordem original para preservar compatibilidade. */
 
 const ACOES_JUDICIAIS = {

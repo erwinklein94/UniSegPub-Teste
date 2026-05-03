@@ -1,4 +1,4 @@
-/* Chunk gerado a partir de js/script-original.js — Informações e tabelas da Polícia Penal.
+/* Módulo organizado por responsabilidade — Informações e tabelas da Polícia Penal.
    Mantém a ordem original para preservar compatibilidade. */
 
 /* BLOCO 15.3.1 — Cargos-base e dossiê informativo da Polícia Penal por Estado
