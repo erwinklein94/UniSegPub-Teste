@@ -122,8 +122,8 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://sites.diretasistemas.com.br/sites/1377/wp-content/uploads/2026/02/10103833/Portal-do-Servidor.pdf'
   },
   ppsp: {
-    nome: 'PPSP — SAP/SP e ALESP — LC SP 1.416/2024, LC SP 1.425/2025 e concurso SAP 2025',
-    url: 'https://www.sap.sp.gov.br/sec_adm_penitenciaria/Noticias/policia-penal-paulista-abre-inscricoes-para-concurso'
+    nome: 'PPSP — SGGD/SP — tabela oficial da área penitenciária julho/2025; LC SP 1.416/2024 e LC SP 1.425/2025',
+    url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/penitenciaria'
   },
   pprj: {
     nome: 'PPRJ — GESPERJ/RJ — Caderno de Remuneração janeiro/2026 — SEAP/Polícia Penal',

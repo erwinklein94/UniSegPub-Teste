@@ -186,7 +186,7 @@ function atualizarHeaderDesc(descInstituicao) {
     pcsc: 'Polícia Civil de Santa Catarina',
     pmes: 'Polícia Militar do Espírito Santo',
     pces: 'Polícia Civil do Espírito Santo',
-    ppsp: 'Polícia Penal de São Paulo',
+    ppsp: 'Polícia Penal do Estado de São Paulo — PPESP/PPSP',
     pprj: 'Polícia Penal do Rio de Janeiro',
     ppmg: 'Polícia Penal de Minas Gerais',
     ppba: 'Polícia Penal da Bahia',
