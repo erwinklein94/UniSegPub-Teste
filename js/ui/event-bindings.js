@@ -51,6 +51,10 @@
       safeCall('mudarInstituicao', [event.currentTarget.value]);
     });
 
+    bindChange('#instituicao_home', event => {
+      safeCall('selecionarInstituicaoPaginaInicial', [event.currentTarget.value]);
+    });
+
     bindChange('#poderes_instituicao', event => {
       safeCall('mudarInstituicaoPoderes', [event.currentTarget.value]);
     });

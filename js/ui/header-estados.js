@@ -2552,8 +2552,7 @@ function inserirOptionFederalNoSelect(select, item) {
 
 function aplicarEstruturaFederaisNoHtml() {
   INSTITUICOES_FEDERAIS_ESTRUTURA.forEach(item => {
-    inserirOptionFederalNoSelect(document.getElementById('instituicao_header'), item);
-    inserirOptionFederalNoSelect(document.getElementById('instituicao'), item);
+    ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => inserirOptionFederalNoSelect(document.getElementById(id), item));
   });
 
   const flags = document.querySelector('.header-state-flags');
@@ -2687,8 +2686,7 @@ function inserirOptionBombeiroNoSelect(select, item) {
 
 function aplicarEstruturaBombeirosMilitaresNoHtml() {
   BOMBEIROS_MILITARES_ESTRUTURA.forEach(item => {
-    inserirOptionBombeiroNoSelect(document.getElementById('instituicao_header'), item);
-    inserirOptionBombeiroNoSelect(document.getElementById('instituicao'), item);
+    ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => inserirOptionBombeiroNoSelect(document.getElementById(id), item));
   });
 }
 
@@ -2795,7 +2793,36 @@ function montarSelectInstituicoes(select) {
 }
 
 function montarSelectsInstituicoes() {
-  document.querySelectorAll('#instituicao, #instituicao_header').forEach(montarSelectInstituicoes);
+  document.querySelectorAll('#instituicao, #instituicao_header, #instituicao_home').forEach(montarSelectInstituicoes);
+}
+
+function prepararSelectInstituicaoHome() {
+  const seletor = document.getElementById('instituicao_home');
+  if (!seletor) return;
+
+  montarSelectInstituicoes(seletor);
+  const primeiraOpcao = seletor.options && seletor.options[0];
+  if (primeiraOpcao) {
+    primeiraOpcao.disabled = false;
+    primeiraOpcao.selected = true;
+    primeiraOpcao.textContent = 'Resumo do portal';
+    primeiraOpcao.value = '';
+  }
+  seletor.value = '';
+}
+
+function selecionarInstituicaoPaginaInicial(inst) {
+  const valor = String(inst || '').trim();
+  if (!valor) {
+    aplicarHeaderInicialPortal();
+    prepararSelectInstituicaoHome();
+    return;
+  }
+
+  mudarInstituicao(valor);
+  atualizarVisibilidadeResumoInstitucional('principal');
+  const info = HEADER_INSTITUICOES_INFO[valor];
+  if (info) mostrarToast(`${info.titulo} selecionada no resumo da página inicial.`);
 }
 
 function aplicarEstruturaEstadosFaltantesNoHtml() {
@@ -2814,8 +2841,7 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
     });
   };
 
-  montarOptgroups(document.getElementById('instituicao_header'));
-  montarOptgroups(document.getElementById('instituicao'));
+  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => montarOptgroups(document.getElementById(id)));
 
   const flags = document.querySelector('.header-state-flags');
   if (flags) {
@@ -3465,7 +3491,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-governador', 'Polícias militares, bombeiros militares, civis e penais');
   setTexto('header-resumo-comando', '—');
 
-  ['instituicao', 'instituicao_header'].forEach(id => {
+  ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
     const seletor = document.getElementById(id);
     if (seletor) seletor.value = '';
   });
@@ -3801,7 +3827,7 @@ function mudarInstituicao(novaInstituicao) {
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
 
-  ['instituicao', 'instituicao_header'].forEach(id => {
+  ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
     const seletor = document.getElementById(id);
     if (!seletor) return;
     const existeOpcao = Array.from(seletor.options || []).some(o => o.value === inst);

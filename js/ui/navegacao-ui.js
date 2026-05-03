@@ -126,21 +126,21 @@ function switchPage(page) {
 }
 
 function atualizarVisibilidadeResumoInstitucional(page = '') {
-  const ativa = document.querySelector('.page-section.active');
-  const pagina = page || (ativa ? ativa.id.replace('page-', '') : 'principal');
   const painelResumo = document.querySelector('.header-facts-panel');
   const cardInstitucional = document.querySelector('.header-institution-card');
   const blocoPrincipal = document.querySelector('.header-institution-main');
-  const mostrarResumo = pagina === 'principal';
 
+  // O resumo do cabeçalho deve existir em todas as páginas:
+  // começa como resumo do portal e vira resumo institucional somente quando
+  // a instituição for escolhida no seletor daquela própria página.
   if (painelResumo) {
-    painelResumo.hidden = !mostrarResumo;
-    painelResumo.style.display = mostrarResumo ? '' : 'none';
-    painelResumo.setAttribute('aria-hidden', mostrarResumo ? 'false' : 'true');
+    painelResumo.hidden = false;
+    painelResumo.style.display = '';
+    painelResumo.setAttribute('aria-hidden', 'false');
   }
 
-  if (cardInstitucional) cardInstitucional.classList.toggle('sem-resumo-institucional', !mostrarResumo);
-  if (blocoPrincipal) blocoPrincipal.classList.toggle('sem-resumo-institucional', !mostrarResumo);
+  if (cardInstitucional) cardInstitucional.classList.remove('sem-resumo-institucional');
+  if (blocoPrincipal) blocoPrincipal.classList.remove('sem-resumo-institucional');
 }
 
 function getNomeAbaAtual() {

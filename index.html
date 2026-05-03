@@ -27,7 +27,7 @@
 <!-- BLOCO 01.5 — CSS dividido em chunks para carregamento mais leve -->
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
-<link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503headerresumo2" rel="stylesheet"/>
+<link href="css/override-logoleao.css?v=20260503homeinst1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260503homeinst1" rel="stylesheet"/>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -433,6 +433,24 @@
 </aside>
 <!-- BLOCO 03.5 — Toast/mensagem temporária controlada pelo JavaScript -->
 <div aria-live="polite" class="toast" id="toast" role="status"></div>
+<!-- BLOCO 03.6 — Seletor institucional exclusivo da página inicial -->
+<section aria-label="Escolha de instituição para o resumo do cabeçalho da página inicial" class="home-institution-selector-wrap">
+<div class="consulta-instituicao-card home-institution-selector" data-home-selector="principal">
+<div class="consulta-instituicao-texto">
+<span>Resumo da página inicial</span>
+<strong>Escolha uma instituição para ver no cabeçalho</strong>
+<small>Esta escolha muda apenas o cabeçalho da página inicial. Ao entrar em outra aba, o cabeçalho volta ao resumo do portal até você escolher uma instituição no seletor da própria aba.</small>
+</div>
+<div class="consulta-instituicao-grid consulta-instituicao-grid--home">
+<div class="field">
+<label for="instituicao_home">Instituição</label>
+<select aria-label="Escolha a instituição exibida no cabeçalho da página inicial" id="instituicao_home">
+<option selected="" value="">Resumo do portal</option>
+</select>
+</div>
+</div>
+</div>
+</section>
 <!-- BLOCO 04 — PÁGINA PRINCIPAL / RESUMO DO SITE -->
 <main class="page-section active" id="page-principal" role="main">
 <!-- BLOCO 04.1 — Hero inicial e botões principais -->
@@ -659,11 +677,11 @@
 <script defer="" src="js/data/parametros-cargos.js"></script>
 <script defer="" src="js/data/policia-penal.js"></script>
 <script defer="" src="js/data/bases-conteudo.js"></script>
-<script defer="" src="js/ui/navegacao-ui.js"></script>
+<script defer="" src="js/ui/navegacao-ui.js?v=20260503homeinst1"></script>
 <script defer="" src="js/services/remuneracao.js"></script>
-<script defer="" src="js/ui/header-estados.js?v=20260503headerresumo2"></script>
-<script defer="" src="js/pages/contato-init.js"></script>
-<script defer="" src="js/ui/event-bindings.js"></script>
+<script defer="" src="js/ui/header-estados.js?v=20260503homeinst1"></script>
+<script defer="" src="js/pages/contato-init.js?v=20260503homeinst1"></script>
+<script defer="" src="js/ui/event-bindings.js?v=20260503homeinst1"></script>
 <script defer="" src="js/core/page-context.js"></script>
 <script defer="" src="js/brasao-lightbox.js?v=20260501"></script>
 </body>

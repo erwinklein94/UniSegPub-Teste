@@ -114,6 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Aplica o cabeçalho inicial do portal; a instituição específica só entra após escolha do usuário.
   aplicarHeaderInicialPortal();
+  if (typeof prepararSelectInstituicaoHome === 'function') prepararSelectInstituicaoHome();
   if (typeof limparConsultaInstitucionalInicial === 'function') limparConsultaInstitucionalInicial();
 
   // Direitos: atualizar quando muda cargo/situação/tempo.
