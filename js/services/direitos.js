@@ -279,7 +279,7 @@ function getSaudeTexto(inst) {
     pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
     pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes; a contribuição deve ser conferida na CBPM conforme vínculo, retribuição-base, pensão e dependentes.',
-    pcsp: 'PCSP: pode haver atendimento pelo IAMSPE e outros mecanismos de assistência conforme vínculo, contribuição e regras do Estado.',
+    pcsp: 'PCSP: pode haver IAMSPE, auxílio-alimentação, DEJEC, insalubridade, quinquênios, sexta-parte e outras rubricas conforme vínculo, dias trabalhados, escala, laudo, contribuição e regras do Estado.',
     pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul ou estruturas próprias da corporação.',
     pcerj: 'PCERJ: verificar assistência disponível, convênios e regras administrativas da Polícia Civil/RJ.',
     pmmg: 'PMMG: assistência e previdência vinculadas ao IPSM, conforme contribuição, dependentes e rede credenciada.',
@@ -482,8 +482,20 @@ function getVantagensEspecificas(inst) {
       'Base: CBPM/SP, Cruz Azul, SPSM e normas administrativas vigentes.');
   } else if (inst === 'pcsp') {
     html += direitoItem('DEJEC / Diária Especial por Jornada Extraordinária', 'condicionado',
-      'Verba eventual para jornada extraordinária na Polícia Civil/SP, quando autorizada e efetivamente cumprida.',
-      'Depende de escala, autorização, limite e regulamentação vigente.');
+      'Verba eventual para jornada extraordinária na Polícia Civil/SP, quando autorizada e efetivamente cumprida. A Lei 18.440/2026 prevê jornada extraordinária de 8 horas contínuas fora da jornada normal, com limite mensal e coeficientes próprios por carreira.',
+      'Base: Lei SP 18.440/2026; conferir escala, autorização, limite de até 10 diárias mensais, coeficiente aplicável e holerite.');
+    html += direitoItem('Lei 18.443/2026 — classes, promoção e evolução funcional', 'condicionado',
+      'A carreira policial civil paulista foi organizada em 3ª Classe, 2ª Classe, 1ª Classe e Classe Especial. Promoções dependem de interstício, avaliação satisfatória, Curso Específico de Aperfeiçoamento e ausência de impedimentos.',
+      'Base: Lei SP 18.443/2026; conferir classe, cargo, histórico disciplinar, curso e atos publicados.');
+    html += direitoItem('Lei 18.441/2026 — vencimentos-base', 'verificar',
+      'A lei reclassificou os vencimentos-base a partir de 01/04/2026. Isso não é remuneração total: RETP, ADPJ, representação, quinquênios, sexta-parte, insalubridade e rubricas pessoais precisam ser conferidos na tabela oficial e no holerite.',
+      'Base: Lei SP 18.441/2026, tabela SGGD/SP julho/2025 e demonstrativo de pagamento individual.');
+    html += direitoItem('RETP, quinquênios e sexta-parte', 'verificar',
+      'RETP, adicional por tempo de serviço e sexta-parte exigem conferência da base de cálculo, tempo de serviço, cargo, classe e rubricas incluídas ou excluídas.',
+      'Base: LC SP 547/1988, Constituição do Estado de SP art. 129 e ficha financeira.');
+    html += direitoItem('IAMSPE, auxílio-alimentação e assistência', 'condicionado',
+      'Podem existir assistência pelo IAMSPE e auxílio-alimentação conforme vínculo, contribuição, dias efetivamente trabalhados e regras estaduais. Não somar automaticamente ao salário bruto.',
+      'Base: IAMSPE/Lei SP 17.293/2020; Lei SP 7.524/1991; conferir cadastro, contracheque e situação funcional.');
   } else if (inst === 'pmerj') {
     html += direitoItem('RAS / Serviço Adicional', 'condicionado',
       'Pode haver remuneração por serviço adicional, escala extraordinária ou programa equivalente, conforme disponibilidade e autorização.',

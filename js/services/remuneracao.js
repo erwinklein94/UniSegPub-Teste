@@ -22,7 +22,7 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
   },
   pcsp: {
-    nome: 'SGGD/SP — Área Policial — Polícia Civil — mês de referência julho/2025',
+    nome: 'SGGD/SP — Área Policial — PCSP — total julho/2025; Lei SP 18.441/2026 atualiza vencimentos-base desde 01/04/2026',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
   },
   pmerj: {
@@ -200,7 +200,7 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
 
   if (inst === 'pcsp') {
     const carreiraDelegado = /delegado/i.test(linha.cargo || '');
-    return `RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. ${carreiraDelegado ? 'Delegados podem ter verbas próprias de representação quando previstas. ' : ''}Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. Insalubridade: possível conforme grau, laudo e enquadramento.`;
+    return `Tabela total oficial com referência julho/2025. RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. A Lei SP 18.441/2026 atualizou vencimentos-base desde 01/04/2026; não use o vencimento-base como total sem conferir tabela posterior/holerite. ${carreiraDelegado ? 'Delegados podem ter ADPJ e verbas próprias de representação quando previstas. ' : ''}Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. DEJEC: eventual, condicionada à escala/autorização e limites da Lei 18.440/2026. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. IAMSPE e insalubridade dependem de contribuição, grau, laudo e enquadramento.`;
   }
 
   if (isPoliciaPenal(inst)) {
@@ -329,6 +329,12 @@ const REMUNERACAO_SP_OFICIAL = {
       linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 6505.76, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),
       linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 6141.88, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),
       linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 5803.06, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp')
+    ]),
+    ...['Agente Policial'].flatMap(nome => [
+      linhaRemuneracaoOficial(`${nome} — Classe Especial`, 5685.64, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 1ª Classe`, 5371.36, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 2ª Classe`, 5037.22, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),
+      linhaRemuneracaoOficial(`${nome} — 3ª Classe`, 4725.36, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp')
     ]),
     ...['Atendente Necrotério Policial', 'Auxiliar Papiloscopista Policial'].flatMap(nome => [
       linhaRemuneracaoOficial(`${nome} — Classe Especial`, 5685.64, 0, 'Salário inicial oficial: salário-base + RETP. Mês de referência: julho/2025; Lei SP 18.441/2026 atualizou vencimentos-base a partir de 01/04/2026, mas o total 2026 deve ser conferido em tabela oficial posterior.', 'Benefícios não somados; adicional de insalubridade é variável conforme classificação oficial; demais rubricas dependem do vínculo, cargo e holerite.', 'pcsp'),

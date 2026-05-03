@@ -171,7 +171,7 @@ function atualizarHeaderDesc(descInstituicao) {
 
   const descs = {
     pmesp: 'Polícia Militar do Estado de São Paulo',
-    pcsp: 'Polícia Civil de São Paulo',
+    pcsp: 'Polícia Civil do Estado de São Paulo',
     pmerj: 'Polícia Militar do Rio de Janeiro',
     pcerj: 'Polícia Civil do Rio de Janeiro',
     pmmg: 'Polícia Militar de Minas Gerais',
