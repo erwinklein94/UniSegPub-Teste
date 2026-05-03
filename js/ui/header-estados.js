@@ -453,6 +453,31 @@ const HEADER_INSTITUICOES_RESUMO = {
     "fonte": "PMESP; Governo de SP; SSP/SP Plano de Ação 2024; SGGD/SP; Leis SP 18.441/2026 e 18.442/2026; Portal da Transparência/SP",
     "atualizado": "PMESP revisada em 03/05/2026 — números exatos não inferidos quando a fonte oficial informa faixa"
   },
+  "bmsp": {
+    "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
+    "sigla": "CBPMESP",
+    "siglaInterna": "BMSP",
+    "estado": "São Paulo",
+    "estadoSigla": "SP",
+    "tipo": "Bombeiro Militar / órgão da PMESP",
+    "criacao": "10/03/1880 · origem histórica",
+    "ativa": 8604,
+    "ativaLabel": "8.604 · ref. TCE/SP 2019/2020",
+    "reserva": 0,
+    "reservaLabel": "A confirmar · recorte CBPMESP",
+    "femininas": 0,
+    "femininasLabel": "A confirmar em fonte oficial",
+    "populacao": 46081801,
+    "populacaoTitulo": "População do Estado",
+    "relacaoLabel": "1 ativo / 5.356 hab. · ref. histórica",
+    "relacaoTitulo": "Relação ativa/população",
+    "governador": "Tarcísio de Freitas",
+    "comando": "Cel PM Alexandre Merlin — Comandante do Corpo de Bombeiros da PMESP",
+    "estrutura": "CCB — Comando do Corpo de Bombeiros, vinculado à PMESP; atuação em prevenção e combate a incêndios, busca e salvamento, salvamento aquático, defesa civil, fiscalização técnica e educação pública.",
+    "emergencia": "193",
+    "fonte": "CBPMESP; PMESP; Governo de SP; ALESP; SGGD/SP; TCE/SP; DOE/SP; Vunesp",
+    "atualizado": "CBPMESP/BMSP revisado em 03/05/2026 — chave interna bmsp preservada para compatibilidade"
+  },
   "pcsp": {
     "nome": "Polícia Civil do Estado de São Paulo",
     "sigla": "PCSP",
@@ -2599,7 +2624,7 @@ const BOMBEIROS_MILITARES_ESTRUTURA = [
   { estado: 'rs', nome: 'Rio Grande do Sul', sigla: 'RS', inst: 'bmrs', titulo: 'BMRS', desc: 'Corpo de Bombeiros Militar do Rio Grande do Sul' },
   { estado: 'sc', nome: 'Santa Catarina', sigla: 'SC', inst: 'bmsc', titulo: 'BMSC', desc: 'Corpo de Bombeiros Militar de Santa Catarina' },
   { estado: 'se', nome: 'Sergipe', sigla: 'SE', inst: 'bmse', titulo: 'BMSE', desc: 'Corpo de Bombeiros Militar de Sergipe' },
-  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'BMSP', desc: 'Corpo de Bombeiros Militar de São Paulo' },
+  { estado: 'sp', nome: 'São Paulo', sigla: 'SP', inst: 'bmsp', titulo: 'CBPMESP', desc: 'Corpo de Bombeiros da Polícia Militar do Estado de São Paulo' },
   { estado: 'to', nome: 'Tocantins', sigla: 'TO', inst: 'bmto', titulo: 'BMTO', desc: 'Corpo de Bombeiros Militar do Tocantins' }
 ];
 
@@ -3798,6 +3823,7 @@ function mudarInstituicao(novaInstituicao) {
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
     pmesp: { titulo: "PMESP", desc: "Polícia Militar do Estado de São Paulo", cor: "#e60000", alertaPrev: "PMESP/SPPREV/SPSM: conferir a contribuição e a base de cálculo no holerite e na norma vigente. Não fixar percentual único sem validar cargo, situação funcional e rubricas." },
+    bmsp: { titulo: "CBPMESP", desc: "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo", cor: "#b91c1c", alertaPrev: "CBPMESP/BMSP: carreira militar estadual vinculada à PMESP; conferir SPPREV/SPSM, RETP, DEJEM, CBPM/Cruz Azul, insalubridade, escalas e rubricas no holerite e na norma vigente." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil do Estado de São Paulo", cor: "#4f4f4f", alertaPrev: "PCSP/SPPREV/IAMSPE: conferir contribuição previdenciária, assistência, quinquênios, sexta-parte, RETP, DEJEC, insalubridade e demais rubricas no holerite e na norma vigente. Não tratar os 14% como regra isolada sem validar base e situação funcional." },
     pmerj: { titulo: "PMERJ", desc: "Polícia Militar do Rio de Janeiro", cor: "#1E3084", alertaPrev: "RioPrevidência — 14% sobre soldo, GRET, GHP, GRAM e triênios." },
     pcerj: { titulo: "PCERJ", desc: "Polícia Civil do Rio de Janeiro",    cor: "#6B7280", alertaPrev: "RioPrevidência — 14% sobre vencimento-base, AAP/representação, GHP, GATC e adicionais remuneratórios." },

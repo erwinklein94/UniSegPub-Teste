@@ -21,6 +21,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'SGGD/SP — Área Policial — PMESP — total julho/2025; Lei SP 18.441/2026 atualiza vencimentos-base desde 01/04/2026',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
   },
+  bmsp: {
+    nome: 'SGGD/SP — Área Policial — CBPMESP/BMSP — usa tabela PMESP por posto/graduação; total julho/2025; Lei SP 18.441/2026 atualiza vencimentos-base desde 01/04/2026',
+    url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
+  },
   pcsp: {
     nome: 'SGGD/SP — Área Policial — PCSP — total julho/2025; Lei SP 18.441/2026 atualiza vencimentos-base desde 01/04/2026',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/policial'
@@ -191,6 +195,13 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return linha.benefDesc || 'PCMT: a tabela salarial cadastrada usa referências do Portal do Servidor/SEPLAG-MT para Escrivão e Delegado; abonos, adicionais, plantões e demais rubricas dependem da legislação estadual, lotação, escala e contracheque.';
   }
 
+  if (inst === 'bmsp') {
+    const representacao = /(comandante|coronel|cel|ten cel)/i.test(linha.cargo || '')
+      ? ' Gratificação de representação: pode existir para postos/funções específicas e já aparece incorporada quando constar na fonte oficial.'
+      : '';
+    return `Tabela total oficial SGGD/SP com referência julho/2025, aplicada aos bombeiros militares por posto/graduação da PMESP. RETP, quando aplicável, já está considerada no bruto oficial desta tabela. A Lei SP 18.441/2026 atualizou vencimentos-base desde 01/04/2026; não use o vencimento-base como total sem conferir tabela posterior/holerite. DEJEM, quinquênio, sexta-parte, auxílio-alimentação, insalubridade, CBPM/Cruz Azul, diárias, ajuda de custo, transporte e demais rubricas dependem de situação funcional, laudo, escala, vínculo, designação e contracheque.${representacao}`;
+  }
+
   if (inst === 'pmesp') {
     const representacao = /(cmt g|coronel|cel|ten cel)/i.test(linha.cargo || '')
       ? ' Gratificação de representação: pode existir para postos/funções específicas e já aparece incorporada quando constar na fonte oficial.'
@@ -344,6 +355,16 @@ const REMUNERACAO_SP_OFICIAL = {
     ])
   ]
 };
+
+
+REMUNERACAO_SP_OFICIAL.bmsp = REMUNERACAO_SP_OFICIAL.pmesp.map(linha => Object.assign({}, linha, {
+  cargo: String(linha.cargo || '')
+    .replace('CMT G — Comandante Geral PM', 'CCB — Comandante do Corpo de Bombeiros da PMESP')
+    .replace(/PM/g, 'BM'),
+  fonteKey: 'bmsp',
+  criterio: 'Salário inicial oficial por posto/graduação: tabela SGGD/SP da área policial, referência julho/2025. Aplicável ao CBPMESP/BMSP enquanto órgão da PMESP. A Lei SP 18.441/2026 atualizou vencimentos-base desde 01/04/2026; total 2026 deve ser confirmado em tabela oficial posterior ou holerite.',
+  benefDesc: 'Benefícios não somados; RETP, DEJEM, insalubridade, CBPM/Cruz Azul, diárias, ajuda de custo, transporte e rubricas pessoais dependem de posto/graduação, escala, laudo, vínculo e situação funcional.'
+}));
 
 const REMUNERACAO_MG_OFICIAL = {
   pmmg: [
