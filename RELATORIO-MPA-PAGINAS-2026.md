@@ -138,3 +138,35 @@ Após a separação em páginas reais, os dados das instituições não haviam s
 - Verificação de resposta HTTP 200 para todas as páginas HTML em servidor local.
 - Smoke test em Node simulando carregamento das páginas e seleção de instituição em cada página principal.
 
+
+---
+
+## Revisão funcional v3 — Brasão ampliado e handlers globais
+
+### Problema encontrado
+
+O arquivo `js/brasao-lightbox.js`, responsável por ampliar a imagem do brasão, ficou carregado apenas em `brasoes.html` após a divisão em páginas reais. No site original, esse script era carregado globalmente no `index.html`, portanto o zoom do brasão do cabeçalho funcionava em todas as abas/páginas.
+
+### Correções aplicadas
+
+- Restaurei o carregamento de `js/brasao-lightbox.js` em todas as páginas HTML.
+- Atualizei a versão do script para `v=20260503` para evitar cache antigo.
+- Melhorei o `js/brasao-lightbox.js` para aceitar clique/teclado em:
+  - `#header-active-flag`, o brasão/logotipo do cabeçalho;
+  - `.brasoes-imagem`, o brasão exibido dentro da página **Brasões e história**.
+- Adicionei delegação de evento e `MutationObserver` para imagens criadas dinamicamente depois que o usuário seleciona uma instituição.
+- Reforcei fechamento do lightbox por botão, clique no fundo e tecla `Esc`.
+- Adicionei foco acessível e cursor de zoom para as imagens ampliáveis.
+
+### Revisões executadas
+
+- `node --check` em todos os arquivos JavaScript.
+- Conferência de todos os HTML para garantir exatamente uma inclusão de `js/brasao-lightbox.js` por página.
+- Conferência de que cada página mantém apenas um `<main>` ativo.
+- Conferência de que o item ativo da sidebar corresponde ao `data-page` do `body`.
+- Conferência de scripts e CSS locais inexistentes: nenhum arquivo local referenciado ficou ausente.
+- Conferência das funções essenciais por página: remuneração, direitos, poderes, brasões, concursos, comparador, ações, associações e contato.
+
+### Observação
+
+O Chromium/headless do ambiente continuou bloqueando navegação por política administrativa, então a validação visual completa em navegador não pôde ser executada aqui. A correção foi feita por revisão estática, validação de dependências e checagem de sintaxe dos scripts.

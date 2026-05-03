@@ -1,19 +1,41 @@
 /*
-  Ampliação dos brasões do cabeçalho.
-  - Mantém a imagem do brasão grande no cabeçalho.
-  - Ao clicar, abre uma visualização ampliada da imagem atual.
+  Ampliação dos brasões.
+  - Mantém a imagem do brasão grande no cabeçalho clicável.
+  - Também permite ampliar o brasão exibido na página "Brasões e história".
   - Fecha pelo botão, clique fora da imagem ou tecla ESC.
 */
 (function () {
   'use strict';
 
   const HEADER_BRASAO_SELECTOR = '#header-active-flag';
+  const PAGE_BRASAO_SELECTOR = '.brasoes-imagem';
+  const BRASAO_CLICK_SELECTOR = `${HEADER_BRASAO_SELECTOR}, ${PAGE_BRASAO_SELECTOR}`;
   const LIGHTBOX_ID = 'brasao-lightbox';
 
   let ultimoFocoAntesDoLightbox = null;
+  let observerCabecalho = null;
+
+  function isElement(node) {
+    return node && node.nodeType === 1;
+  }
+
+  function closest(target, selector) {
+    return isElement(target) && typeof target.closest === 'function'
+      ? target.closest(selector)
+      : null;
+  }
 
   function getImagemCabecalho() {
     return document.querySelector(HEADER_BRASAO_SELECTOR);
+  }
+
+  function tornarImagemClicavel(img, label) {
+    if (!img) return;
+    img.setAttribute('role', 'button');
+    img.setAttribute('tabindex', '0');
+    img.setAttribute('aria-label', label || 'Ampliar imagem do brasão');
+    img.setAttribute('title', 'Clique para ampliar o brasão');
+    img.classList.add('brasao-lightbox-trigger');
   }
 
   function prepararImagemCabecalho() {
@@ -27,10 +49,20 @@
       moldura.classList.add('brasao-header-clickable');
     }
 
-    img.setAttribute('role', 'button');
-    img.setAttribute('tabindex', '0');
-    img.setAttribute('aria-label', 'Ampliar imagem do brasão no cabeçalho');
-    img.setAttribute('title', 'Clique para ampliar o brasão');
+    tornarImagemClicavel(img, 'Ampliar imagem do brasão no cabeçalho');
+  }
+
+  function prepararImagensPaginaBrasoes(root = document) {
+    root.querySelectorAll(PAGE_BRASAO_SELECTOR).forEach(img => {
+      tornarImagemClicavel(img, 'Ampliar brasão da instituição selecionada');
+      const wrap = img.closest('.brasoes-imagem-wrap');
+      if (wrap) wrap.classList.add('brasao-header-clickable');
+    });
+  }
+
+  function prepararTodasImagens() {
+    prepararImagemCabecalho();
+    prepararImagensPaginaBrasoes();
   }
 
   function garantirLightbox() {
@@ -59,7 +91,7 @@
   }
 
   function abrirLightbox(imgOrigem) {
-    if (!imgOrigem || !imgOrigem.currentSrc && !imgOrigem.src) return;
+    if (!imgOrigem || !(imgOrigem.currentSrc || imgOrigem.src)) return;
 
     const lightbox = garantirLightbox();
     const imgAmpliada = lightbox.querySelector('.brasao-lightbox__img');
@@ -89,40 +121,59 @@
     }
   }
 
+  function instalarObservadores() {
+    const imgCabecalho = getImagemCabecalho();
+    if (imgCabecalho && !observerCabecalho) {
+      observerCabecalho = new MutationObserver(prepararImagemCabecalho);
+      observerCabecalho.observe(imgCabecalho, { attributes: true, attributeFilter: ['src', 'alt', 'class'] });
+    }
+
+    const observerConteudo = new MutationObserver(mutations => {
+      for (const mutation of mutations) {
+        mutation.addedNodes.forEach(node => {
+          if (!isElement(node)) return;
+          if (node.matches && node.matches(PAGE_BRASAO_SELECTOR)) {
+            prepararImagensPaginaBrasoes(node.parentElement || document);
+          } else if (node.querySelector && node.querySelector(PAGE_BRASAO_SELECTOR)) {
+            prepararImagensPaginaBrasoes(node);
+          }
+        });
+      }
+    });
+    observerConteudo.observe(document.body, { childList: true, subtree: true });
+  }
+
   function iniciar() {
-    prepararImagemCabecalho();
+    prepararTodasImagens();
     garantirLightbox();
+    instalarObservadores();
 
     document.addEventListener('click', function (event) {
-      const imgCabecalho = event.target.closest(HEADER_BRASAO_SELECTOR);
-      if (imgCabecalho) {
+      const imgClicada = closest(event.target, BRASAO_CLICK_SELECTOR);
+      if (imgClicada) {
         event.preventDefault();
-        abrirLightbox(imgCabecalho);
+        event.stopPropagation();
+        abrirLightbox(imgClicada);
         return;
       }
 
-      if (event.target.closest('[data-brasao-fechar="true"]')) {
+      if (closest(event.target, '[data-brasao-fechar="true"]')) {
         event.preventDefault();
+        event.stopPropagation();
         fecharLightbox();
       }
     });
 
     document.addEventListener('keydown', function (event) {
-      const imgCabecalho = event.target.closest && event.target.closest(HEADER_BRASAO_SELECTOR);
-      if (imgCabecalho && (event.key === 'Enter' || event.key === ' ')) {
+      const imgClicada = closest(event.target, BRASAO_CLICK_SELECTOR);
+      if (imgClicada && (event.key === 'Enter' || event.key === ' ')) {
         event.preventDefault();
-        abrirLightbox(imgCabecalho);
+        abrirLightbox(imgClicada);
         return;
       }
 
       if (event.key === 'Escape') fecharLightbox();
     });
-
-    const img = getImagemCabecalho();
-    if (img) {
-      const observer = new MutationObserver(prepararImagemCabecalho);
-      observer.observe(img, { attributes: true, attributeFilter: ['src', 'alt', 'class'] });
-    }
   }
 
   if (document.readyState === 'loading') {
