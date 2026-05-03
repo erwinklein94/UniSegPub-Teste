@@ -692,3 +692,274 @@ footer .footer-disclaimer strong {
     padding: 8px;
   }
 }
+
+
+/* ============================================================
+   Ajustes v2 — contraste mais alto, paleta cinza/preto/branco,
+   e prevenção de sobreposição em desktop.
+   ============================================================ */
+
+:root {
+  --app-soft-bg: #121315;
+  --app-soft-panel: #1a1c1f;
+  --app-soft-card: #202327;
+  --app-soft-card-2: #17191d;
+  --app-soft-text: #f3f4f6;
+  --app-soft-muted: #c4c8cf;
+  --app-soft-border: rgba(255, 255, 255, 0.10);
+  --app-soft-shadow-dark: rgba(0, 0, 0, 0.55);
+  --app-soft-shadow-light: rgba(255, 255, 255, 0.03);
+  --app-soft-shadow: 14px 14px 28px var(--app-soft-shadow-dark), -8px -8px 18px var(--app-soft-shadow-light);
+  --app-soft-shadow-small: 7px 7px 15px rgba(0, 0, 0, 0.48), -4px -4px 10px rgba(255,255,255,0.03);
+  --app-soft-shadow-inset: inset 4px 4px 10px rgba(0, 0, 0, 0.45), inset -3px -3px 8px rgba(255,255,255,0.03);
+}
+
+body {
+  background-color: var(--app-soft-bg) !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='900' height='900' viewBox='0 0 900 900' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2' stroke-opacity='.055'%3E%3Cpath d='M-100 76c145-34 270-21 376 40 145 83 260 88 390 11 88-52 191-64 314-34'/%3E%3Cpath d='M-93 142c138-38 266-28 383 31 151 77 278 74 389-9 84-63 186-82 304-56'/%3E%3Cpath d='M-110 235c117-42 237-46 360-13 171 46 305 29 402-51 92-76 206-105 344-83'/%3E%3Cpath d='M-125 343c143-55 276-55 399 2 142 66 267 59 374-23 100-77 220-104 361-80'/%3E%3Cpath d='M-102 472c119-34 236-30 352 12 166 60 307 47 423-37 96-70 207-91 333-63'/%3E%3Cpath d='M-100 610c140-54 268-51 383 9 146 76 283 71 411-15 86-58 187-71 305-38'/%3E%3Cpath d='M-95 742c123-40 242-38 357 5 164 62 302 52 414-31 90-67 198-87 322-61'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(circle at 18% 8%, rgba(255,255,255,0.04), transparent 30%),
+    radial-gradient(circle at 82% 12%, rgba(255,255,255,0.03), transparent 26%) !important;
+  color: var(--app-soft-text) !important;
+}
+
+body::before {
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  opacity: .6;
+}
+
+.site-header {
+  background: linear-gradient(145deg, rgba(33,35,39,0.96), rgba(20,21,24,0.98)) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.menu-btn,
+.theme-toggle-header,
+.close-btn,
+.app-floating-action,
+.app-bottom-item,
+.principal-btn,
+.btn-primary,
+.btn-secondary,
+.btn-submit,
+.ad-button,
+.comparador-add-btn,
+.comparador-toggle-lista {
+  background: linear-gradient(145deg, #2b2f34, #17191d) !important;
+  color: #f6f7f9 !important;
+  border-color: rgba(255,255,255,0.12) !important;
+}
+
+.menu-btn span {
+  background: #f6f7f9 !important;
+}
+
+.current-flag-frame,
+.current-flag-frame.brand-logo-frame,
+.current-flag-frame.institution-logo-frame,
+.principal-card-icon {
+  background: linear-gradient(145deg, #2a2d31, #17191d) !important;
+  border-color: rgba(255,255,255,.08) !important;
+}
+
+.header-independent-note,
+.header-current-label,
+.header-current-copy small,
+.header-desc,
+.header-facts-panel,
+.header-fact,
+.header-leadership-item,
+.principal-eyebrow,
+.principal-tag,
+.ad-label,
+.sidebar-nav a,
+.sidebar-social-btn,
+.sidebar-product,
+.sidebar-ad a {
+  background: rgba(255,255,255,0.05) !important;
+  color: var(--app-soft-muted) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.header-institution-card,
+.principal-hero,
+.principal-card,
+.card,
+.consulta-instituicao-card,
+.poderes-resultado,
+.brasoes-historia-resultado,
+.comparador-topo,
+.comparador-select-panel,
+.comparador-selecionadas,
+.remuneracao-stat,
+.ad-slot--card,
+.ad-slot--inline,
+.ad-slot--hero,
+.produto-card,
+.curso-card,
+.field,
+.principal-como-usar,
+.principal-nota,
+.portal-disclaimer,
+.result-list,
+.alerta,
+.success,
+.remuneracao-table-wrap,
+.comparador-table-wrap,
+footer {
+  background: linear-gradient(145deg, rgba(35,37,41,0.98), rgba(21,22,26,0.98)) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+  color: var(--app-soft-text) !important;
+}
+
+.sidebar {
+  background: linear-gradient(145deg, rgba(32,34,38,0.98), rgba(17,18,22,0.98)) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.sidebar-nav a.active,
+body[data-page="principal"] .app-bottom-item[href="index.html"],
+body[data-page="remuneracao"] .app-bottom-item[href="remuneracao.html"],
+body[data-page="concursos"] .app-bottom-item[href="concursos.html"],
+body[data-page="comparar"] .app-bottom-item[href="comparar-carreiras.html"] {
+  background: linear-gradient(145deg, #3a3f45, #1f2227) !important;
+  color: #ffffff !important;
+}
+
+select,
+input,
+textarea {
+  background: linear-gradient(145deg, #272b30, #17191d) !important;
+  color: #f5f6f8 !important;
+  border-color: rgba(255,255,255,0.10) !important;
+}
+
+select option {
+  background: #1b1d21;
+  color: #f3f4f6;
+}
+
+::placeholder {
+  color: #aeb4be !important;
+  opacity: 1;
+}
+
+.header-brand-block h1,
+.header-brand-block h1 span,
+.header-current-copy strong,
+.header-current-copy p,
+.header-facts-head strong,
+.header-facts-head span,
+.header-fact strong,
+.header-fact span,
+.header-leadership-item strong,
+.header-leadership-item span,
+.principal-title,
+.principal-section-title h2,
+.card h2,
+.card h3,
+.principal-card h3,
+.curso-section-title h2,
+.sidebar-brand strong,
+footer strong,
+footer .footer-disclaimer strong,
+.remuneracao-table,
+.comparador-table,
+.remuneracao-table th,
+.remuneracao-table td,
+.comparador-table th,
+.comparador-table td,
+label,
+legend,
+strong,
+.summary-card strong,
+.summary-card span,
+.result-list,
+.result-list * {
+  color: var(--app-soft-text) !important;
+}
+
+.header-current-copy small,
+.header-fact span,
+.header-leadership-item span,
+.principal-subtitle,
+.principal-card p,
+.principal-section-title p,
+.como-usar-step span,
+.small-note,
+.ad-placeholder-link small,
+.produto-card p,
+.curso-card p,
+footer,
+.footer-disclaimer,
+.remuneracao-table .small,
+.comparador-table .small,
+.card p,
+.card li,
+.card ul,
+.card ol,
+.portal-disclaimer p,
+.alerta p,
+.success p {
+  color: var(--app-soft-muted) !important;
+}
+
+.app-bottom-nav {
+  background: linear-gradient(145deg, rgba(34,36,40,.95), rgba(18,19,23,.95)) !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.menu-overlay.active {
+  background: rgba(0,0,0,.56) !important;
+}
+
+/* Evita sobreposição dos controles extras em desktop */
+@media (min-width: 761px) {
+  .app-floating-actions,
+  .app-bottom-nav {
+    display: none !important;
+  }
+
+  body {
+    padding-bottom: 32px !important;
+  }
+
+  footer {
+    margin-bottom: 32px !important;
+  }
+}
+
+/* Mobile: mais contraste e menos chance de botões encavalados */
+@media (max-width: 760px) {
+  .app-floating-actions {
+    top: 12px !important;
+    width: min(520px, calc(100% - 32px)) !important;
+    z-index: 80 !important;
+  }
+
+  .app-floating-action {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .site-header {
+    margin-top: 80px !important;
+  }
+
+  .app-bottom-nav {
+    z-index: 85 !important;
+    width: min(520px, calc(100% - 20px)) !important;
+  }
+
+  .app-bottom-item {
+    min-height: 58px !important;
+  }
+
+  body {
+    padding-bottom: 118px !important;
+  }
+
+  footer {
+    margin-bottom: 126px !important;
+  }
+}
