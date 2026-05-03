@@ -28,6 +28,89 @@
 <link as="style" href="css/dist/main.min.css" rel="preload"/>
 <link href="css/dist/main.min.css" rel="stylesheet"/>
 <link href="css/override-logoleao.css?v=20260502comparadorv1" rel="stylesheet"/><link href="css/app-soft-mobile.css?v=20260502appsoft1" rel="stylesheet"/>
+
+<!-- BLOCO 01.6 — Ajuste da vitrine da aba Produtos -->
+<style>
+  .page-produtos #page-produtos .produtos-vitrine {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+    align-items: stretch !important;
+    margin-bottom: 24px;
+  }
+
+  .page-produtos #page-produtos .curso-pmesp-only.produtos-vitrine,
+  .page-produtos #page-produtos .curso-pcsp-only.produtos-vitrine {
+    display: none !important;
+  }
+
+  body[data-inst="pmesp"] #page-produtos .curso-pmesp-only.produtos-vitrine,
+  body[data-inst="pcsp"] #page-produtos .curso-pcsp-only.produtos-vitrine {
+    display: grid !important;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card {
+    display: flex !important;
+    flex-direction: column;
+    height: 100%;
+    min-height: 100%;
+    padding: 18px !important;
+  }
+
+  .page-produtos #page-produtos .produto-imagem {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 14px;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid var(--border-card);
+    background: var(--bg-card);
+  }
+
+  .page-produtos #page-produtos .produto-imagem img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card h3 {
+    min-height: 2.6em;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .produto-card p {
+    margin-bottom: 14px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-meta {
+    margin-bottom: 16px;
+  }
+
+  .page-produtos #page-produtos .produtos-vitrine .curso-cta {
+    width: 100%;
+    min-height: 48px;
+    margin-top: auto !important;
+    border-radius: 999px !important;
+    text-align: center;
+  }
+
+  .page-produtos #page-produtos .produto-card--destaque .ad-label {
+    width: fit-content;
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 980px) {
+    .page-produtos #page-produtos .produtos-vitrine {
+      grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .page-produtos #page-produtos .produtos-vitrine {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
 <!-- BLOCO SEO GERADO --
      Canonical absoluto, Open Graph, Twitter Card e JSON-LD.
      Gerado na revisão de manutenção.
@@ -717,22 +800,18 @@
 <div class="alerta" style="margin-top: 0; margin-bottom: 24px;">
 <strong>Aviso:</strong> esta aba concentra cursos, livros, e-books, produtos físicos e materiais úteis para estudo, preparação física, carreira e desenvolvimento pessoal.
     </div>
-<!-- BLOCO 08.0A — Espaço comercial principal da aba produtos -->
-<aside aria-label="Produto em destaque: Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-slot ad-slot--inline" data-ad-area="produtos_topo">
-<a aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="ad-placeholder-link ad-placeholder-link--product ad-product-banner" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
-<div aria-hidden="true" class="produto-imagem ad-product-banner__media">
+<div class="curso-section-title">Produtos físicos</div>
+<div aria-label="Produtos físicos com link de compra" class="curso-grid produtos-vitrine">
+<!-- BLOCO 08.0A — Produto em destaque realocado para a vitrine -->
+<a aria-label="Comprar Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" class="curso-card produto-card produto-card--destaque" data-ad-area="produtos_topo" href="https://s.shopee.com.br/901i8h9IK5" rel="noopener noreferrer" target="_blank">
+<div aria-hidden="true" class="produto-imagem">
 <img alt="Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA" data-img-base="img/SHOPEE/mochilaimpermeavel50l" decoding="async" loading="lazy" src="img/SHOPEE/mochilaimpermeavel50l.webp"/>
 </div>
-<div class="ad-product-banner__conteudo">
 <span class="ad-label">Produto em destaque</span>
-<strong>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</strong>
-<small>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</small>
-<span class="ad-button">Comprar</span>
-</div>
+<h3>Mochila Militar Tática Impermeável 50 L Grande Reforçada c/ 2 Bandeiras Brasil/EUA</h3>
+<p>Mochila tática impermeável de 50 L, grande e reforçada, indicada para rotina operacional, estudos, viagens, treinos e organização de equipamentos. Acompanha 2 bandeiras Brasil/EUA.</p>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
-</aside>
-<div class="curso-section-title">Produtos físicos</div>
-<div aria-label="Produtos físicos com link de compra" class="curso-grid">
 <a aria-label="Abrir Mochila Coban Tática Militar Reforçada 24 L" class="curso-card produto-card" href="https://s.shopee.com.br/8V5RQXr16n" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Mochila Coban Tática Militar Reforçada 24 L" data-img-base="img/SHOPEE/mochilacoban" decoding="async" loading="lazy" src="img/SHOPEE/mochilacoban.webp"/>
@@ -744,7 +823,7 @@
 <span>Uso operacional</span>
 <span>24 L</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir barra fixa para porta" class="curso-card produto-card" href="https://s.shopee.com.br/9fHIyi0uae" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -757,7 +836,7 @@
 <span>TAF</span>
 <span>Treino em casa</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir BOTA ACERO COURO COLT PADRÃO POLICIA MILITAR SP" class="curso-card produto-card" href="https://s.shopee.com.br/1qYSZj5bki" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -770,7 +849,7 @@
 <span>Uso operacional</span>
 <span>Conforto e proteção</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Power Rack Funcional" class="curso-card produto-card" href="https://s.shopee.com.br/9fHJ0X4HVl" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -783,14 +862,14 @@
 <span>TAF</span>
 <span>Treino completo</span>
 </div>
-<span class="curso-cta">Comprar aqui</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <div class="curso-section-title">Cursos preparatórios e materiais de estudo</div>
 <div class="alerta curso-outra-inst-only" style="margin-top: 0; margin-bottom: 0;">
       Espaço destinado a cursos preparatórios, mentorias e materiais de estudo. Em breve, novos produtos específicos serão adicionados para esta instituição.
     </div>
-<div class="curso-grid curso-pmesp-only">
+<div class="curso-grid produtos-vitrine curso-pmesp-only">
 <a aria-label="Abrir Curso Preparatório Sargento PMESP" class="curso-card produto-card" href="https://go.hotmart.com/Q105560013F?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Curso Preparatório Sargento PMESP" data-img-base="img/HOTMART/curso-sargento-pmesp" decoding="async" loading="lazy" src="img/HOTMART/curso-sargento-pmesp.webp"/>
@@ -803,7 +882,7 @@
 <span>Concursos internos</span>
 <span>Curso online</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Curso Preparatório PMESP Completo" class="curso-card produto-card" href="https://go.hotmart.com/A105560326I?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -817,7 +896,7 @@
 <span>Soldado 2ª Classe</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Preparatório para o Psicotécnico das Carreiras Policiais" class="curso-card produto-card" href="https://go.hotmart.com/J105560541A?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -831,10 +910,10 @@
 <span>Carreiras policiais</span>
 <span>Concurseiros</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
-<div class="curso-grid curso-pcsp-only">
+<div class="curso-grid produtos-vitrine curso-pcsp-only">
 <a aria-label="Abrir Raciocínio Lógico para Polícia Civil de São Paulo" class="curso-card produto-card" href="https://go.hotmart.com/K105562484Y?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Raciocínio Lógico para Polícia Civil de São Paulo PCSP" data-img-base="img/HOTMART/curso-raciocinio-logico-pcsp" decoding="async" loading="lazy" src="img/HOTMART/curso-raciocinio-logico-pcsp.webp"/>
@@ -847,7 +926,7 @@
 <span>Raciocínio lógico</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Curso de Informática PCSP" class="curso-card produto-card" href="https://go.hotmart.com/K105562579S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -861,14 +940,14 @@
 <span>Informática</span>
 <span>VUNESP</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <div class="curso-section-title">Livros e e-books</div>
 <div class="alerta" style="margin-top: 0; margin-bottom: 16px;">
       Livros, e-books e materiais de desenvolvimento para estudo, carreira, disciplina, produtividade e transição profissional.
     </div>
-<div aria-label="Livros e e-books com link de compra" class="curso-grid">
+<div aria-label="Livros e e-books com link de compra" class="curso-grid produtos-vitrine">
 <a aria-label="Abrir Pacote Viva Sem Procrastinar" class="curso-card produto-card" href="https://go.hotmart.com/C105562969M?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
 <img alt="Pacote Viva Sem Procrastinar" data-img-base="img/HOTMART/pacote-viva-sem-procrastinar" decoding="async" loading="lazy" src="img/HOTMART/pacote-viva-sem-procrastinar.webp"/>
@@ -881,7 +960,7 @@
 <span>Saúde mental</span>
 <span>Desenvolvimento pessoal</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Otimizando o Cérebro para Concursos Públicos" class="curso-card produto-card" href="https://go.hotmart.com/U105563061C?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -895,7 +974,7 @@
 <span>Neurociências</span>
 <span>Produtividade</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Além da Farda O Código da Travessia" class="curso-card produto-card" href="https://go.hotmart.com/Y105563100L?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -909,7 +988,7 @@
 <span>Carreira</span>
 <span>Vida pós-farda</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Método DMA" class="curso-card produto-card" href="https://go.hotmart.com/V105563143D" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -923,7 +1002,7 @@
 <span>Gestão de tempo</span>
 <span>Disciplina</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 <a aria-label="Abrir Táticas de Liderança Militar Aplicadas ao Dia a Dia" class="curso-card produto-card" href="https://go.hotmart.com/M105563187S?dp=1" rel="noopener noreferrer" target="_blank">
 <div aria-hidden="true" class="produto-imagem">
@@ -937,7 +1016,7 @@
 <span>Disciplina</span>
 <span>Tomada de decisão</span>
 </div>
-<span class="curso-cta">Comprar</span>
+<span class="curso-cta">Comprar por afiliado</span>
 </a>
 </div>
 <p class="produto-aviso-compra">
