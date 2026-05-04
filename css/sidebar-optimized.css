@@ -1,0 +1,243 @@
+/* ============================================================
+   UniSegPub — Sidebar reorganizada
+   Menu mais limpo, hierarquia melhor e itens em ordem de uso.
+   ============================================================ */
+
+.sidebar {
+  display: grid !important;
+  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
+  gap: 12px !important;
+  overflow: hidden !important;
+}
+
+.sidebar-header {
+  padding: 18px 18px 8px !important;
+}
+
+.sidebar-brand strong {
+  display: block !important;
+  font-size: 1.08rem !important;
+  line-height: 1.1 !important;
+}
+
+.sidebar-brand span {
+  display: block !important;
+  margin-top: 4px !important;
+  font-size: .84rem !important;
+  line-height: 1.2 !important;
+  opacity: .82 !important;
+}
+
+.sidebar-inst-panel {
+  margin: 0 14px !important;
+  padding: 14px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 24px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(9,12,17,.14)) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08) !important;
+}
+
+.sidebar-inst-panel label {
+  margin: 0 0 8px !important;
+  font-size: .92rem !important;
+  line-height: 1.1 !important;
+  font-weight: 900 !important;
+}
+
+.sidebar-inst-panel select {
+  width: 100% !important;
+  min-height: 52px !important;
+  font-size: .98rem !important;
+  font-weight: 800 !important;
+}
+
+.sidebar-nav {
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 0 8px 10px !important;
+  scrollbar-width: thin !important;
+}
+
+.sidebar-nav-group {
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+}
+
+.sidebar-nav-title {
+  margin: 6px 10px 8px !important;
+  padding: 0 !important;
+  color: var(--lg-muted, #D3D7DA) !important;
+  font-size: .72rem !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  opacity: .84 !important;
+}
+
+.sidebar-nav a,
+.sidebar-social-btn,
+.sidebar-product,
+.sidebar-ad a {
+  position: relative !important;
+  display: grid !important;
+  grid-template-columns: 38px minmax(0, 1fr) !important;
+  grid-template-areas:
+    "icon title"
+    "icon desc" !important;
+  align-items: center !important;
+  column-gap: 10px !important;
+  min-height: 58px !important;
+  margin: 6px 6px !important;
+  padding: 10px 12px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 19px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(9,12,17,.12)) !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+.sidebar-link-icon,
+.sidebar-social-btn > span:first-child {
+  grid-area: icon !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: inline-grid !important;
+  place-items: center !important;
+  border-radius: 15px !important;
+  background: rgba(255,255,255,.08) !important;
+  font-size: 1.12rem !important;
+  line-height: 1 !important;
+}
+
+.sidebar-link-text,
+.sidebar-social-btn strong {
+  grid-area: title !important;
+  min-width: 0 !important;
+  color: var(--lg-text, #fff) !important;
+  font-size: .98rem !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+}
+
+.sidebar-nav a small,
+.sidebar-social-btn small {
+  grid-area: desc !important;
+  min-width: 0 !important;
+  margin-top: 2px !important;
+  color: var(--lg-muted, #D3D7DA) !important;
+  font-size: .78rem !important;
+  line-height: 1.15 !important;
+  opacity: .88 !important;
+}
+
+.sidebar-nav a.active {
+  border-color: rgba(255,211,0,.62) !important;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(255,255,255,.26), transparent 34%),
+    linear-gradient(135deg, #FFD300, #f2d94c) !important;
+  box-shadow: 0 16px 38px rgba(9,12,17,.30), 0 0 24px rgba(255,211,0,.18) !important;
+}
+
+.sidebar-nav a.active .sidebar-link-icon {
+  background: rgba(9,12,17,.12) !important;
+}
+
+.sidebar-nav a.active .sidebar-link-text,
+.sidebar-nav a.active small {
+  color: #090C11 !important;
+}
+
+.sidebar-nav a:hover,
+.sidebar-social-btn:hover,
+.sidebar-product:hover,
+.sidebar-ad a:hover {
+  transform: translateY(-2px) !important;
+}
+
+.sidebar-social {
+  padding: 0 14px !important;
+}
+
+.sidebar-social-btn {
+  margin: 0 !important;
+}
+
+.sidebar-social-btn::after {
+  content: "Rede social";
+  grid-area: desc;
+  color: var(--lg-muted, #D3D7DA);
+  font-size: .78rem;
+  line-height: 1.15;
+  opacity: .88;
+}
+
+.ad-slot--sidebar,
+.sidebar-ad {
+  margin: 0 14px 14px !important;
+}
+
+.ad-slot--sidebar .ad-placeholder-link,
+.sidebar-ad a {
+  border-radius: 20px !important;
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    gap: 10px !important;
+  }
+
+  .sidebar-header {
+    padding: 16px 16px 6px !important;
+  }
+
+  .sidebar-brand strong {
+    font-size: 1.15rem !important;
+  }
+
+  .sidebar-brand span {
+    font-size: .9rem !important;
+  }
+
+  .sidebar-inst-panel {
+    padding: 14px !important;
+  }
+
+  .sidebar-inst-panel label {
+    font-size: .98rem !important;
+  }
+
+  .sidebar-inst-panel select {
+    min-height: 56px !important;
+    font-size: 1.02rem !important;
+  }
+
+  .sidebar-nav-title {
+    font-size: .76rem !important;
+  }
+
+  .sidebar-nav a,
+  .sidebar-social-btn,
+  .sidebar-product,
+  .sidebar-ad a {
+    min-height: 64px !important;
+    grid-template-columns: 42px minmax(0, 1fr) !important;
+  }
+
+  .sidebar-link-icon,
+  .sidebar-social-btn > span:first-child {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.18rem !important;
+  }
+
+  .sidebar-link-text,
+  .sidebar-social-btn strong {
+    font-size: 1.04rem !important;
+  }
+
+  .sidebar-nav a small,
+  .sidebar-social-btn::after {
+    font-size: .84rem !important;
+  }
+}
