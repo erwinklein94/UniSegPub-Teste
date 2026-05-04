@@ -1,17 +1,18 @@
 /* ============================================================
-   UniSegPub — Sidebar reorganizada
-   Menu mais limpo, hierarquia melhor e itens em ordem de uso.
+   UniSegPub — Sidebar corrigida e reorganizada
+   Mantém a ordem melhorada sem quebrar anúncios/produtos.
    ============================================================ */
 
 .sidebar {
-  display: grid !important;
-  grid-template-rows: auto auto minmax(0, 1fr) auto !important;
-  gap: 12px !important;
-  overflow: hidden !important;
+  display: block !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  padding-bottom: 24px !important;
+  scrollbar-width: thin !important;
 }
 
 .sidebar-header {
-  padding: 18px 18px 8px !important;
+  padding: 18px 18px 10px !important;
 }
 
 .sidebar-brand strong {
@@ -29,7 +30,7 @@
 }
 
 .sidebar-inst-panel {
-  margin: 0 14px !important;
+  margin: 0 14px 14px !important;
   padding: 14px !important;
   border: 1px solid rgba(255,255,255,.14) !important;
   border-radius: 24px !important;
@@ -52,10 +53,10 @@
 }
 
 .sidebar-nav {
-  min-height: 0 !important;
-  overflow-y: auto !important;
-  padding: 0 8px 10px !important;
-  scrollbar-width: thin !important;
+  display: block !important;
+  overflow: visible !important;
+  padding: 0 8px 6px !important;
+  min-height: auto !important;
 }
 
 .sidebar-nav-group {
@@ -63,8 +64,9 @@
   padding: 0 !important;
 }
 
-.sidebar-nav-title {
-  margin: 6px 10px 8px !important;
+.sidebar-nav-title,
+.sidebar-ad-title {
+  margin: 8px 12px 8px !important;
   padding: 0 !important;
   color: var(--lg-muted, #D3D7DA) !important;
   font-size: .72rem !important;
@@ -72,13 +74,11 @@
   line-height: 1 !important;
   letter-spacing: .12em !important;
   text-transform: uppercase !important;
-  opacity: .84 !important;
+  opacity: .86 !important;
 }
 
 .sidebar-nav a,
-.sidebar-social-btn,
-.sidebar-product,
-.sidebar-ad a {
+.sidebar-social-btn {
   position: relative !important;
   display: grid !important;
   grid-template-columns: 38px minmax(0, 1fr) !important;
@@ -120,8 +120,7 @@
   line-height: 1.12 !important;
 }
 
-.sidebar-nav a small,
-.sidebar-social-btn small {
+.sidebar-nav a small {
   grid-area: desc !important;
   min-width: 0 !important;
   margin-top: 2px !important;
@@ -150,13 +149,15 @@
 
 .sidebar-nav a:hover,
 .sidebar-social-btn:hover,
-.sidebar-product:hover,
+.ad-slot--sidebar .ad-placeholder-link:hover,
 .sidebar-ad a:hover {
   transform: translateY(-2px) !important;
 }
 
 .sidebar-social {
-  padding: 0 14px !important;
+  display: block !important;
+  padding: 0 14px 14px !important;
+  margin: 0 !important;
 }
 
 .sidebar-social-btn {
@@ -174,21 +175,97 @@
 
 .ad-slot--sidebar,
 .sidebar-ad {
+  display: block !important;
   margin: 0 14px 14px !important;
+  padding: 0 !important;
 }
 
 .ad-slot--sidebar .ad-placeholder-link,
-.sidebar-ad a {
+.sidebar-ad a,
+.sidebar-product {
+  display: grid !important;
+  grid-template-columns: 74px minmax(0, 1fr) !important;
+  grid-template-areas:
+    "image title"
+    "image text"
+    "image button" !important;
+  gap: 8px 12px !important;
+  align-items: center !important;
+  min-height: auto !important;
+  margin: 8px 0 !important;
+  padding: 14px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
   border-radius: 20px !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.06), rgba(9,12,17,.14)) !important;
+  text-decoration: none !important;
+  overflow: hidden !important;
+}
+
+.sidebar-ad img,
+.ad-slot--sidebar img,
+.sidebar-product img,
+.ad-slot--sidebar .ad-placeholder-link img {
+  grid-area: image !important;
+  width: 74px !important;
+  height: 74px !important;
+  max-width: 74px !important;
+  max-height: 74px !important;
+  object-fit: contain !important;
+  border-radius: 14px !important;
+  background: rgba(255,255,255,.86) !important;
+}
+
+.ad-slot--sidebar strong,
+.sidebar-ad strong,
+.sidebar-product strong {
+  grid-area: title !important;
+  min-width: 0 !important;
+  color: var(--lg-text, #fff) !important;
+  font-size: .94rem !important;
+  font-weight: 900 !important;
+  line-height: 1.12 !important;
+  letter-spacing: .02em !important;
+}
+
+.ad-slot--sidebar small,
+.sidebar-ad small,
+.sidebar-product small {
+  grid-area: text !important;
+  min-width: 0 !important;
+  color: var(--lg-muted, #D3D7DA) !important;
+  font-size: .82rem !important;
+  line-height: 1.22 !important;
+  overflow-wrap: anywhere !important;
+}
+
+.ad-slot--sidebar .ad-button,
+.sidebar-ad .ad-button,
+.sidebar-product .ad-button {
+  grid-area: button !important;
+  width: fit-content !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 10px 14px !important;
+  border-radius: 999px !important;
+  font-size: .8rem !important;
+  line-height: 1 !important;
+  white-space: normal !important;
+  text-align: center !important;
+}
+
+.ad-slot--sidebar .ad-label,
+.sidebar-ad .ad-label,
+.sidebar-product .ad-label {
+  display: none !important;
 }
 
 @media (max-width: 760px) {
   .sidebar {
-    gap: 10px !important;
+    padding-bottom: 34px !important;
   }
 
   .sidebar-header {
-    padding: 16px 16px 6px !important;
+    padding: 16px 16px 8px !important;
   }
 
   .sidebar-brand strong {
@@ -212,14 +289,13 @@
     font-size: 1.02rem !important;
   }
 
-  .sidebar-nav-title {
+  .sidebar-nav-title,
+  .sidebar-ad-title {
     font-size: .76rem !important;
   }
 
   .sidebar-nav a,
-  .sidebar-social-btn,
-  .sidebar-product,
-  .sidebar-ad a {
+  .sidebar-social-btn {
     min-height: 64px !important;
     grid-template-columns: 42px minmax(0, 1fr) !important;
   }
@@ -238,6 +314,35 @@
 
   .sidebar-nav a small,
   .sidebar-social-btn::after {
+    font-size: .84rem !important;
+  }
+
+  .ad-slot--sidebar .ad-placeholder-link,
+  .sidebar-ad a,
+  .sidebar-product {
+    grid-template-columns: 68px minmax(0, 1fr) !important;
+    padding: 14px !important;
+  }
+
+  .sidebar-ad img,
+  .ad-slot--sidebar img,
+  .sidebar-product img,
+  .ad-slot--sidebar .ad-placeholder-link img {
+    width: 68px !important;
+    height: 68px !important;
+    max-width: 68px !important;
+    max-height: 68px !important;
+  }
+
+  .ad-slot--sidebar strong,
+  .sidebar-ad strong,
+  .sidebar-product strong {
+    font-size: .96rem !important;
+  }
+
+  .ad-slot--sidebar small,
+  .sidebar-ad small,
+  .sidebar-product small {
     font-size: .84rem !important;
   }
 }
