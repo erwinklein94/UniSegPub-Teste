@@ -1,0 +1,245 @@
+/* ============================================================
+   UniSegPub — Ajuste do tema claro
+   O modo claro deixa de ser branco intenso. A base passa a ser
+   cinza claro, usando branco apenas em pontos de brilho/destaque.
+   ============================================================ */
+
+:root[data-theme="light"] {
+  --lg-white: #FFFFFF;
+  --lg-yellow: #FFD300;
+  --lg-gray: #757B81;
+  --lg-charcoal: #262B32;
+  --lg-black: #090C11;
+  --lg-text: #15191f;
+  --lg-muted: #4e555d;
+  --lg-faint: #757B81;
+  --lg-panel: rgba(226, 229, 232, .82);
+  --lg-panel-dark: rgba(199, 204, 209, .88);
+  --lg-panel-mid: rgba(214, 218, 222, .86);
+  --lg-stroke: rgba(255, 255, 255, .52);
+  --lg-stroke-strong: rgba(255, 211, 0, .76);
+  --lg-shadow: 18px 22px 54px rgba(38, 43, 50, .22), -10px -10px 28px rgba(255, 255, 255, .52), inset 0 1px 0 rgba(255,255,255,.58);
+  --lg-shadow-soft: 10px 16px 34px rgba(38, 43, 50, .18), -8px -8px 22px rgba(255, 255, 255, .42), inset 0 1px 0 rgba(255,255,255,.50);
+  --lg-glow: 0 0 26px rgba(255, 211, 0, .12), 0 0 64px rgba(255, 255, 255, .16);
+}
+
+:root[data-theme="light"] html {
+  background: #d7dadd !important;
+}
+
+:root[data-theme="light"] body,
+:root[data-theme="light"] body.app-soft-theme {
+  color: var(--lg-text) !important;
+  background-color: #d7dadd !important;
+  background-image:
+    radial-gradient(circle at 18% 8%, rgba(255,255,255,.54), transparent 28%),
+    radial-gradient(circle at 86% 10%, rgba(255,211,0,.16), transparent 26%),
+    radial-gradient(circle at 50% 100%, rgba(255,255,255,.34), transparent 34%),
+    linear-gradient(180deg, #c6cbd0 0%, #d7dadd 42%, #e4e6e8 74%, #f0f1f2 100%) !important;
+}
+
+:root[data-theme="light"] body::before {
+  opacity: .24 !important;
+  background-image:
+    linear-gradient(rgba(38,43,50,.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38,43,50,.045) 1px, transparent 1px) !important;
+}
+
+:root[data-theme="light"] body::after {
+  background: radial-gradient(circle, rgba(255,211,0,.18), rgba(117,123,129,.12) 48%, transparent 74%) !important;
+}
+
+:root[data-theme="light"] .site-header {
+  border-color: rgba(255,255,255,.56) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.34), rgba(117,123,129,.10)),
+    linear-gradient(160deg, rgba(221,224,227,.92), rgba(195,200,205,.90)) !important;
+  box-shadow: var(--lg-shadow), var(--lg-glow) !important;
+}
+
+:root[data-theme="light"] .site-header::before {
+  background: radial-gradient(circle, rgba(255,211,0,.22), rgba(255,255,255,.24) 42%, transparent 70%) !important;
+}
+
+:root[data-theme="light"] .site-header::after {
+  border-color: rgba(255,211,0,.48) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.46), rgba(117,123,129,.18)),
+    radial-gradient(circle at 35% 18%, rgba(255,211,0,.28), transparent 28%),
+    radial-gradient(circle at 70% 64%, rgba(255,255,255,.42), transparent 24%),
+    rgba(214,218,222,.54) !important;
+}
+
+:root[data-theme="light"] .header-brand-block h1,
+:root[data-theme="light"] .principal-title,
+:root[data-theme="light"] .principal-section-title h2,
+:root[data-theme="light"] .card h2,
+:root[data-theme="light"] .card h3,
+:root[data-theme="light"] .principal-card h3,
+:root[data-theme="light"] .curso-section-title h2,
+:root[data-theme="light"] .sidebar-brand strong {
+  color: #15191f !important;
+  text-shadow: 0 10px 26px rgba(255,255,255,.38) !important;
+}
+
+:root[data-theme="light"] .header-brand-block h1 span,
+:root[data-theme="light"] .principal-title span,
+:root[data-theme="light"] .card h2 span {
+  background: linear-gradient(90deg, #262B32, #757B81, #FFD300) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+:root[data-theme="light"] .header-independent-note,
+:root[data-theme="light"] .header-current-label,
+:root[data-theme="light"] .header-current-copy small,
+:root[data-theme="light"] .header-desc,
+:root[data-theme="light"] .principal-subtitle,
+:root[data-theme="light"] .principal-card p,
+:root[data-theme="light"] .principal-section-title p,
+:root[data-theme="light"] .como-usar-step span,
+:root[data-theme="light"] .small-note,
+:root[data-theme="light"] .ad-placeholder-link small,
+:root[data-theme="light"] .produto-card p,
+:root[data-theme="light"] .curso-card p,
+:root[data-theme="light"] footer,
+:root[data-theme="light"] footer p {
+  color: #4e555d !important;
+}
+
+:root[data-theme="light"] .header-institution-card,
+:root[data-theme="light"] .principal-hero,
+:root[data-theme="light"] .principal-card,
+:root[data-theme="light"] .card,
+:root[data-theme="light"] .consulta-instituicao-card,
+:root[data-theme="light"] .poderes-resultado,
+:root[data-theme="light"] .brasoes-historia-resultado,
+:root[data-theme="light"] .comparador-topo,
+:root[data-theme="light"] .comparador-select-panel,
+:root[data-theme="light"] .comparador-selecionadas,
+:root[data-theme="light"] .remuneracao-stat,
+:root[data-theme="light"] .ad-slot--card,
+:root[data-theme="light"] .ad-slot--inline,
+:root[data-theme="light"] .ad-slot--hero,
+:root[data-theme="light"] .produto-card,
+:root[data-theme="light"] .curso-card,
+:root[data-theme="light"] .field,
+:root[data-theme="light"] .principal-como-usar,
+:root[data-theme="light"] .principal-nota,
+:root[data-theme="light"] .portal-disclaimer,
+:root[data-theme="light"] .result-list,
+:root[data-theme="light"] .alerta,
+:root[data-theme="light"] .success,
+:root[data-theme="light"] .remuneracao-table-wrap,
+:root[data-theme="light"] .comparador-table-wrap,
+:root[data-theme="light"] footer {
+  border-color: rgba(255,255,255,.52) !important;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.26), rgba(117,123,129,.10)),
+    linear-gradient(160deg, rgba(221,224,227,.88), rgba(199,204,209,.84)) !important;
+  color: #15191f !important;
+  box-shadow: var(--lg-shadow-soft) !important;
+}
+
+:root[data-theme="light"] .header-facts-panel,
+:root[data-theme="light"] .header-fact,
+:root[data-theme="light"] .header-leadership-item,
+:root[data-theme="light"] .principal-eyebrow,
+:root[data-theme="light"] .principal-tag,
+:root[data-theme="light"] .ad-label,
+:root[data-theme="light"] .sidebar-nav a,
+:root[data-theme="light"] .sidebar-social-btn,
+:root[data-theme="light"] .sidebar-product,
+:root[data-theme="light"] .sidebar-ad a,
+:root[data-theme="light"] .como-usar-step {
+  border-color: rgba(255,255,255,.44) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.22), rgba(117,123,129,.10)) !important;
+  color: #4e555d !important;
+}
+
+:root[data-theme="light"] .header-fact strong,
+:root[data-theme="light"] .header-leadership-item strong,
+:root[data-theme="light"] .header-current-copy strong,
+:root[data-theme="light"] .header-current-copy p,
+:root[data-theme="light"] .header-facts-head strong,
+:root[data-theme="light"] .header-facts-head span,
+:root[data-theme="light"] footer strong,
+:root[data-theme="light"] footer .footer-disclaimer strong {
+  color: #15191f !important;
+}
+
+:root[data-theme="light"] .current-flag-frame,
+:root[data-theme="light"] .current-flag-frame.brand-logo-frame,
+:root[data-theme="light"] .current-flag-frame.institution-logo-frame,
+:root[data-theme="light"] .principal-card-icon {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,211,0,.22), transparent 42%),
+    linear-gradient(145deg, rgba(255,255,255,.42), rgba(199,204,209,.70)) !important;
+  border-color: rgba(255,211,0,.54) !important;
+  box-shadow: 0 16px 34px rgba(38,43,50,.20), -8px -8px 22px rgba(255,255,255,.36) !important;
+}
+
+:root[data-theme="light"] select,
+:root[data-theme="light"] input,
+:root[data-theme="light"] textarea {
+  border-color: rgba(255,255,255,.56) !important;
+  background: linear-gradient(145deg, rgba(232,234,236,.90), rgba(199,204,209,.76)) !important;
+  color: #15191f !important;
+  box-shadow: inset 5px 5px 12px rgba(117,123,129,.18), inset -5px -5px 12px rgba(255,255,255,.46) !important;
+}
+
+:root[data-theme="light"] button,
+:root[data-theme="light"] .menu-btn,
+:root[data-theme="light"] .theme-toggle-header,
+:root[data-theme="light"] .close-btn,
+:root[data-theme="light"] .app-floating-action,
+:root[data-theme="light"] .app-bottom-item,
+:root[data-theme="light"] .principal-btn,
+:root[data-theme="light"] .btn-secondary,
+:root[data-theme="light"] .branch-option,
+:root[data-theme="light"] .comparador-add-btn,
+:root[data-theme="light"] .comparador-toggle-lista {
+  border-color: rgba(255,255,255,.52) !important;
+  background: linear-gradient(145deg, rgba(228,231,234,.92), rgba(187,193,199,.84)) !important;
+  color: #15191f !important;
+  box-shadow: 10px 14px 28px rgba(38,43,50,.20), -8px -8px 20px rgba(255,255,255,.44), inset 0 1px 0 rgba(255,255,255,.58) !important;
+}
+
+:root[data-theme="light"] .principal-btn:first-child,
+:root[data-theme="light"] .btn-primary,
+:root[data-theme="light"] .btn-submit,
+:root[data-theme="light"] .ad-button,
+:root[data-theme="light"] .branch-option[aria-pressed="true"],
+:root[data-theme="light"] .sidebar-nav a.active,
+:root[data-theme="light"] body[data-page="principal"] .app-bottom-item[href="index.html"],
+:root[data-theme="light"] body[data-page="remuneracao"] .app-bottom-item[href="remuneracao.html"],
+:root[data-theme="light"] body[data-page="concursos"] .app-bottom-item[href="concursos.html"],
+:root[data-theme="light"] body[data-page="comparar"] .app-bottom-item[href="comparar-carreiras.html"] {
+  background: linear-gradient(135deg, #FFD300, #f4e070) !important;
+  color: #090C11 !important;
+  border-color: rgba(255,211,0,.80) !important;
+  box-shadow: 0 16px 38px rgba(117,123,129,.26), 0 0 24px rgba(255,211,0,.18), inset 0 1px 0 rgba(255,255,255,.42) !important;
+}
+
+:root[data-theme="light"] .sidebar {
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.24), rgba(117,123,129,.12)),
+    linear-gradient(160deg, rgba(218,221,224,.94), rgba(177,184,191,.92)) !important;
+  color: #15191f !important;
+  border-color: rgba(255,255,255,.50) !important;
+}
+
+:root[data-theme="light"] .app-bottom-nav {
+  border-color: rgba(255,255,255,.52) !important;
+  background: linear-gradient(145deg, rgba(255,255,255,.28), rgba(117,123,129,.12)), rgba(203,208,213,.84) !important;
+  box-shadow: 0 18px 48px rgba(38,43,50,.24), -8px -8px 24px rgba(255,255,255,.34), inset 0 1px 0 rgba(255,255,255,.54) !important;
+}
+
+:root[data-theme="light"] a {
+  color: #6f5c00 !important;
+}
+
+:root[data-theme="light"] ::selection {
+  background: rgba(255,211,0,.58);
+  color: #090C11;
+}
