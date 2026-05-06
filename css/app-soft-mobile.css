@@ -3612,3 +3612,239 @@ body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-p
     max-height: 58px !important;
   }
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06G — Mobile modo claro sem fade branco
+   Remove vidros/transparências brancas e gradientes esbranquiçados
+   apenas no mobile quando o tema claro está ativo.
+   ============================================================ */
+@media (max-width: 760px) {
+  html[data-theme="light"] {
+    --app-soft-bg: #e7ebf2;
+    --app-soft-panel: #eef1f6;
+    --app-soft-card: #f3f5f8;
+    --app-soft-card-2: #e6eaf1;
+    --app-soft-text: #111827;
+    --app-soft-muted: #4b5563;
+    --app-soft-border: #c9d0dc;
+    --app-soft-shadow: 0 12px 26px rgba(15, 23, 42, .16);
+    --app-soft-shadow-small: 0 8px 18px rgba(15, 23, 42, .13);
+    --app-soft-shadow-inset: inset 0 2px 5px rgba(15, 23, 42, .12);
+  }
+
+  html[data-theme="light"] body {
+    background-color: #e7ebf2 !important;
+    background-image: none !important;
+    color: #111827 !important;
+  }
+
+  html[data-theme="light"] body::before {
+    display: none !important;
+    content: none !important;
+    border: 0 !important;
+    background: none !important;
+    opacity: 0 !important;
+  }
+
+  html[data-theme="light"] .site-header,
+  html[data-theme="light"] .header-institution-card,
+  html[data-theme="light"] .principal-hero,
+  html[data-theme="light"] .principal-card,
+  html[data-theme="light"] .card,
+  html[data-theme="light"] .consulta-instituicao-card,
+  html[data-theme="light"] .poderes-resultado,
+  html[data-theme="light"] .brasoes-historia-resultado,
+  html[data-theme="light"] .comparador-topo,
+  html[data-theme="light"] .comparador-select-panel,
+  html[data-theme="light"] .comparador-selecionadas,
+  html[data-theme="light"] .comparador-stat,
+  html[data-theme="light"] .comparador-card,
+  html[data-theme="light"] .comparador-hero-simples,
+  html[data-theme="light"] .comparador-controle-simples,
+  html[data-theme="light"] .comparador-resultado-simples,
+  html[data-theme="light"] .comparador-detalhes-tecnicos,
+  html[data-theme="light"] .base-legal-hero,
+  html[data-theme="light"] .base-legal-busca-card,
+  html[data-theme="light"] .base-legal-resultados-card,
+  html[data-theme="light"] .base-legal-card,
+  html[data-theme="light"] .remuneracao-stat,
+  html[data-theme="light"] .remuneracao-table-wrap,
+  html[data-theme="light"] .comparador-table-wrap,
+  html[data-theme="light"] .ad-slot--card,
+  html[data-theme="light"] .ad-slot--inline,
+  html[data-theme="light"] .ad-slot--hero,
+  html[data-theme="light"] .ad-slot--footer,
+  html[data-theme="light"] .produto-card,
+  html[data-theme="light"] .curso-card,
+  html[data-theme="light"] .principal-como-usar,
+  html[data-theme="light"] .principal-nota,
+  html[data-theme="light"] .portal-disclaimer,
+  html[data-theme="light"] .result-list,
+  html[data-theme="light"] .alerta,
+  html[data-theme="light"] .success,
+  html[data-theme="light"] footer {
+    background: #f3f5f8 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    color: #111827 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .12) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .header-facts-panel,
+  html[data-theme="light"] .header-fact,
+  html[data-theme="light"] .header-leadership-item,
+  html[data-theme="light"] .header-independent-note,
+  html[data-theme="light"] .header-current-label,
+  html[data-theme="light"] .header-current-copy small,
+  html[data-theme="light"] .header-desc,
+  html[data-theme="light"] .principal-eyebrow,
+  html[data-theme="light"] .principal-tag,
+  html[data-theme="light"] .ad-label,
+  html[data-theme="light"] .sidebar-nav a,
+  html[data-theme="light"] .sidebar-social-btn,
+  html[data-theme="light"] .sidebar-product,
+  html[data-theme="light"] .sidebar-ad a,
+  html[data-theme="light"] .base-legal-hero-box,
+  html[data-theme="light"] .base-legal-detalhes div,
+  html[data-theme="light"] .comparador-card-metricas > div,
+  html[data-theme="light"] .comparador-check-list--simples .comparador-check-grupo,
+  html[data-theme="light"] .comparador-card,
+  html[data-theme="light"] .base-legal-card {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    color: #111827 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .current-flag-frame,
+  html[data-theme="light"] .current-flag-frame.brand-logo-frame,
+  html[data-theme="light"] .current-flag-frame.institution-logo-frame,
+  html[data-theme="light"] .principal-card-icon {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .13) !important;
+  }
+
+  html[data-theme="light"] .current-flag-frame img,
+  html[data-theme="light"] .current-flag-frame.brand-logo-frame img,
+  html[data-theme="light"] .current-flag-frame.institution-logo-frame img {
+    background: transparent !important;
+  }
+
+  html[data-theme="light"] .menu-btn,
+  html[data-theme="light"] .theme-toggle-header,
+  html[data-theme="light"] .close-btn,
+  html[data-theme="light"] .app-floating-action,
+  html[data-theme="light"] .app-bottom-item,
+  html[data-theme="light"] .principal-btn,
+  html[data-theme="light"] .btn-primary,
+  html[data-theme="light"] .btn-secondary,
+  html[data-theme="light"] .btn-submit,
+  html[data-theme="light"] .ad-button,
+  html[data-theme="light"] .comparador-add-btn,
+  html[data-theme="light"] .comparador-toggle-lista,
+  html[data-theme="light"] .base-legal-exemplos button,
+  html[data-theme="light"] .base-legal-chip,
+  html[data-theme="light"] .base-legal-fonte-btn,
+  html[data-theme="light"] .comparador-card-links a {
+    background: #e6eaf1 !important;
+    background-image: none !important;
+    border-color: #c0c8d5 !important;
+    color: #111827 !important;
+    box-shadow: 0 5px 12px rgba(15, 23, 42, .10) !important;
+  }
+
+  html[data-theme="light"] .app-bottom-nav {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .20) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] body[data-page="principal"] .app-bottom-item[href="index.html"],
+  html[data-theme="light"] body[data-page="remuneracao"] .app-bottom-item[href="remuneracao.html"],
+  html[data-theme="light"] body[data-page="concursos"] .app-bottom-item[href="concursos.html"],
+  html[data-theme="light"] body[data-page="comparar"] .app-bottom-item[href="comparar-carreiras.html"] {
+    background: #d8dee9 !important;
+    background-image: none !important;
+    box-shadow: inset 0 2px 5px rgba(15, 23, 42, .16) !important;
+  }
+
+  html[data-theme="light"] select,
+  html[data-theme="light"] input,
+  html[data-theme="light"] textarea,
+  html[data-theme="light"] .base-legal-input-row input,
+  html[data-theme="light"] .comparador-controle-simples input,
+  html[data-theme="light"] .comparador-controle-simples select {
+    background: #f8fafc !important;
+    background-image: none !important;
+    border-color: #bdc6d4 !important;
+    color: #111827 !important;
+    box-shadow: inset 0 2px 5px rgba(15, 23, 42, .10) !important;
+  }
+
+  html[data-theme="light"] .sidebar {
+    background: #eef1f6 !important;
+    background-image: none !important;
+    border-color: #c9d0dc !important;
+    box-shadow: 0 16px 34px rgba(15, 23, 42, .22) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .menu-overlay.active {
+    background: rgba(17, 24, 39, .34) !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  html[data-theme="light"] .header-institution-card .header-update-note.header-fact--dados-atualizados,
+  html[data-theme="light"] body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    background: #e6eaf1 !important;
+    background-image: none !important;
+    border-color: #c0c8d5 !important;
+    box-shadow: 0 8px 18px rgba(15, 23, 42, .18) !important;
+  }
+
+  html[data-theme="light"] .header-current-copy strong,
+  html[data-theme="light"] .header-current-copy p,
+  html[data-theme="light"] .header-facts-head span,
+  html[data-theme="light"] .header-facts-head strong,
+  html[data-theme="light"] .header-fact span,
+  html[data-theme="light"] .header-fact strong,
+  html[data-theme="light"] .header-leadership-item span,
+  html[data-theme="light"] .header-leadership-item strong,
+  html[data-theme="light"] .principal-title,
+  html[data-theme="light"] .principal-section-title h2,
+  html[data-theme="light"] .card h2,
+  html[data-theme="light"] .card h3,
+  html[data-theme="light"] .principal-card h3,
+  html[data-theme="light"] .sidebar-brand strong {
+    color: #111827 !important;
+    text-shadow: none !important;
+  }
+
+  html[data-theme="light"] .header-current-copy p,
+  html[data-theme="light"] .header-fact span,
+  html[data-theme="light"] .header-leadership-item span,
+  html[data-theme="light"] .principal-card p,
+  html[data-theme="light"] .principal-section-title p,
+  html[data-theme="light"] .small-note,
+  html[data-theme="light"] .ad-placeholder-link small,
+  html[data-theme="light"] footer,
+  html[data-theme="light"] .footer-disclaimer,
+  html[data-theme="light"] .base-legal-detalhes dd,
+  html[data-theme="light"] .base-legal-tags span,
+  html[data-theme="light"] .comparador-card-notas p {
+    color: #4b5563 !important;
+  }
+}
