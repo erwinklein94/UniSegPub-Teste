@@ -2072,3 +2072,219 @@ body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact-
     font-size: 14px !important;
   }
 }
+
+
+/* ============================================================
+   Ajuste 2026-05-06: troca do card de atualização com o seletor
+   e seletor enquadrado abaixo do resumo institucional.
+   ============================================================ */
+
+/* HOME — seletor passa a ficar dentro do card de resumo do portal. */
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  clip-path: none !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select {
+  width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 18px !important;
+  border-radius: 18px !important;
+  border: 1px solid rgba(255,255,255,.18) !important;
+  background: rgba(12,16,26,.84) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  letter-spacing: .2px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 12px 26px rgba(0,0,0,.16) !important;
+}
+
+body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select:focus {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vermelho) 24%, transparent), inset 0 1px 0 rgba(255,255,255,.08) !important;
+  outline: 0 !important;
+}
+
+/* HOME — o card de atualização ocupa o antigo espaço do seletor. */
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+  display: grid !important;
+  grid-template-columns: minmax(64px, 76px) !important;
+  justify-content: start !important;
+  align-items: start !important;
+  gap: 0 !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 4 !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  place-items: center !important;
+  gap: 4px !important;
+  width: clamp(64px, 5.6vw, 76px) !important;
+  min-width: clamp(64px, 5.6vw, 76px) !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 !important;
+  padding: 8px 7px !important;
+  border: 1px solid var(--usp-summary-divider) !important;
+  border-radius: 16px !important;
+  background: var(--usp-summary-sheet-bg) !important;
+  box-shadow: none !important;
+  opacity: .94 !important;
+  text-align: center !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+  display: block !important;
+  margin: 0 !important;
+  color: var(--usp-summary-muted) !important;
+  font-size: 6.4px !important;
+  font-weight: 800 !important;
+  line-height: 1.04 !important;
+  letter-spacing: .055em !important;
+  text-transform: uppercase !important;
+}
+
+body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+  display: block !important;
+  justify-self: center !important;
+  color: #00c853 !important;
+  font-size: clamp(15px, 1.35vw, 18px) !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* PÁGINAS INTERNAS — controles ficam dentro/embaixo do card de resumo institucional. */
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 12px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 14px 0 0 !important;
+  padding: 0 !important;
+  position: relative !important;
+  z-index: 5 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 8px !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 14px 16px !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.08), rgba(255,255,255,.03)), rgba(12,16,26,.82) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 14px 32px rgba(0,0,0,.18) !important;
+  clip-path: none !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector label,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector label {
+  margin: 0 !important;
+  color: rgba(255,255,255,.86) !important;
+  font-family: 'Oswald', sans-serif !important;
+  font-size: 12px !important;
+  letter-spacing: .08em !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 48px !important;
+  padding: 0 16px !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(255,255,255,.16) !important;
+  background: rgba(7,10,18,.88) !important;
+  color: #fff !important;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select:focus,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select:focus {
+  border-color: color-mix(in srgb, var(--vermelho) 70%, #fff) !important;
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--vermelho) 24%, transparent) !important;
+  outline: 0 !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-branch-switcher,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-branch-switcher {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 14px 16px !important;
+  border: 1px solid rgba(255,255,255,.12) !important;
+  border-radius: 18px !important;
+  background: linear-gradient(135deg, rgba(255,255,255,.06), rgba(255,255,255,.025)), rgba(12,16,26,.68) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 12px 28px rgba(0,0,0,.14) !important;
+}
+
+body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .branch-buttons,
+body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .branch-buttons {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1040px) {
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home {
+    width: 100% !important;
+  }
+
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary {
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 640px) {
+  body[data-page="principal"] .header-facts-panel > .header-inst-selector--home,
+  body[data-page="principal"] .header-facts-panel > .header-inst-selector--home select,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+  body:not([data-page="principal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector,
+  body[data-page="principal"][data-inst]:not([data-inst="portal"]) .header-facts-panel > .header-controls-grid--summary .header-inst-selector select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    width: 62px !important;
+    min-width: 62px !important;
+    padding: 6px 5px !important;
+    border-radius: 14px !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    font-size: 5.5px !important;
+  }
+
+  body[data-page="principal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    font-size: 14px !important;
+  }
+}
