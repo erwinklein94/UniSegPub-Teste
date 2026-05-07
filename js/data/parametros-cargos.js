@@ -807,6 +807,32 @@ const CARGOS_PMAC = [
   { val: 'al_soldado_ac', text: 'AL SD PMAC — Aluno Soldado', padrao: 4344.22, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'pmac', criterio: CRITERIO_PMAC_2018, benefDesc: BENEF_PMAC_2018, badge: 'Tabela oficial AC' }
 ];
 
+/* === ACRE — Corpo de Bombeiros Militar do Acre ===================== */
+const CRITERIO_BMAC_2018 = 'Total bruto oficial da tabela remuneratória PMAC/CBMAC, com base na estrutura remuneratória dos militares estaduais do Acre. Referência: Lei Complementar AC nº 349/2018, que trata das carreiras de Oficiais e Praças Militares Estaduais e altera a LC AC nº 164/2006. A tabela cadastrada usa a referência pública consolidada de julho/2018 já existente no portal; conferir atualizações posteriores no Portal do Estado do Acre, Diário Oficial, ficha financeira e contracheque.';
+const BENEF_BMAC_2018 = 'O total bruto da tabela já consolida as parcelas remuneratórias gerais da referência oficial. Não somar automaticamente auxílio-aptidão militar, serviço complementar/banco de horas, localização especial, chefia, sexta-parte, gratificação de atividade especial, prêmio anual, diárias, indenizações, fardamento, saúde ou rubricas pessoais; cada parcela depende de lei, escala, lotação, ato administrativo e contracheque.';
+const CARGOS_BMAC = [
+  { val: 'coronel_bmac', text: 'CEL BMAC — Coronel BM', padrao: 18560.01, gratif: 0, oficial: true, retpFator: 0, selected: false, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'ten_cel_bmac', text: 'TEN CEL BMAC — Tenente-Coronel BM', padrao: 15955.97, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'major_bmac', text: 'MAJ BMAC — Major BM', padrao: 13856.68, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'capitao_bmac', text: 'CAP BMAC — Capitão BM', padrao: 11988.79, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '1ten_bmac', text: '1º TEN BMAC — 1º Tenente BM', padrao: 10494.73, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '2ten_bmac', text: '2º TEN BMAC — 2º Tenente BM', padrao: 9887.81, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'asp_of_bmac', text: 'ASP OF BMAC — Aspirante a Oficial BM', padrao: 9253.15, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'al_of_bmac', text: 'AL OF BMAC — Aluno Oficial BM', padrao: 6887.07, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'subten_bmac', text: 'SUBTEN BMAC — Subtenente BM', padrao: 7285.86, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '1sgt_bmac', text: '1º SGT BMAC — 1º Sargento BM', padrao: 6767.42, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '2sgt_bmac', text: '2º SGT BMAC — 2º Sargento BM', padrao: 6500.93, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '3sgt_b_bmac', text: '3º SGT BMAC — Nível II', padrao: 6349.39, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: '3sgt_a_bmac', text: '3º SGT BMAC — Nível I', padrao: 6217.35, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'al_sgt_bmac', text: 'AL SGT BMAC — Aluno Sargento BM', padrao: 5415.82, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'cabo_bmac', text: 'CB BMAC — Cabo BM', padrao: 5326.50, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'al_cabo_bmac', text: 'AL CB BMAC — Aluno Cabo BM', padrao: 5249.83, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'soldado_2_bmac', text: 'SD BMAC — Soldado BM Nível II', padrao: 5207.53, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'soldado_1_bmac', text: 'SD BMAC — Soldado BM Nível I', padrao: 5007.40, gratif: 0, oficial: false, selected: true, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' },
+  { val: 'al_soldado_bmac', text: 'AL SD BMAC — Aluno Soldado BM', padrao: 4344.22, gratif: 0, oficial: false, retpFator: 0, fonteKey: 'bmac', criterio: CRITERIO_BMAC_2018, benefDesc: BENEF_BMAC_2018, badge: 'Tabela oficial AC · PMAC/CBMAC' }
+];
+
+
 
 
 const CRITERIO_PF_2026 = 'Subsídio federal da carreira policial federal, valores com efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVI, que substituiu a tabela do Anexo II da Lei nº 11.358/2006. A linha mostra subsídio bruto mensal, sem somar indenizações, auxílios, férias, 13º, função, abono de permanência ou parcelas pessoais.';

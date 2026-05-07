@@ -9,6 +9,7 @@ const HEADER_ESTADOS = {
     nome: 'Acre',
     sigla: 'AC',
     pm: 'pmac',
+    bm: 'bmac',
     pc: 'pcac',
     pp: 'ppac',
     flag: 'https://commons.wikimedia.org/wiki/Special:FilePath/Bandeira_do_Acre.svg'
@@ -97,6 +98,7 @@ const HEADER_ESTADOS = {
 
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
+  bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
   pmesp: { titulo: 'PMESP', desc: 'Polícia Militar do Estado de São Paulo' },
@@ -2874,6 +2876,92 @@ function aplicarEstruturaBombeirosMilitaresDados() {
   });
 }
 
+
+function aplicarDadosEspecificosBmac() {
+  const inst = 'bmac';
+  if (HEADER_ESTADOS.ac) HEADER_ESTADOS.ac.bm = inst;
+  if (!INSTITUICOES_VALIDAS.includes(inst)) INSTITUICOES_VALIDAS.push(inst);
+
+  HEADER_INSTITUICOES_INFO[inst] = {
+    titulo: 'BMAC',
+    desc: 'Corpo de Bombeiros Militar do Acre'
+  };
+
+  HEADER_INSTITUICOES_RESUMO[inst] = {
+    nome: 'Corpo de Bombeiros Militar do Acre',
+    sigla: 'BMAC',
+    siglaInterna: 'CBMAC',
+    estado: 'Acre',
+    estadoSigla: 'AC',
+    tipo: 'Bombeiro Militar',
+    criacao: '1974 · separação administrativa da PM em 1991',
+    ativa: 689,
+    ativaLabel: '≈ 690 militares ativos — estimativa de ordem de grandeza: efetivo oficial de 633 militares divulgado no balanço de 2024, acrescido da formatura de 56 novos soldados em 2025; conferir folha/portal de pessoal para número exato',
+    reserva: 500,
+    reservaLabel: '≈ 500 inativos/reserva — estimativa técnica para dar noção de grandeza; conferir Acreprevidência e demonstrativos oficiais antes de uso jurídico ou remuneratório',
+    femininas: 120,
+    femininasLabel: '≈ 120 mulheres — estimativa técnica com base em vagas femininas do concurso de aluno-soldado e composição histórica; não usar como quantitativo oficial fechado',
+    populacao: 884372,
+    populacaoLabel: '884.372 habitantes',
+    populacaoTitulo: 'População estimada do Acre em 1º de julho de 2025, segundo IBGE',
+    relacaoLabel: '≈ 1 militar ativo para cada 1,3 mil habitantes',
+    relacaoTitulo: 'Relação estimada ativa/população: 884.372 habitantes ÷ ≈ 689 ativos',
+    governador: 'Mailza Assis',
+    comando: 'Cel QOBM Charles da Silva Santos — Comandante-Geral do CBMAC',
+    estrutura: 'Comando-Geral em Rio Branco, nove unidades operacionais e três administrativas; atuação direta em Rio Branco, Epitaciolândia, Cruzeiro do Sul, Sena Madureira, Tarauacá, Feijó e Xapuri, com resposta operacional também em Bujari, Porto Acre, Senador Guiomard, Brasileia, Rodrigues Alves e Mâncio Lima, além de prontidão nos aeroportos de Rio Branco e Cruzeiro do Sul.',
+    sede: 'Comando-Geral do CBMAC — Rio Branco/AC',
+    emergencia: '193',
+    fonte: 'Agência de Notícias do Acre; Portal do Estado do Acre; ALEAC; IBGE; SEAD/AC; IBFC',
+    atualizado: 'BMAC revisado em 06/05/2026 — números de efetivo, reserva e mulheres exibidos como estimativas identificadas; remuneração detalhada por tabela PMAC/CBMAC'
+  };
+
+  REMUNERACAO_FONTES_OFICIAIS[inst] = {
+    nome: 'Portal do Estado do Acre e ALEAC — tabela PMAC/CBMAC e leis dos militares estaduais; referência remuneratória de julho/2018 já cadastrada no portal',
+    url: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/'
+  };
+
+  if (typeof CARGOS_BMAC !== 'undefined' && Array.isArray(CARGOS_BMAC) && CARGOS_BMAC.length) {
+    CARGOS_ESTRUTURA_GENERICAS[inst] = CARGOS_BMAC;
+  }
+
+  CONFIGS_INSTITUICOES_GENERICAS[inst] = {
+    titulo: 'BMAC',
+    desc: 'Corpo de Bombeiros Militar do Acre',
+    cor: '#b91c1c',
+    alertaPrev: 'BMAC/CBMAC: conferir LC AC 164/2006, LC AC 349/2018, Lei AC 2.009/2008, Lei AC 2.010/2008, banco de horas, auxílio-aptidão militar, serviço complementar, localização especial, reserva/reforma e contracheque. Não somar rubricas sem ato funcional e escala.'
+  };
+
+  CONCURSOS[inst] = {
+    edital: 'BMAC/CBMAC — Concurso público 2022 para Aluno Soldado Combatente · IBFC · 153 vagas; atos de convocação e formação em 2025',
+    salario: 'Remuneração inicial divulgada no edital/notícia oficial: R$ 4.344,22 para Aluno Soldado. Na tabela remuneratória do site, a referência de Soldado BM Nível I é R$ 5.007,40 e Soldado BM Nível II é R$ 5.207,53, com base na tabela PMAC/CBMAC cadastrada; confirmar atualização no DOE, SEAD/AC e contracheque.',
+    vagas: '153 vagas no edital de 2022: 122 para aluno soldado combatente masculino e 31 para aluno soldado combatente feminino; 56 novos soldados formados em 2025 reforçaram unidades do interior.',
+    cotas: 'Conferir reserva de vagas, sexo, classificação e regras do edital IBFC/CBMAC e atos complementares.',
+    idade: 'No edital divulgado em 2022: idade mínima de 18 anos e máxima de 30 anos, além de CNH, requisitos físicos, médicos, psicológicos, toxicológicos, investigação social e demais exigências.',
+    escolaridade: 'Nível superior completo para aluno soldado combatente, conforme notícia oficial do edital 2022; conferir diploma e requisitos do edital.',
+    banca: 'IBFC — Instituto Brasileiro de Formação e Capacitação.',
+    inscritos: 'Consultar IBFC/SEAD/DOE para total de inscritos e atos finais.',
+    materias: 'Prova objetiva, conforme edital IBFC/CBMAC; conferir disciplinas oficiais do edital antes de publicar material preparatório.',
+    etapas: 'Prova objetiva, prova de aptidão física, exame psicotécnico, exame médico e toxicológico, investigação criminal e social e Curso de Formação.',
+    cfsd: 'Curso de Formação de Soldados Bombeiro Militar, com carga mínima divulgada de 1.600 horas-aula na convocação e turma de 2025 com 1.985 horas-aula, incluindo estágio prático.',
+    estagio: 'Estágio prático e exercício inicial em unidades operacionais, conforme normas de ensino, disciplina militar e atos do CBMAC.',
+    validade: 'Conferir validade, homologação, prorrogações e convocações no DOE/SEAD/IBFC; o concurso de 2022 teve atos de matrícula e formação em 2025.',
+    previsao: 'Não afirmar novo concurso aberto sem edital no DOE/SEAD. O portal deve tratar o concurso 2022/2025 como histórico recente e monitorar novas autorizações.',
+    site: 'https://sead.ac.gov.br/editais-cbmac-corpo-de-bombeiros-militar-do-estado-do-acre/'
+  };
+
+  ACOES_JUDICIAIS[inst] = [
+    { titulo: 'BMAC — tabela PMAC/CBMAC, enquadramento e progressão', status: 'Conferência individual', ano: 'LC AC 164/2006 · LC AC 349/2018', tipo: 'individual', desc: 'Verificar se posto/graduação, nível, promoções, enquadramento e reflexos foram implantados conforme tabela dos militares estaduais do Acre. Diferenças dependem de ficha funcional e contracheque.', base: 'LC AC 164/2006, LC AC 349/2018, tabela PMAC/CBMAC, boletins, atos de promoção e fichas financeiras.', fonte: 'Portal do Estado do Acre / ALEAC', fonteUrl: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAC — serviço complementar, banco de horas, escala e localização especial', status: 'Depende de escala e ato', ano: 'Lei AC 2.148/2009 e normas correlatas', tipo: 'individual', desc: 'Pode haver conferência quando o militar cumpriu serviço extra, banco de horas, missão, plantão, lotação especial ou função de chefia sem pagamento correto. Não tratar como direito automático para toda a tropa.', base: 'Lei AC 2.148/2009, Decreto regulamentar, escalas, boletins, ordem de serviço, lotação, contracheques e ato de designação.', fonte: 'Portal do Estado do Acre / DOE/AC', fonteUrl: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/', atualizado: 'Maio/2026' },
+    { titulo: 'BMAC — reserva, reforma, pensão militar e proteção social', status: 'Análise individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir data de ingresso, tempo militar, idade, posto/graduação, reforma por incapacidade, paridade/integralidade quando cabível e cálculo de proventos/pensão.', base: 'Estatuto dos Militares do Acre, normas de proteção social militar, Acreprevidência, ficha funcional e processo de reserva/reforma.', fonte: 'Acreprevidência / Portal do Estado do Acre', fonteUrl: 'https://estado.ac.gov.br/', atualizado: 'Maio/2026' }
+  ];
+
+  ASSOCIACOES[inst] = [
+    { nome: 'AME-AC — Associação dos Militares Estaduais do Acre', foco: 'Policiais militares, bombeiros militares, veteranos, pensionistas e familiares no Acre', acao: 'Representação associativa, acompanhamento de pautas da carreira militar estadual, valorização profissional, previdência, assistência e comunicação institucional.', site: 'https://ameac.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, eventual apoio jurídico conforme contrato, eventos e acompanhamento institucional.' },
+    { nome: 'CBSAÚDE — Cooperativa de Saúde dos Servidores Públicos do Corpo de Bombeiros do Acre', foco: 'Comunidade vinculada ao Corpo de Bombeiros Militar do Acre e projetos apoiados pela corporação', acao: 'Apoio em iniciativas de saúde e atendimento vinculadas ao ambiente institucional do CBMAC, conforme parcerias divulgadas publicamente.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Atendimento/apoio de saúde conforme parceria, regra interna e disponibilidade institucional.' },
+    { nome: 'Entidades representativas dos militares estaduais do Acre', foco: 'Oficiais e praças da PMAC e do BMAC/CBMAC, ativos, reserva, reformados e pensionistas', acao: 'Espaço para cadastrar entidades locais adicionais que atuem com remuneração, carreira, promoções, saúde, reserva/reforma e condições de serviço.', site: 'Consultar canais oficiais', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, comunicação institucional, convênios, orientação ao associado e acompanhamento de demandas administrativas e judiciais.' }
+  ];
+}
+
 function inserirOptionBombeiroNoSelect(select, item) {
   if (!select || Array.from(select.options || []).some(opt => opt.value === item.inst)) return;
   let grupo = Array.from(select.querySelectorAll('optgroup')).find(optgroup => optgroup.label === item.nome);
@@ -3196,6 +3284,7 @@ function aplicarRevisaoResumosInstitucionais() {
 
 aplicarEstruturaEstadosFaltantesDados();
 aplicarEstruturaBombeirosMilitaresDados();
+aplicarDadosEspecificosBmac();
 aplicarEstruturaFederaisDados();
 aplicarRevisaoResumosInstitucionais();
 

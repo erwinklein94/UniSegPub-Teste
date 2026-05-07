@@ -9,6 +9,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'Portal do Estado do Acre — tabelas salariais PMAC/CBMAC e Edital FGV PMAC 2023',
     url: 'https://estado.ac.gov.br/tabelas-salariais/'
   },
+  bmac: {
+    nome: 'Portal do Estado do Acre e ALEAC — estrutura remuneratória PMAC/CBMAC; LC AC 349/2018, LC AC 164/2006, Lei AC 2.009/2008 e editais CBMAC/IBFC',
+    url: 'https://estado.ac.gov.br/servidor-publico/legislacao-e-pccr/legislacao-e-pccr-diretas/'
+  },
   pcac: {
     nome: 'Portal do Estado do Acre — tabelas salariais PCAC (Lei 2.250/3.228, LC 303 e Lei 3.107)',
     url: 'https://estado.ac.gov.br/tabelas-salariais/'
@@ -418,7 +422,7 @@ const REMUNERACAO_MG_OFICIAL = {
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   bmac: CARGOS_BMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -457,6 +461,13 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
+  } else if (inst === 'pmac' || inst === 'bmac') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Total bruto mensal de referência para militares estaduais do Acre, conforme tabela remuneratória cadastrada.';
+    benefDesc = cargo.benefDesc || 'Adicionais, auxílios, indenizações, banco de horas, serviço complementar, chefia, localização especial e rubricas pessoais dependem de lei local, escala, lotação, ato e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || inst;
+    badge = cargo.valorPendente || padrao <= 0 ? 'Estimativa pendente' : (cargo.badge || 'Tabela oficial AC');
   } else if (inst === 'pmms') {
     remuneracao = padrao;
     beneficios = 0;
