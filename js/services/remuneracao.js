@@ -125,6 +125,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PPSP — SGGD/SP — tabela oficial da área penitenciária julho/2025; LC SP 1.416/2024 e LC SP 1.425/2025',
     url: 'https://www.sggd.sp.gov.br/sgp/normas_e_legislacao/penitenciaria'
   },
+  pf: {
+    nome: 'Lei nº 14.875/2024, Anexo XXVI — subsídio da Carreira Policial Federal com efeitos em 01/05/2026; MGI/Gov.br — benefícios federais 2026; PF/Gov.br — servidores e concursos',
+    url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14875.htm'
+  },
   prf: {
     nome: 'Lei nº 14.875/2024, Anexo XXVII — subsídio PRF com efeitos em 01/05/2026; PRF/Gov.br — carreira e Portal da Transparência',
     url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf'
@@ -218,39 +222,18 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `Tabela total oficial com referência julho/2025. RETP: em regra 100% sobre o padrão/vencimento-base, já considerado no bruto oficial desta tabela. A Lei SP 18.441/2026 atualizou vencimentos-base desde 01/04/2026; não use o vencimento-base como total sem conferir tabela posterior/holerite. ${carreiraDelegado ? 'Delegados podem ter ADPJ e verbas próprias de representação quando previstas. ' : ''}Quinquênio: 5% por período aquisitivo; sexta-parte: 1/6 após requisito temporal. DEJEC: eventual, condicionada à escala/autorização e limites da Lei 18.440/2026. Auxílio-alimentação: ${fmt(AUX_ALIM_SP_DIA_PADRAO)} por dia efetivamente trabalhado. IAMSPE e insalubridade dependem de contribuição, grau, laudo e enquadramento.`;
   }
 
-  if (isPoliciaPenal(inst)) {
-    remuneracao = padrao;
-    beneficios = Number(cargo.beneficios || 0);
-    criterio = cargo.criterio || 'Remuneração bruta mensal de referência da tabela oficial da Polícia Penal.';
-    benefDesc = cargo.benefDesc || 'Auxílios, adicionais, plantões e parcelas indenizatórias dependem de lei, escala, lotação e situação funcional; não foram somados automaticamente.';
-    fonteKey = cargo.fonteKey || inst;
-    badge = cargo.badge || 'Fonte oficial';
-  } else if (inst === 'pf' || inst === 'prf') {
-    remuneracao = padrao;
-    beneficios = Number(cargo.beneficios || 0);
-    criterio = cargo.criterio || 'Subsídio federal mensal da carreira, conforme tabela remuneratória federal vigente.';
-    benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
-    fonteKey = cargo.fonteKey || inst;
-    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
-  } else if (inst === 'pmms') {
-    remuneracao = padrao;
-    beneficios = 0;
-    criterio = cargo.valorPendente || padrao <= 0
-      ? 'Cargo cadastrado para a PMMS; valor vigente deve ser confirmado em tabela oficial, Diário Oficial/MS, edital ou contracheque.'
-      : 'Referência de remuneração do último concurso/edital PMMS; confirmar tabela vigente antes de decisão financeira.';
-    benefDesc = 'Auxílios, adicionais, fardamento, indenizações e verbas por escala/lotação dependem da legislação estadual, ato administrativo e contracheque; não foram somados automaticamente.';
-    fonteKey = 'pmms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital/triagem';
-  } else if (inst === 'pcms') {
-    remuneracao = padrao;
-    beneficios = 0;
-    criterio = cargo.valorPendente || padrao <= 0
-      ? 'Cargo/carreira da PCMS cadastrado para seleção; remuneração deve ser confirmada em tabela legal, DOE/MS, edital ou contracheque.'
-      : 'Remuneração inicial divulgada no Edital SAD/SEJUSP/PCMS/APJ/2025 para jornada de 40h.';
-    benefDesc = 'Abonos, adicionais, plantões, indenizações e outras rubricas dependem da legislação estadual, lotação, escala e contracheque; não foram somados automaticamente.';
-    fonteKey = 'pcms';
-    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : 'Edital APJ/2025';
-  } else if (inst === 'pmerj') {
+  if (inst === 'pf') {
+    const grupoSuperior = /delegado|perito/i.test(linha.cargo || '');
+    const grupoOperacional = /agente|escrivão|escrivao|papiloscopista/i.test(linha.cargo || '');
+    const grupo = grupoSuperior
+      ? 'Grupo remuneratório Delegado/Perito: categorias Especial, Primeira, Segunda e Terceira, sem subdivisão por padrão na tabela legal.'
+      : grupoOperacional
+        ? 'Grupo remuneratório Agente/Escrivão/Papiloscopista: classes Especial, 1ª, 2ª e 3ª na tabela legal.'
+        : 'Grupo remuneratório da Carreira Policial Federal conforme cargo e classe.';
+    return `Regime de subsídio: valor bruto mensal da carreira policial federal com efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVI. ${grupo} Auxílio-alimentação federal: R$ 1.192,00, verba indenizatória não somada ao subsídio. Assistência pré-escolar: R$ 526,64 quando houver dependente elegível e requisitos no SIAPE/SouGov. Saúde suplementar: participação da União por faixa etária/remuneração, não somada automaticamente. Indenização de fronteira: R$ 91,00 por dia de efetivo trabalho somente em localidade estratégica e quando não houver incompatibilidade/cumulação vedada. Diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina, abono de permanência, função e parcelas pessoais dependem de lotação, escala, missão, tempo de serviço e situação funcional.`;
+  }
+
+  if (inst === 'pmerj') {
     let gret = '150%';
     let ghp = '110%';
     if (/cel|ten cel/i.test(linha.cargo || '')) { gret = '192,5%'; ghp = '160%'; }
@@ -369,6 +352,17 @@ const REMUNERACAO_SP_OFICIAL = {
 };
 
 
+REMUNERACAO_SP_OFICIAL.pf = CARGOS_PF.map(cargo => linhaRemuneracaoOficial(
+  cargo.text.replace(/^PF — /, ''),
+  cargo.padrao,
+  0,
+  cargo.criterio,
+  cargo.benefDesc,
+  'pf',
+  cargo.badge || 'Federal 2026'
+));
+
+
 REMUNERACAO_SP_OFICIAL.prf = CARGOS_PRF.map(cargo => linhaRemuneracaoOficial(
   cargo.text.replace(/^PRF — /, ''),
   cargo.padrao,
@@ -423,7 +417,7 @@ const REMUNERACAO_MG_OFICIAL = {
 
 function getTabelaCargosRemuneracao(inst) {
   const map = {
-    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, prf: CARGOS_PRF,
+    pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
     pmac: CARGOS_PMAC,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
     pmerj: CARGOS_PMERJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,

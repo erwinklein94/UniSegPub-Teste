@@ -2425,25 +2425,39 @@ function criarResumoFederalEstrutura(item) {
     return {
       nome: 'Polícia Federal',
       sigla: 'PF',
+      siglaInterna: 'PF',
       estado: 'Brasil',
       estadoSigla: 'BR',
-      tipo: 'Polícia Federal',
-      criacao: '16/11/1964 · Lei nº 4.483/1964 reorganizou o DFSP com atuação federal; órgão permanente no art. 144 da Constituição Federal',
-      ativa: 15000,
-      ativaLabel: '≈15.000 servidores ativos · estimativa PEP/Portal da Transparência 2026',
-      reserva: 5000,
-      reservaLabel: '≈5.000 aposentados e pensionistas · estimativa PEP/Portal da Transparência 2026',
-      femininas: 2500,
-      femininasLabel: '≈2.500 mulheres no quadro ativo · estimativa por sexo/cargo no PEP 2026',
-      populacao: 213000000,
-      populacaoTitulo: 'Abrangência nacional',
-      populacaoLabel: 'Brasil inteiro · competência federal, fronteiras, portos, aeroportos, migração, passaportes, armas, segurança privada e cooperação internacional',
-      relacaoLabel: 'Cobertura nacional por matéria federal; efetivo ativo estimado em cerca de 15 mil servidores',
-      relacaoTitulo: 'Cobertura institucional',
-      governador: 'Governo Federal / Ministério da Justiça e Segurança Pública',
+      tipo: 'Polícia Federal / Polícia Judiciária da União',
+      criacao: 'Órgão permanente de segurança pública federal — art. 144, §1º, da Constituição Federal; carreira reorganizada pela Lei nº 9.266/1996',
+      ativa: 15700,
+      ativaLabel: '≈ 15,7 mil servidores ativos — estimativa pública de ordem de grandeza com base no eGP/PF 2025 T4 e no PEP/MGI; não expõe lotação nem distribuição sensível',
+      reserva: 9000,
+      reservaLabel: '≈ 9 mil vínculos de aposentados e pensionistas — estimativa orientativa para a aba institucional; conferir PEP/Portal da Transparência antes de uso administrativo',
+      femininas: 3000,
+      femininasLabel: '≈ 3 mil mulheres no quadro ativo/institucional — estimativa conservadora para dar noção ao usuário; recorte exato por sexo deve ser conferido no PEP/MGI',
+      efetivoTotalLabel: '≈ 15,7 mil ativos em base pública 2025 T4; recomposição autorizada em 2026 pode elevar a ordem de grandeza para a faixa de 16,7–17,7 mil após formação, nomeação e posse',
+      populacao: 213400000,
+      populacaoTitulo: 'População estimada do Brasil em 2025 — IBGE',
+      populacaoLabel: '213,4 milhões de habitantes — abrangência nacional',
+      relacaoLabel: '≈ 1 servidor ativo da PF para cada 13,6 mil habitantes',
+      relacaoTitulo: 'Razão estimada: população nacional de 213,4 milhões ÷ cerca de 15,7 mil servidores ativos; usar como noção de escala, não como indicador operacional de policiamento ostensivo',
+      governador: 'Presidência da República / Ministério da Justiça e Segurança Pública',
       comando: 'Andrei Augusto Passos Rodrigues — Diretor-Geral da Polícia Federal',
-      fonte: 'Polícia Federal/Gov.br; PEP/MGI; Portal da Transparência/CGU; Lei nº 14.875/2024; Decreto nº 11.348/2023; Portaria MJSP nº 1.112/2025; edital PF 2025/Cebraspe',
-      atualizado: 'Pesquisa em 03/05/2026 · estrutura PF atualizada em 28/02/2026 · efetivo ativo estimado com base PEP/Transparência'
+      estrutura: 'Diretoria-Geral, Gabinete, DIREX, DPA, DICOR, DAMAZ, DCIBER, DCI, DIP, DITEC, DGP, DIREN-ANP, DLOG, DTI, DPP, COGER e Superintendências Regionais, conforme estrutura institucional publicada pela PF.',
+      sede: 'Brasília/DF — Diretoria-Geral da Polícia Federal',
+      emergencia: 'Atendimento institucional; contato da Direção-Geral: (61) 2024-8000',
+      linksOficiais: [
+        'https://www.gov.br/pf/pt-br',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/competencias',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/institucional/estruturas',
+        'https://www.gov.br/pf/pt-br/composicao/direcao-geral/dg',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/servidores-ativos',
+        'https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos',
+        'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/painel-estatistico-de-pessoal'
+      ],
+      fonte: 'Polícia Federal/Gov.br; Constituição Federal art. 144; Lei nº 9.266/1996; Lei nº 11.358/2006; Lei nº 14.875/2024, Anexo XXVI; Decreto nº 11.348/2023; Portaria MJSP nº 1.112/2025; PEP/MGI; eGP/PF Dados Abertos 2025 T4; Portal da Transparência; IBGE; Cebraspe/PF 2025',
+      atualizado: 'PF revisada em 06/05/2026 — remuneração 2026 detalhada; efetivo e recortes populacionais exibidos como estimativas identificadas, com cautela de conferência PEP/MGI'
     };
   }
 
@@ -2508,6 +2522,7 @@ function criarResumoFederalEstrutura(item) {
 }
 
 function criarCargosPfEstrutura(inst, sigla) {
+  if (typeof CARGOS_PF !== 'undefined' && Array.isArray(CARGOS_PF) && CARGOS_PF.length) return CARGOS_PF;
   const fonteKey = 'pf';
   const criterio = 'Subsídio federal da carreira policial federal, valores com efeitos a partir de 01/05/2026 conforme Lei nº 14.875/2024, Anexo XXVI, e Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026.';
   const benefDesc = 'Benefícios não somados ao subsídio: auxílio-alimentação R$ 1.192,00; assistência pré-escolar R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária/remuneração; indenização de fronteira R$ 91,00 por dia quando houver exercício em localidade prevista; diárias, ajuda de custo, transporte, adicional de férias e gratificação natalina conforme legislação.';
@@ -2689,7 +2704,7 @@ function aplicarEstruturaFederaisDados() {
     HEADER_INSTITUICOES_INFO[item.inst] = HEADER_INSTITUICOES_INFO[item.inst] || { titulo: item.titulo, desc: item.desc };
     HEADER_INSTITUICOES_RESUMO[item.inst] = HEADER_INSTITUICOES_RESUMO[item.inst] || criarResumoFederalEstrutura(item);
     if (item.inst === 'pf') {
-      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'MGI/Servidor — Tabela de Remuneração dos Servidores Públicos Federais Civis nº 87/2026; Lei nº 14.875/2024; Polícia Federal — servidores, estrutura e concursos', url: 'https://www.gov.br/servidor/pt-br/observatorio-de-pessoal-govbr/tabela-de-remuneracao-dos-servidores-publicos-federais-civis-e-dos-ex-territorios' };
+      REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'Lei nº 14.875/2024, Anexo XXVI — subsídio PF com efeitos em 01/05/2026; MGI/Gov.br — benefícios federais 2026; PF/Gov.br — servidores, estrutura e concursos', url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2024/lei/l14875.htm' };
     } else if (item.inst === 'prf') {
       REMUNERACAO_FONTES_OFICIAIS[item.inst] = { nome: 'Lei nº 14.875/2024, Anexo XXVII — subsídio PRF com efeitos em 01/05/2026; PRF/Gov.br — carreira e Portal da Transparência', url: 'https://www.gov.br/prf/pt-br/acesso-a-informacao/servidores/carreira-prf' };
     } else {

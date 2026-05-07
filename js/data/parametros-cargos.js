@@ -808,6 +808,49 @@ const CARGOS_PMAC = [
 ];
 
 
+
+const CRITERIO_PF_2026 = 'Subsídio federal da carreira policial federal, valores com efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVI, que substituiu a tabela do Anexo II da Lei nº 11.358/2006. A linha mostra subsídio bruto mensal, sem somar indenizações, auxílios, férias, 13º, função, abono de permanência ou parcelas pessoais.';
+const BENEF_PF_2026 = 'Benefícios e indenizações não somados ao subsídio: auxílio-alimentação federal de R$ 1.192,00; assistência pré-escolar de R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária e remuneração; indenização de fronteira de R$ 91,00 por dia de efetivo trabalho quando houver exercício em localidade estratégica; diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina, abono de permanência e demais rubricas conforme legislação, lotação, escala e situação individual.';
+const PF_SUBSIDIOS_DELEGADO_PERITO_2026 = [
+  ['especial', 'Classe Especial', 41350.00],
+  ['primeira', '1ª Classe', 35377.35],
+  ['segunda', '2ª Classe', 30869.46],
+  ['terceira', '3ª Classe', 27831.70]
+];
+const PF_SUBSIDIOS_AGENTE_ESCRIVAO_PAPILO_2026 = [
+  ['especial', 'Classe Especial', 25250.00],
+  ['primeira', '1ª Classe', 19617.37],
+  ['segunda', '2ª Classe', 16761.16],
+  ['terceira', '3ª Classe', 14710.10]
+];
+const CARGOS_PF = [
+  ...['Delegado de Polícia Federal', 'Perito Criminal Federal'].flatMap((nome, cargoIdx) => PF_SUBSIDIOS_DELEGADO_PERITO_2026.map(([classeId, classeLabel, valor]) => ({
+    val: `pf_${cargoIdx === 0 ? 'delegado' : 'perito'}_${classeId}`,
+    text: `PF — ${nome} — ${classeLabel}`,
+    padrao: valor,
+    gratif: 0,
+    oficial: true,
+    retpFator: 0,
+    fonteKey: 'pf',
+    criterio: `${CRITERIO_PF_2026} Grupo remuneratório: Delegado de Polícia Federal e Perito Criminal Federal.`,
+    benefDesc: `${BENEF_PF_2026} Para este grupo, a Lei nº 14.875/2024 lista as categorias Especial, Primeira, Segunda e Terceira sem subdivisão por padrão.`,
+    badge: 'Federal 2026'
+  }))),
+  ...['Agente de Polícia Federal', 'Escrivão de Polícia Federal', 'Papiloscopista Policial Federal'].flatMap((nome, cargoIdx) => PF_SUBSIDIOS_AGENTE_ESCRIVAO_PAPILO_2026.map(([classeId, classeLabel, valor]) => ({
+    val: `pf_${cargoIdx === 0 ? 'agente' : cargoIdx === 1 ? 'escrivao' : 'papiloscopista'}_${classeId}`,
+    text: `PF — ${nome} — ${classeLabel}`,
+    padrao: valor,
+    gratif: 0,
+    oficial: true,
+    selected: cargoIdx === 0 && classeId === 'terceira',
+    retpFator: 0,
+    fonteKey: 'pf',
+    criterio: `${CRITERIO_PF_2026} Grupo remuneratório: Agente, Escrivão e Papiloscopista Policial Federal.`,
+    benefDesc: `${BENEF_PF_2026} Para este grupo, a Lei nº 14.875/2024 lista as classes Especial, 1ª, 2ª e 3ª.`,
+    badge: 'Federal 2026'
+  })))
+];
+
 const CRITERIO_PRF_2026 = 'Subsídio federal da carreira de Policial Rodoviário Federal, efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVII, que alterou o Anexo III da Lei nº 11.358/2006.';
 const BENEF_PRF_2026 = 'Benefícios e indenizações não somados ao subsídio: auxílio-alimentação federal, assistência à saúde suplementar por faixa, auxílio pré-escolar quando devido, indenização de fronteira quando houver exercício em localidade prevista, diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina e demais rubricas funcionais conforme legislação e situação individual.';
 const CARGOS_PRF = [
