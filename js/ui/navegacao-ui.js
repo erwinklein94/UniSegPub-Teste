@@ -194,6 +194,7 @@ function atualizarHeaderDesc(descInstituicao) {
     pprs: 'Polícia Penal do Rio Grande do Sul',
     ppsc: 'Polícia Penal de Santa Catarina',
     ppes: 'Polícia Penal do Espírito Santo',
+    bmap: 'Corpo de Bombeiros Militar do Amapá',
     pmms: 'Polícia Militar de Mato Grosso do Sul',
     pcms: 'Polícia Civil de Mato Grosso do Sul',
     ppms: 'Polícia Penal de Mato Grosso do Sul',
@@ -261,7 +262,8 @@ function popularCargos(inst) {
     pmsc: CARGOS_PMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
+    pmmt: CARGOS_PMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
+    bmap: CARGOS_BMAP,};
   currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');

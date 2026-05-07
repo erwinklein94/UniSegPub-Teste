@@ -32,9 +32,10 @@ function analisarDireitos() {
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', pces: 'PCES', ppes: 'PPES',
     pmms: 'PMMS', pcms: 'PCMS', ppms: 'PPMS',
-    pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT'
+    pmmt: 'PMMT', pcmt: 'PCMT', ppmt: 'PPMT', bmap: 'BMAP'
   };
   const isPM = String(inst || '').startsWith('pm');
+  const isBM = String(inst || '').startsWith('bm');
   const isPC = String(inst || '').startsWith('pc');
   const isPP = isPoliciaPenal(inst);
   const dadosUfDireitos = HEADER_ESTADOS[getEstadoDaInstituicao(inst)] || {};
@@ -192,9 +193,9 @@ function analisarDireitos() {
     'Verificar estatuto, plano de carreira e editais internos da instituição.');
 
   // ===== APOSENTADORIA / RESERVA / REFORMA =====
-  html += direitoSecao(isPM ? 'Reserva, reforma e proteção previdenciária' : 'Aposentadoria, abono e proteção previdenciária');
+  html += direitoSecao((isPM || isBM) ? 'Reserva, reforma e proteção previdenciária' : 'Aposentadoria, abono e proteção previdenciária');
 
-  html += direitoItem(isPM ? 'Reserva Remunerada / Inatividade' : 'Aposentadoria Policial', getStatusAposentadoria(tempo, idade, requisitosApos),
+  html += direitoItem((isPM || isBM) ? 'Reserva Remunerada / Inatividade' : 'Aposentadoria Policial', getStatusAposentadoria(tempo, idade, requisitosApos),
     getAposentadoriaTexto(inst, tempo, idade, sexo, requisitosApos, ingressoAntesEC103),
     'A regra concreta depende de idade, tempo total, tempo no cargo/carreira, sexo, data de ingresso, legislação estadual e regras de transição após a EC 103/2019.');
 
@@ -285,6 +286,7 @@ function getSaudeTexto(inst) {
   const textos = {
     pmac: 'PMAC: assistência à saúde e proteção social devem ser conferidas na PMAC, SEAD/AC, Acreprevidência e normas estaduais; benefício, cobertura e dependentes variam por vínculo, contribuição e ato funcional.',
     pcac: 'PCAC: assistência à saúde deve ser conferida na PCAC, SEAD/AC, Acreprevidência e normas estaduais; pode envolver perícia oficial, regras do servidor estadual e normas próprias da carreira.',
+    bmap: 'BMAP/CBMAP: assistência, saúde, junta médica e proteção social devem ser conferidas no CBMAP, SEAD/AP, AMPRev e normas estaduais; cobertura, dependentes e descontos variam por vínculo e ato funcional.',
     pmesp: 'PMESP: assistência pode envolver Cruz Azul, FUSAM, CBPM/SPSM e regras próprias para titular e dependentes; a contribuição deve ser conferida na CBPM conforme vínculo, retribuição-base, pensão e dependentes.',
     pcsp: 'PCSP: pode haver IAMSPE, auxílio-alimentação, DEJEC, insalubridade, quinquênios, sexta-parte e outras rubricas conforme vínculo, dias trabalhados, escala, laudo, contribuição e regras do Estado.',
     pmerj: 'PMERJ: assistência pode envolver FUSPOM, HCPM, Família Azul, Diretoria de Assistência Social, Diretoria Geral de Odontologia e regras próprias da SEPM/PMERJ.',
@@ -312,6 +314,7 @@ function getSaudeBase(inst) {
     return `Base: ${info.orgao}; ${info.previdencia}`;
   }
   if (inst === 'prf') return 'Base: Lei nº 8.112/1990, normas SIAPE/SouGov/MGI e regras federais de assistência à saúde suplementar; conferir cadastro, faixa, dependentes e comprovantes.';
+  if (inst === 'bmap') return 'Base: CBMAP, SEAD/AP, AMPRev, LC AP 113/2018, LC AP 173/2025, estatuto militar estadual e normas administrativas. Conferir contribuição, dependentes, perícia, reserva/reforma e cobertura vigente.';
   if (inst === 'pmac' || inst === 'pcac') return 'Base: PMAC/PCAC, SEAD/AC, Acreprevidência, estatutos e normas estaduais. Conferir adesão, contribuição, dependentes, perícia e cobertura vigente.';
   if (inst === 'pmmg') return 'IPSM/MG: gestão de benefícios previdenciários e de saúde dos militares mineiros e dependentes.';
   if (inst === 'pmba' || inst === 'pcba') return 'Planserv/BA e legislação estadual aplicável.';
@@ -329,6 +332,7 @@ function getTempoServicoTexto(inst, tempo) {
     return `${info.sigla}: ${info.quadro} O tempo informado indica <strong>${tempo}</strong> ano(s) para análise de interstício, progressão, promoção, aposentadoria e vantagens condicionadas.`;
   }
   if (inst === 'prf') return `Na PRF, o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de progressão/promoção, classe/padrão, aposentadoria policial, abono de permanência e indenizações condicionadas. Não aplicar quinquênio ou sexta-parte estadual à carreira federal por subsídio.`;
+  if (inst === 'bmap') return `No BMAP/CBMAP, o tempo informado indica <strong>${tempo}</strong> ano(s) para análise de promoção, progressão horizontal, reserva/reforma, licença especial e vantagens condicionadas. Use a LC AP 113/2018, LC AP 173/2025, ficha funcional, boletins e contracheque.`;
   if (inst === 'pmac') return `Na PMAC, o tempo de serviço deve ser conferido para adicional temporal, sexta-parte quando aplicável, promoções, reserva/reforma e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pcac') return `Na PCAC, o tempo de serviço deve ser conferido para adicional temporal, progressão por classe, titulação, aposentadoria policial e vantagens pessoais. Pelo tempo informado, há <strong>${Math.floor(tempo / 5)}</strong> período(s) de 5 anos como referência inicial.`;
   if (inst === 'pmesp' || inst === 'pcsp') return `Em SP, há indicativo de <strong>${Math.floor(tempo / 5)}</strong> quinquênio(s), calculados em regra a cada 5 anos de efetivo exercício, observadas as exceções legais.`;
@@ -430,6 +434,7 @@ function getPericulosidadeBase(inst) {
     return `Base: ${info.criacao}; ${info.fonte}; legislação remuneratória e contracheque.`;
   }
   if (inst === 'prf') return 'Base: Lei nº 14.875/2024, Lei nº 12.855/2013, Lei nº 8.112/1990, atos de lotação/missão, SouGov e contracheque.';
+  if (inst === 'bmap') return 'Base: LC AP nº 113/2018, LC AP nº 173/2025, DOE/AP, CBMAP, SEAD/AP, escalas, boletins, atos de designação e contracheque.';
   if (inst === 'pmac') return 'Base: LC AC 164/2006, LC AC 39/1993, tabelas PMAC/CBMAC, escalas, boletins, atos de designação e contracheque.';
   if (inst === 'pcac') return 'Base: leis remuneratórias da PCAC, Lei Orgânica Nacional das Polícias Civis, atos administrativos, escalas e contracheque.';
   if (inst === 'pcerj') return 'Base: Lei 11.003/2025/RJ, art. sobre adicional de atividade perigosa e verba de representação.';
@@ -460,6 +465,18 @@ function getVantagensEspecificas(inst) {
     html += direitoItem(`${info.sigla} — Previdência, saúde e aposentadoria policial`, 'verificar',
       `${info.previdencia} ${info.saude}`,
       'A análise exige data de ingresso, tempo no cargo, sexo, idade, regra de transição, contribuição e ficha funcional.');
+    return html;
+  }
+  if (inst === 'bmap') {
+    html += direitoItem('BMAP — Subsídio, progressão horizontal e carreira', 'condicionado',
+      'Tabela legal por posto/graduação e progressão horizontal foi cadastrada como referência de remuneração bruta legal. Conferir nível, data de promoção/progressão, quadro, ficha funcional e contracheque antes de qualquer cálculo.',
+      'Base: LC AP 113/2018 alterada pela LC AP 173/2025, DOE/AP, SEAD/AP e atos funcionais.');
+    html += direitoItem('BMAP — Diárias, serviço extraordinário e indenizações', 'condicionado',
+      'Diárias, serviço extraordinário, alimentação, fardamento, indenização, função e parcelas pessoais dependem de previsão legal, escala, ordem de serviço, lotação e rubrica individual.',
+      'Base: legislação estadual, boletins, escalas, ato de designação e contracheque.');
+    html += direitoItem('BMAP — Reserva, reforma, pensão e ex-Território', 'verificar',
+      'Amapá exige cautela adicional para não misturar quadro estadual do CBMAP com eventual vínculo federal de ex-Território/transposição. Conferir vínculo, regime, ato de ingresso e órgão pagador.',
+      'Base: SEAD/AP, AMPRev, processo funcional, ato de transposição quando houver e contracheque.');
     return html;
   }
   if (inst === 'pmac') {
