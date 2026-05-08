@@ -4453,7 +4453,6 @@ function calcularResumoPortalHeader() {
   let ativa = 0;
   let reserva = 0;
   let femininas = 0;
-  let populacao = 0;
 
   INSTITUICOES_VALIDAS.forEach(inst => {
     const dados = HEADER_INSTITUICOES_RESUMO[inst] || {};
@@ -4463,10 +4462,9 @@ function calcularResumoPortalHeader() {
     femininas += Number(dados.femininas || 0);
   });
 
-  Object.values(HEADER_ESTADOS).forEach(estado => {
-    const ref = HEADER_INSTITUICOES_RESUMO[estado.pm] || HEADER_INSTITUICOES_RESUMO[estado.pc] || HEADER_INSTITUICOES_RESUMO[estado.pp] || {};
-    populacao += Number(ref.populacao || 0);
-  });
+  // A população abrangida do portal é a população brasileira uma única vez.
+  // Não somar populações por instituição/ramo, pois isso duplica ou multiplica a abrangência real.
+  const populacao = Number(HEADER_INSTITUICOES_RESUMO.pf?.populacao || 213400000);
 
   return { instituicoes, estados, ativa, reserva, femininas, total: ativa + reserva, populacao };
 }
@@ -4526,7 +4524,7 @@ function aplicarHeaderInicialPortal() {
   setTexto('header-resumo-ativa', `${formatarEfetivoHeader(resumoPortal.total)}+`);
   setTexto('header-resumo-reserva', `${formatarEfetivoHeader(resumoPortal.reserva)}+`);
   setTexto('header-resumo-total', `${formatarEfetivoHeader(resumoPortal.femininas)}+`);
-  setTexto('header-resumo-populacao', formatarNumeroHeader(resumoPortal.populacao));
+  setTexto('header-resumo-populacao', `${formatarNumeroHeader(resumoPortal.populacao)} (estimado)`);
   setTexto('header-resumo-relacao', `${resumoPortal.estados} UFs`);
   atualizarIndicadorPercentualPortal();
   setTexto('header-resumo-governador', 'Polícia Rodoviária Federal, Polícia Federal, Polícia Militar, Polícia Civil, Polícia Penal, Bombeiro Militar e Guarda Municipal');
