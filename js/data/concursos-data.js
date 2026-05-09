@@ -70,6 +70,23 @@ const CONCURSOS = {
     previsao: 'Concurso autorizado/comissão formada; não publicar como edital aberto até sair ato oficial.',
     site: 'https://pc.al.gov.br/'
   },
+  ppal: {
+    edital: 'PPAL/SERIS-AL — último edital 2021 para Agente/Policial Penal; novo concurso sem edital aberto localizado nesta revisão.',
+    salario: 'Edital SERIS/AL 2021: R$ 3.800,00. Remuneração vigente cadastrada pela Lei AL nº 9.849/2026: subsídio de R$ 7.200,00 a R$ 17.734,04 por nível/classe, sem somar rubricas pessoais.',
+    vagas: 'Último edital: 300 vagas. Novo pedido citado por portais especializados: 350 vagas solicitadas; confirmar autorização, banca e edital em SEPLAG/SERIS/DOE antes de publicar como aberto.',
+    cotas: 'Reserva de vagas conforme legislação e edital vigente; no novo certame, aguardar regras oficiais.',
+    idade: 'A definir no próximo edital. No edital 2021, requisitos completos dependiam da publicação Cebraspe/SERIS.',
+    escolaridade: 'Nível superior completo no edital 2021; confirmar CNH, idade, aptidão física, conduta social e demais requisitos no próximo edital.',
+    materias: 'Base esperada: Língua Portuguesa, Raciocínio Lógico, Informática, Direito Constitucional, Administrativo, Penal, Processo Penal, Execução Penal, Direitos Humanos e legislação específica, conforme último edital.',
+    banca: 'Cebraspe no último concurso SERIS/AL 2021; banca futura a definir oficialmente.',
+    inscritos: 'Sem inscrições abertas localizadas nesta revisão. Acompanhar SERIS/AL, SEPLAG/AL, Diário Oficial e banca oficial.',
+    etapas: 'Último edital: provas objetiva e discursiva, TAF, avaliação médica, avaliação psicológica, investigação social, avaliação de títulos/documentos e curso de formação, conforme regras do certame.',
+    cfsd: 'Curso de formação técnico-profissional da SERIS/AL/Escola Penitenciária, com regras de frequência, avaliação, disciplina e classificação.',
+    estagio: 'Posse, exercício, estágio probatório e desenvolvimento na carreira conforme Lei AL nº 7.993/2018, Lei AL nº 8.650/2022, Lei AL nº 9.849/2026 e edital.',
+    validade: 'Último edital 2021 deve ser conferido em seus atos de homologação/prorrogação; novo certame terá validade própria quando publicado.',
+    previsao: 'Não publicar como novo edital aberto sem ato oficial. Manter como pedido/expectativa até publicação formal.',
+    site: 'https://www.seris.al.gov.br/'
+  },
   pcac: {
     edital: 'PCAC — concurso anunciado em 2026 para Delegado, Oficial Investigador de Polícia e Perito',
     salario: 'Edital pendente; o simulador usa as tabelas oficiais cadastradas para Delegado, Perito/Médico-Legista e carreiras operacionais.',

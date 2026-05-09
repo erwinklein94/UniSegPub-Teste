@@ -27,7 +27,7 @@ function analisarDireitos() {
   if (!c) return;
 
   const nomesInst = {
-    pmac: 'PMAC', pmal: 'PMAL', pcal: 'PCAL', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
+    pmac: 'PMAC', pmal: 'PMAL', pcal: 'PCAL', ppal: 'PPAL', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', bmmg: 'CBMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', bmpr: 'CBMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', bmsc: 'CBMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', bmes: 'CBMES', pces: 'PCES', ppes: 'PPES',
@@ -105,6 +105,10 @@ function analisarDireitos() {
     html += direitoItem('AL Previdência / IPASEAL Saúde', 'condicionado',
       'Servidores da PCAL devem conferir RPPS, assistência à saúde, perícia, dependentes, contribuição, abono de permanência, aposentadoria policial, subsídio e rubricas eventuais conforme vínculo e contracheque.',
       'Base: AL Previdência, IPASEAL Saúde, Lei Orgânica Nacional das Polícias Civis, LC Federal nº 51/1985, LC Federal nº 144/2014, LC Estadual nº 52/2019 e normas estaduais.');
+  } else if (inst === 'ppal') {
+    html += direitoItem('SERIS/AL / AL Previdência / IPASEAL Saúde', 'condicionado',
+      'Policiais penais de Alagoas devem conferir assistência, perícia, apoio psicossocial, saúde ocupacional, contribuição previdenciária, dependentes, aposentadoria policial, pensão e abono de permanência conforme vínculo, ficha funcional e contracheque.',
+      'Base: SERIS/AL, AL Previdência, IPASEAL Saúde, Lei AL nº 7.993/2018, Lei AL nº 8.650/2022, Lei AL nº 9.849/2026 e normas estaduais.');
   } else if (inst === 'bmms') {
     html += direitoItem('SPSM/MS / AGEPREV-MS', 'condicionado',
       'Proteção social dos militares estaduais de MS e assistência conforme vínculo, contribuição, dependentes, situação funcional e norma vigente.',
@@ -654,6 +658,19 @@ function getVantagensEspecificas(inst) {
     html += direitoItem('Concurso PCAL 2026 — Agente e Escrivão', 'verificar',
       'Há comissão formada e 300 vagas previstas, mas edital e banca ainda dependem de publicação oficial. Não tratar como inscrições abertas sem ato novo.',
       'Base: Governo de Alagoas, ato de comissão de 2026, futuro edital PCAL e legislação da carreira.');
+  } else if (inst === 'ppal') {
+    html += direitoItem('Lei AL 9.849/2026 — subsídio PPAL', 'verificar',
+      'A tabela do Policial Penal de Alagoas foi cadastrada por nível e classe, de R$ 7.200,00 a R$ 17.734,04. Conferir nível, classe, progressão, implantação, descontos e rubricas pessoais na ficha financeira.',
+      'Base: Lei AL nº 9.849/2026, Lei AL nº 7.993/2018, Lei AL nº 8.650/2022, SAPL/ALEAL, SERIS/AL e contracheque.');
+    html += direitoItem('Jornada 40h e escala 24x72', 'condicionado',
+      'A Lei AL 9.849/2026 disciplina jornada semanal de 40 horas, cumprida em expediente ou plantão; no plantão, a referência legal é 24 horas de serviço por 72 horas de intervalo, conforme necessidade do serviço.',
+      'Base: Lei AL nº 9.849/2026; escalas da SERIS/AL, ordens de serviço, frequência e ficha funcional.');
+    html += direitoItem('Adicional noturno e função de confiança', 'condicionado',
+      'O subsídio é parcela única, mas a lei ressalva função de confiança e adicional noturno. Não somar outras gratificações sem rubrica expressa e previsão normativa.',
+      'Base: Lei AL nº 9.849/2026, atos de designação, escala noturna, folha de pagamento e contracheque.');
+    html += direitoItem('Concurso PPAL — último edital e novo pedido', 'verificar',
+      'Último concurso SERIS/AL foi Cebraspe 2021 com 300 vagas. Há pedido de novo concurso citado por portais, mas sem edital oficial aberto localizado nesta revisão.',
+      'Base: Cebraspe/SERIS 2021; acompanhar SERIS/AL, SEPLAG/AL e Diário Oficial para novo edital.');
   } else if (inst === 'bmms') {
     html += direitoItem('Subsídio CBMMS — posto/graduação e nível', 'verificar',
       'Tabela por subsídio e nível. Conferir posto/graduação, nível, enquadramento, RGA 2026 e implantação no contracheque.',

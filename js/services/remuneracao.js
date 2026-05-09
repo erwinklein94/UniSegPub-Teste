@@ -624,7 +624,7 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,

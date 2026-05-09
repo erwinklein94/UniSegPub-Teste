@@ -115,6 +115,8 @@ const HEADER_ESTADOS = {
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pmal: { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' },
+  pcal: { titulo: 'PCAL', desc: 'Polícia Civil do Estado de Alagoas' },
+  ppal: { titulo: 'PPAL', desc: 'Polícia Penal do Estado de Alagoas' },
   bmac: { titulo: 'BMAC', desc: 'Corpo de Bombeiros Militar do Acre' },
   pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre' },
   ppac: { titulo: 'PPAC', desc: 'Polícia Penal do Acre' },
@@ -1339,26 +1341,36 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "Base numérica inserida em 01/05/2026"
   },
   "ppal": {
-    "nome": "Polícia Penal de Alagoas",
+    "nome": "Polícia Penal do Estado de Alagoas",
     "sigla": "PPAL",
     "estado": "Alagoas",
     "estadoSigla": "AL",
     "tipo": "Polícia Penal",
-    "criacao": "EC 104/2019 · Polícia Penal estadual/distrital",
+    "criacao": "EC 104/2019 · Lei AL 8.650/2022 · Lei AL 7.993/2018",
     "ativa": 508,
-    "ativaLabel": "508",
+    "ativaLabel": "508 policiais penais · estimado",
     "reserva": 0,
-    "reservaLabel": "0 · carreira civil sem reserva militar; inativos dependem do RPPS local",
+    "reservaLabel": "Inativos: conferir AL Previdência/RPPS-AL",
     "femininas": 153,
-    "femininasLabel": "153",
-    "populacao": 5536,
-    "populacaoTitulo": "Presos atendidos",
-    "relacaoLabel": "1 servidor / 11 presos",
+    "femininasLabel": "153 mulheres · estimado",
+    "populacao": 6386,
+    "populacaoTitulo": "Presos recolhidos",
+    "relacaoLabel": "1 policial penal / 13 presos · estimado",
     "relacaoTitulo": "Relação ativa/presos",
     "governador": "Paulo Dantas",
-    "comando": "Diretor/Secretário da PPAL — nome a confirmar em fonte oficial",
-    "fonte": "SISDEPEN/SENAPPEN 1º semestre/2025; IBGE 2025; FBSP/Anuário 2025; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Diogo Zeferino do Carmo Teixeira — Secretário de Estado da Ressocialização e Inclusão Social; Carlos Henrique Toledo Voss — Secretário Executivo de Gestão Penitenciária",
+    "fonte": "SERIS/AL; Alagoas Digital; SAPL/ALEAL; Lei AL 7.993/2018; Lei AL 8.650/2022; Lei AL 9.849/2026; Cebraspe/SERIS 2021; Mapa de População Carcerária SERIS abr/2026",
+    "atualizado": "PPAL revisada em 09/05/2026 — efetivo ativo e feminino mantidos como estimativa quando não localizados em fonte oficial consolidada",
+    "estrutura": "SERIS/AL com gabinete, corregedoria, ouvidoria, gestão interna, Chefia Especial de Gestão Penitenciária, Comando de Operações Penitenciárias, GERT, monitoramento eletrônico, Escola Penitenciária, saúde, educação, produção, laborterapia, inteligência e chefias de unidades prisionais.",
+    "sede": "Rua 10 de Novembro, 256, Farol, Maceió/AL, CEP 57050-220",
+    "emergencia": "Administração prisional: (82) 3315-1744 · Emergências gerais: 190",
+    "linksOficiais": [
+      "https://www.seris.al.gov.br/",
+      "https://www.seris.al.gov.br/institucional",
+      "https://www.seris.al.gov.br/institucional/quem-e-quem",
+      "https://www.seris.al.gov.br/populacao-carceraria",
+      "https://sapl.al.al.leg.br/norma/3810"
+    ]
   },
   "pmam": {
     "nome": "Polícia Militar do Amazonas",
@@ -5372,6 +5384,7 @@ function mudarInstituicao(novaInstituicao) {
     pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre', cor: '#006b3f', alertaPrev: 'PMAC: conferir Acreprevidência, LC AC 164/2006, tabela remuneratória, adicionais por tempo, serviço complementar, localização especial e contracheque.' },
     pcac: { titulo: 'PCAC', desc: 'Polícia Civil do Acre', cor: '#5b6472', alertaPrev: 'PCAC: conferir Acreprevidência, cargo, classe, titulação, serviço complementar, tabela oficial e regra de aposentadoria policial aplicada ao caso concreto.' },
     ppac: { titulo: 'PPAC', desc: POLICIAS_PENAIS_INFO.ppac.nome, cor: '#536b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppac.sigla}: ${POLICIAS_PENAIS_INFO.ppac.previdencia} ${POLICIAS_PENAIS_INFO.ppac.vantagens}` },
+    ppal: { titulo: 'PPAL', desc: POLICIAS_PENAIS_INFO.ppal.nome, cor: '#6b5b2f', alertaPrev: `${POLICIAS_PENAIS_INFO.ppal.sigla}: ${POLICIAS_PENAIS_INFO.ppal.previdencia} ${POLICIAS_PENAIS_INFO.ppal.vantagens}` },
     pmesp: { titulo: "PMESP", desc: "Polícia Militar do Estado de São Paulo", cor: "#e60000", alertaPrev: "PMESP/SPPREV/SPSM: conferir a contribuição e a base de cálculo no holerite e na norma vigente. Não fixar percentual único sem validar cargo, situação funcional e rubricas." },
     bmsp: { titulo: "CBPMESP", desc: "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo", cor: "#b91c1c", alertaPrev: "CBPMESP/BMSP: carreira militar estadual vinculada à PMESP; conferir SPPREV/SPSM, RETP, DEJEM, CBPM/Cruz Azul, insalubridade, escalas e rubricas no holerite e na norma vigente." },
     pcsp:  { titulo: "PCSP",  desc: "Polícia Civil do Estado de São Paulo", cor: "#4f4f4f", alertaPrev: "PCSP/SPPREV/IAMSPE: conferir contribuição previdenciária, assistência, quinquênios, sexta-parte, RETP, DEJEC, insalubridade e demais rubricas no holerite e na norma vigente. Não tratar os 14% como regra isolada sem validar base e situação funcional." },
@@ -5975,6 +5988,7 @@ function getCriadorInstitucional(inst, tipo, estadoNome) {
   if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
   if (inst === 'pmal') return 'Presidência da Província de Alagoas e Ministério da Justiça do Império — Decisão Imperial nº 52, de 03/02/1832, aprovando o Corpo de Guardas Municipais da província.';
   if (inst === 'pcal') return 'Estado de Alagoas — Lei AL nº 3.437, de 25/06/1975, estrutura cargos da Polícia Civil; Lei AL nº 6.441/2003 concede autonomia administrativa e financeira.';
+  if (inst === 'ppal') return 'Estado de Alagoas — Lei AL nº 7.993/2018 reestruturou a carreira; Lei AL nº 8.650/2022 redenominou Agentes Penitenciários para Policiais Penais; Lei AL nº 9.849/2026 atualizou jornada e subsídios.';
   if (inst === 'pmerj') return 'D. João VI — criação da Divisão Militar da Guarda Real da Polícia da Corte em 13/05/1809.';
   if (inst === 'bmms') return 'Governo de Mato Grosso — Lei MT nº 3.322/1973, origem histórica do Comando do Corpo de Bombeiros; Mato Grosso do Sul reorganizou a corporação após a criação do Estado.';
   if (inst === 'bmmg') return 'Júlio Bueno Brandão — Lei MG nº 557, de 31/08/1911, que autorizou a organização da Seção de Bombeiros Profissionais.';
@@ -6044,6 +6058,22 @@ function getHistoricoPorTipo(inst, dados) {
     };
   }
 
+
+  if (inst === 'ppal') {
+    return {
+      origem: `A ${nome} integra a segurança pública estadual como carreira constitucionalizada pela EC 104/2019. Em Alagoas, a base funcional vem da carreira de Agente Penitenciário reestruturada pela Lei AL nº 7.993/2018 e redenominada pela Lei AL nº 8.650/2022 como carreira de Policiais Penais. A gestão do sistema prisional é executada pela SERIS/AL, responsável pela administração das unidades, custódia, disciplina, ressocialização e programas de inclusão social. Em 2026, a Lei AL nº 9.849 atualizou a jornada de 40h, a escala 24x72 em regime de plantão e a tabela de subsídios da carreira.`,
+      marcos: [
+        '1995: Lei AL nº 5.676 cria a Secretaria de Justiça, marco da gestão penitenciária estadual especializada.',
+        '2004: Lei AL nº 6.448 cria a Secretaria Executiva de Ressocialização, com foco na execução penal e administração prisional.',
+        '2015: Lei Delegada nº 47 estrutura a SERIS no modelo contemporâneo de ressocialização e inclusão social.',
+        '2018: Lei AL nº 7.993 reestrutura a carreira de Agente Penitenciário do serviço civil estadual.',
+        '2019/2022: EC 104/2019 constitucionaliza a Polícia Penal; Lei AL nº 8.650/2022 redenomina a carreira para Policiais Penais.',
+        '2021/2022: concurso SERIS/AL Cebraspe oferta 300 vagas e reforça o quadro de policiais penais.',
+        '2026: Lei AL nº 9.849 fixa jornada de 40h, escala 24x72 quando em plantão e subsídios de R$ 7.200,00 a R$ 17.734,04.',
+        '2026: mapa SERIS indica 6.386 presos recolhidos nas unidades prisionais em abril/maio de 2026.'
+      ]
+    };
+  }
 
   if (inst === 'bmms') {
     return {
