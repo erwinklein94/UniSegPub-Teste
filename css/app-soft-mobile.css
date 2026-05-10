@@ -4175,3 +4175,91 @@ main.page-section > * {
     --usp-content-shell-padding: 14px;
   }
 }
+
+/* ============================================================
+   Ajuste 2026-05-10 — card de atualização apenas na home
+   ============================================================
+   Mantém o indicador "Dados de atualização do site" somente no
+   cabeçalho da página inicial e, no mobile, tira o card do modo
+   absoluto para ele ocupar um espaço próprio sem sobrepor textos.
+*/
+.header-update-note.header-fact--dados-atualizados:not(.header-update-note--home),
+body:not([data-page="principal"]) .header-update-note.header-fact--dados-atualizados,
+body[data-page="principal"]:not([data-inst="portal"]) .header-update-note.header-fact--dados-atualizados {
+  display: none !important;
+}
+
+body[data-page="principal"][data-inst="portal"] .header-update-note.header-fact--dados-atualizados.header-update-note--home {
+  display: grid !important;
+}
+
+@media (max-width: 760px) {
+  .header-institution-card {
+    padding-top: 16px !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home {
+    display: grid !important;
+    grid-template-columns: 62px !important;
+    justify-content: start !important;
+    align-items: start !important;
+    width: fit-content !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    overflow: visible !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    position: static !important;
+    inset: auto !important;
+    z-index: auto !important;
+    display: grid !important;
+    width: 62px !important;
+    min-width: 62px !important;
+    height: 62px !important;
+    min-height: 62px !important;
+    aspect-ratio: 1 / 1 !important;
+    margin: 0 !important;
+    padding: 6px 5px !important;
+    border-radius: 14px !important;
+    place-items: center !important;
+    text-align: center !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    font-size: 5.5px !important;
+    line-height: 1.04 !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    font-size: 14px !important;
+    line-height: 1 !important;
+  }
+}
+
+@media (max-width: 390px) {
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home {
+    grid-template-columns: 58px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home {
+    width: 58px !important;
+    min-width: 58px !important;
+    height: 58px !important;
+    min-height: 58px !important;
+    padding: 5px 4px !important;
+    border-radius: 13px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home span {
+    font-size: 5.1px !important;
+  }
+
+  body[data-page="principal"][data-inst="portal"] .header-institution-card > .header-controls-grid--home .header-update-note--home strong {
+    font-size: 13px !important;
+  }
+}
