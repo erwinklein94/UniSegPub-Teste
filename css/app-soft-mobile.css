@@ -4146,3 +4146,32 @@ html[data-theme="dark"] .sidebar-nav a.active {
     padding: 9px 10px !important;
   }
 }
+
+/* ============================================================
+   Ajuste 2026-05-09 — largura dos cards de conteúdo alinhada ao cabeçalho
+   ============================================================
+   Os cards das áreas principais agora usam o mesmo recuo horizontal
+   interno do cabeçalho institucional. Assim, os blocos que aparecem
+   abaixo do cabeçalho ficam com a mesma largura visual do card superior.
+*/
+:root {
+  --usp-content-shell-padding: clamp(16px, 2.4vw, 28px);
+}
+
+main.page-section {
+  padding-left: var(--usp-content-shell-padding) !important;
+  padding-right: var(--usp-content-shell-padding) !important;
+  box-sizing: border-box !important;
+}
+
+main.page-section > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+@media (max-width: 760px) {
+  main.page-section {
+    --usp-content-shell-padding: 14px;
+  }
+}
