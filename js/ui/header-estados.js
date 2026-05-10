@@ -3820,6 +3820,33 @@ function criarOptionInstituicao(inst, texto) {
   return opt;
 }
 
+function compararTextoPtBr(a, b) {
+  return String(a || '').localeCompare(String(b || ''), 'pt-BR', { sensitivity: 'base' });
+}
+
+function getEstadosOrdenadosPorNome() {
+  return Object.entries(HEADER_ESTADOS || {})
+    .filter(([uf, estado]) => estado && !['br', 'municipal'].includes(uf))
+    .sort(([, estadoA], [, estadoB]) => compararTextoPtBr(estadoA?.nome, estadoB?.nome));
+}
+
+function ordenarOptgroupsInstituicoes(select) {
+  if (!select) return;
+  const placeholder = Array.from(select.childNodes).find(node => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'OPTION' && node.value === '');
+  const grupos = Array.from(select.querySelectorAll('optgroup')).sort((a, b) => {
+    const especiais = { 'Federais': -2, 'União': -2, 'Municípios': 99 };
+    const prioridadeA = Object.prototype.hasOwnProperty.call(especiais, a.label) ? especiais[a.label] : 0;
+    const prioridadeB = Object.prototype.hasOwnProperty.call(especiais, b.label) ? especiais[b.label] : 0;
+    if (prioridadeA !== prioridadeB) return prioridadeA - prioridadeB;
+    return compararTextoPtBr(a.label, b.label);
+  });
+
+  const fragmento = document.createDocumentFragment();
+  if (placeholder) fragmento.appendChild(placeholder);
+  grupos.forEach(grupo => fragmento.appendChild(grupo));
+  select.appendChild(fragmento);
+}
+
 
 function getRotuloRamoSelect(ramo, inst, info = {}) {
   if (ramo === 'bm') return 'Bombeiros Militares';
@@ -3839,9 +3866,7 @@ function montarSelectInstituicoes(select) {
   placeholder.selected = true;
   fragmento.appendChild(placeholder);
 
-  Object.entries(HEADER_ESTADOS || {}).forEach(([uf, estado]) => {
-    if (!estado || ['br', 'municipal'].includes(uf)) return;
-
+  getEstadosOrdenadosPorNome().forEach(([uf, estado]) => {
     const grupo = document.createElement('optgroup');
     grupo.label = estado.nome || String(uf).toUpperCase();
 
@@ -3915,7 +3940,11 @@ function aplicarEstruturaEstadosFaltantesNoHtml() {
     });
   };
 
-  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => montarOptgroups(document.getElementById(id)));
+  ['instituicao_header', 'instituicao', 'instituicao_home'].forEach(id => {
+    const seletor = document.getElementById(id);
+    montarOptgroups(seletor);
+    ordenarOptgroupsInstituicoes(seletor);
+  });
 
   const flags = document.querySelector('.header-state-flags');
   if (flags) {
@@ -5723,10 +5752,9 @@ function getInstituicoesParaConsulta(esfera) {
     })
     .sort((a, b) => {
       if (a.estado !== b.estado) {
-        const ordemEstados = Object.keys(HEADER_ESTADOS);
-        return ordemEstados.indexOf(a.estado) - ordemEstados.indexOf(b.estado);
+        return compararTextoPtBr(a.estadoNome, b.estadoNome);
       }
-      return a.ordem - b.ordem || a.sigla.localeCompare(b.sigla, 'pt-BR');
+      return a.ordem - b.ordem || compararTextoPtBr(a.sigla, b.sigla);
     });
 }
 
