@@ -70,6 +70,23 @@ const CONCURSOS = {
     previsao: 'Não publicar novo concurso aberto sem edital posterior. A revisão mantém o concurso 2021/2026 como vigente/histórico com convocações.',
     site: 'https://conhecimento.fgv.br/concursos/pmam21'
   },
+  pmap: {
+    edital: 'PMAP — Concurso Público CFSD/QPPMC/PMAP 2022, organizado pela Fundação Carlos Chagas, para cadastro de reserva de Soldado do Quadro de Praças Policiais Militares Combatentes; em 2026 há convocações e resultados de fases pela SEAD/AP.',
+    salario: 'Edital 2022: Soldado PM 2ª Classe em curso de formação R$ 2.827,00 e Soldado PM 1ª Classe R$ 5.313,18. Tabela legal vigente: LC AP nº 173/2025, Anexo III, com Soldado Base R$ 6.039,13 e Aluno Soldado Base R$ 3.213,26 em 01/04/2026; conferir nível, descontos e rubricas pessoais.',
+    vagas: '2.500 vagas em cadastro de reserva para Soldado PMAP, conforme edital 2022; nomeações, convocações e matrículas dependem de atos da SEAD/AP, PMAP e DOE/AP.',
+    cotas: 'Conferir ampla concorrência, reserva por sexo quando aplicável, cotas legais, classificação, cadastro de reserva e retificações do edital.',
+    idade: 'Requisitos de idade, altura, CNH, saúde, aptidão física e investigação social devem ser conferidos no edital e retificações; não aplicar regra de outro estado.',
+    escolaridade: 'Ensino médio completo para Soldado PM, além de requisitos de nacionalidade, CNH, altura, idoneidade, aptidão física, psicológica e saúde conforme edital.',
+    materias: 'Conhecimentos Gerais, Língua Portuguesa, Matemática, História e Geografia do Amapá, Noções de Direito e legislação específica conforme edital FCC/SEAD/AP.',
+    banca: 'Fundação Carlos Chagas — FCC.',
+    inscritos: 'Certame em acompanhamento pela SEAD/AP, com editais de convocação, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social e matrícula publicados em 2025/2026.',
+    etapas: 'Prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde, investigação social, entrega documental, matrícula e Curso de Formação de Soldados conforme edital e convocações.',
+    cfsd: 'Curso de Formação de Soldados QPPMC/PMAP, com regime e regras próprias da carreira militar estadual; promoção/graduação depende de conclusão, classificação e ato administrativo.',
+    estagio: 'Exercício inicial, estágio probatório/adaptação, lotação e promoções dependem de legislação militar estadual, boletins, necessidade operacional e atos da PMAP.',
+    validade: 'Conferir validade, prorrogação, homologação e convocações no DOE/AP, SEAD/AP e PMAP. Não tratar como novo edital aberto sem ato posterior.',
+    previsao: 'Sem novo edital aberto identificado nesta revisão; manter o concurso Soldado 2022/2026 como certame vigente/histórico com convocações e monitorar futuras autorizações oficiais.',
+    site: 'https://sead.portal.ap.gov.br/concursos/vigentes/24027'
+  },
   pcal: {
     edital: 'PCAL 2026 — comissão formada para novo concurso de Agente e Escrivão; 300 vagas previstas, sendo 150 imediatas e 150 cadastro de reserva; edital e banca em definição.',
     salario: 'Agente/Escrivão: referência inicial R$ 5.318,61 e final até R$ 15.065,12 (estimado por tabela de carreira/revisões). Delegado: tabela específica pela Lei AL nº 8.641/2022; novo edital de Delegado não publicado nesta revisão.',

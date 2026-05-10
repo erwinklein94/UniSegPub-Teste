@@ -1432,6 +1432,20 @@ const CARGOS_BMAP = [
   { val: 'al_soldado_nivel_10_bmap', text: 'AL SD BMAP — Aluno Soldado BM — Nível 10 (+300 meses)', padrao: 4214.65, gratif: 0, oficial: false, retpFator: 0, selected: false, fonteKey: 'bmap', criterio: CRITERIO_BMAP_2026, benefDesc: BENEF_BMAP_2026, badge: 'LC AP 173/2025 · 04/2026' }
 ];
 
+
+
+/* === AMAPÁ — Polícia Militar do Estado do Amapá ===================== */
+const CRITERIO_PMAP_2026 = 'Subsídio bruto mensal dos militares estaduais do Amapá aplicado à PMAP, conforme Lei Complementar AP nº 113/2018, alterada pela Lei Complementar AP nº 173/2025. A tabela principal usa o Anexo III — Tabela de Progressão Horizontal 2026 I, com efeitos a partir de 01/04/2026. Os valores variam por posto/graduação e por tempo de efetivo serviço, em níveis de 30 meses. Conferir DOE/AP, SEAD/AP, Portal da Transparência, ficha funcional, ato de promoção/progressão e contracheque antes de uso administrativo, financeiro ou jurídico.';
+const BENEF_PMAP_2026 = 'Não somar automaticamente verbas indenizatórias sem caráter remuneratório, diárias, ajuda de custo, alimentação/etapa, fardamento, adicional por serviço extraordinário, função gratificada, vantagens pessoais, VPNI, retroativos, decisão judicial, rubricas de reserva/reforma ou parcelas ligadas a quadros federais de ex-território. Cada rubrica depende de lei/decreto, ato, escala, lotação, tempo de serviço, situação funcional e contracheque.';
+const CARGOS_PMAP = (typeof CARGOS_BMAP !== 'undefined' ? CARGOS_BMAP : []).map(cargo => Object.assign({}, cargo, {
+  val: String(cargo.val || '').replace(/_bmap$/i, '_pmap'),
+  text: String(cargo.text || '').replace(/BMAP/g, 'PMAP').replace(/CBMAP/g, 'PMAP').replace(/\bBM\b/g, 'PM'),
+  fonteKey: 'pmap',
+  criterio: CRITERIO_PMAP_2026,
+  benefDesc: BENEF_PMAP_2026,
+  badge: cargo.badge || 'LC AP 173/2025 · 04/2026'
+}));
+
 const CRITERIO_PF_2026 = 'Subsídio federal da carreira policial federal, valores com efeitos financeiros a partir de 01/05/2026, conforme Lei nº 14.875/2024, Anexo XXVI, que substituiu a tabela do Anexo II da Lei nº 11.358/2006. A linha mostra subsídio bruto mensal, sem somar indenizações, auxílios, férias, 13º, função, abono de permanência ou parcelas pessoais.';
 const BENEF_PF_2026 = 'Benefícios e indenizações não somados ao subsídio: auxílio-alimentação federal de R$ 1.192,00; assistência pré-escolar de R$ 526,64 quando devida; assistência à saúde suplementar por faixa etária e remuneração; indenização de fronteira de R$ 91,00 por dia de efetivo trabalho quando houver exercício em localidade estratégica; diárias, ajuda de custo, transporte, adicional de férias, gratificação natalina, abono de permanência e demais rubricas conforme legislação, lotação, escala e situação individual.';
 const PF_SUBSIDIOS_DELEGADO_PERITO_2026 = [
