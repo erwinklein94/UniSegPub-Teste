@@ -5326,7 +5326,7 @@ function selecionarEstado(estado) {
 
   mudarInstituicao(dadosEstado.pm || dadosEstado.pc || dadosEstado.pp);
   switchPage('principal');
-  mostrarToast(`${dadosEstado.nome} selecionado. Agora escolha Militar, Bombeiros, Civil ou Penal no botão ao lado do seletor.`);
+  mostrarToast(`${dadosEstado.nome} selecionado.`);
 }
 
 function selecionarRamo(ramo) {
