@@ -25,3 +25,14 @@
 ## Observação
 
 Os valores do artigo PMESP foram tratados como informativos e aproximados, com aviso explícito para consulta aos canais oficiais e ao edital vigente.
+
+## Ajuste visual solicitado em 11/05/2026
+
+Foram removidos da página `guia-instituicoes.html` os elementos que exibiam informações internas ao visitante final:
+
+- Texto explicando que o conteúdo fica escrito diretamente no HTML para buscadores/AdSense.
+- Cards informativos do topo: "Formato", "Filtro" e "Artigos visíveis".
+- Botão/link "Ir para o guia PMESP".
+- Texto técnico sobre funcionamento com ou sem JavaScript no filtro, substituído por uma instrução simples para o usuário.
+
+Também foi ajustado o texto do estado vazio para não mencionar "cards" ou funcionamento interno do cadastro de artigos.

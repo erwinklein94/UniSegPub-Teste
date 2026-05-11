@@ -574,20 +574,14 @@
     <span class="guia-hero-kicker">📖 Guia das instituições</span>
     <h1 id="guia-titulo">Guia das instituições de segurança pública</h1>
     <p>
-      Esta aba reúne artigos permanentes sobre cada instituição: regras de ingresso, carreira, formação, remuneração, pontos de atenção e dúvidas frequentes. Os textos ficam escritos diretamente no HTML da página, para que mecanismos de busca e avaliadores do Google AdSense consigam ler o conteúdo mesmo sem executar JavaScript.
+      Esta aba reúne artigos permanentes sobre cada instituição: regras de ingresso, carreira, formação, remuneração, pontos de atenção e dúvidas frequentes.
     </p>
-    <div class="guia-info-grid" aria-label="Resumo desta página">
-      <div class="guia-info-item"><span>Formato</span><strong>Artigos em cards</strong></div>
-      <div class="guia-info-item"><span>Filtro</span><strong>Por instituição</strong></div>
-      <div class="guia-info-item"><span>Artigos visíveis</span><strong id="guia-contador-artigos">1</strong></div>
-    </div>
-
     <div class="guia-filter-card" aria-label="Filtro do guia por instituição">
       <section class="consulta-instituicao-card" aria-label="Seleção de instituição para filtrar artigos">
         <div class="consulta-instituicao-texto">
           <span>Filtrar dentro do guia</span>
           <strong>Escolha a instituição</strong>
-          <small>Sem JavaScript, todos os artigos continuam aparecendo. Com JavaScript ativo, o filtro mostra apenas os artigos da instituição escolhida.</small>
+          <small>Use os campos abaixo para encontrar rapidamente os artigos de uma instituição específica.</small>
         </div>
         <div class="consulta-instituicao-grid">
           <div class="field">
@@ -610,14 +604,13 @@
       </section>
       <div class="guia-filter-actions">
         <button type="button" data-guia-limpar>Mostrar todos os artigos</button>
-        <a href="#guia-pmesp">Ir para o guia PMESP</a>
       </div>
     </div>
   </section>
 
   <section class="card guia-empty-state" id="guia-empty-state" hidden aria-live="polite">
     <h2>Artigo ainda não cadastrado</h2>
-    <p>A instituição <strong id="guia-empty-inst">selecionada</strong> ainda não possui artigo publicado no Guia das instituições. Quando o artigo for adicionado, ele poderá ficar logo abaixo dos demais cards e será incluído automaticamente no filtro.</p>
+    <p>A instituição <strong id="guia-empty-inst">selecionada</strong> ainda não possui artigo publicado no Guia das instituições. Quando o artigo for adicionado, ele aparecerá nesta página e poderá ser acessado pelo filtro.</p>
   </section>
 
   <section class="guia-lista-artigos" aria-label="Artigos do Guia das instituições">
