@@ -17,6 +17,7 @@ const UNISEGPUB_JS_ORDER = [
   'js/pages/contato-init.js',
   'js/pages/produtos-render.js',
   'js/ui/event-bindings.js',
+  'js/pages/brasoes-conteudo-estatico.js',
   'js/core/page-context.js',
   'js/brasao-lightbox.js'
 ];
