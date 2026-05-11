@@ -286,3 +286,9 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Ajuste 2026-05-11: evita exibição do seletor institucional legado
+   quando a página já possui o filtro editorial próprio da Remuneração Tabelada. */
+.page-remuneracao .remuneracao-hero-card > .consulta-instituicao-card:not(.remuneracao-filtro-card) {
+  display: none !important;
+}
