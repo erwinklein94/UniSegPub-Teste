@@ -503,24 +503,35 @@ const HEADER_INSTITUICOES_RESUMO = {
   "pmesp": {
     "nome": "Polícia Militar do Estado de São Paulo",
     "sigla": "PMESP",
+    "siglaInterna": "pmesp",
     "estado": "São Paulo",
     "estadoSigla": "SP",
     "tipo": "Polícia Militar",
-    "criacao": "15/12/1831 · origem histórica",
-    "ativa": 82000,
-    "ativaLabel": "82.000+",
-    "reserva": 72000,
-    "reservaLabel": "72.000+ inativos",
+    "criacao": "15/12/1831 · Corpo de Guardas Municipais Permanentes, criado em reunião do Conselho da Presidência da Província de São Paulo",
+    "ativa": 84000,
+    "ativaLabel": "cerca de 82 mil a 86 mil militares estaduais · material institucional recente; confirmar em fonte oficial atualizada",
+    "reserva": 0,
+    "reservaLabel": "Dados em breve",
     "femininas": 0,
-    "femininasLabel": "93.802 cargos fixados em lei",
+    "femininasLabel": "Dados em breve",
+    "efetivoTotalLabel": "cerca de 82 mil a 86 mil militares estaduais · sujeito a atualização oficial",
     "populacao": 46081801,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 562 hab. · 0,178%",
+    "relacaoLabel": "1 ativo / cerca de 549 hab. · cálculo editorial aproximado com efetivo de referência de 84 mil",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Tarcísio de Freitas",
-    "comando": "Cel PM Glauce Anselmo Cavalli — Comandante-Geral",
-    "fonte": "PMESP; Governo de SP; SSP/SP Plano de Ação 2024; SGGD/SP; Leis SP 18.441/2026 e 18.442/2026; Portal da Transparência/SP",
-    "atualizado": "PMESP revisada em 03/05/2026 — números exatos não inferidos quando a fonte oficial informa faixa"
+    "comando": "Coronel PM Glauce Anselmo Cavalli — Comandante-Geral desde 29/04/2026; Subcomandante: Coronel PM Mário Kitsuwa",
+    "estrutura": "Corporação militar estadual subordinada ao Governo do Estado de São Paulo, por meio da Secretaria da Segurança Pública e do Comando-Geral; polícia ostensiva e de preservação da ordem pública, força auxiliar e reserva do Exército.",
+    "linksOficiais": [
+      "https://www.policiamilitar.sp.gov.br/institucional/historia-da-pm",
+      "https://www.policiamilitar.sp.gov.br/institucional/brasao-de-armas",
+      "https://www.policiamilitar.sp.gov.br/institucional/vultos-historicos",
+      "https://www.al.sp.gov.br/repositorio/legislacao/decreto/1981/decreto-17069-21.05.1981.html",
+      "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm",
+      "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/L14751.htm"
+    ],
+    "fonte": "PMESP — História da PM; PMESP — Brasão de Armas; PMESP — Vultos Históricos; Decreto Estadual SP nº 17.069/1981; Lei Estadual SP nº 616/1974; Constituição Federal de 1988; Lei Federal nº 14.751/2023; Agência SP/Governo de SP",
+    "atualizado": "Pesquisa em 13/05/2026 — dados de efetivo, chefia e símbolos devem ser conferidos em diário oficial, portal institucional ou transparência"
   },
   "bmsp": {
     "nome": "Corpo de Bombeiros da Polícia Militar do Estado de São Paulo",
@@ -6269,7 +6280,7 @@ function imagemPrincipalBrasaoInstituicao(inst) {
 }
 
 function getCriadorInstitucional(inst, tipo, estadoNome) {
-  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — então presidente da Província de São Paulo, pela lei provincial de 15/12/1831.';
+  if (inst === 'pmesp') return 'Brigadeiro Rafael Tobias de Aguiar — Presidente da Província de São Paulo, em cumprimento à Lei Imperial de 10/10/1831 do Regente Padre Diogo Antônio Feijó; ato de criação em 15/12/1831.';
   if (inst === 'pmam') return 'Província do Amazonas — criação da Guarda Policial em 04/04/1837; a denominação Polícia Militar do Amazonas foi consolidada em 14/11/1938.';
   if (inst === 'pcam') return 'Estado do Amazonas — organização histórica da Polícia Judiciária de carreira em 1922; Decreto AM nº 2.291/1972 regulamentou a estrutura orgânica da Polícia Civil.';
   if (inst === 'pcap') return 'Estado do Amapá — Lei AP nº 637, de 14/12/2001, estruturou a organização básica da Polícia Civil; Lei AP nº 883/2005 consolidou órgãos de direção superior como a Delegacia-Geral.';
@@ -6303,14 +6314,43 @@ function getHistoricoPorTipo(inst, dados) {
 
   if (inst === 'pmesp') {
     return {
-      origem: `A ${nome} tem origem histórica em 15 de dezembro de 1831, quando foi criada em São Paulo a força pública provincial que se tornaria a Polícia Militar do Estado de São Paulo. Em 2026, a instituição teve atualização relevante de comando, efetivo legal e carreira, com a posse da Cel PM Glauce Anselmo Cavalli no Comando-Geral e a Lei SP 18.442/2026 reorganizando efetivo, quadros, regime jurídico e regras gerais de promoção.`,
+      origem: `A ${nome} é uma das mais antigas corporações policiais militares do Brasil. Sua origem está ligada ao período regencial: em 10 de outubro de 1831, a lei imperial assinada pelo Regente Padre Diogo Antônio Feijó determinou que as províncias organizassem corpos policiais permanentes. Em São Paulo, o Brigadeiro Rafael Tobias de Aguiar, então Presidente da Província, reuniu o Conselho da Presidência em 15 de dezembro de 1831 e criou o Corpo de Guardas Municipais Permanentes, com 100 praças a pé e 30 a cavalo — os "cento e trinta de trinta e um". A corporação passou por denominações como Corpo Policial Permanente e Força Pública do Estado de São Paulo até assumir, em 9 de abril de 1970, a denominação Polícia Militar do Estado de São Paulo, após a unificação da Força Pública com a Guarda Civil paulista.`,
+      denominacoes: [
+        'Corpo de Guardas Municipais Permanentes / Guarda Municipal Permanente — origem em 1831.',
+        'Corpo Policial Permanente — denominação associada ao período imperial e às reorganizações posteriores.',
+        'Força Policial / Força Pública do Estado de São Paulo — reorganização republicana a partir da Lei nº 17, de 14/11/1891.',
+        'Polícia Militar do Estado de São Paulo — PMESP — denominação em vigor desde 09/04/1970.'
+      ],
+      simbolos: [
+        'Escudo português perfilado em ouro, com bordadura vermelha e 18 estrelas de cinco pontas em prata.',
+        'As 18 estrelas representam marcos históricos da corporação, conforme o Decreto Estadual nº 17.069/1981.',
+        'No centro do escudo aparecem listras verticais e horizontais nas cores da Bandeira do Estado de São Paulo, também perfiladas em ouro.',
+        'O timbre apresenta leão rampante em ouro, sobre virol vermelho e prata, empunhando gládio com punho em ouro e lâmina em prata.',
+        'Como tenentes, o brasão traz um Bandeirante com bacamarte e espada e um soldado da época da criação da Milícia com fuzil e baioneta.',
+        'Ao pé, o listel azul traz o lema institucional "Lealdade e Constância" em letras de prata.'
+      ],
+      chefias: [
+        'Primeiro comandante: José Gomes de Almeida, alferes comissionado capitão, de 01/03/1832 a 30/11/1832.',
+        'Comandante-Geral atual: Coronel PM Glauce Anselmo Cavalli, empossada em 29/04/2026 como primeira mulher a comandar a PMESP.',
+        'Subcomandante informado no levantamento: Coronel PM Mário Kitsuwa.'
+      ],
       marcos: [
-        'Criação da força pública paulista em 15/12/1831, associada ao governo provincial de Rafael Tobias de Aguiar.',
-        'Consolidação como força militar estadual com atuação em policiamento ostensivo, preservação da ordem pública e apoio em crises.',
-        'Estrutura institucional organizada em órgãos de direção geral, direção setorial, apoio, execução e assessoria, conforme página oficial de organização da PMESP.',
-        'Lei SP 18.442/2026: efetivo legal de 93.802 cargos, com quadros QOEM, QOE, QOS, QOM, QORR e QP e regras gerais de promoção.',
-        'Lei SP 18.441/2026: vencimentos-base reclassificados a partir de 01/04/2026; remuneração total deve ser conferida em tabela oficial posterior quando disponível.',
-        '2026: Cel PM Glauce Anselmo Cavalli assume o Comando-Geral, primeira mulher a comandar a PMESP.'
+        '1831: em 10 de outubro, Lei Imperial do Regente Padre Diogo Antônio Feijó determina a organização de corpos policiais permanentes; em 15 de dezembro, Rafael Tobias de Aguiar cria o Corpo de Guardas Municipais Permanentes em São Paulo.',
+        '1832: a partir de 1º de março, a corporação é instalada na ala térrea do Convento do Carmo; José Gomes de Almeida assume como primeiro comandante.',
+        '1865–1870: participação na Guerra do Paraguai como Corpo Policial Permanente.',
+        '1891: Lei nº 17, de 14 de novembro, reorganiza a milícia paulista como Força Pública do Estado de São Paulo; em 1º de dezembro, é inaugurado o Quartel da Luz, na Avenida Tiradentes.',
+        '1906: chegada da Missão Militar Francesa, contratada pelo Governador Jorge Tibiriçá para modernizar a instrução da tropa.',
+        '1910: Lei nº 1.244 cria a Companhia da Força Pública, embrião da atual Academia de Polícia Militar do Barro Branco.',
+        '1913: criação oficial da aviação policial no Campo de Marte, em uma das primeiras experiências de aviação militar policial na América Latina.',
+        '1932: a Força Pública lidera a mobilização paulista na Revolução Constitucionalista.',
+        '1944–1945: integrantes da Guarda Civil de São Paulo compõem pelotão de Polícia do Exército da Força Expedicionária Brasileira na Itália.',
+        '1970: em 9 de abril, a Força Pública é unificada à Guarda Civil de São Paulo e passa a denominar-se Polícia Militar do Estado de São Paulo.',
+        '1974: Lei Estadual nº 616 dispõe sobre a Organização Básica da Polícia Militar do Estado de São Paulo.',
+        '1981: Decreto Estadual nº 17.069 fixa a configuração atual do Brasão de Armas, com escudo português, 18 estrelas e lema "Lealdade e Constância".',
+        '1984: entrega do helicóptero Águia Uno e criação do Grupamento de Radiopatrulha Aérea — GRPAe.',
+        '1988: Constituição Federal recepciona as polícias militares estaduais como polícia ostensiva, de preservação da ordem pública, força auxiliar e reserva do Exército.',
+        '2023: Lei Federal nº 14.751 institui a Lei Orgânica Nacional das Polícias Militares e Corpos de Bombeiros Militares.',
+        '2026: em 29 de abril, Coronel PM Glauce Anselmo Cavalli toma posse como primeira mulher comandante-geral da corporação.'
       ]
     };
   }
@@ -6724,6 +6764,39 @@ function renderizarBrasoesHistoria() {
       </div>
       <p>${escapeHtml(historico.origem)}</p>
     </section>
+
+    ${Array.isArray(historico.denominacoes) && historico.denominacoes.length ? `
+    <section class="brasoes-historia-card" aria-label="Denominações históricas">
+      <div class="brasoes-section-title">
+        <span>Denominações</span>
+        <h3>Como a instituição foi chamada ao longo do tempo</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.denominacoes.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>` : ''}
+
+    ${Array.isArray(historico.simbolos) && historico.simbolos.length ? `
+    <section class="brasoes-historia-card" aria-label="Símbolos do brasão">
+      <div class="brasoes-section-title">
+        <span>Brasão</span>
+        <h3>Elementos heráldicos e lema institucional</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.simbolos.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>` : ''}
+
+    ${Array.isArray(historico.chefias) && historico.chefias.length ? `
+    <section class="brasoes-historia-card" aria-label="Chefias históricas">
+      <div class="brasoes-section-title">
+        <span>Chefias</span>
+        <h3>Primeiro comando e comando atual</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${historico.chefias.map(item => `<li>${escapeHtml(item)}</li>`).join('')}
+      </ul>
+    </section>` : ''}
 
     <section class="brasoes-historia-card" aria-label="Marcos históricos">
       <div class="brasoes-section-title">
