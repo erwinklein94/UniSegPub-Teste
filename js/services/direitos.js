@@ -27,7 +27,7 @@ function analisarDireitos() {
   if (!c) return;
 
   const nomesInst = {
-    pmac: 'PMAC', pmal: 'PMAL', pmam: 'PMAM', pcam: 'PCAM', pcap: 'PCAP', pcce: 'PCCE', pmap: 'PMAP', pcal: 'PCAL', ppal: 'PPAL', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
+    pmac: 'PMAC', pmal: 'PMAL', pmce: 'PMCE', pmam: 'PMAM', pcam: 'PCAM', pcap: 'PCAP', pcce: 'PCCE', pmap: 'PMAP', pcal: 'PCAL', ppal: 'PPAL', pcac: 'PCAC', ppac: 'PPAC', pmesp: 'PMESP', pcsp: 'PCSP', ppsp: 'PPSP', pmerj: 'PMERJ', bmrj: 'CBMERJ', pcerj: 'PCERJ', pprj: 'PPRJ',
     pmmg: 'PMMG', bmmg: 'CBMMG', pcmg: 'PCMG', ppmg: 'PPMG', pmba: 'PMBA', pcba: 'PCBA', ppba: 'PPBA', pmpr: 'PMPR', bmpr: 'CBMPR', pcpr: 'PCPR', pppr: 'PPPR',
     pmrs: 'PMRS', pcrs: 'PCRS', pprs: 'PPRS', pmsc: 'PMSC', bmsc: 'CBMSC', pcsc: 'PCSC', ppsc: 'PPSC',
     pmes: 'PMES', bmes: 'CBMES', pces: 'PCES', ppes: 'PPES',
@@ -601,6 +601,18 @@ function getVantagensEspecificas(inst) {
     html += direitoItem(`${info.sigla} — Previdência, saúde e aposentadoria policial`, 'verificar',
       `${info.previdencia} ${info.saude}`,
       'A análise exige data de ingresso, tempo no cargo, sexo, idade, regra de transição, contribuição e ficha funcional.');
+    return html;
+  }
+  if (inst === 'pmce') {
+    html += direitoItem('PMCE — regime militar estadual', 'condicionado',
+      'Regime militar estadual com hierarquia e disciplina, regido principalmente pela Lei Estadual nº 13.729/2006 e pelo Código Disciplinar da PMCE/CBMCE. Direitos, licenças, reserva, reforma e rubricas dependem da situação funcional concreta.',
+      'Base: Estatuto dos Militares Estaduais do Ceará, Lei CE nº 13.407/2003, Lei nº 14.751/2023, Decreto-Lei nº 667/1969, ficha funcional e contracheque.');
+    html += direitoItem('PMCE — remuneração, auxílio-alimentação e rubricas condicionadas', 'verificar',
+      'A tabela cadastrada usa estimativa de maio/2026. Auxílio-alimentação, fardamento, serviço extraordinário, hora extra, metas, diárias, função, insalubridade e adicional noturno não são automáticos e dependem de lei, escala, ato e rubrica.',
+      'Base: Decreto CE nº 36.085/2024, Lei CE nº 19.183/2025, Lei CE nº 19.660/2026, atos PMCE/SSPDS/Seplag e contracheque.');
+    html += direitoItem('PMCE — reserva, reforma, pensão e proteção social', 'verificar',
+      'Reserva remunerada, reforma, pensão por morte e eventual abono de permanência exigem análise individual de ingresso, tempo militar, idade, averbações, contribuição, junta médica quando houver e regra estadual aplicável.',
+      'Base: Estatuto dos Militares Estaduais do Ceará, normas previdenciárias/proteção social militar, CearáPrev/órgão de pessoal e histórico funcional.');
     return html;
   }
   if (inst === 'bmap') {

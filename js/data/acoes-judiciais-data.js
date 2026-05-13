@@ -71,13 +71,95 @@ const ACOES_JUDICIAIS = {
     }
   ],
   pmam: [
-    { titulo: 'Lei AM 7.445/2025 — tabela PM/BM e diferenças remuneratórias', status: 'Conferência individual', ano: 'Efeitos em 2025/2026', tipo: 'individual', desc: 'Conferir se soldo, gratificação de tropa, GAMS quando prevista, reajustes e eventuais retroativos foram aplicados corretamente por posto/graduação. Não tratar tabela legal como contracheque individual completo.', base: 'Lei AM nº 3.725/2012, alterada pela Lei AM nº 7.445/2025, Anexo III; contracheques, ficha financeira e atos SEAD/PMAM.', fonte: 'Lei AM nº 7.445/2025', fonteUrl: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf', atualizado: 'Maio/2026' },
-    { titulo: 'Indenização de compensação orgânica e atividade técnica', status: 'Condicionada a função/ato', ano: 'Lei AM 7.445/2025', tipo: 'individual', desc: 'Discussão possível quando houver exercício técnico/habilitado, escala, ato de designação e não pagamento ou pagamento divergente. Não é verba automática para todo efetivo.', base: 'Lei AM nº 7.445/2025, Anexo IV; atos de designação, escalas, habilitação e contracheque.', fonte: 'Lei AM nº 7.445/2025 — Anexo IV', fonteUrl: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf', atualizado: 'Maio/2026' },
-    { titulo: 'Promoção, interstício, curso e quadro de acesso', status: 'Verificar caso concreto', ano: 'Tema permanente', tipo: 'individual/coletivo', desc: 'Análise de promoção por antiguidade/merecimento, curso, vaga, interstício, conceito, punição impeditiva, quadro e publicação em boletim.', base: 'Estatuto dos Militares Estaduais do Amazonas, normas internas da PMAM, boletins, ficha funcional e atos de promoção.', fonte: 'PMAM / legislação estadual', fonteUrl: 'https://www.pm.am.gov.br/', atualizado: 'Maio/2026' },
-    { titulo: 'Concurso PMAM 2021/2026 — convocação, fase e matrícula', status: 'Condicionado ao edital', ano: '2021/2026', tipo: 'individual', desc: 'Pode envolver entrega documental, avaliação médica, exame físico, psicotécnico, investigação social, classificação, cotas e matrícula em curso de formação. Depende de edital, retificação, convocação e situação individual.', base: 'Edital FGV PMAM 2021, retificações, portarias DPA-1/PMAM 2026 e DOE/AM.', fonte: 'FGV — PMAM 2021', fonteUrl: 'https://conhecimento.fgv.br/concursos/pmam21', atualizado: 'Maio/2026' },
-    { titulo: 'Reserva, reforma, pensão e contribuição previdenciária', status: 'Previdenciário individual', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir tempo de serviço, contribuição, dependentes, reserva remunerada, reforma, pensão, paridade quando aplicável, descontos e base de cálculo no sistema estadual.', base: 'Sistema de proteção social dos militares estaduais do Amazonas, Amazonprev, legislação estadual, ficha funcional e contracheque.', fonte: 'Amazonprev / PMAM / legislação estadual', fonteUrl: 'https://www.amazonprev.am.gov.br/', atualizado: 'Maio/2026' },
-    { titulo: 'Diárias, escalas, serviço extraordinário e função', status: 'Conferência de escala e ato', ano: 'Tema permanente', tipo: 'individual', desc: 'Cobrança ou revisão depende de ordem de serviço, escala, efetivo cumprimento, ato de designação, limite legal e comprovação em ficha financeira.', base: 'Normas PMAM/SEAD-AM, escalas, boletins, ordens de serviço e contracheques.', fonte: 'PMAM / SEAD-AM', fonteUrl: 'https://www.pm.am.gov.br/', atualizado: 'Maio/2026' }
-  ],
+  {
+    "titulo": "Implantação de reajuste e retroativos da Lei nº 7.445/2025",
+    "status": "Conferência individual",
+    "ano": "Lei AM 7.445/2025",
+    "tipo": "individual/coletivo",
+    "desc": "A Lei nº 7.445/2025 fixou reajustes e previsão de pagamento retroativo em parcelas. A tese exige comparar contracheques, datas de implantação, rubricas e valores devidos por posto/graduação.",
+    "base": "Lei nº 7.445/2025, contracheques, fichas financeiras e atos de implantação.",
+    "fonte": "ALEAM/SAPL",
+    "fonteUrl": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/14494/lei_7445.pdf",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "GAMS para oficiais superiores",
+    "status": "Conferência individual",
+    "ano": "Lei AM 4.060/2014",
+    "tipo": "individual",
+    "desc": "A GAMS alcança Major, Tenente-Coronel e Coronel, mas possui restrições de cumulação. A análise deve verificar posto, rubricas acumuladas, passagem para reserva/reforma e eventual exclusão indevida.",
+    "base": "Lei nº 4.060/2014, contracheques, ato de promoção e ato de inatividade.",
+    "fonte": "ALEAM/SAPL",
+    "fonteUrl": "https://sapl.al.am.leg.br/norma/8865",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "SEG: escala, horas e pagamento",
+    "status": "Conferência de escala e rubrica",
+    "ano": "Lei AM 5.747/2021",
+    "tipo": "individual/coletivo",
+    "desc": "O SEG depende de escala e serviço efetivo fora da jornada regular. A tese envolve horas prestadas, limite mensal, valor por hora, atrasos de pagamento e impossibilidade de incorporação aos proventos.",
+    "base": "Lei nº 5.747/2021, escalas, ordens de serviço, registros de frequência e contracheques.",
+    "fonte": "ALEAM/SAPL",
+    "fonteUrl": "https://sapl.al.am.leg.br/norma/11631",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "Promoções e Quadro Especial de Acesso",
+    "status": "Em discussão",
+    "ano": "Lei AM 4.044/2014 / TJAM 2024",
+    "tipo": "individual/coletivo",
+    "desc": "Questões de promoção e enquadramento exigem cautela após decisão noticiada pelo TJAM sobre dispositivos de promoção por Quadro Especial de Acesso. A análise deve observar ato individual, antiguidade, merecimento, vagas, requisitos e efeitos de eventual controle de constitucionalidade.",
+    "base": "Lei nº 4.044/2014, atos de promoção, fichas funcionais e decisões do TJAM.",
+    "fonte": "TJAM",
+    "fonteUrl": "https://www.tjam.jus.br/index.php/menu/sala-de-imprensa/9809-tjam-declara-inconstitucional-promocao-de-militares-por-quadro-especial-de-acesso-2",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "Licença-prêmio e férias não gozadas em pecúnia",
+    "status": "Tema com precedente forte",
+    "ano": "STF Tema 635",
+    "tipo": "individual",
+    "desc": "O STF reconhece possibilidade de conversão em pecúnia de férias e licença-prêmio não usufruídas em determinadas situações. Para militares estaduais, a análise depende de previsão local, histórico funcional, inatividade, não fruição e ausência de contagem em dobro.",
+    "base": "Tema 635/STF, ficha funcional, atos de férias/licenças e passagem à inatividade.",
+    "fonte": "STF",
+    "fonteUrl": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=635",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "URV 11,98%",
+    "status": "Tema histórico com cautela",
+    "ano": "STF Tema 5",
+    "tipo": "individual/coletivo",
+    "desc": "Tema histórico sobre diferença de conversão em URV. Exige análise de prescrição, reestruturações remuneratórias, carreira, fichas financeiras antigas e eventual compensação posterior. Não deve ser tratado como direito automático.",
+    "base": "Tema 5/STF, fichas financeiras antigas, leis de reestruturação e contracheques.",
+    "fonte": "STF",
+    "fonteUrl": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=5",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "SPSM/AM: contribuição, pensão, reserva e reforma",
+    "status": "Análise previdenciária individual",
+    "ano": "LC AM 283/2026",
+    "tipo": "individual/coletivo",
+    "desc": "A LC nº 283/2026 reorganiza a proteção social dos militares estaduais. Podem surgir discussões sobre contribuição, dependentes, pensão, reserva, reforma, paridade e integralidade, sempre com análise individual.",
+    "base": "LC nº 283/2026, ficha funcional, histórico contributivo, ato de reserva/reforma e processo de pensão.",
+    "fonte": "ALEAM/SAPL",
+    "fonteUrl": "https://sapl.al.am.leg.br/norma/14647",
+    "atualizado": "Maio/2026"
+  },
+  {
+    "titulo": "Concurso PMAM: TAF, investigação social, exames e nomeação",
+    "status": "Conferência individual",
+    "ano": "Edital PMAM/FGV 2021",
+    "tipo": "individual/coletivo",
+    "desc": "Candidatos podem discutir eliminação em TAF, avaliação psicológica, investigação social, exame médico, classificação, convocação e nomeação. A análise depende do edital, motivo da eliminação, prazo judicial e documentos do candidato.",
+    "base": "Edital FGV, resultado individual, laudos, recursos administrativos, convocações e atos de nomeação.",
+    "fonte": "FGV / Governo do Amazonas",
+    "fonteUrl": "https://conhecimento.fgv.br/concursos/pmam21",
+    "atualizado": "Maio/2026"
+  }
+],
   pcam: [
     { titulo: 'Lei AM 7.446/2025 — implantação, retroativos e diferenças', status: 'Conferência individual', ano: '2025/2026', tipo: 'individual', desc: 'Conferência da implantação da tabela da PCAM, diferenças da data-base, parcelas retroativas de janeiro a dezembro de 2026 e reflexos em décimo terceiro, férias e verbas remuneratórias. Não tratar como ganho automático sem ficha financeira.', base: 'Lei AM nº 7.446/2025, que altera a remuneração dos servidores da Polícia Civil do Amazonas, com efeitos principais em 01/12/2025 e diferenças pagas em 12 parcelas a partir de janeiro/2026.', fonte: 'Lei AM 7.446/2025', fonteUrl: 'https://sapl.al.am.leg.br/norma/13903', atualizado: 'Maio/2026' },
     { titulo: 'Escalonamento Escrivão/Investigador — Lei AM 4.576/2018', status: 'Possível conferência individual/coletiva', ano: '2018/2025', tipo: 'individual/coletivo', desc: 'Verificar enquadramento, classe, parcela de escalonamento, implantação da quinta parcela, diferenças e eventuais atrasos para Escrivães e Investigadores. Depende de ficha funcional e contracheques.', base: 'Lei AM nº 4.576/2018 e Lei AM nº 7.446/2025, Anexo III, tabela de Escrivães e Investigadores.', fonte: 'Lei AM 7.446/2025', fonteUrl: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13903/7446.pdf', atualizado: 'Maio/2026' },
@@ -99,6 +181,16 @@ const ACOES_JUDICIAIS = {
     { titulo: 'PMAP — diárias, alimentação, fardamento e serviço extraordinário', status: 'Depende de ato, escala e lotação', ano: 'Tema permanente', tipo: 'individual', desc: 'Conferir diárias, ajuda de custo, alimentação/etapa, fardamento, serviço extraordinário, função, lotação especial, indenizações operacionais e eventuais retroativos. Não tratar como parcela universal da tropa.', base: 'Legislação estadual, decretos, boletins, escala, ordem de serviço, ato de designação, ficha financeira e contracheque.', fonte: 'PMAP / SEAD-AP / DOE-AP', fonteUrl: 'https://pm.ap.gov.br/', atualizado: 'Maio/2026' },
     { titulo: 'PMAP — reserva, reforma, pensão militar e ex-Território', status: 'Análise individual', ano: 'Tema previdenciário e funcional', tipo: 'individual', desc: 'Amapá pode envolver militares estaduais e quadros federais oriundos do ex-Território. Não misturar tabela estadual da PMAP com remuneração federal de transposição/ex-Território sem verificar vínculo, ato e regime jurídico.', base: 'Ficha funcional, ato de ingresso/transposição, processo de reserva/reforma, AMPRev, legislação estadual e federal aplicável, contracheques e decisões individuais.', fonte: 'SEAD/AP / AMPRev / Governo Federal quando houver quadro federal', fonteUrl: 'https://www.transparencia.ap.gov.br/', atualizado: 'Maio/2026' },
     { titulo: 'Concurso PMAP 2022/2026 — convocação, fase e matrícula', status: 'Condicionado ao edital', ano: '2022/2026', tipo: 'individual', desc: 'Pode envolver avaliação documental, TAF, psicotécnico, saúde, investigação social, classificação, cotas e matrícula em curso de formação. Depende de edital, retificação, convocação e situação individual.', base: 'Edital FCC/SEAD/AP CFSD/QPPMC/PMAP 2022, retificações, editais SEAD/AP 2025/2026 e DOE/AP.', fonte: 'SEAD/AP — Concurso Soldado PM 2022', fonteUrl: 'https://sead.portal.ap.gov.br/concursos/vigentes/24027', atualizado: 'Maio/2026' }
+  ],
+  pmce: [
+    { titulo: 'Revisão remuneratória e implantação de reajustes gerais', status: 'Conferência individual', ano: 'Lei CE 19.183/2025 e Lei CE 19.660/2026', tipo: 'individual/coletivo', desc: 'Conferir se a revisão geral foi aplicada corretamente ao soldo e parcelas remuneratórias abrangidas. Não presumir diferença sem contracheques antes/depois.', base: 'Contracheques, lei de revisão, decreto de tabela consolidada, ficha financeira.', fonte: 'BELT/ALCE e Seplag', fonteUrl: 'https://belt.al.ce.gov.br/index.php/legislacao-do-ceara/organizacao-tematica/trabalho-administracao-e-servico-publico/itemlist/tag/SERVIDORES%20P%C3%9ABLICOS%20E%20MILITARES', atualizado: 'Maio/2026' },
+    { titulo: 'GQP/GQB, GDSC e base de cálculo', status: 'Conferência de escala e rubrica', ano: 'Decreto CE 36.085/2024', tipo: 'individual', desc: 'Tese de conferência de rubricas fixas da carreira militar estadual, especialmente quando houver mudança de posto/graduação, promoção ou erro de implantação.', base: 'Anexo XV, ficha financeira, atos de promoção e contracheques.', fonte: 'DOE/CE — Decreto nº 36.085/2024', fonteUrl: 'https://www.sindsaudeceara.org.br/wp-content/uploads/2024/07/REAJUSTE-GERAL-2024.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'Adicional por Atividade de Execução Estadual', status: 'Conferência de escala e rubrica', ano: 'Decreto CE 36.085/2024', tipo: 'individual', desc: 'Verificar pagamento do adicional listado para Cabo e Soldado e eventual repercussão após revisões gerais, conforme ato vigente e contracheque.', base: 'Contracheque, escala, Anexo XV e legislação remuneratória.', fonte: 'DOE/CE — Decreto nº 36.085/2024', fonteUrl: 'https://www.sindsaudeceara.org.br/wp-content/uploads/2024/07/REAJUSTE-GERAL-2024.pdf', atualizado: 'Maio/2026' },
+    { titulo: 'Auxílio-alimentação dos militares estaduais', status: 'Acompanhar publicação oficial', ano: 'Lei CE 19.660/2026', tipo: 'individual/coletivo', desc: 'Alteração legislativa de 2026 equipara/reajusta o auxílio. Conferir quando passou a constar mensalmente/linearmente e se houve diferença retroativa.', base: 'Lei nº 19.660/2026, decreto/ato de implantação e contracheques.', fonte: 'BELT/ALCE e Seplag', fonteUrl: 'https://www.seplag.ce.gov.br/2026/02/26/ceara-propoe-equiparar-auxilio-alimentacao-dos-militares-aos-demais-servidores/', atualizado: 'Maio/2026' },
+    { titulo: 'Serviço extraordinário, metas e hora extra', status: 'Conferência de escala e rubrica', ano: 'Tema permanente', tipo: 'individual', desc: 'Verificar escalas, convocações, metas e rubricas de serviço extraordinário. A tese depende de prova de trabalho, ato autorizativo e regra vigente.', base: 'Escalas, portarias, contracheques, registros de jornada/operação.', fonte: 'Seplag/SSPDS/DOE', fonteUrl: '', atualizado: 'Maio/2026' },
+    { titulo: 'Licença-prêmio/férias não gozadas em pecúnia', status: 'Tema com precedente forte', ano: 'STF Tema 635', tipo: 'individual', desc: 'Para inativos ou desligados, pode haver discussão sobre conversão em pecúnia de períodos não gozados, desde que comprovados e não usados em dobro.', base: 'Ficha funcional, publicação de inatividade e histórico de licenças/férias.', fonte: 'STF', fonteUrl: 'https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635', atualizado: 'Maio/2026' },
+    { titulo: 'URV 11,98%', status: 'Tema histórico com cautela', ano: 'STF Tema 5', tipo: 'individual/coletivo', desc: 'Tema antigo que exige análise de conversão remuneratória, prescrição, absorção e histórico da carreira. Não aplicar automaticamente.', base: 'Fichas financeiras históricas, leis de reajuste e perícia contábil.', fonte: 'STF', fonteUrl: 'https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5', atualizado: 'Maio/2026' },
+    { titulo: 'Concurso PMCE — TAF, saúde, psicológico, heteroidentificação e investigação social', status: 'Em discussão', ano: 'Edital PMCE 2025', tipo: 'individual', desc: 'Exclusões em etapas do concurso exigem análise do edital, motivação do ato, laudos e prazo recursal/judicial.', base: 'Edital, laudos, resultado individual e recursos administrativos.', fonte: 'CEV/UECE', fonteUrl: 'https://www.cev.uece.br/pmce2025/', atualizado: 'Maio/2026' }
   ],
   pcce: [
     { titulo: 'PCCE — subsídio, classe/nível e enquadramento', status: 'Conferência individual', ano: '2025/2026', tipo: 'individual', desc: 'Verificar cargo, classe, nível, jornada, enquadramento, implantação da tabela, progressão, eventuais diferenças e descontos. Não tratar tabela do portal como liquidação automática.', base: 'Lei CE nº 12.124/1993, Decreto CE nº 35.521/2023, Lei CE nº 19.128/2024, Lei CE nº 19.186/2025, editais PCCE 2025, DOE/CE, ficha funcional e contracheques.', fonte: 'PCCE / DOE-CE / CEV-UECE / Cebraspe', fonteUrl: 'https://www.cev.uece.br/oippcce/', atualizado: 'Maio/2026' },

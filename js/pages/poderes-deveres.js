@@ -154,6 +154,152 @@ const PODERES_DEVERES_BASE = {
     "local": "Competência federal vinculada às rodovias e estradas federais.",
     "atualizacao": "Revisado e ampliado em 02/05/2026"
   },
+  "pmce": {
+    "rotulo": "Polícia Militar do Estado do Ceará",
+    "categoria": "Estadual",
+    "essencia": "A PMCE exerce polícia ostensiva e preservação da ordem pública no Ceará. Atua de forma fardada e preventiva, com presença territorial nos 184 municípios e unidades especializadas.",
+    "abrangencia": "Estado do Ceará, com atuação municipalizada por batalhões, companhias e unidades especializadas.",
+    "naoConfundir": "Não substitui a Polícia Civil na investigação criminal comum; não exerce polícia judiciária da União; não é órgão municipal de guarda patrimonial.",
+    "pontoAtencao": "A atuação ostensiva deve observar legalidade, proporcionalidade, respeito a direitos fundamentais, controle disciplinar e controle externo da atividade policial.",
+    "deveres": [
+      "Preservar a ordem pública.",
+      "Realizar policiamento ostensivo fardado.",
+      "Proteger pessoas, bens públicos e privados dentro dos limites legais.",
+      "Atuar de forma preventiva na redução da criminalidade.",
+      "Cumprir ordens legais e manter disciplina e hierarquia.",
+      "Respeitar direitos, garantias e liberdades do cidadão.",
+      "Registrar e encaminhar ocorrências às autoridades competentes."
+    ],
+    "poderes": [
+      "Realizar abordagens e buscas pessoais nos limites constitucionais.",
+      "Prender em flagrante delito e apresentar a ocorrência à autoridade competente.",
+      "Empregar força de modo progressivo, necessário e proporcional.",
+      "Isolar áreas de risco e preservar locais de crime até a chegada da polícia judiciária.",
+      "Fiscalizar situações de trânsito, ambiental, eventos e patrulhamento especializado quando houver competência normativa.",
+      "Atuar em inteligência policial militar nos limites legais."
+    ],
+    "limites": [
+      "Não instaurar investigação criminal comum como atribuição ordinária da Polícia Civil.",
+      "Não realizar busca domiciliar sem mandado, consentimento válido ou hipótese constitucional de flagrante/desastre/socorro.",
+      "Não aplicar sanções sem processo legal, contraditório e ampla defesa.",
+      "Não empregar força fora dos parâmetros de necessidade, proporcionalidade e legalidade.",
+      "Não confundir policiamento ostensivo com persecução penal investigativa."
+    ],
+    "leis": [
+      { "nome": "Constituição Federal de 1988, art. 144, §§ 5º e 6º", "resumo": "Define polícia ostensiva, preservação da ordem pública e subordinação das PMs aos governadores.", "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" },
+      { "nome": "Lei nº 14.751/2023", "resumo": "Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares.", "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm" },
+      { "nome": "Decreto-Lei nº 667/1969", "resumo": "Reorganiza as Polícias Militares e Corpos de Bombeiros Militares.", "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm" },
+      { "nome": "Lei Estadual nº 13.729/2006", "resumo": "Estatuto dos Militares Estaduais do Ceará.", "url": "https://www.pm.ce.gov.br/wp-content/uploads/sites/25/2023/06/estatuto-militares.pdf" },
+      { "nome": "Lei Estadual nº 13.407/2003", "resumo": "Código Disciplinar da PMCE e do CBMCE.", "url": "https://www.pm.ce.gov.br/wp-content/uploads/sites/25/2019/03/lei_13.407-C%C3%B3digo-Disciplinar.pdf" },
+      { "nome": "Lei nº 13.675/2018", "resumo": "Institui o Sistema Único de Segurança Pública (SUSP).", "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13675.htm" }
+    ],
+    "entendimentos": [
+      { "titulo": "STF Tema 1019", "data": "2023", "status": "Tema com precedente forte", "resumo": "Precedente sobre aposentadoria especial de policial civil; uso para PMCE exige cautela por se tratar de regime militar estadual diverso.", "fonte": "STF", "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=5550712&numeroProcesso=1162672&numeroTema=1019" },
+      { "titulo": "STF Tema 635", "data": "2020", "status": "Tema com precedente forte", "resumo": "Conversão em pecúnia de férias ou direitos remuneratórios não gozados por servidor inativo, observados requisitos individuais.", "fonte": "STF", "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=ARE&incidente=4326858&numeroProcesso=721001&numeroTema=635" },
+      { "titulo": "STF Tema 5", "data": "2013", "status": "Tema histórico com cautela", "resumo": "Compensação da diferença de 11,98% decorrente da conversão em URV; depende de histórico remuneratório e absorções posteriores.", "fonte": "STF", "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&incidente=2554015&numeroProcesso=561836&numeroTema=5" }
+    ],
+    "local": "Competência estadual, subordinada ao Governador do Estado e vinculada operacionalmente à SSPDS/CE.",
+    "atualizacao": "2026-05-13"
+  },
+  "pmam": {
+  "rotulo": "Polícia Militar do Estado do Amazonas",
+  "categoria": "Estadual",
+  "essencia": "A PMAM exerce polícia ostensiva e preservação da ordem pública no Estado do Amazonas. Atua de forma preventiva e repressiva imediata, dentro dos limites constitucionais, em apoio à segurança pública estadual e à proteção da sociedade.",
+  "abrangencia": "Estado do Amazonas, incluindo capital, Região Metropolitana, interior, áreas urbanas, rurais, fluviais e ambientais conforme estrutura operacional estadual.",
+  "naoConfundir": "Não substitui a Polícia Civil na investigação criminal ordinária; não exerce polícia judiciária da União; não julga infrações penais; e não pode criar restrições sem base legal.",
+  "pontoAtencao": "A atuação ostensiva deve respeitar legalidade, proporcionalidade, fundada suspeita, registro de ocorrência, cadeia de custódia e direitos fundamentais.",
+  "deveres": [
+    "Preservar a ordem pública e a incolumidade das pessoas.",
+    "Realizar policiamento ostensivo preventivo em áreas urbanas, rurais e fluviais.",
+    "Atender ocorrências emergenciais e proteger vítimas.",
+    "Cumprir ordens legais e preservar a disciplina e a hierarquia militares.",
+    "Registrar ocorrências e encaminhar presos, adolescentes, vítimas e objetos apreendidos à autoridade competente.",
+    "Atuar com respeito à dignidade da pessoa humana, à legalidade e ao uso progressivo da força.",
+    "Apoiar ações integradas de segurança pública, defesa civil e proteção ambiental quando acionada."
+  ],
+  "poderes": [
+    "Realizar abordagem policial quando houver fundada suspeita ou situação de flagrância.",
+    "Efetuar prisão em flagrante e apresentar a pessoa presa à autoridade policial competente.",
+    "Isolar e preservar local de crime até a chegada da polícia judiciária ou perícia.",
+    "Fiscalizar condutas ostensivas relacionadas à ordem pública, conforme competência legal.",
+    "Empregar força de modo proporcional, necessário e progressivo, nos limites legais."
+  ],
+  "limites": [
+    "Não realizar investigação criminal ordinária como atribuição principal da polícia judiciária.",
+    "Não violar domicílio fora das hipóteses constitucionais.",
+    "Não realizar busca pessoal sem fundamento concreto ou situação legal autorizadora.",
+    "Não aplicar punição sem processo legal e autoridade competente.",
+    "Não usar força além do necessário para conter risco real e imediato."
+  ],
+  "leis": [
+    {
+      "nome": "Constituição Federal de 1988, art. 144, §5º",
+      "resumo": "Define às polícias militares a polícia ostensiva e a preservação da ordem pública.",
+      "url": "https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm"
+    },
+    {
+      "nome": "Lei Federal nº 14.751/2023",
+      "resumo": "Institui a Lei Orgânica Nacional das Polícias Militares e dos Corpos de Bombeiros Militares.",
+      "url": "https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2023/lei/l14751.htm"
+    },
+    {
+      "nome": "Decreto-Lei nº 667/1969",
+      "resumo": "Reorganiza as Polícias Militares e os Corpos de Bombeiros Militares dos Estados.",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del0667.htm"
+    },
+    {
+      "nome": "Lei Estadual AM nº 1.154/1975",
+      "resumo": "Estatuto dos Policiais Militares do Estado do Amazonas.",
+      "url": "https://sapl.al.am.leg.br/norma/4909"
+    },
+    {
+      "nome": "Código de Processo Penal, art. 301",
+      "resumo": "Prevê prisão em flagrante por autoridades e agentes públicos nos termos legais.",
+      "url": "https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm"
+    },
+    {
+      "nome": "Lei Estadual AM nº 6.811/2024",
+      "resumo": "Reconhece o brasão e a canção da PMAM como patrimônio cultural imaterial do Amazonas.",
+      "url": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2024/13508/lei_6811.pdf"
+    }
+  ],
+  "entendimentos": [
+    {
+      "titulo": "STF Tema 635 — férias e licença-prêmio não gozadas em pecúnia",
+      "data": "2013",
+      "status": "Tema com precedente forte",
+      "resumo": "Servidor público aposentado pode ter direito à conversão em pecúnia de férias e licença-prêmio não usufruídas, quando não houver contagem em dobro ou indenização anterior. Exige conferência individual.",
+      "fonte": "Supremo Tribunal Federal",
+      "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=635"
+    },
+    {
+      "titulo": "STF Tema 5 — URV 11,98%",
+      "data": "2010",
+      "status": "Tema histórico com cautela",
+      "resumo": "Tema de repercussão geral sobre compensação da diferença de 11,98% decorrente da conversão em URV, com análise individual de prescrição, reestruturações e carreira.",
+      "fonte": "Supremo Tribunal Federal",
+      "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=5"
+    },
+    {
+      "titulo": "TJAM — promoções por Quadro Especial de Acesso",
+      "data": "2024",
+      "status": "Em discussão",
+      "resumo": "Decisão noticiada pelo TJAM declarou inconstitucionais dispositivos de promoção de militares por Quadro Especial de Acesso, exigindo cautela em revisões de promoção.",
+      "fonte": "Tribunal de Justiça do Amazonas",
+      "url": "https://www.tjam.jus.br/index.php/menu/sala-de-imprensa/9809-tjam-declara-inconstitucional-promocao-de-militares-por-quadro-especial-de-acesso-2"
+    },
+    {
+      "titulo": "STF Tema 1019 — aposentadoria policial civil, sem aplicação automática à PM",
+      "data": "2022",
+      "status": "Análise previdenciária individual",
+      "resumo": "Tema citado apenas como referência de cautela previdenciária para carreiras de segurança. Para militares estaduais, a análise deve priorizar o SPSM/AM, o Decreto-Lei nº 667/1969 e a legislação militar estadual.",
+      "fonte": "Supremo Tribunal Federal",
+      "url": "https://portal.stf.jus.br/jurisprudenciaRepercussao/tema.asp?num=1019"
+    }
+  ],
+  "local": "Competência estadual. A PMAM atua no território do Amazonas, subordinada ao Governador e integrada ao sistema estadual de segurança pública, com atribuições constitucionais de polícia ostensiva e preservação da ordem pública.",
+  "atualizacao": "Revisado em 2026-05-13 com base em Constituição Federal, Lei Orgânica Nacional das PMs, Decreto-Lei nº 667/1969, Estatuto da PMAM, PMAM e fontes oficiais do Amazonas."
+},
   "pm": {
     "rotulo": "Polícia Militar",
     "categoria": "Estadual/Distrital",
@@ -533,6 +679,7 @@ function poderesEscapar(texto = '') {
 
 function poderesTipoDaInstituicao(inst) {
   inst = String(inst || '').toLowerCase();
+  if (PODERES_DEVERES_BASE[inst]) return inst;
   if (inst === 'pf') return 'pf';
   if (inst === 'prf') return 'prf';
   if (inst === 'guarda_municipal' || inst === 'gm') return 'gm';

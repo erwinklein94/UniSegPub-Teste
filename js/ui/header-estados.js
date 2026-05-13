@@ -141,7 +141,39 @@ const HEADER_ESTADOS = {
 const HEADER_INSTITUICOES_INFO = {
   pmac: { titulo: 'PMAC', desc: 'Polícia Militar do Acre' },
   pmal: { titulo: 'PMAL', desc: 'Polícia Militar do Estado de Alagoas' },
-  pmam: { titulo: 'PMAM', desc: 'Polícia Militar do Estado do Amazonas' },
+  pmam: {
+  "nome": "Polícia Militar do Estado do Amazonas",
+  "sigla": "PMAM",
+  "siglaInterna": "Dados em breve",
+  "estado": "Amazonas",
+  "estadoSigla": "AM",
+  "tipo": "Polícia Militar",
+  "criacao": "04/04/1837 · origem histórica como Guarda Policial da Província do Amazonas, criada por ato do governo provincial citado pela própria PMAM",
+  "ativa": 7000,
+  "ativaLabel": "7.000 ativos · referência oficial secundária da Assembleia Legislativa do Amazonas com base em portais oficiais da PMAM/CBMAM; revisar quando a PMAM publicar efetivo consolidado próprio",
+  "reserva": 0,
+  "reservaLabel": "Dados em breve",
+  "femininas": 0,
+  "femininasLabel": "Dados em breve",
+  "populacao": 4321616,
+  "populacaoTitulo": "População do Estado",
+  "relacaoLabel": "1 ativo / 617 hab. · 0,162% · cálculo editorial com população IBGE 2025 e efetivo ativo de referência de 7.000",
+  "relacaoTitulo": "Relação ativa/população",
+  "governador": "Roberto Cidade",
+  "comando": "Cel QOPM Marcos Klinger dos Santos Paiva — Comandante-Geral",
+  "fonte": "PMAM — Institucional e História; PMAM — Alto Comando; Governo do Amazonas — órgãos; Assembleia Legislativa do Amazonas — efetivo ativo; IBGE Cidades — população estimada 2025",
+  "atualizado": "Pesquisa em 2026-05-13. Efetivo ativo usado como referência oficial secundária; reserva/inativos e efetivo feminino permanecem como Dados em breve até fonte oficial direta da PMAM ou do Governo do Amazonas.",
+  "estrutura": "Polícia Militar estadual subordinada ao Governador do Amazonas, com Comando-Geral, Estado-Maior, diretorias, comandos de policiamento, unidades operacionais, unidades especializadas, ensino e apoio administrativo.",
+  "sede": "Rua Benjamin Constant, 2150, Petrópolis, Manaus/AM, CEP 69063-010",
+  "emergencia": "190",
+  "linksOficiais": [
+    "https://www.pm.am.gov.br/",
+    "https://pm.am.gov.br/portal/pagina/historia_da_pmam",
+    "https://www.ssp.am.gov.br/estrutura/marcos-klinger-dos-santos-paiva/",
+    "https://conhecimento.fgv.br/concursos/pmam21",
+    "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/14494/lei_7445.pdf"
+  ]
+},
   pcam: { titulo: 'PCAM', desc: 'Polícia Civil do Estado do Amazonas' },
   pcap: { titulo: 'PCAP', desc: 'Polícia Civil do Estado do Amapá' },
   pcce: { titulo: 'PCCE', desc: 'Polícia Civil do Estado do Ceará' },
@@ -1604,26 +1636,37 @@ const HEADER_INSTITUICOES_RESUMO = {
     "atualizado": "Base numérica inserida em 01/05/2026"
   },
   "pmce": {
-    "nome": "Polícia Militar do Ceará",
+    "nome": "Polícia Militar do Estado do Ceará",
     "sigla": "PMCE",
+    "siglaInterna": "PMCE",
     "estado": "Ceará",
     "estadoSigla": "CE",
     "tipo": "Polícia Militar",
-    "criacao": "24/05/1835",
-    "ativa": 22427,
-    "ativaLabel": "22.427",
-    "reserva": 23548,
-    "reservaLabel": "23.548 · estimativa técnica",
-    "femininas": 1346,
-    "femininasLabel": "1.346 · estimado",
+    "criacao": "24/05/1835 · origem na Força Pública do Ceará, criada pela Resolução Provincial nº 13",
+    "ativa": 22000,
+    "ativaLabel": "22.000+ homens e mulheres, conforme página institucional da PMCE",
+    "reserva": 0,
+    "reservaLabel": "Dados em breve",
+    "femininas": 1416,
+    "femininasLabel": "1.416 mulheres, conforme notícia institucional da PMCE de 26/06/2025",
     "populacao": 9268836,
     "populacaoTitulo": "População do Estado",
-    "relacaoLabel": "1 ativo / 413 hab. · 0,242%",
+    "relacaoLabel": "1 ativo / 421 hab. · 0,237%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Elmano de Freitas",
-    "comando": "Comandante-Geral da PMCE — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Cel PM Sinval da Silveira Sampaio — Comandante-Geral",
+    "efetivoTotalLabel": "22.000+ ativos · reserva/inativos em Dados em breve",
+    "estrutura": "Comando-Geral, Estado-Maior, comandos operacionais, batalhões, companhias, unidades especializadas, policiamento ostensivo territorial e unidades administrativas vinculadas à Secretaria da Segurança Pública e Defesa Social do Ceará.",
+    "sede": "Quartel do Comando-Geral da PMCE — Av. Aguanambi, 2280, Bairro de Fátima, Fortaleza/CE",
+    "emergencia": "190 · Polícia Militar / 181 · Disque-Denúncia / 193 · Bombeiros",
+    "linksOficiais": [
+      "https://www.pm.ce.gov.br/institucional/",
+      "https://www.pm.ce.gov.br/2025/02/07/coronel-sinval-da-silveira-sampaio-assume-comando-geral-da-policia-militar-do-ceara-pmce/",
+      "https://www.pm.ce.gov.br/2025/06/26/dia-da-policial-militar-feminina-do-ceara-sspds-celebra-o-comprometimento-dessas-mulheres-que-atuam-para-trazer-mais-seguranca-aos-cearenses/",
+      "https://www.cev.uece.br/pmce2025/"
+    ],
+    "fonte": "PMCE — Institucional; PMCE — Quem é quem/passagem de comando; Governo do Ceará/PMCE; IBGE — Estimativas 2025; CEV/UECE — Concurso PMCE 2025",
+    "atualizado": "PMCE revisada em 13/05/2026 — efetivo ativo usado como referência institucional aproximada; reserva/inativos sem fonte direta consolidada, marcado como Dados em breve."
   },
   "pcce": {
     "nome": "Polícia Civil do Estado do Ceará",
@@ -6529,6 +6572,20 @@ function getHistoricoPorTipo(inst, dados) {
         '2023: Decreto nº 11.759/2023 atualiza a estrutura regimental no Ministério da Justiça e Segurança Pública.',
         '2025: documento institucional PRF Rotas de Integração registra presença nos 26 estados e DF, 13 mil+ servidores ativos, 27 Superintendências, 152 Delegacias e cerca de 500 UOPs.',
         '2026: Lei nº 14.875/2024, Anexo XXVII, fixa a tabela de subsídio da carreira PRF com efeitos a partir de 01/05/2026.'
+      ]
+    };
+  }
+
+  if (inst === 'pmce') {
+    return {
+      origem: `A ${nome} nasceu em 24 de maio de 1835, com a criação da Força Pública do Ceará pela Resolução Provincial nº 13. A instituição passou por diferentes denominações e reorganizações ao longo da formação do Estado e, desde 4 de janeiro de 1947, consolidou a denominação Polícia Militar do Ceará. Em 2026, atua no policiamento ostensivo e na preservação da ordem pública nos 184 municípios cearenses, sob comando do Cel PM Sinval da Silveira Sampaio.`,
+      marcos: [
+        '24/05/1835: criação da Força Pública do Ceará pela Resolução Provincial nº 13.',
+        '1835–1839: comando inicial atribuído ao Tenente Tomaz Lourenço da Silva Castro, conforme histórico institucional.',
+        '1889: reorganizações no período republicano e evolução da estrutura de segurança estadual.',
+        '04/01/1947: consolidação da denominação Polícia Militar do Ceará.',
+        '26/06/1994: marco institucional da primeira turma feminina conforme histórico divulgado pela PMCE.',
+        '2025: Cel PM Sinval da Silveira Sampaio assume o Comando-Geral da PMCE.'
       ]
     };
   }
