@@ -237,6 +237,24 @@
       });
     }
 
+    document.addEventListener('change', event => {
+      const alvo = event.target;
+      if (!alvo || !alvo.matches || !alvo.matches('#instituicao, #instituicao_header, #instituicao_home')) return;
+
+      const inst = normalizarTexto(alvo.value);
+      if (!inst) return;
+
+      const card = document.querySelector(`[data-remu-card][data-inst="${escaparSeletorCss(inst)}"]`);
+      if (!card) return;
+
+      seletorEsfera.value = card.dataset.esfera || '';
+      atualizarOpcoesInstituicao();
+      seletorInstituicao.value = inst;
+      paginaAtual = 1;
+      renderizar();
+      selecionarTabelaDetalhada(inst);
+    });
+
     paginacao.addEventListener('click', event => {
       const botao = event.target.closest('[data-remu-page]');
       if (!botao || botao.disabled) return;
