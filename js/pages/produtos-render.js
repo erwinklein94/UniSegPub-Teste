@@ -121,6 +121,78 @@
     return normalizarTexto(partes.filter(Boolean).join(' '));
   }
 
+  const cacheTermosInstituicaoProduto = new Map();
+
+  function unicoProdutos(lista) {
+    return Array.from(new Set((lista || []).map(item => String(item || '').trim()).filter(Boolean)));
+  }
+
+  function getInstituicoesCatalogoProdutos() {
+    const validas = typeof INSTITUICOES_VALIDAS !== 'undefined' && Array.isArray(INSTITUICOES_VALIDAS)
+      ? INSTITUICOES_VALIDAS
+      : [];
+    const info = typeof HEADER_INSTITUICOES_INFO !== 'undefined' && HEADER_INSTITUICOES_INFO
+      ? Object.keys(HEADER_INSTITUICOES_INFO)
+      : [];
+    return unicoProdutos(validas.concat(info)).filter(inst => inst && inst !== 'portal');
+  }
+
+  function getUfInstituicaoProduto(inst) {
+    const valor = String(inst || '').toLowerCase().trim();
+    if (!valor) return '';
+    if (valor === 'pf' || valor === 'prf') return 'br';
+    if (valor === 'gm') return 'mun';
+    if (typeof getEstadoDaInstituicao === 'function') {
+      const uf = String(getEstadoDaInstituicao(valor) || '').toLowerCase();
+      if (UFS_VALIDAS.has(uf)) return uf;
+    }
+    const ufFinal = valor.slice(-2);
+    return UFS_VALIDAS.has(ufFinal) ? ufFinal : '';
+  }
+
+  function getPrefixosRamoProduto(inst) {
+    const valor = String(inst || '').toLowerCase().trim();
+    if (valor === 'pf') return ['pf'];
+    if (valor === 'prf') return ['prf'];
+    if (valor === 'gm') return ['gm'];
+    if (valor.startsWith('pc') || valor === 'pcerj') return ['pc'];
+    if (valor.startsWith('pp')) return ['pp'];
+    if (valor.startsWith('bm')) return ['bm', 'cbm'];
+    if (valor.startsWith('pm') || valor === 'pmerj') return ['pm'];
+    return [];
+  }
+
+  function getTermosInstituicaoProduto(inst) {
+    const codigo = String(inst || '').toLowerCase().trim();
+    if (cacheTermosInstituicaoProduto.has(codigo)) return cacheTermosInstituicaoProduto.get(codigo);
+
+    const info = (typeof HEADER_INSTITUICOES_INFO !== 'undefined' && HEADER_INSTITUICOES_INFO && HEADER_INSTITUICOES_INFO[codigo]) || {};
+    const titulo = info.titulo || codigo.toUpperCase();
+    const desc = info.desc || '';
+    const uf = getUfInstituicaoProduto(codigo);
+    const termos = [codigo, titulo, desc, `${titulo} ${desc}`];
+
+    getPrefixosRamoProduto(codigo).forEach(prefixo => {
+      if (uf && uf !== 'br' && uf !== 'mun') {
+        termos.push(`${prefixo}${uf}`, `${prefixo} ${uf}`, `${prefixo}-${uf}`);
+      }
+    });
+
+    if (codigo === 'pmesp') termos.push('pm sp', 'pm-sp', 'policia militar sp', 'policia militar de sao paulo', 'policia militar do estado de sao paulo');
+    if (codigo === 'bmsp') termos.push('cbpm esp', 'cbpmesp', 'cbm sp', 'bombeiro sp', 'bombeiros sp', 'corpo de bombeiros sp');
+    if (codigo === 'pmerj') termos.push('pm rj', 'pm-rj', 'pmrj', 'policia militar rj', 'policia militar do rio de janeiro');
+    if (codigo === 'bmrj') termos.push('cbmerj', 'cbm rj', 'cbm-rj', 'bombeiro rj', 'bombeiros rj', 'corpo de bombeiros rj');
+    if (codigo === 'pcerj') termos.push('pc rj', 'pc-rj', 'policia civil rj', 'policia civil do rio de janeiro');
+    if (codigo === 'pcdf') termos.push('pc df', 'pc-df', 'policia civil df', 'policia civil do distrito federal');
+    if (codigo === 'ppdf') termos.push('pp df', 'pp-df', 'policia penal df', 'policia penal do distrito federal');
+    if (codigo === 'pf') termos.push('policia federal', 'departamento de policia federal');
+    if (codigo === 'prf') termos.push('policia rodoviaria federal');
+
+    const normalizados = unicoProdutos(termos.map(normalizarTexto)).filter(termo => termo.length >= 2);
+    cacheTermosInstituicaoProduto.set(codigo, normalizados);
+    return normalizados;
+  }
+
   function termoExiste(texto, termo) {
     const termoNormalizado = normalizarTexto(termo);
     if (!termoNormalizado) return false;
@@ -163,6 +235,13 @@
       if (!regra.termos.some(termo => termoExiste(texto, termo))) return;
       (regra.instituicoes || []).forEach(inst => instituicoes.add(inst));
       (regra.ufs || []).forEach(uf => ufs.add(uf));
+    });
+
+    getInstituicoesCatalogoProdutos().forEach(inst => {
+      if (!getTermosInstituicaoProduto(inst).some(termo => termoExiste(texto, termo))) return;
+      instituicoes.add(inst);
+      const uf = getUfInstituicaoProduto(inst);
+      if (uf) ufs.add(uf);
     });
 
     return {

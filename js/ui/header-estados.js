@@ -4942,6 +4942,11 @@ function concursoNormalizarObjeto(inst, dados) {
   });
 
   normalizado.site = concursoUrlValida(origem.site || normalizado.site);
+
+  ['ultimo', 'abertos', 'pedidos_abertura', 'historico_recente', 'fontes'].forEach(campo => {
+    if (origem[campo] !== undefined) normalizado[campo] = origem[campo];
+  });
+
   return normalizado;
 }
 

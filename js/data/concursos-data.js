@@ -2,6 +2,169 @@
    Mantém o identificador CONCURSOS para compatibilidade com o código atual. */
 
 const CONCURSOS = {
+  "pcdf": {
+    "edital": "PCDF — Delegado de Polícia 2026, Edital nº 1/2026, retificado pelos Editais nº 3 e nº 4/2026; concurso aberto e organizado pelo Cebraspe.",
+    "salario": "Delegado de Polícia: subsídio inicial de R$ 26.690,15, jornada de 40 horas semanais e dedicação exclusiva. Demais cargos com pedidos/planejamento sem edital publicado: Dados em breve.",
+    "vagas": "Delegado: 50 vagas imediatas + 100 em cadastro de reserva, total de 150 oportunidades. Distribuição retificada: imediatas 25 AC, 10 PcD, 10 PP e 5 HIPO; cadastro reserva 50 AC, 20 PcD, 20 PP e 10 HIPO. Agente Policial de Custódia e cargos periciais constam em planejamento de contratação de banca, com vagas oficiais ainda em Dados em breve.",
+    "cotas": "Delegado: reserva para PcD, PP e hipossuficientes conforme retificação do edital. Percentuais e procedimentos devem ser conferidos no edital, nas retificações e nos atos do Cebraspe.",
+    "idade": "Delegado: idade mínima de 18 anos na posse, CNH categoria B ou superior, bacharelado em Direito e três anos de atividade jurídica ou policial. Para os demais cargos sem edital vigente: Dados em breve.",
+    "escolaridade": "Delegado: diploma de bacharel em Direito e comprovação de três anos de atividade jurídica ou policial. Agente Policial de Custódia, Perito Criminal, Perito Médico-Legista e Papiloscopista Policial: requisitos serão consolidados após edital específico.",
+    "materias": "Delegado: disciplinas jurídicas e institucionais do edital Cebraspe, incluindo Direito Administrativo, Constitucional, Penal, Processual Penal, Civil, Processual Civil, Empresarial, Tributário, Ambiental, Criminologia, Medicina Legal, Direitos Humanos e legislação especial, além de provas discursivas e prova oral. Demais cargos: Dados em breve até publicação de edital.",
+    "banca": "Cebraspe para o concurso de Delegado PCDF 2026. Para Agente Policial de Custódia e área pericial, os atos do PACC/DODF registram contratação de instituição para realização dos concursos; banca ainda em Dados em breve.",
+    "inscritos": "Delegado: inscrições de 07/05/2026 a 25/05/2026; taxa de R$ 310,00; pagamento até 27/05/2026. Total de inscritos: Dados em breve.",
+    "etapas": "Delegado: provas objetivas e discursivas, prova oral, identificação biométrica, avaliação médica, prova de capacidade física, avaliação psicológica, sindicância de vida pregressa e investigação social, curso de formação profissional e avaliação de títulos, conforme edital/retificações.",
+    "cfsd": "Delegado: Curso de Formação Profissional, de responsabilidade do Cebraspe, com caráter eliminatório. Para demais cargos PCDF ainda sem edital publicado: Dados em breve.",
+    "estagio": "Posse, exercício e estágio probatório seguem a legislação aplicável à PCDF, edital, atos de nomeação e normas internas. Regras específicas por cargo: Dados em breve quando o edital respectivo for publicado.",
+    "validade": "Dados em breve no resumo consolidado; conferir edital, retificações e homologação do resultado final para prazo definitivo de validade/prorrogação.",
+    "previsao": "Em 14/05/2026, o destaque oficial é Delegado PCDF 2026, com inscrições abertas até 25/05/2026, provas objetiva e discursivas previstas para 05/07/2026 e nomeações escalonadas no cronograma 2028/2029. Há planejamento oficial de contratação de banca para Agente Policial de Custódia e área pericial no PACC/DODF, sem edital publicado nesta revisão.",
+    "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO",
+    "ultimo": {
+      "cargo": "Delegado de Polícia",
+      "situacao": "Aberto — inscrições de 07/05/2026 a 25/05/2026",
+      "edital": "Edital nº 1/2026, de 03/02/2026, retificado pelos Editais nº 3 e nº 4/2026",
+      "salario": "R$ 26.690,15",
+      "vagas": "50 imediatas + 100 cadastro de reserva = 150",
+      "cotas": "AC, PcD, PP e HIPO, com distribuição retificada no Edital nº 3/2026",
+      "idade": "18 anos na posse; CNH B ou superior; demais requisitos do edital",
+      "escolaridade": "Bacharelado em Direito e três anos de atividade jurídica ou policial",
+      "materias": [
+        "Direito Administrativo",
+        "Direito Constitucional",
+        "Direito Penal",
+        "Direito Processual Penal",
+        "Direito Civil",
+        "Direito Processual Civil",
+        "Direito Empresarial",
+        "Direito Tributário",
+        "Direito Ambiental",
+        "Criminologia",
+        "Medicina Legal",
+        "Direitos Humanos",
+        "Legislação especial"
+      ],
+      "banca": "Cebraspe",
+      "inscritos": {
+        "periodo": "07/05/2026 a 25/05/2026",
+        "taxa": "R$ 310,00",
+        "pagamento": "até 27/05/2026",
+        "total": "Dados em breve"
+      },
+      "etapas": [
+        "Provas objetivas",
+        "Provas discursivas",
+        "Prova oral",
+        "Identificação biométrica",
+        "Avaliação médica",
+        "Prova de capacidade física",
+        "Avaliação psicológica",
+        "Sindicância de vida pregressa e investigação social",
+        "Curso de formação profissional",
+        "Avaliação de títulos"
+      ],
+      "cfsd": "Curso de Formação Profissional, eliminatório, de responsabilidade do Cebraspe",
+      "estagio": "Dados em breve",
+      "validade": "Dados em breve — confirmar na homologação e atos posteriores",
+      "previsao": "Locais de prova em 22/06/2026; provas objetiva e discursivas em 05/07/2026; prova oral entre 08 e 11/10/2026; TAF/toxicológico entre 09 e 13/04/2027; convocação para CFP em 17/09/2027; nomeações mínimas escalonadas em 2028 e 2029",
+      "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO"
+    },
+    "abertos": [
+      {
+        "cargo": "Delegado de Polícia",
+        "situacao": "Aberto — inscrições de 07/05/2026 a 25/05/2026",
+        "edital": "Edital nº 1/2026, de 03/02/2026, retificado pelos Editais nº 3 e nº 4/2026",
+        "salario": "R$ 26.690,15",
+        "vagas": "50 imediatas + 100 cadastro de reserva = 150",
+        "cotas": "AC, PcD, PP e HIPO, com distribuição retificada no Edital nº 3/2026",
+        "idade": "18 anos na posse; CNH B ou superior; demais requisitos do edital",
+        "escolaridade": "Bacharelado em Direito e três anos de atividade jurídica ou policial",
+        "materias": [
+          "Direito Administrativo",
+          "Direito Constitucional",
+          "Direito Penal",
+          "Direito Processual Penal",
+          "Direito Civil",
+          "Direito Processual Civil",
+          "Direito Empresarial",
+          "Direito Tributário",
+          "Direito Ambiental",
+          "Criminologia",
+          "Medicina Legal",
+          "Direitos Humanos",
+          "Legislação especial"
+        ],
+        "banca": "Cebraspe",
+        "inscritos": {
+          "periodo": "07/05/2026 a 25/05/2026",
+          "taxa": "R$ 310,00",
+          "pagamento": "até 27/05/2026",
+          "total": "Dados em breve"
+        },
+        "etapas": [
+          "Provas objetivas",
+          "Provas discursivas",
+          "Prova oral",
+          "Identificação biométrica",
+          "Avaliação médica",
+          "Prova de capacidade física",
+          "Avaliação psicológica",
+          "Sindicância de vida pregressa e investigação social",
+          "Curso de formação profissional",
+          "Avaliação de títulos"
+        ],
+        "cfsd": "Curso de Formação Profissional, eliminatório, de responsabilidade do Cebraspe",
+        "estagio": "Dados em breve",
+        "validade": "Dados em breve — confirmar na homologação e atos posteriores",
+        "previsao": "Locais de prova em 22/06/2026; provas objetiva e discursivas em 05/07/2026; prova oral entre 08 e 11/10/2026; TAF/toxicológico entre 09 e 13/04/2027; convocação para CFP em 17/09/2027; nomeações mínimas escalonadas em 2028 e 2029",
+        "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO"
+      }
+    ],
+    "pedidos_abertura": [
+      {
+        "cargo": "Agente Policial de Custódia",
+        "situacao": "Planejamento oficial / contratação de banca prevista no PACC",
+        "documento": "DODF nº 8, de 14/01/2026, item 84; DODF nº 66, de 10/04/2026, item 84",
+        "vagas": "Dados em breve — a fonte oficial consultada registra contratação de instituição, mas não consolida vagas do edital",
+        "banca": "Dados em breve",
+        "proximo_passo": "Contratação da banca e publicação de edital específico",
+        "fonte": "SINJ/DODF — PACC PCDF 2026"
+      },
+      {
+        "cargo": "Perito Criminal, Perito Médico-Legista e Papiloscopista Policial",
+        "situacao": "Planejamento oficial / contratação de banca prevista no PACC",
+        "documento": "DODF nº 8, de 14/01/2026, item 85; DODF nº 66, de 10/04/2026, item 85",
+        "vagas": "Dados em breve — a fonte oficial consultada registra contratação de instituição, mas não consolida vagas do edital",
+        "banca": "Dados em breve",
+        "proximo_passo": "Contratação da banca e publicação de edital específico para cada cargo/área",
+        "fonte": "SINJ/DODF — PACC PCDF 2026"
+      }
+    ],
+    "historico_recente": [
+      {
+        "cargo": "Agente de Polícia",
+        "situacao": "Concurso público em andamento/histórico, com atos oficiais publicados pela PCDF em 2025",
+        "edital": "Página oficial PCDF — Agente de Polícia, com editais até o nº 78/DODF nº 220, de 19/11/2025",
+        "banca": "Cebraspe em certame anterior; conferir cada ato oficial",
+        "vagas": "Dados em breve no resumo consolidado",
+        "site": "https://www.pcdf.df.gov.br/concursos-publicos/agente-de-policia"
+      },
+      {
+        "cargo": "Escrivão de Polícia",
+        "situacao": "Concurso público em andamento/histórico, com atos oficiais publicados pela PCDF em 2025",
+        "edital": "Página oficial PCDF — Escrivão de Polícia, com Edital nº 65/DODF nº 158, de 22/08/2025",
+        "banca": "Cebraspe em certame anterior; conferir cada ato oficial",
+        "vagas": "Dados em breve no resumo consolidado",
+        "site": "https://www.pcdf.df.gov.br/concursos-publicos/escrivao-de-policia"
+      }
+    ],
+    "fontes": [
+      "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO",
+      "https://www.cebraspe.org.br/policia-civil-do-distrito-federal-divulga-novas-datas-do-concurso-para-delegado/",
+      "https://www.pcdf.df.gov.br/noticias/15066/pcdf-publica-edital-de-concurso-para-delegado-de-policia",
+      "https://www.sinj.df.gov.br/sinj/TextoArquivoDiario.aspx?id_file=faa7c7d2-2cb9-32fd-80ff-bc259ca22eec",
+      "https://www.pcdf.df.gov.br/concursos-publicos/agente-de-policia",
+      "https://www.pcdf.df.gov.br/concursos-publicos/escrivao-de-policia"
+    ]
+  },
   prf: {
     edital: 'PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026; sem novo concurso aberto na revisão de 04/05/2026',
     salario: 'Inicial 2026: R$ 12.253,84 · 3ª Classe, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial, Padrão III. Valores de subsídio conforme Lei nº 14.875/2024, Anexo XXVII, com efeitos em 01/05/2026.',

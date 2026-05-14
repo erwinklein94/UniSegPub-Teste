@@ -4644,6 +4644,12 @@ html[data-theme="light"] .menu-overlay.active {
     pointer-events: auto;
   }
 
+  .usp-affiliate-rail__cards {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(26px, 4vh, 44px);
+  }
+
   .usp-affiliate-rail__title {
     width: fit-content;
     max-width: 100%;
@@ -4676,6 +4682,11 @@ html[data-theme="light"] .menu-overlay.active {
     backdrop-filter: blur(12px) saturate(118%);
     -webkit-backdrop-filter: blur(12px) saturate(118%);
     overflow: hidden;
+  }
+
+  .usp-affiliate-card--contextual {
+    border-color: color-mix(in srgb, var(--vermelho) 34%, var(--border-card));
+    box-shadow: 0 14px 30px color-mix(in srgb, var(--vermelho) 12%, rgba(15, 23, 42, 0.12));
   }
 
   html[data-theme="dark"] .usp-affiliate-card,

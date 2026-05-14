@@ -496,7 +496,11 @@ function carregarConcursos() {
     return;
   }
   const c = CONCURSOS[currInst] || getConcursoPoliciaPenal(currInst);
-  if (!c) { cont.innerHTML = ""; return; }
+  if (!c) {
+    cont.innerHTML = "";
+    if (typeof window.renderizarProdutosConcursosRelacionados === 'function') window.renderizarProdutosConcursosRelacionados('');
+    return;
+  }
 
   cont.innerHTML = `
     <div class="direito-item acao">
@@ -552,6 +556,10 @@ function carregarConcursos() {
       </div>
     </a>
   `;
+
+  if (typeof window.renderizarProdutosConcursosRelacionados === 'function') {
+    window.renderizarProdutosConcursosRelacionados(currInst);
+  }
 }
 
 /* ============================================================ */
