@@ -278,7 +278,7 @@ function popularCargos(inst) {
     pmsc: CARGOS_PMSC,   bmsc: CARGOS_BMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   bmes: CARGOS_BMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,
+    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,   pcdf: CARGOS_PCDF,
     bmap: CARGOS_BMAP, pmap: CARGOS_PMAP,};
   currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
 

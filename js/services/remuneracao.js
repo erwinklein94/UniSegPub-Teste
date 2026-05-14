@@ -57,6 +57,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'SEAD/IAPEN-AC — Edital 001/2023 e Portal do Estado do Acre — tabela IAPEN',
     url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
   },
+  pcdf: {
+    nome: 'SEEC/DF — Polícia Civil do Distrito Federal — tabela de escalonamento vertical — janeiro/2026; Lei nº 15.395/2026',
+    url: 'https://www.economia.df.gov.br/documents/d/seec/policia-civil-pdf'
+  },
   pmce: {
     nome: 'DOE/CE — Decreto nº 36.085/2024, Anexo XV; Lei nº 19.183/2025; Lei nº 19.660/2026 — revisão remuneratória dos militares estaduais',
     url: 'https://www.sindsaudeceara.org.br/wp-content/uploads/2024/07/REAJUSTE-GERAL-2024.pdf'
@@ -729,7 +733,7 @@ function getTabelaCargosRemuneracao(inst) {
     pmsc: CARGOS_PMSC,   bmsc: CARGOS_BMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   bmes: CARGOS_BMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
+    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,   pcdf: CARGOS_PCDF,};
   const instNorm = normalizarInstituicao(inst);
   return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
 }
@@ -759,6 +763,13 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
+  } else if (inst === 'pcdf') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Subsídio bruto mensal da Polícia Civil do Distrito Federal, em parcela única, conforme tabela oficial vigente.';
+    benefDesc = cargo.benefDesc || 'Auxílios, plantões, indenizações e parcelas pessoais dependem de lei, ato, lotação, escala e contracheque; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'pcdf';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'PCDF jan/2026');
   } else if (inst === 'pmce') {
     remuneracao = padrao;
     beneficios = 0;

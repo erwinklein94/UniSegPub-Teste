@@ -1640,3 +1640,42 @@ const CARGOS_PCAC = [
   { val: 'agente_i_ac', text: 'Agente / Escrivão / Papiloscopista / Aux. Necropsia PCAC — Classe I', padrao: 5000.00, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcac', criterio: CRITERIO_PCAC_OPERACIONAL, benefDesc: BENEF_PCAC, badge: 'Tabela oficial AC' }
 ];
 
+const CRITERIO_PCDF_2026 = 'Subsídio bruto mensal da Polícia Civil do Distrito Federal, fixado em parcela única, conforme Lei nº 11.361/2006 e anexos atualizados pela Lei nº 15.395/2026; tabela SEEC/DF com vigência em janeiro/2026.';
+const BENEF_PCDF_2026 = 'Auxílio-alimentação suplementar mensal de R$ 392,00 e auxílio-uniforme anual de R$ 3.000,00 têm natureza indenizatória e não foram somados ao subsídio. Plantões, verbas eventuais, indenizações e parcelas pessoais dependem de escala, ato, lotação e contracheque.';
+const CARGOS_PCDF = [
+  // Delegado de Polícia,
+  { val: 'pcdf_del_esp', text: 'Delegado de Polícia PCDF — Classe Especial', padrao: 38872.66, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_del_1', text: 'Delegado de Polícia PCDF — Primeira Classe', padrao: 32382.34, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_del_2', text: 'Delegado de Polícia PCDF — Segunda Classe', padrao: 27703.52, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_del_3', text: 'Delegado de Polícia PCDF — Terceira Classe', padrao: 26690.15, gratif: 0, oficial: true, delegado: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Perito Criminal,
+  { val: 'pcdf_perito_criminal_esp', text: 'Perito Criminal PCDF — Classe Especial', padrao: 38872.66, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_perito_criminal_1', text: 'Perito Criminal PCDF — Primeira Classe', padrao: 32382.34, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_perito_criminal_2', text: 'Perito Criminal PCDF — Segunda Classe', padrao: 27703.52, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_perito_criminal_3', text: 'Perito Criminal PCDF — Terceira Classe', padrao: 26690.15, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Perito Médico-Legista,
+  { val: 'pcdf_medico_legista_esp', text: 'Perito Médico-Legista PCDF — Classe Especial', padrao: 38872.66, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_medico_legista_1', text: 'Perito Médico-Legista PCDF — Primeira Classe', padrao: 32382.34, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_medico_legista_2', text: 'Perito Médico-Legista PCDF — Segunda Classe', padrao: 27703.52, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_medico_legista_3', text: 'Perito Médico-Legista PCDF — Terceira Classe', padrao: 26690.15, gratif: 0, oficial: true, perito: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Papiloscopista Policial,
+  { val: 'pcdf_papiloscopista_esp', text: 'Papiloscopista Policial PCDF — Classe Especial', padrao: 23440.38, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_papiloscopista_1', text: 'Papiloscopista Policial PCDF — Primeira Classe', padrao: 17523.06, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_papiloscopista_2', text: 'Papiloscopista Policial PCDF — Segunda Classe', padrao: 14593.70, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_papiloscopista_3', text: 'Papiloscopista Policial PCDF — Terceira Classe', padrao: 13794.41, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Escrivão de Polícia,
+  { val: 'pcdf_escrivao_esp', text: 'Escrivão de Polícia PCDF — Classe Especial', padrao: 23440.38, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_escrivao_1', text: 'Escrivão de Polícia PCDF — Primeira Classe', padrao: 17523.06, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_escrivao_2', text: 'Escrivão de Polícia PCDF — Segunda Classe', padrao: 14593.70, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_escrivao_3', text: 'Escrivão de Polícia PCDF — Terceira Classe', padrao: 13794.41, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Agente de Polícia,
+  { val: 'pcdf_agente_esp', text: 'Agente de Polícia PCDF — Classe Especial', padrao: 23440.38, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_agente_1', text: 'Agente de Polícia PCDF — Primeira Classe', padrao: 17523.06, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_agente_2', text: 'Agente de Polícia PCDF — Segunda Classe', padrao: 14593.70, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_agente_3', text: 'Agente de Polícia PCDF — Terceira Classe', padrao: 13794.41, gratif: 0, oficial: true, selected: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  // Agente Policial de Custódia,
+  { val: 'pcdf_custodia_esp', text: 'Agente Policial de Custódia PCDF — Classe Especial', padrao: 23440.38, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_custodia_1', text: 'Agente Policial de Custódia PCDF — Primeira Classe', padrao: 17523.06, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_custodia_2', text: 'Agente Policial de Custódia PCDF — Segunda Classe', padrao: 14593.70, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' },
+  { val: 'pcdf_custodia_3', text: 'Agente Policial de Custódia PCDF — Terceira Classe', padrao: 13794.41, gratif: 0, oficial: true, retpFator: 0, fonteKey: 'pcdf', criterio: CRITERIO_PCDF_2026, benefDesc: BENEF_PCDF_2026, badge: 'PCDF jan/2026' }
+];
