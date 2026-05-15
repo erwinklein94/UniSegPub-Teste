@@ -1,15 +1,15 @@
 /* ============================================================
    UniSegPub — Produtos relacionados à instituição pesquisada
-   Desktop: mostra todos os produtos/cursos compatíveis nas laterais.
-   Mobile: intercala cards unitários de produto entre os cards da página.
+   Desktop: produtos/cursos relacionados nas laterais.
+   Mobile: produtos unitários intercalados entre os cards.
    ============================================================ */
 (function () {
   'use strict';
 
-  const STORAGE_CONTEXTO_INST = 'unisegpub_produtos_contexto_inst_v1';
+  const STORAGE_CONTEXTO_INST = 'unisegpub_produtos_contexto_inst_v2';
   const MOBILE_MAX_WIDTH = 760;
 
-  const PAGINAS_COM_VITRINE_RELACIONADA = new Set([
+  const PAGINAS_COM_VITRINE = new Set([
     'principal',
     'noticias',
     'guia',
@@ -48,13 +48,17 @@
   ]);
 
   const REGRAS_CLASSIFICACAO_PRODUTOS = [
-    { instituicoes: ['prf'], ufs: ['br'], termos: ['policia rodoviaria federal', 'prf'] },
-    { instituicoes: ['pf'], ufs: ['br'], termos: ['policia federal', 'pf'] },
-    { instituicoes: ['pmesp'], ufs: ['sp'], termos: ['pmesp', 'pm sp', 'policia militar sp', 'policia militar de sao paulo', 'padrao policia militar sp'] },
-    { instituicoes: ['pcsp'], ufs: ['sp'], termos: ['pcsp', 'policia civil de sao paulo'] },
-    { instituicoes: ['pmto'], ufs: ['to'], termos: ['pmto', 'policia militar de tocantins', 'policia militar do tocantins', 'tocantins'] },
+    { instituicoes: ['pf'], ufs: ['br'], termos: ['policia federal', 'delegado de policia federal', 'agente pf', 'escrivao pf', 'papiloscopista pf', 'concurso da pf', ' pf '] },
+    { instituicoes: ['prf'], ufs: ['br'], termos: ['policia rodoviaria federal', 'policial rodoviario federal', 'concurso da prf', ' prf '] },
+    { instituicoes: ['pmesp'], ufs: ['sp'], termos: ['pmesp', 'pm sp', 'policia militar sp', 'policia militar de sao paulo', 'policia militar do estado de sao paulo', 'padrao policia militar sp', 'soldado 2 classe'] },
+    { instituicoes: ['bmsp'], ufs: ['sp'], termos: ['bmsp', 'cbmsp', 'bombeiros sp', 'corpo de bombeiros da pmesp', 'corpo de bombeiros militar de sao paulo'] },
+    { instituicoes: ['pcsp'], ufs: ['sp'], termos: ['pcsp', 'pc sp', 'policia civil de sao paulo', 'policia civil do estado de sao paulo'] },
+    { instituicoes: ['ppsp'], ufs: ['sp'], termos: ['ppsp', 'policia penal de sao paulo', 'policia penal do estado de sao paulo'] },
+    { instituicoes: ['pmto'], ufs: ['to'], termos: ['pmto', 'pm to', 'policia militar de tocantins', 'policia militar do tocantins'] },
     { instituicoes: ['pmerj'], ufs: ['rj'], termos: ['pmerj', 'pm rj', 'pmrj', 'policia militar do rio de janeiro', 'policia militar do estado do rio de janeiro'] },
-    { instituicoes: ['bmrj'], ufs: ['rj'], termos: ['cbmerj', 'cbm rj', 'bombeiro rj', 'corpo de bombeiros militar do rio de janeiro', 'corpo de bombeiros militar do estado do rio de janeiro'] },
+    { instituicoes: ['bmrj'], ufs: ['rj'], termos: ['cbmerj', 'cbm rj', 'bombeiro rj', 'bombeiros rj', 'corpo de bombeiros militar do rio de janeiro', 'corpo de bombeiros militar do estado do rio de janeiro'] },
+    { instituicoes: ['pcerj'], ufs: ['rj'], termos: ['pcerj', 'pc rj', 'pcrj', 'policia civil do rio de janeiro', 'policia civil do estado do rio de janeiro'] },
+    { instituicoes: ['pprj'], ufs: ['rj'], termos: ['pprj', 'policia penal do rio de janeiro', 'policia penal do estado do rio de janeiro'] },
     { instituicoes: ['pcal'], ufs: ['al'], termos: ['pcal', 'pc al', 'policia civil de alagoas'] },
     { instituicoes: ['pcmg'], ufs: ['mg'], termos: ['pcmg', 'pc mg', 'policia civil de minas gerais'] },
     { instituicoes: ['ppdf'], ufs: ['df'], termos: ['ppdf', 'policia penal do distrito federal', 'policia penal df'] },
@@ -92,7 +96,7 @@
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .toLowerCase()
-      .replace(/[()\[\]{}.,;:|/\\_+\-–—]+/g, ' ')
+      .replace(/[()\[\]{},.;:|/\\_+\-–—]+/g, ' ')
       .replace(/\s+/g, ' ')
       .trim();
   }
@@ -109,20 +113,22 @@
 
   function getTextoProduto(produto) {
     const partes = [
+      produto && produto.__grupoProduto,
       produto && produto.titulo,
       produto && produto.descricao,
       Array.isArray(produto && produto.meta) ? produto.meta.join(' ') : '',
       Array.isArray(produto && produto.badges) ? produto.badges.join(' ') : '',
-      produto && produto.imagem && produto.imagem.alt
+      produto && produto.imagem && produto.imagem.alt,
+      produto && produto.ariaLabel
     ];
-    return normalizarTexto(partes.filter(Boolean).join(' '));
+    return ` ${normalizarTexto(partes.filter(Boolean).join(' '))} `;
   }
 
   function termoExiste(texto, termo) {
     const termoNormalizado = normalizarTexto(termo);
     if (!termoNormalizado) return false;
-    if (/^[a-z]{2,6}$/.test(termoNormalizado)) {
-      return new RegExp(`(^|\\s)${termoNormalizado}(\\s|$)`).test(texto);
+    if (/^[a-z]{2,6}$/.test(termoNormalizado.trim())) {
+      return new RegExp(`(^|\\s)${termoNormalizado.trim()}(\\s|$)`).test(texto);
     }
     return texto.includes(termoNormalizado);
   }
@@ -148,6 +154,14 @@
     };
   }
 
+  function instDoGrupoProduto(grupo) {
+    const normalizado = normalizarInst(grupo);
+    const matchCursos = normalizado.match(/^cursos([a-z0-9]+)$/);
+    if (!matchCursos) return '';
+    const possivelInst = matchCursos[1];
+    return possivelInst && possivelInst !== 'gerais' ? possivelInst : '';
+  }
+
   function classificarProduto(produto) {
     const filtroExplicito = normalizarFiltroProdutoExplicito(produto);
     if (filtroExplicito) return filtroExplicito;
@@ -155,6 +169,13 @@
     const texto = getTextoProduto(produto);
     const instituicoes = new Set();
     const ufs = new Set();
+    const instGrupo = instDoGrupoProduto(produto && produto.__grupoProduto);
+
+    if (instGrupo) {
+      instituicoes.add(instGrupo);
+      const ufGrupo = getUfInstituicao(instGrupo);
+      if (ufGrupo) ufs.add(ufGrupo);
+    }
 
     REGRAS_CLASSIFICACAO_PRODUTOS.forEach(regra => {
       if (!regra.termos.some(termo => termoExiste(texto, termo))) return;
@@ -177,17 +198,19 @@
     return UFS_VALIDAS.has(uf) ? uf : '';
   }
 
-  function produtoCombinaComInstituicao(produto, instSelecionada) {
+  function scoreProduto(produto, instSelecionada) {
     const inst = normalizarInst(instSelecionada);
-    if (!inst) return true;
+    if (!inst) return 100;
 
     const filtroProduto = classificarProduto(produto);
-    if (filtroProduto.geral) return true;
-    if ((filtroProduto.instituicoes || []).includes(inst)) return true;
-
     const ufSelecionada = getUfInstituicao(inst);
-    if (!ufSelecionada || ufSelecionada === 'br') return false;
-    return (filtroProduto.ufs || []).includes(ufSelecionada);
+    const instituicoes = filtroProduto.instituicoes || [];
+    const ufs = filtroProduto.ufs || [];
+
+    if (instituicoes.includes(inst)) return 1000;
+    if (ufSelecionada && ufSelecionada !== 'br' && ufs.includes(ufSelecionada)) return 700;
+    if (filtroProduto.geral) return 250;
+    return 0;
   }
 
   function produtoValido(produto) {
@@ -207,8 +230,9 @@
   function coletarProdutos() {
     const base = window.UNISEGPUB_PRODUTOS || {};
     const produtos = Object.keys(base)
-      .map(chave => base[chave])
-      .filter(Array.isArray)
+      .map(chave => Array.isArray(base[chave])
+        ? base[chave].map((produto, index) => Object.assign({ __grupoProduto: chave, __ordemProduto: index }, produto))
+        : [])
       .flat()
       .filter(produtoValido);
 
@@ -217,8 +241,19 @@
 
   function getProdutosRelacionados(inst) {
     const todos = coletarProdutos();
-    const relacionados = todos.filter(produto => produtoCombinaComInstituicao(produto, inst));
-    return relacionados.length ? relacionados : todos;
+    const instNormalizada = normalizarInst(inst);
+    if (!instNormalizada) return todos;
+
+    const avaliados = todos
+      .map((produto, index) => ({ produto, index, score: scoreProduto(produto, instNormalizada) }))
+      .filter(item => item.score > 0)
+      .sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return a.index - b.index;
+      })
+      .map(item => item.produto);
+
+    return avaliados.length ? avaliados : todos;
   }
 
   function getInfoInstituicao(inst) {
@@ -237,7 +272,7 @@
 
   function valorPareceInstituicao(valor) {
     const inst = normalizarInst(valor);
-    if (!inst || inst === 'portal') return false;
+    if (!inst || inst === 'portal' || inst === 'todas' || inst === 'todos') return false;
     if (getInfoInstituicao(inst)) return true;
     if (INSTITUICOES_FEDERAIS.has(inst)) return true;
     return /^[a-z]{4,6}$/.test(inst) && UFS_VALIDAS.has(inst.slice(-2));
@@ -274,12 +309,31 @@
     }
   }
 
+  function seletorEhInstituicao(select) {
+    if (!(select instanceof HTMLSelectElement)) return false;
+    const id = normalizarTexto(select.id || '');
+    const name = normalizarTexto(select.name || '');
+    const label = select.labels && select.labels.length ? normalizarTexto(Array.from(select.labels).map(item => item.textContent).join(' ')) : '';
+    return id.includes('instituicao') ||
+      name.includes('instituicao') ||
+      label.includes('instituicao') ||
+      select.hasAttribute('data-consulta-instituicao') ||
+      select.id === 'instituicao';
+  }
+
+  function prioridadeSelectInstituicao(select) {
+    const id = normalizarTexto(select.id || '');
+    if (id && id !== 'instituicao' && id !== 'instituicao header' && id !== 'instituicao home') return 0;
+    if (id === 'instituicao') return 1;
+    if (id === 'instituicao home') return 2;
+    if (id === 'instituicao header') return 3;
+    return 4;
+  }
+
   function getContextoSelects() {
-    const seletores = Array.from(document.querySelectorAll('select')).filter(select => {
-      const id = normalizarTexto(select.id || '');
-      const name = normalizarTexto(select.name || '');
-      return id.includes('instituicao') || name.includes('instituicao') || select.hasAttribute('data-consulta-instituicao');
-    });
+    const seletores = Array.from(document.querySelectorAll('select'))
+      .filter(seletorEhInstituicao)
+      .sort((a, b) => prioridadeSelectInstituicao(a) - prioridadeSelectInstituicao(b));
 
     const selecionado = seletores
       .map(select => select.value)
@@ -289,7 +343,7 @@
   }
 
   function getInstituicaoAtiva() {
-    return contextoInstituicao || getContextoBody() || getContextoSelects() || getContextoCurrInst() || lerContextoSalvo();
+    return contextoInstituicao || getContextoSelects() || getContextoBody() || lerContextoSalvo() || getContextoCurrInst();
   }
 
   function setContextoInstituicao(inst) {
@@ -316,7 +370,7 @@
     link.textContent = texto;
     if (externo) {
       link.target = '_blank';
-      link.rel = 'noopener noreferrer';
+      link.rel = 'noopener noreferrer sponsored';
     }
     return link;
   }
@@ -326,7 +380,7 @@
     imagemWrap.className = classe;
     imagemWrap.href = produto.href;
     imagemWrap.target = '_blank';
-    imagemWrap.rel = 'noopener noreferrer';
+    imagemWrap.rel = 'noopener noreferrer sponsored';
     imagemWrap.setAttribute('aria-label', `Ver na loja ${produto.titulo || 'produto'}`);
 
     const imagem = document.createElement('img');
@@ -349,12 +403,12 @@
     card.appendChild(criarImagemProduto(produto, 'usp-affiliate-card__media'));
 
     const titulo = document.createElement('h3');
-    titulo.textContent = textoCurto(produto.titulo, 64);
+    titulo.textContent = textoCurto(produto.titulo, 58);
     card.appendChild(titulo);
 
     const aviso = document.createElement('small');
     aviso.className = 'usp-affiliate-card__note';
-    aviso.textContent = 'Produto relacionado ao contexto pesquisado.';
+    aviso.textContent = 'Produto relacionado.';
     card.appendChild(aviso);
 
     card.appendChild(criarLink('usp-affiliate-card__store', produto.href, produto.cta || 'Ver na loja', true));
@@ -422,7 +476,7 @@
     const titulo = document.createElement('div');
     titulo.className = 'usp-affiliate-rail__title';
     const nomeInst = getNomeInstituicao(inst);
-    titulo.textContent = nomeInst ? `Produtos • ${nomeInst}` : 'Produtos';
+    titulo.textContent = nomeInst ? `Produtos ${nomeInst}` : 'Produtos';
     inner.appendChild(titulo);
 
     produtos.forEach(function (produto) {
@@ -496,6 +550,7 @@
       '.acoes-conteudo-card',
       '.associacoes-conteudo-card',
       '.brasoes-conteudo-card',
+      '.guia-artigo-card',
       '.guia-card',
       '.comparador-card',
       '.card'
@@ -562,13 +617,14 @@
     renderAgendado = false;
 
     const pagina = getPaginaAtual();
-    if (!PAGINAS_COM_VITRINE_RELACIONADA.has(pagina)) return;
+    if (!PAGINAS_COM_VITRINE.has(pagina)) return;
     if (pagina === 'produtos') return;
 
     const main = getMainAtual();
     if (!main || !main.parentNode) return;
 
     const inst = getInstituicaoAtiva();
+    if (inst) setContextoInstituicao(inst);
     const produtos = getProdutosRelacionados(inst);
     const shell = garantirShell(main, pagina);
     if (!shell) return;
@@ -585,18 +641,12 @@
   }
 
   function capturarContextoDeSelect(alvo) {
-    if (!(alvo instanceof HTMLSelectElement)) return;
-
-    const id = normalizarTexto(alvo.id || '');
-    const name = normalizarTexto(alvo.name || '');
-    const ehSeletorInstituicao = id.includes('instituicao') || name.includes('instituicao') || alvo.hasAttribute('data-consulta-instituicao');
-    if (!ehSeletorInstituicao) return;
-
+    if (!seletorEhInstituicao(alvo)) return;
     if (setContextoInstituicao(alvo.value)) agendarRender();
   }
 
   function iniciarProdutosRelacionados() {
-    const contextoInicial = getContextoBody() || getContextoSelects() || lerContextoSalvo();
+    const contextoInicial = getContextoSelects() || getContextoBody() || lerContextoSalvo() || getContextoCurrInst();
     if (contextoInicial) setContextoInstituicao(contextoInicial);
 
     renderVitrines();

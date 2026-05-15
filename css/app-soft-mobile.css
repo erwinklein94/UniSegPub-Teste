@@ -681,7 +681,7 @@ footer .footer-disclaimer strong {
 
 @media (max-width: 390px) {
   .app-bottom-label {
-    font-size: 8.5px;
+    font-size: 9px;
   }
 
   .app-bottom-icon {
@@ -4595,7 +4595,7 @@ html[data-theme="light"] .menu-overlay.active {
 */
 .usp-affiliate-side-shell {
   --usp-affiliate-main-width: min(1120px, calc(100vw - 28px));
-  --usp-affiliate-rail-width: clamp(118px, 8.2vw, 164px);
+  --usp-affiliate-rail-width: clamp(92px, 7.2vw, 128px);
   --usp-affiliate-rail-gap: clamp(10px, 0.9vw, 18px);
   display: flow-root;
   position: relative;
@@ -4640,22 +4640,14 @@ html[data-theme="light"] .menu-overlay.active {
     top: 92px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    max-height: calc(100vh - 116px);
-    padding: 0 4px 10px 0;
-    overflow-y: auto;
-    overscroll-behavior: contain;
+    gap: clamp(26px, 4vh, 44px);
     pointer-events: auto;
-    scrollbar-width: thin;
   }
 
   .usp-affiliate-rail__title {
     width: fit-content;
     max-width: 100%;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    margin: 0 auto 0;
+    margin: 0 auto -10px;
     padding: 4px 8px;
     border-radius: 999px;
     border: 1px solid color-mix(in srgb, var(--vermelho) 22%, rgba(148, 163, 184, 0.30));
@@ -4695,7 +4687,7 @@ html[data-theme="light"] .menu-overlay.active {
   .usp-affiliate-card__media {
     display: block;
     width: 100%;
-    height: clamp(72px, 6.2vw, 104px);
+    height: clamp(64px, 5.7vw, 88px);
     border-radius: 13px;
     overflow: hidden;
     background: color-mix(in srgb, var(--vermelho) 9%, var(--item-bg));
@@ -4730,7 +4722,7 @@ html[data-theme="light"] .menu-overlay.active {
     margin: 0;
     color: var(--text-main);
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(10.5px, 0.82vw, 13px);
+    font-size: clamp(10.5px, 0.86vw, 13px);
     line-height: 1.15;
     letter-spacing: 0.02em;
     text-transform: uppercase;
@@ -4799,10 +4791,72 @@ html[data-theme="light"] .menu-overlay.active {
   }
 }
 
-
 /* ============================================================
-   Ajuste 2026-05-14 — Produto unitário entre cards no mobile
+   Ajuste 2026-05-14 — Vitrine contextual por instituição
+   Mantém as laterais estreitas no desktop e intercala produto no mobile.
    ============================================================ */
+.usp-affiliate-side-shell {
+  --usp-affiliate-rail-width: clamp(92px, 7.2vw, 128px) !important;
+  --usp-affiliate-rail-gap: clamp(10px, 0.9vw, 18px) !important;
+}
+
+@media (min-width: 1360px) {
+  body:not([data-page="produtos"]) .usp-affiliate-rail {
+    width: var(--usp-affiliate-rail-width) !important;
+    overflow: visible !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-rail__inner {
+    gap: 12px !important;
+    max-height: calc(100vh - 116px) !important;
+    padding: 0 4px 12px 0 !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain !important;
+    scrollbar-width: thin !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-rail__title {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3 !important;
+    margin: 0 auto 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 7px !important;
+    min-height: 0 !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card__media {
+    display: block !important;
+    width: 100% !important;
+    height: clamp(64px, 5.7vw, 88px) !important;
+    min-height: 64px !important;
+    flex: 0 0 auto !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card__media img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card h3,
+  body:not([data-page="produtos"]) .usp-affiliate-card__note,
+  body:not([data-page="produtos"]) .usp-affiliate-card__store,
+  body:not([data-page="produtos"]) .usp-affiliate-card__more {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
 .usp-affiliate-mobile-insert {
   display: none;
 }
