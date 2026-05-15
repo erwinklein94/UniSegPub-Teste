@@ -5384,3 +5384,147 @@ html[data-theme="light"] .sidebar-nav a {
     font-size: 12px !important;
   }
 }
+
+/* ==========================================================
+   Ajuste 2026-05-15 — Menu superior sem vazios
+   Distribui todas as abas em uma grade única e remove a coluna
+   lateral reservada, mantendo a vitrine de produtos encaixada.
+   ========================================================== */
+.sidebar {
+  width: min(1180px, calc(100vw - 48px)) !important;
+  max-height: min(660px, calc(100dvh - 28px)) !important;
+  grid-template-columns: 1fr !important;
+  grid-template-rows: auto auto auto !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  overflow-x: hidden !important;
+}
+
+.sidebar-header {
+  grid-column: 1 / -1 !important;
+  grid-row: 1 !important;
+}
+
+/* O seletor principal já existe no cabeçalho do site. No painel superior ele
+   criava uma área vazia à esquerda; por isso fica oculto aqui. */
+.sidebar-inst-panel {
+  display: none !important;
+}
+
+.sidebar-nav {
+  grid-column: 1 / -1 !important;
+  grid-row: 2 !important;
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 8px !important;
+  align-items: stretch !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: visible !important;
+  scroll-snap-type: none !important;
+}
+
+.sidebar-nav-group {
+  display: contents !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sidebar-nav-title {
+  display: none !important;
+}
+
+.sidebar-nav a {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 48px !important;
+  padding: 7px 9px !important;
+  grid-template-columns: 30px minmax(0, 1fr) !important;
+  column-gap: 8px !important;
+  border-radius: 14px !important;
+}
+
+.sidebar-link-icon {
+  width: 29px !important;
+  height: 29px !important;
+}
+
+.sidebar-link-text {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.sidebar-nav a small {
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+}
+
+.sidebar-products-vitrine {
+  grid-column: 1 / -1 !important;
+  grid-row: 3 !important;
+}
+
+.sidebar-products-list {
+  grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
+  overflow-x: hidden !important;
+}
+
+.sidebar-product-card {
+  min-width: 0 !important;
+}
+
+@media (max-width: 1120px) {
+  .sidebar {
+    width: min(980px, calc(100vw - 24px)) !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .sidebar-products-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    width: calc(100vw - 14px) !important;
+    max-height: calc(100dvh - 16px) !important;
+    padding: 10px !important;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 7px !important;
+  }
+
+  .sidebar-nav a {
+    min-height: 50px !important;
+    padding: 7px !important;
+    grid-template-columns: 28px minmax(0, 1fr) !important;
+  }
+
+  .sidebar-products-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .sidebar-products-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
