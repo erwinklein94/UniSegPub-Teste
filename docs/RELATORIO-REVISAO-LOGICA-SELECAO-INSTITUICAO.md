@@ -23,7 +23,6 @@ Data: 02/05/2026
 
 - Remuneração Tabelada.
 - Direitos e Vantagens.
-- Poderes e Deveres.
 - Concursos.
 - Ações Judiciais.
 - Associações e Sindicatos.
@@ -48,7 +47,6 @@ As abas abaixo foram preservadas por já terem lógica própria ou por não depe
 - `js/services/direitos.js`
 - `js/services/remuneracao.js`
 - `js/pages/concursos-comparador.js`
-- `js/pages/poderes-deveres.js`
 - `js/dist/app.bundle.js`
 - Chunks equivalentes em `js/chunks/`
 

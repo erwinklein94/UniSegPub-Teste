@@ -10,10 +10,8 @@ Atualização aplicada a partir do dossiê `dossie-pmce-2026-05-13.md`.
 - `js/services/remuneracao.js`: fonte oficial, cálculo tabelado e adicionais resumidos da PMCE.
 - `js/data/concursos-data.js`: concurso PMCE 2025, banca CEV/UECE, vagas, requisitos e etapas.
 - `js/services/direitos.js`: bloco específico de direitos e vantagens da PMCE.
-- `js/pages/poderes-deveres.js`: objeto específico de poderes, deveres, limites, leis e entendimentos.
 - `js/data/associacoes-data.js`: 4 entidades representativas cadastradas.
 - `js/data/acoes-judiciais-data.js`: 8 teses informativas cadastradas.
-- Páginas públicas HTML: inclusão da PMCE nos seletores e cards estáticos de remuneração, concursos, direitos, poderes/deveres, associações, ações judiciais e brasões.
 
 ## Lacunas preservadas como Dados em breve
 

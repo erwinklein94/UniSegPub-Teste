@@ -5740,11 +5740,6 @@ const PAGINAS_COM_SELECAO_INSTITUICAO = {
     subtitulo: 'A análise usa a instituição escolhida nesta aba e os dados funcionais preenchidos abaixo.',
     destino: 'resultados_dir'
   },
-  poderes: {
-    titulo: 'Consultar poderes e deveres por instituição',
-    subtitulo: 'Escolha a esfera e a instituição para ver competências, deveres, limites, fontes e entendimentos aplicáveis.',
-    destino: 'poderes_resultado'
-  },
   brasoes: {
     titulo: 'Consultar brasão e história por instituição',
     subtitulo: 'Escolha a esfera e a instituição para ver o brasão, origem, criação, marcos históricos e dados institucionais.',
@@ -5950,11 +5945,6 @@ function getInstituicoesParaConsulta(esfera) {
     });
 }
 
-function removerSeletorAntigoPoderes() {
-  const antigo = document.getElementById('poderes_instituicao');
-  const bloco = antigo?.closest('.poderes-form-grid');
-  if (bloco) bloco.remove();
-}
 
 function criarHtmlSeletorConsulta(page, config) {
   const idEsfera = `consulta_esfera_${page}`;
@@ -5993,8 +5983,6 @@ function inserirSeletorConsultaNaPagina(page) {
   const pageEl = document.getElementById(`page-${page}`);
   const card = pageEl?.querySelector('.card');
   if (!card || card.querySelector(`[data-consulta-selector="${page}"]`)) return;
-
-  if (page === 'poderes') removerSeletorAntigoPoderes();
 
   const h2 = card.querySelector('h2');
   const temp = document.createElement('div');
@@ -6096,7 +6084,6 @@ function avisoSelecaoInstituicaoHtml(page) {
   const nomes = {
     remuneracao: 'a tabela de remuneração',
     direitos: 'a análise de direitos',
-    poderes: 'os poderes e deveres',
     brasoes: 'o brasão e a história institucional',
     concursos: 'os dados de concursos',
     acoes: 'as ações judiciais',
@@ -6114,7 +6101,6 @@ function atualizarTitulosConsultaSemInstituicao() {
   [
     'txt-inst-dir',
     'txt-inst-concursos',
-    'txt-inst-poderes',
     'txt-inst-brasoes',
     'txt-inst-remuneracao',
     'txt-inst-acoes',
@@ -6173,8 +6159,6 @@ function renderizarConteudoPaginaInstitucional(page) {
     analisarDireitos();
   } else if (page === 'concursos') {
     carregarConcursos();
-  } else if (page === 'poderes') {
-    inicializarPoderesDeveres();
   } else if (page === 'brasoes') {
     renderizarBrasoesHistoria();
   } else if (page === 'acoes') {

@@ -22,7 +22,6 @@ O script observa:
 - seletor geral `#instituicao`;
 - seletor do topo `#instituicao_header`;
 - seletor da home `#instituicao_home`;
-- seletores internos das abas, como concursos, remuneração, direitos, poderes, brasões, ações, associações, guia e notícias;
 - seletor de instituição do comparador de carreiras.
 
 ## Critérios de associação produto ↔ instituição

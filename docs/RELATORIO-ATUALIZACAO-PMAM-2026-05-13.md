@@ -9,10 +9,9 @@ Base utilizada: `dossie-pmam-2026-05-13.md`.
 - `js/services/remuneracao.js` — fonte oficial PMAM e texto de cautela remuneratória.
 - `js/data/concursos-data.js` — concurso PMAM/FGV 2021/2022.
 - `js/services/direitos.js` — mantida a análise específica já existente para PMAM/SPSM-AM, compatível com o dossiê.
-- `js/pages/poderes-deveres.js` — bloco específico PMAM incluído.
 - `js/data/associacoes-data.js` — 4 entidades cadastradas.
 - `js/data/acoes-judiciais-data.js` — 8 teses cadastradas.
-- `remuneracao.html`, `concursos.html`, `direitos.html`, `poderes-deveres.html`, `associacoes-sindicatos.html`, `acoes-judiciais.html` e `brasoes.html` — cards estáticos PMAM atualizados.
+- `remuneracao.html`, `concursos.html`, `direitos.html`, `associacoes-sindicatos.html`, `acoes-judiciais.html` e `brasoes.html` — cards estáticos PMAM atualizados.
 
 ## Mantido fora do escopo
 
