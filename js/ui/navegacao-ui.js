@@ -115,8 +115,10 @@ function switchPage(page) {
   }
 
   // Atualiza dados da página alvo
+  if (page === 'direitos') analisarDireitos();
   else if (page === 'concursos') carregarConcursos();
   else if (page === 'comparar') inicializarComparadorCarreiras();
+  else if (page === 'poderes') inicializarPoderesDeveres();
   else if (page === 'brasoes') renderizarBrasoesHistoria();
   else if (page === 'acoes') carregarAcoes();
   else if (page === 'associacoes') carregarAssociacoes();
@@ -150,10 +152,12 @@ function getNomeAbaAtual() {
     associacoes: 'Associações e Sindicatos',
     remuneracao: 'Remuneração Tabelada',
     concursos: 'Concursos',
+    poderes: 'Poderes e Deveres',
     brasoes: 'Brasões e história',
     guia: 'Guia das instituições',
     comparar: 'Comparar Carreiras',
     produtos: 'Produtos',
+    direitos: 'Direitos e Vantagens',
     parceiros: 'Parceiros - Anuncie aqui!'
   };
   return nomes[page] || 'Principal';
@@ -276,7 +280,7 @@ function popularCargos(inst) {
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,   pcdf: CARGOS_PCDF,
     bmap: CARGOS_BMAP, pmap: CARGOS_PMAP,};
-  currTabela = map[inst] || CARGOS_ESTRUTURA_GENERICAS[inst] || CARGOS_PM;
+  currTabela = CARGOS_ESTRUTURA_GENERICAS[inst] || map[inst] || CARGOS_PM;
 
   const sCargo = document.getElementById('cargo');
   const sCargoDir = document.getElementById('cargo_dir');

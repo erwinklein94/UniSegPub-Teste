@@ -45,6 +45,8 @@ ROOT = Path(__file__).resolve().parents[1]
 PUBLIC_PAGES = [
     "index.html",
     "remuneracao.html",
+    "direitos.html",
+    "poderes-deveres.html",
     "brasoes.html",
     "concursos.html",
     "comparar-carreiras.html",
@@ -59,6 +61,8 @@ PUBLIC_PAGES = [
 APP_PAGES = [
     "index.html",
     "remuneracao.html",
+    "direitos.html",
+    "poderes-deveres.html",
     "brasoes.html",
     "concursos.html",
     "comparar-carreiras.html",
@@ -71,6 +75,8 @@ APP_PAGES = [
 EXPECTED_DATA_PAGE = {
     "index.html": "principal",
     "remuneracao.html": "remuneracao",
+    "direitos.html": "direitos",
+    "poderes-deveres.html": "poderes",
     "brasoes.html": "brasoes",
     "concursos.html": "concursos",
     "comparar-carreiras.html": "comparar",
@@ -84,6 +90,8 @@ EXPECTED_DATA_PAGE = {
 MENU_ROUTES = {
     "index.html": ("menu-principal", "index.html"),
     "remuneracao.html": ("menu-remuneracao", "remuneracao.html"),
+    "direitos.html": ("menu-direitos", "direitos.html"),
+    "poderes-deveres.html": ("menu-poderes", "poderes-deveres.html"),
     "brasoes.html": ("menu-brasoes", "brasoes.html"),
     "concursos.html": ("menu-concursos", "concursos.html"),
     "comparar-carreiras.html": ("menu-comparar", "comparar-carreiras.html"),
@@ -107,6 +115,21 @@ PAGE_TARGETS = {
         "remu-total-cargos",
         "remu-menor-total",
         "remu-maior-total",
+    ],
+    "direitos.html": [
+        "page-direitos",
+        "cargo_dir",
+        "situacao_dir",
+        "tempo_dir",
+        "idade_dir",
+        "sexo_dir",
+        "txt-inst-dir",
+        "resultados_dir",
+    ],
+    "poderes-deveres.html": [
+        "page-poderes",
+        "txt-inst-poderes",
+        "poderes_resultado",
     ],
     "brasoes.html": [
         "page-brasoes",

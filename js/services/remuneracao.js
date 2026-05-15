@@ -735,7 +735,7 @@ function getTabelaCargosRemuneracao(inst) {
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,   pcdf: CARGOS_PCDF,};
   const instNorm = normalizarInstituicao(inst);
-  return map[instNorm] || CARGOS_ESTRUTURA_GENERICAS[instNorm] || CARGOS_PM;
+  return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
 }
 
 function calcularRemuneracaoTabelada(inst, cargo) {
