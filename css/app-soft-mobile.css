@@ -5028,54 +5028,27 @@ html[data-theme="light"] .sidebar-social-btn {
   }
 }
 
-/* ============================================================
-   Ajuste 2026-05-15 — Home sem rolagem lateral nos cards
-   Restaura a grade responsiva da página inicial. Os cards deixam
-   de funcionar como carrossel horizontal e passam a ocupar a largura
-   disponível em linhas equilibradas.
-   ============================================================ */
-body[data-page="principal"] .principal-grid.consultas-principais,
-body[data-page="principal"] .principal-grid.conteudos-parceiros {
-  display: grid !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  gap: clamp(12px, 1.7vw, 20px) !important;
-  overflow: visible !important;
-  padding: 0 !important;
-  scroll-snap-type: none !important;
+/* Consultas principais da home em faixa horizontal */
+body[data-page="principal"] .principal-grid.consultas-principais {
+  display: flex !important;
+  grid-template-columns: none !important;
+  gap: 14px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  padding: 2px 4px 14px !important;
+  scroll-snap-type: x proximity !important;
+  -webkit-overflow-scrolling: touch !important;
 }
 
-body[data-page="principal"] .principal-grid.conteudos-parceiros {
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
-body[data-page="principal"] .principal-grid.consultas-principais .principal-card,
-body[data-page="principal"] .principal-grid.conteudos-parceiros .principal-card {
-  width: 100% !important;
-  max-width: 100% !important;
-  min-width: 0 !important;
-  flex: initial !important;
-  min-height: 190px !important;
-  scroll-snap-align: none !important;
-}
-
-@media (max-width: 960px) {
-  body[data-page="principal"] .principal-grid.consultas-principais,
-  body[data-page="principal"] .principal-grid.conteudos-parceiros {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
+body[data-page="principal"] .principal-grid.consultas-principais .principal-card {
+  flex: 0 0 clamp(238px, 31vw, 322px) !important;
+  min-height: 210px !important;
+  scroll-snap-align: start !important;
 }
 
 @media (max-width: 640px) {
-  body[data-page="principal"] .principal-grid.consultas-principais,
-  body[data-page="principal"] .principal-grid.conteudos-parceiros {
-    grid-template-columns: 1fr !important;
-  }
-
-  body[data-page="principal"] .principal-grid.consultas-principais .principal-card,
-  body[data-page="principal"] .principal-grid.conteudos-parceiros .principal-card {
-    min-height: auto !important;
+  body[data-page="principal"] .principal-grid.consultas-principais .principal-card {
+    flex-basis: min(285px, 84vw) !important;
   }
 }
 
