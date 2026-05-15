@@ -388,6 +388,7 @@
     imagem.alt = produto.imagem && produto.imagem.alt ? produto.imagem.alt : produto.titulo || 'Produto';
     imagem.loading = 'lazy';
     imagem.decoding = 'async';
+    imagem.addEventListener('load', agendarRecalculoEspacamentoProdutos, { once: true });
     imagem.addEventListener('error', function () {
       imagemWrap.classList.add('is-missing-image');
       imagem.remove();
@@ -582,6 +583,59 @@
     return alvos;
   }
 
+
+
+  function getShellAtual() {
+    return document.querySelector('.usp-affiliate-side-shell');
+  }
+
+  function aplicarEspacamentoProdutoCards(raiz) {
+    const escopo = raiz || document;
+
+    escopo.querySelectorAll('.usp-affiliate-rail__inner .usp-affiliate-card').forEach(function (card) {
+      const altura = Math.ceil(card.getBoundingClientRect().height || card.offsetHeight || 140);
+      card.style.setProperty('--usp-affiliate-self-gap', `${altura}px`);
+    });
+
+    escopo.querySelectorAll('.usp-affiliate-mobile-insert').forEach(function (wrapper) {
+      const card = wrapper.querySelector('.usp-affiliate-mobile-card');
+      const altura = Math.ceil((card && card.getBoundingClientRect().height) || wrapper.offsetHeight || 140);
+      wrapper.style.setProperty('--usp-affiliate-mobile-self-gap', `${altura}px`);
+    });
+  }
+
+  function ajustarAlturaShellProdutos(shell) {
+    if (!shell) return;
+    shell.style.minHeight = '';
+
+    if (window.innerWidth < 1360) return;
+
+    let maiorAltura = 0;
+    shell.querySelectorAll(':scope > .usp-affiliate-rail').forEach(function (rail) {
+      const inner = rail.querySelector('.usp-affiliate-rail__inner');
+      if (!inner) return;
+      maiorAltura = Math.max(maiorAltura, Math.ceil(inner.getBoundingClientRect().height || inner.scrollHeight || 0));
+    });
+
+    if (maiorAltura > 0) {
+      const alturaAtual = Math.ceil(shell.getBoundingClientRect().height || shell.offsetHeight || 0);
+      shell.style.minHeight = `${Math.max(alturaAtual, maiorAltura + 96)}px`;
+    }
+  }
+
+  function recalcularEspacamentoProdutos() {
+    const shell = getShellAtual();
+    aplicarEspacamentoProdutoCards(document);
+    ajustarAlturaShellProdutos(shell);
+  }
+
+  function agendarRecalculoEspacamentoProdutos() {
+    window.requestAnimationFrame(function () {
+      recalcularEspacamentoProdutos();
+      window.setTimeout(recalcularEspacamentoProdutos, 220);
+    });
+  }
+
   function renderDesktop(shell, produtos, inst) {
     limparRails(shell);
     if (!shell || !produtos.length) return;
@@ -592,6 +646,7 @@
     const { esquerda, direita } = dividirProdutosLaterais(produtos);
     if (esquerda.length) shell.insertBefore(criarRail('left', esquerda, inst), main);
     if (direita.length) shell.appendChild(criarRail('right', direita, inst));
+    agendarRecalculoEspacamentoProdutos();
   }
 
   function renderMobile(main, produtos, inst) {
@@ -611,6 +666,8 @@
       alvo.insertAdjacentElement('afterend', criarCardProdutoMobile(produto, inseridos, inst));
       inseridos += 1;
     }
+
+    agendarRecalculoEspacamentoProdutos();
   }
 
   function renderVitrines() {

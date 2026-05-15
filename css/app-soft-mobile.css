@@ -5023,3 +5023,57 @@ html[data-theme="light"] .menu-overlay.active {
     min-height: 104px;
   }
 }
+
+/* ============================================================
+   Ajuste 2026-05-15 — Produtos sem barra de rolagem interna
+   Cada produto fica em um card próprio e separado verticalmente.
+   ============================================================ */
+@media (min-width: 1360px) {
+  body:not([data-page="produtos"]) .usp-affiliate-rail {
+    overflow: visible !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-rail__inner {
+    position: relative !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
+    max-height: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overscroll-behavior: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-rail__inner::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+    display: none !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-rail__title {
+    position: static !important;
+    top: auto !important;
+    margin: 0 auto 0 !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card {
+    flex: 0 0 auto !important;
+    margin-top: var(--usp-affiliate-self-gap, clamp(118px, 11vw, 176px)) !important;
+    margin-bottom: 0 !important;
+  }
+
+  body:not([data-page="produtos"]) .usp-affiliate-card + .usp-affiliate-card {
+    margin-top: var(--usp-affiliate-self-gap, clamp(118px, 11vw, 176px)) !important;
+  }
+}
+
+@media (max-width: 760px) {
+  body:not([data-page="produtos"]) .usp-affiliate-mobile-insert {
+    margin-top: var(--usp-affiliate-mobile-self-gap, 142px) !important;
+    margin-bottom: 18px !important;
+  }
+}
