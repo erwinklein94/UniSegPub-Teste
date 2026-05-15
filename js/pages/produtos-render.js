@@ -13,8 +13,6 @@
 
   const FILTRO_PRODUTOS_SELECT_ID = 'produtos_instituicao';
   const FILTRO_PRODUTOS_STATUS_ID = 'produtos-filtro-status';
-  const PRODUTOS_INSTITUICAO_STORAGE_KEY = 'unisegpub_instituicao_pesquisada_v1';
-  const PRODUTOS_INSTITUICAO_EVENTO = 'unisegpub:instituicao-alterada';
   const INSTITUICOES_FEDERAIS = new Set(['pf', 'prf']);
   const UFS_VALIDAS = new Set([
     'ac', 'al', 'am', 'ap', 'ba', 'ce', 'df', 'es', 'go', 'ma', 'mg', 'ms', 'mt',
@@ -100,27 +98,6 @@
     }
     if (text !== undefined && text !== null) element.textContent = text;
     return element;
-  }
-
-
-  function getInstituicaoProdutosSalva() {
-    try {
-      return window.localStorage ? String(window.localStorage.getItem(PRODUTOS_INSTITUICAO_STORAGE_KEY) || '').trim().toLowerCase() : '';
-    } catch (e) {
-      return '';
-    }
-  }
-
-  function salvarInstituicaoProdutos(inst) {
-    try {
-      if (!window.localStorage) return;
-      if (inst) window.localStorage.setItem(PRODUTOS_INSTITUICAO_STORAGE_KEY, inst);
-      else window.localStorage.removeItem(PRODUTOS_INSTITUICAO_STORAGE_KEY);
-    } catch (e) { /* silencioso */ }
-
-    try {
-      window.dispatchEvent(new CustomEvent(PRODUTOS_INSTITUICAO_EVENTO, { detail: { instituicao: inst || '' } }));
-    } catch (e) { /* silencioso */ }
   }
 
   function normalizarTexto(texto) {
@@ -441,25 +418,10 @@
       primeiraOpcao.textContent = 'Todos os produtos';
     }
 
-    const instituicaoSalva = getInstituicaoProdutosSalva();
-    if (instituicaoSalva && Array.from(select.options || []).some(option => option.value === instituicaoSalva)) {
-      select.value = instituicaoSalva;
-    }
-
     filtroProdutosAtual = select.value || '';
     select.dataset.filtroProdutosInicializado = 'true';
     select.addEventListener('change', event => {
       filtroProdutosAtual = event.currentTarget.value || '';
-      salvarInstituicaoProdutos(filtroProdutosAtual);
-      renderProdutos();
-    });
-
-    window.addEventListener(PRODUTOS_INSTITUICAO_EVENTO, event => {
-      const inst = String(event?.detail?.instituicao || '').trim().toLowerCase();
-      if (!inst || !Array.from(select.options || []).some(option => option.value === inst)) return;
-      if (select.value === inst) return;
-      select.value = inst;
-      filtroProdutosAtual = inst;
       renderProdutos();
     });
   }

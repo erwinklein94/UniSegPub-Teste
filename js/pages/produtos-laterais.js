@@ -1,17 +1,15 @@
 /* ============================================================
-   UniSegPub — Produtos contextuais por instituição
-   Desktop: vitrine lateral com todos os produtos relacionados.
-   Mobile: um produto por vez entre cards de conteúdo.
+   UniSegPub — Produtos relacionados à instituição pesquisada
+   Desktop: mostra todos os produtos/cursos compatíveis nas laterais.
+   Mobile: intercala cards unitários de produto entre os cards da página.
    ============================================================ */
 (function () {
   'use strict';
 
-  const STORAGE_INST_KEY = 'unisegpub_instituicao_pesquisada_v1';
-  const EVENTO_INSTITUICAO = 'unisegpub:instituicao-alterada';
-  const DESKTOP_BREAKPOINT = 1360;
-  const MOBILE_INTERVALO_CARDS = 2;
+  const STORAGE_CONTEXTO_INST = 'unisegpub_produtos_contexto_inst_v1';
+  const MOBILE_MAX_WIDTH = 760;
 
-  const PAGINAS_COM_VITRINE_CONTEXTUAL = new Set([
+  const PAGINAS_COM_VITRINE_RELACIONADA = new Set([
     'principal',
     'noticias',
     'guia',
@@ -50,24 +48,17 @@
   ]);
 
   const REGRAS_CLASSIFICACAO_PRODUTOS = [
-    { instituicoes: ['pf'], ufs: ['br'], termos: ['policia federal', 'pf', 'agente pf', 'delegado pf', 'escrivao pf', 'papiloscopista pf', 'perito pf'] },
     { instituicoes: ['prf'], ufs: ['br'], termos: ['policia rodoviaria federal', 'prf'] },
-    { instituicoes: ['pmesp'], ufs: ['sp'], termos: ['pmesp', 'pm sp', 'pm paulista', 'policia militar sp', 'policia militar de sao paulo', 'padrao policia militar sp'] },
-    { instituicoes: ['bmsp'], ufs: ['sp'], termos: ['cbpmesp', 'bombeiros sp', 'bombeiro sp', 'corpo de bombeiros da pmesp'] },
-    { instituicoes: ['pcsp'], ufs: ['sp'], termos: ['pcsp', 'pc sp', 'policia civil de sao paulo', 'policia civil sp'] },
-    { instituicoes: ['ppsp'], ufs: ['sp'], termos: ['ppsp', 'ppesp', 'policia penal de sao paulo', 'policia penal sp'] },
+    { instituicoes: ['pf'], ufs: ['br'], termos: ['policia federal', 'pf'] },
+    { instituicoes: ['pmesp'], ufs: ['sp'], termos: ['pmesp', 'pm sp', 'policia militar sp', 'policia militar de sao paulo', 'padrao policia militar sp'] },
+    { instituicoes: ['pcsp'], ufs: ['sp'], termos: ['pcsp', 'policia civil de sao paulo'] },
+    { instituicoes: ['pmto'], ufs: ['to'], termos: ['pmto', 'policia militar de tocantins', 'policia militar do tocantins', 'tocantins'] },
     { instituicoes: ['pmerj'], ufs: ['rj'], termos: ['pmerj', 'pm rj', 'pmrj', 'policia militar do rio de janeiro', 'policia militar do estado do rio de janeiro'] },
-    { instituicoes: ['bmrj'], ufs: ['rj'], termos: ['cbmerj', 'cbm rj', 'bombeiro rj', 'bombeiros rj', 'corpo de bombeiros militar do rio de janeiro', 'corpo de bombeiros militar do estado do rio de janeiro'] },
-    { instituicoes: ['pcerj'], ufs: ['rj'], termos: ['pcerj', 'pc rj', 'policia civil do rio de janeiro', 'policia civil rj'] },
-    { instituicoes: ['pprj'], ufs: ['rj'], termos: ['pprj', 'policia penal do rio de janeiro', 'policia penal rj'] },
-    { instituicoes: ['pmmg'], ufs: ['mg'], termos: ['pmmg', 'pm mg', 'policia militar de minas gerais'] },
-    { instituicoes: ['bmmg'], ufs: ['mg'], termos: ['cbmmg', 'bombeiro mg', 'bombeiros mg', 'corpo de bombeiros militar de minas gerais'] },
-    { instituicoes: ['pcmg'], ufs: ['mg'], termos: ['pcmg', 'pc mg', 'policia civil de minas gerais', 'investigador pcmg'] },
-    { instituicoes: ['ppmg'], ufs: ['mg'], termos: ['ppmg', 'policia penal de minas gerais', 'policia penal mg'] },
-    { instituicoes: ['pcdf'], ufs: ['df'], termos: ['pcdf', 'pc df', 'policia civil do distrito federal'] },
-    { instituicoes: ['ppdf'], ufs: ['df'], termos: ['ppdf', 'policia penal do distrito federal', 'policia penal df'] },
+    { instituicoes: ['bmrj'], ufs: ['rj'], termos: ['cbmerj', 'cbm rj', 'bombeiro rj', 'corpo de bombeiros militar do rio de janeiro', 'corpo de bombeiros militar do estado do rio de janeiro'] },
     { instituicoes: ['pcal'], ufs: ['al'], termos: ['pcal', 'pc al', 'policia civil de alagoas'] },
-    { instituicoes: ['pmto'], ufs: ['to'], termos: ['pmto', 'policia militar de tocantins', 'policia militar do tocantins', 'tocantins'] }
+    { instituicoes: ['pcmg'], ufs: ['mg'], termos: ['pcmg', 'pc mg', 'policia civil de minas gerais'] },
+    { instituicoes: ['ppdf'], ufs: ['df'], termos: ['ppdf', 'policia penal do distrito federal', 'policia penal df'] },
+    { instituicoes: ['pcdf'], ufs: ['df'], termos: ['pcdf', 'pc df', 'policia civil do distrito federal'] }
   ];
 
   const PRODUTOS_FALLBACK = [
@@ -93,10 +84,8 @@
     }
   ];
 
-  let resizeInstalado = false;
-  let observer = null;
-  let refreshTimer = 0;
-  let renderizacaoInterna = false;
+  let contextoInstituicao = '';
+  let renderAgendado = false;
 
   function normalizarTexto(texto) {
     return String(texto || '')
@@ -108,83 +97,23 @@
       .trim();
   }
 
+  function normalizarInst(valor) {
+    return normalizarTexto(valor).replace(/\s+/g, '');
+  }
+
   function textoCurto(texto, limite) {
     const normalizado = String(texto || '').replace(/\s+/g, ' ').trim();
     if (normalizado.length <= limite) return normalizado;
     return `${normalizado.slice(0, limite - 1).trim()}…`;
   }
 
-  function getPaginaAtual() {
-    return document.body && document.body.dataset ? document.body.dataset.page || '' : '';
-  }
-
-  function getStorageInst() {
-    try {
-      return window.localStorage ? String(window.localStorage.getItem(STORAGE_INST_KEY) || '').trim().toLowerCase() : '';
-    } catch (e) {
-      return '';
-    }
-  }
-
-
-  function salvarInstituicaoPesquisada(inst) {
-    const valor = String(inst || '').trim().toLowerCase();
-    if (!valor) return;
-
-    try {
-      if (window.localStorage) window.localStorage.setItem(STORAGE_INST_KEY, valor);
-    } catch (e) { /* silencioso */ }
-
-    try {
-      window.dispatchEvent(new CustomEvent(EVENTO_INSTITUICAO, { detail: { instituicao: valor } }));
-    } catch (e) { /* silencioso */ }
-  }
-
-
-  function limparInstituicaoPesquisada() {
-    try {
-      if (window.localStorage) window.localStorage.removeItem(STORAGE_INST_KEY);
-    } catch (e) { /* silencioso */ }
-
-    try {
-      window.dispatchEvent(new CustomEvent(EVENTO_INSTITUICAO, { detail: { instituicao: '' } }));
-    } catch (e) { /* silencioso */ }
-  }
-
-  function getInstituicaoAtual() {
-    const bodyInst = String(document.body?.dataset?.inst || '').trim().toLowerCase();
-    if (bodyInst && bodyInst !== 'portal') return bodyInst;
-    return getStorageInst();
-  }
-
-  function getUfInstituicao(inst) {
-    const valor = String(inst || '').toLowerCase().trim();
-    if (!valor) return '';
-    if (INSTITUICOES_FEDERAIS.has(valor)) return 'br';
-    if (valor === 'gm' || valor === 'guarda_municipal') return 'municipal';
-    const uf = valor.slice(-2);
-    return UFS_VALIDAS.has(uf) ? uf : '';
-  }
-
-  function criarLink(classe, href, texto, externo) {
-    const link = document.createElement('a');
-    link.className = classe;
-    link.href = href;
-    link.textContent = texto;
-    if (externo) {
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-    }
-    return link;
-  }
-
   function getTextoProduto(produto) {
     const partes = [
-      produto?.titulo,
-      produto?.descricao,
-      Array.isArray(produto?.meta) ? produto.meta.join(' ') : '',
-      Array.isArray(produto?.badges) ? produto.badges.join(' ') : '',
-      produto?.imagem?.alt
+      produto && produto.titulo,
+      produto && produto.descricao,
+      Array.isArray(produto && produto.meta) ? produto.meta.join(' ') : '',
+      Array.isArray(produto && produto.badges) ? produto.badges.join(' ') : '',
+      produto && produto.imagem && produto.imagem.alt
     ];
     return normalizarTexto(partes.filter(Boolean).join(' '));
   }
@@ -192,7 +121,7 @@
   function termoExiste(texto, termo) {
     const termoNormalizado = normalizarTexto(termo);
     if (!termoNormalizado) return false;
-    if (/^[a-z]{2,7}$/.test(termoNormalizado)) {
+    if (/^[a-z]{2,6}$/.test(termoNormalizado)) {
       return new RegExp(`(^|\\s)${termoNormalizado}(\\s|$)`).test(texto);
     }
     return texto.includes(termoNormalizado);
@@ -200,17 +129,17 @@
 
   function normalizarListaFiltro(valor) {
     if (!valor) return [];
-    if (Array.isArray(valor)) return valor.map(item => String(item || '').toLowerCase().trim()).filter(Boolean);
-    return String(valor).split(',').map(item => item.trim().toLowerCase()).filter(Boolean);
+    if (Array.isArray(valor)) return valor.map(item => normalizarInst(item)).filter(Boolean);
+    return String(valor).split(',').map(item => normalizarInst(item)).filter(Boolean);
   }
 
   function normalizarFiltroProdutoExplicito(produto) {
-    const filtro = produto?.filtro || produto?.filter || null;
+    const filtro = produto && (produto.filtro || produto.filter);
     if (!filtro) return null;
 
-    const geral = filtro.geral === true || filtro.escopo === 'geral' || filtro.scope === 'general';
     const instituicoes = normalizarListaFiltro(filtro.instituicoes || filtro.insts || filtro.inst);
     const ufs = normalizarListaFiltro(filtro.ufs || filtro.uf);
+    const geral = filtro.geral === true || filtro.escopo === 'geral' || filtro.scope === 'general';
 
     return {
       geral: geral || (!instituicoes.length && !ufs.length),
@@ -229,8 +158,8 @@
 
     REGRAS_CLASSIFICACAO_PRODUTOS.forEach(regra => {
       if (!regra.termos.some(termo => termoExiste(texto, termo))) return;
-      (regra.instituicoes || []).forEach(inst => instituicoes.add(inst));
-      (regra.ufs || []).forEach(uf => ufs.add(uf));
+      (regra.instituicoes || []).forEach(inst => instituicoes.add(normalizarInst(inst)));
+      (regra.ufs || []).forEach(uf => ufs.add(normalizarInst(uf)));
     });
 
     return {
@@ -240,30 +169,35 @@
     };
   }
 
-  function pontuarProduto(produto, instSelecionada) {
-    const inst = String(instSelecionada || '').toLowerCase().trim();
-    const filtroProduto = classificarProduto(produto);
-    if (!inst) return 20;
-
-    const instituicoesProduto = filtroProduto.instituicoes || [];
-    const ufsProduto = filtroProduto.ufs || [];
-    if (instituicoesProduto.includes(inst)) return 100;
-
-    const ufSelecionada = getUfInstituicao(inst);
-    if (ufSelecionada && ufSelecionada !== 'br' && ufsProduto.includes(ufSelecionada)) return 70;
-    if (filtroProduto.geral) return 35;
-    return 0;
+  function getUfInstituicao(inst) {
+    const valor = normalizarInst(inst);
+    if (!valor) return '';
+    if (INSTITUICOES_FEDERAIS.has(valor)) return 'br';
+    const uf = valor.slice(-2);
+    return UFS_VALIDAS.has(uf) ? uf : '';
   }
 
   function produtoCombinaComInstituicao(produto, instSelecionada) {
-    return pontuarProduto(produto, instSelecionada) > 0;
+    const inst = normalizarInst(instSelecionada);
+    if (!inst) return true;
+
+    const filtroProduto = classificarProduto(produto);
+    if (filtroProduto.geral) return true;
+    if ((filtroProduto.instituicoes || []).includes(inst)) return true;
+
+    const ufSelecionada = getUfInstituicao(inst);
+    if (!ufSelecionada || ufSelecionada === 'br') return false;
+    return (filtroProduto.ufs || []).includes(ufSelecionada);
+  }
+
+  function produtoValido(produto) {
+    return produto && produto.titulo && produto.href && produto.imagem && produto.imagem.src;
   }
 
   function deduplicarProdutos(produtos) {
     const vistos = new Set();
     return produtos.filter(produto => {
-      if (!produto || !produto.titulo || !produto.href || !produto.imagem || !produto.imagem.src) return false;
-      const chave = `${produto.href}::${normalizarTexto(produto.titulo)}`;
+      const chave = `${produto.href || ''}|${produto.titulo || ''}`.toLowerCase();
       if (vistos.has(chave)) return false;
       vistos.add(chave);
       return true;
@@ -272,43 +206,124 @@
 
   function coletarProdutos() {
     const base = window.UNISEGPUB_PRODUTOS || {};
-    const grupos = [
-      base.produtosFisicos,
-      base.cursosGerais,
-      base.cursosPmesp,
-      base.cursosPcsp,
-      base.livrosEbooks
-    ];
+    const produtos = Object.keys(base)
+      .map(chave => base[chave])
+      .filter(Array.isArray)
+      .flat()
+      .filter(produtoValido);
 
-    const produtos = deduplicarProdutos(grupos.filter(Array.isArray).flat());
-    return produtos.length ? produtos : PRODUTOS_FALLBACK;
+    return produtos.length ? deduplicarProdutos(produtos) : PRODUTOS_FALLBACK;
   }
 
-  function coletarProdutosContextuais() {
-    const inst = getInstituicaoAtual();
-    const produtos = coletarProdutos();
-    const filtrados = produtos
-      .map((produto, index) => ({ produto, index, score: pontuarProduto(produto, inst) }))
-      .filter(item => item.score > 0)
-      .sort((a, b) => b.score - a.score || a.index - b.index)
-      .map(item => item.produto);
-
-    return filtrados.length ? filtrados : produtos;
+  function getProdutosRelacionados(inst) {
+    const todos = coletarProdutos();
+    const relacionados = todos.filter(produto => produtoCombinaComInstituicao(produto, inst));
+    return relacionados.length ? relacionados : todos;
   }
 
-  function getLabelInstituicao(inst) {
-    const info = window.HEADER_INSTITUICOES_INFO?.[inst] || (typeof HEADER_INSTITUICOES_INFO !== 'undefined' ? HEADER_INSTITUICOES_INFO[inst] : null);
-    if (info?.titulo) return info.titulo;
-    if (inst === 'gm') return 'GM';
-    return String(inst || '').toUpperCase();
+  function getInfoInstituicao(inst) {
+    const normalizada = normalizarInst(inst);
+    try {
+      if (typeof HEADER_INSTITUICOES_INFO !== 'undefined' && HEADER_INSTITUICOES_INFO[normalizada]) {
+        return HEADER_INSTITUICOES_INFO[normalizada];
+      }
+    } catch (erro) {
+      /* silencioso */
+    }
+    return window.HEADER_INSTITUICOES_INFO && window.HEADER_INSTITUICOES_INFO[normalizada]
+      ? window.HEADER_INSTITUICOES_INFO[normalizada]
+      : null;
   }
 
-  function criarCardProduto(produto, variante) {
-    const card = document.createElement('article');
-    card.className = variante === 'mobile' ? 'usp-mobile-product-card' : 'usp-affiliate-card';
+  function valorPareceInstituicao(valor) {
+    const inst = normalizarInst(valor);
+    if (!inst || inst === 'portal') return false;
+    if (getInfoInstituicao(inst)) return true;
+    if (INSTITUICOES_FEDERAIS.has(inst)) return true;
+    return /^[a-z]{4,6}$/.test(inst) && UFS_VALIDAS.has(inst.slice(-2));
+  }
 
+  function lerContextoSalvo() {
+    try {
+      const salvo = localStorage.getItem(STORAGE_CONTEXTO_INST);
+      return valorPareceInstituicao(salvo) ? normalizarInst(salvo) : '';
+    } catch (erro) {
+      return '';
+    }
+  }
+
+  function salvarContexto(inst) {
+    try {
+      if (inst) localStorage.setItem(STORAGE_CONTEXTO_INST, inst);
+    } catch (erro) {
+      /* silencioso */
+    }
+  }
+
+  function getContextoBody() {
+    const instBody = document.body && document.body.dataset ? document.body.dataset.inst : '';
+    return valorPareceInstituicao(instBody) ? normalizarInst(instBody) : '';
+  }
+
+  function getContextoCurrInst() {
+    try {
+      const atual = typeof currInst !== 'undefined' ? currInst : window.currInst;
+      return valorPareceInstituicao(atual) ? normalizarInst(atual) : '';
+    } catch (erro) {
+      return '';
+    }
+  }
+
+  function getContextoSelects() {
+    const seletores = Array.from(document.querySelectorAll('select')).filter(select => {
+      const id = normalizarTexto(select.id || '');
+      const name = normalizarTexto(select.name || '');
+      return id.includes('instituicao') || name.includes('instituicao') || select.hasAttribute('data-consulta-instituicao');
+    });
+
+    const selecionado = seletores
+      .map(select => select.value)
+      .find(valorPareceInstituicao);
+
+    return selecionado ? normalizarInst(selecionado) : '';
+  }
+
+  function getInstituicaoAtiva() {
+    return contextoInstituicao || getContextoBody() || getContextoSelects() || getContextoCurrInst() || lerContextoSalvo();
+  }
+
+  function setContextoInstituicao(inst) {
+    const normalizada = normalizarInst(inst);
+    if (!valorPareceInstituicao(normalizada)) return false;
+    contextoInstituicao = normalizada;
+    window.__UNISEGPUB_PRODUTOS_CONTEXT_INST = normalizada;
+    salvarContexto(normalizada);
+    return true;
+  }
+
+  function getNomeInstituicao(inst) {
+    const normalizada = normalizarInst(inst);
+    const info = getInfoInstituicao(normalizada);
+    if (info && info.titulo) return info.titulo;
+    if (normalizada) return normalizada.toUpperCase();
+    return '';
+  }
+
+  function criarLink(classe, href, texto, externo) {
+    const link = document.createElement('a');
+    link.className = classe;
+    link.href = href;
+    link.textContent = texto;
+    if (externo) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    }
+    return link;
+  }
+
+  function criarImagemProduto(produto, classe) {
     const imagemWrap = document.createElement('a');
-    imagemWrap.className = variante === 'mobile' ? 'usp-mobile-product-card__media' : 'usp-affiliate-card__media';
+    imagemWrap.className = classe;
     imagemWrap.href = produto.href;
     imagemWrap.target = '_blank';
     imagemWrap.rel = 'noopener noreferrer';
@@ -324,39 +339,79 @@
       imagem.remove();
     }, { once: true });
     imagemWrap.appendChild(imagem);
-    card.appendChild(imagemWrap);
+    return imagemWrap;
+  }
 
-    const corpo = document.createElement('div');
-    corpo.className = variante === 'mobile' ? 'usp-mobile-product-card__body' : 'usp-affiliate-card__body';
+  function criarCardProdutoDesktop(produto) {
+    const card = document.createElement('article');
+    card.className = 'usp-affiliate-card';
 
-    if (variante === 'mobile') {
-      const label = document.createElement('span');
-      label.className = 'usp-mobile-product-card__label';
-      label.textContent = 'Produto relacionado';
-      corpo.appendChild(label);
-    }
+    card.appendChild(criarImagemProduto(produto, 'usp-affiliate-card__media'));
 
     const titulo = document.createElement('h3');
-    titulo.textContent = textoCurto(produto.titulo, variante === 'mobile' ? 86 : 58);
-    corpo.appendChild(titulo);
+    titulo.textContent = textoCurto(produto.titulo, 64);
+    card.appendChild(titulo);
 
     const aviso = document.createElement('small');
-    aviso.className = variante === 'mobile' ? 'usp-mobile-product-card__note' : 'usp-affiliate-card__note';
-    aviso.textContent = 'Produto de programa de afiliado.';
-    corpo.appendChild(aviso);
+    aviso.className = 'usp-affiliate-card__note';
+    aviso.textContent = 'Produto relacionado ao contexto pesquisado.';
+    card.appendChild(aviso);
 
-    const acoes = document.createElement('div');
-    acoes.className = variante === 'mobile' ? 'usp-mobile-product-card__actions' : 'usp-affiliate-card__actions';
-    acoes.appendChild(criarLink(variante === 'mobile' ? 'usp-mobile-product-card__store' : 'usp-affiliate-card__store', produto.href, 'Ver na loja', true));
-    acoes.appendChild(criarLink(variante === 'mobile' ? 'usp-mobile-product-card__more' : 'usp-affiliate-card__more', 'produtos.html', 'Ver mais produtos', false));
-    corpo.appendChild(acoes);
+    card.appendChild(criarLink('usp-affiliate-card__store', produto.href, produto.cta || 'Ver na loja', true));
+    card.appendChild(criarLink('usp-affiliate-card__more', 'produtos.html', 'Ver mais produtos', false));
 
-    card.appendChild(corpo);
     return card;
   }
 
-  function criarRail(lado, produtos) {
-    const inst = getInstituicaoAtual();
+  function criarCardProdutoMobile(produto, indice, inst) {
+    const wrapper = document.createElement('div');
+    wrapper.className = 'usp-affiliate-mobile-insert';
+    wrapper.setAttribute('data-affiliate-mobile-product', 'true');
+
+    const card = document.createElement('article');
+    card.className = 'usp-affiliate-mobile-card';
+    card.setAttribute('aria-label', `Produto relacionado ${indice + 1}`);
+
+    card.appendChild(criarImagemProduto(produto, 'usp-affiliate-mobile-card__media'));
+
+    const conteudo = document.createElement('div');
+    conteudo.className = 'usp-affiliate-mobile-card__content';
+
+    const label = document.createElement('span');
+    label.className = 'usp-affiliate-mobile-card__label';
+    const nomeInst = getNomeInstituicao(inst);
+    label.textContent = nomeInst ? `Produto para ${nomeInst}` : 'Produto recomendado';
+    conteudo.appendChild(label);
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = textoCurto(produto.titulo, 82);
+    conteudo.appendChild(titulo);
+
+    const descricao = document.createElement('p');
+    descricao.textContent = textoCurto(produto.descricao || 'Item indicado na vitrine de produtos do site.', 116);
+    conteudo.appendChild(descricao);
+
+    const acoes = document.createElement('div');
+    acoes.className = 'usp-affiliate-mobile-card__actions';
+    acoes.appendChild(criarLink('usp-affiliate-mobile-card__store', produto.href, produto.cta || 'Ver na loja', true));
+    acoes.appendChild(criarLink('usp-affiliate-mobile-card__more', 'produtos.html', 'Mais produtos', false));
+    conteudo.appendChild(acoes);
+
+    card.appendChild(conteudo);
+    wrapper.appendChild(card);
+    return wrapper;
+  }
+
+  function dividirProdutosLaterais(produtos) {
+    const esquerda = [];
+    const direita = [];
+    produtos.forEach((produto, index) => {
+      (index % 2 === 0 ? esquerda : direita).push(produto);
+    });
+    return { esquerda, direita };
+  }
+
+  function criarRail(lado, produtos, inst) {
     const rail = document.createElement('aside');
     rail.className = `usp-affiliate-rail usp-affiliate-rail--${lado}`;
     rail.setAttribute('aria-label', lado === 'left' ? 'Produtos relacionados à esquerda' : 'Produtos relacionados à direita');
@@ -366,11 +421,12 @@
 
     const titulo = document.createElement('div');
     titulo.className = 'usp-affiliate-rail__title';
-    titulo.textContent = inst ? `Produtos ${getLabelInstituicao(inst)}` : 'Produtos';
+    const nomeInst = getNomeInstituicao(inst);
+    titulo.textContent = nomeInst ? `Produtos • ${nomeInst}` : 'Produtos';
     inner.appendChild(titulo);
 
     produtos.forEach(function (produto) {
-      inner.appendChild(criarCardProduto(produto, 'desktop'));
+      inner.appendChild(criarCardProdutoDesktop(produto));
     });
 
     rail.appendChild(inner);
@@ -383,208 +439,197 @@
     shell.style.setProperty('--usp-affiliate-main-width', `${Math.min(maximo, larguraDisponivel)}px`);
   }
 
-  function getMainAtual() {
-    return document.querySelector('main.page-section.active[role="main"]') || document.querySelector('main.page-section.active') || document.querySelector('main');
+  function getPaginaAtual() {
+    return document.body && document.body.dataset ? document.body.dataset.page : '';
   }
 
-  function garantirShellDesktop(main, pagina) {
-    let shell = document.querySelector('.usp-affiliate-side-shell');
-    if (shell) return shell;
-    if (!main || !main.parentNode) return null;
+  function getMainAtual() {
+    return document.querySelector('main.page-section.active[role="main"]') ||
+      document.querySelector('main.page-section.active') ||
+      document.querySelector('main[role="main"]') ||
+      document.querySelector('main');
+  }
 
-    shell = document.createElement('div');
+  function garantirShell(main, pagina) {
+    const existente = main.closest('.usp-affiliate-side-shell');
+    if (existente) {
+      ajustarLarguraCentral(existente, pagina);
+      return existente;
+    }
+
+    if (!main.parentNode) return null;
+    const shell = document.createElement('div');
     shell.className = 'usp-affiliate-side-shell';
     shell.setAttribute('data-affiliate-products', 'true');
-
     main.parentNode.insertBefore(shell, main);
     shell.appendChild(main);
     ajustarLarguraCentral(shell, pagina);
     return shell;
   }
 
-  function renderizarDesktop() {
-    const pagina = getPaginaAtual();
-    if (!PAGINAS_COM_VITRINE_CONTEXTUAL.has(pagina) || pagina === 'produtos') return;
-
-    const main = getMainAtual();
-    const shell = garantirShellDesktop(main, pagina);
+  function limparRails(shell) {
     if (!shell) return;
+    shell.querySelectorAll(':scope > .usp-affiliate-rail').forEach(rail => rail.remove());
+  }
 
-    shell.querySelectorAll('.usp-affiliate-rail').forEach(rail => rail.remove());
+  function limparProdutosMobile(main) {
+    const raiz = main || document;
+    raiz.querySelectorAll('.usp-affiliate-mobile-insert').forEach(item => item.remove());
+  }
 
-    const produtos = coletarProdutosContextuais();
-    if (!produtos.length) return;
+  function elementoVisivel(elemento) {
+    if (!elemento || elemento.hidden) return false;
+    if (elemento.closest('[hidden]')) return false;
+    return Boolean(elemento.offsetParent || elemento.getClientRects().length);
+  }
 
-    const esquerda = [];
-    const direita = [];
-    produtos.forEach((produto, index) => {
-      (index % 2 === 0 ? esquerda : direita).push(produto);
+  function getAlvosMobile(main) {
+    const seletoresPrioritarios = [
+      '[data-concurso-card]',
+      '[data-noticia-card]',
+      '[data-acoes-card]',
+      '[data-associacoes-card]',
+      '[data-brasoes-card]',
+      '.principal-card',
+      '.concursos-conteudo-card',
+      '.noticias-card',
+      '.acoes-conteudo-card',
+      '.associacoes-conteudo-card',
+      '.brasoes-conteudo-card',
+      '.guia-card',
+      '.comparador-card',
+      '.card'
+    ];
+
+    const ignorar = [
+      '.usp-affiliate-mobile-insert',
+      '.usp-affiliate-mobile-card',
+      '.header-institution-card',
+      '.sidebar-product-card',
+      '.ad-slot',
+      '.consulta-instituicao-card',
+      '.concursos-detalhe-card',
+      '.page-intro',
+      '.principal-nota'
+    ].join(',');
+
+    const vistos = new Set();
+    const alvos = [];
+    seletoresPrioritarios.forEach(selector => {
+      main.querySelectorAll(selector).forEach(el => {
+        if (vistos.has(el) || el.matches(ignorar) || el.closest(ignorar)) return;
+        if (!elementoVisivel(el)) return;
+        vistos.add(el);
+        alvos.push(el);
+      });
     });
 
-    if (esquerda.length) shell.insertBefore(criarRail('left', esquerda), main);
-    if (direita.length) shell.appendChild(criarRail('right', direita));
-
-    ajustarLarguraCentral(shell, pagina);
-    if (!resizeInstalado) {
-      resizeInstalado = true;
-      window.addEventListener('resize', scheduleRefresh, { passive: true });
-    }
+    return alvos;
   }
 
-  function elementoVisivel(el) {
-    if (!el || el.hidden || el.closest('[hidden]')) return false;
-    const style = window.getComputedStyle ? window.getComputedStyle(el) : null;
-    return !style || (style.display !== 'none' && style.visibility !== 'hidden');
-  }
+  function renderDesktop(shell, produtos, inst) {
+    limparRails(shell);
+    if (!shell || !produtos.length) return;
 
-  function selecionarCardsMobile(main, pagina) {
-    const seletoresPorPagina = {
-      principal: '.principal-card',
-      noticias: '[data-noticia-card]',
-      guia: '[data-guia-artigo]',
-      remuneracao: '[data-remu-card]',
-      direitos: '[data-direitos-card]',
-      poderes: '[data-poderes-card]',
-      brasoes: '[data-brasoes-card]',
-      concursos: '[data-concurso-card]',
-      acoes: '[data-acoes-card]',
-      associacoes: '[data-associacoes-card]',
-      comparar: '.comparador-cards > *',
-      baselegal: '.base-legal-resultados-card > *, .base-legal-busca-card',
-      parceiros: 'form[data-form="contato"], .card > section, .card > div'
-    };
-
-    const seletor = seletoresPorPagina[pagina] || 'article.card, section.card, .principal-card';
-    let cards = Array.from(main.querySelectorAll(seletor)).filter(el => !el.matches('.usp-mobile-product-slot, .usp-mobile-product-slot *'));
-
-    if (cards.length < 2) {
-      cards = Array.from(main.querySelectorAll('article.card, section.card, .principal-card, .card'))
-        .filter(el => !el.matches('.header-institution-card, .consulta-instituicao-card, .usp-mobile-product-slot, .usp-mobile-product-slot *'));
-    }
-
-    return cards.filter(elementoVisivel);
-  }
-
-  function removerSlotsMobile() {
-    document.querySelectorAll('.usp-mobile-product-slot').forEach(slot => slot.remove());
-  }
-
-  function renderizarMobile() {
-    const pagina = getPaginaAtual();
-    if (!PAGINAS_COM_VITRINE_CONTEXTUAL.has(pagina) || pagina === 'produtos') {
-      removerSlotsMobile();
-      return;
-    }
-
-    const main = getMainAtual();
+    const main = shell.querySelector('main');
     if (!main) return;
 
-    removerSlotsMobile();
-
-    const cards = selecionarCardsMobile(main, pagina);
-    const produtos = coletarProdutosContextuais();
-    if (cards.length < 2 || !produtos.length) return;
-
-    let produtoIndex = 0;
-    cards.forEach((card, index) => {
-      const deveInserir = (index + 1) % MOBILE_INTERVALO_CARDS === 0 && index < cards.length - 1;
-      if (!deveInserir) return;
-
-      const produto = produtos[produtoIndex % produtos.length];
-      produtoIndex += 1;
-
-      const slot = document.createElement('aside');
-      slot.className = 'usp-mobile-product-slot';
-      slot.setAttribute('aria-label', 'Produto relacionado à instituição pesquisada');
-      slot.appendChild(criarCardProduto(produto, 'mobile'));
-      card.insertAdjacentElement('afterend', slot);
-    });
+    const { esquerda, direita } = dividirProdutosLaterais(produtos);
+    if (esquerda.length) shell.insertBefore(criarRail('left', esquerda, inst), main);
+    if (direita.length) shell.appendChild(criarRail('right', direita, inst));
   }
 
-  function refreshProdutosContextuais() {
-    const pagina = getPaginaAtual();
-    if (!PAGINAS_COM_VITRINE_CONTEXTUAL.has(pagina)) return;
+  function renderMobile(main, produtos, inst) {
+    limparProdutosMobile(main);
+    if (!main || !produtos.length || window.innerWidth > MOBILE_MAX_WIDTH) return;
 
-    renderizacaoInterna = true;
-    try {
-      renderizarDesktop();
-      renderizarMobile();
-    } finally {
-      window.setTimeout(() => {
-        renderizacaoInterna = false;
-      }, 0);
+    const alvos = getAlvosMobile(main);
+    if (alvos.length < 2) return;
+
+    const maximo = Math.min(produtos.length, Math.max(1, Math.floor(alvos.length / 2)));
+    let inseridos = 0;
+
+    for (let i = 1; i < alvos.length && inseridos < maximo; i += 2) {
+      const alvo = alvos[i];
+      const produto = produtos[inseridos];
+      if (!alvo || !produto) continue;
+      alvo.insertAdjacentElement('afterend', criarCardProdutoMobile(produto, inseridos, inst));
+      inseridos += 1;
     }
   }
 
-  function scheduleRefresh() {
-    window.clearTimeout(refreshTimer);
-    refreshTimer = window.setTimeout(refreshProdutosContextuais, 80);
-  }
+  function renderVitrines() {
+    renderAgendado = false;
 
-  function observarMudancasConteudo() {
-    const main = getMainAtual();
-    if (!main || observer) return;
-
-    observer = new MutationObserver(mutations => {
-      if (renderizacaoInterna) return;
-
-      const mudouConteudo = mutations.some(mutation => {
-        const alvo = mutation.target;
-        if (alvo && alvo.closest && alvo.closest('.usp-affiliate-side-shell, .usp-mobile-product-slot, .usp-affiliate-rail')) return false;
-        return mutation.type === 'childList' || mutation.attributeName === 'hidden' || mutation.attributeName === 'style' || mutation.attributeName === 'class';
-      });
-      if (mudouConteudo) scheduleRefresh();
-    });
-
-    observer.observe(main, {
-      childList: true,
-      subtree: true,
-      attributes: true,
-      attributeFilter: ['hidden', 'style', 'class']
-    });
-  }
-
-  function iniciarProdutosContextuais() {
     const pagina = getPaginaAtual();
-    if (!PAGINAS_COM_VITRINE_CONTEXTUAL.has(pagina) || pagina === 'produtos') return;
+    if (!PAGINAS_COM_VITRINE_RELACIONADA.has(pagina)) return;
+    if (pagina === 'produtos') return;
 
-    refreshProdutosContextuais();
-    observarMudancasConteudo();
+    const main = getMainAtual();
+    if (!main || !main.parentNode) return;
 
-    window.addEventListener(EVENTO_INSTITUICAO, scheduleRefresh);
-    window.addEventListener('storage', event => {
-      if (!event || event.key === STORAGE_INST_KEY) scheduleRefresh();
-    });
+    const inst = getInstituicaoAtiva();
+    const produtos = getProdutosRelacionados(inst);
+    const shell = garantirShell(main, pagina);
+    if (!shell) return;
 
-    document.addEventListener('change', event => {
-      const alvo = event.target;
-      if (!(alvo instanceof HTMLSelectElement)) return;
-      if (alvo.matches('[data-consulta-instituicao], #instituicao, #instituicao_header, #instituicao_home, #guia_instituicao, #noticias_instituicao, #produtos_instituicao')) {
-        if (alvo.value) salvarInstituicaoPesquisada(alvo.value);
-        scheduleRefresh();
-      }
-    });
-
-    document.addEventListener('click', event => {
-      const alvo = event.target;
-      if (alvo && alvo.closest && alvo.closest('[data-guia-limpar], [data-noticias-limpar], [data-concursos-limpar], [data-action="comparador-limpar"]')) {
-        limparInstituicaoPesquisada();
-        scheduleRefresh();
-      }
-    });
+    document.body.setAttribute('data-produtos-contexto', inst || 'geral');
+    renderDesktop(shell, produtos, inst);
+    renderMobile(main, produtos, inst);
   }
 
-  window.UNISEGPUB_PRODUTOS_CONTEXTUAIS = Object.assign({}, window.UNISEGPUB_PRODUTOS_CONTEXTUAIS || {}, {
-    storageKey: STORAGE_INST_KEY,
-    eventName: EVENTO_INSTITUICAO,
-    refresh: scheduleRefresh,
-    classificarProduto,
-    produtoCombinaComInstituicao
-  });
+  function agendarRender() {
+    if (renderAgendado) return;
+    renderAgendado = true;
+    window.setTimeout(renderVitrines, 0);
+  }
+
+  function capturarContextoDeSelect(alvo) {
+    if (!(alvo instanceof HTMLSelectElement)) return;
+
+    const id = normalizarTexto(alvo.id || '');
+    const name = normalizarTexto(alvo.name || '');
+    const ehSeletorInstituicao = id.includes('instituicao') || name.includes('instituicao') || alvo.hasAttribute('data-consulta-instituicao');
+    if (!ehSeletorInstituicao) return;
+
+    if (setContextoInstituicao(alvo.value)) agendarRender();
+  }
+
+  function iniciarProdutosRelacionados() {
+    const contextoInicial = getContextoBody() || getContextoSelects() || lerContextoSalvo();
+    if (contextoInicial) setContextoInstituicao(contextoInicial);
+
+    renderVitrines();
+
+    window.addEventListener('resize', agendarRender, { passive: true });
+
+    document.addEventListener('change', function (event) {
+      capturarContextoDeSelect(event.target);
+      agendarRender();
+    });
+
+    document.addEventListener('click', function () {
+      agendarRender();
+    });
+
+    const observer = new MutationObserver(function (mutations) {
+      const mudouInstBody = mutations.some(mutation => mutation.type === 'attributes' && mutation.attributeName === 'data-inst');
+      if (!mudouInstBody) return;
+      const instBody = getContextoBody();
+      if (instBody) setContextoInstituicao(instBody);
+      agendarRender();
+    });
+
+    if (document.body) {
+      observer.observe(document.body, { attributes: true, attributeFilter: ['data-inst'] });
+    }
+
+    window.atualizarProdutosRelacionadosInstituicao = agendarRender;
+  }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', iniciarProdutosContextuais, { once: true });
+    document.addEventListener('DOMContentLoaded', iniciarProdutosRelacionados, { once: true });
   } else {
-    iniciarProdutosContextuais();
+    iniciarProdutosRelacionados();
   }
 })();

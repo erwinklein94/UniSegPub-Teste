@@ -5680,16 +5680,6 @@ function mudarInstituicao(novaInstituicao) {
   currInst = inst;
   document.body.setAttribute('data-inst', inst);
 
-  try {
-    localStorage.setItem('unisegpub_instituicao_pesquisada_v1', inst);
-  } catch (e) { /* silencioso */ }
-
-  try {
-    window.dispatchEvent(new CustomEvent('unisegpub:instituicao-alterada', {
-      detail: { instituicao: inst }
-    }));
-  } catch (e) { /* silencioso */ }
-
   ['instituicao', 'instituicao_header', 'instituicao_home'].forEach(id => {
     const seletor = document.getElementById(id);
     if (!seletor) return;
