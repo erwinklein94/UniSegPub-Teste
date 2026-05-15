@@ -18,9 +18,9 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://www.cebraspe.org.br/concursos/pm_al_26'
   },
   pmam: {
-  "nome": "ALEAM/SAPL — Lei Estadual nº 7.445/2025 — Anexo III — remuneração PMAM/CBMAM vigente a partir de 01/12/2025",
-  "url": "https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/14494/lei_7445.pdf"
-},
+    nome: 'PMAM, Legisla.AM e ALEAM/SAPL — Lei AM nº 3.725/2012 atualizada pela Lei AM nº 7.445/2025; tabela de remuneração PM/BM com efeitos financeiros em 01/12/2025',
+    url: 'https://sapl.al.am.leg.br/media/sapl/public/normajuridica/2025/13902/7445.pdf'
+  },
   pmap: {
     nome: 'PMAP, SEAD/AP e Diário Oficial do Amapá — LC AP nº 113/2018 alterada pela LC AP nº 173/2025; Tabela de Progressão Horizontal 2026 I, vigente a partir de 01/04/2026',
     url: 'https://editor.amapa.gov.br/arquivos_portais/publicacoes/SEAD_6df4154451d39fe1495462a15d40471c.pdf'
@@ -56,14 +56,6 @@ const REMUNERACAO_FONTES_OFICIAIS = {
   ppac: {
     nome: 'SEAD/IAPEN-AC — Edital 001/2023 e Portal do Estado do Acre — tabela IAPEN',
     url: 'https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/'
-  },
-  pcdf: {
-    nome: 'SEEC/DF — Polícia Civil do Distrito Federal — tabela de escalonamento vertical — janeiro/2026; Lei nº 15.395/2026',
-    url: 'https://www.economia.df.gov.br/documents/d/seec/policia-civil-pdf'
-  },
-  pmce: {
-    nome: 'DOE/CE — Decreto nº 36.085/2024, Anexo XV; Lei nº 19.183/2025; Lei nº 19.660/2026 — revisão remuneratória dos militares estaduais',
-    url: 'https://www.sindsaudeceara.org.br/wp-content/uploads/2024/07/REAJUSTE-GERAL-2024.pdf'
   },
   pmesp: {
     nome: 'SGGD/SP — Área Policial — PMESP — total julho/2025; Lei SP 18.441/2026 atualiza vencimentos-base desde 01/04/2026',
@@ -270,12 +262,8 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
     return `${detalhesLinha}${info.sigla}: ${info.atribuicoes} ${info.vantagens} Fonte principal: ${info.fonte}.`;
   }
 
-  if (inst === 'pmce') {
-    return linha.benefDesc || 'PMCE: tabela estimada de maio/2026 com base no Decreto CE nº 36.085/2024, Lei CE nº 19.183/2025 e Lei CE nº 19.660/2026. Auxílio-alimentação, fardamento, serviço extraordinário, diárias, função, insalubridade, adicional noturno e parcelas pessoais dependem de lei, escala, ato, lotação e contracheque; não foram somados automaticamente.';
-  }
-
   if (inst === 'pmam') {
-    return linha.benefDesc || 'PMAM: tabela legal de remuneração dos militares estaduais do Amazonas pela Lei AM nº 3.725/2012, atualizada pela Lei AM nº 7.445/2025, com referência em 01/12/2025. Soldo, Gratificação de Tropa e GAMS integram a tabela quando previstos; SEG, indenizações técnicas, diárias, função, retroativos, fardamento, saúde, parcelas pessoais, reserva/reforma e decisões judiciais não foram somados automaticamente.';
+    return linha.benefDesc || 'PMAM: tabela legal de remuneração dos policiais e bombeiros militares do Amazonas pela Lei AM nº 3.725/2012, atualizada pela Lei AM nº 7.445/2025, com referência em 01/12/2025. Soldo, gratificação de tropa e GAMS integram a tabela quando previstos; indenizações técnicas, diárias, função, retroativos, fardamento, saúde, parcelas pessoais, reserva/reforma e decisões judiciais não foram somados automaticamente.';
   }
 
   if (inst === 'pmap') {
@@ -724,7 +712,7 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pmap: CARGOS_PMAP,   pmce: CARGOS_PMCE,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -733,7 +721,7 @@ function getTabelaCargosRemuneracao(inst) {
     pmsc: CARGOS_PMSC,   bmsc: CARGOS_BMSC,   pcsc: CARGOS_PCSC,   ppsc: CARGOS_PPSC,
     pmes: CARGOS_PMES,   bmes: CARGOS_BMES,   pces: CARGOS_PCES,   ppes: CARGOS_PPES,
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
-    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,   pcdf: CARGOS_PCDF,};
+    pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
   const instNorm = normalizarInstituicao(inst);
   return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
 }
@@ -763,20 +751,6 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Benefícios e indenizações federais não somados automaticamente; dependem da legislação, lotação, exercício, faixa aplicável e situação funcional.';
     fonteKey = cargo.fonteKey || inst;
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Federal 2026');
-  } else if (inst === 'pcdf') {
-    remuneracao = padrao;
-    beneficios = Number(cargo.beneficios || 0);
-    criterio = cargo.criterio || 'Subsídio bruto mensal da Polícia Civil do Distrito Federal, em parcela única, conforme tabela oficial vigente.';
-    benefDesc = cargo.benefDesc || 'Auxílios, plantões, indenizações e parcelas pessoais dependem de lei, ato, lotação, escala e contracheque; não foram somados automaticamente.';
-    fonteKey = cargo.fonteKey || 'pcdf';
-    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'PCDF jan/2026');
-  } else if (inst === 'pmce') {
-    remuneracao = padrao;
-    beneficios = 0;
-    criterio = cargo.criterio || 'Total bruto mensal estimado da PMCE por posto/graduação; conferir decreto consolidado de 2026, ficha financeira e contracheque.';
-    benefDesc = cargo.benefDesc || 'Auxílios, fardamento, serviço extraordinário, diárias, função, adicionais e rubricas pessoais dependem de lei, escala, lotação, ato e contracheque; não foram somados automaticamente.';
-    fonteKey = cargo.fonteKey || 'pmce';
-    badge = cargo.badge || 'PMCE 05/2026 estimado';
   } else if (inst === 'pcal') {
     remuneracao = padrao;
     beneficios = Number(cargo.beneficios || 0);

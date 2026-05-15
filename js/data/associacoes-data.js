@@ -17,43 +17,10 @@ const ASSOCIACOES = {
     { nome: 'Entidades representativas de oficiais militares de Alagoas', foco: 'Oficiais da PMAL e demais militares estaduais conforme estatuto associativo.', acao: 'Defesa institucional, carreira, promoções, proteção social, saúde e valorização da oficialidade.', site: 'Consultar entidade local', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Acompanhamento legislativo, comunicação, convênios, orientação institucional e eventual apoio jurídico conforme contrato.' }
   ],
   pmam: [
-  {
-    "nome": "Associação dos Oficiais da Polícia e Bombeiro Militar do Estado do Amazonas (AOPBMAM)",
-    "foco": "Oficiais da Polícia Militar e do Corpo de Bombeiros Militar do Amazonas",
-    "acao": "Associativa, institucional, representativa e de apoio à carreira",
-    "site": "https://aopbmam.com.br/",
-    "telefone": "Consultar diretamente",
-    "mensalidade": "Consultar diretamente na entidade",
-    "servicos": "Comunicação institucional, representação associativa, convênios, eventos e apoio aos oficiais"
-  },
-  {
-    "nome": "Associação das Praças da Polícia e Bombeiro Militar do Amazonas (APPBMAM)",
-    "foco": "Praças da Polícia Militar e do Corpo de Bombeiros Militar do Amazonas",
-    "acao": "Associativa, assistencial e representativa",
-    "site": "https://www.instagram.com/appbmam/",
-    "telefone": "(92) 3308-8008 / (92) 99312-9292",
-    "mensalidade": "Consultar diretamente na entidade",
-    "servicos": "Jurídico, comunicação, assistência, sede social, convênios e apoio aos associados"
-  },
-  {
-    "nome": "Associação dos Sargentos, Subtenentes e Oficiais QOA da Polícia e Bombeiro Militar do Amazonas (ASSPBMAM)",
-    "foco": "Sargentos, subtenentes e oficiais QOA da PMAM e CBMAM",
-    "acao": "Associativa e representativa",
-    "site": "https://www.instagram.com/asspbmam/",
-    "telefone": "Consultar diretamente",
-    "mensalidade": "Consultar diretamente na entidade",
-    "servicos": "Comunicação institucional, representação de categoria, eventos e apoio aos associados"
-  },
-  {
-    "nome": "Associação dos Praças do Estado do Amazonas (APEAM)",
-    "foco": "Praças militares estaduais do Amazonas",
-    "acao": "Associativa e representativa",
-    "site": "https://www.facebook.com/apeamamazonas/",
-    "telefone": "Consultar diretamente",
-    "mensalidade": "Consultar diretamente na entidade",
-    "servicos": "Comunicação, mobilização associativa, representação de interesses e apoio aos praças"
-  }
-],
+    { nome: 'ACS/AM — Associação dos Cabos e Soldados da Polícia Militar e Bombeiro Militar do Amazonas', foco: 'Praças da PMAM e do CBMAM, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas remuneratórias, carreira, proteção social, condições de serviço e comunicação com a categoria.', site: 'https://acs-am.com.br', telefone: 'Consultar canais oficiais da entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, comunicação de pautas, convênios e eventual apoio jurídico conforme contrato/estatuto.' },
+    { nome: 'Entidades de oficiais militares estaduais do Amazonas', foco: 'Oficiais da ativa, reserva, reformados e pensionistas da PMAM', acao: 'Acompanhamento de temas de carreira, promoção, comando, remuneração, proteção social e representação institucional.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente na entidade', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação associativa, orientação ao associado, convênios e apoio institucional conforme estatuto.' },
+    { nome: 'Canais institucionais da PMAM', foco: 'Policiais militares, candidatos e público externo', acao: 'Canal oficial para editais, convocações, comunicação social, história institucional e orientações administrativas.', site: 'https://www.pm.am.gov.br/', telefone: '(92) 98842-1841', mensalidade: 'Não se aplica', servicos: 'Notícias, editais, comunicação social, protocolo e informações institucionais.' }
+  ],
   pcam: [
     {
       nome: 'ADEPOL-AM — Associação dos Delegados de Polícia do Estado do Amazonas',
@@ -92,12 +59,6 @@ const ASSOCIACOES = {
     { nome: 'ASMEAP — Associação dos Servidores Militares do Estado do Amapá', foco: 'Policiais militares e bombeiros militares do Amapá, ativos, veteranos e pensionistas', acao: 'Representação associativa, acompanhamento de pautas de carreira, remuneração, proteção social, promoções e condições de serviço.', site: 'Consultar canais oficiais da entidade', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Orientação associativa, plano de saúde, atendimento jurídico, convênios e comunicação de pautas conforme informações públicas da entidade.' },
     { nome: 'ASPOMETERFA — associação vinculada a militares do Amapá e ex-Território', foco: 'Militares estaduais/federais, veteranos, pensionistas e pautas ligadas a transposição e proteção social, conforme atuação da entidade', acao: 'Acompanhamento associativo de demandas funcionais, previdenciárias e remuneratórias. Conferir escopo atualizado diretamente com a entidade.', site: 'https://www.facebook.com/ASPOMETERFA', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente', servicos: 'Representação, orientação ao associado e acompanhamento de pautas administrativas/judiciais.' },
     { nome: 'Canais institucionais da PMAP', foco: 'Informação oficial para policiais militares, candidatos e sociedade amapaense', acao: 'Publicações, editais, serviços à tropa, notícias, batalhões, diretorias, história, comando e comunicação institucional.', site: 'https://pm.ap.gov.br/', telefone: 'Emergência 190; administrativo (96) 3212-1528 / 2101-2252', mensalidade: 'Não se aplica', servicos: 'Emergência, informações institucionais, concursos, boletins, saúde, pessoal, batalhões, notícias e comunicação oficial.' }
-  ],
-  pmce: [
-    { nome: 'Associação de Praças Militares Estaduais do Ceará — ASPRAMECE', foco: 'Praças da PMCE e do CBMCE', acao: 'Associativa, assistencial e jurídica', site: 'https://aspramece.org.br/', telefone: '(85) 3254-5307; WhatsApp informado no site', mensalidade: 'Consultar diretamente na entidade', servicos: 'Assessoria jurídica, benefícios, convênios, comunicação e apoio social.' },
-    { nome: 'Associação dos Oficiais da Polícia Militar e Corpo de Bombeiros do Ceará — ASSOF-CE', foco: 'Oficiais da PMCE e do CBMCE', acao: 'Associativa, benefícios e representação', site: 'https://assofce.com.br/', telefone: '(85) 99962-6096', mensalidade: 'Consultar diretamente na entidade', servicos: 'Convênios, plano de saúde, suporte jurídico, educação, eventos e plataforma de benefícios.' },
-    { nome: 'Associação das Praças Militares do Estado do Ceará — ASPRA-CE', foco: 'Praças policiais e bombeiros militares', acao: 'Associativa e representativa', site: 'https://asprace.com.br/', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Representação associativa, comunicação institucional e serviços aos associados.' },
-    { nome: 'Caixa Beneficente dos Militares do Ceará — CABEMCE', foco: 'Militares associados e dependentes', acao: 'Beneficente/assistencial', site: 'https://www.cabemce.com.br/', telefone: 'Consultar diretamente', mensalidade: 'Consultar diretamente na entidade', servicos: 'Pecúlio, auxílio-funeral, assistência jurídica, assistência habitacional e social conforme estatuto.' }
   ],
   pcce: [
     {

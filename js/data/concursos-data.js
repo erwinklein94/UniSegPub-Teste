@@ -2,169 +2,6 @@
    Mantém o identificador CONCURSOS para compatibilidade com o código atual. */
 
 const CONCURSOS = {
-  "pcdf": {
-    "edital": "PCDF — Delegado de Polícia 2026, Edital nº 1/2026, retificado pelos Editais nº 3 e nº 4/2026; concurso aberto e organizado pelo Cebraspe.",
-    "salario": "Delegado de Polícia: subsídio inicial de R$ 26.690,15, jornada de 40 horas semanais e dedicação exclusiva. Demais cargos com pedidos/planejamento sem edital publicado: Dados em breve.",
-    "vagas": "Delegado: 50 vagas imediatas + 100 em cadastro de reserva, total de 150 oportunidades. Distribuição retificada: imediatas 25 AC, 10 PcD, 10 PP e 5 HIPO; cadastro reserva 50 AC, 20 PcD, 20 PP e 10 HIPO. Agente Policial de Custódia e cargos periciais constam em planejamento de contratação de banca, com vagas oficiais ainda em Dados em breve.",
-    "cotas": "Delegado: reserva para PcD, PP e hipossuficientes conforme retificação do edital. Percentuais e procedimentos devem ser conferidos no edital, nas retificações e nos atos do Cebraspe.",
-    "idade": "Delegado: idade mínima de 18 anos na posse, CNH categoria B ou superior, bacharelado em Direito e três anos de atividade jurídica ou policial. Para os demais cargos sem edital vigente: Dados em breve.",
-    "escolaridade": "Delegado: diploma de bacharel em Direito e comprovação de três anos de atividade jurídica ou policial. Agente Policial de Custódia, Perito Criminal, Perito Médico-Legista e Papiloscopista Policial: requisitos serão consolidados após edital específico.",
-    "materias": "Delegado: disciplinas jurídicas e institucionais do edital Cebraspe, incluindo Direito Administrativo, Constitucional, Penal, Processual Penal, Civil, Processual Civil, Empresarial, Tributário, Ambiental, Criminologia, Medicina Legal, Direitos Humanos e legislação especial, além de provas discursivas e prova oral. Demais cargos: Dados em breve até publicação de edital.",
-    "banca": "Cebraspe para o concurso de Delegado PCDF 2026. Para Agente Policial de Custódia e área pericial, os atos do PACC/DODF registram contratação de instituição para realização dos concursos; banca ainda em Dados em breve.",
-    "inscritos": "Delegado: inscrições de 07/05/2026 a 25/05/2026; taxa de R$ 310,00; pagamento até 27/05/2026. Total de inscritos: Dados em breve.",
-    "etapas": "Delegado: provas objetivas e discursivas, prova oral, identificação biométrica, avaliação médica, prova de capacidade física, avaliação psicológica, sindicância de vida pregressa e investigação social, curso de formação profissional e avaliação de títulos, conforme edital/retificações.",
-    "cfsd": "Delegado: Curso de Formação Profissional, de responsabilidade do Cebraspe, com caráter eliminatório. Para demais cargos PCDF ainda sem edital publicado: Dados em breve.",
-    "estagio": "Posse, exercício e estágio probatório seguem a legislação aplicável à PCDF, edital, atos de nomeação e normas internas. Regras específicas por cargo: Dados em breve quando o edital respectivo for publicado.",
-    "validade": "Dados em breve no resumo consolidado; conferir edital, retificações e homologação do resultado final para prazo definitivo de validade/prorrogação.",
-    "previsao": "Em 14/05/2026, o destaque oficial é Delegado PCDF 2026, com inscrições abertas até 25/05/2026, provas objetiva e discursivas previstas para 05/07/2026 e nomeações escalonadas no cronograma 2028/2029. Há planejamento oficial de contratação de banca para Agente Policial de Custódia e área pericial no PACC/DODF, sem edital publicado nesta revisão.",
-    "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO",
-    "ultimo": {
-      "cargo": "Delegado de Polícia",
-      "situacao": "Aberto — inscrições de 07/05/2026 a 25/05/2026",
-      "edital": "Edital nº 1/2026, de 03/02/2026, retificado pelos Editais nº 3 e nº 4/2026",
-      "salario": "R$ 26.690,15",
-      "vagas": "50 imediatas + 100 cadastro de reserva = 150",
-      "cotas": "AC, PcD, PP e HIPO, com distribuição retificada no Edital nº 3/2026",
-      "idade": "18 anos na posse; CNH B ou superior; demais requisitos do edital",
-      "escolaridade": "Bacharelado em Direito e três anos de atividade jurídica ou policial",
-      "materias": [
-        "Direito Administrativo",
-        "Direito Constitucional",
-        "Direito Penal",
-        "Direito Processual Penal",
-        "Direito Civil",
-        "Direito Processual Civil",
-        "Direito Empresarial",
-        "Direito Tributário",
-        "Direito Ambiental",
-        "Criminologia",
-        "Medicina Legal",
-        "Direitos Humanos",
-        "Legislação especial"
-      ],
-      "banca": "Cebraspe",
-      "inscritos": {
-        "periodo": "07/05/2026 a 25/05/2026",
-        "taxa": "R$ 310,00",
-        "pagamento": "até 27/05/2026",
-        "total": "Dados em breve"
-      },
-      "etapas": [
-        "Provas objetivas",
-        "Provas discursivas",
-        "Prova oral",
-        "Identificação biométrica",
-        "Avaliação médica",
-        "Prova de capacidade física",
-        "Avaliação psicológica",
-        "Sindicância de vida pregressa e investigação social",
-        "Curso de formação profissional",
-        "Avaliação de títulos"
-      ],
-      "cfsd": "Curso de Formação Profissional, eliminatório, de responsabilidade do Cebraspe",
-      "estagio": "Dados em breve",
-      "validade": "Dados em breve — confirmar na homologação e atos posteriores",
-      "previsao": "Locais de prova em 22/06/2026; provas objetiva e discursivas em 05/07/2026; prova oral entre 08 e 11/10/2026; TAF/toxicológico entre 09 e 13/04/2027; convocação para CFP em 17/09/2027; nomeações mínimas escalonadas em 2028 e 2029",
-      "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO"
-    },
-    "abertos": [
-      {
-        "cargo": "Delegado de Polícia",
-        "situacao": "Aberto — inscrições de 07/05/2026 a 25/05/2026",
-        "edital": "Edital nº 1/2026, de 03/02/2026, retificado pelos Editais nº 3 e nº 4/2026",
-        "salario": "R$ 26.690,15",
-        "vagas": "50 imediatas + 100 cadastro de reserva = 150",
-        "cotas": "AC, PcD, PP e HIPO, com distribuição retificada no Edital nº 3/2026",
-        "idade": "18 anos na posse; CNH B ou superior; demais requisitos do edital",
-        "escolaridade": "Bacharelado em Direito e três anos de atividade jurídica ou policial",
-        "materias": [
-          "Direito Administrativo",
-          "Direito Constitucional",
-          "Direito Penal",
-          "Direito Processual Penal",
-          "Direito Civil",
-          "Direito Processual Civil",
-          "Direito Empresarial",
-          "Direito Tributário",
-          "Direito Ambiental",
-          "Criminologia",
-          "Medicina Legal",
-          "Direitos Humanos",
-          "Legislação especial"
-        ],
-        "banca": "Cebraspe",
-        "inscritos": {
-          "periodo": "07/05/2026 a 25/05/2026",
-          "taxa": "R$ 310,00",
-          "pagamento": "até 27/05/2026",
-          "total": "Dados em breve"
-        },
-        "etapas": [
-          "Provas objetivas",
-          "Provas discursivas",
-          "Prova oral",
-          "Identificação biométrica",
-          "Avaliação médica",
-          "Prova de capacidade física",
-          "Avaliação psicológica",
-          "Sindicância de vida pregressa e investigação social",
-          "Curso de formação profissional",
-          "Avaliação de títulos"
-        ],
-        "cfsd": "Curso de Formação Profissional, eliminatório, de responsabilidade do Cebraspe",
-        "estagio": "Dados em breve",
-        "validade": "Dados em breve — confirmar na homologação e atos posteriores",
-        "previsao": "Locais de prova em 22/06/2026; provas objetiva e discursivas em 05/07/2026; prova oral entre 08 e 11/10/2026; TAF/toxicológico entre 09 e 13/04/2027; convocação para CFP em 17/09/2027; nomeações mínimas escalonadas em 2028 e 2029",
-        "site": "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO"
-      }
-    ],
-    "pedidos_abertura": [
-      {
-        "cargo": "Agente Policial de Custódia",
-        "situacao": "Planejamento oficial / contratação de banca prevista no PACC",
-        "documento": "DODF nº 8, de 14/01/2026, item 84; DODF nº 66, de 10/04/2026, item 84",
-        "vagas": "Dados em breve — a fonte oficial consultada registra contratação de instituição, mas não consolida vagas do edital",
-        "banca": "Dados em breve",
-        "proximo_passo": "Contratação da banca e publicação de edital específico",
-        "fonte": "SINJ/DODF — PACC PCDF 2026"
-      },
-      {
-        "cargo": "Perito Criminal, Perito Médico-Legista e Papiloscopista Policial",
-        "situacao": "Planejamento oficial / contratação de banca prevista no PACC",
-        "documento": "DODF nº 8, de 14/01/2026, item 85; DODF nº 66, de 10/04/2026, item 85",
-        "vagas": "Dados em breve — a fonte oficial consultada registra contratação de instituição, mas não consolida vagas do edital",
-        "banca": "Dados em breve",
-        "proximo_passo": "Contratação da banca e publicação de edital específico para cada cargo/área",
-        "fonte": "SINJ/DODF — PACC PCDF 2026"
-      }
-    ],
-    "historico_recente": [
-      {
-        "cargo": "Agente de Polícia",
-        "situacao": "Concurso público em andamento/histórico, com atos oficiais publicados pela PCDF em 2025",
-        "edital": "Página oficial PCDF — Agente de Polícia, com editais até o nº 78/DODF nº 220, de 19/11/2025",
-        "banca": "Cebraspe em certame anterior; conferir cada ato oficial",
-        "vagas": "Dados em breve no resumo consolidado",
-        "site": "https://www.pcdf.df.gov.br/concursos-publicos/agente-de-policia"
-      },
-      {
-        "cargo": "Escrivão de Polícia",
-        "situacao": "Concurso público em andamento/histórico, com atos oficiais publicados pela PCDF em 2025",
-        "edital": "Página oficial PCDF — Escrivão de Polícia, com Edital nº 65/DODF nº 158, de 22/08/2025",
-        "banca": "Cebraspe em certame anterior; conferir cada ato oficial",
-        "vagas": "Dados em breve no resumo consolidado",
-        "site": "https://www.pcdf.df.gov.br/concursos-publicos/escrivao-de-policia"
-      }
-    ],
-    "fontes": [
-      "https://www.cebraspe.org.br/concursos/PC_DF_26_DELEGADO",
-      "https://www.cebraspe.org.br/policia-civil-do-distrito-federal-divulga-novas-datas-do-concurso-para-delegado/",
-      "https://www.pcdf.df.gov.br/noticias/15066/pcdf-publica-edital-de-concurso-para-delegado-de-policia",
-      "https://www.sinj.df.gov.br/sinj/TextoArquivoDiario.aspx?id_file=faa7c7d2-2cb9-32fd-80ff-bc259ca22eec",
-      "https://www.pcdf.df.gov.br/concursos-publicos/agente-de-policia",
-      "https://www.pcdf.df.gov.br/concursos-publicos/escrivao-de-policia"
-    ]
-  },
   prf: {
     edital: 'PRF — Concurso Policial Rodoviário Federal 2021 · 1.500 vagas · validade prorrogada até junho/2026; sem novo concurso aberto na revisão de 04/05/2026',
     salario: 'Inicial 2026: R$ 12.253,84 · 3ª Classe, Padrão I; final da carreira: R$ 23.000,00 · Classe Especial, Padrão III. Valores de subsídio conforme Lei nº 14.875/2024, Anexo XXVII, com efeitos em 01/05/2026.',
@@ -217,22 +54,22 @@ const CONCURSOS = {
     site: 'https://www.cebraspe.org.br/concursos/pm_al_26'
   },
   pmam: {
-  "edital": "Concurso Público PMAM 2021/2022, organizado pela Fundação Getulio Vargas (FGV), para Aluno Oficial PM, Aluno Oficial de Saúde PM e Aluno Soldado PM. Edital publicado em 03/12/2021.",
-  "salario": "Edital: R$ 7.180,34 para Aluno Oficial PM / Aluno Oficial de Saúde PM e R$ 2.657,28 para Aluno Soldado PM. Tabela remuneratória atualizada pela Lei nº 7.445/2025: Aluno Soldado PMAM em R$ 3.149,12 e Aluno Oficial PMAM entre R$ 8.509,34 e R$ 8.589,14, conforme ano do curso.",
-  "vagas": "1.350 vagas: 320 para Aluno Oficial PM, 30 para Aluno Oficial de Saúde PM e 1.000 para Aluno Soldado PM.",
-  "cotas": "O edital dividiu vagas por sexo: Aluno Oficial PM, 288 masculinas e 32 femininas; Aluno Soldado PM, 900 masculinas e 100 femininas. Regras PCD, PPI, indígenas e quilombolas: Dados em breve.",
-  "idade": "Mínima de 18 anos e máxima de 35 anos na forma editalícia; confirmar exceções e data de aferição no edital.",
-  "escolaridade": "Aluno Soldado: nível médio; Aluno Oficial PM: nível superior; Aluno Oficial de Saúde: formação superior específica na especialidade. Exigências gerais incluem CNH categoria B, altura mínima de 1,60 m para homens e 1,55 m para mulheres, além dos demais requisitos editalícios.",
-  "materias": "Para Aluno Soldado: Língua Portuguesa, Geografia do Amazonas, História do Amazonas, Raciocínio Lógico-Matemático, Noções de Informática e Legislação Institucional. Para demais cargos, confirmar matriz específica no edital da FGV.",
-  "banca": "Fundação Getulio Vargas (FGV).",
-  "inscritos": "Inscrições de 08/12/2021 a 04/01/2022, com provas objetivas em 06/02/2022 nos municípios de Coari, Eirunepé, Humaitá, Itacoatiara, Manaus, Parintins, Tabatinga e Tefé.",
-  "etapas": "Prova objetiva, exame médico, exame toxicológico, teste de aptidão física, avaliação psicológica, sindicância de vida pregressa / investigação social, apresentação documental e, para cargos de saúde, etapa de títulos conforme edital.",
-  "cfsd": "Curso de Formação para Aluno Soldado e curso de formação/graduação para Aluno Oficial, conforme regras da PMAM e edital. Duração detalhada do curso: Dados em breve.",
-  "estagio": "Dados em breve.",
-  "validade": "Validade de 2 anos, contados da homologação, conforme edital.",
-  "previsao": "Concurso histórico com convocações, formação e nomeações posteriores. Em 2026, o Governo do Amazonas divulgou formação/nomeação de 500 novos soldados e informou chamamento superior ao quantitativo inicialmente ofertado. Não publicar novo concurso aberto sem fonte oficial.",
-  "site": "https://conhecimento.fgv.br/concursos/pmam21"
-},
+    edital: 'PMAM — Concurso Público 2021/2022 FGV; em 2026 segue em convocações e apresentação documental por portarias DPA-1. Edital original com 1.350 vagas.',
+    salario: 'Edital 2021: Aluno Soldado R$ 2.657,28; Aluno Oficial/Oficial de Saúde R$ 7.180,34. Tabela legal vigente da Lei AM nº 7.445/2025: Aluno Soldado R$ 3.149,12; Soldado R$ 5.725,66; Aluno Oficial 1º ano R$ 8.509,34; Aspirante R$ 11.345,79; sem somar indenizações ou rubricas pessoais.',
+    vagas: '1.350 vagas: 1.000 Aluno Soldado, 320 Aluno Oficial e 30 Aluno Oficial de Saúde. Governo informou 2.348 convocados até março/2026.',
+    cotas: 'Edital 2021: 10% das vagas de Aluno Oficial e Aluno Soldado reservadas para candidatas do sexo feminino; demais reservas conforme edital e retificações.',
+    idade: '18 a 35 anos completos no ato da inscrição, conforme edital 2021; conferir edital vigente para novos certames.',
+    escolaridade: 'Aluno Soldado: ensino médio completo. Aluno Oficial e Oficial de Saúde: nível superior conforme cargo/especialidade.',
+    materias: 'Conteúdo programático do Anexo I do edital FGV, com provas objetivas por nível/cargo e disciplinas específicas do edital.',
+    banca: 'FGV.',
+    inscritos: 'Inscrições históricas de 08/12/2021 a 04/01/2022; em 2026 há convocações e apresentação documental publicadas pela PMAM/FGV/DOE-AM.',
+    etapas: 'Prova objetiva, títulos quando aplicável, avaliação médica, exame físico, investigação social, exame psicotécnico, entrega de documentos e curso de formação.',
+    cfsd: 'CFSD/PM com 10 meses; CFO/PM com 36 meses; CFOS/PM com 4 meses, conforme página de editais da PMAM.',
+    estagio: 'Matrícula, formação, nomeação, estágio e lotação conforme estatuto militar estadual, edital, boletins e atos da PMAM.',
+    validade: 'Edital 2021: validade de 2 anos contados da homologação; conferir homologação, prorrogação e convocações no DOE/AM, PMAM e FGV.',
+    previsao: 'Não publicar novo concurso aberto sem edital posterior. A revisão mantém o concurso 2021/2026 como vigente/histórico com convocações.',
+    site: 'https://conhecimento.fgv.br/concursos/pmam21'
+  },
   pcam: {
     edital: 'PCAM — Concurso Público FGV 2021/2022, com resultado final/homologação e posses/convocações acompanhadas em 2025/2026; manter como certame vigente/histórico, sem tratar como novo edital aberto.',
     salario: 'Tabela legal vigente da Lei AM nº 7.446/2025, com efeitos em 01/12/2025: Delegado IV R$ 24.417,49 a Especial R$ 37.221,83; Comissário Classe Única R$ 28.397,17; Perito IV R$ 19.481,73 a Especial R$ 29.697,78; Investigador/Escrivão IV R$ 16.765,69 a Especial R$ 25.557,47. Valores brutos de tabela, sem somar rubricas pessoais.',
@@ -283,23 +120,6 @@ const CONCURSOS = {
     validade: 'Conferir validade, prorrogação, homologação e convocações no DOE/AP, SEAD/AP e PMAP. Não tratar como novo edital aberto sem ato posterior.',
     previsao: 'Sem novo edital aberto identificado nesta revisão; manter o concurso Soldado 2022/2026 como certame vigente/histórico com convocações e monitorar futuras autorizações oficiais.',
     site: 'https://sead.portal.ap.gov.br/concursos/vigentes/24027'
-  },
-  pmce: {
-    edital: 'PMCE — Edital nº 001/2025 — Soldado PMCE, FUNECE/CEV-UECE, concurso público com 1.000 vagas.',
-    salario: 'Aluno CFSD: R$ 3.081,79 estimado em maio/2026; Soldado PMCE: R$ 6.187,96 estimado em maio/2026. Valores calculados a partir do Decreto CE nº 36.085/2024, Lei CE nº 19.183/2025 e Lei CE nº 19.660/2026; confirmar decreto consolidado e contracheque.',
-    vagas: '1.000 vagas para Soldado da Polícia Militar do Estado do Ceará.',
-    cotas: 'Vagas distribuídas conforme edital PMCE 2025; conferir reservas, critérios de concorrência, heteroidentificação e demais regras na CEV/UECE.',
-    idade: '18 anos completos e, na data de inscrição, idade máxima conforme edital; conferir exceções e requisitos completos no Edital nº 001/2025.',
-    escolaridade: 'Ensino médio completo, CNH categoria B e demais requisitos de nacionalidade, quitação eleitoral/militar, aptidão física e idoneidade conforme edital.',
-    materias: 'Língua Portuguesa; raciocínio lógico; atualidades e História do Ceará; administração pública/ética; Direito Constitucional; Direitos Humanos; Direito Penal Militar e Processo Penal Militar; Direito Penal e Processo Penal; Criminologia; Segurança Pública.',
-    banca: 'Fundação Universidade Estadual do Ceará (FUNECE), por meio da CEV/UECE.',
-    inscritos: 'Inscrições on-line iniciadas em 21/04/2025 no sistema da CEV/UECE; taxa de inscrição R$ 180,00. Datas completas devem ser conferidas no cronograma da banca.',
-    etapas: 'Prova objetiva; inspeção de saúde; avaliação psicológica; avaliação de capacidade física; investigação social; heteroidentificação e validações correlatas quando aplicáveis.',
-    cfsd: 'Curso de Formação de Soldados, coordenado pela PMCE e AESP; o aprovado ingressa como Aluno-Soldado e, após conclusão com aproveitamento, é promovido a Soldado PMCE.',
-    estagio: 'Dados em breve',
-    validade: '2 anos a contar da publicação do resultado final, prorrogável uma vez por igual período.',
-    previsao: 'Concurso PMCE 2025 com acompanhamento pela CEV/UECE; não publicar novo concurso aberto sem fonte oficial da PMCE, SSPDS, AESP, Seplag ou banca.',
-    site: 'https://www.cev.uece.br/pmce2025/'
   },
   pcce: {
     edital: 'PCCE 2025/2026 — Delegado de Polícia/Cebraspe, Edital nº 1/2025, e Oficial Investigador de Polícia/CEV-UECE/FUNECE, Edital nº 1-PC/CE, de 14/04/2025; ambos em acompanhamento por atos oficiais, sem tratar como novo edital aberto.',
