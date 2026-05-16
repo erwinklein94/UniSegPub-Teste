@@ -38,8 +38,8 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     url: 'https://gestaointegrada.seplag.al.gov.br/'
   },
   pcdf: {
-    nome: 'PCDF — Edital Delegado 2026, carreira administrativa 2024 e pedidos autorizados para Polícia Técnica/Agente de Custódia; Lei nº 9.264/1996',
-    url: 'https://www.cebraspe.org.br/concursos/pc_df_26_delegado'
+    nome: 'Lei nº 15.395, de 27 de abril de 2026 — Anexos III e IV (subsídio PCDF, vigente a partir de 1º/01/2026) — Diário Oficial da União',
+    url: 'https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2026/lei/l15395.htm'
   },
   bmal: {
     nome: 'CBMAL, Transparência/AL e SAPL/ALEAL — Lei AL 7.580/2014, Lei AL 7.581/2014, Lei AL 8.668/2022 e revisões gerais até a Lei AL 9.852/2026; tabela exibida como estimativa técnica de maio/2026',
@@ -285,6 +285,11 @@ function getAdicionaisRemuneracaoResumo(inst, linha = {}) {
   if (inst === 'pcce') {
     return linha.benefDesc || 'PCCE: remuneração/subsídio bruto mensal por cargo, classe e nível conforme editais 2025, Decreto CE nº 35.521/2023 e atualização DOE/CE de 2025. Plantões, adicional noturno, diárias, funções, acúmulo, retroativos, ISSEC, previdência, parcelas pessoais e decisões judiciais não foram somados automaticamente.';
   }
+
+  if (inst === 'pcdf') {
+    return linha.benefDesc || 'PCDF: subsídio em parcela única (Lei nº 15.395/2026, Anexos III e IV). Não há gratificações fixas somadas ao bruto da tabela. Verbas indenizatórias e eventuais que não entram no subsídio: auxílio-alimentação federal, assistência pré-escolar, assistência à saúde suplementar, Serviço Voluntário Gratificado, diárias e ajuda de custo. Valores dependem de lei, ato administrativo, escala, lotação e situação funcional.';
+  }
+
 
   if (inst === 'pmal') {
     return linha.benefDesc || 'PMAL: regime de subsídio por posto/graduação e nível. Soldado-Aluno, Soldado, Cadete e Aspirante vêm do edital PMAL 2026; demais linhas marcadas como “estimado” usam projeção técnica a partir da Lei AL 7.580/2014 e devem ser confirmadas no DOE/AL, SEPLAG/AL, transparência e contracheque. SPSM/AL, serviço voluntário, Força Tarefa, diárias, indenizações e parcelas pessoais não foram somados automaticamente.';
@@ -763,6 +768,13 @@ function calcularRemuneracaoTabelada(inst, cargo) {
     benefDesc = cargo.benefDesc || 'Plantões, adicional noturno, diárias, acúmulo extraordinário, representação, indenizações, função, retroativos e parcelas pessoais dependem de lei, ato, escala, lotação e contracheque; não foram somados automaticamente.';
     fonteKey = cargo.fonteKey || 'pcal';
     badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'PCAL estimado');
+  } else if (inst === 'pcdf') {
+    remuneracao = padrao;
+    beneficios = Number(cargo.beneficios || 0);
+    criterio = cargo.criterio || 'Subsídio bruto mensal em parcela única da PCDF, conforme Lei nº 15.395/2026, Anexos III e IV, vigente a partir de 1º/01/2026.';
+    benefDesc = cargo.benefDesc || 'Não há gratificações fixas somadas ao subsídio. Auxílios, indenizações, plantões, diárias, ajuda de custo e parcelas pessoais dependem de lei, ato administrativo, escala, lotação e situação funcional; não foram somados automaticamente.';
+    fonteKey = cargo.fonteKey || 'pcdf';
+    badge = cargo.valorPendente || padrao <= 0 ? 'Dados em breve' : (cargo.badge || 'Lei 15.395/2026');
   } else if (inst === 'pmac' || inst === 'pmal' || inst === 'pmam' || inst === 'pmap' || inst === 'bmac' || inst === 'bmal' || inst === 'bmam' || inst === 'bmap') {
     remuneracao = padrao;
     beneficios = Number(cargo.beneficios || 0);
