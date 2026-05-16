@@ -187,7 +187,8 @@ const HEADER_INSTITUICOES_INFO = {
   pmmt: { titulo: 'PMMT', desc: 'Polícia Militar de Mato Grosso' },
   bmmt: { titulo: 'CBMMT', desc: 'Corpo de Bombeiros Militar do Estado de Mato Grosso' },
   pcmt: { titulo: 'PCMT', desc: 'Polícia Judiciária Civil de Mato Grosso' },
-  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' }
+  ppmt: { titulo: 'PPMT', desc: 'Polícia Penal de Mato Grosso' },
+  pcdf: { titulo: 'PCDF', desc: 'Polícia Civil do Distrito Federal' }
 };
 
 const HEADER_INSTITUICOES_IMAGENS = {
@@ -1710,7 +1711,7 @@ const HEADER_INSTITUICOES_RESUMO = {
     "estado": "Distrito Federal",
     "estadoSigla": "DF",
     "tipo": "Polícia Civil",
-    "criacao": "Polícia Civil do Distrito Federal · estrutura distrital",
+    "criacao": "10/05/1808 · Intendência-Geral de Polícia; PCDF em 1902; Brasília em 1960",
     "ativa": 3440,
     "ativaLabel": "3.440",
     "reserva": 3784,
@@ -1722,9 +1723,9 @@ const HEADER_INSTITUICOES_RESUMO = {
     "relacaoLabel": "1 ativo / 871 hab. · 0,115%",
     "relacaoTitulo": "Relação ativa/população",
     "governador": "Celina Leão",
-    "comando": "Delegado-Geral da PCDF — nome a confirmar em fonte oficial",
-    "fonte": "IBGE 2025; FBSP/Anuário 2025; Pesquisa Perfil/SENASP; transparências estaduais quando disponível",
-    "atualizado": "Base numérica inserida em 01/05/2026"
+    "comando": "Delegado-Geral José Werick de Carvalho — nomeado em 02/10/2023",
+    "fonte": "Base PCDF: história, símbolos e legislação institucional pesquisadas em 15/05/2026; confirmar dados mutáveis em canais oficiais.",
+    "atualizado": "Base histórica revisada em 15/05/2026"
   },
   "ppdf": {
     "nome": "Polícia Penal do Distrito Federal",
@@ -6618,6 +6619,85 @@ function montarCamposResumoHistoria(inst, dados) {
   ];
 }
 
+
+function renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial) {
+  const tituloSpan = document.getElementById('txt-inst-brasoes');
+  if (tituloSpan) tituloSpan.textContent = especial.sigla_publica || inst.toUpperCase();
+  const lista = (itens, classe) => (Array.isArray(itens) ? itens : []).map(item => `<li>${escapeHtml(item)}</li>`).join('');
+  const pares = (itens) => (Array.isArray(itens) ? itens : []).map(item => `
+    <article class="brasoes-resumo-item">
+      <span>${escapeHtml(item[0])}</span>
+      <strong>${escapeHtml(item[1])}</strong>
+    </article>
+  `).join('');
+  const paragrafos = (itens) => (Array.isArray(itens) ? itens : []).map(item => `<p>${escapeHtml(item)}</p>`).join('');
+
+  cont.innerHTML = `
+    <section class="brasoes-hero" aria-label="Brasão e identificação da instituição">
+      <div class="brasoes-imagem-wrap">
+        <img class="brasoes-imagem" src="${escapeHtml(especial.imagem || 'img/CIVIL/pcdf.webp')}" alt="Brasão ou insígnia da ${escapeHtml(especial.nome_oficial || 'PCDF')}" loading="eager" decoding="async" onerror="this.onerror=null;this.src='img/LOGO/logoleao.webp';">
+      </div>
+      <div class="brasoes-hero-copy">
+        <span class="brasoes-kicker">${escapeHtml(especial.esfera || 'estadual')}</span>
+        <h3>${escapeHtml(especial.sigla_publica || inst.toUpperCase())} — ${escapeHtml(especial.nome_oficial || '')}</h3>
+        <p>${escapeHtml(especial.uf || 'DF')} · Polícia Civil</p>
+        <small>${escapeHtml(especial.atualizado || 'Resumo institucional revisado')}</small>
+      </div>
+    </section>
+
+    <section class="brasoes-resumo-grid" aria-label="Resumo institucional detalhado">
+      ${pares(especial.indicadores)}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="História da instituição">
+      <div class="brasoes-section-title">
+        <span>História detalhada</span>
+        <h3>Origem e evolução institucional</h3>
+      </div>
+      ${paragrafos(especial.historia)}
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Identidade visual e símbolos">
+      <div class="brasoes-section-title">
+        <span>Símbolos</span>
+        <h3>Como interpretar o brasão e a bandeira</h3>
+      </div>
+      <div class="brasoes-resumo-grid">
+        ${pares(especial.simbolos)}
+      </div>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Marcos históricos">
+      <div class="brasoes-section-title">
+        <span>Linha do tempo</span>
+        <h3>Marcos históricos da PCDF</h3>
+      </div>
+      <ul class="brasoes-marcos">
+        ${lista(especial.marcos)}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card" aria-label="Chefias e medalhística">
+      <div class="brasoes-section-title">
+        <span>Memória institucional</span>
+        <h3>Chefias e condecorações</h3>
+      </div>
+      <div class="brasoes-resumo-grid">
+        ${pares(especial.chefias)}
+      </div>
+      <ul class="brasoes-marcos">
+        ${lista(especial.medalhas)}
+      </ul>
+    </section>
+
+    <section class="brasoes-historia-card brasoes-observacao" aria-label="Fontes e observações">
+      <strong>Fonte-base do resumo:</strong>
+      <p>${escapeHtml(especial.fonte || 'Fontes públicas e oficiais quando disponíveis.')}</p>
+      <small>Conteúdo informativo, independente e não oficial. Dados de efetivo, chefia e datas podem mudar; confirme sempre em ato oficial, portal da transparência, diário oficial ou site institucional.</small>
+    </section>
+  `;
+}
+
 function renderizarBrasoesHistoria() {
   const cont = document.getElementById('brasoes_historia_resultado');
   if (!cont) return;
@@ -6627,6 +6707,11 @@ function renderizarBrasoesHistoria() {
   }
 
   const inst = currInst;
+  const especial = window.BRASOES_HISTORIA_DETALHES && window.BRASOES_HISTORIA_DETALHES[inst];
+  if (especial) {
+    renderizarBrasoesHistoriaDetalheEspecial(cont, inst, especial);
+    return;
+  }
   const dados = obterResumoInstituicaoCompleto(inst);
   const { sigla, nome, tipo, estadoNome, resumo } = dados;
   const imagem = imagemPrincipalBrasaoInstituicao(inst);
