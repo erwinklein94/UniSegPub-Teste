@@ -5728,3 +5728,268 @@ pre,
     min-width: 0 !important;
   }
 }
+
+/* ============================================================
+   Correção final do menu acionado no mobile — 2026-05-16
+   O bloco responsivo anterior reativava o menu lateral antigo em telas pequenas.
+   Esta camada força o painel a abrir centralizado, compacto e sem cortar conteúdo.
+   ============================================================ */
+@media (max-width: 760px) {
+  body.menu-open {
+    overflow: hidden !important;
+  }
+
+  .menu-overlay,
+  .menu-overlay.active {
+    inset: 0 !important;
+  }
+
+  .sidebar {
+    position: fixed !important;
+    top: max(8px, env(safe-area-inset-top)) !important;
+    left: 50% !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: min(440px, calc(100vw - 18px)) !important;
+    max-width: calc(100vw - 18px) !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: calc(100dvh - 16px) !important;
+    margin: 0 !important;
+    padding: 9px !important;
+    border-radius: 22px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    overscroll-behavior: contain !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    transform: translate(-50%, -10px) scale(.985) !important;
+    box-sizing: border-box !important;
+  }
+
+  .sidebar.active {
+    left: 50% !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
+    visibility: visible !important;
+    transform: translate(-50%, 0) scale(1) !important;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  .sidebar-header {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center !important;
+    gap: 8px !important;
+    margin: 0 0 7px !important;
+    padding: 0 !important;
+  }
+
+  .sidebar-brand strong {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    font-size: 14px !important;
+    line-height: 1 !important;
+  }
+
+  .sidebar-brand span {
+    display: none !important;
+  }
+
+  .close-btn {
+    width: 34px !important;
+    height: 34px !important;
+    min-width: 34px !important;
+  }
+
+  .sidebar-inst-panel {
+    display: none !important;
+  }
+
+  .sidebar-nav {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  .sidebar-nav-group,
+  .sidebar-nav a {
+    min-width: 0 !important;
+  }
+
+  .sidebar-nav-title,
+  .sidebar-nav a small {
+    display: none !important;
+  }
+
+  .sidebar-nav a {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    min-height: 48px !important;
+    height: auto !important;
+    padding: 6px 4px !important;
+    border-radius: 13px !important;
+    text-align: center !important;
+    gap: 4px !important;
+  }
+
+  .sidebar-link-icon {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    border-radius: 8px !important;
+    font-size: 12px !important;
+  }
+
+  .sidebar-link-text {
+    display: block !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    font-size: 8.5px !important;
+    line-height: 1.05 !important;
+    letter-spacing: .55px !important;
+    white-space: normal !important;
+  }
+
+  .sidebar-social {
+    display: none !important;
+  }
+
+  .sidebar-products-vitrine {
+    margin: 7px 0 0 !important;
+    padding: 8px !important;
+    border-radius: 18px !important;
+    overflow: visible !important;
+  }
+
+  .sidebar-products-title {
+    margin: 0 0 6px !important;
+  }
+
+  .sidebar-products-title strong {
+    font-size: 11px !important;
+    line-height: 1.1 !important;
+  }
+
+  .sidebar-products-title span {
+    display: none !important;
+  }
+
+  .sidebar-products-list {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 5px !important;
+    overflow: visible !important;
+  }
+
+  .sidebar-product-card {
+    display: block !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 4px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+  }
+
+  .sidebar-product-card img {
+    display: block !important;
+    width: 100% !important;
+    height: 31px !important;
+    max-height: 31px !important;
+    object-fit: contain !important;
+    border-radius: 8px !important;
+  }
+
+  .sidebar-product-card-info,
+  .sidebar-product-card-info strong,
+  .sidebar-product-card-info em,
+  .sidebar-products-more,
+  .sidebar-products-vitrine .sidebar-affiliate-note {
+    display: none !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .sidebar {
+    top: max(7px, env(safe-area-inset-top)) !important;
+    width: calc(100vw - 14px) !important;
+    max-width: calc(100vw - 14px) !important;
+    max-height: calc(100dvh - 14px) !important;
+    padding: 8px !important;
+    border-radius: 20px !important;
+  }
+
+  .sidebar-nav {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 6px !important;
+  }
+
+  .sidebar-nav a {
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    min-height: 43px !important;
+    padding: 6px !important;
+  }
+
+  .sidebar-link-text {
+    font-size: 9px !important;
+  }
+
+  .sidebar-products-title {
+    display: none !important;
+  }
+
+  .sidebar-products-list {
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 4px !important;
+  }
+
+  .sidebar-product-card {
+    padding: 3px !important;
+  }
+
+  .sidebar-product-card img {
+    height: 28px !important;
+    max-height: 28px !important;
+  }
+}
+
+@media (max-height: 610px) and (max-width: 760px) {
+  .sidebar-nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .sidebar-nav a {
+    min-height: 40px !important;
+    padding: 5px !important;
+  }
+
+  .sidebar-link-icon {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+  }
+
+  .sidebar-products-vitrine {
+    padding: 6px !important;
+  }
+
+  .sidebar-product-card img {
+    height: 24px !important;
+    max-height: 24px !important;
+  }
+}
