@@ -249,14 +249,14 @@ function initTheme() {
 
     if (style === 'icon') {
       btn.innerHTML = isDark
-        ? '<span aria-hidden="true">✷</span>'
-        : '<span aria-hidden="true">☾</span>';
+        ? '<span aria-hidden="true">☀️</span>'
+        : '<span aria-hidden="true">🌙</span>';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     } else {
       btn.innerHTML = isDark
-        ? '<span aria-hidden="true">✷</span> Claro / Escuro'
-        : '<span aria-hidden="true">☾</span> Claro / Escuro';
+        ? '<span aria-hidden="true">☀️</span> Claro'
+        : '<span aria-hidden="true">🌙</span> Escuro';
       btn.setAttribute('aria-label', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
       btn.setAttribute('title', isDark ? 'Ativar tema claro' : 'Ativar tema escuro');
     }
