@@ -37,6 +37,10 @@ const REMUNERACAO_FONTES_OFICIAIS = {
     nome: 'PCAL — Leis AL nº 6.276/2001, nº 6.277/2001 e nº 7.602/2014 para Agente/Escrivão; Lei AL nº 8.641/2022 para Delegado; Lei AL nº 9.551/2025 revisão geral; valores sem tabela consolidada 2026 marcados como estimados',
     url: 'https://gestaointegrada.seplag.al.gov.br/'
   },
+  pcdf: {
+    nome: 'PCDF — Edital Delegado 2026, carreira administrativa 2024 e pedidos autorizados para Polícia Técnica/Agente de Custódia; Lei nº 9.264/1996',
+    url: 'https://www.cebraspe.org.br/concursos/pc_df_26_delegado'
+  },
   bmal: {
     nome: 'CBMAL, Transparência/AL e SAPL/ALEAL — Lei AL 7.580/2014, Lei AL 7.581/2014, Lei AL 8.668/2022 e revisões gerais até a Lei AL 9.852/2026; tabela exibida como estimativa técnica de maio/2026',
     url: 'https://www.cbm.al.gov.br/paginas/legislacao'
@@ -712,7 +716,7 @@ REMUNERACAO_MG_OFICIAL.bmmg = [
 function getTabelaCargosRemuneracao(inst) {
   const map = {
     pmesp: CARGOS_PM,    pcsp: CARGOS_PC,    ppsp: CARGOS_PPSP, pf: CARGOS_PF, prf: CARGOS_PRF,
-    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
+    pmac: CARGOS_PMAC,   pmal: CARGOS_PMAL,   pmam: CARGOS_PMAM,   pcam: CARGOS_PCAM,   pcap: CARGOS_PCAP,   pcce: CARGOS_PCCE,   pcdf: CARGOS_PCDF,   pmap: CARGOS_PMAP,   pcal: CARGOS_PCAL,   bmac: CARGOS_BMAC,   bmal: CARGOS_BMAL,   bmam: CARGOS_BMAM,   bmap: CARGOS_BMAP,   pcac: CARGOS_PCAC,   ppac: CARGOS_PPAC,   ppal: CARGOS_PPAL,
     pmerj: CARGOS_PMERJ, bmrj: CARGOS_BMRJ, pcerj: CARGOS_PCERJ, pprj: CARGOS_PPRJ,
     pmmg: CARGOS_PMMG,   bmmg: CARGOS_BMMG,   pcmg: CARGOS_PCMG,   ppmg: CARGOS_PPMG,
     pmba: CARGOS_PMBA,   bmba: CARGOS_BMBA,   pcba: CARGOS_PCBA,   ppba: CARGOS_PPBA,
@@ -723,7 +727,8 @@ function getTabelaCargosRemuneracao(inst) {
     pmms: CARGOS_PMMS,   bmms: CARGOS_BMMS,   pcms: CARGOS_PCMS,   ppms: CARGOS_PPMS,
     pmmt: CARGOS_PMMT,   bmmt: CARGOS_BMMT,   pcmt: CARGOS_PCMT,   ppmt: CARGOS_PPMT,};
   const instNorm = normalizarInstituicao(inst);
-  return CARGOS_ESTRUTURA_GENERICAS[instNorm] || map[instNorm] || CARGOS_PM;
+  const genericas = (typeof CARGOS_ESTRUTURA_GENERICAS !== 'undefined' && CARGOS_ESTRUTURA_GENERICAS) ? CARGOS_ESTRUTURA_GENERICAS : {};
+  return genericas[instNorm] || map[instNorm] || CARGOS_PM;
 }
 
 function calcularRemuneracaoTabelada(inst, cargo) {
@@ -1007,3 +1012,7 @@ function carregarRemuneracaoTabelada() {
 
 
 /* ============================================================ */
+
+if (typeof window !== 'undefined') {
+  window.REMUNERACAO_FONTES_OFICIAIS = REMUNERACAO_FONTES_OFICIAIS;
+}
