@@ -96,7 +96,7 @@ body.usp-home img { display: block; max-width: 100%; }
   background: var(--usp-gold);
 }
 .usp-search {
-  width: 240px;
+  width: 300px;
   min-height: 40px;
   display: flex;
   align-items: center;
@@ -107,9 +107,9 @@ body.usp-home img { display: block; max-width: 100%; }
   color: #b7c2d0;
   background: rgba(255,255,255,.07);
 }
-.usp-search input { min-width: 0; flex: 1; border: 0; outline: 0; color: #fff; background: transparent; font-size: 13px; }
+.usp-search input { min-width: 0; flex: 1; border: 0; outline: 0; color: #fff; background: transparent; font-size: 13px; padding-right: 4px; }
 .usp-search input::placeholder { color: #aeb8c6; }
-.usp-search kbd { border: 1px solid rgba(255,255,255,.13); border-radius: 6px; padding: 1px 6px; font-family: var(--usp-mono); font-size: 11px; color: #ced6df; background: rgba(0,0,0,.15); }
+.usp-search kbd { display: none !important; }
 
 .usp-hero { background: #fff; padding: 78px 0 32px; }
 .usp-hero__grid { display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(420px, .8fr); gap: 88px; align-items: end; }
@@ -1981,3 +1981,6 @@ body.usp-home .usp-header .usp-nav a.is-active {
     scrollbar-width: thin !important;
   }
 }
+
+/* Correção global: remove o atalho visual "⌘ K"/"K" da busca do cabeçalho. */
+.usp-search kbd, .usp-search .search-shortcut, .usp-search .shortcut { display: none !important; }
