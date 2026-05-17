@@ -4,6 +4,8 @@ import crypto from 'node:crypto';
 const CONFIG_PATH = process.env.CONFIG_PATH || 'config/concursos-instituicoes.json';
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-5.4-nano';
+const OPENAI_MODEL_QUALIDADE = process.env.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini';
+const MODO_QUALIDADE = String(process.env.MODO_QUALIDADE || 'economico').trim().toLowerCase();
 const USAR_WEB_SEARCH = String(process.env.USAR_WEB_SEARCH || 'false').toLowerCase() === 'true';
 const FORCAR_ATUALIZACAO = String(process.env.FORCAR_ATUALIZACAO || 'false').toLowerCase() === 'true';
 const INSTITUICAO_ID = String(process.env.INSTITUICAO_ID || 'pmesp').trim().toLowerCase();
@@ -11,6 +13,9 @@ const LIMITE_INSTITUICOES = Number(process.env.LIMITE_INSTITUICOES || 1);
 const DIAS_REVALIDACAO_COMPLETA = Number(process.env.DIAS_REVALIDACAO_COMPLETA || 14);
 const MAX_PAGINAS_OFICIAIS = Number(process.env.MAX_PAGINAS_OFICIAIS || 6);
 const MAX_CARACTERES_POR_PAGINA = Number(process.env.MAX_CARACTERES_POR_PAGINA || 4500);
+const MIN_SCORE_PUBLICACAO = Number(process.env.MIN_SCORE_PUBLICACAO || 78);
+const MAX_CRITICOS_GENERICOS = Number(process.env.MAX_CRITICOS_GENERICOS || 2);
+const PERMITIR_PUBLICAR_SE_PIORA = String(process.env.PERMITIR_PUBLICAR_SE_PIORA || 'false').toLowerCase() === 'true';
 const HOJE = new Date().toISOString().slice(0, 10);
 
 const camposObrigatorios = [
@@ -322,24 +327,95 @@ function extrairTextoResposta(payload) {
 }
 
 
+function normalizarParaAnalise(valor) {
+  return String(valor == null ? '' : valor)
+    .trim()
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/\s+/g, ' ');
+}
+
 function valorEhRuim(valor) {
-  const texto = String(valor == null ? '' : valor).trim().toLowerCase();
+  const texto = normalizarParaAnalise(valor);
   if (!texto) return true;
   const padroesRuins = [
-    'não encontrado em fonte oficial',
     'nao encontrado em fonte oficial',
-    'não encontrado',
     'nao encontrado',
-    'não informado',
     'nao informado',
-    'dados em atualização',
     'dados em atualizacao',
-    'em atualização',
     'em atualizacao',
-    'não localizado',
-    'nao localizado'
+    'nao localizado',
+    'sem informacao',
+    'sem dados',
+    'indisponivel'
   ];
   return padroesRuins.some((padrao) => texto === padrao || texto.includes(padrao));
+}
+
+function valorTemDadoConcreto(valor) {
+  const textoOriginal = String(valor == null ? '' : valor).trim();
+  const texto = normalizarParaAnalise(valorOriginal);
+  if (!texto || valorEhRuim(texto)) return false;
+
+  const padroesConcretos = [
+    /r\$\s?\d/i,
+    /\b\d{1,4}([\.,]\d{3})*\s*(vagas?|cargos?|convocados?|nomeacoes?|inscritos?)\b/i,
+    /\b\d{1,2}\/?\d{1,2}\/?\d{2,4}\b/,
+    /\b20\d{2}\b/,
+    /\b(cebraspe|vunesp|fgv|ibfc|iades|instituto ao cp|idecan|fcc|fepese|acafe|cesgranrio)\b/i,
+    /\b(soldado|oficial|delegado|investigador|escrivao|perito|agente|papiloscopista|inspetor|policial rodoviario federal|policial penal|bombeiro)\b/i,
+    /\b(ensino medio|nivel medio|nivel superior|bacharelado|graduacao|cnh|direito|medicina)\b/i,
+    /https?:\/\//i
+  ];
+
+  return padroesConcretos.some((regex) => regex.test(textoOriginal));
+}
+
+function valorEhGenerico(valor) {
+  const texto = normalizarParaAnalise(valor);
+  if (!texto || valorEhRuim(texto)) return true;
+
+  const padroesGenericos = [
+    'conferir edital',
+    'consultar edital',
+    'consultar ato',
+    'consultar atos',
+    'acompanhar a pagina',
+    'acompanhar o site',
+    'conforme edital',
+    'conforme o edital',
+    'edital especifico',
+    'varia conforme',
+    'podem variar',
+    'depende do concurso',
+    'depende do cargo',
+    'quando previsto',
+    'quando aplicavel',
+    'demais etapas',
+    'e demais',
+    'informacoes oficiais',
+    'pagina oficial',
+    'banca organizadora',
+    'criterios dependem',
+    'regras dependem',
+    'requisitos proprios',
+    'conteudo programatico proprio',
+    'concurso vigente',
+    'edital vigente'
+  ];
+
+  const contemGenerico = padroesGenericos.some((padrao) => texto.includes(padrao));
+
+  if (!contemGenerico) return false;
+
+  // Se o campo tem dado concreto, não tratamos automaticamente como ruim.
+  // Ex.: "Vunesp; conferir edital específico" ainda contém um dado útil.
+  return !valorTemDadoConcreto(valor);
+}
+
+function valorEhUtil(valor) {
+  return !valorEhRuim(valor) && !valorEhGenerico(valor);
 }
 
 const camposDeConteudo = [
@@ -360,21 +436,35 @@ const camposDeConteudo = [
 ];
 
 const camposCriticos = ['edital', 'salario', 'vagas', 'escolaridade', 'banca', 'etapas'];
+const camposQuePodemSerMenosConcretos = ['cotas', 'estagio', 'validade', 'previsao'];
 
 function avaliarQualidadePublicacao(dados) {
   const ruins = camposDeConteudo.filter((campo) => valorEhRuim(dados[campo]));
+  const genericos = camposDeConteudo.filter((campo) => !valorEhRuim(dados[campo]) && valorEhGenerico(dados[campo]));
+  const concretos = camposDeConteudo.filter((campo) => valorTemDadoConcreto(dados[campo]));
   const criticosRuins = camposCriticos.filter((campo) => valorEhRuim(dados[campo]));
+  const criticosGenericos = camposCriticos.filter((campo) => !valorEhRuim(dados[campo]) && valorEhGenerico(dados[campo]));
+  const criticosConcretos = camposCriticos.filter((campo) => valorTemDadoConcreto(dados[campo]));
+  const menosImportantesGenericos = camposQuePodemSerMenosConcretos.filter((campo) => genericos.includes(campo));
 
   let score = 100;
-  score -= ruins.length * 6;
-  score -= criticosRuins.length * 8;
-  if (String(dados.nivel_confianca || '').toLowerCase() === 'baixo') score -= 15;
-  if (dados.precisa_revisao_humana) score -= 5;
+  score -= ruins.length * 7;
+  score -= genericos.length * 5;
+  score -= menosImportantesGenericos.length * 2; // estes campos toleram mais cautela editorial
+  score -= criticosRuins.length * 10;
+  score -= criticosGenericos.length * 10;
+
+  if (criticosConcretos.length < 3) score -= 12;
+  if (concretos.length < 6) score -= 10;
+  if (!Array.isArray(dados.fontes) || dados.fontes.length === 0) score -= 15;
+  if (String(dados.nivel_confianca || '').toLowerCase() === 'baixo') score -= 12;
+  if (dados.precisa_revisao_humana) score -= 3;
+
   score = Math.max(0, Math.min(100, score));
 
-  const qualidade = score >= 75
+  const qualidade = score >= 82
     ? 'alta'
-    : score >= 55
+    : score >= MIN_SCORE_PUBLICACAO
       ? 'media'
       : 'baixa';
 
@@ -382,8 +472,12 @@ function avaliarQualidadePublicacao(dados) {
     score,
     qualidade,
     ruins,
+    genericos,
+    concretos,
     criticosRuins,
-    podePublicar: qualidade !== 'baixa' && criticosRuins.length <= 2
+    criticosGenericos,
+    criticosConcretos,
+    podePublicar: score >= MIN_SCORE_PUBLICACAO && criticosRuins.length === 0 && criticosGenericos.length <= MAX_CRITICOS_GENERICOS
   };
 }
 
@@ -393,12 +487,22 @@ function mesclarComDadosAtuais(dadosGerados, dadosAtuais) {
   const alertas = new Set([...(Array.isArray(dadosGerados.alertas) ? dadosGerados.alertas : [])]);
 
   for (const campo of camposDeConteudo) {
-    const novoRuim = valorEhRuim(dadosGerados[campo]);
-    const atualBom = !valorEhRuim(base[campo]);
+    const novoPobre = !valorEhUtil(dadosGerados[campo]);
+    const atualUtil = valorEhUtil(base[campo]);
+    const novoConcreto = valorTemDadoConcreto(dadosGerados[campo]);
+    const atualConcreto = valorTemDadoConcreto(base[campo]);
 
-    if (novoRuim && atualBom) {
+    // A regra central: nunca trocar um dado útil/concreto por uma frase genérica.
+    if (novoPobre && atualUtil) {
       mesclado[campo] = base[campo];
-      alertas.add(`Campo ${campo} mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.`);
+      alertas.add(`Campo ${campo} mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.`);
+      continue;
+    }
+
+    // Se ambos têm dado concreto, mantém o novo; se o novo não é melhor, mantém o antigo.
+    if (!novoConcreto && atualConcreto && campo !== 'previsao') {
+      mesclado[campo] = base[campo];
+      alertas.add(`Campo ${campo} preservado porque a nova versão não trouxe dado concreto superior ao já publicado.`);
     }
   }
 
@@ -415,7 +519,23 @@ function mesclarComDadosAtuais(dadosGerados, dadosAtuais) {
   return mesclado;
 }
 
-async function salvarRascunhoBloqueado(instituicao, dados, paginasColetadas, payload, motivo) {
+function consultasSugeridas(instituicao) {
+  const base = Array.isArray(instituicao.consultas_sugeridas) ? instituicao.consultas_sugeridas : [];
+  const sigla = instituicao.sigla || instituicao.id;
+  const nome = instituicao.nome || sigla;
+  const uf = instituicao.uf || '';
+  const geradas = [
+    `${sigla} concurso edital ${uf}`,
+    `${nome} concurso público edital`,
+    `${sigla} concurso vagas salário banca escolaridade`,
+    `${sigla} inscrições concurso prova etapas banca`,
+    `${sigla} site oficial concurso edital`,
+    `${sigla} diário oficial concurso edital nomeação convocação`
+  ];
+  return [...new Set([...base, ...geradas].filter(Boolean))].slice(0, 10);
+}
+
+async function salvarRascunhoBloqueado(instituicao, dados, paginasColetadas, payload, motivo, avaliacao = null) {
   const pastaRascunhos = 'data/concursos/_rascunhos';
   await fs.mkdir(pastaRascunhos, { recursive: true });
   await fs.writeFile(
@@ -424,6 +544,7 @@ async function salvarRascunhoBloqueado(instituicao, dados, paginasColetadas, pay
       gerado_em: HOJE,
       instituicao_id: instituicao.id,
       motivo_bloqueio: motivo,
+      avaliacao,
       dados
     }, null, 2)}\n`,
     'utf8'
@@ -434,11 +555,13 @@ async function salvarRascunhoBloqueado(instituicao, dados, paginasColetadas, pay
     `${JSON.stringify({
       atualizado_em: HOJE,
       instituicao_id: instituicao.id,
-      modelo: OPENAI_MODEL,
+      modo_qualidade: MODO_QUALIDADE,
+      modelo: MODO_QUALIDADE === 'qualificado' ? OPENAI_MODEL_QUALIDADE : OPENAI_MODEL,
       usou_openai: true,
-      usou_web_search_openai: USAR_WEB_SEARCH,
+      usou_web_search_openai: USAR_WEB_SEARCH || MODO_QUALIDADE === 'qualificado',
       publicacao_bloqueada: true,
       motivo,
+      avaliacao,
       usage: payload?.usage || null,
       fontes_monitoradas: resumoMonitoramento(paginasColetadas)
     }, null, 2)}\n`,
@@ -479,6 +602,8 @@ function validarDados(dados, instituicao) {
 }
 
 async function chamarOpenAI({ instituicao, jsonAtual, paginasColetadas, houveMudanca, forcarAtualizacao }) {
+  const modeloDaChamada = MODO_QUALIDADE === 'qualificado' ? OPENAI_MODEL_QUALIDADE : OPENAI_MODEL;
+  const usarWebSearchNaChamada = USAR_WEB_SEARCH || MODO_QUALIDADE === 'qualificado';
   if (!OPENAI_API_KEY) {
     throw new Error('Defina o segredo OPENAI_API_KEY no GitHub antes de rodar a automação com IA.');
   }
@@ -491,6 +616,17 @@ async function chamarOpenAI({ instituicao, jsonAtual, paginasColetadas, houveMud
     .join('\n\n---\n\n');
 
   const prompt = `
+Você está atualizando o portal Universo Seg Pub.
+
+Modo de qualidade: ${MODO_QUALIDADE}.
+${MODO_QUALIDADE === 'qualificado' ? 'Neste modo, faça pesquisa mais profunda e só produza campos publicáveis quando houver base em fonte oficial, banca oficial ou diário oficial.' : 'Neste modo, seja conservador e econômico; preserve dados anteriores quando as fontes coletadas não forem suficientes.'}
+
+Consultas sugeridas para pesquisa qualificada:
+${consultasSugeridas(instituicao).map((q, i) => `${i + 1}. ${q}`).join('\n')}
+
+Fontes base cadastradas no sistema:
+${(instituicao.fontes_base || []).map((url, i) => `${i + 1}. ${url}`).join('\n') || 'Nenhuma fonte base cadastrada.'}
+
 Você está atualizando o portal Universo Seg Pub.
 
 Tarefa única:
@@ -512,9 +648,14 @@ Regras rígidas:
 - Só escreva literalmente: "não encontrado em fonte oficial" quando não houver informação nem nas fontes fornecidas nem nos dados atualmente publicados.
 - Diferencie concurso aberto, em andamento, encerrado e previsto.
 - Para o campo "previsao", não prometa novo edital sem fonte oficial.
-- Mantenha respostas curtas por campo, pois o objetivo é economizar custo e publicar em card do site.
-- Não substitua conteúdo útil já publicado por "não encontrado em fonte oficial".
-- Não cite blogs, cursinhos, agregadores de concurso ou sites comerciais.
+- Mantenha respostas objetivas por campo, mas com dado concreto quando houver: cargo, ano, número de vagas, salário, banca, escolaridade, data ou etapa.
+- Evite frases genéricas como "conferir edital", "consultar página oficial", "conforme edital específico" quando elas forem a informação principal do campo.
+- Se não encontrar dado novo, preserve o dado atual publicado e adicione alerta.
+- Não substitua conteúdo útil já publicado por "não encontrado em fonte oficial" ou por frase genérica.
+- Não cite blogs, cursinhos, agregadores de concurso ou sites comerciais como fonte final.
+- Pode usar banca organizadora oficial como fonte final quando ela for responsável pelo concurso.
+- Para salário, vagas, banca, escolaridade e etapas, tente entregar o dado concreto mais recente localizado.
+- Se houver edital aberto, priorize o edital aberto; se não houver, informe o concurso mais recente ou certame ainda válido, deixando claro no status/resumo.
 - O JSON precisa continuar compatível com ${instituicao.arquivo_saida}.
 - Mantenha instituicao_id exatamente como "${instituicao.id}".
 - Mantenha instituicao_nome exatamente como "${instituicao.nome}".
@@ -531,7 +672,7 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
 `;
 
   const body = {
-    model: OPENAI_MODEL,
+    model: modeloDaChamada,
     input: [
       {
         role: 'system',
@@ -552,8 +693,8 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
     }
   };
 
-  if (USAR_WEB_SEARCH) {
-    body.tools = [{ type: 'web_search', search_context_size: 'low' }];
+  if (usarWebSearchNaChamada) {
+    body.tools = [{ type: 'web_search', search_context_size: MODO_QUALIDADE === 'qualificado' ? 'medium' : 'low' }];
   }
 
   const resposta = await fetch('https://api.openai.com/v1/responses', {
@@ -587,16 +728,27 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
   const dadosValidados = validarDados(dadosGerados, instituicao);
   const dadosMesclados = mesclarComDadosAtuais(dadosValidados, jsonAtual);
   const avaliacao = avaliarQualidadePublicacao(dadosMesclados);
+  const avaliacaoAtual = jsonAtual ? avaliarQualidadePublicacao(jsonAtual) : { score: 0, qualidade: 'inexistente' };
 
   dadosMesclados.qualidade_publicacao = avaliacao.qualidade;
   dadosMesclados.score_publicacao = avaliacao.score;
+  dadosMesclados.modo_qualidade = MODO_QUALIDADE;
   dadosMesclados.bloquear_publicacao = !avaliacao.podePublicar;
+  dadosMesclados.alertas = Array.from(new Set([
+    ...(dadosMesclados.alertas || []),
+    `Qualidade calculada: ${avaliacao.qualidade} (${avaliacao.score}/100). Campos concretos: ${avaliacao.concretos.length}/${camposDeConteudo.length}.`
+  ]));
 
-  if (!avaliacao.podePublicar) {
-    const motivo = `Atualização bloqueada: qualidade ${avaliacao.qualidade}, score ${avaliacao.score}, campos críticos sem confirmação: ${avaliacao.criticosRuins.join(', ') || 'nenhum'}.`;
+  const piorouMuito = jsonAtual && !PERMITIR_PUBLICAR_SE_PIORA && avaliacao.score < Math.max(MIN_SCORE_PUBLICACAO, avaliacaoAtual.score - 3);
+
+  if (!avaliacao.podePublicar || piorouMuito) {
+    const motivo = !avaliacao.podePublicar
+      ? `Atualização bloqueada: qualidade ${avaliacao.qualidade}, score ${avaliacao.score}, campos críticos genéricos: ${avaliacao.criticosGenericos.join(', ') || 'nenhum'}, campos críticos sem confirmação: ${avaliacao.criticosRuins.join(', ') || 'nenhum'}.`
+      : `Atualização bloqueada: a nova versão (${avaliacao.score}/100) ficou pior que a versão publicada (${avaliacaoAtual.score}/100).`;
     dadosMesclados.precisa_revisao_humana = true;
+    dadosMesclados.bloquear_publicacao = true;
     dadosMesclados.alertas = Array.from(new Set([...(dadosMesclados.alertas || []), motivo]));
-    await salvarRascunhoBloqueado(instituicao, dadosMesclados, paginasColetadas, payload, motivo);
+    await salvarRascunhoBloqueado(instituicao, dadosMesclados, paginasColetadas, payload, motivo, avaliacao);
     console.warn(`⚠️ ${instituicao.sigla}: ${motivo}`);
     console.warn(`⚠️ ${instituicao.sigla}: JSON principal NÃO foi sobrescrito. Rascunho salvo em data/concursos/_rascunhos/${instituicao.id}.json`);
     return;
@@ -609,9 +761,10 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
     `${JSON.stringify({
       atualizado_em: HOJE,
       instituicao_id: instituicao.id,
-      modelo: OPENAI_MODEL,
+      modo_qualidade: MODO_QUALIDADE,
+      modelo: modeloDaChamada,
       usou_openai: true,
-      usou_web_search_openai: USAR_WEB_SEARCH,
+      usou_web_search_openai: usarWebSearchNaChamada,
       publicacao_bloqueada: false,
       qualidade_publicacao: avaliacao.qualidade,
       score_publicacao: avaliacao.score,
@@ -630,6 +783,7 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
   console.log(`   Última pesquisa: ${dadosMesclados.ultima_pesquisa}`);
   console.log(`   Nível de confiança: ${dadosMesclados.nivel_confianca}`);
   console.log(`   Qualidade publicação: ${avaliacao.qualidade} (${avaliacao.score}/100)`);
+  console.log(`   Qualidade anterior: ${avaliacaoAtual.qualidade} (${avaliacaoAtual.score}/100)`);
   console.log(`   Precisa revisão humana: ${dadosMesclados.precisa_revisao_humana ? 'sim' : 'não'}`);
 
   if (payload.usage) {
@@ -653,7 +807,9 @@ async function processarInstituicao(instituicao) {
   const diasDesdeUltimaPesquisa = diasDesde(jsonAtual?.ultima_pesquisa);
   const precisaRevalidarPorTempo = diasDesdeUltimaPesquisa >= DIAS_REVALIDACAO_COMPLETA;
 
-  console.log(`Modelo configurado: ${OPENAI_MODEL}`);
+  console.log(`Modelo econômico configurado: ${OPENAI_MODEL}`);
+  console.log(`Modelo qualificado configurado: ${OPENAI_MODEL_QUALIDADE}`);
+  console.log(`Modo de qualidade: ${MODO_QUALIDADE}`);
   console.log(`Web search da OpenAI: ${USAR_WEB_SEARCH ? 'ligado' : 'desligado'}`);
   console.log(`Forçar atualização: ${FORCAR_ATUALIZACAO ? 'sim' : 'não'}`);
   console.log(`Fontes oficiais coletadas: ${paginasColetadas.length}`);
@@ -699,6 +855,8 @@ console.log('Motor genérico de concursos iniciado.');
 console.log(`Instituição selecionada: ${INSTITUICAO_ID}`);
 console.log(`Total a processar nesta execução: ${instituicoes.length}`);
 console.log(`Limite configurado: ${LIMITE_INSTITUICOES}`);
+console.log(`Modo de qualidade: ${MODO_QUALIDADE}`);
+console.log(`Score mínimo para publicação: ${MIN_SCORE_PUBLICACAO}`);
 
 for (const instituicao of instituicoes) {
   await processarInstituicao(instituicao);

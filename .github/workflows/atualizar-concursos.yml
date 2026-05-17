@@ -89,6 +89,14 @@ on:
         options:
           - 'false'
           - 'true'
+      modo_qualidade:
+        description: 'economico preserva dados; qualificado usa modelo melhor e web_search para melhorar conteúdo. Use uma instituição por vez.'
+        required: false
+        default: 'economico'
+        type: choice
+        options:
+          - 'economico'
+          - 'qualificado'
   schedule:
     # 07h00 de Brasília, segunda-feira. GitHub Actions usa UTC.
     # Mantido conservador: prioridade_1 com limite 1 por padrão.
@@ -118,6 +126,11 @@ jobs:
           LIMITE_INSTITUICOES: ${{ github.event.inputs.limite || '1' }}
           FORCAR_ATUALIZACAO: ${{ github.event.inputs.forcar_atualizacao || 'false' }}
           USAR_WEB_SEARCH: ${{ github.event.inputs.usar_web_search || 'false' }}
+          MODO_QUALIDADE: ${{ github.event.inputs.modo_qualidade || 'economico' }}
+          OPENAI_MODEL_QUALIDADE: ${{ vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
+          MIN_SCORE_PUBLICACAO: '78'
+          MAX_CRITICOS_GENERICOS: '2'
+          PERMITIR_PUBLICAR_SE_PIORA: 'false'
           DIAS_REVALIDACAO_COMPLETA: '14'
           MAX_PAGINAS_OFICIAIS: '6'
           MAX_CARACTERES_POR_PAGINA: '4500'
