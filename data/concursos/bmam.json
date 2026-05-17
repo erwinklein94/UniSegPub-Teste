@@ -5,9 +5,9 @@
   "uf": "AM",
   "tema": "concursos",
   "status": "concurso de 2021 com convocações em andamento",
-  "titulo": "CBMAM mantém convocações do concurso de 2021",
-  "resumo": "O concurso de 2021 do CBMAM segue ativo, com convocações em 2026 para 2º Tenente Bombeiro Militar e Aluno Soldado",
-  "edital": "Edital nº 1 – CBMAM, de 03 de dezembro de 2021; convocações publicadas em 2026",
+  "titulo": "Concurso de 2021 do CBMAM segue com convocações em 2026",
+  "resumo": "O concurso do CBMAM de 2021 continua ativo, com convocações publicadas em 2026 para 2º Tenente Bombeiro Militar e Aluno Soldado",
+  "edital": "Edital nº 1 – CBMAM, de 03 de dezembro de 2021; convocações e retificações publicadas em 2026",
   "salario": "Pesquisa inicial pendente",
   "vagas": "453 vagas previstas no edital de 2021; em 2026 houve convocações para 15 vagas de 2º Tenente e 100 vagas de Aluno Soldado",
   "cotas": "Pesquisa inicial pendente",
@@ -17,10 +17,10 @@
   "banca": "Fundação Getulio Vargas (FGV)",
   "inscritos": "Mais de 46 mil inscritos no concurso de 2021",
   "etapas": "Pesquisa inicial pendente",
-  "cfsd": "Curso de Formação de Soldados Bombeiro Militar (CFP-SD BM) 2026, com convocação publicada para matrícula em 1º de março de 2026",
+  "cfsd": "Curso de Formação de Soldados Bombeiro Militar (CFP-SD BM) 2026, com convocação para matrícula publicada em 1º de março de 2026",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Prorrogado por mais 2 anos, a contar de 13 de janeiro de 2025",
-  "previsao": "Novas convocações para o concurso de 2021",
+  "previsao": "Novas convocações do concurso de 2021",
   "site": "https://www.cbm.am.gov.br",
   "fontes": [
     {
@@ -36,7 +36,13 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Concurso público para o Corpo de Bombeiros",
+      "titulo": "CBMAM - Início",
+      "url": "https://www.cbm.am.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Concurso público do Corpo de Bombeiros",
       "url": "https://www.agenciaamazonas.am.gov.br/noticias/concurso-publico-do-corpo-de-bombeiros/",
       "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
@@ -55,16 +61,16 @@
     }
   ],
   "ultima_pesquisa": "2026-05-17",
-  "nivel_confianca": "médio",
+  "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "As fontes oficiais confirmam que o concurso-base é o Edital nº 1/CBMAM de 03/12/2021 e que ainda há convocações em 2026.",
+    "As fontes oficiais confirmam que o concurso-base é o Edital nº 1/CBMAM, de 03/12/2021, e que ainda há convocações em 2026.",
     "A fonte oficial confirma 453 vagas previstas no edital de 2021 e convocações adicionais em 2026 para 2º Tenente e Aluno Soldado.",
     "Não foram localizados, nas fontes consultadas, os dados de salário, cotas, idade, escolaridade, matérias, etapas e estágio probatório com recorte completo.",
     "O campo cfsd foi preenchido com informação de convocação para matrícula no CFP-SD BM 2026.",
     "Há confirmação oficial de homologação em 13/01/2023 e prorrogação de validade a partir de 13/01/2025 por mais 2 anos.",
-    "Qualidade publicável, porém com lacunas relevantes em campos essenciais de edital.",
     "Campos ausentes foram mantidos como Não localizado nas fontes consultadas.",
+    "Há fonte auxiliar usada para reforço de contexto, o que mantém revisão humana recomendada.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

@@ -4295,6 +4295,46 @@
       }
     },
     {
+      "id": "bmce",
+      "sigla": "BMCE",
+      "nome": "Corpo de Bombeiros Militar do Ceará",
+      "uf": "CE",
+      "prioridade_config": 3,
+      "score": 95,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
       "id": "bmdf",
       "sigla": "BMDF",
       "nome": "Corpo de Bombeiros Militar do Distrito Federal",
@@ -4395,7 +4435,7 @@
         "edital",
         "salario",
         "vagas",
-        "cotas",
+        "escolaridade",
         "materias",
         "banca",
         "cfsd",
@@ -4740,47 +4780,6 @@
         "escolaridade",
         "banca",
         "inscritos",
-        "cfsd"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
-      "id": "bmce",
-      "sigla": "BMCE",
-      "nome": "Corpo de Bombeiros Militar do Ceará",
-      "uf": "CE",
-      "prioridade_config": 3,
-      "score": 100,
-      "qualidade": "alta",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
         "cfsd"
       ],
       "campos_criticos_ruins": [],
@@ -9163,6 +9162,46 @@
         }
       },
       {
+        "id": "bmce",
+        "sigla": "BMCE",
+        "nome": "Corpo de Bombeiros Militar do Ceará",
+        "uf": "CE",
+        "prioridade_config": 3,
+        "score": 95,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
         "id": "bmdf",
         "sigla": "BMDF",
         "nome": "Corpo de Bombeiros Militar do Distrito Federal",
@@ -9263,7 +9302,7 @@
           "edital",
           "salario",
           "vagas",
-          "cotas",
+          "escolaridade",
           "materias",
           "banca",
           "cfsd",
@@ -9608,47 +9647,6 @@
           "escolaridade",
           "banca",
           "inscritos",
-          "cfsd"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
-        "id": "bmce",
-        "sigla": "BMCE",
-        "nome": "Corpo de Bombeiros Militar do Ceará",
-        "uf": "CE",
-        "prioridade_config": 3,
-        "score": 100,
-        "qualidade": "alta",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
           "cfsd"
         ],
         "campos_criticos_ruins": [],
