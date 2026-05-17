@@ -1,0 +1,18 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "ppmt",
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.sejus.mt.gov.br/",
+      "ok": true,
+      "status": 200,
+      "hash": "cea2df238491813cbc3c8bf1352418ec324e0fbd1c39a8b563369a3ae67c0498",
+      "tamanho_texto": 139
+    }
+  ]
+}

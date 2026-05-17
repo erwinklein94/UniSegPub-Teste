@@ -1,0 +1,18 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "bmmt",
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
+      "ok": true,
+      "status": 200,
+      "hash": "fd4aa861e0def47e0a21a48c05eafff84482f86d057d2062ebf90a5b4f95f4de",
+      "tamanho_texto": 139
+    }
+  ]
+}

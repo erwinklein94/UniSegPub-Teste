@@ -1,0 +1,18 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pmes",
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "fontes_monitoradas": [
+    {
+      "url": "https://pm.es.gov.br/concursos",
+      "ok": false,
+      "status": 404,
+      "hash": "23b90f8dfbe1b06c525eea98112969718c4b9aa5f9e5418af5689b26865c9c73",
+      "tamanho_texto": 14398
+    }
+  ]
+}

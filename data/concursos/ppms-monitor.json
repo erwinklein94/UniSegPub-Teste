@@ -1,0 +1,74 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "ppms",
+  "modo_qualidade": "economico",
+  "modelo": "gpt-5.4-nano",
+  "usou_openai": true,
+  "usou_web_search_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Atualização bloqueada: qualidade baixa, score 37, campos críticos genéricos: nenhum, campos críticos sem confirmação: vagas, banca.",
+  "avaliacao": {
+    "score": 37,
+    "qualidade": "baixa",
+    "ruins": [
+      "vagas",
+      "cotas",
+      "banca",
+      "cfsd"
+    ],
+    "genericos": [],
+    "concretos": [
+      "edital",
+      "salario",
+      "idade",
+      "escolaridade",
+      "materias",
+      "inscritos"
+    ],
+    "criticosRuins": [
+      "vagas",
+      "banca"
+    ],
+    "criticosGenericos": [],
+    "criticosConcretos": [
+      "edital",
+      "salario",
+      "escolaridade"
+    ],
+    "podePublicar": false
+  },
+  "usage": {
+    "input_tokens": 4048,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 596,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4644
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.agepen.ms.gov.br/",
+      "ok": true,
+      "status": 200,
+      "hash": "6f8397785aceb9f480a23b0ad7f6342620aa46d65366bec941830ddc74bde92b",
+      "tamanho_texto": 1999
+    },
+    {
+      "url": "https://agenciadenoticias.ms.gov.br/mais-social-recebe-inscricoes-para-programa-do-governo-de-ms-que-paga-creche-particular/",
+      "ok": true,
+      "status": 200,
+      "hash": "10767fb954105f24c018d4fc7330ff3473ccb0307bc08a8188355a0514b3049f",
+      "tamanho_texto": 8464
+    },
+    {
+      "url": "https://agenciadenoticias.ms.gov.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fagenciadenoticias.ms.gov.br%2Fmais-social-recebe-inscricoes-para-programa-do-governo-de-ms-que-paga-creche-particular%2F",
+      "ok": true,
+      "status": 200,
+      "hash": "9bcebfa8b1bd52c9eeaf2992368ae360fe7a3b472ed42f9f2f300fb30e19312a",
+      "tamanho_texto": 719
+    }
+  ]
+}

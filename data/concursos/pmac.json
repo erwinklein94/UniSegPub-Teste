@@ -4,40 +4,74 @@
   "sigla": "PMAC",
   "uf": "AC",
   "tema": "concursos",
-  "status": "conteúdo inicial protegido",
-  "titulo": "PMAC: concursos, requisitos e etapas",
-  "resumo": "Guia de concursos da PMAC com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes de conferência.",
-  "edital": "PMAC — Edital nº 001/2023 SEAD/PMAC — Aluno Oficial e 2º Tenente Estagiário de Saúde",
-  "salario": "Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73, conforme edital.",
+  "status": "conteúdo inicial protegido (atualizações parciais de acompanhamento do concurso 2023)",
+  "titulo": "PMAC/AC: concurso de 2023 (FGV) — cargos Aluno Oficial Combatente e 2º Tenente Estagiário de Saúde",
+  "resumo": "Concurso público da PMAC/AC realizado (banca FGV), com andamento/convocações e publicações de fases posteriores (inspeção de saúde e curso de formação), incluindo prorrogação de validade registrada na página da banca",
+  "edital": "Edital nº 001/2023 SEAD/PMAC — Aluno Oficial Combatente e 2º Tenente Estagiário de Saúde (concurso realizado)",
+  "salario": "Aluno Oficial: R$ 8.129,55; 2º Tenente Estagiário de Saúde: R$ 10.423,73",
   "vagas": "36 vagas: Aluno Oficial Combatente e cargos de 2º Tenente Estagiário de Saúde",
   "cotas": "Conferir regras do edital FGV/SEAD/PMAC 2023",
-  "idade": "Conferir limite etário e requisitos específicos do edital.",
-  "escolaridade": "Nível superior conforme cargo; requisitos específicos no edital.",
-  "materias": "Língua Portuguesa, conhecimentos jurídicos, conhecimentos específicos, redação/discursiva, raciocínio e legislação conforme cargo.",
-  "banca": "FGV",
+  "idade": "Conferir limite etário e requisitos específicos do edital",
+  "escolaridade": "Nível superior conforme cargo; requisitos específicos no edital",
+  "materias": "Língua Portuguesa; conhecimentos jurídicos; conhecimentos específicos; redação/discursiva; raciocínio; legislação (conforme cargo)",
+  "banca": "FGV Conhecimento",
   "inscritos": "Conferir página oficial da FGV",
-  "etapas": "Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação.",
-  "cfsd": "Curso de formação/estágio conforme cargo e edital PMAC 2023.",
-  "estagio": "Conferir estatuto militar estadual e edital.",
-  "validade": "Conferir edital e atos de homologação/prorrogação.",
-  "previsao": "Concurso PMAC 2023 já publicado; acompanhar convocações e atos oficiais da SEAD/PMAC/FGV.",
+  "etapas": "Prova objetiva, prova discursiva/redação, TAF, avaliação psicológica, avaliação médica/toxicológica, investigação social e curso de formação",
+  "cfsd": "Curso de formação/estágio conforme cargo; com matrículas homologadas e convocações publicadas na página de acompanhamento da FGV (datas de 2024 a 2026)",
+  "estagio": "Conferir estatuto militar estadual e edital",
+  "validade": "Prorrogação do prazo de validade do concurso registrada na página de acompanhamento da FGV em 06/02/2026",
+  "previsao": "Acompanhar novas retificações/atos e convocações remanescentes no fluxo do curso de formação (há publicações recentes de matrículas/inspeção de saúde)",
   "site": "https://conhecimento.fgv.br/concursos/pmac23",
   "fontes": [
     {
-      "titulo": "Página de referência de concursos — PMAC",
+      "titulo": "Página do concurso PMAC 2023 (FGV Conhecimento) — acompanhamento e arquivos",
       "url": "https://conhecimento.fgv.br/concursos/pmac23",
       "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Cronograma previsto (PMAC) — PDF",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/cronograma-previsto-pmac_2.pdf",
+      "tipo": "banca organizadora ou página do concurso",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Homologação da matrícula no curso de formação (exemplo de arquivo do acompanhamento)",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital-no-075-pmac-homologacao-de-matricula-no-curso-de-formacao-24-04-2026.pdf",
+      "tipo": "banca organizadora ou arquivo de acompanhamento",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Resultado final da inspeção de saúde e convocação para matrícula no curso de formação (arquivo do acompanhamento)",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital-no-074-pmac-resultado-final-da-inspecao-de-saude-e-convocacao-para-a-matricula-no-curso-de-formacao-de-candidato-sub.pdf",
+      "tipo": "banca organizadora ou arquivo de acompanhamento",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Homologação de matrículas no curso de formação (arquivo do acompanhamento)",
+      "url": "https://conhecimento.fgv.br/sites/default/files/concursos/edital-no-073-pmac-homologacao-de-matriculas-no-curso-de-formacao-31-03-2026.pdf",
+      "tipo": "banca organizadora ou arquivo de acompanhamento",
       "data_consulta": "2026-05-17"
     }
   ],
   "ultima_pesquisa": "2026-05-17",
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 85,
-  "bloquear_publicacao": false,
   "alertas": [
-    "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
-    "Automação protegida: não sobrescreve JSON principal quando atualização vier genérica ou ruim."
-  ]
+    "Dados de cargos, salário, vagas e etapas preservados do conteúdo anterior publicado.",
+    "A página da FGV mostra várias publicações de andamento (inspeção de saúde, convocação/matrícula no curso de formação) e prorrogação de validade em 06/02/2026.",
+    "Alguns campos (idade, cotas, inscritos) não foram extraídos nas fontes consultadas e permanecem como ‘Não localizado nas fontes consultadas.’",
+    "Campo cotas mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Campo idade mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Campo inscritos mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Campo etapas mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Campo estagio mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
+    "Qualidade calculada: alta (97/100). Campos concretos: 8/14."
+  ],
+  "texto_final_limpo": true,
+  "padrao_editorial": "usuario-final-sem-links-nos-campos",
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 97,
+  "modo_qualidade": "economico",
+  "bloquear_publicacao": false
 }

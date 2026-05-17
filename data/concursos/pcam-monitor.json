@@ -1,0 +1,70 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pcam",
+  "modo_qualidade": "economico",
+  "modelo": "gpt-5.4-nano",
+  "usou_openai": true,
+  "usou_web_search_openai": false,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": false,
+  "forcar_exibicao_site": false,
+  "publicacao_forcada_por_credito_openai": false,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 90,
+  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "usage": {
+    "input_tokens": 4942,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 966,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 5908
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://conhecimento.fgv.br/concursos/pcam21",
+      "ok": true,
+      "status": 200,
+      "hash": "7e32a6d20e4c9c5535c7ba55a3afe68a1875b58ecd3ef65a2a663640a8a2a0d4",
+      "tamanho_texto": 1530
+    },
+    {
+      "url": "https://conhecimento.fgv.br/concursos",
+      "ok": true,
+      "status": 200,
+      "hash": "9702c8462ac45fece721195bb58c46e982f65f6bddbbcbfa72147567b53c2213",
+      "tamanho_texto": 4291
+    },
+    {
+      "url": "http://conhecimento.fgv.br/concursos/pcam21/01",
+      "ok": false,
+      "status": 503,
+      "hash": "97893d36fdb70486daac9cf5e6aa148c88f35f2c11798c78d57b7c0132850d54",
+      "tamanho_texto": 297
+    },
+    {
+      "url": "http://conhecimento.fgv.br/concursos/pcam21/02",
+      "ok": false,
+      "status": 503,
+      "hash": "e4da42f397dabac6750e156a16978ba370de36972c98005b2042039d78fd069a",
+      "tamanho_texto": 295
+    },
+    {
+      "url": "https://conhecimento.fgv.br/concursos/seducsp26edbasica",
+      "ok": true,
+      "status": 200,
+      "hash": "209f4744ace33f6ae33e06cc0bdb8007ff5eb857bddfb2f7d8a692c9e9509474",
+      "tamanho_texto": 1985
+    },
+    {
+      "url": "https://conhecimento.fgv.br/concursos/navbrasil26",
+      "ok": true,
+      "status": 200,
+      "hash": "eaa51961bff1680d185a400313311f189f182a7a68eccbfc4b15d3e9c09248c1",
+      "tamanho_texto": 2231
+    }
+  ]
+}

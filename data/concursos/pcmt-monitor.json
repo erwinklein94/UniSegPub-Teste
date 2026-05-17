@@ -1,0 +1,18 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pcmt",
+  "modo_qualidade": "economico",
+  "usou_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
+  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.pjc.mt.gov.br/",
+      "ok": true,
+      "status": 200,
+      "hash": "e74dcd012c7ec6950fb60d7c13b43466140f98623fd3dc2219ac376cddea7529",
+      "tamanho_texto": 139
+    }
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "ppsp",
+  "modo_qualidade": "economico",
+  "modelo": "gpt-5.4-nano",
+  "usou_openai": true,
+  "usou_web_search_openai": false,
+  "publicacao_bloqueada": true,
+  "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum.",
+  "avaliacao": {
+    "score": 68,
+    "qualidade": "baixa",
+    "ruins": [
+      "validade"
+    ],
+    "genericos": [
+      "cotas",
+      "etapas"
+    ],
+    "concretos": [
+      "edital",
+      "salario",
+      "vagas",
+      "idade",
+      "escolaridade",
+      "inscritos",
+      "previsao"
+    ],
+    "criticosRuins": [],
+    "criticosGenericos": [
+      "etapas"
+    ],
+    "criticosConcretos": [
+      "edital",
+      "salario",
+      "vagas",
+      "escolaridade"
+    ],
+    "podePublicar": false
+  },
+  "usage": {
+    "input_tokens": 3999,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 773,
+    "output_tokens_details": {
+      "reasoning_tokens": 0
+    },
+    "total_tokens": 4772
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/664",
+      "ok": true,
+      "status": 200,
+      "hash": "ec931f13bf0e061eda9f36640937497fdc133e8035540d298fb5fff10c00fbfe",
+      "tamanho_texto": 1070
+    },
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/status/novos",
+      "ok": true,
+      "status": 200,
+      "hash": "898b506d7c6bba6369305d38567800cfbaddae742118d2c580fcc18fea1e6196",
+      "tamanho_texto": 1087
+    },
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/status/inscricoes-abertas",
+      "ok": true,
+      "status": 200,
+      "hash": "898b506d7c6bba6369305d38567800cfbaddae742118d2c580fcc18fea1e6196",
+      "tamanho_texto": 1087
+    },
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/status/em-andamento",
+      "ok": true,
+      "status": 200,
+      "hash": "898b506d7c6bba6369305d38567800cfbaddae742118d2c580fcc18fea1e6196",
+      "tamanho_texto": 1087
+    },
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/status/resultados-disponiveis",
+      "ok": true,
+      "status": 200,
+      "hash": "898b506d7c6bba6369305d38567800cfbaddae742118d2c580fcc18fea1e6196",
+      "tamanho_texto": 1087
+    },
+    {
+      "url": "https://www.institutoaocp.org.br/concursos/status/finalizados",
+      "ok": true,
+      "status": 200,
+      "hash": "898b506d7c6bba6369305d38567800cfbaddae742118d2c580fcc18fea1e6196",
+      "tamanho_texto": 1087
+    }
+  ]
+}
