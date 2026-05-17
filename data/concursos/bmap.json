@@ -4,53 +4,59 @@
   "sigla": "CBMAP",
   "uf": "AP",
   "tema": "concursos",
-  "status": "edital aberto em 2025 e certame de soldado com fases em andamento; histórico recente também em acompanhamento",
+  "status": "Concurso de Oficial Combatente em andamento em 2025, com resultado da prova objetiva já publicado e demais fases em curso; concurso de Soldado de 2022 segue com convocações oficiais em 2026.",
   "titulo": "CBMAP: concursos, requisitos e etapas",
-  "resumo": "O CBMAP tem concurso aberto de Oficial Combatente em 2025, com cadastro de reserva, banca Fundação Carlos Chagas e fases previstas no edital. Também há histórico recente de convocações e fases do concurso de Soldado iniciado em 2022",
-  "edital": "Edital nº 01/2025 de abertura do QOCBM/CBMAP: cadastro de reserva para Oficial Combatente, publicação em 01/07/2025; concurso CFSD/BM/CBMAP 2022 com convocações e etapas posteriores já publicadas no Diário Oficial",
-  "salario": "No edital QOCBM/CBMAP 2025, a remuneração inicial informada para Oficial Combatente aparece como Aluno Oficial no curso de formação, Aspirante a Oficial e 2º Tenente, com valores vinculados à legislação em vigor",
-  "vagas": "QOCBM/CBMAP 2025: 180 vagas para cadastro de reserva no cargo de Oficial Combatente",
-  "cotas": "No QOCBM/CBMAP 2025 não houve vagas destinadas a candidatos com deficiência, por conta da natureza da ocupação",
-  "idade": "Os requisitos de idade, aptidão física, saúde, investigação social e demais exigências são definidos no edital vigente do certame",
-  "escolaridade": "Para Oficial Combatente, o edital exige diploma de curso superior, devidamente registrado, expedido por instituição reconhecida pelo MEC",
-  "materias": "A seleção do QOCBM/CBMAP 2025 prevê prova objetiva seguida de exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde e investigação social",
+  "resumo": "O CBMAP mantém em andamento o concurso de Oficial Combatente iniciado em 2025, com cadastro de reserva, banca Fundação Carlos Chagas e etapas eliminatórias previstas em edital",
+  "edital": "Edital nº 01/2025 de Abertura de Inscrições do QOCBM/CBMAP, publicado em 01/07/2025; concurso CFSD/BM/CBMAP 2022 com convocações e fases posteriores publicadas no Diário Oficial",
+  "salario": "O edital de 2025 informa a carreira de Oficial Combatente do CBMAP e a progressão no curso de formação e nos cargos iniciais da carreira, conforme a legislação vigente do estado",
+  "vagas": "Concurso de 2025 para Oficial Combatente em cadastro de reserva, sem vagas imediatas destinadas a candidatos com deficiência",
+  "cotas": "Não houve vagas reservadas para candidatos com deficiência no edital de Oficial Combatente de 2025, por se tratar de carreira de natureza exclusiva",
+  "idade": "Os critérios de idade e demais condições de ingresso são os previstos no edital vigente do concurso",
+  "escolaridade": "Para Oficial Combatente, o edital exige diploma de curso superior, devidamente registrado e expedido por instituição reconhecida pelo MEC",
+  "materias": "A seleção de 2025 prevê prova objetiva e, depois, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde e investigação social",
   "banca": "Fundação Carlos Chagas",
-  "inscritos": "As inscrições do QOCBM/CBMAP 2025 ocorreram de 14/07/2025 a 21/08/2025, com pagamento até 22/08/2025",
-  "etapas": "O concurso QOCBM/CBMAP 2025 é composto por 6 fases: prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde e investigação social",
-  "cfsd": "No concurso CFSD/BM/CBMAP 2022, o processo foi voltado ao cargo de Soldado do Quadro de Praças Combatentes e seguiu fases posteriores com convocações publicadas no Diário Oficial",
-  "estagio": "Após a aprovação e convocação, o candidato ingressa no curso de formação correspondente ao cargo, com matrícula e atos complementares publicados pela administração",
-  "validade": "A validade do concurso segue o edital e os atos oficiais de homologação e prorrogação, quando houver",
-  "previsao": "Há acompanhamento de um concurso aberto em 2025 para Oficial Combatente e histórico recente de convocações no concurso de Soldado de 2022. Novas convocações dependem de publicação oficial",
+  "inscritos": "As inscrições do concurso de Oficial Combatente de 2025 ocorreram de 14/07/2025 a 21/08/2025, com prazo final de pagamento em 22/08/2025",
+  "etapas": "O concurso de Oficial Combatente de 2025 tem seis fases: prova objetiva, exame documental, avaliação das capacidades físicas, avaliação psicológica, exame de saúde e investigação social",
+  "cfsd": "O concurso CFSD/BM/CBMAP de 2022, para Soldado do Quadro de Praças Combatentes, permanece com convocações oficiais publicadas no Diário Oficial em 2026",
+  "estagio": "O aprovado no concurso de Oficial Combatente ingressa no Curso de Formação de Oficiais Combatentes, com matrícula e demais atos definidos pela administração",
+  "validade": "A validade do concurso segue o prazo fixado no edital e nos atos oficiais de homologação e eventual prorrogação",
+  "previsao": "Há certame em andamento para Oficial Combatente e convocações recentes no concurso de Soldado de 2022; novas chamadas dependem de publicação oficial",
   "site": "https://bombeiros.portal.ap.gov.br/",
   "fontes": [
     {
-      "titulo": "Edital nº 01/2025 de Abertura de Inscrições – QOCBM/CBMAP (Diário Oficial do Estado do Amapá, 01/07/2025)",
+      "titulo": "Diário Oficial do Estado do Amapá - Edital nº 01/2025 de Abertura de Inscrições do QOCBM/CBMAP",
       "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/2586",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Diário Oficial do Estado do Amapá – Edital de convocações do CFSD/BM/CBMAP (20/10/2023)",
-      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/1811",
+      "titulo": "Diário Oficial do Estado do Amapá - Edital nº 02/2025 de Retificação do concurso QOCBM/CBMAP",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/2590/",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Diário Oficial do Estado do Amapá – publicação sobre CFSD/BM/CBMAP (2025)",
-      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/9778/",
+      "titulo": "Diário Oficial do Estado do Amapá - Resultado final da 1ª fase do concurso QOCBM/CBMAP",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/9761/",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Portal de Serviços do Corpo de Bombeiros Militar do Amapá",
-      "url": "https://sistemas.cbm.ap.gov.br/portal/portal_menu/",
+      "titulo": "Diário Oficial do Estado do Amapá - Convocações do CFSD/BM/CBMAP em 2026",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/visualizar_pdf/9923/",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Diário Oficial do Estado do Amapá - Convocação para fases do CFSD/BM/CBMAP em 2026",
+      "url": "https://diofe.portal.ap.gov.br/portal/edicoes/download/9931",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Site institucional do Corpo de Bombeiros Militar do Amapá",
+      "url": "https://bombeiros.portal.ap.gov.br/",
       "tipo": "fonte oficial institucional",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Fundação Carlos Chagas – página de concursos",
-      "url": "https://piaget.fcc.org.br/",
-      "tipo": "banca oficial",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -58,8 +64,9 @@
   "nivel_confianca": "alto",
   "precisa_revisao_humana": false,
   "alertas": [
-    "Dados de remuneração foram resumidos de forma editorial; se houver atualização legal posterior, deve ser revalidada.",
-    "O campo 'salario' foi mantido em formato publicável e sem quadro detalhado para evitar duplicação excessiva de texto do edital.",
+    "O concurso de Oficial Combatente está em andamento e ainda pode ter novas publicações oficiais.",
+    "O concurso de Soldado de 2022 segue com atos recentes em 2026, então o status pode mudar com novas convocações.",
+    "Campos editoriais foram resumidos para publicação leiga e sem links nos textos visíveis.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
@@ -74,7 +81,7 @@
     "Campo estagio atualizado/priorizado pelo modo qualificado pago.",
     "Campo validade atualizado/priorizado pelo modo qualificado pago.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (95/100). Campos concretos: 10/14.",
+    "Qualidade calculada: alta (95/100). Campos concretos: 11/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,
