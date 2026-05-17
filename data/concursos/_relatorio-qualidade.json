@@ -29,12 +29,13 @@
       "nome": "Polícia Militar de Minas Gerais",
       "uf": "MG",
       "prioridade_config": 1,
-      "score": 90,
+      "score": 87,
       "qualidade": "alta",
       "acao": "rodar_qualificado",
       "prioridade_operacional": "alta",
       "motivos": [
-        "fonte direta falhou ou não trouxe texto suficiente"
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
       ],
       "workflow_sugerido": {
         "instituicao": "pmmg",
@@ -46,6 +47,7 @@
       "idade_dias": 0,
       "campos_ruins": [],
       "campos_genericos": [
+        "idade",
         "validade"
       ],
       "campos_concretos": [
@@ -54,22 +56,21 @@
         "vagas",
         "escolaridade",
         "materias",
-        "cfsd",
         "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
       "fonte_falhou": true,
       "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
       "monitor": {
         "atualizado_em": "2026-05-17",
-        "usou_openai": false,
-        "usou_web_search_openai": false,
-        "publicacao_bloqueada": true,
-        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado."
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
       }
     },
     {
@@ -2017,12 +2018,13 @@
         "nome": "Polícia Militar de Minas Gerais",
         "uf": "MG",
         "prioridade_config": 1,
-        "score": 90,
+        "score": 87,
         "qualidade": "alta",
         "acao": "rodar_qualificado",
         "prioridade_operacional": "alta",
         "motivos": [
-          "fonte direta falhou ou não trouxe texto suficiente"
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
         ],
         "workflow_sugerido": {
           "instituicao": "pmmg",
@@ -2034,6 +2036,7 @@
         "idade_dias": 0,
         "campos_ruins": [],
         "campos_genericos": [
+          "idade",
           "validade"
         ],
         "campos_concretos": [
@@ -2042,22 +2045,21 @@
           "vagas",
           "escolaridade",
           "materias",
-          "cfsd",
           "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
         "fonte_falhou": true,
         "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
         "monitor": {
           "atualizado_em": "2026-05-17",
-          "usou_openai": false,
-          "usou_web_search_openai": false,
-          "publicacao_bloqueada": true,
-          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado."
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
         }
       },
       {

@@ -1,19 +1,31 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmmg",
-  "usou_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado.",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "motivo": "Atualização forçada manualmente.",
+  "usage": {
+    "input_tokens": 12833,
+    "input_tokens_details": {
+      "cached_tokens": 0
+    },
+    "output_tokens": 1128,
+    "output_tokens_details": {
+      "reasoning_tokens": 270
+    },
+    "total_tokens": 13961
+  },
   "fontes_monitoradas": [
     {
-      "url": "https://www.policiamilitar.mg.gov.br/",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
-    },
-    {
-      "url": "https://www.policiamilitar.mg.gov.br/portal-pm/crs",
+      "url": "https://www.policiamilitar.mg.gov.br",
       "ok": false,
       "status": 0,
       "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
