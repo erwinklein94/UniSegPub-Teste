@@ -129,6 +129,7 @@ jobs:
           MIN_SCORE_PUBLICACAO: '78'
           MAX_CRITICOS_GENERICOS: '2'
           PERMITIR_PUBLICAR_SE_PIORA: 'false'
+          PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI: 'true'
         run: node scripts/atualizar-concursos.mjs
       - name: Salvar alterações no repositório
         run: |
