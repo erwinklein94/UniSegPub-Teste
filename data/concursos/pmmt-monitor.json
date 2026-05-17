@@ -1,18 +1,35 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmmt",
-  "modo_qualidade": "economico",
-  "usou_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
-  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 90,
+  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "usage": {
+    "input_tokens": 15115,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1261,
+    "output_tokens_details": {
+      "reasoning_tokens": 295
+    },
+    "total_tokens": 16376
+  },
   "fontes_monitoradas": [
     {
       "url": "https://www.pm.mt.gov.br/",
       "ok": true,
       "status": 200,
-      "hash": "dbfac27df5ddd4f5fd87ee6d21abfe80018df5cea26be6f2f39f06ba86d83dd1",
-      "tamanho_texto": 138
+      "hash": "c59ee1720c1c875e51c33548ae6a22141dfbc7647b2e584e6957cf0378e2718e",
+      "tamanho_texto": 139
     }
   ]
 }

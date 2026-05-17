@@ -1,17 +1,34 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "bmmt",
-  "modo_qualidade": "economico",
-  "usou_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
-  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 82,
+  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "usage": {
+    "input_tokens": 26563,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1809,
+    "output_tokens_details": {
+      "reasoning_tokens": 480
+    },
+    "total_tokens": 28372
+  },
   "fontes_monitoradas": [
     {
       "url": "https://www.bombeiros.mt.gov.br/concursos-e-seletivos",
       "ok": true,
       "status": 200,
-      "hash": "fd4aa861e0def47e0a21a48c05eafff84482f86d057d2062ebf90a5b4f95f4de",
+      "hash": "9403596beb0784c264f946a7a828a72a684822d3ffa9fbfbe1848ae610268764",
       "tamanho_texto": 139
     }
   ]

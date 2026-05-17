@@ -1,17 +1,34 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcmt",
-  "modo_qualidade": "economico",
-  "usou_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico.",
-  "recomendacao": "Rode com modo_qualidade=qualificado e usar_web_search=true para tentar pesquisa profunda.",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 90,
+  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "usage": {
+    "input_tokens": 18391,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1052,
+    "output_tokens_details": {
+      "reasoning_tokens": 225
+    },
+    "total_tokens": 19443
+  },
   "fontes_monitoradas": [
     {
       "url": "https://www.pjc.mt.gov.br/",
       "ok": true,
       "status": 200,
-      "hash": "e74dcd012c7ec6950fb60d7c13b43466140f98623fd3dc2219ac376cddea7529",
+      "hash": "3c5f33249729dc2cd7081981d057e14ee3cc075eef3f7445d867c085bfe27583",
       "tamanho_texto": 139
     }
   ]
