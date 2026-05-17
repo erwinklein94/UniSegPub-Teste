@@ -130,6 +130,8 @@ jobs:
           MAX_CRITICOS_GENERICOS: '2'
           PERMITIR_PUBLICAR_SE_PIORA: 'false'
           PUBLICAR_RESULTADO_QUALIFICADO_COM_OPENAI: 'true'
+          WEB_SEARCH_CONTEXT_QUALIDADE: 'high'
+          PERMITIR_FONTES_AUXILIARES_QUALIFICADAS: 'true'
         run: node scripts/atualizar-concursos.mjs
       - name: Gerar relatório de qualidade após atualização
         env:

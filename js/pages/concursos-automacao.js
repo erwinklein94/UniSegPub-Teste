@@ -39,6 +39,17 @@
       limpo = limpo.replace(par[0], par[1]);
     });
 
+    var frasesGincana = [
+      /(conferir|consulte|consultar|ver|olhar|acessar|acesse)\s+(o\s+)?edital[^.;]*(?:[.;]|$)/gi,
+      /(conferir|consulte|consultar|acompanhar|ver|olhar|acessar|acesse)\s+(a\s+)?p[aá]gina\s+oficial[^.;]*(?:[.;]|$)/gi,
+      /(conforme|segundo)\s+(o\s+)?edital\s+espec[ií]fico[^.;]*(?:[.;]|$)/gi,
+      /(depende|varia|podem variar)\s+[^.;]*(edital|cargo|concurso)[^.;]*(?:[.;]|$)/gi,
+      /quando\s+(previsto|aplic[aá]vel)[^.;]*(?:[.;]|$)/gi
+    ];
+    frasesGincana.forEach(function (regex) {
+      limpo = limpo.replace(regex, 'Não localizado com precisão nas fontes consultadas. ');
+    });
+
     limpo = limpo.replace(/Não foi localizado[^.;]*?(?:;|\.)/gi, 'Não localizado nas fontes consultadas. ');
     limpo = limpo.replace(/Nao foi localizado[^.;]*?(?:;|\.)/gi, 'Não localizado nas fontes consultadas. ');
     limpo = limpo.replace(/\s+([,.;:])/g, '$1');
@@ -223,7 +234,7 @@
         <span class="direito-desc"><strong>Salário inicial:</strong> ${escapar(concurso.salario)}</span>
         <span class="direito-desc"><strong>Vagas:</strong> ${escapar(concurso.vagas)}</span>
         <span class="direito-desc"><strong>Cotas:</strong> ${escapar(concurso.cotas)}</span>
-        <span class="direito-desc"><strong>Idade exigida:</strong> ${escapar(concurso.idade)}</span>
+        <span class="direito-desc"><strong>Idade e requisitos:</strong> ${escapar(concurso.idade)}</span>
         <span class="direito-desc"><strong>Escolaridade:</strong> ${escapar(concurso.escolaridade)}</span>
         <span class="direito-desc"><strong>Banca:</strong> ${escapar(concurso.banca)} · <strong>Inscrições/inscritos:</strong> ${escapar(concurso.inscritos)}</span>
         <span class="direito-desc"><strong>Disciplinas:</strong> ${escapar(concurso.materias)}</span>
