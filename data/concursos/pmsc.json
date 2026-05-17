@@ -6,21 +6,21 @@
   "tema": "concursos",
   "status": "em andamento com histórico recente e novos processos seletivos publicados",
   "titulo": "PMSC: concursos, requisitos e etapas",
-  "resumo": "Portal oficial da PMSC reúne concursos para Soldados, Oficiais, processos seletivos temporários e atos subsequentes como homologações, convocações e encerramentos. O concurso de Soldados regido pelo Edital 002/CGCP/2023 foi encerrado em 24/06/2025, mas a PMSC mantém publicações ativas de processos seletivos e atos de acompanhamento no portal oficial de concursos.",
-  "edital": "Há concursos e processos seletivos oficiais ativos no portal da PMSC, com histórico recente de edital encerrado para Soldados (Edital nº 002/CGCP/2023) e publicações recentes em outros certames e seleções.",
-  "salario": "Carreira PMSC em regime de subsídio. Referência publicada no conteúdo-base: Soldado R$ 8.505,00, Cabo R$ 9.720,00, com demais postos/graduações conforme legislação estadual citada no cadastro base.",
-  "vagas": "Variável por edital. Exemplo recente no portal oficial: processo seletivo de policial militar temporário com inscrições abertas em dezembro de 2025 e cronograma até janeiro de 2026; o portal também mantém seções específicas para Oficiais, Soldados e temporários.",
-  "cotas": "Dependem do edital específico e dos atos publicados para cada concurso/processo seletivo.",
-  "idade": "Depende do cargo e do edital específico.",
-  "escolaridade": "Conferir edital vigente. Em regra, cargos de carreira exigem escolaridade compatível com Soldado, Oficial ou quadro específico.",
-  "materias": "Conteúdo definido no edital de cada certame, normalmente com provas de conhecimentos gerais, legislação, conhecimentos específicos e demais temas previstos para o cargo.",
-  "banca": "Banca variável conforme o certame; o portal oficial informa o organizador no edital de cada processo seletivo.",
+  "resumo": "O portal oficial da PMSC concentra concursos para Oficiais, Soldados e processos seletivos temporários, além de atos posteriores como convocações, resultados e homologações. No momento, há processo seletivo ativo para policial militar temporário (Edital nº 200/CCP/2025), com inscrições abertas de 23/12/2025 a 26/01/2026, 1.465 vagas e execução em conjunto com o IDECAN. O concurso de Soldados regido pelo Edital nº 002/CGCP/2023 aparece com resultado final publicado no portal e atos posteriores até 2025, indicando histórico recente encerrado. ([pm.sc.gov.br](https://www.pm.sc.gov.br/concursos?utm_source=openai))",
+  "edital": "Há processo seletivo vigente no portal oficial da PMSC para policial militar temporário, regido pelo Edital nº 200/CCP/2025, e concursos anteriores de Soldados e Oficiais com atos já publicados e histórico de encerramento/homologação. ([pm.sc.gov.br](https://pm.sc.gov.br/concursos/processo-seletivo-simplificado-para-militar-temporario-pmsc-semet/edital-n-200ccp2025-concurso-publico-para-o-preenchimento-de-vagas-temporarias-no-curso-basico-de-formacao-da-policia-militar-de-santa-catarina?utm_source=openai))",
+  "salario": "O edital/ notícia do processo seletivo temporário informa o certame e suas condições, mas o trecho coletado não traz o valor da remuneração. O conteúdo-base anterior menciona carreira em subsídio com referências como Soldado R$ 8.505,00 e Cabo R$ 9.720,00, porém esse valor não foi revalidado nesta pesquisa atual. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
+  "vagas": "1.465 vagas para policial militar temporário no Edital nº 200/CCP/2025, com ingresso na graduação de Aluno-Soldado Temporário. Para concursos de carreira, os quantitativos variam por edital. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
+  "cotas": "Não foi localizado, nas fontes oficiais consultadas, um quadro consolidado de cotas para o portal geral; a reserva de vagas depende do edital específico e dos atos do certame. ([pm.sc.gov.br](https://pm.sc.gov.br/concursos/processo-seletivo-simplificado-para-militar-temporario-pmsc-semet/edital-n-200ccp2025-concurso-publico-para-o-preenchimento-de-vagas-temporarias-no-curso-basico-de-formacao-da-policia-militar-de-santa-catarina?utm_source=openai))",
+  "idade": "Não foi localizado dado consolidado único para a instituição; a exigência de idade depende do cargo e do edital específico. ([pm.sc.gov.br](https://pm.sc.gov.br/concursos/processo-seletivo-simplificado-para-militar-temporario-pmsc-semet/edital-n-200ccp2025-concurso-publico-para-o-preenchimento-de-vagas-temporarias-no-curso-basico-de-formacao-da-policia-militar-de-santa-catarina?utm_source=openai))",
+  "escolaridade": "Para o processo seletivo temporário publicado, o portal não detalhou no trecho coletado a escolaridade; o requisito deve ser extraído do edital específico. Para concursos de carreira, a escolaridade varia conforme Soldado, Oficial ou quadro específico. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
+  "materias": "O conteúdo das provas não veio detalhado no trecho coletado; o portal oficial informa que as informações completas do certame constam no edital. Nos processos da PMSC, as provas e avaliações são definidas por edital e atos posteriores. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
+  "banca": "IDECAN no Processo Seletivo Simplificado para Militar Temporário PMSC-SEMET/Edital nº 200/CCP/2025. Nos concursos de carreira anteriores, a banca é definida por edital. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
   "inscritos": "Sem dado consolidado confirmado para o portal geral. Os números devem ser consultados nos atos oficiais do concurso ou da banca organizadora.",
-  "etapas": "Etapas variam por edital. Nos certames da PMSC aparecem prova objetiva, avaliações/inspeções de saúde, investigação social, teste físico e curso de formação, além de convocações e homologações posteriores conforme o caso.",
-  "cfsd": "Curso de Formação de Soldados ou Curso de Formação de Oficiais, conforme o cargo e o edital.",
+  "etapas": "No processo seletivo temporário, o portal informa etapa de prova objetiva em várias cidades e execução com etapas de caráter eliminatório e classificatório; os atos publicados mostram convocações para prova de títulos, avaliação psicológica, exame toxicológico, dados biométricos e investigação social. Nos concursos de carreira, as etapas variam por edital. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
+  "cfsd": "Para o processo seletivo temporário, o ingresso é no Curso Básico de Formação. Nos concursos de carreira, podem existir Curso de Formação de Soldados ou de Oficiais, conforme o cargo e o edital. ([pm.sc.gov.br](https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc?utm_source=openai))",
   "estagio": "Conforme a legislação de carreira e o edital do certame; sem dado consolidado único para todos os concursos.",
-  "validade": "O concurso de Soldados do Edital nº 002/CGCP/2023 foi encerrado em 24/06/2025. Os demais processos devem ser verificados nos atos vigentes do portal oficial.",
-  "previsao": "A PMSC mantém novas publicações e processos seletivos no portal oficial de concursos; há registros recentes de abertura de inscrições e de convocações em 2025 e 2026.",
+  "validade": "O concurso de Soldados regido pelo Edital nº 002/CGCP/2023 já possui resultado final publicado e atos posteriores no portal, indicando encerramento do certame principal; já o processo seletivo temporário do Edital nº 200/CCP/2025 segue em andamento nos atos publicados em 2026. ([pm.sc.gov.br](https://pm.sc.gov.br/concursos/processo-seletivo-simplificado-para-militar-temporario-pmsc-semet/edital-n-200ccp2025-concurso-publico-para-o-preenchimento-de-vagas-temporarias-no-curso-basico-de-formacao-da-policia-militar-de-santa-catarina?utm_source=openai))",
+  "previsao": "A PMSC mantém publicações ativas de concursos e processos seletivos em seu portal oficial, com histórico recente de novo processo seletivo temporário e atos subsequentes em 2026. ([pm.sc.gov.br](https://www.pm.sc.gov.br/concursos?utm_source=openai))",
   "site": "https://www.pm.sc.gov.br/concursos",
   "fontes": [
     {
@@ -30,14 +30,26 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Concurso de Soldados da PMSC — Edital nº 002/CGCP/2023 (encerrado em 24/06/2025)",
-      "url": "https://www.pm.sc.gov.br/concursos/concursos-para-soldados-da-pmsc/edital-n-002cgcp2023-concurso-publico-para-o-preenchimento-de-vagas-no-curso-de-formacao-de-pracas-da-policia-militar-de-santa-catarina",
+      "titulo": "Notícia oficial - Inscrições abertas para o processo seletivo de policial militar temporário da PMSC",
+      "url": "https://pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Notícia oficial sobre abertura de inscrições para policial militar temporário",
-      "url": "https://www.pm.sc.gov.br/noticias/inscricoes-abertas-para-o-processo-seletivo-de-policial-militar-temporario-da-pmsc",
+      "titulo": "Processo Seletivo Simplificado para Militar Temporário PMSC-SEMET - Edital nº 200/CCP/2025",
+      "url": "https://pm.sc.gov.br/concursos/processo-seletivo-simplificado-para-militar-temporario-pmsc-semet/edital-n-200ccp2025-concurso-publico-para-o-preenchimento-de-vagas-temporarias-no-curso-basico-de-formacao-da-policia-militar-de-santa-catarina",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Concursos para Soldados da PMSC - Edital nº 002/CGCP/2023",
+      "url": "https://www.pm.sc.gov.br/concursos/concursos-para-soldados-da-pmsc/edital-n-002cgcp2023-concurso-publico-para-o-preenchimento-de-vagas-no-curso-de-formacao-de-pracas-da-policia-militar-de-santa-catarina?page=5&sort=status",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Concursos para Oficiais da PMSC - Edital nº 001/CGCP/2023",
+      "url": "https://pm.sc.gov.br/concursos/concursos-para-oficiais-da-pmsc/edital-n-001cgcp2023-concurso-publico-para-o-preenchimento-de-vagas-no-curso-de-formacao-de-oficiais-da-policia-militar-de-santa-catarina?page=3",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -46,16 +58,31 @@
   "nivel_confianca": "alto",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Não foi localizado, nas fontes consultadas, um edital de concurso de carreira totalmente novo e vigente para Soldados/Oficiais com dados completos de vagas, banca e salários específicos.",
-    "O portal oficial mostra concursos encerrados e processos seletivos ativos/recorrentes; os detalhes concretos variam por edital e por ato publicado.",
-    "Como o conteúdo-base já traz referências remuneratórias por lei, elas foram preservadas, mas não foram revalidadas integralmente nesta pesquisa.",
-    "Campo escolaridade mantido da versão anterior porque a atualização automática veio genérica ou sem confirmação suficiente.",
-    "Qualidade calculada: baixa (75/100). Campos concretos: 7/14.",
-    "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 75/100, qualidade baixa. Revisão humana recomendada."
+    "Foi confirmado processo seletivo ativo para militar temporário (Edital nº 200/CCP/2025), mas os campos de salário, escolaridade e requisitos específicos do trecho coletado não vieram completos no extrato disponível.",
+    "O concurso de Soldados 002/CGCP/2023 aparece com resultado final e atos posteriores, mas sem confirmação de um novo concurso de carreira totalmente aberto nas fontes consultadas.",
+    "Informações como cotas, idade, matérias e estagio permanecem dependentes de edital específico e não foram consolidadas em fonte única no portal geral.",
+    "Campo edital atualizado/priorizado pelo modo qualificado pago.",
+    "Campo salario atualizado/priorizado pelo modo qualificado pago.",
+    "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
+    "Campo cotas atualizado/priorizado pelo modo qualificado pago.",
+    "Campo idade atualizado/priorizado pelo modo qualificado pago.",
+    "Campo escolaridade atualizado/priorizado pelo modo qualificado pago.",
+    "Campo materias atualizado/priorizado pelo modo qualificado pago.",
+    "Campo banca atualizado/priorizado pelo modo qualificado pago.",
+    "Campo inscritos preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
+    "Campo etapas atualizado/priorizado pelo modo qualificado pago.",
+    "Campo cfsd atualizado/priorizado pelo modo qualificado pago.",
+    "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
+    "Campo validade atualizado/priorizado pelo modo qualificado pago.",
+    "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
+    "Qualidade calculada: alta (92/100). Campos concretos: 12/14.",
+    "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 92,
   "modo_qualidade": "qualificado",
   "bloquear_publicacao": false,
-  "publicado_por_modo_qualificado": true
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true
 }
