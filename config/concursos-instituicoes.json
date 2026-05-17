@@ -34,45 +34,9 @@
       "PRF concurso vagas salário banca escolaridade",
       "PRF inscrições concurso prova etapas banca",
       "PRF diário oficial concurso edital convocação",
-      "PRF edital pdf concurso banca organizadora"
-    ]
-  },
-  {
-    "id": "pf",
-    "nome": "Polícia Federal",
-    "sigla": "PF",
-    "uf": "BR",
-    "tema": "concursos",
-    "prioridade": 1,
-    "frequencia": "semanal",
-    "arquivo_saida": "data/concursos/pf.json",
-    "arquivo_monitoramento": "data/concursos/pf-monitor.json",
-    "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
-    "fontes_base": [
-      "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
-      "https://www.cebraspe.org.br/concursos/PF_25"
-    ],
-    "dominios_oficiais": [
-      "cebraspe.org.br",
-      "gov.br"
-    ],
-    "termos_relevantes": [
-      "concurso",
-      "edital",
-      "inscrição",
-      "inscricao",
-      "pf",
-      "policial federal",
-      "federal",
-      "cebraspe"
-    ],
-    "consultas_sugeridas": [
-      "PF concurso edital BR",
-      "Polícia Federal concurso público edital",
-      "PF concurso vagas salário banca escolaridade",
-      "PF inscrições concurso prova etapas banca",
-      "PF diário oficial concurso edital convocação",
-      "PF edital pdf concurso banca organizadora"
+      "PRF edital pdf concurso banca organizadora",
+      "PRF resultado homologação concurso",
+      "PRF concurso oficial site governo"
     ]
   },
   {
@@ -104,7 +68,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCDF concurso edital DF",
@@ -112,7 +77,9 @@
       "PCDF concurso vagas salário banca escolaridade",
       "PCDF inscrições concurso prova etapas banca",
       "PCDF diário oficial concurso edital convocação",
-      "PCDF edital pdf concurso banca organizadora"
+      "PCDF edital pdf concurso banca organizadora",
+      "PCDF resultado homologação concurso",
+      "PCDF concurso oficial site governo"
     ]
   },
   {
@@ -130,7 +97,8 @@
       "https://concursos.policiamilitar.sp.gov.br"
     ],
     "dominios_oficiais": [
-      "concursos.policiamilitar.sp.gov.br"
+      "concursos.policiamilitar.sp.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -143,6 +111,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -152,7 +121,9 @@
       "PMESP concurso vagas salário banca escolaridade",
       "PMESP inscrições concurso prova etapas banca",
       "PMESP diário oficial concurso edital convocação",
-      "PMESP edital pdf concurso banca organizadora"
+      "PMESP edital pdf concurso banca organizadora",
+      "PMESP resultado homologação concurso",
+      "PMESP concurso oficial site governo"
     ]
   },
   {
@@ -170,7 +141,8 @@
       "https://concursos.policiamilitar.sp.gov.br"
     ],
     "dominios_oficiais": [
-      "concursos.policiamilitar.sp.gov.br"
+      "concursos.policiamilitar.sp.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -184,11 +156,11 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca",
       "bombeiro",
-      "bombeiros",
-      "cfsd"
+      "bombeiros"
     ],
     "consultas_sugeridas": [
       "CBPMESP concurso edital SP",
@@ -196,7 +168,9 @@
       "CBPMESP concurso vagas salário banca escolaridade",
       "CBPMESP inscrições concurso prova etapas banca",
       "CBPMESP diário oficial concurso edital convocação",
-      "CBPMESP edital pdf concurso banca organizadora"
+      "CBPMESP edital pdf concurso banca organizadora",
+      "CBPMESP resultado homologação concurso",
+      "CBPMESP concurso oficial site governo"
     ]
   },
   {
@@ -214,6 +188,7 @@
       "https://www.policiacivil.sp.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "policiacivil.sp.gov.br"
     ],
     "termos_relevantes": [
@@ -228,7 +203,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCSP concurso edital SP",
@@ -236,7 +212,9 @@
       "PCSP concurso vagas salário banca escolaridade",
       "PCSP inscrições concurso prova etapas banca",
       "PCSP diário oficial concurso edital convocação",
-      "PCSP edital pdf concurso banca organizadora"
+      "PCSP edital pdf concurso banca organizadora",
+      "PCSP resultado homologação concurso",
+      "PCSP concurso oficial site governo"
     ]
   },
   {
@@ -273,7 +251,9 @@
       "PPSP concurso vagas salário banca escolaridade",
       "PPSP inscrições concurso prova etapas banca",
       "PPSP diário oficial concurso edital convocação",
-      "PPSP edital pdf concurso banca organizadora"
+      "PPSP edital pdf concurso banca organizadora",
+      "PPSP resultado homologação concurso",
+      "PPSP concurso oficial site governo"
     ]
   },
   {
@@ -304,6 +284,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -313,7 +294,9 @@
       "PMAL concurso vagas salário banca escolaridade",
       "PMAL inscrições concurso prova etapas banca",
       "PMAL diário oficial concurso edital convocação",
-      "PMAL edital pdf concurso banca organizadora"
+      "PMAL edital pdf concurso banca organizadora",
+      "PMAL resultado homologação concurso",
+      "PMAL concurso oficial site governo"
     ]
   },
   {
@@ -331,6 +314,7 @@
       "https://pc.al.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pc.al.gov.br"
     ],
     "termos_relevantes": [
@@ -345,7 +329,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCAL concurso edital AL",
@@ -353,7 +338,9 @@
       "PCAL concurso vagas salário banca escolaridade",
       "PCAL inscrições concurso prova etapas banca",
       "PCAL diário oficial concurso edital convocação",
-      "PCAL edital pdf concurso banca organizadora"
+      "PCAL edital pdf concurso banca organizadora",
+      "PCAL resultado homologação concurso",
+      "PCAL concurso oficial site governo"
     ]
   },
   {
@@ -371,6 +358,7 @@
       "https://www.seris.al.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "seris.al.gov.br"
     ],
     "termos_relevantes": [
@@ -390,7 +378,9 @@
       "PPAL concurso vagas salário banca escolaridade",
       "PPAL inscrições concurso prova etapas banca",
       "PPAL diário oficial concurso edital convocação",
-      "PPAL edital pdf concurso banca organizadora"
+      "PPAL edital pdf concurso banca organizadora",
+      "PPAL resultado homologação concurso",
+      "PPAL concurso oficial site governo"
     ]
   },
   {
@@ -408,7 +398,8 @@
       "https://www.bombeiros.mg.gov.br/concursos"
     ],
     "dominios_oficiais": [
-      "bombeiros.mg.gov.br"
+      "bombeiros.mg.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -430,7 +421,9 @@
       "CBMMG concurso vagas salário banca escolaridade",
       "CBMMG inscrições concurso prova etapas banca",
       "CBMMG diário oficial concurso edital convocação",
-      "CBMMG edital pdf concurso banca organizadora"
+      "CBMMG edital pdf concurso banca organizadora",
+      "CBMMG resultado homologação concurso",
+      "CBMMG concurso oficial site governo"
     ]
   },
   {
@@ -448,6 +441,7 @@
       "https://www.seguranca.mg.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "seguranca.mg.gov.br"
     ],
     "termos_relevantes": [
@@ -467,7 +461,9 @@
       "PPMG concurso vagas salário banca escolaridade",
       "PPMG inscrições concurso prova etapas banca",
       "PPMG diário oficial concurso edital convocação",
-      "PPMG edital pdf concurso banca organizadora"
+      "PPMG edital pdf concurso banca organizadora",
+      "PPMG resultado homologação concurso",
+      "PPMG concurso oficial site governo"
     ]
   },
   {
@@ -485,6 +481,7 @@
       "https://www.policiamilitar.mg.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "policiamilitar.mg.gov.br"
     ],
     "termos_relevantes": [
@@ -498,6 +495,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -507,7 +505,9 @@
       "PMMG concurso vagas salário banca escolaridade",
       "PMMG inscrições concurso prova etapas banca",
       "PMMG diário oficial concurso edital convocação",
-      "PMMG edital pdf concurso banca organizadora"
+      "PMMG edital pdf concurso banca organizadora",
+      "PMMG resultado homologação concurso",
+      "PMMG concurso oficial site governo"
     ]
   },
   {
@@ -525,6 +525,7 @@
       "https://www.policiacivil.mg.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "policiacivil.mg.gov.br"
     ],
     "termos_relevantes": [
@@ -539,7 +540,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCMG concurso edital MG",
@@ -547,7 +549,9 @@
       "PCMG concurso vagas salário banca escolaridade",
       "PCMG inscrições concurso prova etapas banca",
       "PCMG diário oficial concurso edital convocação",
-      "PCMG edital pdf concurso banca organizadora"
+      "PCMG edital pdf concurso banca organizadora",
+      "PCMG resultado homologação concurso",
+      "PCMG concurso oficial site governo"
     ]
   },
   {
@@ -565,7 +569,8 @@
       "https://www.bombeiros.pr.gov.br/Pagina/Concursos"
     ],
     "dominios_oficiais": [
-      "bombeiros.pr.gov.br"
+      "bombeiros.pr.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -587,7 +592,9 @@
       "CBMPR concurso vagas salário banca escolaridade",
       "CBMPR inscrições concurso prova etapas banca",
       "CBMPR diário oficial concurso edital convocação",
-      "CBMPR edital pdf concurso banca organizadora"
+      "CBMPR edital pdf concurso banca organizadora",
+      "CBMPR resultado homologação concurso",
+      "CBMPR concurso oficial site governo"
     ]
   },
   {
@@ -605,6 +612,7 @@
       "https://www.pmpr.pr.gov.br/Pagina/Concursos-em-Andamento"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pmpr.pr.gov.br"
     ],
     "termos_relevantes": [
@@ -618,6 +626,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -627,7 +636,9 @@
       "PMPR concurso vagas salário banca escolaridade",
       "PMPR inscrições concurso prova etapas banca",
       "PMPR diário oficial concurso edital convocação",
-      "PMPR edital pdf concurso banca organizadora"
+      "PMPR edital pdf concurso banca organizadora",
+      "PMPR resultado homologação concurso",
+      "PMPR concurso oficial site governo"
     ]
   },
   {
@@ -645,6 +656,7 @@
       "https://www.pcpr.pr.gov.br/Pagina/Concursos"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pcpr.pr.gov.br"
     ],
     "termos_relevantes": [
@@ -659,7 +671,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCPR concurso edital PR",
@@ -667,7 +680,9 @@
       "PCPR concurso vagas salário banca escolaridade",
       "PCPR inscrições concurso prova etapas banca",
       "PCPR diário oficial concurso edital convocação",
-      "PCPR edital pdf concurso banca organizadora"
+      "PCPR edital pdf concurso banca organizadora",
+      "PCPR resultado homologação concurso",
+      "PCPR concurso oficial site governo"
     ]
   },
   {
@@ -699,6 +714,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -708,7 +724,9 @@
       "PMAM concurso vagas salário banca escolaridade",
       "PMAM inscrições concurso prova etapas banca",
       "PMAM diário oficial concurso edital convocação",
-      "PMAM edital pdf concurso banca organizadora"
+      "PMAM edital pdf concurso banca organizadora",
+      "PMAM resultado homologação concurso",
+      "PMAM concurso oficial site governo"
     ]
   },
   {
@@ -741,7 +759,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCAM concurso edital AM",
@@ -749,7 +768,9 @@
       "PCAM concurso vagas salário banca escolaridade",
       "PCAM inscrições concurso prova etapas banca",
       "PCAM diário oficial concurso edital convocação",
-      "PCAM edital pdf concurso banca organizadora"
+      "PCAM edital pdf concurso banca organizadora",
+      "PCAM resultado homologação concurso",
+      "PCAM concurso oficial site governo"
     ]
   },
   {
@@ -767,7 +788,8 @@
       "https://concursos.sepm.rj.gov.br"
     ],
     "dominios_oficiais": [
-      "concursos.sepm.rj.gov.br"
+      "concursos.sepm.rj.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -780,6 +802,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -789,7 +812,9 @@
       "PMERJ concurso vagas salário banca escolaridade",
       "PMERJ inscrições concurso prova etapas banca",
       "PMERJ diário oficial concurso edital convocação",
-      "PMERJ edital pdf concurso banca organizadora"
+      "PMERJ edital pdf concurso banca organizadora",
+      "PMERJ resultado homologação concurso",
+      "PMERJ concurso oficial site governo"
     ]
   },
   {
@@ -807,7 +832,8 @@
       "https://www.cbmerj.rj.gov.br/cursos-e-concursos/"
     ],
     "dominios_oficiais": [
-      "cbmerj.rj.gov.br"
+      "cbmerj.rj.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -829,7 +855,9 @@
       "CBMERJ concurso vagas salário banca escolaridade",
       "CBMERJ inscrições concurso prova etapas banca",
       "CBMERJ diário oficial concurso edital convocação",
-      "CBMERJ edital pdf concurso banca organizadora"
+      "CBMERJ edital pdf concurso banca organizadora",
+      "CBMERJ resultado homologação concurso",
+      "CBMERJ concurso oficial site governo"
     ]
   },
   {
@@ -847,6 +875,7 @@
       "https://www.policiacivil.rj.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "policiacivil.rj.gov.br"
     ],
     "termos_relevantes": [
@@ -861,7 +890,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCERJ concurso edital RJ",
@@ -869,7 +899,9 @@
       "PCERJ concurso vagas salário banca escolaridade",
       "PCERJ inscrições concurso prova etapas banca",
       "PCERJ diário oficial concurso edital convocação",
-      "PCERJ edital pdf concurso banca organizadora"
+      "PCERJ edital pdf concurso banca organizadora",
+      "PCERJ resultado homologação concurso",
+      "PCERJ concurso oficial site governo"
     ]
   },
   {
@@ -887,6 +919,7 @@
       "https://www.pm.ba.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pm.ba.gov.br"
     ],
     "termos_relevantes": [
@@ -900,6 +933,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -909,7 +943,9 @@
       "PMBA concurso vagas salário banca escolaridade",
       "PMBA inscrições concurso prova etapas banca",
       "PMBA diário oficial concurso edital convocação",
-      "PMBA edital pdf concurso banca organizadora"
+      "PMBA edital pdf concurso banca organizadora",
+      "PMBA resultado homologação concurso",
+      "PMBA concurso oficial site governo"
     ]
   },
   {
@@ -927,6 +963,7 @@
       "https://www.policiacivil.ba.gov.br"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "policiacivil.ba.gov.br"
     ],
     "termos_relevantes": [
@@ -941,7 +978,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCBA concurso edital BA",
@@ -949,7 +987,9 @@
       "PCBA concurso vagas salário banca escolaridade",
       "PCBA inscrições concurso prova etapas banca",
       "PCBA diário oficial concurso edital convocação",
-      "PCBA edital pdf concurso banca organizadora"
+      "PCBA edital pdf concurso banca organizadora",
+      "PCBA resultado homologação concurso",
+      "PCBA concurso oficial site governo"
     ]
   },
   {
@@ -967,7 +1007,8 @@
       "https://www.brigadamilitar.rs.gov.br/concursos-2025"
     ],
     "dominios_oficiais": [
-      "brigadamilitar.rs.gov.br"
+      "brigadamilitar.rs.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -980,6 +1021,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -989,7 +1031,9 @@
       "PMRS concurso vagas salário banca escolaridade",
       "PMRS inscrições concurso prova etapas banca",
       "PMRS diário oficial concurso edital convocação",
-      "PMRS edital pdf concurso banca organizadora"
+      "PMRS edital pdf concurso banca organizadora",
+      "PMRS resultado homologação concurso",
+      "PMRS concurso oficial site governo"
     ]
   },
   {
@@ -1007,6 +1051,7 @@
       "https://www.pc.rs.gov.br/concurso-publico-para-escrivao-e-inspetor-2025"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pc.rs.gov.br"
     ],
     "termos_relevantes": [
@@ -1021,7 +1066,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCRS concurso edital RS",
@@ -1029,7 +1075,9 @@
       "PCRS concurso vagas salário banca escolaridade",
       "PCRS inscrições concurso prova etapas banca",
       "PCRS diário oficial concurso edital convocação",
-      "PCRS edital pdf concurso banca organizadora"
+      "PCRS edital pdf concurso banca organizadora",
+      "PCRS resultado homologação concurso",
+      "PCRS concurso oficial site governo"
     ]
   },
   {
@@ -1047,6 +1095,7 @@
       "https://www.pm.sc.gov.br/concursos"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pm.sc.gov.br"
     ],
     "termos_relevantes": [
@@ -1060,6 +1109,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1069,7 +1119,9 @@
       "PMSC concurso vagas salário banca escolaridade",
       "PMSC inscrições concurso prova etapas banca",
       "PMSC diário oficial concurso edital convocação",
-      "PMSC edital pdf concurso banca organizadora"
+      "PMSC edital pdf concurso banca organizadora",
+      "PMSC resultado homologação concurso",
+      "PMSC concurso oficial site governo"
     ]
   },
   {
@@ -1109,7 +1161,9 @@
       "CBMSC concurso vagas salário banca escolaridade",
       "CBMSC inscrições concurso prova etapas banca",
       "CBMSC diário oficial concurso edital convocação",
-      "CBMSC edital pdf concurso banca organizadora"
+      "CBMSC edital pdf concurso banca organizadora",
+      "CBMSC resultado homologação concurso",
+      "CBMSC concurso oficial site governo"
     ]
   },
   {
@@ -1127,6 +1181,7 @@
       "https://pc.sc.gov.br/?p=35166"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pc.sc.gov.br"
     ],
     "termos_relevantes": [
@@ -1141,7 +1196,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCSC concurso edital SC",
@@ -1149,7 +1205,9 @@
       "PCSC concurso vagas salário banca escolaridade",
       "PCSC inscrições concurso prova etapas banca",
       "PCSC diário oficial concurso edital convocação",
-      "PCSC edital pdf concurso banca organizadora"
+      "PCSC edital pdf concurso banca organizadora",
+      "PCSC resultado homologação concurso",
+      "PCSC concurso oficial site governo"
     ]
   },
   {
@@ -1167,6 +1225,7 @@
       "https://pm.es.gov.br/concursos"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pm.es.gov.br"
     ],
     "termos_relevantes": [
@@ -1180,6 +1239,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1189,7 +1249,9 @@
       "PMES concurso vagas salário banca escolaridade",
       "PMES inscrições concurso prova etapas banca",
       "PMES diário oficial concurso edital convocação",
-      "PMES edital pdf concurso banca organizadora"
+      "PMES edital pdf concurso banca organizadora",
+      "PMES resultado homologação concurso",
+      "PMES concurso oficial site governo"
     ]
   },
   {
@@ -1207,7 +1269,8 @@
       "https://cb.es.gov.br/cfo2023"
     ],
     "dominios_oficiais": [
-      "cb.es.gov.br"
+      "cb.es.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1229,7 +1292,9 @@
       "CBMES concurso vagas salário banca escolaridade",
       "CBMES inscrições concurso prova etapas banca",
       "CBMES diário oficial concurso edital convocação",
-      "CBMES edital pdf concurso banca organizadora"
+      "CBMES edital pdf concurso banca organizadora",
+      "CBMES resultado homologação concurso",
+      "CBMES concurso oficial site governo"
     ]
   },
   {
@@ -1247,6 +1312,7 @@
       "https://pc.es.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pc.es.gov.br"
     ],
     "termos_relevantes": [
@@ -1261,7 +1327,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCES concurso edital ES",
@@ -1269,7 +1336,9 @@
       "PCES concurso vagas salário banca escolaridade",
       "PCES inscrições concurso prova etapas banca",
       "PCES diário oficial concurso edital convocação",
-      "PCES edital pdf concurso banca organizadora"
+      "PCES edital pdf concurso banca organizadora",
+      "PCES resultado homologação concurso",
+      "PCES concurso oficial site governo"
     ]
   },
   {
@@ -1287,6 +1356,7 @@
       "https://www.pm.ms.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pm.ms.gov.br"
     ],
     "termos_relevantes": [
@@ -1300,6 +1370,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1309,7 +1380,9 @@
       "PMMS concurso vagas salário banca escolaridade",
       "PMMS inscrições concurso prova etapas banca",
       "PMMS diário oficial concurso edital convocação",
-      "PMMS edital pdf concurso banca organizadora"
+      "PMMS edital pdf concurso banca organizadora",
+      "PMMS resultado homologação concurso",
+      "PMMS concurso oficial site governo"
     ]
   },
   {
@@ -1327,7 +1400,8 @@
       "https://www.concursos.ms.gov.br/"
     ],
     "dominios_oficiais": [
-      "concursos.ms.gov.br"
+      "concursos.ms.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1349,7 +1423,9 @@
       "CBMMS concurso vagas salário banca escolaridade",
       "CBMMS inscrições concurso prova etapas banca",
       "CBMMS diário oficial concurso edital convocação",
-      "CBMMS edital pdf concurso banca organizadora"
+      "CBMMS edital pdf concurso banca organizadora",
+      "CBMMS resultado homologação concurso",
+      "CBMMS concurso oficial site governo"
     ]
   },
   {
@@ -1367,6 +1443,7 @@
       "https://www.pc.ms.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pc.ms.gov.br"
     ],
     "termos_relevantes": [
@@ -1381,7 +1458,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCMS concurso edital MS",
@@ -1389,7 +1467,9 @@
       "PCMS concurso vagas salário banca escolaridade",
       "PCMS inscrições concurso prova etapas banca",
       "PCMS diário oficial concurso edital convocação",
-      "PCMS edital pdf concurso banca organizadora"
+      "PCMS edital pdf concurso banca organizadora",
+      "PCMS resultado homologação concurso",
+      "PCMS concurso oficial site governo"
     ]
   },
   {
@@ -1407,7 +1487,8 @@
       "https://www.agepen.ms.gov.br/"
     ],
     "dominios_oficiais": [
-      "agepen.ms.gov.br"
+      "agepen.ms.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1426,7 +1507,9 @@
       "PPMS concurso vagas salário banca escolaridade",
       "PPMS inscrições concurso prova etapas banca",
       "PPMS diário oficial concurso edital convocação",
-      "PPMS edital pdf concurso banca organizadora"
+      "PPMS edital pdf concurso banca organizadora",
+      "PPMS resultado homologação concurso",
+      "PPMS concurso oficial site governo"
     ]
   },
   {
@@ -1444,6 +1527,7 @@
       "https://www.pm.mt.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pm.mt.gov.br"
     ],
     "termos_relevantes": [
@@ -1457,6 +1541,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1466,7 +1551,9 @@
       "PMMT concurso vagas salário banca escolaridade",
       "PMMT inscrições concurso prova etapas banca",
       "PMMT diário oficial concurso edital convocação",
-      "PMMT edital pdf concurso banca organizadora"
+      "PMMT edital pdf concurso banca organizadora",
+      "PMMT resultado homologação concurso",
+      "PMMT concurso oficial site governo"
     ]
   },
   {
@@ -1484,7 +1571,8 @@
       "https://www.bombeiros.mt.gov.br/concursos-e-seletivos"
     ],
     "dominios_oficiais": [
-      "bombeiros.mt.gov.br"
+      "bombeiros.mt.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1506,7 +1594,9 @@
       "CBMMT concurso vagas salário banca escolaridade",
       "CBMMT inscrições concurso prova etapas banca",
       "CBMMT diário oficial concurso edital convocação",
-      "CBMMT edital pdf concurso banca organizadora"
+      "CBMMT edital pdf concurso banca organizadora",
+      "CBMMT resultado homologação concurso",
+      "CBMMT concurso oficial site governo"
     ]
   },
   {
@@ -1524,6 +1614,7 @@
       "https://www.pjc.mt.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "pjc.mt.gov.br"
     ],
     "termos_relevantes": [
@@ -1538,7 +1629,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCMT concurso edital MT",
@@ -1546,7 +1638,9 @@
       "PCMT concurso vagas salário banca escolaridade",
       "PCMT inscrições concurso prova etapas banca",
       "PCMT diário oficial concurso edital convocação",
-      "PCMT edital pdf concurso banca organizadora"
+      "PCMT edital pdf concurso banca organizadora",
+      "PCMT resultado homologação concurso",
+      "PCMT concurso oficial site governo"
     ]
   },
   {
@@ -1564,6 +1658,7 @@
       "https://www.sejus.mt.gov.br/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "sejus.mt.gov.br"
     ],
     "termos_relevantes": [
@@ -1583,7 +1678,9 @@
       "PPMT concurso vagas salário banca escolaridade",
       "PPMT inscrições concurso prova etapas banca",
       "PPMT diário oficial concurso edital convocação",
-      "PPMT edital pdf concurso banca organizadora"
+      "PPMT edital pdf concurso banca organizadora",
+      "PPMT resultado homologação concurso",
+      "PPMT concurso oficial site governo"
     ]
   },
   {
@@ -1615,6 +1712,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1624,7 +1722,9 @@
       "PMAC concurso vagas salário banca escolaridade",
       "PMAC inscrições concurso prova etapas banca",
       "PMAC diário oficial concurso edital convocação",
-      "PMAC edital pdf concurso banca organizadora"
+      "PMAC edital pdf concurso banca organizadora",
+      "PMAC resultado homologação concurso",
+      "PMAC concurso oficial site governo"
     ]
   },
   {
@@ -1642,7 +1742,8 @@
       "https://agencia.ac.gov.br/governadora-mailza-assis-empossa-novo-delegado-geral-e-anuncia-concurso-publico-da-policia-civil/"
     ],
     "dominios_oficiais": [
-      "agencia.ac.gov.br"
+      "agencia.ac.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1656,7 +1757,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCAC concurso edital AC",
@@ -1664,7 +1766,9 @@
       "PCAC concurso vagas salário banca escolaridade",
       "PCAC inscrições concurso prova etapas banca",
       "PCAC diário oficial concurso edital convocação",
-      "PCAC edital pdf concurso banca organizadora"
+      "PCAC edital pdf concurso banca organizadora",
+      "PCAC resultado homologação concurso",
+      "PCAC concurso oficial site governo"
     ]
   },
   {
@@ -1682,6 +1786,7 @@
       "https://sead.ac.gov.br/gestao-governamental/editais-e-concursos/iapen-instituto-de-administracao-penitenciaria-do-acre/"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "sead.ac.gov.br"
     ],
     "termos_relevantes": [
@@ -1701,7 +1806,9 @@
       "PPAC concurso vagas salário banca escolaridade",
       "PPAC inscrições concurso prova etapas banca",
       "PPAC diário oficial concurso edital convocação",
-      "PPAC edital pdf concurso banca organizadora"
+      "PPAC edital pdf concurso banca organizadora",
+      "PPAC resultado homologação concurso",
+      "PPAC concurso oficial site governo"
     ]
   },
   {
@@ -1719,6 +1826,7 @@
       "https://sead.portal.ap.gov.br/concursos/vigentes/24027"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "sead.portal.ap.gov.br"
     ],
     "termos_relevantes": [
@@ -1732,6 +1840,7 @@
       "soldado",
       "oficial",
       "cfo",
+      "cfsd",
       "praça",
       "praca"
     ],
@@ -1741,7 +1850,9 @@
       "PMAP concurso vagas salário banca escolaridade",
       "PMAP inscrições concurso prova etapas banca",
       "PMAP diário oficial concurso edital convocação",
-      "PMAP edital pdf concurso banca organizadora"
+      "PMAP edital pdf concurso banca organizadora",
+      "PMAP resultado homologação concurso",
+      "PMAP concurso oficial site governo"
     ]
   },
   {
@@ -1759,6 +1870,7 @@
       "https://sead.portal.ap.gov.br/concursos/vigentes/3736"
     ],
     "dominios_oficiais": [
+      "gov.br",
       "sead.portal.ap.gov.br"
     ],
     "termos_relevantes": [
@@ -1773,7 +1885,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCAP concurso edital AP",
@@ -1781,7 +1894,9 @@
       "PCAP concurso vagas salário banca escolaridade",
       "PCAP inscrições concurso prova etapas banca",
       "PCAP diário oficial concurso edital convocação",
-      "PCAP edital pdf concurso banca organizadora"
+      "PCAP edital pdf concurso banca organizadora",
+      "PCAP resultado homologação concurso",
+      "PCAP concurso oficial site governo"
     ]
   },
   {
@@ -1799,7 +1914,8 @@
       "https://bombeiros.portal.ap.gov.br/"
     ],
     "dominios_oficiais": [
-      "bombeiros.portal.ap.gov.br"
+      "bombeiros.portal.ap.gov.br",
+      "gov.br"
     ],
     "termos_relevantes": [
       "concurso",
@@ -1821,7 +1937,9 @@
       "CBMAP concurso vagas salário banca escolaridade",
       "CBMAP inscrições concurso prova etapas banca",
       "CBMAP diário oficial concurso edital convocação",
-      "CBMAP edital pdf concurso banca organizadora"
+      "CBMAP edital pdf concurso banca organizadora",
+      "CBMAP resultado homologação concurso",
+      "CBMAP concurso oficial site governo"
     ]
   },
   {
@@ -1853,7 +1971,8 @@
       "investigador",
       "escrivão",
       "escrivao",
-      "perito"
+      "perito",
+      "papiloscopista"
     ],
     "consultas_sugeridas": [
       "PCCE concurso edital CE",
@@ -1861,7 +1980,49 @@
       "PCCE concurso vagas salário banca escolaridade",
       "PCCE inscrições concurso prova etapas banca",
       "PCCE diário oficial concurso edital convocação",
-      "PCCE edital pdf concurso banca organizadora"
+      "PCCE edital pdf concurso banca organizadora",
+      "PCCE resultado homologação concurso",
+      "PCCE concurso oficial site governo"
+    ]
+  },
+  {
+    "id": "pf",
+    "nome": "Polícia Federal",
+    "sigla": "PF",
+    "uf": "BR",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pf.json",
+    "arquivo_monitoramento": "data/concursos/pf-monitor.json",
+    "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+    "fontes_base": [
+      "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+      "https://www.cebraspe.org.br/concursos/PF_25"
+    ],
+    "dominios_oficiais": [
+      "cebraspe.org.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "pf",
+      "policial federal",
+      "federal",
+      "cebraspe"
+    ],
+    "consultas_sugeridas": [
+      "PF concurso edital BR",
+      "Polícia Federal concurso público edital",
+      "PF concurso vagas salário banca escolaridade",
+      "PF inscrições concurso prova etapas banca",
+      "PF diário oficial concurso edital convocação",
+      "PF edital pdf concurso banca organizadora",
+      "PF resultado homologação concurso",
+      "PF concurso oficial site governo"
     ]
   }
 ]

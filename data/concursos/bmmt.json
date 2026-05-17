@@ -38,7 +38,6 @@
   "bloquear_publicacao": false,
   "alertas": [
     "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
-    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+    "Automação protegida: não sobrescreve JSON principal quando atualização vier genérica ou ruim."
   ]
 }

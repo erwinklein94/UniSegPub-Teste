@@ -90,7 +90,7 @@ on:
           - 'false'
           - 'true'
       modo_qualidade:
-        description: 'economico preserva dados; qualificado usa modelo melhor e web_search para melhorar conteúdo. Use uma instituição por vez.'
+        description: 'economico preserva dados; qualificado usa modelo melhor e web_search mesmo quando fonte direta falhar.'
         required: false
         default: 'economico'
         type: choice
@@ -98,8 +98,6 @@ on:
           - 'economico'
           - 'qualificado'
   schedule:
-    # 07h00 de Brasília, segunda-feira. GitHub Actions usa UTC.
-    # Mantido conservador: prioridade_1 com limite 1 por padrão.
     - cron: '0 10 * * 1'
 
 permissions:
@@ -108,41 +106,36 @@ permissions:
 jobs:
   atualizar-concursos:
     runs-on: ubuntu-latest
-
     steps:
       - name: Baixar repositório
         uses: actions/checkout@v4
-
       - name: Configurar Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Rodar motor genérico de concursos
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-nano' }}
+          OPENAI_MODEL_QUALIDADE: ${{ vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
           INSTITUICAO_ID: ${{ github.event.inputs.instituicao || 'prioridade_1' }}
           LIMITE_INSTITUICOES: ${{ github.event.inputs.limite || '1' }}
           FORCAR_ATUALIZACAO: ${{ github.event.inputs.forcar_atualizacao || 'false' }}
           USAR_WEB_SEARCH: ${{ github.event.inputs.usar_web_search || 'false' }}
           MODO_QUALIDADE: ${{ github.event.inputs.modo_qualidade || 'economico' }}
-          OPENAI_MODEL_QUALIDADE: ${{ vars.OPENAI_MODEL_QUALIDADE || 'gpt-5.4-mini' }}
-          MIN_SCORE_PUBLICACAO: '78'
-          MAX_CRITICOS_GENERICOS: '2'
-          PERMITIR_PUBLICAR_SE_PIORA: 'false'
           DIAS_REVALIDACAO_COMPLETA: '14'
           MAX_PAGINAS_OFICIAIS: '6'
           MAX_CARACTERES_POR_PAGINA: '4500'
+          MIN_SCORE_PUBLICACAO: '78'
+          MAX_CRITICOS_GENERICOS: '2'
+          PERMITIR_PUBLICAR_SE_PIORA: 'false'
         run: node scripts/atualizar-concursos.mjs
-
       - name: Salvar alterações no repositório
         run: |
           if [ -z "$(git status --porcelain data/concursos)" ]; then
             echo "Nenhuma alteração detectada em data/concursos."
             exit 0
           fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/concursos

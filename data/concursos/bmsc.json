@@ -26,7 +26,7 @@
     {
       "titulo": "Página de referência de concursos — CBMSC",
       "url": "https://concurso.idib.org.br/",
-      "tipo": "banca organizadora ou página do concurso",
+      "tipo": "fonte oficial ou página institucional",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -38,7 +38,6 @@
   "bloquear_publicacao": false,
   "alertas": [
     "Arquivo inicial criado a partir dos dados estáticos já existentes no site.",
-    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade.",
-    "Antes de considerar o conteúdo definitivo, revise edital, datas, remuneração e validade nas fontes oficiais."
+    "Automação protegida: não sobrescreve JSON principal quando atualização vier genérica ou ruim."
   ]
 }
