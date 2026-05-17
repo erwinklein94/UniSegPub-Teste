@@ -1,7 +1,7 @@
 /*
   Automação genérica — Concursos
-  Lê config/concursos-instituicoes.json e usa data/concursos/{id}.json
-  como fonte preferencial para cards e consulta detalhada.
+  Correção Etapa 19: JSON publicado em modo qualificado pago deve ser exibido no site,
+  mesmo quando qualidade_publicacao vier como baixa, desde que bloquear_publicacao seja false.
 */
 (function () {
   const CONFIG_URL = 'config/concursos-instituicoes.json';
@@ -63,6 +63,13 @@
 
   function jsonTemQualidadeMinima(dados) {
     if (!dados || typeof dados !== 'object') return false;
+
+    // Etapa 19: se o back-end publicou porque houve uso pago qualificado,
+    // o front-end não pode barrar a exibição. A revisão humana fica indicada nos alertas/metadados.
+    if (dados.forcar_exibicao_site === true) return true;
+    if (dados.publicado_por_modo_qualificado === true && dados.bloquear_publicacao !== true) return true;
+    if (dados.publicacao_forcada_por_credito_openai === true && dados.bloquear_publicacao !== true) return true;
+
     if (dados.bloquear_publicacao === true) return false;
     if (texto(dados.qualidade_publicacao).toLowerCase() === 'baixa') return false;
 
@@ -71,10 +78,8 @@
       return valorRuim(dados[campo]);
     });
 
-    // Se muitos campos essenciais vieram como "não encontrado", o JSON não pode substituir os dados estáticos.
     if (ruins.length >= 3) return false;
 
-    // Baixa confiança + revisão humana + pelo menos dois campos ruins também bloqueia publicação no front.
     if (texto(dados.nivel_confianca).toLowerCase() === 'baixo' && dados.precisa_revisao_humana && ruins.length >= 2) {
       return false;
     }
@@ -104,7 +109,11 @@
         origem: texto(itemConfig.arquivo_saida || ('data/concursos/' + id + '.json')),
         ultima_pesquisa: texto(dados.ultima_pesquisa || ''),
         nivel_confianca: texto(dados.nivel_confianca || ''),
+        qualidade_publicacao: texto(dados.qualidade_publicacao || ''),
+        score_publicacao: texto(dados.score_publicacao || ''),
         precisa_revisao_humana: Boolean(dados.precisa_revisao_humana),
+        publicado_por_modo_qualificado: Boolean(dados.publicado_por_modo_qualificado),
+        forcar_exibicao_site: Boolean(dados.forcar_exibicao_site),
         fontes: Array.isArray(dados.fontes) ? dados.fontes : [],
         alertas: Array.isArray(dados.alertas) ? dados.alertas : []
       }
@@ -145,6 +154,8 @@
 
     card.dataset.automacao = 'concursos-json';
     card.dataset.automacaoAtualizada = concurso.automacao.ultima_pesquisa || '';
+    card.dataset.automacaoQualidade = concurso.automacao.qualidade_publicacao || '';
+    card.dataset.automacaoScore = concurso.automacao.score_publicacao || '';
   }
 
   function renderizarDetalheSeAberto(instId, concurso) {
@@ -159,10 +170,12 @@
       ? '<a href="' + escapar(concurso.site) + '" target="_blank" rel="noopener noreferrer" class="concurso-link">🔗 Site oficial da instituição</a>'
       : '<span class="direito-desc">Fonte oficial em atualização</span>';
 
-    const metadados = concurso.automacao.ultima_pesquisa || concurso.automacao.nivel_confianca
+    const metadados = concurso.automacao.ultima_pesquisa || concurso.automacao.nivel_confianca || concurso.automacao.score_publicacao
       ? '<span class="direito-desc"><strong>Atualização automática:</strong> ' +
           escapar(concurso.automacao.ultima_pesquisa || 'sem data') +
           ' · confiança: ' + escapar(concurso.automacao.nivel_confianca || 'não informada') +
+          (concurso.automacao.score_publicacao ? ' · score: ' + escapar(concurso.automacao.score_publicacao) : '') +
+          (concurso.automacao.publicado_por_modo_qualificado ? ' · modo qualificado' : '') +
         '</span>'
       : '';
 
