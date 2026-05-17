@@ -5,30 +5,24 @@
   "uf": "DF",
   "tema": "concursos",
   "status": "edital 2025 publicado e em andamento",
-  "titulo": "CBMDF 2025: editais publicados para Oficiais e Praças",
-  "resumo": "O CBMDF publicou em 2025 editais para ingresso na corporação, com concursos ativos para CHOBM e outras carreiras de formação",
-  "edital": "Edital nº 01/2025 publicado em 15/08/2025 para CHOBM; portal institucional mantém a página do Concurso Público 2025 com editais e retificações",
+  "titulo": "Edital 2025 publicado para ingresso no CBMDF",
+  "resumo": "O CBMDF está com concurso público de 2025 publicado e em andamento, com vagas para os cursos de formação de oficiais e praças",
+  "edital": "Edital nº 01/2025 publicado em 15/08/2025; retificações e resultados parciais já divulgados; concurso em andamento",
   "salario": "Aspirante a Oficial: R$ 13.242,94; 2º Tenente: R$ 15.287,06",
-  "vagas": "CHOBM: 23 vagas providas em 2026",
-  "cotas": "Pesquisa inicial pendente",
-  "idade": "18 a 35 anos na data da inscrição; altura mínima de 1,55 m para mulher e 1,60 m para homem; CNH categoria B no ato da convocação",
+  "vagas": "CHOBM: 23 vagas",
+  "cotas": "20% das vagas reservadas a candidatos negros; vagas também previstas para pessoas com deficiência e hipossuficientes",
+  "idade": "18 a 35 anos; altura mínima de 1,55 m para mulher e 1,60 m para homem; CNH categoria B no ato da convocação",
   "escolaridade": "Ensino superior completo, com graduação compatível com a especialidade",
-  "materias": "Língua Portuguesa; Língua Inglesa; Noções de Informática; Noções de Agenda Ambiental; Legislação; Conhecimento específico do cargo",
+  "materias": "Língua Portuguesa; Língua Inglesa; Noções de Informática; Noções de Agenda Ambiental; Legislação; Conhecimento Específico do Cargo",
   "banca": "IDECAN",
   "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Prova objetiva; prova discursiva; teste de aptidão física; avaliação biopsicossocial para PcD; demais fases de habilitação e classificação previstas no certame",
+  "etapas": "Prova objetiva; prova discursiva; procedimento de heteroidentificação; avaliação biopsicossocial; Teste de Aptidão Física; demais fases de habilitação e classificação",
   "cfsd": "Pesquisa inicial pendente",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Acompanhar as próximas convocações e resultados das etapas já previstas no concurso",
+  "previsao": "A próxima movimentação tende a ser a continuidade das convocações e resultados das etapas já previstas",
   "site": "https://www.cbm.df.gov.br",
   "fontes": [
-    {
-      "titulo": "CBMDF abre edital para seleção e ingresso de candidatos às fileiras da corporação",
-      "url": "https://www.cbm.df.gov.br/cbmdf-abre-edital-para-selecao-e-ingresso-de-candidatos-as-fileiras-da-corporacao/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
     {
       "titulo": "Concurso Público 2025 CHO",
       "url": "https://www.cbm.df.gov.br/lai/concursos/concurso-publico-2025-cho/",
@@ -36,14 +30,26 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Edital nº 01/2025 – CHOBM",
+      "titulo": "Prorrogação das inscrições – Concurso Público do CBMDF",
+      "url": "https://www.cbm.df.gov.br/prorrogacao-das-inscricoes-concurso-publico-do-cbmdf/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "CBMDF abre edital para seleção e ingresso de candidatos às fileiras da corporação",
+      "url": "https://www.cbm.df.gov.br/cbmdf-abre-edital-para-selecao-e-ingresso-de-candidatos-as-fileiras-da-corporacao/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Edital CHOBM 2025",
       "url": "https://www.cbm.df.gov.br/lai/download/edital-chobm-2025/?tmstv=1755324811",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Site institucional do CBMDF",
-      "url": "https://www.cbm.df.gov.br",
+      "titulo": "Sobre o CBMDF",
+      "url": "https://www.cbm.df.gov.br/sobre-o-cbmdf/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -52,13 +58,14 @@
   "nivel_confianca": "alta",
   "precisa_revisao_humana": false,
   "alertas": [
-    "A pesquisa localizada com segurança o edital de CHOBM 2025; os dados acima se referem a esse concurso específico dentro do portal de concursos do CBMDF.",
-    "Não foram localizados, nas fontes consultadas, os dados de CFSD, estágio probatório e validade do concurso.",
-    "O portal institucional também exibe outras frentes de concurso em 2025, mas o edital analisado com dados completos é o CHOBM.",
+    "Os dados salariais e parte dos requisitos foram confirmados no edital de CHOBM 2025.",
+    "As vagas, cotas, idade, altura, CNH, escolaridade, matérias, banca e etapas refletem o edital de CHOBM 2025 localizado nas fontes oficiais consultadas.",
+    "Não foram localizados nas fontes consultadas os campos inscritos, CFSD, estágio probatório e validade do concurso.",
+    "O portal institucional informa que o concurso 2025 está com edital publicado e etapas em andamento.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
-    "Campo cotas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
+    "Campo cotas atualizado/priorizado pelo modo qualificado pago.",
     "Campo idade atualizado/priorizado pelo modo qualificado pago.",
     "Campo escolaridade atualizado/priorizado pelo modo qualificado pago.",
     "Campo materias atualizado/priorizado pelo modo qualificado pago.",

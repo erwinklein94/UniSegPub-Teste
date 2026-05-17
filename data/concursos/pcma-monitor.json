@@ -1,0 +1,70 @@
+{
+  "atualizado_em": "2026-05-17",
+  "instituicao_id": "pcma",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
+  "usou_openai": true,
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 87,
+  "motivo": "Atualização forçada manualmente.",
+  "usage": {
+    "input_tokens": 28383,
+    "input_tokens_details": {
+      "cached_tokens": 4736
+    },
+    "output_tokens": 1165,
+    "output_tokens_details": {
+      "reasoning_tokens": 254
+    },
+    "total_tokens": 29548
+  },
+  "fontes_monitoradas": [
+    {
+      "url": "https://www.policiacivil.ma.gov.br",
+      "ok": true,
+      "status": 200,
+      "hash": "e17b3ebf90e32049522450a5cc7f83efcb0f1536fcffbafb4bc2b200750e57a2",
+      "tamanho_texto": 5174
+    },
+    {
+      "url": "https://www.policiacivil.ma.gov.br/biopisicossocial-pcma/",
+      "ok": true,
+      "status": 200,
+      "hash": "9f2af44bba202e9d19a1e3c8aeed4c0fac1850886f50cca44636f61969884d3c",
+      "tamanho_texto": 1239
+    },
+    {
+      "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barros-neto-participa-do-lancamento-do-programa-brasil-contra-o-crime-organizado-em-brasilia/",
+      "ok": true,
+      "status": 200,
+      "hash": "6677e629b4c72b653264ee19f4809d70e02896083190367d9f57758a6627ee2a",
+      "tamanho_texto": 3492
+    },
+    {
+      "url": "https://www.policiacivil.ma.gov.br/delegado-geral-augusto-barro-neto-participa-de-audiencia-publica-sobre-seguranca-em-caxias/",
+      "ok": true,
+      "status": 200,
+      "hash": "2507aece0eed220c345139e83da81de7d8ce8688a967dd7841451817f0bff66e",
+      "tamanho_texto": 3222
+    },
+    {
+      "url": "https://www.policiacivil.ma.gov.br/category/concursos-editais-e-seletivos/",
+      "ok": true,
+      "status": 200,
+      "hash": "a8ae97cb3758682cea6a2a8f6db5f181892827542b3e8217606c9ddc742df4b8",
+      "tamanho_texto": 2525
+    },
+    {
+      "url": "https://www.policiacivil.ma.gov.br/wp-content/uploads/2023/02/OFC.-CIRC.-09-2023-DG-PCMA-COM-ANEXO.pdf",
+      "ok": true,
+      "status": 200,
+      "hash": "b28b3648dd23b74bcb1dabba481b158643b8f187ec07f9744b22e63a4930d2b8",
+      "tamanho_texto": 214808
+    }
+  ]
+}

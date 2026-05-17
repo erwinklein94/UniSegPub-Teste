@@ -4,23 +4,23 @@
   "sigla": "BMAC",
   "uf": "AC",
   "tema": "concursos",
-  "status": "edital 2022 homologado; sem novo edital localizado nas fontes consultadas",
-  "titulo": "CBMAC: último concurso homologado e sem novo edital localizado",
-  "resumo": "O último concurso do CBMAC foi homologado em 29/06/2022 para Aluno Soldado Combatente; não localizei novo edital oficial nas fontes consultadas",
-  "edital": "Edital nº 001/2022 SEPLAG/CBMAC, de 07/01/2022; homologação e resultado final publicados em 29/06/2022",
-  "salario": "R$ 4.344,22 durante o curso/formação do concurso de 2022",
-  "vagas": "153 vagas no edital de 2022: 122 para masculino e 31 para feminino",
+  "status": "último concurso homologado; sem novo edital oficial localizado",
+  "titulo": "Último concurso homologado e sem novo edital localizado",
+  "resumo": "O último concurso do CBMAC foi homologado e segue com convocações para o curso de formação; não localizei novo edital oficial ativo",
+  "edital": "Edital nº 001/2022 SEPLAG/CBMAC, de 07/01/2022; resultado final e homologação publicados em 29/06/2022",
+  "salario": "R$ 4.344,22 durante o curso de formação do concurso de 2022",
+  "vagas": "153 vagas no concurso de 2022: 122 para masculino e 31 para feminino",
   "cotas": "Cadastro de reserva limitado a 20% das vagas existentes no concurso de 2022",
   "idade": "Mínimo de 18 anos até a matrícula no Curso de Formação; máximo de 30 anos na inscrição; altura mínima de 1,60 m para homens e 1,55 m para mulheres",
   "escolaridade": "Ensino superior completo reconhecido pelo MEC",
   "materias": "Língua Portuguesa; Matemática; História e Geografia do Acre; Informática Básica; Estatuto dos Militares do Estado do Acre; Noções de Direito Administrativo; Noções de Direito Constitucional",
   "banca": "IBFC",
   "inscritos": "Pesquisa inicial pendente",
-  "etapas": "Prova objetiva; prova de aptidão física; exame psicotécnico; exame médico/toxicológico; investigação criminal e social; curso de formação",
+  "etapas": "Prova objetiva; prova de aptidão física; exame psicotécnico; exame médico e toxicológico; investigação criminal e social; curso de formação",
   "cfsd": "Curso de Formação de Aluno Soldado Combatente; matrícula após aprovação e convocação; atuação em tempo integral e dedicação exclusiva",
   "estagio": "Pesquisa inicial pendente",
   "validade": "2 anos a contar da homologação do resultado final, com possibilidade de prorrogação por igual período",
-  "previsao": "Sem novo edital anunciado nas fontes consultadas; próximo passo relevante é eventual publicação de novas convocações ou de novo certame",
+  "previsao": "Sem novo edital anunciado nas fontes consultadas",
   "site": "https://www.ac.gov.br",
   "fontes": [
     {
@@ -36,20 +36,20 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Governo publica edital com 153 vagas para o CBMAC",
-      "url": "https://sead.ac.gov.br/governo-publica-edital-com-153-vagas-para-o-concurso-do-corpo-de-bombeiros-militar-do-acre/",
+      "titulo": "Editais CBMAC no Governo do Acre",
+      "url": "https://sead.ac.gov.br/editais-cbmac-corpo-de-bombeiros-militar-do-estado-do-acre/",
+      "tipo": "portal oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Governo do Acre convoca candidatos para matrícula no curso de formação de soldados do Corpo de Bombeiros",
+      "url": "https://sead.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-soldados-do-corpo-de-bombeiros/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Estado convoca aprovados no concurso público do Corpo de Bombeiros do Acre",
-      "url": "https://sead.ac.gov.br/estado-convoca-aprovados-no-concurso-publico-do-corpo-de-bombeiros-do-acre/",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Estado publica resultado final do concurso público do Corpo de Bombeiros Militar",
-      "url": "https://agencia.ac.gov.br/estado-publica-resultado-final-do-concurso-publico-do-corpo-de-bombeiros-militar/",
+      "titulo": "Governo convoca candidatos para matrícula no Curso de Formação de Aluno-Soldado do Corpo de Bombeiros",
+      "url": "https://agencia.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-aluno-soldado-do-corpo-de-bombeiros/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -61,6 +61,10 @@
     "Não localizei novo edital oficial ativo nas fontes consultadas.",
     "As informações estruturais refletem o concurso de 2022, que foi homologado.",
     "Número total de inscritos não localizado nas fontes consultadas.",
+    "Campo estagio não localizado nas fontes consultadas.",
+    "Há convocações e atos de 2024 e 2025 ligados ao concurso de 2022.",
+    "Qualidade calculada: alta.",
+    "Resultado do modo qualificado aplicado no JSON principal.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

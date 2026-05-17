@@ -5,9 +5,9 @@
   "uf": "AL",
   "tema": "concursos",
   "status": "cobertura atualizada",
-  "titulo": "BMAL: concurso com comissão organizadora instituída e histórico de editais publicados",
-  "resumo": "A corporação tem concurso público em andamento na esfera administrativa, com comissão organizadora criada em 2025 e página oficial reunindo os certames de 2017 e 2021",
-  "edital": "Comissão Mista Organizadora do Concurso Público instituída em 10/12/2025; página oficial do CBMAL mantém os editais de 2017 e 2021 para Oficial Combatente e Soldado Combatente",
+  "titulo": "Concurso BMAL com comissão organizadora instituída e próximos editais aguardados",
+  "resumo": "O CBMAL tem concurso público em fase administrativa, com comissão mista organizadora instituída em 2025, mas sem novo edital publicado até agora",
+  "edital": "Comissão Mista Organizadora do Concurso Público instituída em 10/12/2025; página oficial mantém os editais de 2017 e 2021 para Oficial Combatente e Soldado Combatente",
   "salario": "Pesquisa inicial pendente",
   "vagas": "Pesquisa inicial pendente",
   "cotas": "Pesquisa inicial pendente",
@@ -20,7 +20,7 @@
   "cfsd": "Pesquisa inicial pendente",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Aguardar a publicação do novo edital do concurso público instituído em 2025",
+  "previsao": "Aguardar publicação do novo edital",
   "site": "https://www.cbm.al.gov.br",
   "fontes": [
     {
@@ -30,20 +30,20 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Decreto de comissão mista organizadora do concurso público do CBMAL",
+      "titulo": "Decreto que institui comissão mista organizadora do concurso público do CBMAL",
       "url": "https://diario.imprensaoficial.al.gov.br/apinova/api/editions/viewPdf/51192",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Notícia oficial sobre o CAP-BM/2026",
-      "url": "https://www.cbm.al.gov.br/noticias/view/4104/curso-de-aperfeicoamento-de-pracas-2026-cap-bm-2026",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
       "titulo": "Portal institucional do CBMAL",
       "url": "https://www.cbm.al.gov.br",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Notícia oficial sobre o CAP-BM/2026",
+      "url": "https://www.cbm.al.gov.br/noticias/view/4104/curso-de-aperfeicoamento-de-pracas-2026-cap-bm-2026",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -53,8 +53,10 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "A fonte oficial confirma a comissão organizadora do concurso público em 10/12/2025, mas não traz o novo edital com cargos, vagas e cronograma.",
-    "A página oficial de concursos exibe os certames de 2017 e 2021, porém os detalhes completos de critérios, salários e etapas não foram localizados nesta rodada.",
-    "Campos sem confirmação permanecem como 'Não localizado nas fontes consultadas.' para evitar inventário incorreto.",
+    "A página oficial de concursos exibe os editais de 2017 e 2021, porém os detalhes completos de critérios, salários e etapas não foram localizados nesta rodada.",
+    "Campos sem confirmação permanecem como 'Não localizado nas fontes consultadas.' para evitar informação incorreta.",
+    "Campo edital atualizado com a informação oficial mais recente localizada.",
+    "Qualidade da cobertura permanece parcial porque o novo edital não foi publicado nas fontes consultadas.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
@@ -69,7 +71,7 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: baixa (75/100). Campos concretos: 2/14.",
+    "Qualidade calculada: baixa (75/100). Campos concretos: 1/14.",
     "Publicação permitida em modo qualificado porque houve uso de OpenAI/web_search. Score 75/100, qualidade baixa. Revisão humana recomendada.",
     "Resultado pago da OpenAI priorizado no JSON principal para evitar gasto sem alteração visível no site.",
     "Resultado do modo qualificado pago aplicado no JSON principal."

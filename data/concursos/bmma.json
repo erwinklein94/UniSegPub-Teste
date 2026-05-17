@@ -5,11 +5,11 @@
   "uf": "MA",
   "tema": "concursos",
   "status": "em andamento",
-  "titulo": "CFO BM 2026 em andamento no CBMMA",
-  "resumo": "O concurso do CBMMA está com movimentação ativa em 2026, com chamadas e recursos do CFO BM 2026 publicados pelo órgão",
-  "edital": "Edital nº 57/2025-GR/UEMA; acompanhamento ativo em 2026 para CFO BM 2026 e certame vinculado ao Edital nº 22/2022-GR/UEMA",
+  "titulo": "CFO BM 2026 segue em andamento no CBMMA",
+  "resumo": "O concurso do CBMMA segue ativo em 2026, com publicações oficiais de divulgação e andamento do CFO BM 2026",
+  "edital": "Edital nº 57/2025-GR/UEMA; andamento vinculado também ao Edital nº 22/2022-GR/UEMA",
   "salario": "Pesquisa inicial pendente",
-  "vagas": "500 vagas anunciadas para o concurso do CBMMA em 2024",
+  "vagas": "500 vagas anunciadas em publicação oficial de 2024",
   "cotas": "Pesquisa inicial pendente",
   "idade": "Pesquisa inicial pendente",
   "escolaridade": "Pesquisa inicial pendente",
@@ -20,7 +20,7 @@
   "cfsd": "Pesquisa inicial pendente",
   "estagio": "Pesquisa inicial pendente",
   "validade": "Pesquisa inicial pendente",
-  "previsao": "Prosseguimento das etapas do CFO BM 2026",
+  "previsao": "Prosseguimento das etapas e novas divulgações do CFO BM 2026",
   "site": "https://cbm.ssp.ma.gov.br/",
   "fontes": [
     {
@@ -30,26 +30,26 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — março de 2026",
-      "url": "https://cbm.ssp.ma.gov.br/2026/03/",
+      "titulo": "CBMMA — edição 2026",
+      "url": "https://cbm.ssp.ma.gov.br/2026/",
       "tipo": "site oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — concurso de 500 vagas anunciado",
-      "url": "https://cbm.ssp.ma.gov.br/2024/10/02/governo-abre-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros/",
-      "tipo": "site oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "CBMMA — divulgação do CFO BM 2026",
+      "titulo": "CBMMA — Edital de Divulgação nº 13/2026",
       "url": "https://cbm.ssp.ma.gov.br/2026/03/30/517-edital-de-divulgacao-no-13-2026-comissao-de-concurso-cfo-bm-2026/",
       "tipo": "site oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMMA — divulgação do CFO BM 2026",
+      "titulo": "CBMMA — Edital de Divulgação nº 14/2026",
       "url": "https://cbm.ssp.ma.gov.br/2026/03/30/516-edital-de-divulgacao-no-14-2026-comissao-de-concurso-cfo-bm-2026/",
+      "tipo": "site oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "CBMMA — concurso de 500 vagas",
+      "url": "https://cbm.ssp.ma.gov.br/2024/10/02/governo-abre-500-vagas-em-concurso-publico-para-o-corpo-de-bombeiros/",
       "tipo": "site oficial",
       "data_consulta": "2026-05-17"
     }
@@ -58,10 +58,10 @@
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Fontes oficiais confirmam movimentação recente do CFO BM 2026, mas não foi localizado, nas fontes consultadas, o detalhamento completo de salário, escolaridade, idade, cotas, matérias, inscritos, validade e demais requisitos.",
-    "O valor de 500 vagas foi confirmado em publicação oficial de 2024, mas não foi encontrada atualização oficial consolidando a oferta final do certame.",
+    "As fontes oficiais consultadas confirmam movimentação recente do CFO BM 2026, mas não foi localizado o detalhamento completo de salário, cotas, idade, escolaridade, matérias, inscritos, etapas, CFSd, estágio e validade.",
+    "O quantitativo de 500 vagas foi confirmado em publicação oficial de 2024, sem consolidação posterior localizada nesta pesquisa.",
     "Há referência oficial ao Edital nº 57/2025-GR/UEMA e ao Edital nº 22/2022-GR/UEMA em publicações de 2026.",
-    "Dados mais específicos sobre requisitos e etapas não foram localizados nas fontes consultadas e permanecem pendentes.",
+    "Revisão humana recomendada para completar campos técnicos do certame.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

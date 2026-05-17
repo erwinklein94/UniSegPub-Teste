@@ -5,9 +5,9 @@
   "uf": "BA",
   "tema": "concursos",
   "status": "concurso para oficiais aberto",
-  "titulo": "Concurso de Oficiais BMBA aberto com inscrições encerradas",
-  "resumo": "O BMBA está com concurso para Oficiais publicado em 2024, com 30 vagas e prova realizada em 16/02/2025",
-  "edital": "Edital publicado em 29/11/2024 para o Curso de Formação de Oficiais do Corpo de Bombeiros Militar da Bahia, com inscrições de 05/12/2024 a 05/01/2025",
+  "titulo": "Edital de Oficiais BMBA publicado; inscrições encerradas",
+  "resumo": "O BMBA publicou concurso para Oficiais em 29/11/2024, com 30 vagas e prova aplicada em 16/02/2025",
+  "edital": "Edital do Curso de Formação de Oficiais do Corpo de Bombeiros Militar da Bahia publicado em 29/11/2024; inscrições de 05/12/2024 a 05/01/2025",
   "salario": "Pesquisa inicial pendente",
   "vagas": "30 vagas para Oficiais do Corpo de Bombeiros Militar da Bahia",
   "cotas": "Pesquisa inicial pendente",
@@ -30,20 +30,20 @@
       "data_consulta": "2026-05-17"
     },
     {
+      "titulo": "Governo do Estado anuncia concurso para Oficiais da Polícia Militar e Corpo de Bombeiros",
+      "url": "https://www.ba.gov.br/comunicacao/index.php/2024/11/noticias/governo-do-estado-anuncia-concurso-para-oficiais-da-policia-militar-e-corpo-de-bombeiros",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
       "titulo": "Termo de referência para concurso do CFOA/BM",
       "url": "https://comprasnet4.ba.gov.br/download/termoreferencia/2060620240055-TR.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "CBMBA recebe nova turma com 330 alunos a soldados",
-      "url": "https://www.ba.gov.br/ssp/2024/02/21/cbmba-recebe-nova-turma-com-330-alunos-a-soldados",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Convocação no Diário Oficial para matrícula no CFSD BM/2022",
-      "url": "https://www.ba.gov.br/esporte/sites/site-sudesb/files/migracao_2024/arquivos/File/TERMO_DE_FOMENTO_2023/98_2023/APOSTILAMENTOII98.pdf",
+      "titulo": "Corpo de Bombeiros Militar da Bahia ganha reforço de mais 328 novos soldados",
+      "url": "https://www.ba.gov.br/ssp/2024/12/03/cbm-ganha-reforco-de-mais-328-novos-bombeiros-militar/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -52,10 +52,11 @@
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "As fontes localizadas confirmam o concurso de Oficiais publicado em 29/11/2024 e o quantitativo de 30 vagas, mas não trazem de forma consolidada todos os requisitos e etapas em uma única peça acessível.",
-    "Salário, cotas, matérias, inscritos, etapas, estágio probatório e validade não foram localizados nas fontes consultadas.",
-    "Há evidência oficial de turma de soldado e de curso de formação, mas sem consolidação suficiente para preencher os campos específicos de CFSD com segurança.",
-    "Foi usada fonte auxiliar oficial de governo para confirmar contexto; recomenda-se revisão humana para completar detalhes operacionais se houver atualização posterior.",
+    "As fontes oficiais confirmam o concurso de Oficiais publicado em 29/11/2024, com 30 vagas, idade entre 18 e 30 anos e prova em 16/02/2025.",
+    "Não foi possível consolidar, nas fontes consultadas, salário, cotas, matérias, inscritos, etapas, CFSd, estágio probatório e validade.",
+    "O campo banca foi preenchido com base em fonte auxiliar oficial de governo; manter revisão humana se houver atualização posterior.",
+    "A situação atual indica concurso de Oficiais já aberto/publicado, mas com inscrições encerradas e fase posterior de andamento.",
+    "Qualidade da publicação limitada pela ausência de peça única oficial acessível com todos os dados operacionais.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

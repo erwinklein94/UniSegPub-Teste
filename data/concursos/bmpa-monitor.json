@@ -10,18 +10,18 @@
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "baixa",
-  "score_publicacao": 68,
+  "score_publicacao": 75,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 23874,
+    "input_tokens": 16306,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1005,
+    "output_tokens": 985,
     "output_tokens_details": {
-      "reasoning_tokens": 281
+      "reasoning_tokens": 152
     },
-    "total_tokens": 24879
+    "total_tokens": 17291
   },
   "fontes_monitoradas": [
     {
@@ -49,8 +49,8 @@
       "url": "https://www.bombeiros.pa.gov.br",
       "ok": false,
       "status": 403,
-      "hash": "fcef504f81098b1a14c20f6f9fa647f2ce947fa9d8b846715ae26c8701b3542a",
-      "tamanho_texto": 772
+      "hash": "187d38e3c1cce0230e6b001b7ef966e33b6fbbd5af4b3b9022bae900e2ef824a",
+      "tamanho_texto": 773
     }
   ]
 }
