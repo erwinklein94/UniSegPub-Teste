@@ -5754,7 +5754,7 @@ function instituicaoConsultaFoiSelecionada() {
 
 function getEsferaConsultaInstituicao(inst) {
   inst = String(inst || '').toLowerCase();
-  if (inst === 'pf' || inst === 'prf' || inst === 'pcdf') return 'federal';
+  if (inst === 'pf' || inst === 'prf') return 'federal';
   return 'estadual';
 }
 
@@ -5774,7 +5774,6 @@ function getOrdemConsultaInstituicao(inst) {
   const dadosEstado = HEADER_ESTADOS[estado] || {};
   if (inst === 'pf') return 1;
   if (inst === 'prf') return 2;
-  if (inst === 'pcdf') return 3;
   if (dadosEstado.pm === inst) return 1;
   if (dadosEstado.bm === inst) return 2;
   if (dadosEstado.pc === inst) return 3;
@@ -5787,7 +5786,7 @@ function getInstituicoesParaConsulta(esfera) {
   let base = [];
 
   if (esferaNormalizada === 'federal') {
-    base = ['pf', 'prf', 'pcdf'];
+    base = ['pf', 'prf'];
   } else if (esferaNormalizada === 'estadual') {
     base = INSTITUICOES_VALIDAS.filter(inst => getEsferaConsultaInstituicao(inst) === 'estadual');
   }
