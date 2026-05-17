@@ -6,6 +6,49 @@
 (function () {
   const CONFIG_URL = 'config/concursos-instituicoes.json';
 
+  const UF_ORDEM = ['BR', 'AC', 'AL', 'AM', 'AP', 'BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PI', 'PR', 'RJ', 'RN', 'RO', 'RR', 'RS', 'SC', 'SE', 'SP', 'TO'];
+
+  const UF_NOME = {
+    BR: 'União / Federal',
+    AC: 'Acre',
+    AL: 'Alagoas',
+    AM: 'Amazonas',
+    AP: 'Amapá',
+    BA: 'Bahia',
+    CE: 'Ceará',
+    DF: 'Distrito Federal',
+    ES: 'Espírito Santo',
+    GO: 'Goiás',
+    MA: 'Maranhão',
+    MG: 'Minas Gerais',
+    MS: 'Mato Grosso do Sul',
+    MT: 'Mato Grosso',
+    PA: 'Pará',
+    PB: 'Paraíba',
+    PE: 'Pernambuco',
+    PI: 'Piauí',
+    PR: 'Paraná',
+    RJ: 'Rio de Janeiro',
+    RN: 'Rio Grande do Norte',
+    RO: 'Rondônia',
+    RR: 'Roraima',
+    RS: 'Rio Grande do Sul',
+    SC: 'Santa Catarina',
+    SE: 'Sergipe',
+    SP: 'São Paulo',
+    TO: 'Tocantins'
+  };
+
+  const ORDEM_TIPO = {
+    pf: 1,
+    prf: 2,
+    pm: 10,
+    bm: 20,
+    pc: 30,
+    pp: 40,
+    outro: 90
+  };
+
   function texto(valor) {
     return String(valor == null ? '' : valor).replace(/\s+/g, ' ').trim();
   }
@@ -251,19 +294,109 @@
 
 
   function esferaDaInstituicao(itemConfig) {
-    return itemConfig.uf === 'BR' ? 'federal' : 'estadual';
+    return texto(itemConfig && itemConfig.uf).toUpperCase() === 'BR' ? 'federal' : 'estadual';
+  }
+
+  function ufDaInstituicao(itemConfig) {
+    return texto(itemConfig && itemConfig.uf).toUpperCase() || 'BR';
+  }
+
+  function rotuloGrupoUf(uf) {
+    const codigo = texto(uf).toUpperCase() || 'BR';
+    if (codigo === 'BR') return 'União / Federal';
+    return (UF_NOME[codigo] || codigo) + ' (' + codigo + ')';
+  }
+
+  function tipoInstituicao(itemConfig) {
+    const id = texto(itemConfig && itemConfig.id).toLowerCase();
+    const sigla = texto(itemConfig && itemConfig.sigla).toLowerCase();
+    const nome = texto(itemConfig && itemConfig.nome).toLowerCase();
+    const tipo = texto(itemConfig && itemConfig.tipo).toLowerCase();
+
+    if (id === 'pf' || sigla === 'pf') return 'pf';
+    if (id === 'prf' || sigla === 'prf') return 'prf';
+    if (id.startsWith('pm') || /pol[íi]cia militar/.test(nome) || tipo.indexOf('polícia militar') >= 0 || tipo.indexOf('policia militar') >= 0) return 'pm';
+    if (id.startsWith('bm') || sigla.startsWith('cbm') || /bombeiros?/.test(nome) || tipo.indexOf('bombeiro') >= 0) return 'bm';
+    if (id.startsWith('pc') || /pol[íi]cia civil/.test(nome) || tipo.indexOf('polícia civil') >= 0 || tipo.indexOf('policia civil') >= 0) return 'pc';
+    if (id.startsWith('pp') || /pol[íi]cia penal/.test(nome) || tipo.indexOf('polícia penal') >= 0 || tipo.indexOf('policia penal') >= 0) return 'pp';
+    return 'outro';
+  }
+
+  function ordenarInstituicoes(a, b) {
+    const ufA = ufDaInstituicao(a);
+    const ufB = ufDaInstituicao(b);
+    const posA = UF_ORDEM.indexOf(ufA) >= 0 ? UF_ORDEM.indexOf(ufA) : 999;
+    const posB = UF_ORDEM.indexOf(ufB) >= 0 ? UF_ORDEM.indexOf(ufB) : 999;
+    if (posA !== posB) return posA - posB;
+
+    const tipoA = ORDEM_TIPO[tipoInstituicao(a)] || ORDEM_TIPO.outro;
+    const tipoB = ORDEM_TIPO[tipoInstituicao(b)] || ORDEM_TIPO.outro;
+    if (tipoA !== tipoB) return tipoA - tipoB;
+
+    return texto(a.sigla || a.id).localeCompare(texto(b.sigla || b.id), 'pt-BR');
+  }
+
+  function criarOptionInstituicao(itemConfig) {
+    const option = document.createElement('option');
+    const id = texto(itemConfig.id).toLowerCase();
+    option.value = id;
+    option.dataset.esfera = esferaDaInstituicao(itemConfig);
+    option.dataset.uf = ufDaInstituicao(itemConfig);
+    option.dataset.tipo = tipoInstituicao(itemConfig);
+    option.textContent = texto(itemConfig.sigla || id.toUpperCase()) + ' — ' + texto(itemConfig.nome || id.toUpperCase());
+    return option;
+  }
+
+  function reorganizarSeletorInstituicoes(config) {
+    const select = document.getElementById('concursos_instituicao');
+    if (!select || !Array.isArray(config)) return;
+
+    const valorAtual = select.value;
+    const idsVistos = new Set();
+    const itens = config
+      .filter(function (item) {
+        const id = texto(item && item.id).toLowerCase();
+        if (!id || idsVistos.has(id)) return false;
+        idsVistos.add(id);
+        return true;
+      })
+      .sort(ordenarInstituicoes);
+
+    select.innerHTML = '';
+
+    const todas = document.createElement('option');
+    todas.value = '';
+    todas.textContent = 'Todas as instituições';
+    select.appendChild(todas);
+
+    const grupos = new Map();
+    itens.forEach(function (item) {
+      const uf = ufDaInstituicao(item);
+      if (!grupos.has(uf)) {
+        const optgroup = document.createElement('optgroup');
+        optgroup.label = rotuloGrupoUf(uf);
+        grupos.set(uf, optgroup);
+        select.appendChild(optgroup);
+      }
+      grupos.get(uf).appendChild(criarOptionInstituicao(item));
+    });
+
+    if (valorAtual && idsVistos.has(valorAtual)) {
+      select.value = valorAtual;
+    } else {
+      select.value = '';
+    }
+
+    select.dataset.totalInstituicoes = String(itens.length);
   }
 
   function criarOpcaoSeFaltar(itemConfig) {
+    // Mantida por compatibilidade. A partir da Etapa 24 o seletor é reconstruído por UF em reorganizarSeletorInstituicoes().
     const select = document.getElementById('concursos_instituicao');
     if (!select || !itemConfig || !itemConfig.id) return;
     const id = texto(itemConfig.id).toLowerCase();
     if ([...select.options].some(function (opt) { return opt.value === id; })) return;
-    const option = document.createElement('option');
-    option.value = id;
-    option.dataset.esfera = esferaDaInstituicao(itemConfig);
-    option.textContent = texto(itemConfig.sigla || id.toUpperCase()) + ' — ' + texto(itemConfig.nome || id.toUpperCase());
-    select.appendChild(option);
+    select.appendChild(criarOptionInstituicao(itemConfig));
   }
 
   function criarCardSeFaltar(instId, itemConfig, dados, concurso) {
@@ -320,13 +453,29 @@
   function atualizarIndicadoresTotais(config) {
     const total = Array.isArray(config) ? config.length : 0;
     if (!total) return;
+
     document.querySelectorAll('strong').forEach(function (el) {
-      if (/\bcards\b/i.test(el.textContent || '')) el.textContent = total + ' cards';
+      const txt = texto(el.textContent);
+      if (/^\d+\s*cards$/i.test(txt)) el.textContent = total + ' cards';
     });
+
     const contador = document.getElementById('concursos-contador-cards');
     if (contador && !document.getElementById('concursos_instituicao')?.value) {
       contador.textContent = total + ' instituições encontradas';
     }
+
+    document.querySelectorAll('.usp-stat').forEach(function (stat) {
+      const label = texto(stat.querySelector('span') && stat.querySelector('span').textContent).toLowerCase();
+      const numero = stat.querySelector('strong');
+      if (numero && label.indexOf('instituições') >= 0 && label.indexOf('resumo') >= 0) {
+        numero.textContent = String(total);
+        stat.dataset.totalConcursos = String(total);
+      }
+    });
+
+    document.querySelectorAll('[data-total-concursos]').forEach(function (el) {
+      el.textContent = String(total);
+    });
   }
 
   function dispararAtualizacaoFiltros() {
@@ -375,9 +524,10 @@
       if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
       const config = await resposta.json();
       if (!Array.isArray(config)) throw new Error('Configuração inválida.');
-      config.forEach(criarOpcaoSeFaltar);
+      reorganizarSeletorInstituicoes(config);
       atualizarIndicadoresTotais(config);
       await Promise.all(config.map(carregarJsonInstituicao));
+      reorganizarSeletorInstituicoes(config);
       atualizarIndicadoresTotais(config);
       dispararAtualizacaoFiltros();
     } catch (erro) {
