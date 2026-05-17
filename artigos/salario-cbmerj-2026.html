@@ -15,6 +15,7 @@ Tokens substituídos no template:
 <!DOCTYPE html>
 <html class="page-artigo" lang="pt-BR">
 <head>
+  <script>(function(){try{var t=localStorage.getItem("theme");document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light");}catch(e){document.documentElement.setAttribute("data-theme","light");}})();</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
@@ -159,6 +160,7 @@ Tokens substituídos no template:
 }
 </script>
   <link href="../css/components/sugerir-correcao.css?v=20260517" rel="stylesheet" />
+  <link href="../css/components/theme-toggle.css?v=20260517" rel="stylesheet" />
 </head>
 
 <body class="app-soft-theme" data-inst="cbmerj" data-page="artigo">
@@ -321,5 +323,6 @@ Tokens substituídos no template:
 
 </main>
 
+  <script defer src="../js/ui/theme-toggle.js?v=20260517"></script>
 </body>
 </html>
