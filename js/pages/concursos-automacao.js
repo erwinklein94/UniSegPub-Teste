@@ -249,8 +249,95 @@
     `;
   }
 
+
+  function esferaDaInstituicao(itemConfig) {
+    return itemConfig.uf === 'BR' ? 'federal' : 'estadual';
+  }
+
+  function criarOpcaoSeFaltar(itemConfig) {
+    const select = document.getElementById('concursos_instituicao');
+    if (!select || !itemConfig || !itemConfig.id) return;
+    const id = texto(itemConfig.id).toLowerCase();
+    if ([...select.options].some(function (opt) { return opt.value === id; })) return;
+    const option = document.createElement('option');
+    option.value = id;
+    option.dataset.esfera = esferaDaInstituicao(itemConfig);
+    option.textContent = texto(itemConfig.sigla || id.toUpperCase()) + ' — ' + texto(itemConfig.nome || id.toUpperCase());
+    select.appendChild(option);
+  }
+
+  function criarCardSeFaltar(instId, itemConfig, dados, concurso) {
+    if (document.querySelector('[data-concurso-card][data-inst="' + cssEscape(instId) + '"]')) return;
+    const lista = document.getElementById('concursos-conteudo-lista');
+    if (!lista) return;
+
+    const card = document.createElement('article');
+    card.className = 'card concursos-conteudo-card';
+    card.setAttribute('data-concurso-card', '');
+    card.dataset.inst = instId;
+    card.dataset.esfera = esferaDaInstituicao(itemConfig);
+    card.id = 'concurso-' + instId;
+
+    const sigla = escapar(dados.sigla || itemConfig.sigla || instId.toUpperCase());
+    const nome = escapar(dados.instituicao_nome || itemConfig.nome || sigla);
+    const uf = escapar(itemConfig.uf === 'BR' ? 'Federal' : (itemConfig.uf || 'Estadual'));
+    const site = /^https?:\/\//i.test(concurso.site) ? concurso.site : '#';
+    const fonteLink = /^https?:\/\//i.test(concurso.site)
+      ? '<a href="' + escapar(site) + '" target="_blank" rel="noopener noreferrer">Abrir fonte oficial</a>'
+      : '<span>Fonte oficial em atualização</span>';
+
+    card.innerHTML = `
+      <div class="concursos-card-topo">
+        <div>
+          <span class="concursos-card-kicker">${uf} • ${sigla} · ${nome}</span>
+          <h2>${escapar(limparTextoPublico(dados.titulo || (sigla + ': concursos, requisitos e etapas')))}</h2>
+          <p>${escapar(limparTextoPublico(dados.resumo || ('Guia de concursos da ' + sigla + ' com dados estruturados de edital, requisitos, vagas, banca e etapas.')))}</p>
+        </div>
+        <span class="concursos-card-sigla" aria-hidden="true">${sigla}</span>
+      </div>
+      <div class="concursos-card-indicadores" aria-label="Resumo do concurso da ${sigla}">
+        <div><span>Edital de referência</span><strong>${escapar(encurtar(concurso.edital, 190))}</strong></div>
+        <div><span>Vagas</span><strong>${escapar(encurtar(concurso.vagas, 170))}</strong></div>
+        <div><span>Banca</span><strong>${escapar(encurtar(concurso.banca, 150))}</strong></div>
+        <div><span>Escolaridade</span><strong>${escapar(encurtar(concurso.escolaridade, 160))}</strong></div>
+      </div>
+      <div class="concursos-card-corpo">
+        <p><strong>Remuneração de referência:</strong> ${escapar(concurso.salario)}</p>
+        <p><strong>Etapas comuns do certame:</strong> ${escapar(concurso.etapas)}</p>
+        <p><strong>Próximo edital e acompanhamento:</strong> ${escapar(concurso.previsao)}</p>
+      </div>
+      <div class="concursos-card-rodape">
+        <p><strong>Status da automação:</strong> ${escapar(concurso.automacao.qualidade_publicacao || 'em acompanhamento')}${concurso.automacao.score_publicacao ? ' · score ' + escapar(concurso.automacao.score_publicacao) : ''}</p>
+        <div class="concursos-card-links">
+          ${fonteLink}
+          <button type="button" data-concurso-load="${escapar(instId)}">Consultar dados completos</button>
+        </div>
+      </div>
+    `;
+    lista.appendChild(card);
+  }
+
+  function atualizarIndicadoresTotais(config) {
+    const total = Array.isArray(config) ? config.length : 0;
+    if (!total) return;
+    document.querySelectorAll('strong').forEach(function (el) {
+      if (/\bcards\b/i.test(el.textContent || '')) el.textContent = total + ' cards';
+    });
+    const contador = document.getElementById('concursos-contador-cards');
+    if (contador && !document.getElementById('concursos_instituicao')?.value) {
+      contador.textContent = total + ' instituições encontradas';
+    }
+  }
+
+  function dispararAtualizacaoFiltros() {
+    const select = document.getElementById('concursos_instituicao');
+    if (select) select.dispatchEvent(new Event('change', { bubbles: true }));
+  }
+
   function aplicarDados(itemConfig, dados) {
     const instId = texto(dados.instituicao_id || itemConfig.id).toLowerCase();
+
+    criarOpcaoSeFaltar(itemConfig || dados || {});
 
     if (!jsonTemQualidadeMinima(dados)) {
       console.warn('Automação concursos: JSON de ' + instId + ' ignorado por baixa qualidade. Mantendo dados estáticos.');
@@ -259,6 +346,7 @@
 
     const concurso = normalizarParaConcursos(dados || {}, itemConfig || {});
     atualizarBaseGlobal(instId, concurso);
+    criarCardSeFaltar(instId, itemConfig || {}, dados || {}, concurso);
     atualizarCard(instId, dados || {}, concurso);
     renderizarDetalheSeAberto(instId, concurso);
     document.dispatchEvent(new CustomEvent('concursos:json-carregado', {
@@ -287,7 +375,11 @@
       if (!resposta.ok) throw new Error('HTTP ' + resposta.status);
       const config = await resposta.json();
       if (!Array.isArray(config)) throw new Error('Configuração inválida.');
+      config.forEach(criarOpcaoSeFaltar);
+      atualizarIndicadoresTotais(config);
       await Promise.all(config.map(carregarJsonInstituicao));
+      atualizarIndicadoresTotais(config);
+      dispararAtualizacaoFiltros();
     } catch (erro) {
       console.warn('Automação concursos: não foi possível carregar configuração genérica. Mantendo dados estáticos.', erro);
     }

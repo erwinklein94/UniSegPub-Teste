@@ -37,7 +37,8 @@
       "PRF edital pdf concurso banca organizadora",
       "PRF resultado homologação concurso",
       "PRF concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Rodoviária Federal"
   },
   {
     "id": "pcdf",
@@ -80,7 +81,8 @@
       "PCDF edital pdf concurso banca organizadora",
       "PCDF resultado homologação concurso",
       "PCDF concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmesp",
@@ -124,7 +126,8 @@
       "PMESP edital pdf concurso banca organizadora",
       "PMESP resultado homologação concurso",
       "PMESP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmsp",
@@ -171,7 +174,10 @@
       "CBPMESP edital pdf concurso banca organizadora",
       "CBPMESP resultado homologação concurso",
       "CBPMESP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar / órgão da PMESP",
+    "concurso_compartilhado_com": "pmesp",
+    "observacao_automacao": "CBPMESP normalmente usa ingresso/carreira vinculada à PMESP; o motor pode reaproveitar dados da PMESP no modo econômico."
   },
   {
     "id": "pcsp",
@@ -215,7 +221,8 @@
       "PCSP edital pdf concurso banca organizadora",
       "PCSP resultado homologação concurso",
       "PCSP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "ppsp",
@@ -254,7 +261,8 @@
       "PPSP edital pdf concurso banca organizadora",
       "PPSP resultado homologação concurso",
       "PPSP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "pmal",
@@ -297,7 +305,8 @@
       "PMAL edital pdf concurso banca organizadora",
       "PMAL resultado homologação concurso",
       "PMAL concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcal",
@@ -341,7 +350,8 @@
       "PCAL edital pdf concurso banca organizadora",
       "PCAL resultado homologação concurso",
       "PCAL concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "ppal",
@@ -381,7 +391,8 @@
       "PPAL edital pdf concurso banca organizadora",
       "PPAL resultado homologação concurso",
       "PPAL concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "bmmg",
@@ -424,7 +435,8 @@
       "CBMMG edital pdf concurso banca organizadora",
       "CBMMG resultado homologação concurso",
       "CBMMG concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "ppmg",
@@ -464,7 +476,8 @@
       "PPMG edital pdf concurso banca organizadora",
       "PPMG resultado homologação concurso",
       "PPMG concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "pmmg",
@@ -508,7 +521,8 @@
       "PMMG edital pdf concurso banca organizadora",
       "PMMG resultado homologação concurso",
       "PMMG concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcmg",
@@ -552,7 +566,8 @@
       "PCMG edital pdf concurso banca organizadora",
       "PCMG resultado homologação concurso",
       "PCMG concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "bmpr",
@@ -595,7 +610,8 @@
       "CBMPR edital pdf concurso banca organizadora",
       "CBMPR resultado homologação concurso",
       "CBMPR concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pmpr",
@@ -639,7 +655,8 @@
       "PMPR edital pdf concurso banca organizadora",
       "PMPR resultado homologação concurso",
       "PMPR concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcpr",
@@ -683,7 +700,8 @@
       "PCPR edital pdf concurso banca organizadora",
       "PCPR resultado homologação concurso",
       "PCPR concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmam",
@@ -727,7 +745,8 @@
       "PMAM edital pdf concurso banca organizadora",
       "PMAM resultado homologação concurso",
       "PMAM concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcam",
@@ -771,7 +790,8 @@
       "PCAM edital pdf concurso banca organizadora",
       "PCAM resultado homologação concurso",
       "PCAM concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmerj",
@@ -815,7 +835,8 @@
       "PMERJ edital pdf concurso banca organizadora",
       "PMERJ resultado homologação concurso",
       "PMERJ concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmrj",
@@ -858,7 +879,8 @@
       "CBMERJ edital pdf concurso banca organizadora",
       "CBMERJ resultado homologação concurso",
       "CBMERJ concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pcerj",
@@ -902,7 +924,8 @@
       "PCERJ edital pdf concurso banca organizadora",
       "PCERJ resultado homologação concurso",
       "PCERJ concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmba",
@@ -946,7 +969,8 @@
       "PMBA edital pdf concurso banca organizadora",
       "PMBA resultado homologação concurso",
       "PMBA concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcba",
@@ -990,7 +1014,8 @@
       "PCBA edital pdf concurso banca organizadora",
       "PCBA resultado homologação concurso",
       "PCBA concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmrs",
@@ -1034,7 +1059,8 @@
       "PMRS edital pdf concurso banca organizadora",
       "PMRS resultado homologação concurso",
       "PMRS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcrs",
@@ -1078,7 +1104,8 @@
       "PCRS edital pdf concurso banca organizadora",
       "PCRS resultado homologação concurso",
       "PCRS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmsc",
@@ -1122,7 +1149,8 @@
       "PMSC edital pdf concurso banca organizadora",
       "PMSC resultado homologação concurso",
       "PMSC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmsc",
@@ -1164,7 +1192,8 @@
       "CBMSC edital pdf concurso banca organizadora",
       "CBMSC resultado homologação concurso",
       "CBMSC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pcsc",
@@ -1208,7 +1237,8 @@
       "PCSC edital pdf concurso banca organizadora",
       "PCSC resultado homologação concurso",
       "PCSC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmes",
@@ -1252,7 +1282,8 @@
       "PMES edital pdf concurso banca organizadora",
       "PMES resultado homologação concurso",
       "PMES concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmes",
@@ -1295,7 +1326,8 @@
       "CBMES edital pdf concurso banca organizadora",
       "CBMES resultado homologação concurso",
       "CBMES concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pces",
@@ -1339,7 +1371,8 @@
       "PCES edital pdf concurso banca organizadora",
       "PCES resultado homologação concurso",
       "PCES concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pmms",
@@ -1383,7 +1416,8 @@
       "PMMS edital pdf concurso banca organizadora",
       "PMMS resultado homologação concurso",
       "PMMS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmms",
@@ -1426,7 +1460,8 @@
       "CBMMS edital pdf concurso banca organizadora",
       "CBMMS resultado homologação concurso",
       "CBMMS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pcms",
@@ -1470,7 +1505,8 @@
       "PCMS edital pdf concurso banca organizadora",
       "PCMS resultado homologação concurso",
       "PCMS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "ppms",
@@ -1510,7 +1546,8 @@
       "PPMS edital pdf concurso banca organizadora",
       "PPMS resultado homologação concurso",
       "PPMS concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "pmmt",
@@ -1554,7 +1591,8 @@
       "PMMT edital pdf concurso banca organizadora",
       "PMMT resultado homologação concurso",
       "PMMT concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "bmmt",
@@ -1597,7 +1635,8 @@
       "CBMMT edital pdf concurso banca organizadora",
       "CBMMT resultado homologação concurso",
       "CBMMT concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pcmt",
@@ -1641,7 +1680,8 @@
       "PCMT edital pdf concurso banca organizadora",
       "PCMT resultado homologação concurso",
       "PCMT concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "ppmt",
@@ -1681,7 +1721,8 @@
       "PPMT edital pdf concurso banca organizadora",
       "PPMT resultado homologação concurso",
       "PPMT concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "pmac",
@@ -1725,7 +1766,8 @@
       "PMAC edital pdf concurso banca organizadora",
       "PMAC resultado homologação concurso",
       "PMAC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcac",
@@ -1769,7 +1811,8 @@
       "PCAC edital pdf concurso banca organizadora",
       "PCAC resultado homologação concurso",
       "PCAC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "ppac",
@@ -1809,7 +1852,8 @@
       "PPAC edital pdf concurso banca organizadora",
       "PPAC resultado homologação concurso",
       "PPAC concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Penal"
   },
   {
     "id": "pmap",
@@ -1853,7 +1897,8 @@
       "PMAP edital pdf concurso banca organizadora",
       "PMAP resultado homologação concurso",
       "PMAP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Militar"
   },
   {
     "id": "pcap",
@@ -1897,7 +1942,8 @@
       "PCAP edital pdf concurso banca organizadora",
       "PCAP resultado homologação concurso",
       "PCAP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "bmap",
@@ -1940,7 +1986,8 @@
       "CBMAP edital pdf concurso banca organizadora",
       "CBMAP resultado homologação concurso",
       "CBMAP concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Bombeiro Militar"
   },
   {
     "id": "pcce",
@@ -1983,7 +2030,8 @@
       "PCCE edital pdf concurso banca organizadora",
       "PCCE resultado homologação concurso",
       "PCCE concurso oficial site governo"
-    ]
+    ],
+    "tipo": "Polícia Civil"
   },
   {
     "id": "pf",
@@ -2023,6 +2071,3432 @@
       "PF edital pdf concurso banca organizadora",
       "PF resultado homologação concurso",
       "PF concurso oficial site governo"
+    ],
+    "tipo": "Polícia Federal / Polícia Judiciária da União"
+  },
+  {
+    "id": "ppam",
+    "nome": "Polícia Penal de Amazonas",
+    "sigla": "PPAM",
+    "uf": "AM",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppam.json",
+    "arquivo_monitoramento": "data/concursos/ppam-monitor.json",
+    "site_principal": "https://www.am.gov.br",
+    "fontes_base": [
+      "https://www.am.gov.br",
+      "https://www.policiapenal.am.gov.br",
+      "https://www.seap.am.gov.br"
+    ],
+    "dominios_oficiais": [
+      "am.gov.br",
+      "gov.br",
+      "policiapenal.am.gov.br",
+      "seap.am.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppam",
+      "PPAM",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPAM concurso edital AM",
+      "Polícia Penal de Amazonas concurso público edital",
+      "PPAM concurso vagas salário banca escolaridade idade altura CNH",
+      "PPAM inscrições concurso prova etapas banca",
+      "PPAM diário oficial concurso edital convocação homologação",
+      "PPAM edital PDF concurso Amazonas",
+      "PPAM concurso resultado final nomeação convocação",
+      "PPAM concurso oficial site governo AM"
+    ]
+  },
+  {
+    "id": "ppap",
+    "nome": "Polícia Penal de Amapá",
+    "sigla": "PPAP",
+    "uf": "AP",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppap.json",
+    "arquivo_monitoramento": "data/concursos/ppap-monitor.json",
+    "site_principal": "https://www.ap.gov.br",
+    "fontes_base": [
+      "https://www.ap.gov.br",
+      "https://www.policiapenal.ap.gov.br",
+      "https://www.seap.ap.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ap.gov.br",
+      "gov.br",
+      "policiapenal.ap.gov.br",
+      "seap.ap.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppap",
+      "PPAP",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPAP concurso edital AP",
+      "Polícia Penal de Amapá concurso público edital",
+      "PPAP concurso vagas salário banca escolaridade idade altura CNH",
+      "PPAP inscrições concurso prova etapas banca",
+      "PPAP diário oficial concurso edital convocação homologação",
+      "PPAP edital PDF concurso Amapá",
+      "PPAP concurso resultado final nomeação convocação",
+      "PPAP concurso oficial site governo AP"
+    ]
+  },
+  {
+    "id": "pmce",
+    "nome": "Polícia Militar de Ceará",
+    "sigla": "PMCE",
+    "uf": "CE",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmce.json",
+    "arquivo_monitoramento": "data/concursos/pmce-monitor.json",
+    "site_principal": "https://www.pm.ce.gov.br",
+    "fontes_base": [
+      "https://www.pm.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ce.gov.br",
+      "gov.br",
+      "pm.ce.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmce",
+      "PMCE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMCE concurso edital CE",
+      "Polícia Militar de Ceará concurso público edital",
+      "PMCE concurso vagas salário banca escolaridade idade altura CNH",
+      "PMCE inscrições concurso prova etapas banca",
+      "PMCE diário oficial concurso edital convocação homologação",
+      "PMCE edital PDF concurso Ceará",
+      "PMCE concurso resultado final nomeação convocação",
+      "PMCE concurso oficial site governo CE"
+    ]
+  },
+  {
+    "id": "ppce",
+    "nome": "Polícia Penal de Ceará",
+    "sigla": "PPCE",
+    "uf": "CE",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppce.json",
+    "arquivo_monitoramento": "data/concursos/ppce-monitor.json",
+    "site_principal": "https://www.ce.gov.br",
+    "fontes_base": [
+      "https://www.ce.gov.br",
+      "https://www.policiapenal.ce.gov.br",
+      "https://www.seap.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ce.gov.br",
+      "gov.br",
+      "policiapenal.ce.gov.br",
+      "seap.ce.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppce",
+      "PPCE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPCE concurso edital CE",
+      "Polícia Penal de Ceará concurso público edital",
+      "PPCE concurso vagas salário banca escolaridade idade altura CNH",
+      "PPCE inscrições concurso prova etapas banca",
+      "PPCE diário oficial concurso edital convocação homologação",
+      "PPCE edital PDF concurso Ceará",
+      "PPCE concurso resultado final nomeação convocação",
+      "PPCE concurso oficial site governo CE"
+    ]
+  },
+  {
+    "id": "pmdf",
+    "nome": "Polícia Militar de Distrito Federal",
+    "sigla": "PMDF",
+    "uf": "DF",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmdf.json",
+    "arquivo_monitoramento": "data/concursos/pmdf-monitor.json",
+    "site_principal": "https://www.pmdf.df.gov.br",
+    "fontes_base": [
+      "https://www.pmdf.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "df.gov.br",
+      "gov.br",
+      "pmdf.df.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmdf",
+      "PMDF",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMDF concurso edital DF",
+      "Polícia Militar de Distrito Federal concurso público edital",
+      "PMDF concurso vagas salário banca escolaridade idade altura CNH",
+      "PMDF inscrições concurso prova etapas banca",
+      "PMDF diário oficial concurso edital convocação homologação",
+      "PMDF edital PDF concurso Distrito Federal",
+      "PMDF concurso resultado final nomeação convocação",
+      "PMDF concurso oficial site governo DF"
+    ]
+  },
+  {
+    "id": "ppdf",
+    "nome": "Polícia Penal de Distrito Federal",
+    "sigla": "PPDF",
+    "uf": "DF",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppdf.json",
+    "arquivo_monitoramento": "data/concursos/ppdf-monitor.json",
+    "site_principal": "https://www.seape.df.gov.br",
+    "fontes_base": [
+      "https://www.seape.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "df.gov.br",
+      "gov.br",
+      "seape.df.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppdf",
+      "PPDF",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPDF concurso edital DF",
+      "Polícia Penal de Distrito Federal concurso público edital",
+      "PPDF concurso vagas salário banca escolaridade idade altura CNH",
+      "PPDF inscrições concurso prova etapas banca",
+      "PPDF diário oficial concurso edital convocação homologação",
+      "PPDF edital PDF concurso Distrito Federal",
+      "PPDF concurso resultado final nomeação convocação",
+      "PPDF concurso oficial site governo DF"
+    ]
+  },
+  {
+    "id": "pmgo",
+    "nome": "Polícia Militar de Goiás",
+    "sigla": "PMGO",
+    "uf": "GO",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmgo.json",
+    "arquivo_monitoramento": "data/concursos/pmgo-monitor.json",
+    "site_principal": "https://www.pm.go.gov.br",
+    "fontes_base": [
+      "https://www.pm.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "pm.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmgo",
+      "PMGO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMGO concurso edital GO",
+      "Polícia Militar de Goiás concurso público edital",
+      "PMGO concurso vagas salário banca escolaridade idade altura CNH",
+      "PMGO inscrições concurso prova etapas banca",
+      "PMGO diário oficial concurso edital convocação homologação",
+      "PMGO edital PDF concurso Goiás",
+      "PMGO concurso resultado final nomeação convocação",
+      "PMGO concurso oficial site governo GO"
+    ]
+  },
+  {
+    "id": "pcgo",
+    "nome": "Polícia Civil de Goiás",
+    "sigla": "PCGO",
+    "uf": "GO",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcgo.json",
+    "arquivo_monitoramento": "data/concursos/pcgo-monitor.json",
+    "site_principal": "https://www.policiacivil.go.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "policiacivil.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcgo",
+      "PCGO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCGO concurso edital GO",
+      "Polícia Civil de Goiás concurso público edital",
+      "PCGO concurso vagas salário banca escolaridade idade altura CNH",
+      "PCGO inscrições concurso prova etapas banca",
+      "PCGO diário oficial concurso edital convocação homologação",
+      "PCGO edital PDF concurso Goiás",
+      "PCGO concurso resultado final nomeação convocação",
+      "PCGO concurso oficial site governo GO"
+    ]
+  },
+  {
+    "id": "ppgo",
+    "nome": "Polícia Penal de Goiás",
+    "sigla": "PPGO",
+    "uf": "GO",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppgo.json",
+    "arquivo_monitoramento": "data/concursos/ppgo-monitor.json",
+    "site_principal": "https://www.go.gov.br",
+    "fontes_base": [
+      "https://www.go.gov.br",
+      "https://www.policiapenal.go.gov.br",
+      "https://www.seap.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "go.gov.br",
+      "gov.br",
+      "policiapenal.go.gov.br",
+      "seap.go.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppgo",
+      "PPGO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPGO concurso edital GO",
+      "Polícia Penal de Goiás concurso público edital",
+      "PPGO concurso vagas salário banca escolaridade idade altura CNH",
+      "PPGO inscrições concurso prova etapas banca",
+      "PPGO diário oficial concurso edital convocação homologação",
+      "PPGO edital PDF concurso Goiás",
+      "PPGO concurso resultado final nomeação convocação",
+      "PPGO concurso oficial site governo GO"
+    ]
+  },
+  {
+    "id": "pmma",
+    "nome": "Polícia Militar de Maranhão",
+    "sigla": "PMMA",
+    "uf": "MA",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmma.json",
+    "arquivo_monitoramento": "data/concursos/pmma-monitor.json",
+    "site_principal": "https://www.pm.ma.gov.br",
+    "fontes_base": [
+      "https://www.pm.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "pm.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmma",
+      "PMMA",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMMA concurso edital MA",
+      "Polícia Militar de Maranhão concurso público edital",
+      "PMMA concurso vagas salário banca escolaridade idade altura CNH",
+      "PMMA inscrições concurso prova etapas banca",
+      "PMMA diário oficial concurso edital convocação homologação",
+      "PMMA edital PDF concurso Maranhão",
+      "PMMA concurso resultado final nomeação convocação",
+      "PMMA concurso oficial site governo MA"
+    ]
+  },
+  {
+    "id": "pcma",
+    "nome": "Polícia Civil de Maranhão",
+    "sigla": "PCMA",
+    "uf": "MA",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcma.json",
+    "arquivo_monitoramento": "data/concursos/pcma-monitor.json",
+    "site_principal": "https://www.policiacivil.ma.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "policiacivil.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcma",
+      "PCMA",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCMA concurso edital MA",
+      "Polícia Civil de Maranhão concurso público edital",
+      "PCMA concurso vagas salário banca escolaridade idade altura CNH",
+      "PCMA inscrições concurso prova etapas banca",
+      "PCMA diário oficial concurso edital convocação homologação",
+      "PCMA edital PDF concurso Maranhão",
+      "PCMA concurso resultado final nomeação convocação",
+      "PCMA concurso oficial site governo MA"
+    ]
+  },
+  {
+    "id": "ppma",
+    "nome": "Polícia Penal de Maranhão",
+    "sigla": "PPMA",
+    "uf": "MA",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppma.json",
+    "arquivo_monitoramento": "data/concursos/ppma-monitor.json",
+    "site_principal": "https://www.ma.gov.br",
+    "fontes_base": [
+      "https://www.ma.gov.br",
+      "https://www.policiapenal.ma.gov.br",
+      "https://www.seap.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "ma.gov.br",
+      "policiapenal.ma.gov.br",
+      "seap.ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppma",
+      "PPMA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPMA concurso edital MA",
+      "Polícia Penal de Maranhão concurso público edital",
+      "PPMA concurso vagas salário banca escolaridade idade altura CNH",
+      "PPMA inscrições concurso prova etapas banca",
+      "PPMA diário oficial concurso edital convocação homologação",
+      "PPMA edital PDF concurso Maranhão",
+      "PPMA concurso resultado final nomeação convocação",
+      "PPMA concurso oficial site governo MA"
+    ]
+  },
+  {
+    "id": "pmpa",
+    "nome": "Polícia Militar de Pará",
+    "sigla": "PMPA",
+    "uf": "PA",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmpa.json",
+    "arquivo_monitoramento": "data/concursos/pmpa-monitor.json",
+    "site_principal": "https://www.pm.pa.gov.br",
+    "fontes_base": [
+      "https://www.pm.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "pm.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpa",
+      "PMPA",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPA concurso edital PA",
+      "Polícia Militar de Pará concurso público edital",
+      "PMPA concurso vagas salário banca escolaridade idade altura CNH",
+      "PMPA inscrições concurso prova etapas banca",
+      "PMPA diário oficial concurso edital convocação homologação",
+      "PMPA edital PDF concurso Pará",
+      "PMPA concurso resultado final nomeação convocação",
+      "PMPA concurso oficial site governo PA"
+    ]
+  },
+  {
+    "id": "pcpa",
+    "nome": "Polícia Civil de Pará",
+    "sigla": "PCPA",
+    "uf": "PA",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcpa.json",
+    "arquivo_monitoramento": "data/concursos/pcpa-monitor.json",
+    "site_principal": "https://www.policiacivil.pa.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "policiacivil.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpa",
+      "PCPA",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPA concurso edital PA",
+      "Polícia Civil de Pará concurso público edital",
+      "PCPA concurso vagas salário banca escolaridade idade altura CNH",
+      "PCPA inscrições concurso prova etapas banca",
+      "PCPA diário oficial concurso edital convocação homologação",
+      "PCPA edital PDF concurso Pará",
+      "PCPA concurso resultado final nomeação convocação",
+      "PCPA concurso oficial site governo PA"
+    ]
+  },
+  {
+    "id": "pppa",
+    "nome": "Polícia Penal de Pará",
+    "sigla": "PPPA",
+    "uf": "PA",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pppa.json",
+    "arquivo_monitoramento": "data/concursos/pppa-monitor.json",
+    "site_principal": "https://www.pa.gov.br",
+    "fontes_base": [
+      "https://www.pa.gov.br",
+      "https://www.policiapenal.pa.gov.br",
+      "https://www.seap.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pa.gov.br",
+      "policiapenal.pa.gov.br",
+      "seap.pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppa",
+      "PPPA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPA concurso edital PA",
+      "Polícia Penal de Pará concurso público edital",
+      "PPPA concurso vagas salário banca escolaridade idade altura CNH",
+      "PPPA inscrições concurso prova etapas banca",
+      "PPPA diário oficial concurso edital convocação homologação",
+      "PPPA edital PDF concurso Pará",
+      "PPPA concurso resultado final nomeação convocação",
+      "PPPA concurso oficial site governo PA"
+    ]
+  },
+  {
+    "id": "pmpb",
+    "nome": "Polícia Militar de Paraíba",
+    "sigla": "PMPB",
+    "uf": "PB",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmpb.json",
+    "arquivo_monitoramento": "data/concursos/pmpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.pm.pb.gov.br",
+      "https://www.pmpb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "pm.pb.gov.br",
+      "pmpb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpb",
+      "PMPB",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPB concurso edital PB",
+      "Polícia Militar de Paraíba concurso público edital",
+      "PMPB concurso vagas salário banca escolaridade idade altura CNH",
+      "PMPB inscrições concurso prova etapas banca",
+      "PMPB diário oficial concurso edital convocação homologação",
+      "PMPB edital PDF concurso Paraíba",
+      "PMPB concurso resultado final nomeação convocação",
+      "PMPB concurso oficial site governo PB"
+    ]
+  },
+  {
+    "id": "pcpb",
+    "nome": "Polícia Civil de Paraíba",
+    "sigla": "PCPB",
+    "uf": "PB",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcpb.json",
+    "arquivo_monitoramento": "data/concursos/pcpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.pc.pb.gov.br",
+      "https://www.policiacivil.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "pc.pb.gov.br",
+      "policiacivil.pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpb",
+      "PCPB",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPB concurso edital PB",
+      "Polícia Civil de Paraíba concurso público edital",
+      "PCPB concurso vagas salário banca escolaridade idade altura CNH",
+      "PCPB inscrições concurso prova etapas banca",
+      "PCPB diário oficial concurso edital convocação homologação",
+      "PCPB edital PDF concurso Paraíba",
+      "PCPB concurso resultado final nomeação convocação",
+      "PCPB concurso oficial site governo PB"
+    ]
+  },
+  {
+    "id": "pppb",
+    "nome": "Polícia Penal de Paraíba",
+    "sigla": "PPPB",
+    "uf": "PB",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pppb.json",
+    "arquivo_monitoramento": "data/concursos/pppb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.policiapenal.pb.gov.br",
+      "https://www.seap.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pb.gov.br",
+      "policiapenal.pb.gov.br",
+      "seap.pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppb",
+      "PPPB",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPB concurso edital PB",
+      "Polícia Penal de Paraíba concurso público edital",
+      "PPPB concurso vagas salário banca escolaridade idade altura CNH",
+      "PPPB inscrições concurso prova etapas banca",
+      "PPPB diário oficial concurso edital convocação homologação",
+      "PPPB edital PDF concurso Paraíba",
+      "PPPB concurso resultado final nomeação convocação",
+      "PPPB concurso oficial site governo PB"
+    ]
+  },
+  {
+    "id": "pmpe",
+    "nome": "Polícia Militar de Pernambuco",
+    "sigla": "PMPE",
+    "uf": "PE",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmpe.json",
+    "arquivo_monitoramento": "data/concursos/pmpe-monitor.json",
+    "site_principal": "https://www.pm.pe.gov.br",
+    "fontes_base": [
+      "https://www.pm.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "pm.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpe",
+      "PMPE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPE concurso edital PE",
+      "Polícia Militar de Pernambuco concurso público edital",
+      "PMPE concurso vagas salário banca escolaridade idade altura CNH",
+      "PMPE inscrições concurso prova etapas banca",
+      "PMPE diário oficial concurso edital convocação homologação",
+      "PMPE edital PDF concurso Pernambuco",
+      "PMPE concurso resultado final nomeação convocação",
+      "PMPE concurso oficial site governo PE"
+    ]
+  },
+  {
+    "id": "pcpe",
+    "nome": "Polícia Civil de Pernambuco",
+    "sigla": "PCPE",
+    "uf": "PE",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcpe.json",
+    "arquivo_monitoramento": "data/concursos/pcpe-monitor.json",
+    "site_principal": "https://www.policiacivil.pe.gov.br",
+    "fontes_base": [
+      "https://www.policiacivil.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "policiacivil.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpe",
+      "PCPE",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPE concurso edital PE",
+      "Polícia Civil de Pernambuco concurso público edital",
+      "PCPE concurso vagas salário banca escolaridade idade altura CNH",
+      "PCPE inscrições concurso prova etapas banca",
+      "PCPE diário oficial concurso edital convocação homologação",
+      "PCPE edital PDF concurso Pernambuco",
+      "PCPE concurso resultado final nomeação convocação",
+      "PCPE concurso oficial site governo PE"
+    ]
+  },
+  {
+    "id": "pppe",
+    "nome": "Polícia Penal de Pernambuco",
+    "sigla": "PPPE",
+    "uf": "PE",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pppe.json",
+    "arquivo_monitoramento": "data/concursos/pppe-monitor.json",
+    "site_principal": "https://www.pe.gov.br",
+    "fontes_base": [
+      "https://www.pe.gov.br",
+      "https://www.policiapenal.pe.gov.br",
+      "https://www.seap.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pe.gov.br",
+      "policiapenal.pe.gov.br",
+      "seap.pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppe",
+      "PPPE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPE concurso edital PE",
+      "Polícia Penal de Pernambuco concurso público edital",
+      "PPPE concurso vagas salário banca escolaridade idade altura CNH",
+      "PPPE inscrições concurso prova etapas banca",
+      "PPPE diário oficial concurso edital convocação homologação",
+      "PPPE edital PDF concurso Pernambuco",
+      "PPPE concurso resultado final nomeação convocação",
+      "PPPE concurso oficial site governo PE"
+    ]
+  },
+  {
+    "id": "pmpi",
+    "nome": "Polícia Militar de Piauí",
+    "sigla": "PMPI",
+    "uf": "PI",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmpi.json",
+    "arquivo_monitoramento": "data/concursos/pmpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.pm.pi.gov.br",
+      "https://www.pmpi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pi.gov.br",
+      "pm.pi.gov.br",
+      "pmpi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmpi",
+      "PMPI",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMPI concurso edital PI",
+      "Polícia Militar de Piauí concurso público edital",
+      "PMPI concurso vagas salário banca escolaridade idade altura CNH",
+      "PMPI inscrições concurso prova etapas banca",
+      "PMPI diário oficial concurso edital convocação homologação",
+      "PMPI edital PDF concurso Piauí",
+      "PMPI concurso resultado final nomeação convocação",
+      "PMPI concurso oficial site governo PI"
+    ]
+  },
+  {
+    "id": "pcpi",
+    "nome": "Polícia Civil de Piauí",
+    "sigla": "PCPI",
+    "uf": "PI",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcpi.json",
+    "arquivo_monitoramento": "data/concursos/pcpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.pc.pi.gov.br",
+      "https://www.policiacivil.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.pi.gov.br",
+      "pi.gov.br",
+      "policiacivil.pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcpi",
+      "PCPI",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCPI concurso edital PI",
+      "Polícia Civil de Piauí concurso público edital",
+      "PCPI concurso vagas salário banca escolaridade idade altura CNH",
+      "PCPI inscrições concurso prova etapas banca",
+      "PCPI diário oficial concurso edital convocação homologação",
+      "PCPI edital PDF concurso Piauí",
+      "PCPI concurso resultado final nomeação convocação",
+      "PCPI concurso oficial site governo PI"
+    ]
+  },
+  {
+    "id": "pppi",
+    "nome": "Polícia Penal de Piauí",
+    "sigla": "PPPI",
+    "uf": "PI",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pppi.json",
+    "arquivo_monitoramento": "data/concursos/pppi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.policiapenal.pi.gov.br",
+      "https://www.seap.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pi.gov.br",
+      "policiapenal.pi.gov.br",
+      "seap.pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppi",
+      "PPPI",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPI concurso edital PI",
+      "Polícia Penal de Piauí concurso público edital",
+      "PPPI concurso vagas salário banca escolaridade idade altura CNH",
+      "PPPI inscrições concurso prova etapas banca",
+      "PPPI diário oficial concurso edital convocação homologação",
+      "PPPI edital PDF concurso Piauí",
+      "PPPI concurso resultado final nomeação convocação",
+      "PPPI concurso oficial site governo PI"
+    ]
+  },
+  {
+    "id": "pmrn",
+    "nome": "Polícia Militar de Rio Grande do Norte",
+    "sigla": "PMRN",
+    "uf": "RN",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmrn.json",
+    "arquivo_monitoramento": "data/concursos/pmrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.pm.rn.gov.br",
+      "https://www.pmrn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.rn.gov.br",
+      "pmrn.gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmrn",
+      "PMRN",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRN concurso edital RN",
+      "Polícia Militar de Rio Grande do Norte concurso público edital",
+      "PMRN concurso vagas salário banca escolaridade idade altura CNH",
+      "PMRN inscrições concurso prova etapas banca",
+      "PMRN diário oficial concurso edital convocação homologação",
+      "PMRN edital PDF concurso Rio Grande do Norte",
+      "PMRN concurso resultado final nomeação convocação",
+      "PMRN concurso oficial site governo RN"
+    ]
+  },
+  {
+    "id": "pcrn",
+    "nome": "Polícia Civil de Rio Grande do Norte",
+    "sigla": "PCRN",
+    "uf": "RN",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcrn.json",
+    "arquivo_monitoramento": "data/concursos/pcrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.pc.rn.gov.br",
+      "https://www.policiacivil.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.rn.gov.br",
+      "policiacivil.rn.gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcrn",
+      "PCRN",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRN concurso edital RN",
+      "Polícia Civil de Rio Grande do Norte concurso público edital",
+      "PCRN concurso vagas salário banca escolaridade idade altura CNH",
+      "PCRN inscrições concurso prova etapas banca",
+      "PCRN diário oficial concurso edital convocação homologação",
+      "PCRN edital PDF concurso Rio Grande do Norte",
+      "PCRN concurso resultado final nomeação convocação",
+      "PCRN concurso oficial site governo RN"
+    ]
+  },
+  {
+    "id": "pprn",
+    "nome": "Polícia Penal de Rio Grande do Norte",
+    "sigla": "PPRN",
+    "uf": "RN",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pprn.json",
+    "arquivo_monitoramento": "data/concursos/pprn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.policiapenal.rn.gov.br",
+      "https://www.seap.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rn.gov.br",
+      "rn.gov.br",
+      "seap.rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprn",
+      "PPRN",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRN concurso edital RN",
+      "Polícia Penal de Rio Grande do Norte concurso público edital",
+      "PPRN concurso vagas salário banca escolaridade idade altura CNH",
+      "PPRN inscrições concurso prova etapas banca",
+      "PPRN diário oficial concurso edital convocação homologação",
+      "PPRN edital PDF concurso Rio Grande do Norte",
+      "PPRN concurso resultado final nomeação convocação",
+      "PPRN concurso oficial site governo RN"
+    ]
+  },
+  {
+    "id": "pmro",
+    "nome": "Polícia Militar de Rondônia",
+    "sigla": "PMRO",
+    "uf": "RO",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmro.json",
+    "arquivo_monitoramento": "data/concursos/pmro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.pm.ro.gov.br",
+      "https://www.pmro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.ro.gov.br",
+      "pmro.gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmro",
+      "PMRO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRO concurso edital RO",
+      "Polícia Militar de Rondônia concurso público edital",
+      "PMRO concurso vagas salário banca escolaridade idade altura CNH",
+      "PMRO inscrições concurso prova etapas banca",
+      "PMRO diário oficial concurso edital convocação homologação",
+      "PMRO edital PDF concurso Rondônia",
+      "PMRO concurso resultado final nomeação convocação",
+      "PMRO concurso oficial site governo RO"
+    ]
+  },
+  {
+    "id": "pcro",
+    "nome": "Polícia Civil de Rondônia",
+    "sigla": "PCRO",
+    "uf": "RO",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcro.json",
+    "arquivo_monitoramento": "data/concursos/pcro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.pc.ro.gov.br",
+      "https://www.policiacivil.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.ro.gov.br",
+      "policiacivil.ro.gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcro",
+      "PCRO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRO concurso edital RO",
+      "Polícia Civil de Rondônia concurso público edital",
+      "PCRO concurso vagas salário banca escolaridade idade altura CNH",
+      "PCRO inscrições concurso prova etapas banca",
+      "PCRO diário oficial concurso edital convocação homologação",
+      "PCRO edital PDF concurso Rondônia",
+      "PCRO concurso resultado final nomeação convocação",
+      "PCRO concurso oficial site governo RO"
+    ]
+  },
+  {
+    "id": "ppro",
+    "nome": "Polícia Penal de Rondônia",
+    "sigla": "PPRO",
+    "uf": "RO",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppro.json",
+    "arquivo_monitoramento": "data/concursos/ppro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.policiapenal.ro.gov.br",
+      "https://www.seap.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.ro.gov.br",
+      "ro.gov.br",
+      "seap.ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppro",
+      "PPRO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRO concurso edital RO",
+      "Polícia Penal de Rondônia concurso público edital",
+      "PPRO concurso vagas salário banca escolaridade idade altura CNH",
+      "PPRO inscrições concurso prova etapas banca",
+      "PPRO diário oficial concurso edital convocação homologação",
+      "PPRO edital PDF concurso Rondônia",
+      "PPRO concurso resultado final nomeação convocação",
+      "PPRO concurso oficial site governo RO"
+    ]
+  },
+  {
+    "id": "pmrr",
+    "nome": "Polícia Militar de Roraima",
+    "sigla": "PMRR",
+    "uf": "RR",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmrr.json",
+    "arquivo_monitoramento": "data/concursos/pmrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.pm.rr.gov.br",
+      "https://www.pmrr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.rr.gov.br",
+      "pmrr.gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmrr",
+      "PMRR",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMRR concurso edital RR",
+      "Polícia Militar de Roraima concurso público edital",
+      "PMRR concurso vagas salário banca escolaridade idade altura CNH",
+      "PMRR inscrições concurso prova etapas banca",
+      "PMRR diário oficial concurso edital convocação homologação",
+      "PMRR edital PDF concurso Roraima",
+      "PMRR concurso resultado final nomeação convocação",
+      "PMRR concurso oficial site governo RR"
+    ]
+  },
+  {
+    "id": "pcrr",
+    "nome": "Polícia Civil de Roraima",
+    "sigla": "PCRR",
+    "uf": "RR",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcrr.json",
+    "arquivo_monitoramento": "data/concursos/pcrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.pc.rr.gov.br",
+      "https://www.policiacivil.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.rr.gov.br",
+      "policiacivil.rr.gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcrr",
+      "PCRR",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCRR concurso edital RR",
+      "Polícia Civil de Roraima concurso público edital",
+      "PCRR concurso vagas salário banca escolaridade idade altura CNH",
+      "PCRR inscrições concurso prova etapas banca",
+      "PCRR diário oficial concurso edital convocação homologação",
+      "PCRR edital PDF concurso Roraima",
+      "PCRR concurso resultado final nomeação convocação",
+      "PCRR concurso oficial site governo RR"
+    ]
+  },
+  {
+    "id": "pprr",
+    "nome": "Polícia Penal de Roraima",
+    "sigla": "PPRR",
+    "uf": "RR",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pprr.json",
+    "arquivo_monitoramento": "data/concursos/pprr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.policiapenal.rr.gov.br",
+      "https://www.seap.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rr.gov.br",
+      "rr.gov.br",
+      "seap.rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprr",
+      "PPRR",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRR concurso edital RR",
+      "Polícia Penal de Roraima concurso público edital",
+      "PPRR concurso vagas salário banca escolaridade idade altura CNH",
+      "PPRR inscrições concurso prova etapas banca",
+      "PPRR diário oficial concurso edital convocação homologação",
+      "PPRR edital PDF concurso Roraima",
+      "PPRR concurso resultado final nomeação convocação",
+      "PPRR concurso oficial site governo RR"
+    ]
+  },
+  {
+    "id": "pmse",
+    "nome": "Polícia Militar de Sergipe",
+    "sigla": "PMSE",
+    "uf": "SE",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmse.json",
+    "arquivo_monitoramento": "data/concursos/pmse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.pm.se.gov.br",
+      "https://www.pmse.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.se.gov.br",
+      "pmse.gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmse",
+      "PMSE",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMSE concurso edital SE",
+      "Polícia Militar de Sergipe concurso público edital",
+      "PMSE concurso vagas salário banca escolaridade idade altura CNH",
+      "PMSE inscrições concurso prova etapas banca",
+      "PMSE diário oficial concurso edital convocação homologação",
+      "PMSE edital PDF concurso Sergipe",
+      "PMSE concurso resultado final nomeação convocação",
+      "PMSE concurso oficial site governo SE"
+    ]
+  },
+  {
+    "id": "pcse",
+    "nome": "Polícia Civil de Sergipe",
+    "sigla": "PCSE",
+    "uf": "SE",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcse.json",
+    "arquivo_monitoramento": "data/concursos/pcse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.pc.se.gov.br",
+      "https://www.policiacivil.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.se.gov.br",
+      "policiacivil.se.gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcse",
+      "PCSE",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCSE concurso edital SE",
+      "Polícia Civil de Sergipe concurso público edital",
+      "PCSE concurso vagas salário banca escolaridade idade altura CNH",
+      "PCSE inscrições concurso prova etapas banca",
+      "PCSE diário oficial concurso edital convocação homologação",
+      "PCSE edital PDF concurso Sergipe",
+      "PCSE concurso resultado final nomeação convocação",
+      "PCSE concurso oficial site governo SE"
+    ]
+  },
+  {
+    "id": "ppse",
+    "nome": "Polícia Penal de Sergipe",
+    "sigla": "PPSE",
+    "uf": "SE",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppse.json",
+    "arquivo_monitoramento": "data/concursos/ppse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.policiapenal.se.gov.br",
+      "https://www.seap.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.se.gov.br",
+      "se.gov.br",
+      "seap.se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppse",
+      "PPSE",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPSE concurso edital SE",
+      "Polícia Penal de Sergipe concurso público edital",
+      "PPSE concurso vagas salário banca escolaridade idade altura CNH",
+      "PPSE inscrições concurso prova etapas banca",
+      "PPSE diário oficial concurso edital convocação homologação",
+      "PPSE edital PDF concurso Sergipe",
+      "PPSE concurso resultado final nomeação convocação",
+      "PPSE concurso oficial site governo SE"
+    ]
+  },
+  {
+    "id": "pmto",
+    "nome": "Polícia Militar de Tocantins",
+    "sigla": "PMTO",
+    "uf": "TO",
+    "tipo": "Polícia Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pmto.json",
+    "arquivo_monitoramento": "data/concursos/pmto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.pm.to.gov.br",
+      "https://www.pmto.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pm.to.gov.br",
+      "pmto.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pmto",
+      "PMTO",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cfo",
+      "cfsd",
+      "praça",
+      "praca",
+      "aluno soldado"
+    ],
+    "consultas_sugeridas": [
+      "PMTO concurso edital TO",
+      "Polícia Militar de Tocantins concurso público edital",
+      "PMTO concurso vagas salário banca escolaridade idade altura CNH",
+      "PMTO inscrições concurso prova etapas banca",
+      "PMTO diário oficial concurso edital convocação homologação",
+      "PMTO edital PDF concurso Tocantins",
+      "PMTO concurso resultado final nomeação convocação",
+      "PMTO concurso oficial site governo TO"
+    ]
+  },
+  {
+    "id": "pcto",
+    "nome": "Polícia Civil de Tocantins",
+    "sigla": "PCTO",
+    "uf": "TO",
+    "tipo": "Polícia Civil",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pcto.json",
+    "arquivo_monitoramento": "data/concursos/pcto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.pc.to.gov.br",
+      "https://www.policiacivil.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pc.to.gov.br",
+      "policiacivil.to.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pcto",
+      "PCTO",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "agente",
+      "papiloscopista"
+    ],
+    "consultas_sugeridas": [
+      "PCTO concurso edital TO",
+      "Polícia Civil de Tocantins concurso público edital",
+      "PCTO concurso vagas salário banca escolaridade idade altura CNH",
+      "PCTO inscrições concurso prova etapas banca",
+      "PCTO diário oficial concurso edital convocação homologação",
+      "PCTO edital PDF concurso Tocantins",
+      "PCTO concurso resultado final nomeação convocação",
+      "PCTO concurso oficial site governo TO"
+    ]
+  },
+  {
+    "id": "ppto",
+    "nome": "Polícia Penal de Tocantins",
+    "sigla": "PPTO",
+    "uf": "TO",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppto.json",
+    "arquivo_monitoramento": "data/concursos/ppto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.policiapenal.to.gov.br",
+      "https://www.seap.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.to.gov.br",
+      "seap.to.gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppto",
+      "PPTO",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPTO concurso edital TO",
+      "Polícia Penal de Tocantins concurso público edital",
+      "PPTO concurso vagas salário banca escolaridade idade altura CNH",
+      "PPTO inscrições concurso prova etapas banca",
+      "PPTO diário oficial concurso edital convocação homologação",
+      "PPTO edital PDF concurso Tocantins",
+      "PPTO concurso resultado final nomeação convocação",
+      "PPTO concurso oficial site governo TO"
+    ]
+  },
+  {
+    "id": "bmac",
+    "nome": "Corpo de Bombeiros Militar do Acre",
+    "sigla": "BMAC",
+    "uf": "AC",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmac.json",
+    "arquivo_monitoramento": "data/concursos/bmac-monitor.json",
+    "site_principal": "https://www.ac.gov.br",
+    "fontes_base": [
+      "https://www.ac.gov.br",
+      "https://www.cbm.ac.gov.br",
+      "https://www.cbmac.gov.br",
+      "https://www.bombeiros.ac.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ac.gov.br",
+      "bombeiros.ac.gov.br",
+      "cbm.ac.gov.br",
+      "cbmac.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmac",
+      "BMAC",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAC concurso edital AC",
+      "Corpo de Bombeiros Militar do Acre concurso público edital",
+      "BMAC concurso vagas salário banca escolaridade idade altura CNH",
+      "BMAC inscrições concurso prova etapas banca",
+      "BMAC diário oficial concurso edital convocação homologação",
+      "BMAC edital PDF concurso Acre",
+      "BMAC concurso resultado final nomeação convocação",
+      "BMAC concurso oficial site governo AC"
+    ]
+  },
+  {
+    "id": "bmal",
+    "nome": "Corpo de Bombeiros Militar de Alagoas",
+    "sigla": "BMAL",
+    "uf": "AL",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmal.json",
+    "arquivo_monitoramento": "data/concursos/bmal-monitor.json",
+    "site_principal": "https://www.al.gov.br",
+    "fontes_base": [
+      "https://www.al.gov.br",
+      "https://www.cbm.al.gov.br",
+      "https://www.cbmal.gov.br",
+      "https://www.bombeiros.al.gov.br"
+    ],
+    "dominios_oficiais": [
+      "al.gov.br",
+      "bombeiros.al.gov.br",
+      "cbm.al.gov.br",
+      "cbmal.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmal",
+      "BMAL",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAL concurso edital AL",
+      "Corpo de Bombeiros Militar de Alagoas concurso público edital",
+      "BMAL concurso vagas salário banca escolaridade idade altura CNH",
+      "BMAL inscrições concurso prova etapas banca",
+      "BMAL diário oficial concurso edital convocação homologação",
+      "BMAL edital PDF concurso Alagoas",
+      "BMAL concurso resultado final nomeação convocação",
+      "BMAL concurso oficial site governo AL"
+    ]
+  },
+  {
+    "id": "bmam",
+    "nome": "Corpo de Bombeiros Militar do Amazonas",
+    "sigla": "BMAM",
+    "uf": "AM",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmam.json",
+    "arquivo_monitoramento": "data/concursos/bmam-monitor.json",
+    "site_principal": "https://www.am.gov.br",
+    "fontes_base": [
+      "https://www.am.gov.br",
+      "https://www.cbm.am.gov.br",
+      "https://www.cbmam.gov.br",
+      "https://www.bombeiros.am.gov.br"
+    ],
+    "dominios_oficiais": [
+      "am.gov.br",
+      "bombeiros.am.gov.br",
+      "cbm.am.gov.br",
+      "cbmam.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmam",
+      "BMAM",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMAM concurso edital AM",
+      "Corpo de Bombeiros Militar do Amazonas concurso público edital",
+      "BMAM concurso vagas salário banca escolaridade idade altura CNH",
+      "BMAM inscrições concurso prova etapas banca",
+      "BMAM diário oficial concurso edital convocação homologação",
+      "BMAM edital PDF concurso Amazonas",
+      "BMAM concurso resultado final nomeação convocação",
+      "BMAM concurso oficial site governo AM"
+    ]
+  },
+  {
+    "id": "bmba",
+    "nome": "Corpo de Bombeiros Militar da Bahia",
+    "sigla": "BMBA",
+    "uf": "BA",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmba.json",
+    "arquivo_monitoramento": "data/concursos/bmba-monitor.json",
+    "site_principal": "https://www.cbm.ba.gov.br",
+    "fontes_base": [
+      "https://www.cbm.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ba.gov.br",
+      "cbm.ba.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmba",
+      "BMBA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMBA concurso edital BA",
+      "Corpo de Bombeiros Militar da Bahia concurso público edital",
+      "BMBA concurso vagas salário banca escolaridade idade altura CNH",
+      "BMBA inscrições concurso prova etapas banca",
+      "BMBA diário oficial concurso edital convocação homologação",
+      "BMBA edital PDF concurso Bahia",
+      "BMBA concurso resultado final nomeação convocação",
+      "BMBA concurso oficial site governo BA"
+    ]
+  },
+  {
+    "id": "bmce",
+    "nome": "Corpo de Bombeiros Militar do Ceará",
+    "sigla": "BMCE",
+    "uf": "CE",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmce.json",
+    "arquivo_monitoramento": "data/concursos/bmce-monitor.json",
+    "site_principal": "https://www.bombeiros.ce.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.ce.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ce.gov.br",
+      "ce.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmce",
+      "BMCE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMCE concurso edital CE",
+      "Corpo de Bombeiros Militar do Ceará concurso público edital",
+      "BMCE concurso vagas salário banca escolaridade idade altura CNH",
+      "BMCE inscrições concurso prova etapas banca",
+      "BMCE diário oficial concurso edital convocação homologação",
+      "BMCE edital PDF concurso Ceará",
+      "BMCE concurso resultado final nomeação convocação",
+      "BMCE concurso oficial site governo CE"
+    ]
+  },
+  {
+    "id": "bmdf",
+    "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+    "sigla": "BMDF",
+    "uf": "DF",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmdf.json",
+    "arquivo_monitoramento": "data/concursos/bmdf-monitor.json",
+    "site_principal": "https://www.cbm.df.gov.br",
+    "fontes_base": [
+      "https://www.cbm.df.gov.br"
+    ],
+    "dominios_oficiais": [
+      "cbm.df.gov.br",
+      "df.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmdf",
+      "BMDF",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMDF concurso edital DF",
+      "Corpo de Bombeiros Militar do Distrito Federal concurso público edital",
+      "BMDF concurso vagas salário banca escolaridade idade altura CNH",
+      "BMDF inscrições concurso prova etapas banca",
+      "BMDF diário oficial concurso edital convocação homologação",
+      "BMDF edital PDF concurso Distrito Federal",
+      "BMDF concurso resultado final nomeação convocação",
+      "BMDF concurso oficial site governo DF"
+    ]
+  },
+  {
+    "id": "bmgo",
+    "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+    "sigla": "BMGO",
+    "uf": "GO",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmgo.json",
+    "arquivo_monitoramento": "data/concursos/bmgo-monitor.json",
+    "site_principal": "https://www.bombeiros.go.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.go.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.go.gov.br",
+      "go.gov.br",
+      "gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmgo",
+      "BMGO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMGO concurso edital GO",
+      "Corpo de Bombeiros Militar do Estado de Goiás concurso público edital",
+      "BMGO concurso vagas salário banca escolaridade idade altura CNH",
+      "BMGO inscrições concurso prova etapas banca",
+      "BMGO diário oficial concurso edital convocação homologação",
+      "BMGO edital PDF concurso Goiás",
+      "BMGO concurso resultado final nomeação convocação",
+      "BMGO concurso oficial site governo GO"
+    ]
+  },
+  {
+    "id": "bmma",
+    "nome": "Corpo de Bombeiros Militar do Maranhão",
+    "sigla": "BMMA",
+    "uf": "MA",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmma.json",
+    "arquivo_monitoramento": "data/concursos/bmma-monitor.json",
+    "site_principal": "https://www.ma.gov.br",
+    "fontes_base": [
+      "https://www.ma.gov.br",
+      "https://www.cbm.ma.gov.br",
+      "https://www.cbmma.gov.br",
+      "https://www.bombeiros.ma.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ma.gov.br",
+      "cbm.ma.gov.br",
+      "cbmma.gov.br",
+      "gov.br",
+      "ma.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmma",
+      "BMMA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMMA concurso edital MA",
+      "Corpo de Bombeiros Militar do Maranhão concurso público edital",
+      "BMMA concurso vagas salário banca escolaridade idade altura CNH",
+      "BMMA inscrições concurso prova etapas banca",
+      "BMMA diário oficial concurso edital convocação homologação",
+      "BMMA edital PDF concurso Maranhão",
+      "BMMA concurso resultado final nomeação convocação",
+      "BMMA concurso oficial site governo MA"
+    ]
+  },
+  {
+    "id": "bmpa",
+    "nome": "Corpo de Bombeiros Militar do Pará",
+    "sigla": "BMPA",
+    "uf": "PA",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmpa.json",
+    "arquivo_monitoramento": "data/concursos/bmpa-monitor.json",
+    "site_principal": "https://www.pa.gov.br",
+    "fontes_base": [
+      "https://www.pa.gov.br",
+      "https://www.cbm.pa.gov.br",
+      "https://www.cbmpa.gov.br",
+      "https://www.bombeiros.pa.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pa.gov.br",
+      "cbm.pa.gov.br",
+      "cbmpa.gov.br",
+      "gov.br",
+      "pa.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpa",
+      "BMPA",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPA concurso edital PA",
+      "Corpo de Bombeiros Militar do Pará concurso público edital",
+      "BMPA concurso vagas salário banca escolaridade idade altura CNH",
+      "BMPA inscrições concurso prova etapas banca",
+      "BMPA diário oficial concurso edital convocação homologação",
+      "BMPA edital PDF concurso Pará",
+      "BMPA concurso resultado final nomeação convocação",
+      "BMPA concurso oficial site governo PA"
+    ]
+  },
+  {
+    "id": "bmpb",
+    "nome": "Corpo de Bombeiros Militar da Paraíba",
+    "sigla": "BMPB",
+    "uf": "PB",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmpb.json",
+    "arquivo_monitoramento": "data/concursos/bmpb-monitor.json",
+    "site_principal": "https://www.pb.gov.br",
+    "fontes_base": [
+      "https://www.pb.gov.br",
+      "https://www.cbm.pb.gov.br",
+      "https://www.cbmpb.gov.br",
+      "https://www.bombeiros.pb.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pb.gov.br",
+      "cbm.pb.gov.br",
+      "cbmpb.gov.br",
+      "gov.br",
+      "pb.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpb",
+      "BMPB",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPB concurso edital PB",
+      "Corpo de Bombeiros Militar da Paraíba concurso público edital",
+      "BMPB concurso vagas salário banca escolaridade idade altura CNH",
+      "BMPB inscrições concurso prova etapas banca",
+      "BMPB diário oficial concurso edital convocação homologação",
+      "BMPB edital PDF concurso Paraíba",
+      "BMPB concurso resultado final nomeação convocação",
+      "BMPB concurso oficial site governo PB"
+    ]
+  },
+  {
+    "id": "bmpe",
+    "nome": "Corpo de Bombeiros Militar de Pernambuco",
+    "sigla": "BMPE",
+    "uf": "PE",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmpe.json",
+    "arquivo_monitoramento": "data/concursos/bmpe-monitor.json",
+    "site_principal": "https://www.pe.gov.br",
+    "fontes_base": [
+      "https://www.pe.gov.br",
+      "https://www.cbm.pe.gov.br",
+      "https://www.cbmpe.gov.br",
+      "https://www.bombeiros.pe.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pe.gov.br",
+      "cbm.pe.gov.br",
+      "cbmpe.gov.br",
+      "gov.br",
+      "pe.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpe",
+      "BMPE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPE concurso edital PE",
+      "Corpo de Bombeiros Militar de Pernambuco concurso público edital",
+      "BMPE concurso vagas salário banca escolaridade idade altura CNH",
+      "BMPE inscrições concurso prova etapas banca",
+      "BMPE diário oficial concurso edital convocação homologação",
+      "BMPE edital PDF concurso Pernambuco",
+      "BMPE concurso resultado final nomeação convocação",
+      "BMPE concurso oficial site governo PE"
+    ]
+  },
+  {
+    "id": "bmpi",
+    "nome": "Corpo de Bombeiros Militar do Piauí",
+    "sigla": "BMPI",
+    "uf": "PI",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmpi.json",
+    "arquivo_monitoramento": "data/concursos/bmpi-monitor.json",
+    "site_principal": "https://www.pi.gov.br",
+    "fontes_base": [
+      "https://www.pi.gov.br",
+      "https://www.cbm.pi.gov.br",
+      "https://www.cbmpi.gov.br",
+      "https://www.bombeiros.pi.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.pi.gov.br",
+      "cbm.pi.gov.br",
+      "cbmpi.gov.br",
+      "gov.br",
+      "pi.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmpi",
+      "BMPI",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMPI concurso edital PI",
+      "Corpo de Bombeiros Militar do Piauí concurso público edital",
+      "BMPI concurso vagas salário banca escolaridade idade altura CNH",
+      "BMPI inscrições concurso prova etapas banca",
+      "BMPI diário oficial concurso edital convocação homologação",
+      "BMPI edital PDF concurso Piauí",
+      "BMPI concurso resultado final nomeação convocação",
+      "BMPI concurso oficial site governo PI"
+    ]
+  },
+  {
+    "id": "bmrn",
+    "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
+    "sigla": "BMRN",
+    "uf": "RN",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmrn.json",
+    "arquivo_monitoramento": "data/concursos/bmrn-monitor.json",
+    "site_principal": "https://www.rn.gov.br",
+    "fontes_base": [
+      "https://www.rn.gov.br",
+      "https://www.cbm.rn.gov.br",
+      "https://www.cbmrn.gov.br",
+      "https://www.bombeiros.rn.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rn.gov.br",
+      "cbm.rn.gov.br",
+      "cbmrn.gov.br",
+      "gov.br",
+      "rn.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrn",
+      "BMRN",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRN concurso edital RN",
+      "Corpo de Bombeiros Militar do Rio Grande do Norte concurso público edital",
+      "BMRN concurso vagas salário banca escolaridade idade altura CNH",
+      "BMRN inscrições concurso prova etapas banca",
+      "BMRN diário oficial concurso edital convocação homologação",
+      "BMRN edital PDF concurso Rio Grande do Norte",
+      "BMRN concurso resultado final nomeação convocação",
+      "BMRN concurso oficial site governo RN"
+    ]
+  },
+  {
+    "id": "bmro",
+    "nome": "Corpo de Bombeiros Militar de Rondônia",
+    "sigla": "BMRO",
+    "uf": "RO",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmro.json",
+    "arquivo_monitoramento": "data/concursos/bmro-monitor.json",
+    "site_principal": "https://www.ro.gov.br",
+    "fontes_base": [
+      "https://www.ro.gov.br",
+      "https://www.cbm.ro.gov.br",
+      "https://www.cbmro.gov.br",
+      "https://www.bombeiros.ro.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.ro.gov.br",
+      "cbm.ro.gov.br",
+      "cbmro.gov.br",
+      "gov.br",
+      "ro.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmro",
+      "BMRO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRO concurso edital RO",
+      "Corpo de Bombeiros Militar de Rondônia concurso público edital",
+      "BMRO concurso vagas salário banca escolaridade idade altura CNH",
+      "BMRO inscrições concurso prova etapas banca",
+      "BMRO diário oficial concurso edital convocação homologação",
+      "BMRO edital PDF concurso Rondônia",
+      "BMRO concurso resultado final nomeação convocação",
+      "BMRO concurso oficial site governo RO"
+    ]
+  },
+  {
+    "id": "bmrr",
+    "nome": "Corpo de Bombeiros Militar de Roraima",
+    "sigla": "BMRR",
+    "uf": "RR",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmrr.json",
+    "arquivo_monitoramento": "data/concursos/bmrr-monitor.json",
+    "site_principal": "https://www.rr.gov.br",
+    "fontes_base": [
+      "https://www.rr.gov.br",
+      "https://www.cbm.rr.gov.br",
+      "https://www.cbmrr.gov.br",
+      "https://www.bombeiros.rr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rr.gov.br",
+      "cbm.rr.gov.br",
+      "cbmrr.gov.br",
+      "gov.br",
+      "rr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrr",
+      "BMRR",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRR concurso edital RR",
+      "Corpo de Bombeiros Militar de Roraima concurso público edital",
+      "BMRR concurso vagas salário banca escolaridade idade altura CNH",
+      "BMRR inscrições concurso prova etapas banca",
+      "BMRR diário oficial concurso edital convocação homologação",
+      "BMRR edital PDF concurso Roraima",
+      "BMRR concurso resultado final nomeação convocação",
+      "BMRR concurso oficial site governo RR"
+    ]
+  },
+  {
+    "id": "bmrs",
+    "nome": "Corpo de Bombeiros Militar do Rio Grande do Sul",
+    "sigla": "BMRS",
+    "uf": "RS",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmrs.json",
+    "arquivo_monitoramento": "data/concursos/bmrs-monitor.json",
+    "site_principal": "https://www.bombeiros.rs.gov.br",
+    "fontes_base": [
+      "https://www.bombeiros.rs.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.rs.gov.br",
+      "gov.br",
+      "rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmrs",
+      "BMRS",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMRS concurso edital RS",
+      "Corpo de Bombeiros Militar do Rio Grande do Sul concurso público edital",
+      "BMRS concurso vagas salário banca escolaridade idade altura CNH",
+      "BMRS inscrições concurso prova etapas banca",
+      "BMRS diário oficial concurso edital convocação homologação",
+      "BMRS edital PDF concurso Rio Grande do Sul",
+      "BMRS concurso resultado final nomeação convocação",
+      "BMRS concurso oficial site governo RS"
+    ]
+  },
+  {
+    "id": "bmse",
+    "nome": "Corpo de Bombeiros Militar de Sergipe",
+    "sigla": "BMSE",
+    "uf": "SE",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmse.json",
+    "arquivo_monitoramento": "data/concursos/bmse-monitor.json",
+    "site_principal": "https://www.se.gov.br",
+    "fontes_base": [
+      "https://www.se.gov.br",
+      "https://www.cbm.se.gov.br",
+      "https://www.cbmse.gov.br",
+      "https://www.bombeiros.se.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.se.gov.br",
+      "cbm.se.gov.br",
+      "cbmse.gov.br",
+      "gov.br",
+      "se.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmse",
+      "BMSE",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMSE concurso edital SE",
+      "Corpo de Bombeiros Militar de Sergipe concurso público edital",
+      "BMSE concurso vagas salário banca escolaridade idade altura CNH",
+      "BMSE inscrições concurso prova etapas banca",
+      "BMSE diário oficial concurso edital convocação homologação",
+      "BMSE edital PDF concurso Sergipe",
+      "BMSE concurso resultado final nomeação convocação",
+      "BMSE concurso oficial site governo SE"
+    ]
+  },
+  {
+    "id": "bmto",
+    "nome": "Corpo de Bombeiros Militar do Tocantins",
+    "sigla": "BMTO",
+    "uf": "TO",
+    "tipo": "Bombeiro Militar",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/bmto.json",
+    "arquivo_monitoramento": "data/concursos/bmto-monitor.json",
+    "site_principal": "https://www.to.gov.br",
+    "fontes_base": [
+      "https://www.to.gov.br",
+      "https://www.cbm.to.gov.br",
+      "https://www.cbmto.gov.br",
+      "https://www.bombeiros.to.gov.br"
+    ],
+    "dominios_oficiais": [
+      "bombeiros.to.gov.br",
+      "cbm.to.gov.br",
+      "cbmto.gov.br",
+      "gov.br",
+      "to.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "bmto",
+      "BMTO",
+      "bombeiro",
+      "bombeiros",
+      "bombeiro militar",
+      "soldado bombeiro",
+      "oficial bombeiro",
+      "combatente",
+      "cfsd",
+      "cfo"
+    ],
+    "consultas_sugeridas": [
+      "BMTO concurso edital TO",
+      "Corpo de Bombeiros Militar do Tocantins concurso público edital",
+      "BMTO concurso vagas salário banca escolaridade idade altura CNH",
+      "BMTO inscrições concurso prova etapas banca",
+      "BMTO diário oficial concurso edital convocação homologação",
+      "BMTO edital PDF concurso Tocantins",
+      "BMTO concurso resultado final nomeação convocação",
+      "BMTO concurso oficial site governo TO"
+    ]
+  },
+  {
+    "id": "pprj",
+    "nome": "Polícia Penal do Rio de Janeiro",
+    "sigla": "PPRJ",
+    "uf": "RJ",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pprj.json",
+    "arquivo_monitoramento": "data/concursos/pprj-monitor.json",
+    "site_principal": "https://www.rj.gov.br",
+    "fontes_base": [
+      "https://www.rj.gov.br",
+      "https://www.policiapenal.rj.gov.br",
+      "https://www.seap.rj.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rj.gov.br",
+      "rj.gov.br",
+      "seap.rj.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprj",
+      "PPRJ",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRJ concurso edital RJ",
+      "Polícia Penal do Rio de Janeiro concurso público edital",
+      "PPRJ concurso vagas salário banca escolaridade idade altura CNH",
+      "PPRJ inscrições concurso prova etapas banca",
+      "PPRJ diário oficial concurso edital convocação homologação",
+      "PPRJ edital PDF concurso Rio de Janeiro",
+      "PPRJ concurso resultado final nomeação convocação",
+      "PPRJ concurso oficial site governo RJ"
+    ]
+  },
+  {
+    "id": "ppba",
+    "nome": "Polícia Penal da Bahia",
+    "sigla": "PPBA",
+    "uf": "BA",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppba.json",
+    "arquivo_monitoramento": "data/concursos/ppba-monitor.json",
+    "site_principal": "https://www.ba.gov.br",
+    "fontes_base": [
+      "https://www.ba.gov.br",
+      "https://www.policiapenal.ba.gov.br",
+      "https://www.seap.ba.gov.br"
+    ],
+    "dominios_oficiais": [
+      "ba.gov.br",
+      "gov.br",
+      "policiapenal.ba.gov.br",
+      "seap.ba.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppba",
+      "PPBA",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPBA concurso edital BA",
+      "Polícia Penal da Bahia concurso público edital",
+      "PPBA concurso vagas salário banca escolaridade idade altura CNH",
+      "PPBA inscrições concurso prova etapas banca",
+      "PPBA diário oficial concurso edital convocação homologação",
+      "PPBA edital PDF concurso Bahia",
+      "PPBA concurso resultado final nomeação convocação",
+      "PPBA concurso oficial site governo BA"
+    ]
+  },
+  {
+    "id": "pppr",
+    "nome": "Polícia Penal do Paraná",
+    "sigla": "PPPR",
+    "uf": "PR",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pppr.json",
+    "arquivo_monitoramento": "data/concursos/pppr-monitor.json",
+    "site_principal": "https://www.pr.gov.br",
+    "fontes_base": [
+      "https://www.pr.gov.br",
+      "https://www.policiapenal.pr.gov.br",
+      "https://www.seap.pr.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.pr.gov.br",
+      "pr.gov.br",
+      "seap.pr.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pppr",
+      "PPPR",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPPR concurso edital PR",
+      "Polícia Penal do Paraná concurso público edital",
+      "PPPR concurso vagas salário banca escolaridade idade altura CNH",
+      "PPPR inscrições concurso prova etapas banca",
+      "PPPR diário oficial concurso edital convocação homologação",
+      "PPPR edital PDF concurso Paraná",
+      "PPPR concurso resultado final nomeação convocação",
+      "PPPR concurso oficial site governo PR"
+    ]
+  },
+  {
+    "id": "pprs",
+    "nome": "Polícia Penal do Rio Grande do Sul",
+    "sigla": "PPRS",
+    "uf": "RS",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/pprs.json",
+    "arquivo_monitoramento": "data/concursos/pprs-monitor.json",
+    "site_principal": "https://www.rs.gov.br",
+    "fontes_base": [
+      "https://www.rs.gov.br",
+      "https://www.policiapenal.rs.gov.br",
+      "https://www.seap.rs.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.rs.gov.br",
+      "rs.gov.br",
+      "seap.rs.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "pprs",
+      "PPRS",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPRS concurso edital RS",
+      "Polícia Penal do Rio Grande do Sul concurso público edital",
+      "PPRS concurso vagas salário banca escolaridade idade altura CNH",
+      "PPRS inscrições concurso prova etapas banca",
+      "PPRS diário oficial concurso edital convocação homologação",
+      "PPRS edital PDF concurso Rio Grande do Sul",
+      "PPRS concurso resultado final nomeação convocação",
+      "PPRS concurso oficial site governo RS"
+    ]
+  },
+  {
+    "id": "ppsc",
+    "nome": "Polícia Penal de Santa Catarina",
+    "sigla": "PPSC",
+    "uf": "SC",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppsc.json",
+    "arquivo_monitoramento": "data/concursos/ppsc-monitor.json",
+    "site_principal": "https://www.sc.gov.br",
+    "fontes_base": [
+      "https://www.sc.gov.br",
+      "https://www.policiapenal.sc.gov.br",
+      "https://www.seap.sc.gov.br"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "policiapenal.sc.gov.br",
+      "sc.gov.br",
+      "seap.sc.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppsc",
+      "PPSC",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPSC concurso edital SC",
+      "Polícia Penal de Santa Catarina concurso público edital",
+      "PPSC concurso vagas salário banca escolaridade idade altura CNH",
+      "PPSC inscrições concurso prova etapas banca",
+      "PPSC diário oficial concurso edital convocação homologação",
+      "PPSC edital PDF concurso Santa Catarina",
+      "PPSC concurso resultado final nomeação convocação",
+      "PPSC concurso oficial site governo SC"
+    ]
+  },
+  {
+    "id": "ppes",
+    "nome": "Polícia Penal do Espírito Santo",
+    "sigla": "PPES",
+    "uf": "ES",
+    "tipo": "Polícia Penal",
+    "tema": "concursos",
+    "prioridade": 3,
+    "frequencia": "manual_inicial",
+    "arquivo_saida": "data/concursos/ppes.json",
+    "arquivo_monitoramento": "data/concursos/ppes-monitor.json",
+    "site_principal": "https://www.es.gov.br",
+    "fontes_base": [
+      "https://www.es.gov.br",
+      "https://www.policiapenal.es.gov.br",
+      "https://www.seap.es.gov.br"
+    ],
+    "dominios_oficiais": [
+      "es.gov.br",
+      "gov.br",
+      "policiapenal.es.gov.br",
+      "seap.es.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao",
+      "resultado",
+      "homologação",
+      "homologacao",
+      "ppes",
+      "PPES",
+      "polícia penal",
+      "policia penal",
+      "policial penal",
+      "agente penal",
+      "agente penitenciário",
+      "agente penitenciario"
+    ],
+    "consultas_sugeridas": [
+      "PPES concurso edital ES",
+      "Polícia Penal do Espírito Santo concurso público edital",
+      "PPES concurso vagas salário banca escolaridade idade altura CNH",
+      "PPES inscrições concurso prova etapas banca",
+      "PPES diário oficial concurso edital convocação homologação",
+      "PPES edital PDF concurso Espírito Santo",
+      "PPES concurso resultado final nomeação convocação",
+      "PPES concurso oficial site governo ES"
     ]
   }
 ]
