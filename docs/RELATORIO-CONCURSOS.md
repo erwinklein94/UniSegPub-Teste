@@ -2,8 +2,8 @@
 
 Gerado em: **2026-05-17**
 
-Total de instituições avaliadas: **47**
-Precisam de modo qualificado: **28**
+Total de instituições avaliadas: **110**
+Precisam de modo qualificado: **91**
 Precisam de revisão: **19**
 OK: **0**
 
@@ -19,6 +19,69 @@ OK: **0**
 | rodar_qualificado | `pmerj` | PMERJ | alta | 98 | fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmerj; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `prf` | PRF | alta | 98 | fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual | instituicao=prf; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `bmms` | CBMMS | media | 43 | score muito baixo (43); campos críticos genéricos: salario, escolaridade; muitos campos genéricos: salario, cotas, idade, escolaridade, materias, estagio; foi publicado por modo qualificado; recomenda revisão visual | instituicao=bmms; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmac` | BMAC | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmac; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmal` | BMAL | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmal; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmam` | BMAM | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmam; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmba` | BMBA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmba; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmce` | BMCE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmce; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmdf` | BMDF | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmdf; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmgo` | BMGO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmgo; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmma` | BMMA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmma; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmpa` | BMPA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmpa; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmpb` | BMPB | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmpb; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmpe` | BMPE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmpe; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmpi` | BMPI | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmpi; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmrn` | BMRN | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmrn; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmro` | BMRO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmro; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmrr` | BMRR | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmrr; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmrs` | BMRS | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmrs; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmse` | BMSE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmse; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `bmto` | BMTO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=bmto; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcgo` | PCGO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcgo; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcma` | PCMA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcma; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcpa` | PCPA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcpa; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcpb` | PCPB | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcpb; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcpe` | PCPE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcpe; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcpi` | PCPI | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcpi; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcrn` | PCRN | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcrn; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcro` | PCRO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcro; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcrr` | PCRR | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcrr; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcse` | PCSE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcse; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcto` | PCTO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pcto; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmce` | PMCE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmce; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmdf` | PMDF | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmdf; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmgo` | PMGO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmgo; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmma` | PMMA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmma; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmpa` | PMPA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmpa; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmpb` | PMPB | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmpb; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmpe` | PMPE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmpe; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmpi` | PMPI | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmpi; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmrn` | PMRN | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmrn; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmro` | PMRO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmro; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmrr` | PMRR | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmrr; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmse` | PMSE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmse; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pmto` | PMTO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pmto; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppam` | PPAM | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppam; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppap` | PPAP | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppap; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppba` | PPBA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppba; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppce` | PPCE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppce; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppdf` | PPDF | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppdf; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppes` | PPES | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppes; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppgo` | PPGO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppgo; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppma` | PPMA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppma; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pppa` | PPPA | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pppa; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pppb` | PPPB | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pppb; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pppe` | PPPE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pppe; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pppi` | PPPI | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pppi; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pppr` | PPPR | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pppr; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pprj` | PPRJ | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pprj; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pprn` | PPRN | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pprn; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppro` | PPRO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppro; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pprr` | PPRR | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pprr; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pprs` | PPRS | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=pprs; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppsc` | PPSC | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppsc; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppse` | PPSE | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppse; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `ppto` | PPTO | media | 51 | score muito baixo (51); muito desatualizado: Infinity dias | instituicao=ppto; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `ppms` | PPMS | media | 65 | existe rascunho gerado para revisão; score abaixo do mínimo (65); campos críticos genéricos: vagas, banca; foi publicado por modo qualificado; recomenda revisão visual | instituicao=ppms; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `ppmt` | PPMT | media | 70 | fonte direta falhou ou não trouxe texto suficiente; score abaixo do mínimo (70); campos críticos genéricos: vagas, banca; foi publicado por modo qualificado; recomenda revisão visual | instituicao=ppmt; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmsc` | PMSC | media | 81 | fonte direta falhou ou não trouxe texto suficiente; existe rascunho gerado para revisão; foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmsc; modo=qualificado; web=true; forcar=true |
