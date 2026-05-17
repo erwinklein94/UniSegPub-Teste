@@ -4,9 +4,9 @@
   "sigla": "BMBA",
   "uf": "BA",
   "tema": "concursos",
-  "status": "concurso para oficiais aberto",
-  "titulo": "Edital de Oficiais BMBA publicado; inscrições encerradas",
-  "resumo": "O BMBA publicou concurso para Oficiais em 29/11/2024, com 30 vagas e prova aplicada em 16/02/2025",
+  "status": "concurso para oficiais com edital publicado e inscrições encerradas",
+  "titulo": "Concurso de Oficiais BMBA publicado; inscrições encerradas",
+  "resumo": "O BMBA teve edital para Oficiais publicado em 29/11/2024, com 30 vagas e prova aplicada em 16/02/2025",
   "edital": "Edital do Curso de Formação de Oficiais do Corpo de Bombeiros Militar da Bahia publicado em 29/11/2024; inscrições de 05/12/2024 a 05/01/2025",
   "salario": "Pesquisa inicial pendente",
   "vagas": "30 vagas para Oficiais do Corpo de Bombeiros Militar da Bahia",
@@ -31,7 +31,7 @@
     },
     {
       "titulo": "Governo do Estado anuncia concurso para Oficiais da Polícia Militar e Corpo de Bombeiros",
-      "url": "https://www.ba.gov.br/comunicacao/index.php/2024/11/noticias/governo-do-estado-anuncia-concurso-para-oficiais-da-policia-militar-e-corpo-de-bombeiros",
+      "url": "https://www.ba.gov.br/comunicacao/2024/11/noticias/governo-do-estado-anuncia-concurso-para-oficiais-da-policia-militar-e-corpo-de-bombeiros",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
@@ -42,8 +42,8 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Corpo de Bombeiros Militar da Bahia ganha reforço de mais 328 novos soldados",
-      "url": "https://www.ba.gov.br/ssp/2024/12/03/cbm-ganha-reforco-de-mais-328-novos-bombeiros-militar/",
+      "titulo": "Diário Oficial do Estado",
+      "url": "https://www.ba.gov.br/egba/diario-oficial-do-estado",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -54,9 +54,9 @@
   "alertas": [
     "As fontes oficiais confirmam o concurso de Oficiais publicado em 29/11/2024, com 30 vagas, idade entre 18 e 30 anos e prova em 16/02/2025.",
     "Não foi possível consolidar, nas fontes consultadas, salário, cotas, matérias, inscritos, etapas, CFSd, estágio probatório e validade.",
-    "O campo banca foi preenchido com base em fonte auxiliar oficial de governo; manter revisão humana se houver atualização posterior.",
-    "A situação atual indica concurso de Oficiais já aberto/publicado, mas com inscrições encerradas e fase posterior de andamento.",
-    "Qualidade da publicação limitada pela ausência de peça única oficial acessível com todos os dados operacionais.",
+    "O campo banca foi preenchido com base em informação de governo; manter revisão humana se houver nova publicação.",
+    "A situação atual indica concurso de Oficiais já publicado, com inscrições encerradas e fase posterior de andamento.",
+    "Publicação com qualidade limitada pela ausência de peça única oficial acessível com todos os dados operacionais.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

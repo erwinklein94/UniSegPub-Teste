@@ -5,10 +5,10 @@
   "uf": "AC",
   "tema": "concursos",
   "status": "último concurso homologado; sem novo edital oficial localizado",
-  "titulo": "Último concurso homologado e sem novo edital localizado",
-  "resumo": "O último concurso do CBMAC foi homologado e segue com convocações para o curso de formação; não localizei novo edital oficial ativo",
-  "edital": "Edital nº 001/2022 SEPLAG/CBMAC, de 07/01/2022; resultado final e homologação publicados em 29/06/2022",
-  "salario": "R$ 4.344,22 durante o curso de formação do concurso de 2022",
+  "titulo": "Último concurso homologado; sem novo edital oficial localizado",
+  "resumo": "O concurso do CBMAC de 2022 foi homologado e ainda gerou convocações e matrículas em 2025; Não localizado nas fontes consultadas",
+  "edital": "Edital nº 001/2022 SEPLAG/CBMAC, de 07/01/2022; resultado final e homologação publicados em 30/06/2022",
+  "salario": "R$ 4.344,22 durante o Curso de Formação de Aluno Soldado Combatente",
   "vagas": "153 vagas no concurso de 2022: 122 para masculino e 31 para feminino",
   "cotas": "Cadastro de reserva limitado a 20% das vagas existentes no concurso de 2022",
   "idade": "Mínimo de 18 anos até a matrícula no Curso de Formação; máximo de 30 anos na inscrição; altura mínima de 1,60 m para homens e 1,55 m para mulheres",
@@ -17,15 +17,15 @@
   "banca": "IBFC",
   "inscritos": "Pesquisa inicial pendente",
   "etapas": "Prova objetiva; prova de aptidão física; exame psicotécnico; exame médico e toxicológico; investigação criminal e social; curso de formação",
-  "cfsd": "Curso de Formação de Aluno Soldado Combatente; matrícula após aprovação e convocação; atuação em tempo integral e dedicação exclusiva",
+  "cfsd": "Curso de Formação de Aluno Soldado Combatente; matrícula após aprovação e convocação; duração e demais regras do curso constam dos atos de convocação publicados em 2025",
   "estagio": "Pesquisa inicial pendente",
-  "validade": "2 anos a contar da homologação do resultado final, com possibilidade de prorrogação por igual período",
-  "previsao": "Sem novo edital anunciado nas fontes consultadas",
+  "validade": "2 anos a contar da homologação do resultado final, prorrogável por igual período",
+  "previsao": "Sem novo edital anunciado; o cenário atual é de convocações vinculadas ao concurso de 2022",
   "site": "https://www.ac.gov.br",
   "fontes": [
     {
       "titulo": "Edital nº 001/2022 SEPLAG/CBMAC (PDF)",
-      "url": "https://estado.ac.gov.br/wp-content/uploads/2022/01/Edital-no-001-Abetura-do-concurso-CBMAC-07-01-2022.pdf",
+      "url": "https://sead.ac.gov.br/wp-content/uploads/2025/01/Edital-no-001-CBMAC-Abetura-do-concurso-07-01-2022.pdf",
       "tipo": "edital oficial",
       "data_consulta": "2026-05-17"
     },
@@ -43,13 +43,13 @@
     },
     {
       "titulo": "Governo do Acre convoca candidatos para matrícula no curso de formação de soldados do Corpo de Bombeiros",
-      "url": "https://sead.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-soldados-do-corpo-de-bombeiros/",
+      "url": "https://agencia.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-soldados-do-corpo-de-bombeiros/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Governo convoca candidatos para matrícula no Curso de Formação de Aluno-Soldado do Corpo de Bombeiros",
-      "url": "https://agencia.ac.gov.br/governo-convoca-candidatos-para-matricula-no-curso-de-formacao-de-aluno-soldado-do-corpo-de-bombeiros/",
+      "titulo": "IBFC – página do concurso CBMAC",
+      "url": "https://concursos.ibfc.org.br/informacoes/388/",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     }
@@ -64,7 +64,7 @@
     "Campo estagio não localizado nas fontes consultadas.",
     "Há convocações e atos de 2024 e 2025 ligados ao concurso de 2022.",
     "Qualidade calculada: alta.",
-    "Resultado do modo qualificado aplicado no JSON principal.",
+    "Campo inscrito sem valor localizado.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",
@@ -79,7 +79,7 @@
     "Campo estagio preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo validade atualizado/priorizado pelo modo qualificado pago.",
     "Campo previsao atualizado/priorizado pelo modo qualificado pago.",
-    "Qualidade calculada: alta (97/100). Campos concretos: 7/14.",
+    "Qualidade calculada: alta (97/100). Campos concretos: 8/14.",
     "Resultado do modo qualificado pago aplicado no JSON principal."
   ],
   "texto_final_limpo": true,

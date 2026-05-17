@@ -84,7 +84,6 @@ OK: **0**
 | revisar_rascunho_ou_site | `pf` | PF | alta | 95 | existe rascunho gerado para revisão; foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pcba` | PCBA | alta | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmal` | BMAL | media | 77 | score abaixo do mínimo (77); foi publicado por modo qualificado; recomenda revisão visual |  |
-| revisar_rascunho_ou_site | `bmam` | BMAM | media | 77 | score abaixo do mínimo (77); foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmgo` | BMGO | media | 77 | score abaixo do mínimo (77); foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pmpe` | PMPE | media | 77 | score abaixo do mínimo (77); foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pmpi` | PMPI | media | 77 | score abaixo do mínimo (77); foi publicado por modo qualificado; recomenda revisão visual |  |
@@ -111,7 +110,7 @@ OK: **0**
 | revisar_rascunho_ou_site | `bmdf` | BMDF | media | 97 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmrj` | CBMERJ | media | 97 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmac` | BMAC | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
-| revisar_rascunho_ou_site | `bmce` | BMCE | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
+| revisar_rascunho_ou_site | `bmam` | BMAM | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmpr` | CBMPR | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pcce` | PCCE | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pcpi` | PCPI | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
@@ -119,6 +118,7 @@ OK: **0**
 | revisar_rascunho_ou_site | `pmam` | PMAM | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pmpa` | PMPA | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `ppac` | PPAC | media | 98 | foi publicado por modo qualificado; recomenda revisão visual |  |
+| revisar_rascunho_ou_site | `bmce` | BMCE | media | 100 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `bmes` | CBMES | media | 100 | foi publicado por modo qualificado; recomenda revisão visual |  |
 | revisar_rascunho_ou_site | `pcro` | PCRO | media | 100 | foi publicado por modo qualificado; recomenda revisão visual |  |
 

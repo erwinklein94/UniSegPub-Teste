@@ -3366,46 +3366,6 @@
       }
     },
     {
-      "id": "bmam",
-      "sigla": "BMAM",
-      "nome": "Corpo de Bombeiros Militar do Amazonas",
-      "uf": "AM",
-      "prioridade_config": 3,
-      "score": 77,
-      "qualidade": "baixa",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "score abaixo do mínimo (77)",
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "cfsd",
-        "validade",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
       "id": "bmgo",
       "sigla": "BMGO",
       "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
@@ -4438,7 +4398,8 @@
         "cotas",
         "materias",
         "banca",
-        "cfsd"
+        "cfsd",
+        "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
@@ -4456,10 +4417,10 @@
       }
     },
     {
-      "id": "bmce",
-      "sigla": "BMCE",
-      "nome": "Corpo de Bombeiros Militar do Ceará",
-      "uf": "CE",
+      "id": "bmam",
+      "sigla": "BMAM",
+      "nome": "Corpo de Bombeiros Militar do Amazonas",
+      "uf": "AM",
       "prioridade_config": 3,
       "score": 98,
       "qualidade": "alta",
@@ -4474,13 +4435,12 @@
       "campos_genericos": [],
       "campos_concretos": [
         "edital",
-        "salario",
         "vagas",
-        "cotas",
-        "idade",
-        "escolaridade",
-        "materias",
-        "cfsd"
+        "banca",
+        "inscritos",
+        "cfsd",
+        "validade",
+        "previsao"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
@@ -4780,6 +4740,47 @@
         "escolaridade",
         "banca",
         "inscritos",
+        "cfsd"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "bmce",
+      "sigla": "BMCE",
+      "nome": "Corpo de Bombeiros Militar do Ceará",
+      "uf": "CE",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
         "cfsd"
       ],
       "campos_criticos_ruins": [],
@@ -8233,46 +8234,6 @@
         }
       },
       {
-        "id": "bmam",
-        "sigla": "BMAM",
-        "nome": "Corpo de Bombeiros Militar do Amazonas",
-        "uf": "AM",
-        "prioridade_config": 3,
-        "score": 77,
-        "qualidade": "baixa",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "score abaixo do mínimo (77)",
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "cfsd",
-          "validade",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
         "id": "bmgo",
         "sigla": "BMGO",
         "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
@@ -9305,7 +9266,8 @@
           "cotas",
           "materias",
           "banca",
-          "cfsd"
+          "cfsd",
+          "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
@@ -9323,10 +9285,10 @@
         }
       },
       {
-        "id": "bmce",
-        "sigla": "BMCE",
-        "nome": "Corpo de Bombeiros Militar do Ceará",
-        "uf": "CE",
+        "id": "bmam",
+        "sigla": "BMAM",
+        "nome": "Corpo de Bombeiros Militar do Amazonas",
+        "uf": "AM",
         "prioridade_config": 3,
         "score": 98,
         "qualidade": "alta",
@@ -9341,13 +9303,12 @@
         "campos_genericos": [],
         "campos_concretos": [
           "edital",
-          "salario",
           "vagas",
-          "cotas",
-          "idade",
-          "escolaridade",
-          "materias",
-          "cfsd"
+          "banca",
+          "inscritos",
+          "cfsd",
+          "validade",
+          "previsao"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
@@ -9647,6 +9608,47 @@
           "escolaridade",
           "banca",
           "inscritos",
+          "cfsd"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "bmce",
+        "sigla": "BMCE",
+        "nome": "Corpo de Bombeiros Militar do Ceará",
+        "uf": "CE",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
           "cfsd"
         ],
         "campos_criticos_ruins": [],
