@@ -3,9 +3,9 @@
 Gerado em: **2026-05-17**
 
 Total de instituições avaliadas: **47**
-Precisam de modo qualificado: **13**
+Precisam de modo qualificado: **14**
 Precisam de revisão: **5**
-OK: **29**
+OK: **28**
 
 ## Fila de ações
 
@@ -15,6 +15,7 @@ OK: **29**
 | rodar_qualificado | `prf` | PRF | alta | 85 | fonte direta falhou ou não trouxe texto suficiente | instituicao=prf; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pcsp` | PCSP | alta | 87 | fonte direta falhou ou não trouxe texto suficiente | instituicao=pcsp; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmmg` | PMMG | alta | 87 | fonte direta falhou ou não trouxe texto suficiente; foi publicado por modo qualificado; recomenda revisão visual | instituicao=pmmg; modo=qualificado; web=true; forcar=true |
+| rodar_qualificado | `pcba` | PCBA | alta | 89 | fonte direta falhou ou não trouxe texto suficiente | instituicao=pcba; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmba` | PMBA | alta | 90 | fonte direta falhou ou não trouxe texto suficiente | instituicao=pmba; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pmerj` | PMERJ | alta | 90 | fonte direta falhou ou não trouxe texto suficiente | instituicao=pmerj; modo=qualificado; web=true; forcar=true |
 | rodar_qualificado | `pcerj` | PCERJ | alta | 93 | fonte direta falhou ou não trouxe texto suficiente | instituicao=pcerj; modo=qualificado; web=true; forcar=true |
@@ -46,7 +47,6 @@ OK: **29**
 | ok | `pmmt` | PMMT | baixa | 87 | sem ação necessária |  |
 | ok | `ppmg` | PPMG | baixa | 87 | sem ação necessária |  |
 | ok | `ppsp` | PPSP | baixa | 87 | sem ação necessária |  |
-| ok | `pcba` | PCBA | baixa | 89 | sem ação necessária |  |
 | ok | `bmsc` | CBMSC | baixa | 90 | sem ação necessária |  |
 | ok | `bmsp` | CBPMESP | baixa | 90 | sem ação necessária |  |
 | ok | `pcce` | PCCE | baixa | 90 | sem ação necessária |  |

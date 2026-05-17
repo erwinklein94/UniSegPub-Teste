@@ -15,11 +15,11 @@
   },
   "resumo": {
     "total": 47,
-    "rodar_qualificado": 13,
+    "rodar_qualificado": 14,
     "revisar": 5,
     "rodar_economico": 0,
-    "ok": 29,
-    "fonte_falhou": 10,
+    "ok": 28,
+    "fonte_falhou": 11,
     "com_rascunho": 3
   },
   "fila_acoes": [
@@ -235,6 +235,51 @@
         "usou_web_search_openai": true,
         "publicacao_bloqueada": false,
         "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "pcba",
+      "sigla": "PCBA",
+      "nome": "Polícia Civil da Bahia",
+      "uf": "BA",
+      "prioridade_config": 1,
+      "score": 89,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "alta",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "pcba",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "materias"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": false,
+      "publicacao_forcada_por_credito_openai": false,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": false,
+        "usou_web_search_openai": false,
+        "publicacao_bloqueada": true,
+        "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
       }
     },
     {
@@ -1647,45 +1692,6 @@
       "monitor": null
     },
     {
-      "id": "pcba",
-      "sigla": "PCBA",
-      "nome": "Polícia Civil da Bahia",
-      "uf": "BA",
-      "prioridade_config": 1,
-      "score": 89,
-      "qualidade": "alta",
-      "acao": "ok",
-      "prioridade_operacional": "baixa",
-      "motivos": [
-        "sem ação necessária"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": false,
-      "publicacao_forcada_por_credito_openai": false,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": false,
-        "publicacao_bloqueada": false,
-        "motivo": "Mudança detectada nas fontes monitoradas."
-      }
-    },
-    {
       "id": "bmsc",
       "sigla": "CBMSC",
       "nome": "Corpo de Bombeiros Militar de Santa Catarina",
@@ -2327,6 +2333,51 @@
           "usou_web_search_openai": true,
           "publicacao_bloqueada": false,
           "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "pcba",
+        "sigla": "PCBA",
+        "nome": "Polícia Civil da Bahia",
+        "uf": "BA",
+        "prioridade_config": 1,
+        "score": 89,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "alta",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "pcba",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "materias"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": false,
+        "publicacao_forcada_por_credito_openai": false,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": false,
+          "usou_web_search_openai": false,
+          "publicacao_bloqueada": true,
+          "motivo": "Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado no modo econômico."
         }
       },
       {
@@ -3742,45 +3793,6 @@
         "publicacao_forcada_por_credito_openai": false,
         "ultima_pesquisa": "2026-05-17",
         "monitor": null
-      },
-      {
-        "id": "pcba",
-        "sigla": "PCBA",
-        "nome": "Polícia Civil da Bahia",
-        "uf": "BA",
-        "prioridade_config": 1,
-        "score": 89,
-        "qualidade": "alta",
-        "acao": "ok",
-        "prioridade_operacional": "baixa",
-        "motivos": [
-          "sem ação necessária"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": false,
-        "publicacao_forcada_por_credito_openai": false,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": false,
-          "publicacao_bloqueada": false,
-          "motivo": "Mudança detectada nas fontes monitoradas."
-        }
       },
       {
         "id": "bmsc",
