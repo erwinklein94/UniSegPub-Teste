@@ -2,26 +2,26 @@
   "atualizado_em": "2026-05-17",
   "instituicao_id": "bmma",
   "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "publicacao_bloqueada": false,
   "publicado_por_modo_qualificado": true,
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "baixa",
-  "score_publicacao": 75,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 100,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 27817,
+    "input_tokens": 28018,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1250,
+    "output_tokens": 1721,
     "output_tokens_details": {
-      "reasoning_tokens": 426
+      "reasoning_tokens": 620
     },
-    "total_tokens": 29067
+    "total_tokens": 29739
   },
   "fontes_monitoradas": [
     {

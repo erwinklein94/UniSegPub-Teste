@@ -1040,51 +1040,6 @@
       }
     },
     {
-      "id": "bmma",
-      "sigla": "BMMA",
-      "nome": "Corpo de Bombeiros Militar do Maranhão",
-      "uf": "MA",
-      "prioridade_config": 3,
-      "score": 77,
-      "qualidade": "baixa",
-      "acao": "rodar_qualificado",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "fonte direta falhou ou não trouxe texto suficiente",
-        "score abaixo do mínimo (77)",
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": {
-        "instituicao": "bmma",
-        "limite": "1",
-        "forcar_atualizacao": "true",
-        "usar_web_search": "true",
-        "modo_qualidade": "qualificado"
-      },
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "previsao"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": true,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
       "id": "pcrr",
       "sigla": "PCRR",
       "nome": "Polícia Civil de Roraima",
@@ -1397,50 +1352,6 @@
       "campos_criticos_genericos": [],
       "fonte_falhou": true,
       "tem_rascunho": true,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
-      "id": "bmba",
-      "sigla": "BMBA",
-      "nome": "Corpo de Bombeiros Militar da Bahia",
-      "uf": "BA",
-      "prioridade_config": 3,
-      "score": 83,
-      "qualidade": "alta",
-      "acao": "rodar_qualificado",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "fonte direta falhou ou não trouxe texto suficiente",
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": {
-        "instituicao": "bmba",
-        "limite": "1",
-        "forcar_atualizacao": "true",
-        "usar_web_search": "true",
-        "modo_qualidade": "qualificado"
-      },
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "escolaridade"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": true,
-      "tem_rascunho": false,
       "publicado_por_modo_qualificado": true,
       "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
@@ -2504,10 +2415,10 @@
       }
     },
     {
-      "id": "bmpb",
-      "sigla": "BMPB",
-      "nome": "Corpo de Bombeiros Militar da Paraíba",
-      "uf": "PB",
+      "id": "bmba",
+      "sigla": "BMBA",
+      "nome": "Corpo de Bombeiros Militar da Bahia",
+      "uf": "BA",
       "prioridade_config": 3,
       "score": 98,
       "qualidade": "alta",
@@ -2518,7 +2429,7 @@
         "foi publicado por modo qualificado; recomenda revisão visual"
       ],
       "workflow_sugerido": {
-        "instituicao": "bmpb",
+        "instituicao": "bmba",
         "limite": "1",
         "forcar_atualizacao": "true",
         "usar_web_search": "true",
@@ -2531,11 +2442,10 @@
         "edital",
         "salario",
         "vagas",
-        "cotas",
         "idade",
+        "escolaridade",
         "materias",
-        "cfsd",
-        "estagio"
+        "cfsd"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
@@ -2993,6 +2903,106 @@
       }
     },
     {
+      "id": "bmma",
+      "sigla": "BMMA",
+      "nome": "Corpo de Bombeiros Militar do Maranhão",
+      "uf": "MA",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "bmma",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "vagas",
+        "cotas",
+        "escolaridade",
+        "etapas",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "bmpb",
+      "sigla": "BMPB",
+      "nome": "Corpo de Bombeiros Militar da Paraíba",
+      "uf": "PB",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "rodar_qualificado",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "fonte direta falhou ou não trouxe texto suficiente",
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": {
+        "instituicao": "bmpb",
+        "limite": "1",
+        "forcar_atualizacao": "true",
+        "usar_web_search": "true",
+        "modo_qualidade": "qualificado"
+      },
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "estagio",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": true,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
       "id": "pcdf",
       "sigla": "PCDF",
       "nome": "Polícia Civil do Distrito Federal",
@@ -3305,44 +3315,6 @@
       }
     },
     {
-      "id": "bmgo",
-      "sigla": "BMGO",
-      "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
-      "uf": "GO",
-      "prioridade_config": 3,
-      "score": 77,
-      "qualidade": "baixa",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "score abaixo do mínimo (77)",
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "vagas",
-        "cfsd"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
       "id": "pmpe",
       "sigla": "PMPE",
       "nome": "Polícia Militar de Pernambuco",
@@ -3574,45 +3546,6 @@
       "campos_criticos_genericos": [],
       "fonte_falhou": false,
       "tem_rascunho": true,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
-      "id": "bmdf",
-      "sigla": "BMDF",
-      "nome": "Corpo de Bombeiros Militar do Distrito Federal",
-      "uf": "DF",
-      "prioridade_config": 3,
-      "score": 89,
-      "qualidade": "alta",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "banca"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
       "publicado_por_modo_qualificado": true,
       "publicacao_forcada_por_credito_openai": true,
       "ultima_pesquisa": "2026-05-17",
@@ -4192,46 +4125,6 @@
       }
     },
     {
-      "id": "bmpa",
-      "sigla": "BMPA",
-      "nome": "Corpo de Bombeiros Militar do Pará",
-      "uf": "PA",
-      "prioridade_config": 3,
-      "score": 94,
-      "qualidade": "alta",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "escolaridade",
-        "banca"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
       "id": "pces",
       "sigla": "PCES",
       "nome": "Polícia Civil do Espírito Santo",
@@ -4298,6 +4191,46 @@
         "escolaridade",
         "materias",
         "banca"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "bmpa",
+      "sigla": "BMPA",
+      "nome": "Corpo de Bombeiros Militar do Pará",
+      "uf": "PA",
+      "prioridade_config": 3,
+      "score": 97,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "escolaridade",
+        "banca",
+        "cfsd"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
@@ -4397,46 +4330,6 @@
       }
     },
     {
-      "id": "bmal",
-      "sigla": "BMAL",
-      "nome": "Corpo de Bombeiros Militar de Alagoas",
-      "uf": "AL",
-      "prioridade_config": 3,
-      "score": 98,
-      "qualidade": "alta",
-      "acao": "revisar_rascunho_ou_site",
-      "prioridade_operacional": "media",
-      "motivos": [
-        "foi publicado por modo qualificado; recomenda revisão visual"
-      ],
-      "workflow_sugerido": null,
-      "idade_dias": 0,
-      "campos_ruins": [],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "banca",
-        "etapas",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_criticos_ruins": [],
-      "campos_criticos_genericos": [],
-      "fonte_falhou": false,
-      "tem_rascunho": false,
-      "publicado_por_modo_qualificado": true,
-      "publicacao_forcada_por_credito_openai": true,
-      "ultima_pesquisa": "2026-05-17",
-      "monitor": {
-        "atualizado_em": "2026-05-17",
-        "usou_openai": true,
-        "usou_web_search_openai": true,
-        "publicacao_bloqueada": false,
-        "motivo": "Atualização forçada manualmente."
-      }
-    },
-    {
       "id": "bmam",
       "sigla": "BMAM",
       "nome": "Corpo de Bombeiros Militar do Amazonas",
@@ -4455,13 +4348,13 @@
       "campos_genericos": [],
       "campos_concretos": [
         "edital",
+        "salario",
         "vagas",
-        "idade",
         "escolaridade",
+        "materias",
         "banca",
         "inscritos",
         "cfsd",
-        "validade",
         "previsao"
       ],
       "campos_criticos_ruins": [],
@@ -4480,10 +4373,10 @@
       }
     },
     {
-      "id": "bmce",
-      "sigla": "BMCE",
-      "nome": "Corpo de Bombeiros Militar do Ceará",
-      "uf": "CE",
+      "id": "bmdf",
+      "sigla": "BMDF",
+      "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+      "uf": "DF",
       "prioridade_config": 3,
       "score": 98,
       "qualidade": "alta",
@@ -4503,7 +4396,7 @@
         "cotas",
         "idade",
         "escolaridade",
-        "cfsd"
+        "banca"
       ],
       "campos_criticos_ruins": [],
       "campos_criticos_genericos": [],
@@ -4822,6 +4715,91 @@
       }
     },
     {
+      "id": "bmal",
+      "sigla": "BMAL",
+      "nome": "Corpo de Bombeiros Militar de Alagoas",
+      "uf": "AL",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "banca",
+        "inscritos",
+        "etapas",
+        "cfsd",
+        "estagio"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "bmce",
+      "sigla": "BMCE",
+      "nome": "Corpo de Bombeiros Militar do Ceará",
+      "uf": "CE",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "cfsd",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
       "id": "bmes",
       "sigla": "CBMES",
       "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -4849,6 +4827,49 @@
         "etapas",
         "cfsd",
         "estagio",
+        "previsao"
+      ],
+      "campos_criticos_ruins": [],
+      "campos_criticos_genericos": [],
+      "fonte_falhou": false,
+      "tem_rascunho": false,
+      "publicado_por_modo_qualificado": true,
+      "publicacao_forcada_por_credito_openai": true,
+      "ultima_pesquisa": "2026-05-17",
+      "monitor": {
+        "atualizado_em": "2026-05-17",
+        "usou_openai": true,
+        "usou_web_search_openai": true,
+        "publicacao_bloqueada": false,
+        "motivo": "Atualização forçada manualmente."
+      }
+    },
+    {
+      "id": "bmgo",
+      "sigla": "BMGO",
+      "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+      "uf": "GO",
+      "prioridade_config": 3,
+      "score": 100,
+      "qualidade": "alta",
+      "acao": "revisar_rascunho_ou_site",
+      "prioridade_operacional": "media",
+      "motivos": [
+        "foi publicado por modo qualificado; recomenda revisão visual"
+      ],
+      "workflow_sugerido": null,
+      "idade_dias": 0,
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "cfsd",
         "previsao"
       ],
       "campos_criticos_ruins": [],
@@ -5929,51 +5950,6 @@
         }
       },
       {
-        "id": "bmma",
-        "sigla": "BMMA",
-        "nome": "Corpo de Bombeiros Militar do Maranhão",
-        "uf": "MA",
-        "prioridade_config": 3,
-        "score": 77,
-        "qualidade": "baixa",
-        "acao": "rodar_qualificado",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "fonte direta falhou ou não trouxe texto suficiente",
-          "score abaixo do mínimo (77)",
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": {
-          "instituicao": "bmma",
-          "limite": "1",
-          "forcar_atualizacao": "true",
-          "usar_web_search": "true",
-          "modo_qualidade": "qualificado"
-        },
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "previsao"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": true,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
         "id": "pcrr",
         "sigla": "PCRR",
         "nome": "Polícia Civil de Roraima",
@@ -6286,50 +6262,6 @@
         "campos_criticos_genericos": [],
         "fonte_falhou": true,
         "tem_rascunho": true,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
-        "id": "bmba",
-        "sigla": "BMBA",
-        "nome": "Corpo de Bombeiros Militar da Bahia",
-        "uf": "BA",
-        "prioridade_config": 3,
-        "score": 83,
-        "qualidade": "alta",
-        "acao": "rodar_qualificado",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "fonte direta falhou ou não trouxe texto suficiente",
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": {
-          "instituicao": "bmba",
-          "limite": "1",
-          "forcar_atualizacao": "true",
-          "usar_web_search": "true",
-          "modo_qualidade": "qualificado"
-        },
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "escolaridade"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": true,
-        "tem_rascunho": false,
         "publicado_por_modo_qualificado": true,
         "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
@@ -7393,10 +7325,10 @@
         }
       },
       {
-        "id": "bmpb",
-        "sigla": "BMPB",
-        "nome": "Corpo de Bombeiros Militar da Paraíba",
-        "uf": "PB",
+        "id": "bmba",
+        "sigla": "BMBA",
+        "nome": "Corpo de Bombeiros Militar da Bahia",
+        "uf": "BA",
         "prioridade_config": 3,
         "score": 98,
         "qualidade": "alta",
@@ -7407,7 +7339,7 @@
           "foi publicado por modo qualificado; recomenda revisão visual"
         ],
         "workflow_sugerido": {
-          "instituicao": "bmpb",
+          "instituicao": "bmba",
           "limite": "1",
           "forcar_atualizacao": "true",
           "usar_web_search": "true",
@@ -7420,11 +7352,10 @@
           "edital",
           "salario",
           "vagas",
-          "cotas",
           "idade",
+          "escolaridade",
           "materias",
-          "cfsd",
-          "estagio"
+          "cfsd"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
@@ -7882,6 +7813,106 @@
         }
       },
       {
+        "id": "bmma",
+        "sigla": "BMMA",
+        "nome": "Corpo de Bombeiros Militar do Maranhão",
+        "uf": "MA",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "bmma",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "vagas",
+          "cotas",
+          "escolaridade",
+          "etapas",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "bmpb",
+        "sigla": "BMPB",
+        "nome": "Corpo de Bombeiros Militar da Paraíba",
+        "uf": "PB",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "rodar_qualificado",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "fonte direta falhou ou não trouxe texto suficiente",
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": {
+          "instituicao": "bmpb",
+          "limite": "1",
+          "forcar_atualizacao": "true",
+          "usar_web_search": "true",
+          "modo_qualidade": "qualificado"
+        },
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "estagio",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": true,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
         "id": "pcdf",
         "sigla": "PCDF",
         "nome": "Polícia Civil do Distrito Federal",
@@ -8196,44 +8227,6 @@
         }
       },
       {
-        "id": "bmgo",
-        "sigla": "BMGO",
-        "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
-        "uf": "GO",
-        "prioridade_config": 3,
-        "score": 77,
-        "qualidade": "baixa",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "score abaixo do mínimo (77)",
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "vagas",
-          "cfsd"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
         "id": "pmpe",
         "sigla": "PMPE",
         "nome": "Polícia Militar de Pernambuco",
@@ -8465,45 +8458,6 @@
         "campos_criticos_genericos": [],
         "fonte_falhou": false,
         "tem_rascunho": true,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
-        "id": "bmdf",
-        "sigla": "BMDF",
-        "nome": "Corpo de Bombeiros Militar do Distrito Federal",
-        "uf": "DF",
-        "prioridade_config": 3,
-        "score": 89,
-        "qualidade": "alta",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "banca"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
         "publicado_por_modo_qualificado": true,
         "publicacao_forcada_por_credito_openai": true,
         "ultima_pesquisa": "2026-05-17",
@@ -9083,46 +9037,6 @@
         }
       },
       {
-        "id": "bmpa",
-        "sigla": "BMPA",
-        "nome": "Corpo de Bombeiros Militar do Pará",
-        "uf": "PA",
-        "prioridade_config": 3,
-        "score": 94,
-        "qualidade": "alta",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "escolaridade",
-          "banca"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
         "id": "pces",
         "sigla": "PCES",
         "nome": "Polícia Civil do Espírito Santo",
@@ -9189,6 +9103,46 @@
           "escolaridade",
           "materias",
           "banca"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "bmpa",
+        "sigla": "BMPA",
+        "nome": "Corpo de Bombeiros Militar do Pará",
+        "uf": "PA",
+        "prioridade_config": 3,
+        "score": 97,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "escolaridade",
+          "banca",
+          "cfsd"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
@@ -9288,46 +9242,6 @@
         }
       },
       {
-        "id": "bmal",
-        "sigla": "BMAL",
-        "nome": "Corpo de Bombeiros Militar de Alagoas",
-        "uf": "AL",
-        "prioridade_config": 3,
-        "score": 98,
-        "qualidade": "alta",
-        "acao": "revisar_rascunho_ou_site",
-        "prioridade_operacional": "media",
-        "motivos": [
-          "foi publicado por modo qualificado; recomenda revisão visual"
-        ],
-        "workflow_sugerido": null,
-        "idade_dias": 0,
-        "campos_ruins": [],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "banca",
-          "etapas",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_criticos_ruins": [],
-        "campos_criticos_genericos": [],
-        "fonte_falhou": false,
-        "tem_rascunho": false,
-        "publicado_por_modo_qualificado": true,
-        "publicacao_forcada_por_credito_openai": true,
-        "ultima_pesquisa": "2026-05-17",
-        "monitor": {
-          "atualizado_em": "2026-05-17",
-          "usou_openai": true,
-          "usou_web_search_openai": true,
-          "publicacao_bloqueada": false,
-          "motivo": "Atualização forçada manualmente."
-        }
-      },
-      {
         "id": "bmam",
         "sigla": "BMAM",
         "nome": "Corpo de Bombeiros Militar do Amazonas",
@@ -9346,13 +9260,13 @@
         "campos_genericos": [],
         "campos_concretos": [
           "edital",
+          "salario",
           "vagas",
-          "idade",
           "escolaridade",
+          "materias",
           "banca",
           "inscritos",
           "cfsd",
-          "validade",
           "previsao"
         ],
         "campos_criticos_ruins": [],
@@ -9371,10 +9285,10 @@
         }
       },
       {
-        "id": "bmce",
-        "sigla": "BMCE",
-        "nome": "Corpo de Bombeiros Militar do Ceará",
-        "uf": "CE",
+        "id": "bmdf",
+        "sigla": "BMDF",
+        "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+        "uf": "DF",
         "prioridade_config": 3,
         "score": 98,
         "qualidade": "alta",
@@ -9394,7 +9308,7 @@
           "cotas",
           "idade",
           "escolaridade",
-          "cfsd"
+          "banca"
         ],
         "campos_criticos_ruins": [],
         "campos_criticos_genericos": [],
@@ -9713,6 +9627,91 @@
         }
       },
       {
+        "id": "bmal",
+        "sigla": "BMAL",
+        "nome": "Corpo de Bombeiros Militar de Alagoas",
+        "uf": "AL",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "banca",
+          "inscritos",
+          "etapas",
+          "cfsd",
+          "estagio"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "bmce",
+        "sigla": "BMCE",
+        "nome": "Corpo de Bombeiros Militar do Ceará",
+        "uf": "CE",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "cfsd",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
         "id": "bmes",
         "sigla": "CBMES",
         "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -9740,6 +9739,49 @@
           "etapas",
           "cfsd",
           "estagio",
+          "previsao"
+        ],
+        "campos_criticos_ruins": [],
+        "campos_criticos_genericos": [],
+        "fonte_falhou": false,
+        "tem_rascunho": false,
+        "publicado_por_modo_qualificado": true,
+        "publicacao_forcada_por_credito_openai": true,
+        "ultima_pesquisa": "2026-05-17",
+        "monitor": {
+          "atualizado_em": "2026-05-17",
+          "usou_openai": true,
+          "usou_web_search_openai": true,
+          "publicacao_bloqueada": false,
+          "motivo": "Atualização forçada manualmente."
+        }
+      },
+      {
+        "id": "bmgo",
+        "sigla": "BMGO",
+        "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+        "uf": "GO",
+        "prioridade_config": 3,
+        "score": 100,
+        "qualidade": "alta",
+        "acao": "revisar_rascunho_ou_site",
+        "prioridade_operacional": "media",
+        "motivos": [
+          "foi publicado por modo qualificado; recomenda revisão visual"
+        ],
+        "workflow_sugerido": null,
+        "idade_dias": 0,
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "cfsd",
           "previsao"
         ],
         "campos_criticos_ruins": [],

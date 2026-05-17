@@ -2,7 +2,7 @@
   "atualizado_em": "2026-05-17",
   "instituicao_id": "bmdf",
   "modo_qualidade": "qualificado",
-  "modelo": "gpt-5.4-mini",
+  "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "publicacao_bloqueada": false,
@@ -10,18 +10,18 @@
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
-  "score_publicacao": 87,
+  "score_publicacao": 97,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 27284,
+    "input_tokens": 43584,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1168,
+    "output_tokens": 1805,
     "output_tokens_details": {
-      "reasoning_tokens": 314
+      "reasoning_tokens": 568
     },
-    "total_tokens": 28452
+    "total_tokens": 45389
   },
   "fontes_monitoradas": [
     {
@@ -49,7 +49,7 @@
       "url": "https://www.cbm.df.gov.br/lai/acoes-e-programas/anuario-estatistico-do-cbmdf/",
       "ok": true,
       "status": 200,
-      "hash": "73bbe26f0a30ea7920327d8a19c1c70aaa99ef31c1b1ae2f3259d98b4d3e2f95",
+      "hash": "507303485eea20c6e1c44d759ec710a311c69d7f83daa45e84efc8c5b89ca5aa",
       "tamanho_texto": 2865
     },
     {
