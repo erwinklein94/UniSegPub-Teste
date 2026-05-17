@@ -11,24 +11,24 @@
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "baixa",
   "score_publicacao": 67,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 14840,
+    "input_tokens": 15538,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 912,
+    "output_tokens": 779,
     "output_tokens_details": {
-      "reasoning_tokens": 199
+      "reasoning_tokens": 159
     },
-    "total_tokens": 15752
+    "total_tokens": 16317
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.sejus.mt.gov.br/",
       "ok": true,
       "status": 200,
-      "hash": "9bdb02df8f89a7804620514e674dffb26c80ef3d24c39bafa11784193b194760",
+      "hash": "84a3623c691a1399f1e186adc7e6be620e5634cfa9ed149d66657d8b3a001e94",
       "tamanho_texto": 139
     }
   ]

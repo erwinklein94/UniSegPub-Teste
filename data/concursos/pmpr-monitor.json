@@ -1,27 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmpr",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
+  "usou_web_search_openai": true,
   "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": false,
-  "forcar_exibicao_site": false,
-  "publicacao_forcada_por_credito_openai": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
   "score_publicacao": 90,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 13137,
+    "input_tokens": 34196,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 794,
+    "output_tokens": 1245,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 293
     },
-    "total_tokens": 13931
+    "total_tokens": 35441
   },
   "fontes_monitoradas": [
     {

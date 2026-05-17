@@ -1,27 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "ppac",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
+  "usou_web_search_openai": true,
   "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": false,
-  "forcar_exibicao_site": false,
-  "publicacao_forcada_por_credito_openai": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
   "score_publicacao": 97,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 11672,
+    "input_tokens": 36332,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 4736
     },
-    "output_tokens": 897,
+    "output_tokens": 1263,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 337
     },
-    "total_tokens": 12569
+    "total_tokens": 37595
   },
   "fontes_monitoradas": [
     {
@@ -47,10 +47,10 @@
     },
     {
       "url": "https://sead.ac.gov.br/wp-content/uploads/2026/05/Edital-no-105-IAPEN-Retificacao-da-convocacao-para-a-posse-07-05-2026.pdf",
-      "ok": false,
-      "status": 0,
-      "hash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
-      "tamanho_texto": 0
+      "ok": true,
+      "status": 200,
+      "hash": "ca13bc09096a96132f38964204d0924ba51ddc018dd029fd78bf70a881566000",
+      "tamanho_texto": 30675
     },
     {
       "url": "https://sead.ac.gov.br/wp-content/uploads/2026/04/Edital-no-104-IAPEN-Convocacao-para-a-posse-28-04-2026.pdf",

@@ -9,19 +9,19 @@
   "publicado_por_modo_qualificado": true,
   "forcar_exibicao_site": true,
   "publicacao_forcada_por_credito_openai": true,
-  "qualidade_publicacao": "alta",
-  "score_publicacao": 85,
+  "qualidade_publicacao": "media",
+  "score_publicacao": 80,
   "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 12833,
+    "input_tokens": 9616,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 4736
     },
-    "output_tokens": 1128,
+    "output_tokens": 786,
     "output_tokens_details": {
-      "reasoning_tokens": 270
+      "reasoning_tokens": 97
     },
-    "total_tokens": 13961
+    "total_tokens": 10402
   },
   "fontes_monitoradas": [
     {

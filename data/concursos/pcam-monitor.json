@@ -11,17 +11,17 @@
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
   "score_publicacao": 90,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 25754,
+    "input_tokens": 17619,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1377,
+    "output_tokens": 1232,
     "output_tokens_details": {
-      "reasoning_tokens": 297
+      "reasoning_tokens": 173
     },
-    "total_tokens": 27131
+    "total_tokens": 18851
   },
   "fontes_monitoradas": [
     {
@@ -42,14 +42,14 @@
       "url": "http://conhecimento.fgv.br/concursos/pcam21/01",
       "ok": false,
       "status": 503,
-      "hash": "c84887144b85238c885d19064d176f4523b70f81942f50e02fd61652e34c73ea",
+      "hash": "9891cdaf8e592a1fa73fe7942606b88acb494d44277441852025a1c5df81d594",
       "tamanho_texto": 297
     },
     {
       "url": "http://conhecimento.fgv.br/concursos/pcam21/02",
       "ok": false,
       "status": 503,
-      "hash": "9b7c7381752960c913b377fcf6f6aff5cf469c58884e18c73ac49dbe2794f542",
+      "hash": "db2e46f39d136dad581a43cd4885e6880648015a5f42ac9f00aa647660615cb4",
       "tamanho_texto": 295
     },
     {

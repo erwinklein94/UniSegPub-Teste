@@ -1,55 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pmms",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Atualização bloqueada: qualidade baixa, score 68, campos críticos genéricos: etapas, campos críticos sem confirmação: nenhum.",
-  "avaliacao": {
-    "score": 68,
-    "qualidade": "baixa",
-    "ruins": [
-      "cotas",
-      "validade"
-    ],
-    "genericos": [
-      "etapas"
-    ],
-    "concretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "idade",
-      "escolaridade",
-      "materias",
-      "banca",
-      "inscritos"
-    ],
-    "criticosRuins": [],
-    "criticosGenericos": [
-      "etapas"
-    ],
-    "criticosConcretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "escolaridade",
-      "banca"
-    ],
-    "podePublicar": false
-  },
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 83,
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 9059,
+    "input_tokens": 25207,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 4736
     },
-    "output_tokens": 792,
+    "output_tokens": 1167,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 313
     },
-    "total_tokens": 9851
+    "total_tokens": 26374
   },
   "fontes_monitoradas": [
     {

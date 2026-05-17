@@ -6,7 +6,7 @@
   "tema": "concursos",
   "status": "sem edital novo localizado",
   "titulo": "PPMT: sem novo edital localizado no momento",
-  "resumo": "Não há edital novo localizado para a Polícia Penal de Mato Grosso; o ciclo recente foi de nomeações e curso de formação de aprovados anteriores",
+  "resumo": "Não localizado nas fontes consultadas. o movimento recente identificado é de nomeações e curso de formação de aprovados anteriores",
   "edital": "PPMT/SEJUS-MT — monitorar SEJUS/MT, SEPLAG/MT e Diário Oficial/MT; último grande ciclo histórico veio da antiga carreira de Agente Penitenciário/SEJUDH-MT",
   "salario": "Policial penal: remuneração inicial não localizada nas fontes consultadas. Há referência oficial a carga horária de 480 horas no curso de formação",
   "vagas": "Conferir autorização e edital vigente; histórico anterior mencionou cadastro de reserva para a antiga carreira penitenciária estadual",
@@ -16,11 +16,11 @@
   "materias": "A definir no edital; geralmente envolve Língua Portuguesa, Direito Constitucional, Penal, Processo Penal, Execução Penal, Direitos Humanos, Raciocínio, Informática e legislação local",
   "banca": "A definir conforme edital vigente; históricos anteriores devem ser tratados apenas como referência",
   "inscritos": "Sem novo edital aberto cadastrado nesta revisão; acompanhar SEJUS/MT, SEPLAG/MT, Diário Oficial/MT e banca quando houver",
-  "etapas": "Curso de formação; posse; nomeação; lotação em unidades prisionais",
+  "etapas": "Nomeação; posse; curso de formação; lotação em unidades prisionais",
   "cfsd": "Curso de formação da Polícia Penal com carga horária total de 480 horas",
   "estagio": "Estágio probatório e lotação inicial conforme legislação estadual e atos da SEJUS/MT",
   "validade": "A definir no edital; conferir homologação, prorrogação e convocações no Diário Oficial/MT",
-  "previsao": "Sem novo edital anunciado nas fontes consultadas",
+  "previsao": "Sem novo edital anunciado",
   "site": "https://www.sejus.mt.gov.br/",
   "fontes": [
     {
@@ -32,12 +32,6 @@
     {
       "titulo": "Governo de MT nomeia mais 52 novos policiais penais e agentes socioeducativos",
       "url": "https://www.sejus.mt.gov.br/w/governo-de-mt-nomeia-mais-52-novos-policiais-penais-e-agentes-socioeducativos",
-      "tipo": "fonte oficial",
-      "data_consulta": "2026-05-17"
-    },
-    {
-      "titulo": "Sesp convoca 97 classificados no concurso público do Sistema Penitenciário",
-      "url": "https://www.indea.mt.gov.br/web/sesp/w/sesp-convoca-97-classificados-no-concurso-p%C3%BAblico-do-sistema-penitenci%C3%A1rio",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
@@ -54,10 +48,10 @@
   "alertas": [
     "Não foi localizado edital novo específico da PPMT nas fontes consultadas.",
     "As fontes encontradas indicam nomeações e curso de formação de aprovados anteriores, não um concurso aberto.",
-    "O site oficial da Sejus retornou bloqueio de acesso em parte da navegação automatizada.",
-    "Campo salarial e demais requisitos específicos não foram confirmados em documento de edital localizado nesta pesquisa.",
+    "O site oficial da Sejus apresentou bloqueio em parte da navegação automatizada.",
+    "Campos de edital, salário, vagas, cotas, idade, escolaridade, matérias, banca, inscritos, estágio e validade não foram confirmados em documento de edital localizado nesta pesquisa.",
     "Campo edital preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
-    "Campo salario atualizado/priorizado pelo modo qualificado pago.",
+    "Campo salario preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo vagas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo cotas preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",
     "Campo idade preenchido com a versão anterior porque a pesquisa qualificada não trouxe valor utilizável.",

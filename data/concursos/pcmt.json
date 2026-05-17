@@ -7,20 +7,20 @@
   "status": "há nomeação de cadastro de reserva do concurso de 2022; novo concurso para delegado em preparação",
   "titulo": "PCMT: cadastro de reserva de 2022 teve novas nomeações e novo concurso para delegado está em preparação",
   "resumo": "A PCMT nomeou 235 aprovados do concurso de 2022 para escrivão e investigador e avança na preparação de um novo concurso para delegado",
-  "edital": "Concurso de 2022 para escrivão e investigador: cadastro de reserva com nomeações em 2026; novo concurso para delegado em preparação",
+  "edital": "Concurso de 2022 para escrivão e investigador; novo concurso para delegado em preparação",
   "salario": "Escrivão de Polícia: R$ 7.023,44 a R$ 21.134,03; Delegado: R$ 30.961,87 a R$ 42.471,66; Delegado Substituto: R$ 27.865,69",
   "vagas": "Concurso de 2022: cadastro de reserva para escrivão e investigador; em 2026 foram nomeados 235 aprovados",
-  "cotas": "Escrivão: 10 nomeações para pessoas pretas e pardas entre os 113 convocados; investigador: todas as 122 nomeações em ampla concorrência",
+  "cotas": "Escrivão: 10 nomeações para pessoas pretas e pardas entre os 113 convocados; investigador: 122 nomeações em ampla concorrência",
   "idade": "Conferir edital; requisitos podem envolver nível superior, CNH, aptidão física, investigação social e demais condições legais",
   "escolaridade": "Escrivão e investigador: nível superior; Delegado: bacharelado em Direito",
   "materias": "Língua Portuguesa; Informática; Raciocínio Lógico; Direito Constitucional; Direito Administrativo; Direito Penal; Direito Processual Penal; legislação especial; conhecimentos específicos",
   "banca": "UFMT no concurso de 2022",
   "inscritos": "Sem edital novo aberto cadastrado nesta versão; acompanhar PJC-MT, SEPLAG/MT, SESP/MT e Diário Oficial/MT",
-  "etapas": "Prova objetiva; prova discursiva quando prevista; TAF; avaliação psicológica; exame médico; investigação social; curso de formação",
+  "etapas": "Prova objetiva; prova discursiva; TAF; avaliação psicológica; exame médico; investigação social; curso de formação",
   "cfsd": "Curso de formação na Academia de Polícia Judiciária Civil de Mato Grosso (ACADEPOL-MT)",
   "estagio": "Estágio probatório e evolução funcional conforme carreira e legislação estadual",
   "validade": "Conferir edital, homologação, prorrogação, convocações e atos posteriores no DOE/MT",
-  "previsao": "Nomeações e procedimentos administrativos do concurso de 2022; novo edital para delegado em preparação",
+  "previsao": "Novo edital para delegado em preparação; para escrivão e investigador, o cenário é de nomeações do cadastro de reserva de 2022",
   "site": "https://www.pjc.mt.gov.br/",
   "fontes": [
     {
@@ -30,15 +30,21 @@
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "PJC-MT - 2026 - Edital nº 1",
-      "url": "https://www.qconcursos.com/questoes-de-concursos/concursos/pjc-mt-2026-edital-n-1",
-      "tipo": "fonte auxiliar",
+      "titulo": "Notícias SEPLAG/MT sobre nomeação de 235 aprovados da Polícia Civil",
+      "url": "https://www.seplag.mt.gov.br/en/noticias/-/categories/8125279",
+      "tipo": "fonte oficial",
       "data_consulta": "2026-05-17"
     },
     {
-      "titulo": "Diário Oficial de Mato Grosso - edição com edital 2022",
-      "url": "https://iomat.mt.gov.br/legislacao/diario_oficial/detalhes/805439",
+      "titulo": "Diário Oficial de Mato Grosso - concurso 2022 da PJC-MT",
+      "url": "https://www.iomat.mt.gov.br/legislacao/diario_oficial/detalhes/805439",
       "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "PJC-MT - 2026 - Edital nº 1",
+      "url": "https://www.qconcursos.com/questoes-de-concursos/concursos/pjc-mt-2026-edital-n-1",
+      "tipo": "fonte auxiliar",
       "data_consulta": "2026-05-17"
     }
   ],
@@ -46,10 +52,12 @@
   "nivel_confianca": "médio",
   "precisa_revisao_humana": true,
   "alertas": [
-    "Há concurso/seleção temporária de 2026 em fonte auxiliar, mas não foi usado para os campos principais.",
-    "A banca do concurso de 2022 foi preservada como UFMT, com base em histórico e fonte auxiliar.",
-    "Não foi localizado edital novo de concurso efetivo para escrivão e investigador em fonte oficial consultada.",
-    "Fonte oficial da PJC com bloqueio de acesso em parte do conteúdo institucional.",
+    "Novo concurso para delegado ainda em preparação; não há edital efetivo confirmado em fonte oficial consultada.",
+    "Banca do concurso de 2022 preservada como UFMT com base em histórico e fonte auxiliar.",
+    "Campos idade, inscritos, estágio e validade não foram localizados nas fontes consultadas.",
+    "Fonte oficial da PJC teve acesso parcial/bloqueado em parte do conteúdo institucional.",
+    "Há uso de fonte auxiliar para pista do concurso de 2026, sem confirmação oficial do edital efetivo.",
+    "Alguns valores de remuneração e detalhes de nomeação foram preservados da base anterior por consistência editorial.",
     "Campo edital atualizado/priorizado pelo modo qualificado pago.",
     "Campo salario atualizado/priorizado pelo modo qualificado pago.",
     "Campo vagas atualizado/priorizado pelo modo qualificado pago.",

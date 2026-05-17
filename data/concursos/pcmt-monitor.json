@@ -11,24 +11,24 @@
   "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
   "score_publicacao": 90,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 18391,
+    "input_tokens": 11367,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1052,
+    "output_tokens": 1025,
     "output_tokens_details": {
-      "reasoning_tokens": 225
+      "reasoning_tokens": 103
     },
-    "total_tokens": 19443
+    "total_tokens": 12392
   },
   "fontes_monitoradas": [
     {
       "url": "https://www.pjc.mt.gov.br/",
       "ok": true,
       "status": 200,
-      "hash": "3c5f33249729dc2cd7081981d057e14ee3cc075eef3f7445d867c085bfe27583",
+      "hash": "c6a48496da6ea4d5f41c52f72958a24e7b5b2fe6db02df0ac8207c2a7df53843",
       "tamanho_texto": 139
     }
   ]

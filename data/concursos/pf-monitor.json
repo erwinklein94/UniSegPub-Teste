@@ -1,52 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pf",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Atualização bloqueada: a nova versão (85/100) ficou pior que a versão publicada (97/100).",
-  "avaliacao": {
-    "score": 85,
-    "qualidade": "alta",
-    "ruins": [],
-    "genericos": [],
-    "concretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "idade",
-      "escolaridade",
-      "materias",
-      "banca",
-      "inscritos",
-      "etapas",
-      "cfsd",
-      "validade"
-    ],
-    "criticosRuins": [],
-    "criticosGenericos": [],
-    "criticosConcretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "escolaridade",
-      "banca",
-      "etapas"
-    ],
-    "podePublicar": true
-  },
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 90,
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 7568,
+    "input_tokens": 24215,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 4736
     },
-    "output_tokens": 454,
+    "output_tokens": 1172,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 172
     },
-    "total_tokens": 8022
+    "total_tokens": 25387
   },
   "fontes_monitoradas": [
     {

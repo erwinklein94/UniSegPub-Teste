@@ -1,27 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcac",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
+  "usou_web_search_openai": true,
   "publicacao_bloqueada": false,
-  "publicado_por_modo_qualificado": false,
-  "forcar_exibicao_site": false,
-  "publicacao_forcada_por_credito_openai": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
   "qualidade_publicacao": "alta",
-  "score_publicacao": 97,
-  "motivo": "Mudança detectada nas fontes monitoradas.",
+  "score_publicacao": 87,
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 7894,
+    "input_tokens": 28802,
     "input_tokens_details": {
-      "cached_tokens": 0
+      "cached_tokens": 4736
     },
-    "output_tokens": 602,
+    "output_tokens": 893,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 280
     },
-    "total_tokens": 8496
+    "total_tokens": 29695
   },
   "fontes_monitoradas": [
     {

@@ -1,52 +1,27 @@
 {
   "atualizado_em": "2026-05-17",
   "instituicao_id": "pcmg",
-  "modo_qualidade": "economico",
-  "modelo": "gpt-5.4-nano",
+  "modo_qualidade": "qualificado",
+  "modelo": "gpt-5.4-mini",
   "usou_openai": true,
-  "usou_web_search_openai": false,
-  "publicacao_bloqueada": true,
-  "motivo": "Atualização bloqueada: qualidade baixa, score 70, campos críticos genéricos: escolaridade, campos críticos sem confirmação: nenhum.",
-  "avaliacao": {
-    "score": 70,
-    "qualidade": "baixa",
-    "ruins": [],
-    "genericos": [
-      "idade",
-      "escolaridade",
-      "validade"
-    ],
-    "concretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "materias",
-      "banca",
-      "inscritos",
-      "previsao"
-    ],
-    "criticosRuins": [],
-    "criticosGenericos": [
-      "escolaridade"
-    ],
-    "criticosConcretos": [
-      "edital",
-      "salario",
-      "vagas",
-      "banca"
-    ],
-    "podePublicar": false
-  },
+  "usou_web_search_openai": true,
+  "publicacao_bloqueada": false,
+  "publicado_por_modo_qualificado": true,
+  "forcar_exibicao_site": true,
+  "publicacao_forcada_por_credito_openai": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 92,
+  "motivo": "Atualização forçada manualmente.",
   "usage": {
-    "input_tokens": 10104,
+    "input_tokens": 22571,
     "input_tokens_details": {
       "cached_tokens": 0
     },
-    "output_tokens": 575,
+    "output_tokens": 1101,
     "output_tokens_details": {
-      "reasoning_tokens": 0
+      "reasoning_tokens": 203
     },
-    "total_tokens": 10679
+    "total_tokens": 23672
   },
   "fontes_monitoradas": [
     {
