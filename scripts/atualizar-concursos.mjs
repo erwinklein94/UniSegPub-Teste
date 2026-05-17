@@ -318,6 +318,131 @@ function extrairTextoResposta(payload) {
   return textos.join('\n').trim();
 }
 
+
+function valorEhRuim(valor) {
+  const texto = String(valor == null ? '' : valor).trim().toLowerCase();
+  if (!texto) return true;
+  const padroesRuins = [
+    'não encontrado em fonte oficial',
+    'nao encontrado em fonte oficial',
+    'não encontrado',
+    'nao encontrado',
+    'não informado',
+    'nao informado',
+    'dados em atualização',
+    'dados em atualizacao',
+    'em atualização',
+    'em atualizacao',
+    'não localizado',
+    'nao localizado'
+  ];
+  return padroesRuins.some((padrao) => texto === padrao || texto.includes(padrao));
+}
+
+const camposDeConteudo = [
+  'edital',
+  'salario',
+  'vagas',
+  'cotas',
+  'idade',
+  'escolaridade',
+  'materias',
+  'banca',
+  'inscritos',
+  'etapas',
+  'cfsd',
+  'estagio',
+  'validade',
+  'previsao'
+];
+
+const camposCriticos = ['edital', 'salario', 'vagas', 'escolaridade', 'banca', 'etapas'];
+
+function avaliarQualidadePublicacao(dados) {
+  const ruins = camposDeConteudo.filter((campo) => valorEhRuim(dados[campo]));
+  const criticosRuins = camposCriticos.filter((campo) => valorEhRuim(dados[campo]));
+
+  let score = 100;
+  score -= ruins.length * 6;
+  score -= criticosRuins.length * 8;
+  if (String(dados.nivel_confianca || '').toLowerCase() === 'baixo') score -= 15;
+  if (dados.precisa_revisao_humana) score -= 5;
+  score = Math.max(0, Math.min(100, score));
+
+  const qualidade = score >= 75
+    ? 'alta'
+    : score >= 55
+      ? 'media'
+      : 'baixa';
+
+  return {
+    score,
+    qualidade,
+    ruins,
+    criticosRuins,
+    podePublicar: qualidade !== 'baixa' && criticosRuins.length <= 2
+  };
+}
+
+function mesclarComDadosAtuais(dadosGerados, dadosAtuais) {
+  const base = dadosAtuais && typeof dadosAtuais === 'object' ? dadosAtuais : {};
+  const mesclado = { ...dadosGerados };
+  const alertas = new Set([...(Array.isArray(dadosGerados.alertas) ? dadosGerados.alertas : [])]);
+
+  for (const campo of camposDeConteudo) {
+    const novoRuim = valorEhRuim(dadosGerados[campo]);
+    const atualBom = !valorEhRuim(base[campo]);
+
+    if (novoRuim && atualBom) {
+      mesclado[campo] = base[campo];
+      alertas.add(`Campo ${campo} mantido da versão anterior porque a atualização automática não encontrou confirmação suficiente.`);
+    }
+  }
+
+  if ((!Array.isArray(mesclado.fontes) || mesclado.fontes.length === 0) && Array.isArray(base.fontes)) {
+    mesclado.fontes = base.fontes;
+    alertas.add('Fontes mantidas da versão anterior porque a atualização automática não encontrou nova fonte publicável.');
+  }
+
+  if (valorEhRuim(mesclado.site) && !valorEhRuim(base.site)) {
+    mesclado.site = base.site;
+  }
+
+  mesclado.alertas = [...alertas];
+  return mesclado;
+}
+
+async function salvarRascunhoBloqueado(instituicao, dados, paginasColetadas, payload, motivo) {
+  const pastaRascunhos = 'data/concursos/_rascunhos';
+  await fs.mkdir(pastaRascunhos, { recursive: true });
+  await fs.writeFile(
+    `${pastaRascunhos}/${instituicao.id}.json`,
+    `${JSON.stringify({
+      gerado_em: HOJE,
+      instituicao_id: instituicao.id,
+      motivo_bloqueio: motivo,
+      dados
+    }, null, 2)}\n`,
+    'utf8'
+  );
+
+  await fs.writeFile(
+    instituicao.arquivo_monitoramento,
+    `${JSON.stringify({
+      atualizado_em: HOJE,
+      instituicao_id: instituicao.id,
+      modelo: OPENAI_MODEL,
+      usou_openai: true,
+      usou_web_search_openai: USAR_WEB_SEARCH,
+      publicacao_bloqueada: true,
+      motivo,
+      usage: payload?.usage || null,
+      fontes_monitoradas: resumoMonitoramento(paginasColetadas)
+    }, null, 2)}\n`,
+    'utf8'
+  );
+}
+
 function validarDados(dados, instituicao) {
   for (const campo of camposObrigatorios) {
     if (!(campo in dados)) {
@@ -380,10 +505,12 @@ Data da pesquisa: ${HOJE}
 Regras rígidas:
 - Use prioritariamente o texto das fontes oficiais fornecidas no prompt.
 - Não invente edital, salário, vagas, datas, banca, requisitos ou etapas.
-- Se uma informação não estiver nas fontes fornecidas, escreva literalmente: "não encontrado em fonte oficial".
+- Se uma informação não estiver nas fontes fornecidas, mas já existir nos dados atualmente publicados, MANTENHA o valor atualmente publicado e adicione alerta de revisão.
+- Só escreva literalmente: "não encontrado em fonte oficial" quando não houver informação nem nas fontes fornecidas nem nos dados atualmente publicados.
 - Diferencie concurso aberto, em andamento, encerrado e previsto.
 - Para o campo "previsao", não prometa novo edital sem fonte oficial.
 - Mantenha respostas curtas por campo, pois o objetivo é economizar custo e publicar em card do site.
+- Não substitua conteúdo útil já publicado por "não encontrado em fonte oficial".
 - Não cite blogs, cursinhos, agregadores de concurso ou sites comerciais.
 - O JSON precisa continuar compatível com ${instituicao.arquivo_saida}.
 - Mantenha instituicao_id exatamente como "${instituicao.id}".
@@ -455,9 +582,25 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
   }
 
   const dadosValidados = validarDados(dadosGerados, instituicao);
+  const dadosMesclados = mesclarComDadosAtuais(dadosValidados, jsonAtual);
+  const avaliacao = avaliarQualidadePublicacao(dadosMesclados);
+
+  dadosMesclados.qualidade_publicacao = avaliacao.qualidade;
+  dadosMesclados.score_publicacao = avaliacao.score;
+  dadosMesclados.bloquear_publicacao = !avaliacao.podePublicar;
+
+  if (!avaliacao.podePublicar) {
+    const motivo = `Atualização bloqueada: qualidade ${avaliacao.qualidade}, score ${avaliacao.score}, campos críticos sem confirmação: ${avaliacao.criticosRuins.join(', ') || 'nenhum'}.`;
+    dadosMesclados.precisa_revisao_humana = true;
+    dadosMesclados.alertas = Array.from(new Set([...(dadosMesclados.alertas || []), motivo]));
+    await salvarRascunhoBloqueado(instituicao, dadosMesclados, paginasColetadas, payload, motivo);
+    console.warn(`⚠️ ${instituicao.sigla}: ${motivo}`);
+    console.warn(`⚠️ ${instituicao.sigla}: JSON principal NÃO foi sobrescrito. Rascunho salvo em data/concursos/_rascunhos/${instituicao.id}.json`);
+    return;
+  }
 
   await fs.mkdir(instituicao.arquivo_saida.split('/').slice(0, -1).join('/'), { recursive: true });
-  await fs.writeFile(instituicao.arquivo_saida, `${JSON.stringify(dadosValidados, null, 2)}\n`, 'utf8');
+  await fs.writeFile(instituicao.arquivo_saida, `${JSON.stringify(dadosMesclados, null, 2)}\n`, 'utf8');
   await fs.writeFile(
     instituicao.arquivo_monitoramento,
     `${JSON.stringify({
@@ -466,6 +609,9 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
       modelo: OPENAI_MODEL,
       usou_openai: true,
       usou_web_search_openai: USAR_WEB_SEARCH,
+      publicacao_bloqueada: false,
+      qualidade_publicacao: avaliacao.qualidade,
+      score_publicacao: avaliacao.score,
       motivo: forcarAtualizacao
         ? 'Atualização forçada manualmente.'
         : houveMudanca
@@ -478,9 +624,10 @@ Atualize os campos do JSON somente quando houver base nas fontes oficiais. Retor
   );
 
   console.log(`✅ ${instituicao.sigla}: arquivo atualizado com sucesso em ${instituicao.arquivo_saida}`);
-  console.log(`   Última pesquisa: ${dadosValidados.ultima_pesquisa}`);
-  console.log(`   Nível de confiança: ${dadosValidados.nivel_confianca}`);
-  console.log(`   Precisa revisão humana: ${dadosValidados.precisa_revisao_humana ? 'sim' : 'não'}`);
+  console.log(`   Última pesquisa: ${dadosMesclados.ultima_pesquisa}`);
+  console.log(`   Nível de confiança: ${dadosMesclados.nivel_confianca}`);
+  console.log(`   Qualidade publicação: ${avaliacao.qualidade} (${avaliacao.score}/100)`);
+  console.log(`   Precisa revisão humana: ${dadosMesclados.precisa_revisao_humana ? 'sim' : 'não'}`);
 
   if (payload.usage) {
     console.log(`   Uso OpenAI ${instituicao.id}: ${JSON.stringify(payload.usage)}`);
@@ -512,6 +659,24 @@ async function processarInstituicao(instituicao) {
 
   if (!FORCAR_ATUALIZACAO && !houveMudanca && !precisaRevalidarPorTempo) {
     console.log(`✅ ${instituicao.sigla}: nenhuma mudança relevante. OpenAI não foi chamada. Custo na API: US$ 0,00.`);
+    return;
+  }
+
+  const fontesComTexto = paginasColetadas.filter((pagina) => pagina.ok && pagina.texto && pagina.texto.length > 300);
+  if (fontesComTexto.length === 0 && jsonAtual) {
+    console.warn(`⚠️ ${instituicao.sigla}: nenhuma fonte oficial com texto suficiente foi coletada. OpenAI não foi chamada e o JSON publicado foi preservado.`);
+    await fs.writeFile(
+      instituicao.arquivo_monitoramento,
+      `${JSON.stringify({
+        atualizado_em: HOJE,
+        instituicao_id: instituicao.id,
+        usou_openai: false,
+        publicacao_bloqueada: true,
+        motivo: 'Nenhuma fonte oficial com texto suficiente foi coletada; conteúdo publicado preservado.',
+        fontes_monitoradas: monitorAtual
+      }, null, 2)}\n`,
+      'utf8'
+    );
     return;
   }
 

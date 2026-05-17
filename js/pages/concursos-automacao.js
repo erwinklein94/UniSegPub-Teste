@@ -41,6 +41,47 @@
     return fonte ? texto(fonte.url) : '';
   }
 
+  function valorRuim(valor) {
+    const limpo = texto(valor).toLowerCase();
+    if (!limpo) return true;
+    const ruins = [
+      'não encontrado em fonte oficial',
+      'nao encontrado em fonte oficial',
+      'não encontrado',
+      'nao encontrado',
+      'não informado',
+      'nao informado',
+      'dados em atualização',
+      'dados em atualizacao',
+      'em atualização',
+      'em atualizacao'
+    ];
+    return ruins.some(function (padrao) {
+      return limpo === padrao || limpo.indexOf(padrao) !== -1;
+    });
+  }
+
+  function jsonTemQualidadeMinima(dados) {
+    if (!dados || typeof dados !== 'object') return false;
+    if (dados.bloquear_publicacao === true) return false;
+    if (texto(dados.qualidade_publicacao).toLowerCase() === 'baixa') return false;
+
+    const camposCriticos = ['edital', 'salario', 'vagas', 'escolaridade', 'banca', 'etapas'];
+    const ruins = camposCriticos.filter(function (campo) {
+      return valorRuim(dados[campo]);
+    });
+
+    // Se muitos campos essenciais vieram como "não encontrado", o JSON não pode substituir os dados estáticos.
+    if (ruins.length >= 3) return false;
+
+    // Baixa confiança + revisão humana + pelo menos dois campos ruins também bloqueia publicação no front.
+    if (texto(dados.nivel_confianca).toLowerCase() === 'baixo' && dados.precisa_revisao_humana && ruins.length >= 2) {
+      return false;
+    }
+
+    return true;
+  }
+
   function normalizarParaConcursos(dados, itemConfig) {
     const id = texto(dados.instituicao_id || itemConfig.id).toLowerCase();
     return {
@@ -148,6 +189,12 @@
 
   function aplicarDados(itemConfig, dados) {
     const instId = texto(dados.instituicao_id || itemConfig.id).toLowerCase();
+
+    if (!jsonTemQualidadeMinima(dados)) {
+      console.warn('Automação concursos: JSON de ' + instId + ' ignorado por baixa qualidade. Mantendo dados estáticos.');
+      return;
+    }
+
     const concurso = normalizarParaConcursos(dados || {}, itemConfig || {});
     atualizarBaseGlobal(instId, concurso);
     atualizarCard(instId, dados || {}, concurso);
