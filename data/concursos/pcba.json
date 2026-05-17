@@ -1,0 +1,49 @@
+{
+  "instituicao_id": "pcba",
+  "instituicao_nome": "Polícia Civil da Bahia",
+  "sigla": "PCBA",
+  "uf": "BA",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCBA: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCBA com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "edital": "Novo concurso PCBA 2026 anunciado — Delegado, Escrivão e Investigador",
+  "salario": "A definir no edital; último concurso de 2022 informava remuneração inicial de R$ 4.873,18",
+  "vagas": "Mais de 750 vagas anunciadas para Delegado, Escrivão e Investigador",
+  "cotas": "30% negros / 5% PCD, conforme legislação e regras do edital",
+  "idade": "A definir no edital; último concurso exigia idade mínima de 18 anos",
+  "escolaridade": "Nível superior, conforme cargo e edital",
+  "materias": "A definir no edital. Último concurso cobrou Língua Portuguesa, Raciocínio Lógico, Informática, Atualidades e Conhecimentos Específicos de Direito.",
+  "banca": "A definir oficialmente no edital",
+  "inscritos": "Ainda sem inscrições abertas",
+  "etapas": "A definir no edital; último certame teve prova objetiva, discursiva, TAF, avaliação psicológica, exames médicos, investigação social e curso de formação.",
+  "cfsd": "Curso de Formação na ACADEPOL-BA, conforme cargo e edital.",
+  "estagio": "Estágio probatório de 3 anos.",
+  "validade": "A definir no edital.",
+  "previsao": "Governo da Bahia anunciou novo concurso da Polícia Civil em 2026 com mais de 750 vagas para Delegado, Escrivão e Investigador. Aguardar edital oficial.",
+  "site": "https://www.policiacivil.ba.gov.br",
+  "fontes": [
+    {
+      "titulo": "PCBA - Editais",
+      "url": "https://www.ba.gov.br/policiacivil/editais",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Polícia Civil da Bahia",
+      "url": "https://www.policiacivil.ba.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+  ]
+}

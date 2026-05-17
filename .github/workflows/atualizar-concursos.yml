@@ -12,6 +12,13 @@ on:
           - 'pmesp'
           - 'pcsp'
           - 'prf'
+          - 'pf'
+          - 'pmerj'
+          - 'pcerj'
+          - 'pmmg'
+          - 'pcmg'
+          - 'pmba'
+          - 'pcba'
           - 'prioridade_1'
           - 'todas_configuradas'
       limite:

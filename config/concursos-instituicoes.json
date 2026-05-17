@@ -118,5 +118,275 @@
       "convocação",
       "convocacao"
     ]
+  },
+  {
+    "id": "pf",
+    "nome": "Polícia Federal",
+    "sigla": "PF",
+    "uf": "BR",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pf.json",
+    "arquivo_monitoramento": "data/concursos/pf-monitor.json",
+    "site_principal": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+    "fontes_base": [
+      "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+      "https://www.gov.br/pf/pt-br/assuntos/noticias",
+      "https://www.cebraspe.org.br/concursos/PF_25"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "pf.gov.br",
+      "cebraspe.org.br",
+      "in.gov.br",
+      "planalto.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "polícia federal",
+      "policia federal",
+      "delegado",
+      "perito",
+      "escrivão",
+      "escrivao",
+      "agente",
+      "papiloscopista",
+      "cebraspe",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao"
+    ]
+  },
+  {
+    "id": "pmerj",
+    "nome": "Polícia Militar do Estado do Rio de Janeiro",
+    "sigla": "PMERJ",
+    "uf": "RJ",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmerj.json",
+    "arquivo_monitoramento": "data/concursos/pmerj-monitor.json",
+    "site_principal": "https://concursos.sepm.rj.gov.br/cfsd.php",
+    "fontes_base": [
+      "https://concursos.sepm.rj.gov.br/cfsd.php",
+      "https://sepm.rj.gov.br/",
+      "https://conhecimento.fgv.br/concursos/pmerj24/soldados",
+      "https://conhecimento.fgv.br/concursos/pmerjsaude/3"
+    ],
+    "dominios_oficiais": [
+      "concursos.sepm.rj.gov.br",
+      "sepm.rj.gov.br",
+      "pmerj.rj.gov.br",
+      "rj.gov.br",
+      "fgv.br",
+      "conhecimento.fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pmerj",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "saúde",
+      "saude",
+      "fgv",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao"
+    ]
+  },
+  {
+    "id": "pcerj",
+    "nome": "Polícia Civil do Estado do Rio de Janeiro",
+    "sigla": "PCERJ",
+    "uf": "RJ",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcerj.json",
+    "arquivo_monitoramento": "data/concursos/pcerj-monitor.json",
+    "site_principal": "https://www.policiacivil.rj.gov.br/",
+    "fontes_base": [
+      "https://www.policiacivil.rj.gov.br/",
+      "https://conhecimento.fgv.br/concursos/pcrj21",
+      "https://www.cebraspe.org.br/concursos/pc_rj_21_delegado"
+    ],
+    "dominios_oficiais": [
+      "policiacivil.rj.gov.br",
+      "rj.gov.br",
+      "fgv.br",
+      "conhecimento.fgv.br",
+      "cebraspe.org.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pcerj",
+      "pc-rj",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "inspetor",
+      "investigador",
+      "perito",
+      "legista",
+      "papiloscopista",
+      "fgv",
+      "cebraspe",
+      "edital",
+      "inscrição",
+      "inscricao"
+    ]
+  },
+  {
+    "id": "pmmg",
+    "nome": "Polícia Militar de Minas Gerais",
+    "sigla": "PMMG",
+    "uf": "MG",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmmg.json",
+    "arquivo_monitoramento": "data/concursos/pmmg-monitor.json",
+    "site_principal": "https://www.policiamilitar.mg.gov.br/",
+    "fontes_base": [
+      "https://www.policiamilitar.mg.gov.br/",
+      "https://www.policiamilitar.mg.gov.br/portal-pm/crs"
+    ],
+    "dominios_oficiais": [
+      "policiamilitar.mg.gov.br",
+      "mg.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pmmg",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "cadete",
+      "crs",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao"
+    ]
+  },
+  {
+    "id": "pcmg",
+    "nome": "Polícia Civil de Minas Gerais",
+    "sigla": "PCMG",
+    "uf": "MG",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcmg.json",
+    "arquivo_monitoramento": "data/concursos/pcmg-monitor.json",
+    "site_principal": "https://acadepol.policiacivil.mg.gov.br/concurso/listar",
+    "fontes_base": [
+      "https://acadepol.policiacivil.mg.gov.br/concurso/listar",
+      "https://www.policiacivil.mg.gov.br/",
+      "https://conhecimento.fgv.br/concursos/pcmg24/04"
+    ],
+    "dominios_oficiais": [
+      "policiacivil.mg.gov.br",
+      "acadepol.policiacivil.mg.gov.br",
+      "mg.gov.br",
+      "fgv.br",
+      "conhecimento.fgv.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pcmg",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "perito",
+      "médico legista",
+      "medico legista",
+      "fgv",
+      "edital",
+      "inscrição",
+      "inscricao"
+    ]
+  },
+  {
+    "id": "pmba",
+    "nome": "Polícia Militar da Bahia",
+    "sigla": "PMBA",
+    "uf": "BA",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmba.json",
+    "arquivo_monitoramento": "data/concursos/pmba-monitor.json",
+    "site_principal": "https://www.pm.ba.gov.br/category/concurso/",
+    "fontes_base": [
+      "https://www.pm.ba.gov.br/category/concurso/",
+      "https://www.pm.ba.gov.br/",
+      "https://www.concursosfcc.com.br/concursos/govba222/index.html"
+    ],
+    "dominios_oficiais": [
+      "pm.ba.gov.br",
+      "ba.gov.br",
+      "concursosfcc.com.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pmba",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "fcc",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao"
+    ]
+  },
+  {
+    "id": "pcba",
+    "nome": "Polícia Civil da Bahia",
+    "sigla": "PCBA",
+    "uf": "BA",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcba.json",
+    "arquivo_monitoramento": "data/concursos/pcba-monitor.json",
+    "site_principal": "https://www.ba.gov.br/policiacivil/editais",
+    "fontes_base": [
+      "https://www.ba.gov.br/policiacivil/editais",
+      "https://www.policiacivil.ba.gov.br/",
+      "https://www.ba.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "ba.gov.br",
+      "policiacivil.ba.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pcba",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "aocp",
+      "edital",
+      "inscrição",
+      "inscricao"
+    ]
   }
 ]

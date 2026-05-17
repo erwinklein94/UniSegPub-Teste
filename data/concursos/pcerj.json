@@ -1,0 +1,49 @@
+{
+  "instituicao_id": "pcerj",
+  "instituicao_nome": "Polícia Civil do Estado do Rio de Janeiro",
+  "sigla": "PCERJ",
+  "uf": "RJ",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PCERJ: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PCERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "edital": "Novo concurso PCERJ 2026 anunciado/autorizado — 414 vagas previstas",
+  "salario": "A definir no edital; último concurso de Inspetor/Investigador teve remuneração inicial na faixa de R$ 5.800 a R$ 6.300",
+  "vagas": "414 vagas previstas para Delegado, Perito Criminal, Perito Legista e Piloto Policial",
+  "cotas": "Reserva de vagas conforme legislação estadual e regras do edital",
+  "idade": "A definir no novo edital; último concurso exigia idade mínima de 18 anos",
+  "escolaridade": "A definir por cargo; tendência de nível superior para os cargos previstos",
+  "materias": "A definir no edital. Últimos concursos cobraram Língua Portuguesa, Direito Penal, Direito Processual Penal, Direito Administrativo, Direito Constitucional, Informática e conhecimentos específicos.",
+  "banca": "A definir",
+  "inscritos": "Ainda sem inscrições abertas para o novo concurso",
+  "etapas": "A definir no edital; últimos certames tiveram prova objetiva, discursiva, TAF, exames médicos, avaliação psicológica, investigação social e curso de formação.",
+  "cfsd": "Curso de Formação Profissional na Acadepol-RJ, conforme cargo e edital.",
+  "estagio": "Estágio probatório de 3 anos.",
+  "validade": "A definir no edital.",
+  "previsao": "Novo concurso anunciado para 2026, com 414 vagas previstas, mas ainda dependente de edital oficial com cargos, requisitos, banca, cronograma e remuneração.",
+  "site": "https://www.policiacivil.rj.gov.br",
+  "fontes": [
+    {
+      "titulo": "Polícia Civil RJ",
+      "url": "https://www.policiacivil.rj.gov.br/",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "FGV - Concurso Polícia Civil RJ 2021",
+      "url": "https://conhecimento.fgv.br/concursos/pcrj21",
+      "tipo": "banca organizadora",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+  ]
+}

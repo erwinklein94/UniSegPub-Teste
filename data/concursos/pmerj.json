@@ -1,0 +1,49 @@
+{
+  "instituicao_id": "pmerj",
+  "instituicao_nome": "Polícia Militar do Estado do Rio de Janeiro",
+  "sigla": "PMERJ",
+  "uf": "RJ",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PMERJ: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PMERJ com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "edital": "PMERJ — últimos certames oficiais FGV: Edital nº 001/2023 para Curso de Formação de Soldados e Edital nº 001/2024 para Curso de Formação de Oficiais; novo concurso de Soldado em tramitação oficial",
+  "salario": "Referência GESPERJ jan/2026: Soldado-Aluno R$ 2.956,40; Soldado A/B/C R$ 5.233,88; Aluno EsFO R$ 4.127,16. A remuneração bruta combina soldo, GRET, GHP quando aplicável e GRAM; auxílio-transporte de R$ 100,00/mês e alimentação são tratados como parcelas próprias.",
+  "vagas": "Último edital de Soldado: 2.500 vagas. A PMERJ informou em 06/04/2026 que o processo para novo concurso está em tramitação entre Governo do Estado e SEPM, ainda sem inscrições abertas.",
+  "cotas": "Reserva de vagas conforme legislação estadual e regras do edital publicado; o edital de Soldado trouxe ampla concorrência, vagas para candidatos negros/indígenas e hipossuficientes, conforme retificações do certame.",
+  "idade": "Lei RJ 9.546/2022 fixa idades de 18 a 32 anos para ingresso na PMERJ e no CBMERJ a partir dos editais publicados após a lei; a regra concreta sempre acompanha o edital vigente.",
+  "escolaridade": "Soldado: ensino médio completo no edital 001/2023; Oficial: requisitos próprios do edital CFO 001/2024. O próximo edital definirá requisitos finais de escolaridade, CNH, saúde, TAF e documentação.",
+  "materias": "Conteúdo programático conforme o edital FGV do cargo: Soldado 001/2023 e Oficial 001/2024 possuem matrizes e fases próprias.",
+  "banca": "FGV nos certames PMERJ 001/2023 — Soldado e 001/2024 — Oficial. No novo certame, a banca será a que constar no edital publicado.",
+  "inscritos": "Não abertas no comunicado oficial PMERJ de 06/04/2026.",
+  "etapas": "Últimos editais PMERJ/FGV tiveram prova, fases de avaliação física, psicológica, médica, investigação social/documental e curso de formação, conforme o cargo.",
+  "cfsd": "Curso de Formação de Soldados conduzido pela PMERJ/CFAP, conforme convocações oficiais do certame.",
+  "estagio": "Estágio probatório e formação funcional conforme Estatuto dos Policiais Militares do Estado do Rio de Janeiro, edital e normas internas da SEPM.",
+  "validade": "Validade conforme edital e atos de homologação do certame correspondente.",
+  "previsao": "Novo concurso em tramitação entre Governo do Estado e SEPM; a PMERJ informou que o edital oficial será publicado no Diário Oficial quando houver definição.",
+  "site": "https://concursos.sepm.rj.gov.br",
+  "fontes": [
+    {
+      "titulo": "SEPM/DRSP - Concursos PMERJ",
+      "url": "https://concursos.sepm.rj.gov.br/cfsd.php",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "FGV - PMERJ Curso de Formação de Soldados",
+      "url": "https://conhecimento.fgv.br/concursos/pmerj24/soldados",
+      "tipo": "banca organizadora",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "instituicao_id": "pf",
+  "instituicao_nome": "Polícia Federal",
+  "sigla": "PF",
+  "uf": "BR",
+  "tema": "concursos",
+  "status": "conteúdo inicial protegido",
+  "titulo": "PF: concursos, requisitos e etapas",
+  "resumo": "Guia de concursos da PF com dados estruturados de edital, requisitos, vagas, banca, etapas e fontes oficiais de conferência.",
+  "edital": "PF — Concurso Policial Federal 2025/2026 em andamento, com cargos de Delegado, Perito Criminal, Escrivão, Agente e Papiloscopista; também há acompanhamento de certames administrativos no portal oficial.",
+  "salario": "Remuneração conforme edital, legislação federal e tabelas vigentes da carreira policial federal; confirmar valores por cargo no edital PF/Cebraspe e atos oficiais.",
+  "vagas": "Concurso policial federal 2025 com 1.000 vagas informado em notícia oficial da PF; acompanhar convocações, resultados e curso de formação no portal de concursos da PF e no Cebraspe.",
+  "cotas": "Reserva de vagas conforme legislação federal, edital do certame e atos de heteroidentificação/avaliação biopsicossocial quando aplicáveis.",
+  "idade": "Requisitos gerais e específicos por cargo conforme edital; manter atenção a idade mínima legal, CNH quando exigida, aptidão física, investigação social, saúde e demais condições editalícias.",
+  "escolaridade": "Nível superior conforme cargo; Delegado exige bacharelado em Direito e demais requisitos do edital; Perito exige formação específica por área; Agente, Escrivão e Papiloscopista seguem edital próprio.",
+  "materias": "Conteúdo programático definido no edital Cebraspe/PF, incluindo conhecimentos básicos, específicos por cargo, prova discursiva e demais avaliações previstas.",
+  "banca": "Cebraspe nos concursos PF localizados no portal oficial; confirmar no edital específico antes de publicar atualização final.",
+  "inscritos": "Concurso policial PF 2025/2026 em andamento, com inscrições históricas encerradas e fases posteriores acompanhadas nos canais oficiais.",
+  "etapas": "Provas objetiva e discursiva, exames de aptidão física, avaliação médica, avaliação psicológica, investigação social, avaliação de títulos quando prevista, prova oral para Delegado quando aplicável e Curso de Formação Profissional.",
+  "cfsd": "Curso de Formação Profissional da Polícia Federal, com matrícula, regras e convocações publicadas no portal oficial e no Cebraspe.",
+  "estagio": "Estágio probatório de 3 anos para servidor público federal, conforme legislação aplicável e avaliação de desempenho.",
+  "validade": "Conforme edital e atos oficiais de homologação, convocação e prorrogação publicados pela PF, Cebraspe e Diário Oficial da União.",
+  "previsao": "Não publicar novo edital como aberto sem fonte oficial. O destaque atual deve ser o acompanhamento do concurso PF 2025/2026 e seus atos posteriores.",
+  "site": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+  "fontes": [
+    {
+      "titulo": "Concursos públicos - Polícia Federal - GOV.BR",
+      "url": "https://www.gov.br/pf/pt-br/acesso-a-informacao/servidores/concursos",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-17"
+    },
+    {
+      "titulo": "Cebraspe - Concurso PF 2025",
+      "url": "https://www.cebraspe.org.br/concursos/PF_25",
+      "tipo": "banca organizadora",
+      "data_consulta": "2026-05-17"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-17",
+  "nivel_confianca": "médio",
+  "precisa_revisao_humana": true,
+  "qualidade_publicacao": "alta",
+  "score_publicacao": 85,
+  "bloquear_publicacao": false,
+  "alertas": [
+    "Arquivo inicial criado para expansão controlada do motor genérico de concursos.",
+    "A automação está protegida para não sobrescrever este JSON principal quando a atualização automática vier com baixa qualidade."
+  ]
+}

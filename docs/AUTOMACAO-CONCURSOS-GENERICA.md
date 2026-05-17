@@ -29,7 +29,16 @@ data/concursos/{id}.json
 pmesp
 pcsp
 prf
+pf
+pmerj
+pcerj
+pmmg
+pcmg
+pmba
+pcba
 ```
+
+As novas instituições foram incluídas com JSON inicial protegido. Se uma atualização automática vier com muitos campos sem confirmação, o script salva o resultado em `data/concursos/_rascunhos/` e mantém o JSON principal publicado.
 
 ## Como rodar manualmente
 
@@ -61,6 +70,26 @@ E depois:
 
 ```text
 instituicao: prf
+limite: 1
+forcar_atualizacao: false
+usar_web_search: false
+```
+
+Depois de validar as três primeiras, teste uma por vez:
+
+```text
+instituicao: pf
+instituicao: pmerj
+instituicao: pcerj
+instituicao: pmmg
+instituicao: pcmg
+instituicao: pmba
+instituicao: pcba
+```
+
+Sempre mantenha:
+
+```text
 limite: 1
 forcar_atualizacao: false
 usar_web_search: false
