@@ -1,0 +1,122 @@
+[
+  {
+    "id": "pmesp",
+    "nome": "Polícia Militar do Estado de São Paulo",
+    "sigla": "PMESP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pmesp.json",
+    "arquivo_monitoramento": "data/concursos/pmesp-monitor.json",
+    "site_principal": "https://concursos.policiamilitar.sp.gov.br/",
+    "fontes_base": [
+      "https://concursos.policiamilitar.sp.gov.br/",
+      "https://www.policiamilitar.sp.gov.br/",
+      "https://www.vunesp.com.br/"
+    ],
+    "dominios_oficiais": [
+      "concursos.policiamilitar.sp.gov.br",
+      "policiamilitar.sp.gov.br",
+      "vunesp.com.br",
+      "doe.sp.gov.br",
+      "imprensaoficial.com.br",
+      "saopaulo.sp.gov.br",
+      "al.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pmesp",
+      "polícia militar",
+      "policia militar",
+      "soldado",
+      "oficial",
+      "médico",
+      "medico",
+      "vunesp",
+      "edital",
+      "inscrição",
+      "inscricao"
+    ]
+  },
+  {
+    "id": "pcsp",
+    "nome": "Polícia Civil do Estado de São Paulo",
+    "sigla": "PCSP",
+    "uf": "SP",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/pcsp.json",
+    "arquivo_monitoramento": "data/concursos/pcsp-monitor.json",
+    "site_principal": "https://www.policiacivil.sp.gov.br/",
+    "fontes_base": [
+      "https://www.policiacivil.sp.gov.br/",
+      "https://www.vunesp.com.br/",
+      "https://www.saopaulo.sp.gov.br/"
+    ],
+    "dominios_oficiais": [
+      "policiacivil.sp.gov.br",
+      "vunesp.com.br",
+      "doe.sp.gov.br",
+      "imprensaoficial.com.br",
+      "saopaulo.sp.gov.br",
+      "al.sp.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "pcsp",
+      "polícia civil",
+      "policia civil",
+      "delegado",
+      "investigador",
+      "escrivão",
+      "escrivao",
+      "perito",
+      "médico legista",
+      "medico legista",
+      "vunesp",
+      "edital",
+      "inscrição",
+      "inscricao"
+    ]
+  },
+  {
+    "id": "prf",
+    "nome": "Polícia Rodoviária Federal",
+    "sigla": "PRF",
+    "uf": "BR",
+    "tema": "concursos",
+    "prioridade": 1,
+    "frequencia": "semanal",
+    "arquivo_saida": "data/concursos/prf.json",
+    "arquivo_monitoramento": "data/concursos/prf-monitor.json",
+    "site_principal": "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
+    "fontes_base": [
+      "https://www.gov.br/prf/pt-br/servicos/concurso-prf-2021",
+      "https://www.gov.br/prf/pt-br/assuntos/noticias",
+      "https://www.cebraspe.org.br/concursos/PRF_21"
+    ],
+    "dominios_oficiais": [
+      "gov.br",
+      "prf.gov.br",
+      "cebraspe.org.br",
+      "in.gov.br",
+      "planalto.gov.br"
+    ],
+    "termos_relevantes": [
+      "concurso",
+      "prf",
+      "polícia rodoviária federal",
+      "policia rodoviaria federal",
+      "policial rodoviário federal",
+      "policial rodoviario federal",
+      "cebraspe",
+      "edital",
+      "inscrição",
+      "inscricao",
+      "convocação",
+      "convocacao"
+    ]
+  }
+]
