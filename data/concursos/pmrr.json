@@ -6,11 +6,11 @@
   "tema": "concursos",
   "status": "Pesquisa pendente",
   "titulo": "PMRR tem concurso anunciado com 600 vagas para praças",
-  "resumo": "O Governo de Roraima anunciou em 6 de maio de 2026 um novo concurso da PMRR com 600 vagas para praças, com ingresso em turmas anuais de 150 aprovados até completar o total. Até 18 de maio de 2026, não foi localizado edital publicado desse novo certame. O último edital oficial localizado é o concurso de 2018 para Soldado PM 2ª Classe.",
-  "edital": "Novo concurso anunciado em 06/05/2026 com 600 vagas para praças, ainda sem edital publicado localizado. Último edital oficial localizado: concurso de 2018 para Soldado PM 2ª Classe do Quadro de Praças Combatentes.",
+  "resumo": "O Governo de Roraima anunciou em 6 de maio de 2026 um novo concurso da PMRR com 600 vagas para praças, com entrada em turmas anuais de 150 aprovados até completar o total. Até 18 de maio de 2026, não foi localizado edital publicado desse novo certame. O último edital oficial localizado é o de 2018, para Soldado PM 2ª Classe.",
+  "edital": "Novo concurso anunciado em 06/05/2026 com 600 vagas para praças, ainda sem edital publicado localizado. Último edital oficial localizado: Edital nº 001/2018 para Soldado PM 2ª Classe do Quadro de Praças Combatentes.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "600 vagas anunciadas em 2026 para praças, com ingresso em turmas anuais de 150 aprovados até completar o total. No último edital oficial localizado, em 2018, foram 400 vagas para Soldado PM 2ª Classe.",
-  "cotas": "No edital de 2018, 15% das vagas foram reservadas para candidatas do sexo feminino e 5% para pessoas com deficiência por decisão judicial.",
+  "cotas": "No edital de 2018, 15% das vagas foram reservadas para candidatas do sexo feminino. Também houve reserva de 5% para pessoas com deficiência por decisão judicial em atos posteriores do certame.",
   "idade": "No último edital oficial localizado, exigiu idade de 18 a 35 anos no ingresso, altura mínima de 1,60 m para masculino e 1,55 m para feminino, além de CNH categoria B no mínimo.",
   "escolaridade": "No último edital oficial localizado, exigiu ensino médio completo.",
   "materias": "No último edital oficial localizado, a prova objetiva cobrou Língua Portuguesa, Noções de Direito Constitucional, Direito Penal, Direito Processual Penal, Direito Administrativo, Legislação Extravagante, Legislação da PMRR, Atualidades Gerais, História de Roraima e Geografia de Roraima.",
@@ -30,15 +30,15 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Edital PM 2018 consolidado com editais de 02 a 07",
-      "url": "https://cpc.uerr.edu.br/wp-content/uploads/2018/08/EDITAL-PM-2018-CONSOLIDADO-com-editais-de-02-a-07.pdf",
-      "tipo": "edital PDF / banca organizadora",
+      "titulo": "Diário Oficial de Roraima de 03/05/2018 com o Edital nº 001/2018 do concurso da PMRR",
+      "url": "https://www.imprensaoficial.rr.gov.br/app/_edicoes/2018/05/doe-20180503.pdf",
+      "tipo": "diário oficial / edital",
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Edital PM 2018 consolidado",
-      "url": "https://cpc.uerr.edu.br/wp-content/uploads/2018/05/EDITAL-PM-2018-CONSOLIDADO.pdf",
-      "tipo": "edital PDF / banca organizadora",
+      "titulo": "Concurso PM 2018 Ed 001/2018 – Edital nº 046 de 05/07/2023 - Alteração de Cronograma",
+      "url": "https://cpc.uerr.edu.br/post/11090/",
+      "tipo": "banca organizadora",
       "data_consulta": "2026-05-18"
     }
   ],
@@ -49,7 +49,7 @@
     "Há anúncio oficial de novo concurso em 06/05/2026, mas até 18/05/2026 o edital não foi localizado.",
     "Salário, banca, etapas e requisitos específicos do concurso anunciado em 2026 não foram localizados nas fontes consultadas.",
     "Campos de requisitos, matérias, validade e curso de formação foram preenchidos com base no último edital oficial localizado, de 2018.",
-    "O domínio informado da PMRR apresentou conteúdo inconsistente na pesquisa e não foi usado como base principal.",
+    "Foi localizado ato da UERR de 05/07/2023 com alteração de cronograma do concurso de 2018, indicando movimentação posterior desse certame.",
     "Revisão humana recomendada até a publicação do edital de 2026.",
     "Classificação automática: Pesquisa pendente (70/100)."
   ],
