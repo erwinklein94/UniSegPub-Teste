@@ -14,14 +14,14 @@
     "score": 62
   },
   "usage": {
-    "input_tokens": 10585,
+    "input_tokens": 26866,
     "input_tokens_details": {
-      "cached_tokens": 4736
+      "cached_tokens": 5760
     },
-    "output_tokens": 1075,
+    "output_tokens": 1506,
     "output_tokens_details": {
-      "reasoning_tokens": 106
+      "reasoning_tokens": 509
     },
-    "total_tokens": 11660
+    "total_tokens": 28372
   }
 }
