@@ -3,66 +3,10 @@
   "resumo": {
     "total": 110,
     "pendentes": 0,
-    "fracas": 29,
-    "fortes": 81
+    "fracas": 28,
+    "fortes": 82
   },
   "fila_acoes": [
-    {
-      "id": "pmba",
-      "sigla": "PMBA",
-      "nome": "Polícia Militar da Bahia",
-      "uf": "BA",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 1,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pmce",
-      "sigla": "PMCE",
-      "nome": "Polícia Militar de Ceará",
-      "uf": "CE",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 2,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pmce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
     {
       "id": "pmmg",
       "sigla": "PMMG",
@@ -72,7 +16,7 @@
       "classe": "fraca",
       "score": 65,
       "linhas_com_valor": 2,
-      "fontes": 5,
+      "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -693,6 +637,34 @@
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
         "instituicao": "pmam",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pmce",
+      "sigla": "PMCE",
+      "nome": "Polícia Militar de Ceará",
+      "uf": "CE",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pmce",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
@@ -1901,6 +1873,29 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pmba",
+      "sigla": "PMBA",
+      "nome": "Polícia Militar da Bahia",
+      "uf": "BA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 10,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmdf",
       "sigla": "PMDF",
       "nome": "Polícia Militar de Distrito Federal",
@@ -2771,7 +2766,7 @@
         "classe": "fraca",
         "score": 65,
         "linhas_com_valor": 2,
-        "fontes": 5,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -2842,34 +2837,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmrj",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "pmba",
-        "sigla": "PMBA",
-        "nome": "Polícia Militar da Bahia",
-        "uf": "BA",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 1,
-        "fontes": 3,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "pmba",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -3189,8 +3156,8 @@
         "uf": "CE",
         "acao": "fracas",
         "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 2,
+        "score": 82,
+        "linhas_com_valor": 3,
         "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
@@ -3200,7 +3167,7 @@
           "usou_openai": true,
           "depois": {
             "classe": "fraca",
-            "score": 65
+            "score": 82
           }
         },
         "workflow_sugerido": {
@@ -3816,6 +3783,29 @@
         "score": 100,
         "linhas_com_valor": 22,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pmba",
+        "sigla": "PMBA",
+        "nome": "Polícia Militar da Bahia",
+        "uf": "BA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 10,
+        "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
