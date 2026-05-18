@@ -2,211 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 80,
-    "fracas": 8,
-    "fortes": 22
+    "pendentes": 70,
+    "fracas": 10,
+    "fortes": 30
   },
   "fila_acoes": [
-    {
-      "id": "pcam",
-      "sigla": "PCAM",
-      "nome": "Polícia Civil do Estado do Amazonas",
-      "uf": "AM",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcam",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcap",
-      "sigla": "PCAP",
-      "nome": "Polícia Civil do Estado do Amapá",
-      "uf": "AP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcap",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcba",
-      "sigla": "PCBA",
-      "nome": "Polícia Civil da Bahia",
-      "uf": "BA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcce",
-      "sigla": "PCCE",
-      "nome": "Polícia Civil do Estado do Ceará",
-      "uf": "CE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcdf",
-      "sigla": "PCDF",
-      "nome": "Polícia Civil do Distrito Federal",
-      "uf": "DF",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcdf",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcerj",
-      "sigla": "PCERJ",
-      "nome": "Polícia Civil do Rio de Janeiro",
-      "uf": "RJ",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcerj",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pces",
-      "sigla": "PCES",
-      "nome": "Polícia Civil do Espírito Santo",
-      "uf": "ES",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pces",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcgo",
-      "sigla": "PCGO",
-      "nome": "Polícia Civil de Goiás",
-      "uf": "GO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcgo",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcma",
-      "sigla": "PCMA",
-      "nome": "Polícia Civil de Maranhão",
-      "uf": "MA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcma",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcmg",
-      "sigla": "PCMG",
-      "nome": "Polícia Civil de Minas Gerais",
-      "uf": "MG",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pcmg",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "pcms",
       "sigla": "PCMS",
@@ -1636,6 +1436,34 @@
       }
     },
     {
+      "id": "pces",
+      "sigla": "PCES",
+      "nome": "Polícia Civil do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 65,
+      "linhas_com_valor": 2,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 65
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pces",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "bmes",
       "sigla": "CBMES",
       "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -1830,6 +1658,80 @@
         "quantidade": "1",
         "modelo_openai": "gpt-5.4"
       }
+    },
+    {
+      "id": "pcba",
+      "sigla": "PCBA",
+      "nome": "Polícia Civil da Bahia",
+      "uf": "BA",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcba",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "pcce",
+      "sigla": "PCCE",
+      "nome": "Polícia Civil do Estado do Ceará",
+      "uf": "CE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcmg",
+      "sigla": "PCMG",
+      "nome": "Polícia Civil de Minas Gerais",
+      "uf": "MG",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 82,
+      "linhas_com_valor": 5,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": null
     },
     {
       "id": "bmac",
@@ -2315,6 +2217,144 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pcam",
+      "sigla": "PCAM",
+      "nome": "Polícia Civil do Estado do Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 6,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcap",
+      "sigla": "PCAP",
+      "nome": "Polícia Civil do Estado do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 22,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcdf",
+      "sigla": "PCDF",
+      "nome": "Polícia Civil do Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 20,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcerj",
+      "sigla": "PCERJ",
+      "nome": "Polícia Civil do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 22,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcgo",
+      "sigla": "PCGO",
+      "nome": "Polícia Civil de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 28,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "pcma",
+      "sigla": "PCMA",
+      "nome": "Polícia Civil de Maranhão",
+      "uf": "MA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmesp",
       "sigla": "PMESP",
       "nome": "Polícia Militar do Estado de São Paulo",
@@ -2348,26 +2388,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "prf",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcdf",
-        "sigla": "PCDF",
-        "nome": "Polícia Civil do Distrito Federal",
-        "uf": "DF",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcdf",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2493,26 +2513,6 @@
         }
       },
       {
-        "id": "pcmg",
-        "sigla": "PCMG",
-        "nome": "Polícia Civil de Minas Gerais",
-        "uf": "MG",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pmpr",
         "sigla": "PMPR",
         "nome": "Polícia Militar do Paraná",
@@ -2573,26 +2573,6 @@
         }
       },
       {
-        "id": "pcam",
-        "sigla": "PCAM",
-        "nome": "Polícia Civil do Estado do Amazonas",
-        "uf": "AM",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcam",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pmerj",
         "sigla": "PMERJ",
         "nome": "Polícia Militar do Rio de Janeiro",
@@ -2613,26 +2593,6 @@
         }
       },
       {
-        "id": "pcerj",
-        "sigla": "PCERJ",
-        "nome": "Polícia Civil do Rio de Janeiro",
-        "uf": "RJ",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcerj",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pmba",
         "sigla": "PMBA",
         "nome": "Polícia Militar da Bahia",
@@ -2648,26 +2608,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmba",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcba",
-        "sigla": "PCBA",
-        "nome": "Polícia Civil da Bahia",
-        "uf": "BA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcba",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2768,26 +2708,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmes",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pces",
-        "sigla": "PCES",
-        "nome": "Polícia Civil do Espírito Santo",
-        "uf": "ES",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pces",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2973,46 +2893,6 @@
         }
       },
       {
-        "id": "pcap",
-        "sigla": "PCAP",
-        "nome": "Polícia Civil do Estado do Amapá",
-        "uf": "AP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcap",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcce",
-        "sigla": "PCCE",
-        "nome": "Polícia Civil do Estado do Ceará",
-        "uf": "CE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcce",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pf",
         "sigla": "PF",
         "nome": "Polícia Federal",
@@ -3173,26 +3053,6 @@
         }
       },
       {
-        "id": "pcgo",
-        "sigla": "PCGO",
-        "nome": "Polícia Civil de Goiás",
-        "uf": "GO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcgo",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "ppgo",
         "sigla": "PPGO",
         "nome": "Polícia Penal de Goiás",
@@ -3228,26 +3088,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmma",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcma",
-        "sigla": "PCMA",
-        "nome": "Polícia Civil de Maranhão",
-        "uf": "MA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pcma",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -4019,6 +3859,34 @@
         }
       },
       {
+        "id": "pcba",
+        "sigla": "PCBA",
+        "nome": "Polícia Civil da Bahia",
+        "uf": "BA",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pcba",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "bmsc",
         "sigla": "CBMSC",
         "nome": "Corpo de Bombeiros Militar de Santa Catarina",
@@ -4070,6 +3938,34 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "bmes",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "pces",
+        "sigla": "PCES",
+        "nome": "Polícia Civil do Espírito Santo",
+        "uf": "ES",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 65,
+        "linhas_com_valor": 2,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 65
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "pces",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -4161,6 +4057,29 @@
     ],
     "fortes": [
       {
+        "id": "pcdf",
+        "sigla": "PCDF",
+        "nome": "Polícia Civil do Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 20,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "pmesp",
         "sigla": "PMESP",
         "nome": "Polícia Militar do Estado de São Paulo",
@@ -4199,6 +4118,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pcmg",
+        "sigla": "PCMG",
+        "nome": "Polícia Civil de Minas Gerais",
+        "uf": "MG",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "bmpr",
         "sigla": "CBMPR",
         "nome": "Corpo de Bombeiros Militar do Paraná",
@@ -4208,6 +4150,52 @@
         "score": 100,
         "linhas_com_valor": 18,
         "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcam",
+        "sigla": "PCAM",
+        "nome": "Polícia Civil do Estado do Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 6,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcerj",
+        "sigla": "PCERJ",
+        "nome": "Polícia Civil do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 22,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4245,6 +4233,29 @@
         "workflow_sugerido": null
       },
       {
+        "id": "pcap",
+        "sigla": "PCAP",
+        "nome": "Polícia Civil do Estado do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 22,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
         "id": "bmap",
         "sigla": "CBMAP",
         "nome": "Corpo de Bombeiros Militar do Amapá",
@@ -4254,6 +4265,75 @@
         "score": 100,
         "linhas_com_valor": 14,
         "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcce",
+        "sigla": "PCCE",
+        "nome": "Polícia Civil do Estado do Ceará",
+        "uf": "CE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 82,
+        "linhas_com_valor": 5,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcgo",
+        "sigla": "PCGO",
+        "nome": "Polícia Civil de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 28,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pcma",
+        "sigla": "PCMA",
+        "nome": "Polícia Civil de Maranhão",
+        "uf": "MA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {

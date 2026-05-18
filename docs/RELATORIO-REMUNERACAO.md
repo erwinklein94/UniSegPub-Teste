@@ -3,22 +3,12 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 80
-- Fracas: 8
-- Fortes: 22
+- Pendentes: 70
+- Fracas: 10
+- Fortes: 30
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | pcam | PCAM | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcap | PCAP | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcba | PCBA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcce | PCCE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcdf | PCDF | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcerj | PCERJ | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pces | PCES | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcgo | PCGO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcma | PCMA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcmg | PCMG | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcms | PCMS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcmt | PCMT | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pcpa | PCPA | 0 | 0 | Rodar atualização de remuneração |
@@ -90,6 +80,7 @@ Gerado em: 2026-05-18
 | pendentes | ppto | PPTO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | prf | PRF | 0 | 0 | Rodar atualização de remuneração |
 | fracas | bmrr | BMRR | 65 | 1 | Rodar atualização de remuneração |
+| fracas | pces | PCES | 65 | 2 | Rodar atualização de remuneração |
 | fracas | bmes | CBMES | 82 | 4 | Rodar atualização de remuneração |
 | fracas | bmmg | CBMMG | 82 | 3 | Rodar atualização de remuneração |
 | fracas | bmms | CBMMS | 82 | 3 | Rodar atualização de remuneração |
@@ -97,6 +88,9 @@ Gerado em: 2026-05-18
 | fracas | bmrj | CBMERJ | 82 | 4 | Rodar atualização de remuneração |
 | fracas | bmsc | CBMSC | 82 | 4 | Rodar atualização de remuneração |
 | fracas | pcal | PCAL | 82 | 3 | Rodar atualização de remuneração |
+| fracas | pcba | PCBA | 82 | 3 | Rodar atualização de remuneração |
+| fortes | pcce | PCCE | 82 | 5 | OK |
+| fortes | pcmg | PCMG | 82 | 5 | OK |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -118,4 +112,10 @@ Gerado em: 2026-05-18
 | fortes | bmsp | CBPMESP | 100 | 14 | OK |
 | fortes | bmto | BMTO | 100 | 17 | OK |
 | fortes | pcac | PCAC | 100 | 35 | OK |
+| fortes | pcam | PCAM | 100 | 6 | OK |
+| fortes | pcap | PCAP | 100 | 22 | OK |
+| fortes | pcdf | PCDF | 100 | 20 | OK |
+| fortes | pcerj | PCERJ | 100 | 22 | OK |
+| fortes | pcgo | PCGO | 100 | 28 | OK |
+| fortes | pcma | PCMA | 100 | 14 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |
