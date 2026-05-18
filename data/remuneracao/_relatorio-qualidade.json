@@ -2,39 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 1,
+    "pendentes": 0,
     "fracas": 30,
-    "fortes": 79
+    "fortes": 80
   },
   "fila_acoes": [
-    {
-      "id": "pprr",
-      "sigla": "PPRR",
-      "nome": "Polícia Penal de Roraima",
-      "uf": "RR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 6,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "pendente",
-          "score": 0
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "pprr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "bmrr",
       "sigla": "BMRR",
@@ -2593,6 +2565,29 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pprr",
+      "sigla": "PPRR",
+      "nome": "Polícia Penal de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "ppsc",
       "sigla": "PPSC",
       "nome": "Polícia Penal de Santa Catarina",
@@ -2686,36 +2681,7 @@
     }
   ],
   "grupos": {
-    "pendentes": [
-      {
-        "id": "pprr",
-        "sigla": "PPRR",
-        "nome": "Polícia Penal de Roraima",
-        "uf": "RR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 6,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "pendente",
-            "score": 0
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "pprr",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      }
-    ],
+    "pendentes": [],
     "fracas": [
       {
         "id": "pcal",
@@ -4779,6 +4745,29 @@
         "classe": "forte",
         "score": 100,
         "linhas_com_valor": 9,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "pprr",
+        "sigla": "PPRR",
+        "nome": "Polícia Penal de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
         "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",

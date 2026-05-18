@@ -3,13 +3,12 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 1
+- Pendentes: 0
 - Fracas: 30
-- Fortes: 79
+- Fortes: 80
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | pprr | PPRR | 0 | 0 | Rodar atualização de remuneração |
 | fracas | bmrr | BMRR | 65 | 1 | Rodar atualização de remuneração |
 | fracas | pces | PCES | 65 | 2 | Rodar atualização de remuneração |
 | fracas | pcmt | PCMT | 65 | 1 | Rodar atualização de remuneração |
@@ -115,6 +114,7 @@ Gerado em: 2026-05-18
 | fortes | pppe | PPPE | 100 | 8 | OK |
 | fortes | pppr | PPPR | 100 | 12 | OK |
 | fortes | pprn | PPRN | 100 | 21 | OK |
+| fortes | pprr | PPRR | 100 | 12 | OK |
 | fortes | ppsc | PPSC | 100 | 8 | OK |
 | fortes | ppse | PPSE | 100 | 6 | OK |
 | fortes | ppsp | PPSP | 100 | 20 | OK |

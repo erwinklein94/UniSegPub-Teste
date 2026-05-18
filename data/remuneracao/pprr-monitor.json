@@ -10,19 +10,19 @@
     "score": 0
   },
   "depois": {
-    "classe": "pendente",
-    "score": 0
+    "classe": "forte",
+    "score": 100
   },
-  "linhas": 0,
+  "linhas": 12,
   "usage": {
-    "input_tokens": 38268,
+    "input_tokens": 39081,
     "input_tokens_details": {
-      "cached_tokens": 4736
+      "cached_tokens": 0
     },
-    "output_tokens": 1486,
+    "output_tokens": 3091,
     "output_tokens_details": {
-      "reasoning_tokens": 664
+      "reasoning_tokens": 615
     },
-    "total_tokens": 39754
+    "total_tokens": 42172
   }
 }
