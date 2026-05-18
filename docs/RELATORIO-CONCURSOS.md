@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 43
-- Atualização forte: 65
+- Atualização fraca: 42
+- Atualização forte: 66
 
 ## Como atualizar
 
@@ -49,10 +49,7 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | PMPI | Polícia Militar de Piauí | PI | fraca | 48 | conteúdo fraco ou genérico; campos críticos sem dado: salario, escolaridade |
-| PPGO | Polícia Penal de Goiás | GO | fraca | 48 | conteúdo fraco ou genérico |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
-| PPRN | Polícia Penal de Rio Grande do Norte | RN | fraca | 52 | conteúdo fraco ou genérico |
-| PCTO | Polícia Civil de Tocantins | TO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: escolaridade |
 | PMRO | Polícia Militar de Rondônia | RO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMCE | Polícia Militar de Ceará | CE | fraca | 56 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
@@ -68,6 +65,7 @@ modelo_openai: gpt-5.4-mini
 | BMPI | Corpo de Bombeiros Militar do Piauí | PI | fraca | 64 | conteúdo fraco ou genérico |
 | BMRN | Corpo de Bombeiros Militar do Rio Grande do Norte | RN | fraca | 64 | conteúdo fraco ou genérico |
 | PPES | Polícia Penal do Espírito Santo | ES | fraca | 64 | conteúdo fraco ou genérico |
+| PPGO | Polícia Penal de Goiás | GO | fraca | 64 | conteúdo fraco ou genérico |
 | BMRR | Corpo de Bombeiros Militar de Roraima | RR | fraca | 68 | conteúdo fraco ou genérico |
 | BMSE | Corpo de Bombeiros Militar de Sergipe | SE | fraca | 68 | conteúdo fraco ou genérico |
 | BMTO | Corpo de Bombeiros Militar do Tocantins | TO | fraca | 68 | conteúdo fraco ou genérico |
@@ -84,6 +82,7 @@ modelo_openai: gpt-5.4-mini
 | PCPE | Polícia Civil de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
 | PCPI | Polícia Civil de Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCSE | Polícia Civil de Sergipe | SE | fraca | 76 | conteúdo fraco ou genérico |
+| PCTO | Polícia Civil de Tocantins | TO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRO | Polícia Penal de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRS | Polícia Penal do Rio Grande do Sul | RS | fraca | 76 | conteúdo fraco ou genérico |
 | PMSC | Polícia Militar de Santa Catarina | SC | fraca | 79 | conteúdo fraco ou genérico; campos genéricos: cotas, idade, estagio |
@@ -111,6 +110,7 @@ modelo_openai: gpt-5.4-mini
 | PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
 | PPDF | Polícia Penal de Distrito Federal | DF | forte | 84 | conteúdo bom |
 | PPMA | Polícia Penal de Maranhão | MA | forte | 84 | conteúdo bom |
+| PPRN | Polícia Penal de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PPSC | Polícia Penal de Santa Catarina | SC | forte | 84 | conteúdo bom |
 | PPSE | Polícia Penal de Sergipe | SE | forte | 84 | conteúdo bom |
 | PCAP | Polícia Civil do Estado do Amapá | AP | forte | 86 | campos genéricos: cotas, materias |

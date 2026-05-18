@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 43,
-    "fortes": 65
+    "fracas": 42,
+    "fortes": 66
   },
   "grupos": {
     "pendentes": [
@@ -117,37 +117,6 @@
         }
       },
       {
-        "id": "ppgo",
-        "sigla": "PPGO",
-        "nome": "Polícia Penal de Goiás",
-        "uf": "GO",
-        "score": 48,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "cotas",
-          "idade",
-          "materias",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "banca"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pppb",
         "sigla": "PPPB",
         "nome": "Polícia Penal de Paraíba",
@@ -170,77 +139,6 @@
           "edital",
           "salario",
           "idade",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprn",
-        "sigla": "PPRN",
-        "nome": "Polícia Penal de Rio Grande do Norte",
-        "uf": "RN",
-        "score": 52,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "cotas",
-          "idade",
-          "inscritos",
-          "estagio",
-          "validade",
-          "previsao"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "banca",
-          "cfsd"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pcto",
-        "sigla": "PCTO",
-        "nome": "Polícia Civil de Tocantins",
-        "uf": "TO",
-        "score": 54,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos críticos sem dado: escolaridade"
-        ],
-        "campos_ruins": [
-          "escolaridade",
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "cotas",
-          "idade",
-          "materias",
-          "etapas",
-          "cfsd",
           "previsao"
         ],
         "workflow_sugerido": {
@@ -727,6 +625,35 @@
           "vagas",
           "cotas",
           "escolaridade"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "ppgo",
+        "sigla": "PPGO",
+        "nome": "Polícia Penal de Goiás",
+        "uf": "GO",
+        "score": 64,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "idade",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "banca"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -1256,6 +1183,41 @@
           "idade",
           "materias",
           "banca"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pcto",
+        "sigla": "PCTO",
+        "nome": "Polícia Civil de Tocantins",
+        "uf": "TO",
+        "score": 76,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "etapas",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -1984,6 +1946,40 @@
           "idade",
           "materias",
           "cfsd"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pprn",
+        "sigla": "PPRN",
+        "nome": "Polícia Penal de Rio Grande do Norte",
+        "uf": "RN",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "banca",
+          "cfsd",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fortes",
@@ -3585,37 +3581,6 @@
       }
     },
     {
-      "id": "ppgo",
-      "sigla": "PPGO",
-      "nome": "Polícia Penal de Goiás",
-      "uf": "GO",
-      "score": 48,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "cotas",
-        "idade",
-        "materias",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "banca"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "pppb",
       "sigla": "PPPB",
       "nome": "Polícia Penal de Paraíba",
@@ -3638,77 +3603,6 @@
         "edital",
         "salario",
         "idade",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprn",
-      "sigla": "PPRN",
-      "nome": "Polícia Penal de Rio Grande do Norte",
-      "uf": "RN",
-      "score": 52,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "cotas",
-        "idade",
-        "inscritos",
-        "estagio",
-        "validade",
-        "previsao"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "banca",
-        "cfsd"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pcto",
-      "sigla": "PCTO",
-      "nome": "Polícia Civil de Tocantins",
-      "uf": "TO",
-      "score": 54,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos críticos sem dado: escolaridade"
-      ],
-      "campos_ruins": [
-        "escolaridade",
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "cotas",
-        "idade",
-        "materias",
-        "etapas",
-        "cfsd",
         "previsao"
       ],
       "workflow_sugerido": {
@@ -4195,6 +4089,35 @@
         "vagas",
         "cotas",
         "escolaridade"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppgo",
+      "sigla": "PPGO",
+      "nome": "Polícia Penal de Goiás",
+      "uf": "GO",
+      "score": 64,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "idade",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "banca"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -4761,6 +4684,41 @@
         "idade",
         "materias",
         "banca"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pcto",
+      "sigla": "PCTO",
+      "nome": "Polícia Civil de Tocantins",
+      "uf": "TO",
+      "score": 76,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "etapas",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -5423,6 +5381,40 @@
         "idade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprn",
+      "sigla": "PPRN",
+      "nome": "Polícia Penal de Rio Grande do Norte",
+      "uf": "RN",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "banca",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",
