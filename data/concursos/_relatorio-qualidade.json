@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 40,
-    "fortes": 68
+    "fracas": 39,
+    "fortes": 69
   },
   "grupos": {
     "pendentes": [
@@ -135,40 +135,6 @@
           "vagas",
           "cotas",
           "escolaridade"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "pprj",
-        "sigla": "PPRJ",
-        "nome": "Polícia Penal do Rio de Janeiro",
-        "uf": "RJ",
-        "score": 60,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "cotas",
-          "idade",
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "escolaridade",
-          "materias",
-          "cfsd",
-          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -1918,6 +1884,39 @@
         }
       },
       {
+        "id": "pprj",
+        "sigla": "PPRJ",
+        "nome": "Polícia Penal do Rio de Janeiro",
+        "uf": "RJ",
+        "score": 84,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "cotas",
+          "idade",
+          "escolaridade",
+          "materias",
+          "cfsd",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "pprn",
         "sigla": "PPRN",
         "nome": "Polícia Penal de Rio Grande do Norte",
@@ -3599,40 +3598,6 @@
         "vagas",
         "cotas",
         "escolaridade"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "pprj",
-      "sigla": "PPRJ",
-      "nome": "Polícia Penal do Rio de Janeiro",
-      "uf": "RJ",
-      "score": 60,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "cotas",
-        "idade",
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "escolaridade",
-        "materias",
-        "cfsd",
-        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -5345,6 +5310,39 @@
         "idade",
         "materias",
         "cfsd"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pprj",
+      "sigla": "PPRJ",
+      "nome": "Polícia Penal do Rio de Janeiro",
+      "uf": "RJ",
+      "score": 84,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "cotas",
+        "idade",
+        "escolaridade",
+        "materias",
+        "cfsd",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

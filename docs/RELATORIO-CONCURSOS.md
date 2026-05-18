@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 40
-- Atualização forte: 68
+- Atualização fraca: 39
+- Atualização forte: 69
 
 ## Como atualizar
 
@@ -50,7 +50,6 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
-| PPRJ | Polícia Penal do Rio de Janeiro | RJ | fraca | 60 | conteúdo fraco ou genérico |
 | BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -109,6 +108,7 @@ modelo_openai: gpt-5.4-mini
 | PPAP | Polícia Penal de Amapá | AP | forte | 84 | conteúdo bom |
 | PPDF | Polícia Penal de Distrito Federal | DF | forte | 84 | conteúdo bom |
 | PPMA | Polícia Penal de Maranhão | MA | forte | 84 | conteúdo bom |
+| PPRJ | Polícia Penal do Rio de Janeiro | RJ | forte | 84 | conteúdo bom |
 | PPRN | Polícia Penal de Rio Grande do Norte | RN | forte | 84 | conteúdo bom |
 | PPSC | Polícia Penal de Santa Catarina | SC | forte | 84 | conteúdo bom |
 | PPSE | Polícia Penal de Sergipe | SE | forte | 84 | conteúdo bom |
