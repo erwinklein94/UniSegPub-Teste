@@ -6,9 +6,9 @@
   "tema": "concursos",
   "status": "Atualização fraca",
   "titulo": "PPPB: concurso da Polícia Penal da Paraíba segue em preparação com comissão organizadora formada",
-  "resumo": "O concurso da Polícia Penal da Paraíba foi anunciado em 15/04/2024 e teve comissão organizadora designada em 23/10/2024. Até 18/05/2026, não foi localizado edital de abertura com inscrições, vagas definidas, banca e cronograma do novo certame.",
-  "edital": "Novo concurso para Policial Penal da Paraíba em fase de preparação. Anunciado em 15/04/2024 e com comissão organizadora designada em 23/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo concurso.",
-  "salario": "Policial Penal: R$ 4.844,14 na classe A-I da tabela remuneratória de janeiro de 2024.",
+  "resumo": "O Governo da Paraíba anunciou novo concurso para Policial Penal em 15/04/2024. Em 23/10/2024, foi publicada a comissão organizadora do certame. Até 18/05/2026, não foi localizado edital de abertura com inscrições, banca definida, vagas oficiais e cronograma do novo concurso.",
+  "edital": "Novo concurso para Policial Penal da Paraíba em fase de preparação. Anunciado em 15/04/2024 e com comissão organizadora publicada em 23/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo concurso.",
+  "salario": "Policial Penal: R$ 4.844,14 na referência 1701 A I da tabela da Polícia Penal de 2024.",
   "vagas": "Quantidade de vagas do novo concurso não localizada nas fontes consultadas.",
   "cotas": "Não localizado nas fontes consultadas.",
   "idade": "Idade mínima, idade máxima, altura mínima, CNH e demais requisitos físicos do novo concurso não localizados nas fontes consultadas.",
@@ -23,6 +23,12 @@
   "previsao": "Concurso em preparação, sem data oficial de publicação do edital localizada nas fontes consultadas.",
   "site": "https://www.pb.gov.br",
   "fontes": [
+    {
+      "titulo": "João Azevêdo anuncia mais um concurso público para a Polícia Penal",
+      "url": "https://www.paraiba.pb.gov.br/noticias/joao-azevedo-anuncia-mais-um-concurso-publico-para-a-policia-penal",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
     {
       "titulo": "Polícia Penal terá novo concurso",
       "url": "https://auniao.pb.gov.br/noticias/caderno_politicas/policia-penal-tera-novo-concurso",
@@ -42,7 +48,13 @@
       "data_consulta": "2026-05-18"
     },
     {
-      "titulo": "Tabela com o padrão remuneratório das categorias funcionais do Estado da Paraíba | janeiro/2024",
+      "titulo": "Diário Oficial do Estado da Paraíba de 26/04/2024 - Anexo VIII Tabela da Polícia Penal 2024",
+      "url": "https://auniao.pb.gov.br/servicos/doe/2024/abril/diario-oficial-26-04-2024-portal.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Tabela com o padrão remuneratório das categorias funcionais do Estado da Paraíba",
       "url": "https://paraiba.pb.gov.br/diretas/secretaria-de-administracao/arquivos/TABELACOMOPADRAOREMUNERATORIODOSCARGOSEFUNCOES_3_21_021.pdf",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
@@ -53,7 +65,7 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Até 18/05/2026, não foi localizado edital de abertura do novo concurso da Polícia Penal da Paraíba.",
-    "Há anúncio oficial do concurso em 15/04/2024 e comissão organizadora designada em 23/10/2024.",
+    "Há anúncio oficial do concurso em 15/04/2024 e comissão organizadora publicada em 23/10/2024.",
     "Vagas, banca, escolaridade, idade, etapas e disciplinas do novo certame não apareceram de forma objetiva nas fontes oficiais consultadas.",
     "Classificação automática: Atualização fraca.",
     "Classificação automática: Atualização fraca (48/100)."

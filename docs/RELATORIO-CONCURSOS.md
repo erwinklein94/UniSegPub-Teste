@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 39
-- Atualização forte: 69
+- Atualização fraca: 38
+- Atualização forte: 70
 
 ## Como atualizar
 
@@ -50,7 +50,6 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
-| BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PCPB | Polícia Civil de Paraíba | PB | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -95,6 +94,7 @@ modelo_openai: gpt-5.4-mini
 | BMPB | Corpo de Bombeiros Militar da Paraíba | PB | forte | 78 | campos críticos sem dado: banca |
 | BMAC | Corpo de Bombeiros Militar do Acre | AC | forte | 84 | conteúdo bom |
 | BMBA | Corpo de Bombeiros Militar da Bahia | BA | forte | 84 | conteúdo bom |
+| BMMA | Corpo de Bombeiros Militar do Maranhão | MA | forte | 84 | conteúdo bom |
 | BMRS | Corpo de Bombeiros Militar do Rio Grande do Sul | RS | forte | 84 | conteúdo bom |
 | PCGO | Polícia Civil de Goiás | GO | forte | 84 | conteúdo bom |
 | PCMA | Polícia Civil de Maranhão | MA | forte | 84 | conteúdo bom |
