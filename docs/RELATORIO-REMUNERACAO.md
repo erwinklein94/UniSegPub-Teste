@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 43
+- Pendentes: 34
 - Fracas: 18
-- Fortes: 49
+- Fortes: 58
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
 | pendentes | pcmt | PCMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmms | PMMS | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmmt | PMMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmpa | PMPA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmpb | PMPB | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmpe | PMPE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmpi | PMPI | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmpr | PMPR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmrn | PMRN | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmro | PMRO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmrr | PMRR | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmrs | PMRS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmsc | PMSC | 0 | 0 | Rodar atualização de remuneração |
@@ -119,3 +110,12 @@ Gerado em: 2026-05-18
 | fortes | pmes | PMES | 100 | 8 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |
 | fortes | pmgo | PMGO | 100 | 14 | OK |
+| fortes | pmms | PMMS | 100 | 12 | OK |
+| fortes | pmmt | PMMT | 100 | 18 | OK |
+| fortes | pmpa | PMPA | 100 | 9 | OK |
+| fortes | pmpb | PMPB | 100 | 13 | OK |
+| fortes | pmpe | PMPE | 100 | 12 | OK |
+| fortes | pmpi | PMPI | 100 | 12 | OK |
+| fortes | pmpr | PMPR | 100 | 30 | OK |
+| fortes | pmrn | PMRN | 100 | 13 | OK |
+| fortes | pmro | PMRO | 100 | 13 | OK |
