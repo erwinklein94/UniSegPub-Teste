@@ -81,37 +81,6 @@
     ],
     "fracas": [
       {
-        "id": "pppb",
-        "sigla": "PPPB",
-        "nome": "Polícia Penal de Paraíba",
-        "uf": "PB",
-        "score": 48,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "cotas",
-          "inscritos",
-          "cfsd",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "idade",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "bmro",
         "sigla": "BMRO",
         "nome": "Corpo de Bombeiros Militar de Rondônia",
@@ -171,7 +140,6 @@
           "vagas",
           "idade",
           "escolaridade",
-          "materias",
           "banca",
           "previsao"
         ],
@@ -359,6 +327,36 @@
           "salario",
           "vagas",
           "banca"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "pppb",
+        "sigla": "PPPB",
+        "nome": "Polícia Penal de Paraíba",
+        "uf": "PB",
+        "score": 64,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "cotas",
+          "inscritos",
+          "estagio"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "idade",
+          "escolaridade",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -3548,37 +3546,6 @@
       }
     },
     {
-      "id": "pppb",
-      "sigla": "PPPB",
-      "nome": "Polícia Penal de Paraíba",
-      "uf": "PB",
-      "score": 48,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "cotas",
-        "inscritos",
-        "cfsd",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "idade",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
       "id": "bmro",
       "sigla": "BMRO",
       "nome": "Corpo de Bombeiros Militar de Rondônia",
@@ -3638,7 +3605,6 @@
         "vagas",
         "idade",
         "escolaridade",
-        "materias",
         "banca",
         "previsao"
       ],
@@ -3826,6 +3792,36 @@
         "salario",
         "vagas",
         "banca"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "pppb",
+      "sigla": "PPPB",
+      "nome": "Polícia Penal de Paraíba",
+      "uf": "PB",
+      "score": 64,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "cotas",
+        "inscritos",
+        "estagio"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "idade",
+        "escolaridade",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",

@@ -48,7 +48,6 @@ modelo_openai: gpt-5.4-mini
 
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
-| PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PMMA | Polícia Militar de Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPCE | Polícia Penal de Ceará | CE | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -57,6 +56,7 @@ modelo_openai: gpt-5.4-mini
 | BMRN | Corpo de Bombeiros Militar do Rio Grande do Norte | RN | fraca | 64 | conteúdo fraco ou genérico |
 | PPES | Polícia Penal do Espírito Santo | ES | fraca | 64 | conteúdo fraco ou genérico |
 | PPGO | Polícia Penal de Goiás | GO | fraca | 64 | conteúdo fraco ou genérico |
+| PPPB | Polícia Penal de Paraíba | PB | fraca | 64 | conteúdo fraco ou genérico |
 | BMRR | Corpo de Bombeiros Militar de Roraima | RR | fraca | 68 | conteúdo fraco ou genérico |
 | BMSE | Corpo de Bombeiros Militar de Sergipe | SE | fraca | 68 | conteúdo fraco ou genérico |
 | BMTO | Corpo de Bombeiros Militar do Tocantins | TO | fraca | 68 | conteúdo fraco ou genérico |

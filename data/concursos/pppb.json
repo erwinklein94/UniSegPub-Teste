@@ -5,26 +5,26 @@
   "uf": "PB",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "PPPB: concurso da Polícia Penal da Paraíba segue em preparação, com comissão organizadora republicada",
-  "resumo": "O Governo da Paraíba anunciou novo concurso para a Polícia Penal em 15/04/2024. A comissão organizadora para provimento de cargos efetivos no âmbito da Secretaria de Estado da Administração Penitenciária foi republicada no Diário Oficial de 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo concurso.",
-  "edital": "Novo concurso da Polícia Penal da Paraíba em preparação. Anunciado em 15/04/2024 e com comissão organizadora republicada em 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura.",
-  "salario": "Policial Penal: R$ 6.308,96 na classe inicial 1701 A I da tabela da Polícia Penal de 2026.",
+  "titulo": "PPPB: novo concurso da Polícia Penal da Paraíba segue em preparação, com comissão organizadora republicada",
+  "resumo": "O Governo da Paraíba anunciou novo concurso para a Polícia Penal em 16/04/2024. A comissão organizadora do concurso para cargos efetivos da Secretaria de Estado da Administração Penitenciária foi republicada no Diário Oficial de 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo concurso.",
+  "edital": "Novo concurso da Polícia Penal da Paraíba em preparação. Anunciado em 16/04/2024 e com comissão organizadora republicada em 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura.",
+  "salario": "Policial Penal: R$ 6.308,96 na classe inicial A I da tabela da Polícia Penal de 2026.",
   "vagas": "Quantidade de vagas do novo concurso não localizada nas fontes consultadas.",
   "cotas": "Não localizado nas fontes consultadas.",
-  "idade": "Idade mínima, idade máxima, altura mínima, CNH e demais requisitos físicos do novo concurso não localizados nas fontes consultadas.",
-  "escolaridade": "Escolaridade exigida para o novo concurso não localizada nas fontes consultadas.",
+  "idade": "18 anos no mínimo e CNH categoria B. Idade máxima e altura mínima não localizadas nas fontes consultadas.",
+  "escolaridade": "Nível médio completo.",
   "materias": "Disciplinas do novo concurso não localizadas nas fontes consultadas.",
   "banca": "Não localizada nas fontes consultadas.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Etapas do novo concurso não localizadas nas fontes consultadas.",
-  "cfsd": "Não localizado nas fontes consultadas.",
+  "etapas": "Prova objetiva ou prova objetiva e títulos, exame médico, teste de aptidão física, avaliação psicológica, investigação social e curso de formação.",
+  "cfsd": "Curso de formação com caráter eliminatório e classificatório, com frequência mínima de 75% da carga horária total.",
   "estagio": "Não localizado nas fontes consultadas.",
-  "validade": "Não localizado nas fontes consultadas.",
+  "validade": "Até 2 anos, prorrogável uma única vez por igual período.",
   "previsao": "Concurso em preparação. Até 18/05/2026, não foi localizada data oficial para publicação do edital.",
   "site": "https://www.pb.gov.br",
   "fontes": [
     {
-      "titulo": "João Azevêdo anuncia mais um concurso público para a Polícia Penal",
+      "titulo": "Polícia Penal terá novo concurso",
       "url": "https://auniao.pb.gov.br/noticias/caderno_politicas/policia-penal-tera-novo-concurso",
       "tipo": "fonte oficial",
       "data_consulta": "2026-05-18"
@@ -32,6 +32,12 @@
     {
       "titulo": "Diário Oficial do Estado da Paraíba de 24/10/2024",
       "url": "https://auniao.pb.gov.br/servicos/doe/2024/outubro/diario-oficial-24-10-2024-portal.pdf",
+      "tipo": "diário oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial do Estado da Paraíba de 19/06/2019 - Lei nº 11.359/2019",
+      "url": "https://auniao.pb.gov.br/servicos/doe/2019/junho/diario-oficial-19-06-2019.pdf",
       "tipo": "diário oficial",
       "data_consulta": "2026-05-18"
     },
@@ -47,13 +53,15 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Até 18/05/2026, não foi localizado edital de abertura do novo concurso da Polícia Penal da Paraíba.",
-    "Há anúncio oficial do concurso em 15/04/2024 e comissão organizadora republicada no DOE de 24/10/2024.",
-    "Vagas, banca, escolaridade, idade, etapas e disciplinas do novo certame não apareceram de forma objetiva nas fontes oficiais consultadas.",
-    "Classificação automática: Atualização fraca (48/100)."
+    "Há anúncio oficial do concurso em 16/04/2024 e comissão organizadora republicada no DOE de 24/10/2024.",
+    "Vagas, banca, matérias, idade máxima, altura mínima e cotas do novo certame não apareceram de forma objetiva nas fontes oficiais consultadas.",
+    "A escolaridade, etapas, validade, CNH e requisitos mínimos foram confirmados na Lei nº 11.359/2019.",
+    "Classificação automática: Atualização fraca.",
+    "Classificação automática: Atualização fraca (64/100)."
   ],
   "classe_atualizacao": "fraca",
   "qualidade_publicacao": "fraca",
-  "score_publicacao": "48",
+  "score_publicacao": "64",
   "modelo_openai": "gpt-5.4",
   "atualizado_pela_openai": true
 }
