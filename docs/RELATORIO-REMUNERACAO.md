@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 14
-- Fracas: 27
-- Fortes: 69
+- Pendentes: 5
+- Fracas: 30
+- Fortes: 75
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | pppb | PPPB | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pppe | PPPE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pppi | PPPI | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pppr | PPPR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pprj | PPRJ | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pprn | PPRN | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | ppro | PPRO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pprr | PPRR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pprs | PPRS | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | ppsc | PPSC | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | ppse | PPSE | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | ppsp | PPSP | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | ppto | PPTO | 0 | 0 | Rodar atualização de remuneração |
@@ -52,6 +43,10 @@ Gerado em: 2026-05-18
 | fracas | pmma | PMMA | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pmrs | PMRS | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pppa | PPPA | 82 | 3 | Rodar atualização de remuneração |
+| fortes | pppi | PPPI | 82 | 5 | OK |
+| fracas | pprj | PPRJ | 82 | 3 | Rodar atualização de remuneração |
+| fracas | ppro | PPRO | 82 | 4 | Rodar atualização de remuneração |
+| fracas | pprs | PPRS | 82 | 3 | Rodar atualização de remuneração |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -119,3 +114,8 @@ Gerado em: 2026-05-18
 | fortes | ppgo | PPGO | 100 | 10 | OK |
 | fortes | ppms | PPMS | 100 | 9 | OK |
 | fortes | ppmt | PPMT | 100 | 8 | OK |
+| fortes | pppb | PPPB | 100 | 35 | OK |
+| fortes | pppe | PPPE | 100 | 8 | OK |
+| fortes | pppr | PPPR | 100 | 12 | OK |
+| fortes | pprn | PPRN | 100 | 21 | OK |
+| fortes | ppsc | PPSC | 100 | 8 | OK |
