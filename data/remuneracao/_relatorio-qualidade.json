@@ -3,94 +3,10 @@
   "resumo": {
     "total": 110,
     "pendentes": 0,
-    "fracas": 30,
-    "fortes": 80
+    "fracas": 29,
+    "fortes": 81
   },
   "fila_acoes": [
-    {
-      "id": "bmrr",
-      "sigla": "BMRR",
-      "nome": "Corpo de Bombeiros Militar de Roraima",
-      "uf": "RR",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 1,
-      "fontes": 3,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "bmrr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pces",
-      "sigla": "PCES",
-      "nome": "Polícia Civil do Espírito Santo",
-      "uf": "ES",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 2,
-      "fontes": 2,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pces",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
-    {
-      "id": "pcmt",
-      "sigla": "PCMT",
-      "nome": "Polícia Judiciária Civil de Mato Grosso",
-      "uf": "MT",
-      "acao": "fracas",
-      "classe": "fraca",
-      "score": 65,
-      "linhas_com_valor": 1,
-      "fontes": 5,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "fraca",
-          "score": 65
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "instituicao": "pcmt",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4"
-      }
-    },
     {
       "id": "pmba",
       "sigla": "PMBA",
@@ -591,6 +507,34 @@
       "workflow_sugerido": null
     },
     {
+      "id": "pces",
+      "sigla": "PCES",
+      "nome": "Polícia Civil do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 6,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pces",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "pcmg",
       "sigla": "PCMG",
       "nome": "Polícia Civil de Minas Gerais",
@@ -612,6 +556,34 @@
         }
       },
       "workflow_sugerido": null
+    },
+    {
+      "id": "pcmt",
+      "sigla": "PCMT",
+      "nome": "Polícia Judiciária Civil de Mato Grosso",
+      "uf": "MT",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "pcmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
     },
     {
       "id": "pcpe",
@@ -1294,6 +1266,29 @@
       "score": 100,
       "linhas_com_valor": 13,
       "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmrr",
+      "sigla": "BMRR",
+      "nome": "Corpo de Bombeiros Militar de Roraima",
+      "uf": "RR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 15,
+      "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -3054,9 +3049,9 @@
         "uf": "ES",
         "acao": "fracas",
         "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 2,
-        "fontes": 2,
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 6,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -3065,7 +3060,7 @@
           "usou_openai": true,
           "depois": {
             "classe": "fraca",
-            "score": 65
+            "score": 82
           }
         },
         "workflow_sugerido": {
@@ -3138,9 +3133,9 @@
         "uf": "MT",
         "acao": "fracas",
         "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 1,
-        "fontes": 5,
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -3149,7 +3144,7 @@
           "usou_openai": true,
           "depois": {
             "classe": "fraca",
-            "score": 65
+            "score": 82
           }
         },
         "workflow_sugerido": {
@@ -3379,34 +3374,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
           "instituicao": "ppro",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4"
-        }
-      },
-      {
-        "id": "bmrr",
-        "sigla": "BMRR",
-        "nome": "Corpo de Bombeiros Militar de Roraima",
-        "uf": "RR",
-        "acao": "fracas",
-        "classe": "fraca",
-        "score": 65,
-        "linhas_com_valor": 1,
-        "fontes": 3,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "fraca",
-            "score": 65
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "instituicao": "bmrr",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
@@ -5229,6 +5196,29 @@
         "score": 100,
         "linhas_com_valor": 13,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmrr",
+        "sigla": "BMRR",
+        "nome": "Corpo de Bombeiros Militar de Roraima",
+        "uf": "RR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 15,
+        "fontes": 3,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {

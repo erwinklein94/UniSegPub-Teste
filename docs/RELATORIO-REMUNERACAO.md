@@ -4,14 +4,11 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 0
-- Fracas: 30
-- Fortes: 80
+- Fracas: 29
+- Fortes: 81
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| fracas | bmrr | BMRR | 65 | 1 | Rodar atualização de remuneração |
-| fracas | pces | PCES | 65 | 2 | Rodar atualização de remuneração |
-| fracas | pcmt | PCMT | 65 | 1 | Rodar atualização de remuneração |
 | fracas | pmba | PMBA | 65 | 1 | Rodar atualização de remuneração |
 | fracas | pmce | PMCE | 65 | 2 | Rodar atualização de remuneração |
 | fracas | pmmg | PMMG | 65 | 2 | Rodar atualização de remuneração |
@@ -30,7 +27,9 @@ Gerado em: 2026-05-18
 | fracas | pcal | PCAL | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pcba | PCBA | 82 | 3 | Rodar atualização de remuneração |
 | fortes | pcce | PCCE | 82 | 5 | OK |
+| fracas | pces | PCES | 82 | 4 | Rodar atualização de remuneração |
 | fortes | pcmg | PCMG | 82 | 5 | OK |
+| fracas | pcmt | PCMT | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pcpe | PCPE | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pcrs | PCRS | 82 | 3 | Rodar atualização de remuneração |
 | fracas | pcsc | PCSC | 82 | 4 | Rodar atualização de remuneração |
@@ -59,6 +58,7 @@ Gerado em: 2026-05-18
 | fortes | bmpr | CBMPR | 100 | 18 | OK |
 | fortes | bmrn | BMRN | 100 | 12 | OK |
 | fortes | bmro | BMRO | 100 | 13 | OK |
+| fortes | bmrr | BMRR | 100 | 15 | OK |
 | fortes | bmrs | BMRS | 100 | 15 | OK |
 | fortes | bmse | BMSE | 100 | 15 | OK |
 | fortes | bmsp | CBPMESP | 100 | 14 | OK |
