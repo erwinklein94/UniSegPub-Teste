@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 61
-- Fracas: 11
-- Fortes: 38
+- Pendentes: 52
+- Fracas: 14
+- Fortes: 44
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
 | pendentes | pcmt | PCMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcrs | PCRS | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcsc | PCSC | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcse | PCSE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcsp | PCSP | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pcto | PCTO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pf | PF | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmac | PMAC | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmal | PMAL | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | pmam | PMAM | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmap | PMAP | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmba | PMBA | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | pmce | PMCE | 0 | 0 | Rodar atualização de remuneração |
@@ -83,6 +74,9 @@ Gerado em: 2026-05-18
 | fortes | pcce | PCCE | 82 | 5 | OK |
 | fortes | pcmg | PCMG | 82 | 5 | OK |
 | fracas | pcpe | PCPE | 82 | 3 | Rodar atualização de remuneração |
+| fracas | pcrs | PCRS | 82 | 3 | Rodar atualização de remuneração |
+| fracas | pcsc | PCSC | 82 | 4 | Rodar atualização de remuneração |
+| fracas | pmam | PMAM | 82 | 3 | Rodar atualização de remuneração |
 | fortes | bmac | BMAC | 100 | 19 | OK |
 | fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
@@ -118,4 +112,10 @@ Gerado em: 2026-05-18
 | fortes | pcrn | PCRN | 100 | 21 | OK |
 | fortes | pcro | PCRO | 100 | 52 | OK |
 | fortes | pcrr | PCRR | 100 | 9 | OK |
+| fortes | pcse | PCSE | 100 | 10 | OK |
+| fortes | pcsp | PCSP | 100 | 56 | OK |
+| fortes | pcto | PCTO | 100 | 10 | OK |
+| fortes | pf | PF | 100 | 10 | OK |
+| fortes | pmac | PMAC | 100 | 17 | OK |
+| fortes | pmal | PMAL | 100 | 27 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |
