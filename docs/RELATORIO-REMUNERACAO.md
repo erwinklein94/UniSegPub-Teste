@@ -3,22 +3,12 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 100
-- Fracas: 1
-- Fortes: 9
+- Pendentes: 90
+- Fracas: 5
+- Fortes: 15
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | bmal | BMAL | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmmg | CBMMG | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmms | CBMMS | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmmt | CBMMT | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmpa | BMPA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmpb | BMPB | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmpe | BMPE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmpi | BMPI | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmpr | CBMPR | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmrj | CBMERJ | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmrn | BMRN | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmro | BMRO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmrr | BMRR | 0 | 0 | Rodar atualização de remuneração |
@@ -110,7 +100,12 @@ Gerado em: 2026-05-18
 | pendentes | ppto | PPTO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | prf | PRF | 0 | 0 | Rodar atualização de remuneração |
 | fracas | bmes | CBMES | 82 | 4 | Rodar atualização de remuneração |
+| fracas | bmmg | CBMMG | 82 | 3 | Rodar atualização de remuneração |
+| fracas | bmms | CBMMS | 82 | 3 | Rodar atualização de remuneração |
+| fracas | bmmt | CBMMT | 82 | 3 | Rodar atualização de remuneração |
+| fracas | bmrj | CBMERJ | 82 | 4 | Rodar atualização de remuneração |
 | fortes | bmac | BMAC | 100 | 19 | OK |
+| fortes | bmal | BMAL | 100 | 31 | OK |
 | fortes | bmam | BMAM | 100 | 11 | OK |
 | fortes | bmap | CBMAP | 100 | 14 | OK |
 | fortes | bmba | BMBA | 100 | 13 | OK |
@@ -118,4 +113,9 @@ Gerado em: 2026-05-18
 | fortes | bmdf | BMDF | 100 | 16 | OK |
 | fortes | bmgo | BMGO | 100 | 16 | OK |
 | fortes | bmma | BMMA | 100 | 14 | OK |
+| fortes | bmpa | BMPA | 100 | 7 | OK |
+| fortes | bmpb | BMPB | 100 | 13 | OK |
+| fortes | bmpe | BMPE | 100 | 48 | OK |
+| fortes | bmpi | BMPI | 100 | 12 | OK |
+| fortes | bmpr | CBMPR | 100 | 18 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |

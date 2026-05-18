@@ -2,219 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 100,
-    "fracas": 1,
-    "fortes": 9
+    "pendentes": 90,
+    "fracas": 5,
+    "fortes": 15
   },
   "fila_acoes": [
-    {
-      "id": "bmal",
-      "sigla": "BMAL",
-      "nome": "Corpo de Bombeiros Militar de Alagoas",
-      "uf": "AL",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 5,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": "2026-05-18",
-      "monitor": {
-        "atualizado_em": "2026-05-18",
-        "modelo": "gpt-5.4",
-        "usou_openai": true,
-        "depois": {
-          "classe": "pendente",
-          "score": 0
-        }
-      },
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmal",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmmg",
-      "sigla": "CBMMG",
-      "nome": "Corpo de Bombeiros Militar de Minas Gerais",
-      "uf": "MG",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmmg",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmms",
-      "sigla": "CBMMS",
-      "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
-      "uf": "MS",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmms",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmmt",
-      "sigla": "CBMMT",
-      "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
-      "uf": "MT",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmmt",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpa",
-      "sigla": "BMPA",
-      "nome": "Corpo de Bombeiros Militar do Pará",
-      "uf": "PA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmpa",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpb",
-      "sigla": "BMPB",
-      "nome": "Corpo de Bombeiros Militar da Paraíba",
-      "uf": "PB",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmpb",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpe",
-      "sigla": "BMPE",
-      "nome": "Corpo de Bombeiros Militar de Pernambuco",
-      "uf": "PE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmpe",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpi",
-      "sigla": "BMPI",
-      "nome": "Corpo de Bombeiros Militar do Piauí",
-      "uf": "PI",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmpi",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpr",
-      "sigla": "CBMPR",
-      "nome": "Corpo de Bombeiros Militar do Paraná",
-      "uf": "PR",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmpr",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmrj",
-      "sigla": "CBMERJ",
-      "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
-      "uf": "RJ",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmrj",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "bmrn",
       "sigla": "BMRN",
@@ -2044,6 +1836,118 @@
       }
     },
     {
+      "id": "bmmg",
+      "sigla": "CBMMG",
+      "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+      "uf": "MG",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 5,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmmg",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmms",
+      "sigla": "CBMMS",
+      "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+      "uf": "MS",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmms",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmmt",
+      "sigla": "CBMMT",
+      "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+      "uf": "MT",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 3,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmmt",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmrj",
+      "sigla": "CBMERJ",
+      "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+      "uf": "RJ",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmrj",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
       "id": "bmac",
       "sigla": "BMAC",
       "nome": "Corpo de Bombeiros Militar do Acre",
@@ -2053,6 +1957,29 @@
       "score": 100,
       "linhas_com_valor": 19,
       "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmal",
+      "sigla": "BMAL",
+      "nome": "Corpo de Bombeiros Militar de Alagoas",
+      "uf": "AL",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 31,
+      "fontes": 4,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -2214,6 +2141,121 @@
       "score": 100,
       "linhas_com_valor": 14,
       "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpa",
+      "sigla": "BMPA",
+      "nome": "Corpo de Bombeiros Militar do Pará",
+      "uf": "PA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 7,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpb",
+      "sigla": "BMPB",
+      "nome": "Corpo de Bombeiros Militar da Paraíba",
+      "uf": "PB",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpe",
+      "sigla": "BMPE",
+      "nome": "Corpo de Bombeiros Militar de Pernambuco",
+      "uf": "PE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 48,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpi",
+      "sigla": "BMPI",
+      "nome": "Corpo de Bombeiros Militar do Piauí",
+      "uf": "PI",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 12,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmpr",
+      "sigla": "CBMPR",
+      "nome": "Corpo de Bombeiros Militar do Paraná",
+      "uf": "PR",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 18,
+      "fontes": 3,
       "linhas_genericas": 0,
       "ultima_pesquisa": "2026-05-18",
       "monitor": {
@@ -2406,26 +2448,6 @@
         }
       },
       {
-        "id": "bmmg",
-        "sigla": "CBMMG",
-        "nome": "Corpo de Bombeiros Militar de Minas Gerais",
-        "uf": "MG",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "ppmg",
         "sigla": "PPMG",
         "nome": "Polícia Penal de Minas Gerais",
@@ -2481,26 +2503,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pcmg",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpr",
-        "sigla": "CBMPR",
-        "nome": "Corpo de Bombeiros Militar do Paraná",
-        "uf": "PR",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmpr",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2601,26 +2603,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmerj",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmrj",
-        "sigla": "CBMERJ",
-        "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
-        "uf": "RJ",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmrj",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -2846,26 +2828,6 @@
         }
       },
       {
-        "id": "bmms",
-        "sigla": "CBMMS",
-        "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
-        "uf": "MS",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmms",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pcms",
         "sigla": "PCMS",
         "nome": "Polícia Civil de Mato Grosso do Sul",
@@ -2921,26 +2883,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pmmt",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmmt",
-        "sigla": "CBMMT",
-        "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
-        "uf": "MT",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmmt",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -3906,114 +3848,6 @@
         }
       },
       {
-        "id": "bmal",
-        "sigla": "BMAL",
-        "nome": "Corpo de Bombeiros Militar de Alagoas",
-        "uf": "AL",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 5,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": "2026-05-18",
-        "monitor": {
-          "atualizado_em": "2026-05-18",
-          "modelo": "gpt-5.4",
-          "usou_openai": true,
-          "depois": {
-            "classe": "pendente",
-            "score": 0
-          }
-        },
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmal",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpa",
-        "sigla": "BMPA",
-        "nome": "Corpo de Bombeiros Militar do Pará",
-        "uf": "PA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmpa",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpb",
-        "sigla": "BMPB",
-        "nome": "Corpo de Bombeiros Militar da Paraíba",
-        "uf": "PB",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmpb",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpe",
-        "sigla": "BMPE",
-        "nome": "Corpo de Bombeiros Militar de Pernambuco",
-        "uf": "PE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmpe",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpi",
-        "sigla": "BMPI",
-        "nome": "Corpo de Bombeiros Militar do Piauí",
-        "uf": "PI",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmpi",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "bmrn",
         "sigla": "BMRN",
         "nome": "Corpo de Bombeiros Militar do Rio Grande do Norte",
@@ -4256,6 +4090,62 @@
     ],
     "fracas": [
       {
+        "id": "bmmg",
+        "sigla": "CBMMG",
+        "nome": "Corpo de Bombeiros Militar de Minas Gerais",
+        "uf": "MG",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 5,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmmg",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmrj",
+        "sigla": "CBMERJ",
+        "nome": "Corpo de Bombeiros Militar do Estado do Rio de Janeiro",
+        "uf": "RJ",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmrj",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
         "id": "bmes",
         "sigla": "CBMES",
         "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
@@ -4282,6 +4172,62 @@
           "quantidade": "1",
           "modelo_openai": "gpt-5.4"
         }
+      },
+      {
+        "id": "bmms",
+        "sigla": "CBMMS",
+        "nome": "Corpo de Bombeiros Militar de Mato Grosso do Sul",
+        "uf": "MS",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmms",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      },
+      {
+        "id": "bmmt",
+        "sigla": "CBMMT",
+        "nome": "Corpo de Bombeiros Militar do Estado de Mato Grosso",
+        "uf": "MT",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 3,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmmt",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
       }
     ],
     "fortes": [
@@ -4298,6 +4244,29 @@
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-17",
         "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpr",
+        "sigla": "CBMPR",
+        "nome": "Corpo de Bombeiros Militar do Paraná",
+        "uf": "PR",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 18,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
         "workflow_sugerido": null
       },
       {
@@ -4333,6 +4302,29 @@
         "score": 100,
         "linhas_com_valor": 19,
         "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmal",
+        "sigla": "BMAL",
+        "nome": "Corpo de Bombeiros Militar de Alagoas",
+        "uf": "AL",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 31,
+        "fontes": 4,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {
@@ -4471,6 +4463,98 @@
         "score": 100,
         "linhas_com_valor": 14,
         "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpa",
+        "sigla": "BMPA",
+        "nome": "Corpo de Bombeiros Militar do Pará",
+        "uf": "PA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 7,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpb",
+        "sigla": "BMPB",
+        "nome": "Corpo de Bombeiros Militar da Paraíba",
+        "uf": "PB",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpe",
+        "sigla": "BMPE",
+        "nome": "Corpo de Bombeiros Militar de Pernambuco",
+        "uf": "PE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 48,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmpi",
+        "sigla": "BMPI",
+        "nome": "Corpo de Bombeiros Militar do Piauí",
+        "uf": "PI",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 12,
+        "fontes": 2,
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-18",
         "monitor": {

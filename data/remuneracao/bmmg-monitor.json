@@ -1,6 +1,6 @@
 {
   "atualizado_em": "2026-05-18",
-  "instituicao_id": "bmal",
+  "instituicao_id": "bmmg",
   "grupo_atualizacao": "pendentes",
   "modelo": "gpt-5.4",
   "usou_openai": true,
@@ -10,19 +10,19 @@
     "score": 0
   },
   "depois": {
-    "classe": "forte",
-    "score": 100
+    "classe": "fraca",
+    "score": 82
   },
-  "linhas": 31,
+  "linhas": 3,
   "usage": {
-    "input_tokens": 37862,
+    "input_tokens": 38728,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 7002,
+    "output_tokens": 1663,
     "output_tokens_details": {
-      "reasoning_tokens": 1749
+      "reasoning_tokens": 623
     },
-    "total_tokens": 44864
+    "total_tokens": 40391
   }
 }
