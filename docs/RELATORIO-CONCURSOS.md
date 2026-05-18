@@ -50,7 +50,6 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
-| PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
 | PPRJ | Polícia Penal do Rio de Janeiro | RJ | fraca | 60 | conteúdo fraco ou genérico |
 | BMMA | Corpo de Bombeiros Militar do Maranhão | MA | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
@@ -68,6 +67,7 @@ modelo_openai: gpt-5.4-mini
 | PCPA | Polícia Civil de Pará | PA | fraca | 68 | conteúdo fraco ou genérico |
 | PMDF | Polícia Militar de Distrito Federal | DF | fraca | 68 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 68 | conteúdo fraco ou genérico |
+| PPPE | Polícia Penal de Pernambuco | PE | fraca | 68 | conteúdo fraco ou genérico |
 | PPRR | Polícia Penal de Roraima | RR | fraca | 68 | conteúdo fraco ou genérico |
 | PMPB | Polícia Militar de Paraíba | PB | fraca | 70 | conteúdo fraco ou genérico; campos críticos sem dado: banca |
 | PMESP | Polícia Militar do Estado de São Paulo | SP | fraca | 74 | conteúdo fraco ou genérico; campos genéricos: cotas, etapas; campos críticos genéricos: etapas |
