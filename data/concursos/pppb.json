@@ -6,8 +6,8 @@
   "tema": "concursos",
   "status": "Atualização fraca",
   "titulo": "PPPB: concurso da Polícia Penal da Paraíba segue em preparação com comissão organizadora formada",
-  "resumo": "O novo concurso da Polícia Penal da Paraíba segue em preparação. O governador anunciou o certame em 15/04/2024 e a comissão organizadora para provimento de cargos efetivos no âmbito da Secretaria de Estado da Administração Penitenciária foi publicada em 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo concurso.",
-  "edital": "Novo concurso da Polícia Penal da Paraíba em fase de preparação. Houve anúncio oficial em 15/04/2024 e comissão organizadora publicada em 24/10/2024. Até 18/05/2026, não foi localizado edital de abertura com inscrições, provas e regras completas.",
+  "resumo": "O concurso da Polícia Penal da Paraíba segue em preparação. O governador anunciou o novo certame em 15/04/2024 e a comissão organizadora foi designada em 23/10/2024. Até 18/05/2026, não foi localizado edital de abertura com inscrições e cronograma do novo concurso.",
+  "edital": "Novo concurso da Polícia Penal da Paraíba em fase de preparação. Anúncio oficial em 15/04/2024 e comissão organizadora designada em 23/10/2024. Até 18/05/2026, não foi localizado edital de abertura do novo certame.",
   "salario": "Policial Penal: R$ 4.844,14 na classe A-I da tabela remuneratória de janeiro de 2024.",
   "vagas": "Quantidade de vagas e cadastro reserva não localizados nas fontes consultadas.",
   "cotas": "Não localizado nas fontes consultadas.",
@@ -30,6 +30,12 @@
       "data_consulta": "2026-05-18"
     },
     {
+      "titulo": "Seap-PB: governador designa comissão organizadora do concurso público para policial penal",
+      "url": "https://paraiba-portal-backend.plone.rke.codataprd.pb.gov.br/portal_paraiba/diretas/secretaria-de-administracao-penitenciaria/noticias/policia-penal-da-paraiba-governador-designa-comissao-organizadora-do-concurso-publico",
+      "tipo": "fonte oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
       "titulo": "Boletim Interno SEAP nº 115, de 25 de outubro de 2024",
       "url": "https://paraiba.pb.gov.br/diretas/secretaria-de-administracao-penitenciaria/arquivos/BISEAP115de25deoutubrode2024.pdf",
       "tipo": "fonte oficial",
@@ -47,8 +53,9 @@
   "precisa_revisao_humana": true,
   "alertas": [
     "Até 18/05/2026, não foi localizado edital de abertura do novo concurso da Polícia Penal da Paraíba.",
-    "Há anúncio oficial do concurso em 15/04/2024 e comissão organizadora publicada em 24/10/2024.",
+    "Há anúncio oficial do concurso em 15/04/2024 e comissão organizadora designada em 23/10/2024.",
     "Vagas, banca, escolaridade, idade, etapas e disciplinas do novo certame não apareceram de forma objetiva nas fontes oficiais consultadas.",
+    "Classificação automática: Atualização fraca.",
     "Classificação automática: Atualização fraca (48/100)."
   ],
   "classe_atualizacao": "fraca",

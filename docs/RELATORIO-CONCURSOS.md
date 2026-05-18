@@ -50,7 +50,6 @@ modelo_openai: gpt-5.4-mini
 |---|---|---:|---|---:|---|
 | PMPI | Polícia Militar de Piauí | PI | fraca | 48 | conteúdo fraco ou genérico; campos críticos sem dado: salario, escolaridade |
 | PPPB | Polícia Penal de Paraíba | PB | fraca | 48 | conteúdo fraco ou genérico |
-| PMRO | Polícia Militar de Rondônia | RO | fraca | 54 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
 | PPTO | Polícia Penal de Tocantins | TO | fraca | 56 | conteúdo fraco ou genérico |
 | PPPA | Polícia Penal de Pará | PA | fraca | 60 | conteúdo fraco ou genérico |
 | PPPE | Polícia Penal de Pernambuco | PE | fraca | 60 | conteúdo fraco ou genérico |
@@ -82,6 +81,7 @@ modelo_openai: gpt-5.4-mini
 | PCPI | Polícia Civil de Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCSE | Polícia Civil de Sergipe | SE | fraca | 76 | conteúdo fraco ou genérico |
 | PCTO | Polícia Civil de Tocantins | TO | fraca | 76 | conteúdo fraco ou genérico |
+| PMRO | Polícia Militar de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRO | Polícia Penal de Rondônia | RO | fraca | 76 | conteúdo fraco ou genérico |
 | PPRS | Polícia Penal do Rio Grande do Sul | RS | fraca | 76 | conteúdo fraco ou genérico |
 | PMSC | Polícia Militar de Santa Catarina | SC | fraca | 79 | conteúdo fraco ou genérico; campos genéricos: cotas, idade, estagio |

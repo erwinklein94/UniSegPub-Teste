@@ -5,9 +5,9 @@
   "uf": "PI",
   "tema": "concursos",
   "status": "Atualização fraca",
-  "titulo": "PMPI tem concurso autorizado com 1.001 vagas para soldado e capelão; edital novo ainda não foi publicado",
-  "resumo": "A Polícia Militar do Piauí tem novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão no posto de 1º tenente PM. Até 18 de maio de 2026, o novo edital ainda não foi publicado. O último concurso de soldado foi o Edital nº 02/2021, organizado pelo Nucepe, e formou 650 novos soldados em 2025.",
-  "edital": "Novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado e 1 vaga para capelão, sem edital publicado até 18 de maio de 2026. Último edital disponível para soldado: Edital nº 02/2021 - Curso de Formação de Soldados PMPI.",
+  "titulo": "PMPI tem concurso autorizado com 1.001 vagas para soldado e capelão; novo edital ainda não saiu",
+  "resumo": "A Polícia Militar do Piauí tem concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado, sendo 500 imediatas e 500 para cadastro de reserva, além de 1 vaga para capelão no posto de 1º tenente PM. Até 18 de maio de 2026, o novo edital ainda não foi publicado. O último edital de soldado foi o nº 02/2021, organizado pelo Nucepe, e a corporação lotou definitivamente mais de 650 novos soldados em janeiro de 2026.",
+  "edital": "Novo concurso autorizado pelo Decreto nº 24.290, de 30 de dezembro de 2025, com 1.000 vagas para soldado e 1 vaga para capelão, mas sem edital publicado até 18 de maio de 2026. Último edital publicado para soldado: Edital nº 02/2021, do Curso de Formação de Soldados PMPI.",
   "salario": "Não localizado nas fontes consultadas.",
   "vagas": "Novo concurso autorizado com 1.001 vagas, sendo 1.000 para soldado, com 500 imediatas e 500 para cadastro de reserva, e 1 vaga para capelão no posto de 1º tenente PM. No último edital de soldado, foram 650 vagas, sendo 585 para homens e 65 para mulheres.",
   "cotas": "No último edital de soldado, 10% das vagas foram destinadas a candidatas do sexo feminino. Não houve reserva de vagas para pessoas com deficiência.",
@@ -16,11 +16,11 @@
   "materias": "Língua Portuguesa; Raciocínio Lógico e Matemática Básica; Conhecimentos Gerais; Conhecimentos Regionais do Estado do Piauí; Legislação da Polícia Militar do Estado do Piauí; Noções de Direito; redação.",
   "banca": "Nucepe/Uespi no último concurso de soldado. Banca do novo concurso autorizado: Não localizada nas fontes consultadas.",
   "inscritos": "Não localizado nas fontes consultadas.",
-  "etapas": "Prova escrita objetiva e dissertativa; exame de saúde; exame de aptidão física; avaliação psicológica; investigação social; curso de formação.",
-  "cfsd": "O CFSD 2025 formou 650 novos soldados, com nomeação em agosto de 2025 e lotação definitiva em janeiro de 2026.",
-  "estagio": "Estágio operacional encerrado em janeiro de 2026, antes da lotação definitiva dos novos soldados.",
-  "validade": "No último edital de soldado, a validade foi de 2 anos, prorrogável por igual período. No decreto de autorização do novo concurso, foi fixado prazo de 6 meses para publicação do edital.",
-  "previsao": "Novo edital autorizado em 30 de dezembro de 2025, mas ainda não publicado até 18 de maio de 2026.",
+  "etapas": "Prova objetiva e redação; exame de saúde; teste de aptidão física; avaliação psicológica; investigação social; curso de formação.",
+  "cfsd": "O CFSD 2025 formou 650 novos soldados. A lotação definitiva da turma ocorreu em 5 de janeiro de 2026.",
+  "estagio": "Os novos soldados cumpriram seis meses de estágio operacional antes da lotação definitiva em janeiro de 2026.",
+  "validade": "No último edital de soldado, a validade foi de 2 anos, prorrogável por igual período. No decreto do novo concurso, foi fixado prazo de 6 meses para publicação do edital.",
+  "previsao": "Edital novo ainda não publicado até 18 de maio de 2026.",
   "site": "https://www.pm.pi.gov.br",
   "fontes": [
     {
@@ -31,8 +31,8 @@
     },
     {
       "titulo": "Diário Oficial do Estado do Piauí - Decreto nº 24.290, de 30 de dezembro de 2025",
-      "url": "https://www.pi.gov.br/wp-content/uploads/2025/12/DOEPI_251_2025.pdf",
-      "tipo": "fonte oficial",
+      "url": "https://www.diario.pi.gov.br/doe/files/diarios/anexo/6eef0a5d-44e0-42af-b227-0a1cd3fc0040/DOEPI_251_2025.pdf",
+      "tipo": "diário oficial",
       "data_consulta": "2026-05-18"
     },
     {
