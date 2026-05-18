@@ -1,27 +1,27 @@
 {
   "atualizado_em": "2026-05-18",
   "instituicao_id": "bmro",
-  "grupo_atualizacao": "pendentes",
+  "grupo_atualizacao": "fracas",
   "modelo": "gpt-5.4",
   "usou_openai": true,
   "usou_web_search_openai": true,
   "antes": {
-    "classe": "pendente",
-    "score": 28
+    "classe": "fraca",
+    "score": 62
   },
   "depois": {
     "classe": "fraca",
     "score": 62
   },
   "usage": {
-    "input_tokens": 22849,
+    "input_tokens": 22668,
     "input_tokens_details": {
       "cached_tokens": 4736
     },
-    "output_tokens": 1276,
+    "output_tokens": 1323,
     "output_tokens_details": {
-      "reasoning_tokens": 395
+      "reasoning_tokens": 398
     },
-    "total_tokens": 24125
+    "total_tokens": 23991
   }
 }
