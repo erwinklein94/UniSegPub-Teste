@@ -4,8 +4,8 @@
   "resumo": {
     "total": 110,
     "pendentes": 2,
-    "fracas": 35,
-    "fortes": 73
+    "fracas": 34,
+    "fortes": 74
   },
   "grupos": {
     "pendentes": [
@@ -110,69 +110,6 @@
           "cfsd",
           "validade",
           "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "ppms",
-        "sigla": "PPMS",
-        "nome": "Polícia Penal de Mato Grosso do Sul",
-        "uf": "MS",
-        "score": 62,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico",
-          "campos genéricos: vagas, banca",
-          "campos críticos genéricos: vagas, banca"
-        ],
-        "campos_ruins": [],
-        "campos_genericos": [
-          "vagas",
-          "banca"
-        ],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "idade",
-          "escolaridade",
-          "materias",
-          "inscritos",
-          "previsao"
-        ],
-        "workflow_sugerido": {
-          "grupo_atualizacao": "fracas",
-          "quantidade": "5",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmpi",
-        "sigla": "BMPI",
-        "nome": "Corpo de Bombeiros Militar do Piauí",
-        "uf": "PI",
-        "score": 64,
-        "classe": "fraca",
-        "qualidade": "fraca",
-        "motivos": [
-          "conteúdo fraco ou genérico"
-        ],
-        "campos_ruins": [
-          "inscritos",
-          "estagio",
-          "validade"
-        ],
-        "campos_genericos": [],
-        "campos_concretos": [
-          "edital",
-          "salario",
-          "vagas",
-          "idade",
-          "materias"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -792,6 +729,37 @@
           "idade",
           "escolaridade",
           "banca"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
+        "id": "bmpi",
+        "sigla": "BMPI",
+        "nome": "Corpo de Bombeiros Militar do Piauí",
+        "uf": "PI",
+        "score": 76,
+        "classe": "fraca",
+        "qualidade": "fraca",
+        "motivos": [
+          "conteúdo fraco ou genérico"
+        ],
+        "campos_ruins": [
+          "inscritos",
+          "estagio",
+          "validade"
+        ],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "materias",
+          "previsao"
         ],
         "workflow_sugerido": {
           "grupo_atualizacao": "fracas",
@@ -3480,6 +3448,34 @@
         }
       },
       {
+        "id": "ppms",
+        "sigla": "PPMS",
+        "nome": "Polícia Penal de Mato Grosso do Sul",
+        "uf": "MS",
+        "score": 100,
+        "classe": "forte",
+        "qualidade": "forte",
+        "motivos": [
+          "conteúdo bom"
+        ],
+        "campos_ruins": [],
+        "campos_genericos": [],
+        "campos_concretos": [
+          "edital",
+          "salario",
+          "vagas",
+          "idade",
+          "materias",
+          "inscritos",
+          "previsao"
+        ],
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fortes",
+          "quantidade": "5",
+          "modelo_openai": "gpt-5.4-mini"
+        }
+      },
+      {
         "id": "prf",
         "sigla": "PRF",
         "nome": "Polícia Rodoviária Federal",
@@ -3574,69 +3570,6 @@
         "cfsd",
         "validade",
         "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "ppms",
-      "sigla": "PPMS",
-      "nome": "Polícia Penal de Mato Grosso do Sul",
-      "uf": "MS",
-      "score": 62,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico",
-        "campos genéricos: vagas, banca",
-        "campos críticos genéricos: vagas, banca"
-      ],
-      "campos_ruins": [],
-      "campos_genericos": [
-        "vagas",
-        "banca"
-      ],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "idade",
-        "escolaridade",
-        "materias",
-        "inscritos",
-        "previsao"
-      ],
-      "workflow_sugerido": {
-        "grupo_atualizacao": "fracas",
-        "quantidade": "5",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmpi",
-      "sigla": "BMPI",
-      "nome": "Corpo de Bombeiros Militar do Piauí",
-      "uf": "PI",
-      "score": 64,
-      "classe": "fraca",
-      "qualidade": "fraca",
-      "motivos": [
-        "conteúdo fraco ou genérico"
-      ],
-      "campos_ruins": [
-        "inscritos",
-        "estagio",
-        "validade"
-      ],
-      "campos_genericos": [],
-      "campos_concretos": [
-        "edital",
-        "salario",
-        "vagas",
-        "idade",
-        "materias"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -4293,6 +4226,37 @@
         "idade",
         "escolaridade",
         "banca"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "bmpi",
+      "sigla": "BMPI",
+      "nome": "Corpo de Bombeiros Militar do Piauí",
+      "uf": "PI",
+      "score": 76,
+      "classe": "fraca",
+      "qualidade": "fraca",
+      "motivos": [
+        "conteúdo fraco ou genérico"
+      ],
+      "campos_ruins": [
+        "inscritos",
+        "estagio",
+        "validade"
+      ],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "materias",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fracas",
@@ -6971,6 +6935,34 @@
         "inscritos",
         "estagio",
         "validade"
+      ],
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fortes",
+        "quantidade": "5",
+        "modelo_openai": "gpt-5.4-mini"
+      }
+    },
+    {
+      "id": "ppms",
+      "sigla": "PPMS",
+      "nome": "Polícia Penal de Mato Grosso do Sul",
+      "uf": "MS",
+      "score": 100,
+      "classe": "forte",
+      "qualidade": "forte",
+      "motivos": [
+        "conteúdo bom"
+      ],
+      "campos_ruins": [],
+      "campos_genericos": [],
+      "campos_concretos": [
+        "edital",
+        "salario",
+        "vagas",
+        "idade",
+        "materias",
+        "inscritos",
+        "previsao"
       ],
       "workflow_sugerido": {
         "grupo_atualizacao": "fortes",

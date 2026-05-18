@@ -6,8 +6,8 @@ Gerado em: 2026-05-18
 
 - Total: 110
 - Pendentes: 2
-- Atualização fraca: 35
-- Atualização forte: 73
+- Atualização fraca: 34
+- Atualização forte: 74
 
 ## Como atualizar
 
@@ -49,8 +49,6 @@ modelo_openai: gpt-5.4-mini
 | Sigla | Instituição | UF | Classe | Score | Motivos |
 |---|---|---:|---|---:|---|
 | BMRO | Corpo de Bombeiros Militar de Rondônia | RO | fraca | 62 | conteúdo fraco ou genérico; campos críticos sem dado: salario |
-| PPMS | Polícia Penal de Mato Grosso do Sul | MS | fraca | 62 | conteúdo fraco ou genérico; campos genéricos: vagas, banca; campos críticos genéricos: vagas, banca |
-| BMPI | Corpo de Bombeiros Militar do Piauí | PI | fraca | 64 | conteúdo fraco ou genérico |
 | BMRN | Corpo de Bombeiros Militar do Rio Grande do Norte | RN | fraca | 64 | conteúdo fraco ou genérico |
 | PPES | Polícia Penal do Espírito Santo | ES | fraca | 64 | conteúdo fraco ou genérico |
 | PPGO | Polícia Penal de Goiás | GO | fraca | 64 | conteúdo fraco ou genérico |
@@ -70,6 +68,7 @@ modelo_openai: gpt-5.4-mini
 | CBMMS | Corpo de Bombeiros Militar de Mato Grosso do Sul | MS | fraca | 76 | conteúdo fraco ou genérico |
 | BMPA | Corpo de Bombeiros Militar do Pará | PA | fraca | 76 | conteúdo fraco ou genérico |
 | BMPE | Corpo de Bombeiros Militar de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
+| BMPI | Corpo de Bombeiros Militar do Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCPE | Polícia Civil de Pernambuco | PE | fraca | 76 | conteúdo fraco ou genérico |
 | PCPI | Polícia Civil de Piauí | PI | fraca | 76 | conteúdo fraco ou genérico |
 | PCSE | Polícia Civil de Sergipe | SE | fraca | 76 | conteúdo fraco ou genérico |
@@ -160,4 +159,5 @@ modelo_openai: gpt-5.4-mini
 | PMRS | Brigada Militar do Rio Grande do Sul | RS | forte | 100 | conteúdo bom |
 | PPAC | Polícia Penal do Acre | AC | forte | 100 | conteúdo bom |
 | PPAL | Polícia Penal do Estado de Alagoas | AL | forte | 100 | conteúdo bom |
+| PPMS | Polícia Penal de Mato Grosso do Sul | MS | forte | 100 | conteúdo bom |
 | PRF | Polícia Rodoviária Federal | BR | forte | 100 | conteúdo bom |
