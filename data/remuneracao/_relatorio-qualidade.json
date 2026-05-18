@@ -2,31 +2,11 @@
   "gerado_em": "2026-05-18",
   "resumo": {
     "total": 110,
-    "pendentes": 109,
-    "fracas": 0,
-    "fortes": 1
+    "pendentes": 100,
+    "fracas": 1,
+    "fortes": 9
   },
   "fila_acoes": [
-    {
-      "id": "bmac",
-      "sigla": "BMAC",
-      "nome": "Corpo de Bombeiros Militar do Acre",
-      "uf": "AC",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmac",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
     {
       "id": "bmal",
       "sigla": "BMAL",
@@ -36,173 +16,21 @@
       "classe": "pendente",
       "score": 0,
       "linhas_com_valor": 0,
-      "fontes": 0,
+      "fontes": 5,
       "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "pendente",
+          "score": 0
+        }
+      },
       "workflow_sugerido": {
         "grupo_atualizacao": "pendentes",
         "instituicao": "bmal",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmam",
-      "sigla": "BMAM",
-      "nome": "Corpo de Bombeiros Militar do Amazonas",
-      "uf": "AM",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmam",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmap",
-      "sigla": "CBMAP",
-      "nome": "Corpo de Bombeiros Militar do Amapá",
-      "uf": "AP",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmap",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmba",
-      "sigla": "BMBA",
-      "nome": "Corpo de Bombeiros Militar da Bahia",
-      "uf": "BA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmba",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmce",
-      "sigla": "BMCE",
-      "nome": "Corpo de Bombeiros Militar do Ceará",
-      "uf": "CE",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmce",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmdf",
-      "sigla": "BMDF",
-      "nome": "Corpo de Bombeiros Militar do Distrito Federal",
-      "uf": "DF",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmdf",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmes",
-      "sigla": "CBMES",
-      "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
-      "uf": "ES",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmes",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmgo",
-      "sigla": "BMGO",
-      "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
-      "uf": "GO",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmgo",
-        "quantidade": "1",
-        "modelo_openai": "gpt-5.4-mini"
-      }
-    },
-    {
-      "id": "bmma",
-      "sigla": "BMMA",
-      "nome": "Corpo de Bombeiros Militar do Maranhão",
-      "uf": "MA",
-      "acao": "pendentes",
-      "classe": "pendente",
-      "score": 0,
-      "linhas_com_valor": 0,
-      "fontes": 0,
-      "linhas_genericas": 0,
-      "ultima_pesquisa": null,
-      "monitor": null,
-      "workflow_sugerido": {
-        "grupo_atualizacao": "pendentes",
-        "instituicao": "bmma",
         "quantidade": "1",
         "modelo_openai": "gpt-5.4-mini"
       }
@@ -2188,6 +2016,218 @@
       }
     },
     {
+      "id": "bmes",
+      "sigla": "CBMES",
+      "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+      "uf": "ES",
+      "acao": "fracas",
+      "classe": "fraca",
+      "score": 82,
+      "linhas_com_valor": 4,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "fraca",
+          "score": 82
+        }
+      },
+      "workflow_sugerido": {
+        "grupo_atualizacao": "fracas",
+        "instituicao": "bmes",
+        "quantidade": "1",
+        "modelo_openai": "gpt-5.4"
+      }
+    },
+    {
+      "id": "bmac",
+      "sigla": "BMAC",
+      "nome": "Corpo de Bombeiros Militar do Acre",
+      "uf": "AC",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 19,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmam",
+      "sigla": "BMAM",
+      "nome": "Corpo de Bombeiros Militar do Amazonas",
+      "uf": "AM",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 11,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmap",
+      "sigla": "CBMAP",
+      "nome": "Corpo de Bombeiros Militar do Amapá",
+      "uf": "AP",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmba",
+      "sigla": "BMBA",
+      "nome": "Corpo de Bombeiros Militar da Bahia",
+      "uf": "BA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 13,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmce",
+      "sigla": "BMCE",
+      "nome": "Corpo de Bombeiros Militar do Ceará",
+      "uf": "CE",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 17,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmdf",
+      "sigla": "BMDF",
+      "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+      "uf": "DF",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 16,
+      "fontes": 2,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmgo",
+      "sigla": "BMGO",
+      "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+      "uf": "GO",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 16,
+      "fontes": 3,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
+      "id": "bmma",
+      "sigla": "BMMA",
+      "nome": "Corpo de Bombeiros Militar do Maranhão",
+      "uf": "MA",
+      "acao": "fortes",
+      "classe": "forte",
+      "score": 100,
+      "linhas_com_valor": 14,
+      "fontes": 4,
+      "linhas_genericas": 0,
+      "ultima_pesquisa": "2026-05-18",
+      "monitor": {
+        "atualizado_em": "2026-05-18",
+        "modelo": "gpt-5.4",
+        "usou_openai": true,
+        "depois": {
+          "classe": "forte",
+          "score": 100
+        }
+      },
+      "workflow_sugerido": null
+    },
+    {
       "id": "pmesp",
       "sigla": "PMESP",
       "nome": "Polícia Militar do Estado de São Paulo",
@@ -2766,26 +2806,6 @@
         }
       },
       {
-        "id": "bmes",
-        "sigla": "CBMES",
-        "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
-        "uf": "ES",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmes",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "pces",
         "sigla": "PCES",
         "nome": "Polícia Civil do Espírito Santo",
@@ -3061,26 +3081,6 @@
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "pcap",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmap",
-        "sigla": "CBMAP",
-        "nome": "Corpo de Bombeiros Militar do Amapá",
-        "uf": "AP",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmap",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -3906,26 +3906,6 @@
         }
       },
       {
-        "id": "bmac",
-        "sigla": "BMAC",
-        "nome": "Corpo de Bombeiros Militar do Acre",
-        "uf": "AC",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmac",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
         "id": "bmal",
         "sigla": "BMAL",
         "nome": "Corpo de Bombeiros Militar de Alagoas",
@@ -3934,133 +3914,21 @@
         "classe": "pendente",
         "score": 0,
         "linhas_com_valor": 0,
-        "fontes": 0,
+        "fontes": 5,
         "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "pendente",
+            "score": 0
+          }
+        },
         "workflow_sugerido": {
           "grupo_atualizacao": "pendentes",
           "instituicao": "bmal",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmam",
-        "sigla": "BMAM",
-        "nome": "Corpo de Bombeiros Militar do Amazonas",
-        "uf": "AM",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmam",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmba",
-        "sigla": "BMBA",
-        "nome": "Corpo de Bombeiros Militar da Bahia",
-        "uf": "BA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmba",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmce",
-        "sigla": "BMCE",
-        "nome": "Corpo de Bombeiros Militar do Ceará",
-        "uf": "CE",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmce",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmdf",
-        "sigla": "BMDF",
-        "nome": "Corpo de Bombeiros Militar do Distrito Federal",
-        "uf": "DF",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmdf",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmgo",
-        "sigla": "BMGO",
-        "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
-        "uf": "GO",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmgo",
-          "quantidade": "1",
-          "modelo_openai": "gpt-5.4-mini"
-        }
-      },
-      {
-        "id": "bmma",
-        "sigla": "BMMA",
-        "nome": "Corpo de Bombeiros Militar do Maranhão",
-        "uf": "MA",
-        "acao": "pendentes",
-        "classe": "pendente",
-        "score": 0,
-        "linhas_com_valor": 0,
-        "fontes": 0,
-        "linhas_genericas": 0,
-        "ultima_pesquisa": null,
-        "monitor": null,
-        "workflow_sugerido": {
-          "grupo_atualizacao": "pendentes",
-          "instituicao": "bmma",
           "quantidade": "1",
           "modelo_openai": "gpt-5.4-mini"
         }
@@ -4386,7 +4254,36 @@
         }
       }
     ],
-    "fracas": [],
+    "fracas": [
+      {
+        "id": "bmes",
+        "sigla": "CBMES",
+        "nome": "Corpo de Bombeiros Militar do Estado do Espírito Santo",
+        "uf": "ES",
+        "acao": "fracas",
+        "classe": "fraca",
+        "score": 82,
+        "linhas_com_valor": 4,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "fraca",
+            "score": 82
+          }
+        },
+        "workflow_sugerido": {
+          "grupo_atualizacao": "fracas",
+          "instituicao": "bmes",
+          "quantidade": "1",
+          "modelo_openai": "gpt-5.4"
+        }
+      }
+    ],
     "fortes": [
       {
         "id": "pmesp",
@@ -4401,6 +4298,190 @@
         "linhas_genericas": 0,
         "ultima_pesquisa": "2026-05-17",
         "monitor": null,
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmap",
+        "sigla": "CBMAP",
+        "nome": "Corpo de Bombeiros Militar do Amapá",
+        "uf": "AP",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmac",
+        "sigla": "BMAC",
+        "nome": "Corpo de Bombeiros Militar do Acre",
+        "uf": "AC",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 19,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmam",
+        "sigla": "BMAM",
+        "nome": "Corpo de Bombeiros Militar do Amazonas",
+        "uf": "AM",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 11,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmba",
+        "sigla": "BMBA",
+        "nome": "Corpo de Bombeiros Militar da Bahia",
+        "uf": "BA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 13,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmce",
+        "sigla": "BMCE",
+        "nome": "Corpo de Bombeiros Militar do Ceará",
+        "uf": "CE",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 17,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmdf",
+        "sigla": "BMDF",
+        "nome": "Corpo de Bombeiros Militar do Distrito Federal",
+        "uf": "DF",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 16,
+        "fontes": 2,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmgo",
+        "sigla": "BMGO",
+        "nome": "Corpo de Bombeiros Militar do Estado de Goiás",
+        "uf": "GO",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 16,
+        "fontes": 3,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
+        "workflow_sugerido": null
+      },
+      {
+        "id": "bmma",
+        "sigla": "BMMA",
+        "nome": "Corpo de Bombeiros Militar do Maranhão",
+        "uf": "MA",
+        "acao": "fortes",
+        "classe": "forte",
+        "score": 100,
+        "linhas_com_valor": 14,
+        "fontes": 4,
+        "linhas_genericas": 0,
+        "ultima_pesquisa": "2026-05-18",
+        "monitor": {
+          "atualizado_em": "2026-05-18",
+          "modelo": "gpt-5.4",
+          "usou_openai": true,
+          "depois": {
+            "classe": "forte",
+            "score": 100
+          }
+        },
         "workflow_sugerido": null
       }
     ]

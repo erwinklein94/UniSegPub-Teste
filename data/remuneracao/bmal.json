@@ -1,0 +1,56 @@
+{
+  "instituicao_id": "bmal",
+  "instituicao_nome": "Corpo de Bombeiros Militar de Alagoas",
+  "sigla": "BMAL",
+  "uf": "AL",
+  "tema": "remuneracao",
+  "status": "Pesquisa pendente",
+  "titulo": "Remuneração bruta mensal do Corpo de Bombeiros Militar de Alagoas",
+  "resumo": "Foram localizadas fontes oficiais do CBMAL que confirmam a legislação remuneratória da carreira militar estadual e indicam a base legal mais recente de revisão geral. Porém, a tabela numérica consolidada por posto e graduação não ficou integralmente acessível nas fontes abertas consultadas. Para preservar precisão, a página fica com atualização parcial e sem inflar valores não confirmados.",
+  "linhas": [],
+  "fonte_principal": "https://www.bombeiros.al.gov.br/paginas/legislacao",
+  "fontes": [
+    {
+      "titulo": "Legislação do CBMAL",
+      "url": "https://www.bombeiros.al.gov.br/paginas/legislacao",
+      "tipo": "pagina_governamental",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "PMAL Sislegis - Lei n. 6.698, de 27.3.2006",
+      "url": "https://sistemas.pm.al.gov.br/sistemas/public/sislegis/publico/index/dist/1479344110/perPagegrid/20/ordergrid/titulo_DESC/startgrid/40",
+      "tipo": "sistema_legislacao",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de Alagoas - Lei nº 8.649, de 31 de março de 2022",
+      "url": "https://imprensaoficial.al.gov.br/storage/files/diary/2022/04/doeal-2022-04-01-completo-rapahgjpukwewt-xl1m9qob9jp7ielju7dton8dcr1hehimdgf2iu.pdf",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de Alagoas - referência à Lei nº 8.947, de 24 de agosto de 2023",
+      "url": "https://diario.imprensaoficial.al.gov.br/apinova/api/editions/viewPdf/37764",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    },
+    {
+      "titulo": "Diário Oficial de Alagoas - referência à Lei nº 8.238, de 10 de janeiro de 2020",
+      "url": "https://www.imprensaoficial.al.gov.br/storage/files/diary/2023/04/doeal-2023-04-18-completo-p-blfj2t0tlwlkrrs7zxke-7xcymcdd-cpnzi2xbw-basc7fwqsmy.pdf",
+      "tipo": "diario_oficial",
+      "data_consulta": "2026-05-18"
+    }
+  ],
+  "ultima_pesquisa": "2026-05-18",
+  "classe_atualizacao": "pendente",
+  "score_publicacao": 0,
+  "modelo_openai": "gpt-5.4",
+  "atualizado_pela_openai": true,
+  "precisa_revisao_humana": true,
+  "alertas": [
+    "Não foi possível confirmar, com segurança suficiente, a tabela numérica bruta mensal por posto e graduação em fonte oficial aberta e acessível durante a pesquisa.",
+    "As fontes oficiais localizadas confirmam a existência da legislação remuneratória da carreira e revisões posteriores, mas a extração dos valores por cargo ficou incompleta.",
+    "Para evitar publicar valores possivelmente desatualizados ou incompletos, as linhas de remuneração foram deixadas vazias até validação humana.",
+    "Classificação automática: Pesquisa pendente (0/100)."
+  ]
+}

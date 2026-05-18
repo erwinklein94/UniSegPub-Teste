@@ -3,22 +3,13 @@
 Gerado em: 2026-05-18
 
 - Total: 110
-- Pendentes: 109
-- Fracas: 0
-- Fortes: 1
+- Pendentes: 100
+- Fracas: 1
+- Fortes: 9
 
 | Ação | ID | Sigla | Score | Linhas úteis | Observação |
 |---|---|---:|---:|---:|---|
-| pendentes | bmac | BMAC | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmal | BMAL | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmam | BMAM | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmap | CBMAP | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmba | BMBA | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmce | BMCE | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmdf | BMDF | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmes | CBMES | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmgo | BMGO | 0 | 0 | Rodar atualização de remuneração |
-| pendentes | bmma | BMMA | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmmg | CBMMG | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmms | CBMMS | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | bmmt | CBMMT | 0 | 0 | Rodar atualização de remuneração |
@@ -118,4 +109,13 @@ Gerado em: 2026-05-18
 | pendentes | ppsp | PPSP | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | ppto | PPTO | 0 | 0 | Rodar atualização de remuneração |
 | pendentes | prf | PRF | 0 | 0 | Rodar atualização de remuneração |
+| fracas | bmes | CBMES | 82 | 4 | Rodar atualização de remuneração |
+| fortes | bmac | BMAC | 100 | 19 | OK |
+| fortes | bmam | BMAM | 100 | 11 | OK |
+| fortes | bmap | CBMAP | 100 | 14 | OK |
+| fortes | bmba | BMBA | 100 | 13 | OK |
+| fortes | bmce | BMCE | 100 | 17 | OK |
+| fortes | bmdf | BMDF | 100 | 16 | OK |
+| fortes | bmgo | BMGO | 100 | 16 | OK |
+| fortes | bmma | BMMA | 100 | 14 | OK |
 | fortes | pmesp | PMESP | 100 | 19 | OK |
