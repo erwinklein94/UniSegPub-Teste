@@ -1911,7 +1911,7 @@
 
   <script defer src="js/data/concursos-data.js?v=20260516concursosdesktop1"></script>
   <script defer src="js/pages/concursos-automacao.js?v=20260517generico1"></script>
-  <script defer src="js/pages/concursos-conteudo-estatico.js?v=20260516concursosdesktop1"></script>
+  <script defer src="js/pages/concursos-conteudo-estatico.js?v=20260517trocaresultado1"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       var select = document.getElementById('concursos_instituicao');
@@ -1938,7 +1938,7 @@
         if (label) label.textContent = currentName(inst || (select && select.value) || '');
       }
       function renderFromVisibleCard(inst) {
-        if (!inst || !list || clean(list.textContent)) return;
+        if (!inst || !list) return;
         var card = document.querySelector('[data-concurso-card][data-inst="' + cssEscape(inst) + '"]');
         if (!card) return;
         var title = clean(card.querySelector('h2') && card.querySelector('h2').textContent);
@@ -1954,6 +1954,7 @@
         list.innerHTML = '<div class="direito-item acao"><span class="direito-nome">' + escapeHtml(title || currentName(inst)) + '</span>' + (intro ? '<span class="direito-desc">' + escapeHtml(intro) + '</span>' : '') + indicadores + corpo + linkHtml + '</div>';
       }
       function handle(inst) {
+        if (list) list.innerHTML = '';
         window.setTimeout(function () {
           updateLabel(inst);
           renderFromVisibleCard(inst || (select && select.value));
