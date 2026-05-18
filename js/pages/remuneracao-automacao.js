@@ -5,6 +5,117 @@
   const DATA_DIR = 'data/remuneracao';
   window.REMUNERACAO_AUTOMATIZADA = window.REMUNERACAO_AUTOMATIZADA || {};
 
+  const CONFIG_URL = 'config/remuneracao-instituicoes.json';
+
+  const UF_ORDEM = ['BR','AC','AL','AM','AP','BA','CE','DF','ES','GO','MA','MG','MS','MT','PA','PB','PE','PI','PR','RJ','RN','RO','RR','RS','SC','SE','SP','TO'];
+  const UF_NOME = {
+    BR: 'União / Federal', AC: 'Acre', AL: 'Alagoas', AM: 'Amazonas', AP: 'Amapá', BA: 'Bahia', CE: 'Ceará', DF: 'Distrito Federal', ES: 'Espírito Santo', GO: 'Goiás', MA: 'Maranhão', MG: 'Minas Gerais', MS: 'Mato Grosso do Sul', MT: 'Mato Grosso', PA: 'Pará', PB: 'Paraíba', PE: 'Pernambuco', PI: 'Piauí', PR: 'Paraná', RJ: 'Rio de Janeiro', RN: 'Rio Grande do Norte', RO: 'Rondônia', RR: 'Roraima', RS: 'Rio Grande do Sul', SC: 'Santa Catarina', SE: 'Sergipe', SP: 'São Paulo', TO: 'Tocantins'
+  };
+
+  function tipoOrdem(item) {
+    const id = texto(item && item.id).toLowerCase();
+    const tipo = normalizar(item && (item.tipo || item.nome || item.sigla));
+    if (id === 'pf') return 0;
+    if (id === 'prf') return 1;
+    if (tipo.includes('militar') && !tipo.includes('bombeiro') && id.startsWith('pm')) return 10;
+    if (tipo.includes('bombeiro') || id.startsWith('bm')) return 20;
+    if (tipo.includes('civil') || id.startsWith('pc')) return 30;
+    if (tipo.includes('penal') || id.startsWith('pp')) return 40;
+    return 90;
+  }
+
+  function esferaDaInstituicao(item) {
+    const uf = texto(item && item.uf).toUpperCase();
+    return uf === 'BR' || texto(item && item.id).toLowerCase() === 'pf' || texto(item && item.id).toLowerCase() === 'prf' ? 'federal' : 'estadual';
+  }
+
+  function labelInstituicao(item) {
+    const sigla = texto(item && item.sigla).toUpperCase() || texto(item && item.id).toUpperCase();
+    const nome = texto(item && item.nome) || sigla;
+    return `${sigla} — ${nome}`;
+  }
+
+  function criarOption(item) {
+    const opt = document.createElement('option');
+    const id = texto(item && item.id).toLowerCase();
+    opt.value = id;
+    opt.textContent = labelInstituicao(item);
+    opt.dataset.esfera = esferaDaInstituicao(item);
+    opt.dataset.uf = texto(item && item.uf).toUpperCase();
+    opt.dataset.sigla = texto(item && item.sigla).toUpperCase();
+    opt.dataset.nome = texto(item && item.nome);
+    opt.dataset.tipo = texto(item && item.tipo);
+    if (id === 'pmesp') opt.selected = true;
+    return opt;
+  }
+
+  function reconstruirSeletorInstituicoes(config) {
+    const select = document.getElementById('remu-filtro-instituicao');
+    if (!select || !Array.isArray(config) || !config.length) return false;
+
+    const atual = select.value || 'pmesp';
+    const vistos = new Set();
+    const itens = config
+      .filter(item => item && item.id && !vistos.has(texto(item.id).toLowerCase()) && vistos.add(texto(item.id).toLowerCase()))
+      .sort((a, b) => {
+        const ufA = texto(a.uf).toUpperCase();
+        const ufB = texto(b.uf).toUpperCase();
+        const idxA = UF_ORDEM.indexOf(ufA);
+        const idxB = UF_ORDEM.indexOf(ufB);
+        const ordemUfA = idxA === -1 ? 999 : idxA;
+        const ordemUfB = idxB === -1 ? 999 : idxB;
+        if (ordemUfA !== ordemUfB) return ordemUfA - ordemUfB;
+        const tipoA = tipoOrdem(a);
+        const tipoB = tipoOrdem(b);
+        if (tipoA !== tipoB) return tipoA - tipoB;
+        return texto(a.sigla || a.id).localeCompare(texto(b.sigla || b.id), 'pt-BR');
+      });
+
+    select.innerHTML = '';
+    const optTodos = document.createElement('option');
+    optTodos.value = '';
+    optTodos.textContent = `Todas as instituições (${itens.length})`;
+    select.appendChild(optTodos);
+
+    const grupos = new Map();
+    itens.forEach(item => {
+      const uf = texto(item.uf).toUpperCase() || 'BR';
+      if (!grupos.has(uf)) grupos.set(uf, []);
+      grupos.get(uf).push(item);
+    });
+
+    Array.from(grupos.keys())
+      .sort((a, b) => {
+        const ia = UF_ORDEM.indexOf(a); const ib = UF_ORDEM.indexOf(b);
+        return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+      })
+      .forEach(uf => {
+        const optgroup = document.createElement('optgroup');
+        const nomeUf = UF_NOME[uf] || uf;
+        optgroup.label = `${nomeUf} (${uf})`;
+        grupos.get(uf).forEach(item => optgroup.appendChild(criarOption(item)));
+        select.appendChild(optgroup);
+      });
+
+    if (atual && Array.from(select.options).some(opt => opt.value === atual)) select.value = atual;
+    else select.value = 'pmesp';
+
+    window.REMUNERACAO_INSTITUICOES_CONFIG = itens;
+    document.dispatchEvent(new CustomEvent('remuneracao:config-carregado', { detail: { config: itens, total: itens.length } }));
+    return true;
+  }
+
+  async function carregarConfigInstituicoes() {
+    try {
+      const resposta = await fetch(`${CONFIG_URL}?v=${Date.now()}`, { cache: 'no-store' });
+      if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+      const config = await resposta.json();
+      reconstruirSeletorInstituicoes(config);
+    } catch (erro) {
+      console.warn('Remuneração: não foi possível carregar config/remuneracao-instituicoes.json. Mantendo seletor estático.', erro);
+    }
+  }
+
   function texto(valor) { return String(valor == null ? '' : valor).replace(/\s+/g, ' ').trim(); }
   function numero(valor) { const n = Number(valor); return Number.isFinite(n) && n > 0 ? n : 0; }
   function limpar(valor) {
@@ -102,9 +213,10 @@
   }
 
   function iniciar() {
-    carregarAtual();
+    carregarConfigInstituicoes().finally(carregarAtual);
     const select = document.getElementById('remu-filtro-instituicao');
     if (select) select.addEventListener('change', () => carregar(select.value));
+    document.addEventListener('remuneracao:config-carregado', carregarAtual);
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', iniciar, { once: true });
